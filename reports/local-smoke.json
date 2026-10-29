@@ -1,0 +1,225 @@
+{
+  "artifact_created_at_utc": "2026-10-29T04:48:51Z",
+  "availability": {
+    "forecast_delivery_or_inference_completion": "NOT_RUN",
+    "historical_first_publication": "UNKNOWN",
+    "lag_seconds": 7200,
+    "mode": "retrospective_simulated",
+    "policy_id": "development_simulated_lag_2h_v1",
+    "retrieval_time_used_as_availability": false
+  },
+  "elapsed_seconds": 0.607222,
+  "execution": {
+    "assessment_rows_read": 0,
+    "cloud_operations": 0,
+    "network_requests": 0,
+    "scaler_fits": 0,
+    "source_files_modified": false,
+    "training_steps": 0
+  },
+  "features": {
+    "cfs_to_cms": 0.028316846592,
+    "history": [
+      "discharge_cms",
+      "age_hours"
+    ],
+    "precipitation": "original one-hour accumulation; kg/m2 numerically equals mm; no differencing",
+    "quality_policy": "STRICT_EXACT_A_ONLY",
+    "soil_definition": "modeled nominal 1cm node",
+    "state": [
+      "soil_water_fraction",
+      "soil_age_hours"
+    ],
+    "target": "discharge_cms",
+    "transform": "PHYSICAL_UNITS_UNSCALED",
+    "weather": [
+      "precip_mm",
+      "temp_k",
+      "specific_humidity",
+      "swe_kg_m2"
+    ]
+  },
+  "gauge_ids": [
+    "03161000",
+    "03164000",
+    "03479000"
+  ],
+  "geometry": {
+    "axis_source_sha256": {
+      "projection_x_coordinate": "993a76cf606f879a6263b3d28e5d79ec0b46aec55518e6ff9baeba68e6e79a07",
+      "projection_y_coordinate": "f8b955dbfc985a08b76e5643c2f7fe09a9fc617cf81d341a9b1ee53d9a14c70e"
+    },
+    "cell_order": "j-major i-minor",
+    "coverage_max": 1.000000000000001,
+    "coverage_min": 0.9999999999999954,
+    "decoded_axis_sha256": {
+      "projection_x_coordinate": "5c3bbcf48178c5dc34d46063b2946ed39679a10706a0130f56aec08ee8a7308f",
+      "projection_y_coordinate": "909b6a5c7c11317424a87acdbd274f015c286bce95fa5117e4d3d3fd243feab0"
+    },
+    "grid_asset_sha256": "f706418ce30b51f44214802eaf8a90b0a671840212c05418865ec15a1eb468b2",
+    "limitations": [
+      "Approximate study-basin polygons; no surveyed outlet claim",
+      "Jefferson and Galax treated separately; no nesting or differencing claim",
+      "CRS binding corroborated; original provider Zarr CRS attribute absent"
+    ],
+    "matrix_shape": [
+      3,
+      957
+    ],
+    "missing_cell_policy": "MASK_IF_ANY_POSITIVE_WEIGHT_CELL_IS_MISSING",
+    "original_candidate_status_unchanged": true,
+    "qualification": "DEVELOPMENT_ONLY_APPROXIMATE_BASINS_SEPARATE_NON_NESTING_GAUGES",
+    "renormalized": false,
+    "scientific_admission": false,
+    "soil_section3_sha256": "a3d66291c0a46d57625377318f0404bc2cea9837bf49ae59e28a23a1f8884558",
+    "sparse_rows": 514,
+    "weight_sums": [
+      0.9999999999999953,
+      1.0000000000000018,
+      1.000000000000001
+    ],
+    "weights_sha256": "9eaaf3b221360ed6faaa0376e953fd0c2d0356fb419df96daed9107404283a74"
+  },
+  "history_end_utc": "2021-08-23T00:00:00Z",
+  "history_hours": 24,
+  "history_start_utc": "2021-08-22T01:00:00Z",
+  "horizons_hours": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "origin_utc": "2021-08-23T02:00:00Z",
+  "private_tensor_artifact": {
+    "bytes": 30047,
+    "format": "npz",
+    "sha256": "0aad781c8bcb77a901e1f6c3e1a5d2efc1115d7819145ceeb1d410a4532548b8"
+  },
+  "private_tensor_artifact_written": true,
+  "provenance_retention": {
+    "development_labels_stored_separately_from_original_metadata": true,
+    "hrrr_generic_quality_flags_column_exists": false,
+    "hrrr_original_metadata_retained": [
+      "group availability status and source key",
+      "publication availability status and null timestamp",
+      "field source ID or native soil source key",
+      "record index",
+      "source route and dtype",
+      "source units and accumulation interval",
+      "reference and valid clocks",
+      "record values and mask hashes",
+      "original source bytes SHA256 and byte count",
+      "original missing cell count"
+    ],
+    "soil_metadata_alignment": "gauge",
+    "usgs_original_qualifiers_and_source_wire_ids_retained": true,
+    "weather_metadata_alignment": "gauge x target hour x weather feature"
+  },
+  "qualification": "Development preprocessing receipt only; no trained model, forecast skill, frozen study, or historical real-time availability claim",
+  "schema": "hydra-directflow-local-smoke/v1",
+  "scope": "ONE_REAL_LOCAL_ORIGIN_THREE_GAUGES_NO_TRAINING",
+  "selected_single_cycle_per_gauge": [
+    "20210823_00Z",
+    "20210823_00Z",
+    "20210823_00Z"
+  ],
+  "source_cycle": "20210823_00Z",
+  "source_leads_hours": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "source_quality_counts": {
+    "[\"A\"]": 132
+  },
+  "source_reference_utc": "2021-08-23T00:00:00Z",
+  "sources": {
+    "hrrr": {
+      "bytes": 5150720,
+      "grid_cells": 957,
+      "logical_id": "20210823_00Z",
+      "native_grid_verified": true,
+      "numeric_forecast_clocks_verified": true,
+      "record_count": 145,
+      "regular_members_verified": 38,
+      "sha256": "6f34151174311054173b03dc32bcb4080b9244537c24f9a45f7746c6be6cdf00",
+      "soil_values_verified_against_original_record_hash": true,
+      "weather_crop_redecoded_from_original_source_tiles": true
+    },
+    "usgs": {
+      "exact_hour_rows_in_requested_window": 132,
+      "logical_id": "native/2021-08.parquet",
+      "manifest_sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a",
+      "native_rows_in_requested_window": 519,
+      "sha256": "16f1dcbc063fed46a72ce286571c3b78fc2c199fce24e07aa76cdd03318c6d2b"
+    }
+  },
+  "status": "PASSED_DEVELOPMENT_SMOKE",
+  "target_end_utc": "2021-08-23T20:00:00Z",
+  "target_start_utc": "2021-08-23T03:00:00Z",
+  "tensors": {
+    "history": {
+      "mask_total": 144,
+      "mask_true": 144,
+      "shape": [
+        3,
+        24,
+        2
+      ]
+    },
+    "state": {
+      "mask_total": 6,
+      "mask_true": 6,
+      "shape": [
+        3,
+        2
+      ]
+    },
+    "target": {
+      "mask_total": 54,
+      "mask_true": 54,
+      "shape": [
+        3,
+        18
+      ]
+    },
+    "weather": {
+      "mask_total": 216,
+      "mask_true": 216,
+      "shape": [
+        3,
+        18,
+        4
+      ]
+    }
+  }
+}
