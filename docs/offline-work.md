@@ -11,8 +11,9 @@ python3.11 scripts/verify_offline_cache.py
 ```
 
 The cached wheel tags are macOS arm64, not a Linux/CUDA deployment bundle. A fresh
-isolated environment was installed with networking disabled in pip and passed the
-current unit suite. Restore it with the already installed Python 3.11:
+isolated environment was installed with networking disabled in pip and passed
+55 tests at that recorded checkpoint. Later suite results have separate receipts.
+Restore it with the already installed Python 3.11:
 
 ```sh
 python3.11 -m venv .venv-restored
