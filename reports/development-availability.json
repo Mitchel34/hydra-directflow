@@ -1,0 +1,792 @@
+{
+  "artifact_created_at_utc": "2026-10-29T06:09:06.037420+00:00",
+  "common_origin_window": {
+    "earliest_L168_history_utc": "2021-08-01T01:00:00Z",
+    "end_inclusive_utc": "2021-08-31T05:00:00Z",
+    "history_lag_hours": 2,
+    "latest_target_utc": "2021-08-31T23:00:00Z",
+    "origins_per_gauge": 556,
+    "start_inclusive_utc": "2021-08-08T02:00:00Z",
+    "target_horizons_hours": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "timezone": "UTC"
+  },
+  "counting_notes": [
+    "Each origin is tested on all exact history slots and all H18 target slots",
+    "Missing exact hours are never replaced by quarter-hour samples",
+    "Slot occurrences count repeated use across overlapping windows; they are not unique source-hour counts",
+    "Reason counts may overlap; history/target incomplete totals count each origin once",
+    "Source padding rows are counted but excluded from August core availability"
+  ],
+  "decision": "No lookback or quality policy selected automatically; this single-month audit does not establish whole-study coverage",
+  "decoded_columns": [
+    "site",
+    "sample_epoch",
+    "sample_time_utc",
+    "is_exact_utc_hour",
+    "numeric_valid",
+    "source_qualifiers_json",
+    "is_estimated",
+    "is_core"
+  ],
+  "execution": {
+    "discharge_or_source_value_columns_decoded": false,
+    "elapsed_seconds": 0.7736236249911599,
+    "imputation": false,
+    "model_operations": 0,
+    "network_requests": 0,
+    "protected_rows_or_outcomes_read": false,
+    "scoring_operations": 0,
+    "source_files_modified": false
+  },
+  "implementation_sha256": "6f0912eb33e8bc233a76f84b09828eed49a3aed73fa22343f92654f3a0076325",
+  "lookback_comparisons_on_identical_origins": [
+    {
+      "common_requested_origins": 556,
+      "joint_complete_L168_only": 0,
+      "joint_complete_L24_only": 0,
+      "joint_complete_both_lookbacks": 556,
+      "policy": "exact_A_only",
+      "site": "03161000"
+    },
+    {
+      "common_requested_origins": 556,
+      "joint_complete_L168_only": 0,
+      "joint_complete_L24_only": 0,
+      "joint_complete_both_lookbacks": 556,
+      "policy": "approved_A_optional_R_no_e_or_P",
+      "site": "03161000"
+    },
+    {
+      "common_requested_origins": 556,
+      "joint_complete_L168_only": 0,
+      "joint_complete_L24_only": 0,
+      "joint_complete_both_lookbacks": 556,
+      "policy": "exact_A_only",
+      "site": "03164000"
+    },
+    {
+      "common_requested_origins": 556,
+      "joint_complete_L168_only": 0,
+      "joint_complete_L24_only": 0,
+      "joint_complete_both_lookbacks": 556,
+      "policy": "approved_A_optional_R_no_e_or_P",
+      "site": "03164000"
+    },
+    {
+      "common_requested_origins": 556,
+      "joint_complete_L168_only": 0,
+      "joint_complete_L24_only": 0,
+      "joint_complete_both_lookbacks": 556,
+      "policy": "exact_A_only",
+      "site": "03479000"
+    },
+    {
+      "common_requested_origins": 556,
+      "joint_complete_L168_only": 0,
+      "joint_complete_L24_only": 0,
+      "joint_complete_both_lookbacks": 556,
+      "policy": "approved_A_optional_R_no_e_or_P",
+      "site": "03479000"
+    }
+  ],
+  "monthly_metadata_profiles": {
+    "03161000": {
+      "core_native_rows": 2976,
+      "core_qualifier_counts_verbatim": {
+        "[\"A\"]": 2976
+      },
+      "estimated_flag_qualifier_disagreements": 0,
+      "exact_core_estimated": 0,
+      "exact_core_numeric_invalid": 0,
+      "exact_core_qualifier_counts_verbatim": {
+        "[\"A\"]": 744
+      },
+      "exact_core_rows": 744,
+      "expected_exact_core_hours": 744,
+      "missing_exact_core_hours": 0,
+      "native_rows": 3073,
+      "padding_native_rows": 97
+    },
+    "03164000": {
+      "core_native_rows": 2976,
+      "core_qualifier_counts_verbatim": {
+        "[\"A\"]": 2976
+      },
+      "estimated_flag_qualifier_disagreements": 0,
+      "exact_core_estimated": 0,
+      "exact_core_numeric_invalid": 0,
+      "exact_core_qualifier_counts_verbatim": {
+        "[\"A\"]": 744
+      },
+      "exact_core_rows": 744,
+      "expected_exact_core_hours": 744,
+      "missing_exact_core_hours": 0,
+      "native_rows": 3073,
+      "padding_native_rows": 97
+    },
+    "03479000": {
+      "core_native_rows": 2976,
+      "core_qualifier_counts_verbatim": {
+        "[\"A\"]": 2976
+      },
+      "estimated_flag_qualifier_disagreements": 0,
+      "exact_core_estimated": 0,
+      "exact_core_numeric_invalid": 0,
+      "exact_core_qualifier_counts_verbatim": {
+        "[\"A\"]": 744
+      },
+      "exact_core_rows": 744,
+      "expected_exact_core_hours": 744,
+      "missing_exact_core_hours": 0,
+      "native_rows": 3073,
+      "padding_native_rows": 97
+    }
+  },
+  "policies": {
+    "approved_A_optional_R_no_e_or_P": "A required; only A/R flags allowed, order independent; numeric_valid true and is_estimated false",
+    "exact_A_only": "Qualifier tuple exactly (A,); numeric_valid true and is_estimated false",
+    "historical_publication_assumption": "Two-hour history lag is a simulation, not historical publication proof",
+    "same_input_and_target_policy": true,
+    "unknown_and_duplicate_flags": "Unknown flags rejected by both policies; duplicate/empty/malformed flag entries fail metadata validation"
+  },
+  "policy_counts": [
+    {
+      "admitted_exact_core_hours": 744,
+      "exact_core_rows": 744,
+      "policy": "exact_A_only",
+      "present_hour_exclusions_by_reason_overlap": {
+        "estimated_flag_true": 0,
+        "missing_exact_hour": 0,
+        "numeric_valid_false": 0,
+        "qualifiers_not_admitted": 0
+      },
+      "rejected_present_exact_core_hours": 0,
+      "site": "03161000"
+    },
+    {
+      "admitted_exact_core_hours": 744,
+      "exact_core_rows": 744,
+      "policy": "approved_A_optional_R_no_e_or_P",
+      "present_hour_exclusions_by_reason_overlap": {
+        "estimated_flag_true": 0,
+        "missing_exact_hour": 0,
+        "numeric_valid_false": 0,
+        "qualifiers_not_admitted": 0
+      },
+      "rejected_present_exact_core_hours": 0,
+      "site": "03161000"
+    },
+    {
+      "admitted_exact_core_hours": 744,
+      "exact_core_rows": 744,
+      "policy": "exact_A_only",
+      "present_hour_exclusions_by_reason_overlap": {
+        "estimated_flag_true": 0,
+        "missing_exact_hour": 0,
+        "numeric_valid_false": 0,
+        "qualifiers_not_admitted": 0
+      },
+      "rejected_present_exact_core_hours": 0,
+      "site": "03164000"
+    },
+    {
+      "admitted_exact_core_hours": 744,
+      "exact_core_rows": 744,
+      "policy": "approved_A_optional_R_no_e_or_P",
+      "present_hour_exclusions_by_reason_overlap": {
+        "estimated_flag_true": 0,
+        "missing_exact_hour": 0,
+        "numeric_valid_false": 0,
+        "qualifiers_not_admitted": 0
+      },
+      "rejected_present_exact_core_hours": 0,
+      "site": "03164000"
+    },
+    {
+      "admitted_exact_core_hours": 744,
+      "exact_core_rows": 744,
+      "policy": "exact_A_only",
+      "present_hour_exclusions_by_reason_overlap": {
+        "estimated_flag_true": 0,
+        "missing_exact_hour": 0,
+        "numeric_valid_false": 0,
+        "qualifiers_not_admitted": 0
+      },
+      "rejected_present_exact_core_hours": 0,
+      "site": "03479000"
+    },
+    {
+      "admitted_exact_core_hours": 744,
+      "exact_core_rows": 744,
+      "policy": "approved_A_optional_R_no_e_or_P",
+      "present_hour_exclusions_by_reason_overlap": {
+        "estimated_flag_true": 0,
+        "missing_exact_hour": 0,
+        "numeric_valid_false": 0,
+        "qualifiers_not_admitted": 0
+      },
+      "rejected_present_exact_core_hours": 0,
+      "site": "03479000"
+    }
+  ],
+  "results": [
+    {
+      "history_complete": 556,
+      "history_hours": 24,
+      "history_incomplete": 0,
+      "joint_USGS_complete": 556,
+      "joint_USGS_complete_fraction": 1.0,
+      "origin_exclusions_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "policy": "exact_A_only",
+      "prefix_window_count_crosscheck": "PASS",
+      "requested_history_slot_occurrences": 13344,
+      "requested_origins": 556,
+      "requested_target_slot_occurrences": 10008,
+      "site": "03161000",
+      "slot_exclusion_occurrences_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "targets_complete": 556,
+      "targets_incomplete": 0
+    },
+    {
+      "history_complete": 556,
+      "history_hours": 168,
+      "history_incomplete": 0,
+      "joint_USGS_complete": 556,
+      "joint_USGS_complete_fraction": 1.0,
+      "origin_exclusions_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "policy": "exact_A_only",
+      "prefix_window_count_crosscheck": "PASS",
+      "requested_history_slot_occurrences": 93408,
+      "requested_origins": 556,
+      "requested_target_slot_occurrences": 10008,
+      "site": "03161000",
+      "slot_exclusion_occurrences_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "targets_complete": 556,
+      "targets_incomplete": 0
+    },
+    {
+      "history_complete": 556,
+      "history_hours": 24,
+      "history_incomplete": 0,
+      "joint_USGS_complete": 556,
+      "joint_USGS_complete_fraction": 1.0,
+      "origin_exclusions_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "policy": "approved_A_optional_R_no_e_or_P",
+      "prefix_window_count_crosscheck": "PASS",
+      "requested_history_slot_occurrences": 13344,
+      "requested_origins": 556,
+      "requested_target_slot_occurrences": 10008,
+      "site": "03161000",
+      "slot_exclusion_occurrences_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "targets_complete": 556,
+      "targets_incomplete": 0
+    },
+    {
+      "history_complete": 556,
+      "history_hours": 168,
+      "history_incomplete": 0,
+      "joint_USGS_complete": 556,
+      "joint_USGS_complete_fraction": 1.0,
+      "origin_exclusions_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "policy": "approved_A_optional_R_no_e_or_P",
+      "prefix_window_count_crosscheck": "PASS",
+      "requested_history_slot_occurrences": 93408,
+      "requested_origins": 556,
+      "requested_target_slot_occurrences": 10008,
+      "site": "03161000",
+      "slot_exclusion_occurrences_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "targets_complete": 556,
+      "targets_incomplete": 0
+    },
+    {
+      "history_complete": 556,
+      "history_hours": 24,
+      "history_incomplete": 0,
+      "joint_USGS_complete": 556,
+      "joint_USGS_complete_fraction": 1.0,
+      "origin_exclusions_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "policy": "exact_A_only",
+      "prefix_window_count_crosscheck": "PASS",
+      "requested_history_slot_occurrences": 13344,
+      "requested_origins": 556,
+      "requested_target_slot_occurrences": 10008,
+      "site": "03164000",
+      "slot_exclusion_occurrences_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "targets_complete": 556,
+      "targets_incomplete": 0
+    },
+    {
+      "history_complete": 556,
+      "history_hours": 168,
+      "history_incomplete": 0,
+      "joint_USGS_complete": 556,
+      "joint_USGS_complete_fraction": 1.0,
+      "origin_exclusions_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "policy": "exact_A_only",
+      "prefix_window_count_crosscheck": "PASS",
+      "requested_history_slot_occurrences": 93408,
+      "requested_origins": 556,
+      "requested_target_slot_occurrences": 10008,
+      "site": "03164000",
+      "slot_exclusion_occurrences_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "targets_complete": 556,
+      "targets_incomplete": 0
+    },
+    {
+      "history_complete": 556,
+      "history_hours": 24,
+      "history_incomplete": 0,
+      "joint_USGS_complete": 556,
+      "joint_USGS_complete_fraction": 1.0,
+      "origin_exclusions_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "policy": "approved_A_optional_R_no_e_or_P",
+      "prefix_window_count_crosscheck": "PASS",
+      "requested_history_slot_occurrences": 13344,
+      "requested_origins": 556,
+      "requested_target_slot_occurrences": 10008,
+      "site": "03164000",
+      "slot_exclusion_occurrences_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "targets_complete": 556,
+      "targets_incomplete": 0
+    },
+    {
+      "history_complete": 556,
+      "history_hours": 168,
+      "history_incomplete": 0,
+      "joint_USGS_complete": 556,
+      "joint_USGS_complete_fraction": 1.0,
+      "origin_exclusions_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "policy": "approved_A_optional_R_no_e_or_P",
+      "prefix_window_count_crosscheck": "PASS",
+      "requested_history_slot_occurrences": 93408,
+      "requested_origins": 556,
+      "requested_target_slot_occurrences": 10008,
+      "site": "03164000",
+      "slot_exclusion_occurrences_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "targets_complete": 556,
+      "targets_incomplete": 0
+    },
+    {
+      "history_complete": 556,
+      "history_hours": 24,
+      "history_incomplete": 0,
+      "joint_USGS_complete": 556,
+      "joint_USGS_complete_fraction": 1.0,
+      "origin_exclusions_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "policy": "exact_A_only",
+      "prefix_window_count_crosscheck": "PASS",
+      "requested_history_slot_occurrences": 13344,
+      "requested_origins": 556,
+      "requested_target_slot_occurrences": 10008,
+      "site": "03479000",
+      "slot_exclusion_occurrences_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "targets_complete": 556,
+      "targets_incomplete": 0
+    },
+    {
+      "history_complete": 556,
+      "history_hours": 168,
+      "history_incomplete": 0,
+      "joint_USGS_complete": 556,
+      "joint_USGS_complete_fraction": 1.0,
+      "origin_exclusions_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "policy": "exact_A_only",
+      "prefix_window_count_crosscheck": "PASS",
+      "requested_history_slot_occurrences": 93408,
+      "requested_origins": 556,
+      "requested_target_slot_occurrences": 10008,
+      "site": "03479000",
+      "slot_exclusion_occurrences_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "targets_complete": 556,
+      "targets_incomplete": 0
+    },
+    {
+      "history_complete": 556,
+      "history_hours": 24,
+      "history_incomplete": 0,
+      "joint_USGS_complete": 556,
+      "joint_USGS_complete_fraction": 1.0,
+      "origin_exclusions_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "policy": "approved_A_optional_R_no_e_or_P",
+      "prefix_window_count_crosscheck": "PASS",
+      "requested_history_slot_occurrences": 13344,
+      "requested_origins": 556,
+      "requested_target_slot_occurrences": 10008,
+      "site": "03479000",
+      "slot_exclusion_occurrences_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "targets_complete": 556,
+      "targets_incomplete": 0
+    },
+    {
+      "history_complete": 556,
+      "history_hours": 168,
+      "history_incomplete": 0,
+      "joint_USGS_complete": 556,
+      "joint_USGS_complete_fraction": 1.0,
+      "origin_exclusions_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "policy": "approved_A_optional_R_no_e_or_P",
+      "prefix_window_count_crosscheck": "PASS",
+      "requested_history_slot_occurrences": 93408,
+      "requested_origins": 556,
+      "requested_target_slot_occurrences": 10008,
+      "site": "03479000",
+      "slot_exclusion_occurrences_by_reason_overlap": {
+        "history": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        },
+        "targets": {
+          "estimated_flag_true": 0,
+          "missing_exact_hour": 0,
+          "numeric_valid_false": 0,
+          "qualifiers_not_admitted": 0
+        }
+      },
+      "targets_complete": 556,
+      "targets_incomplete": 0
+    }
+  ],
+  "schema": "hydra-development-usgs-metadata-availability/v1",
+  "scope": "USGS-only metadata availability; not full HRRR eligibility or forecast performance",
+  "source_integrity": {
+    "duplicate_native_keys": 0,
+    "numeric_valid_is_retained_acquisition_QA_not_recomputed_from_discharge": true,
+    "only_selected_metadata_columns_decoded": true,
+    "qualifier_strings_preserved_verbatim": true,
+    "whole_file_bytes_hashed": true
+  },
+  "sources": {
+    "native_partition": {
+      "bytes": 73458,
+      "logical_id": "native/2021-08.parquet",
+      "sha256": "16f1dcbc063fed46a72ce286571c3b78fc2c199fce24e07aa76cdd03318c6d2b"
+    },
+    "pyarrow_version": "21.0.0",
+    "source_manifest": {
+      "bytes": 1092392,
+      "logical_id": "usgs-source-manifest",
+      "sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a"
+    }
+  },
+  "status": "COMPLETED_METADATA_ONLY_AUDIT"
+}
