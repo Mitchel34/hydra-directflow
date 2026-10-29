@@ -197,7 +197,9 @@
     "project_no_index_editable_install_returncode": 0,
     "unit_tests_passed": 55,
     "unit_test_optimizer_updates": 0,
-    "research_training_runs": 0
+    "research_training_runs": 0,
+    "offline_copied_input_smoke": "PASSED_DEVELOPMENT_SMOKE",
+    "offline_input_source_hashes_verified": true
   },
   "limitations": [
     "Requires already installed Python3.11 and compatible macOSarm64.",
