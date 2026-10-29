@@ -26,6 +26,12 @@ through `2025-07-31T17:00Z`. Development labels must stay inside their partition
 Actual artifact creation timestamps are distinct from simulated historical
 information cutoffs.
 
+See [the completed work ledger](docs/work-ledger.md) for commits and evidence.
+The integrated offline-environment suite passes **114 tests**. Current reports
+include four-model CPU/MPS qualification, a bounded real-data engineering probe,
+fresh-process recovery and a 20-case synthetic local throughput benchmark.
+Discharge-only ablation and source-aware NWM evaluation helpers are implemented.
+
 ## Local use
 
 ```sh
