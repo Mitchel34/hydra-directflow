@@ -1,0 +1,9 @@
+{
+  "source_package_manifest_sha256": "3aa5169247168c2be845338a0fc019f5b0a05b113a40b9af49821c3d7bdeeda4",
+  "copied_modules": {
+    "contract.py": "efb5d2299126496f8916857848f91226673db57a32af4697fd7c9b6a04e5532a",
+    "reference.py": "42b034feb53bf26d102c5c56a5bb606f6cef83417fbe1ac35ae0acfa0a4d7213",
+    "spatial.py": "680e84d00cb77a7f5ca27579ab55f7369bc3234435463677e3bb85e67cedcb2f"
+  },
+  "scope": "New direct-flow study; no prior fitted weights, scalers or scientific results reused."
+}
