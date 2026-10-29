@@ -31,6 +31,12 @@ or add a bounded exporter later. Multiple unlabeled historical files must not be
 scraped as if they were one current job. Keep individual case IDs and unrestricted
 run IDs in logs/artifacts rather than metric labels.
 
+`configs/grafana-development.json` is an importable dashboard template targeting
+these metrics. It includes explicit active/terminal states so a completed run is
+not mistaken for a stalled active job. Its JSON and metric names have been checked;
+it has not been tested against a running Grafana/Prometheus deployment. Select a
+Prometheus datasource when importing it. No hosted account or service was started.
+
 Suggested future dashboards cover data progress/exclusions, loader versus compute
 time, train/validation metrics, memory/disk/accelerator measurements, heartbeat,
 checkpoint age and resource-hours. Protected assessment skill stays disabled

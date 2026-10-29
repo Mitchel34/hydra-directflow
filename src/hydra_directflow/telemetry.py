@@ -48,6 +48,7 @@ class RunJournal:
         self.latest = {}
         atomic_json(self.path / 'spec.json', self.spec)
         self.event('started', spec_sha256=self.spec_sha256)
+        self.metric('run_active', 1)
         self._state()
 
     def _state(self):
@@ -136,6 +137,8 @@ class RunJournal:
     def finish(self, status='COMPLETED', **fields):
         if self.status != 'RUNNING' or status not in {'COMPLETED', 'FAILED', 'STOPPED'}:
             raise ValueError('Exactly one valid terminal transition required')
+        self.metric('run_active', 0)
+        self.metric('terminal_status', {'COMPLETED': 1, 'FAILED': 2, 'STOPPED': 3}[status])
         self.status = status
         self.event('finished', status=status, **fields)
         self._state()

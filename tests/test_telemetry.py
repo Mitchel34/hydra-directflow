@@ -16,6 +16,8 @@ class JournalTests(unittest.TestCase):
             self.assertEqual(run.artifact(output)['file'], 'result.json')
             run.finish()
             self.assertEqual(json.loads((run.path/'state.json').read_text())['status'], 'COMPLETED')
+            self.assertIn('hydra_run_active 0', (run.path/'metrics.prom').read_text())
+            self.assertIn('hydra_terminal_status 1', (run.path/'metrics.prom').read_text())
             with self.assertRaises(RuntimeError):run.metric('loss',1.)
             with self.assertRaises(ValueError):run.finish()
 
