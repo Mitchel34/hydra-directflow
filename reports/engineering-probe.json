@@ -1,0 +1,106 @@
+{
+  "schema": "hydra-engineering-integration-summary/v1",
+  "qualification": "Bounded optimizer mechanics on ONE repeated development observation; not forecast skill or a scientific campaign.",
+  "fixed_unit_mapping_not_fitted_scaler": true,
+  "gauge_id": "03161000",
+  "origin_utc": "2021-08-23T02:00:00Z",
+  "protected_assessment_scores": 0,
+  "network_requests": 0,
+  "prior_attempts": [
+    {
+      "architecture": "LSTM",
+      "device": "cpu",
+      "status": "FAILED",
+      "precharged_updates": 2,
+      "confirmed_updates": 0,
+      "cause": "UTC text formatting mismatch rejected before optimizer admission; corrected by instant comparison."
+    }
+  ],
+  "cases": [
+    {
+      "architecture": "LSTM",
+      "device": "cpu",
+      "result": {
+        "schema": "hydra-engineering-probe-result/v1",
+        "status": "COMPLETED_ENGINEERING_ONLY",
+        "qualification": "DEVELOPMENT_ENGINEERING_ONLY: repeated updates on one already observed case; fixed declared unit mapping, no fitted scalers, no forecast skill, no scientific campaign, no protected assessment, no deployment",
+        "artifact_created_at_utc": "2026-10-29T05:42:50.521196+00:00",
+        "spec_sha256": "45a27b4f1e28effee8a89b8b36236569d67b991b5d47c9730b79b9b365094439",
+        "source_digest": "3b61d864326d3dbbdaa294bf976d180c26cb4b68685e8c5d779d11a029bcc96d",
+        "optimizer_steps_precharged": 2,
+        "confirmed_optimizer_steps": 2,
+        "optimizer_step_count_exact": true,
+        "network_requests": 0,
+        "protected_assessment_scores": 0,
+        "scaler_fits": 0,
+        "scientific_campaign_enabled": false,
+        "checkpoint_bytes": 851354,
+        "checkpoint_file": "engineering-checkpoint.pt",
+        "checkpoint_sha256": "70c1195a9a8cc6750403d028e35a39782e416ca0ccae6473d76b00fbe61b219f",
+        "implementation_sha256": {
+          "engineering.py": "fa05a5bb0199d77411f30625fb1439a3a9a7b3a16f4325fdd6505396e892646c",
+          "models/directflow.py": "ad767e49021f144402de669ddd50080c86d3b76cb5724afdfb9bec01a29c23a5",
+          "models/mamba2_math.py": "e467b5de664bd0bc7f517c246bceb0c4dc777b1b63cf819effbf7eb5ee94b7aa"
+        },
+        "torch_version": "2.8.0",
+        "training_losses_fixed_units": [
+          0.07607808709144592,
+          0.07396049052476883
+        ],
+        "valid_target_cells": 18,
+        "checkpoint": {
+          "file": "engineering-checkpoint.pt",
+          "bytes": 851354,
+          "sha256": "70c1195a9a8cc6750403d028e35a39782e416ca0ccae6473d76b00fbe61b219f"
+        },
+        "combined_observed_peak_bytes": 302841856,
+        "journal_status": "COMPLETED"
+      },
+      "run_directory": "runs/engineering-lstm-20261029T054249092232Z"
+    },
+    {
+      "architecture": "Mamba2_Transformer",
+      "device": "mps",
+      "result": {
+        "schema": "hydra-engineering-probe-result/v1",
+        "status": "COMPLETED_ENGINEERING_ONLY",
+        "qualification": "DEVELOPMENT_ENGINEERING_ONLY: repeated updates on one already observed case; fixed declared unit mapping, no fitted scalers, no forecast skill, no scientific campaign, no protected assessment, no deployment",
+        "artifact_created_at_utc": "2026-10-29T05:42:53.967560+00:00",
+        "spec_sha256": "80978f7763c92d9730b69eabdb29e0ea99698da67b45bfae2ce737be7bf2e42b",
+        "source_digest": "3b61d864326d3dbbdaa294bf976d180c26cb4b68685e8c5d779d11a029bcc96d",
+        "optimizer_steps_precharged": 2,
+        "confirmed_optimizer_steps": 2,
+        "optimizer_step_count_exact": true,
+        "network_requests": 0,
+        "protected_assessment_scores": 0,
+        "scaler_fits": 0,
+        "scientific_campaign_enabled": false,
+        "checkpoint_bytes": 1091103,
+        "checkpoint_file": "engineering-checkpoint.pt",
+        "checkpoint_sha256": "ab5d6aa7ae224214b6341d42e151f9d88afab0f701cc200a52f82b0b52def639",
+        "implementation_sha256": {
+          "engineering.py": "fa05a5bb0199d77411f30625fb1439a3a9a7b3a16f4325fdd6505396e892646c",
+          "models/directflow.py": "ad767e49021f144402de669ddd50080c86d3b76cb5724afdfb9bec01a29c23a5",
+          "models/mamba2_math.py": "e467b5de664bd0bc7f517c246bceb0c4dc777b1b63cf819effbf7eb5ee94b7aa"
+        },
+        "torch_version": "2.8.0",
+        "training_losses_fixed_units": [
+          0.10537204146385193,
+          0.13191956281661987
+        ],
+        "valid_target_cells": 18,
+        "checkpoint": {
+          "file": "engineering-checkpoint.pt",
+          "bytes": 1091103,
+          "sha256": "ab5d6aa7ae224214b6341d42e151f9d88afab0f701cc200a52f82b0b52def639"
+        },
+        "combined_observed_peak_bytes": 578863104,
+        "journal_status": "COMPLETED"
+      },
+      "run_directory": "runs/engineering-mamba2_transformer-20261029T054250790019Z"
+    }
+  ],
+  "status": "PASS_ENGINEERING_ONLY",
+  "successful_real_data_optimizer_updates": 4,
+  "total_precharged_update_allowance": 6
+}
