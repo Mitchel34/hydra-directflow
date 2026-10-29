@@ -1,0 +1,282 @@
+{
+  "artifact_created_at_utc": "2026-10-29T04:51:46.576210+00:00",
+  "cases": [
+    {
+      "architecture": "LSTM",
+      "combined_observed_peak_bytes": 259407872,
+      "device": "cpu",
+      "forward_seconds": 0.0012322500115260482,
+      "input_npz_sha256": "0aad781c8bcb77a901e1f6c3e1a5d2efc1115d7819145ceeb1d410a4532548b8",
+      "model_state_sha256": "124b38cb7cd7b0d3dffe08be48abf9c2d83acb5412b4e43c9d5f3c541a2a9079",
+      "mps_available": true,
+      "observed_peaks": {
+        "host_rss_bytes": 193757184,
+        "mps_driver_bytes": 0
+      },
+      "optimizer_updates": 0,
+      "output_finite": true,
+      "output_requires_grad": false,
+      "output_shape": [
+        3,
+        18
+      ],
+      "parameter_count": 67905,
+      "parameters_and_buffers_unchanged": true,
+      "scaler_fits": 0,
+      "status": "PASSED",
+      "targets_decoded_or_passed_to_forward": false,
+      "torch_version": "2.8.0"
+    },
+    {
+      "architecture": "Transformer",
+      "combined_observed_peak_bytes": 260653056,
+      "device": "cpu",
+      "forward_seconds": 0.003007417020853609,
+      "input_npz_sha256": "0aad781c8bcb77a901e1f6c3e1a5d2efc1115d7819145ceeb1d410a4532548b8",
+      "model_state_sha256": "e451aabfbf1dcc5fe12055ad82319796c1c770b29ceb65f9d00a04ed75d60627",
+      "mps_available": true,
+      "observed_peaks": {
+        "host_rss_bytes": 193871872,
+        "mps_driver_bytes": 0
+      },
+      "optimizer_updates": 0,
+      "output_finite": true,
+      "output_requires_grad": false,
+      "output_shape": [
+        3,
+        18
+      ],
+      "parameter_count": 85057,
+      "parameters_and_buffers_unchanged": true,
+      "scaler_fits": 0,
+      "status": "PASSED",
+      "targets_decoded_or_passed_to_forward": false,
+      "torch_version": "2.8.0"
+    },
+    {
+      "architecture": "GRU_Transformer",
+      "combined_observed_peak_bytes": 260849664,
+      "device": "cpu",
+      "forward_seconds": 0.0016354589606635273,
+      "input_npz_sha256": "0aad781c8bcb77a901e1f6c3e1a5d2efc1115d7819145ceeb1d410a4532548b8",
+      "model_state_sha256": "7a8a28996da5f42947f29f4ecb092ca4c3c513e9bd9115bee9954b0a899bbadf",
+      "mps_available": true,
+      "observed_peaks": {
+        "host_rss_bytes": 194117632,
+        "mps_driver_bytes": 0
+      },
+      "optimizer_updates": 0,
+      "output_finite": true,
+      "output_requires_grad": false,
+      "output_shape": [
+        3,
+        18
+      ],
+      "parameter_count": 76545,
+      "parameters_and_buffers_unchanged": true,
+      "scaler_fits": 0,
+      "status": "PASSED",
+      "targets_decoded_or_passed_to_forward": false,
+      "torch_version": "2.8.0"
+    },
+    {
+      "architecture": "Mamba2_Transformer",
+      "combined_observed_peak_bytes": 367591424,
+      "device": "cpu",
+      "forward_seconds": 0.003704457951243967,
+      "input_npz_sha256": "0aad781c8bcb77a901e1f6c3e1a5d2efc1115d7819145ceeb1d410a4532548b8",
+      "model_state_sha256": "c29a096e14ea10964b1325fbe4e4445b9bd41a91cfed7801d821c2ffd5277877",
+      "mps_available": true,
+      "observed_peaks": {
+        "host_rss_bytes": 306823168,
+        "mps_driver_bytes": 0
+      },
+      "optimizer_updates": 0,
+      "output_finite": true,
+      "output_requires_grad": false,
+      "output_shape": [
+        3,
+        18
+      ],
+      "parameter_count": 86093,
+      "parameters_and_buffers_unchanged": true,
+      "scaler_fits": 0,
+      "status": "PASSED",
+      "targets_decoded_or_passed_to_forward": false,
+      "torch_version": "2.8.0"
+    },
+    {
+      "architecture": "LSTM",
+      "combined_observed_peak_bytes": 333889536,
+      "device": "mps",
+      "forward_seconds": 0.133090750023257,
+      "input_npz_sha256": "0aad781c8bcb77a901e1f6c3e1a5d2efc1115d7819145ceeb1d410a4532548b8",
+      "model_state_sha256": "124b38cb7cd7b0d3dffe08be48abf9c2d83acb5412b4e43c9d5f3c541a2a9079",
+      "mps_available": true,
+      "observed_peaks": {
+        "host_rss_bytes": 254033920,
+        "mps_driver_bytes": 28065792
+      },
+      "optimizer_updates": 0,
+      "output_finite": true,
+      "output_requires_grad": false,
+      "output_shape": [
+        3,
+        18
+      ],
+      "parameter_count": 67905,
+      "parameters_and_buffers_unchanged": true,
+      "scaler_fits": 0,
+      "status": "PASSED",
+      "targets_decoded_or_passed_to_forward": false,
+      "torch_version": "2.8.0"
+    },
+    {
+      "architecture": "Transformer",
+      "combined_observed_peak_bytes": 338493440,
+      "device": "mps",
+      "forward_seconds": 0.14619979198323563,
+      "input_npz_sha256": "0aad781c8bcb77a901e1f6c3e1a5d2efc1115d7819145ceeb1d410a4532548b8",
+      "model_state_sha256": "e451aabfbf1dcc5fe12055ad82319796c1c770b29ceb65f9d00a04ed75d60627",
+      "mps_available": true,
+      "observed_peaks": {
+        "host_rss_bytes": 256098304,
+        "mps_driver_bytes": 27983872
+      },
+      "optimizer_updates": 0,
+      "output_finite": true,
+      "output_requires_grad": false,
+      "output_shape": [
+        3,
+        18
+      ],
+      "parameter_count": 85057,
+      "parameters_and_buffers_unchanged": true,
+      "scaler_fits": 0,
+      "status": "PASSED",
+      "targets_decoded_or_passed_to_forward": false,
+      "torch_version": "2.8.0"
+    },
+    {
+      "architecture": "GRU_Transformer",
+      "combined_observed_peak_bytes": 337297408,
+      "device": "mps",
+      "forward_seconds": 0.14508762501645833,
+      "input_npz_sha256": "0aad781c8bcb77a901e1f6c3e1a5d2efc1115d7819145ceeb1d410a4532548b8",
+      "model_state_sha256": "7a8a28996da5f42947f29f4ecb092ca4c3c513e9bd9115bee9954b0a899bbadf",
+      "mps_available": true,
+      "observed_peaks": {
+        "host_rss_bytes": 255623168,
+        "mps_driver_bytes": 27983872
+      },
+      "optimizer_updates": 0,
+      "output_finite": true,
+      "output_requires_grad": false,
+      "output_shape": [
+        3,
+        18
+      ],
+      "parameter_count": 76545,
+      "parameters_and_buffers_unchanged": true,
+      "scaler_fits": 0,
+      "status": "PASSED",
+      "targets_decoded_or_passed_to_forward": false,
+      "torch_version": "2.8.0"
+    },
+    {
+      "architecture": "Mamba2_Transformer",
+      "combined_observed_peak_bytes": 460668928,
+      "device": "mps",
+      "forward_seconds": 0.18550908303586766,
+      "input_npz_sha256": "0aad781c8bcb77a901e1f6c3e1a5d2efc1115d7819145ceeb1d410a4532548b8",
+      "model_state_sha256": "c29a096e14ea10964b1325fbe4e4445b9bd41a91cfed7801d821c2ffd5277877",
+      "mps_available": true,
+      "observed_peaks": {
+        "host_rss_bytes": 383270912,
+        "mps_driver_bytes": 28049408
+      },
+      "optimizer_updates": 0,
+      "output_finite": true,
+      "output_requires_grad": false,
+      "output_shape": [
+        3,
+        18
+      ],
+      "parameter_count": 86093,
+      "parameters_and_buffers_unchanged": true,
+      "scaler_fits": 0,
+      "status": "PASSED",
+      "targets_decoded_or_passed_to_forward": false,
+      "torch_version": "2.8.0"
+    }
+  ],
+  "execution": {
+    "assessment_rows_read": 0,
+    "network_requests": 0,
+    "optimizer_updates": 0,
+    "outputs_saved_as_forecasts": false,
+    "performance_scores_computed": false,
+    "scaler_fits": 0,
+    "targets_decoded_or_passed_to_forward": false
+  },
+  "input_features": {
+    "history": [
+      "discharge_cms",
+      "age_hours"
+    ],
+    "state": [
+      "soil_water_fraction",
+      "soil_age_hours"
+    ],
+    "weather": [
+      "precip_mm",
+      "temp_k",
+      "specific_humidity",
+      "swe_kg_m2"
+    ]
+  },
+  "input_provenance": {
+    "hrrr_archive_sha256": "6f34151174311054173b03dc32bcb4080b9244537c24f9a45f7746c6be6cdf00",
+    "origin_utc": "2021-08-23T02:00:00Z",
+    "private_npz": {
+      "bytes": 30047,
+      "format": "npz",
+      "sha256": "0aad781c8bcb77a901e1f6c3e1a5d2efc1115d7819145ceeb1d410a4532548b8"
+    },
+    "source_cycle": "20210823_00Z",
+    "source_qualification": "Development preprocessing receipt only; no trained model, forecast skill, frozen study, or historical real-time availability claim",
+    "source_receipt_sha256": "21466fe485fd0517eee0d0ce62a23645859ccb99f38a41e34bf3b19f60bee0c2",
+    "usgs_partition_sha256": "16f1dcbc063fed46a72ce286571c3b78fc2c199fce24e07aa76cdd03318c6d2b"
+  },
+  "journal": {
+    "events_sha256": "cdddbdb46d02ccf26246fba7928ea4bffb677c29043122b99bfd849170fb08d4",
+    "metrics_sha256": "936727084d1c188eada01e9311ad333c48eaa485f3ba9618229422027f221f95",
+    "spec_sha256": "c02decce43fcb69f2ad28a32af5946bc94836cdfb1335654f684f2524ab68304",
+    "state_sha256": "3c5f65ccbafbe3750bc718addec66025770e61fbd23c6ce57790b629ec074160",
+    "status": "COMPLETED"
+  },
+  "limits": {
+    "automatic_limit_increases": false,
+    "combined_RSS_MPS_bytes": 4294967296,
+    "mps_cpu_fallback": false,
+    "mps_driver_cap_bytes": 2147483648,
+    "overall_wall_seconds": 300,
+    "poll_interval_seconds": 0.05,
+    "threads": 1
+  },
+  "mps_available": true,
+  "qualification": "ENGINEERING_ONLY_FIXED_UNIT_MAPPING_NOT_STUDY_TRANSFORMS; initialized random weights; no trained model, optimizer updates, fitted scalers, prediction publication, or forecast skill claim",
+  "schema": "hydra-directflow-input-model-smoke/v1",
+  "status": "PASSED_REAL_INPUT_FORWARD_SMOKE",
+  "unit_mapping": {
+    "history.age_hours": "x / 168",
+    "history.discharge_cms": "x / 100",
+    "missing_inputs": "map only observed values; encode false masks with zero placeholders",
+    "state.soil_age_hours": "x / 24",
+    "state.soil_water_fraction": "x",
+    "weather.precip_mm": "x / 10",
+    "weather.specific_humidity": "x / 0.01",
+    "weather.swe_kg_m2": "x / 100",
+    "weather.temp_k": "(x - 273.15) / 30"
+  }
+}
