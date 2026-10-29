@@ -30,11 +30,12 @@ information cutoffs.
 
 ```sh
 python3.11 -m venv .venv
-.venv/bin/python -m pip install -e .
+.venv/bin/python -m pip install -e '.[data,models]'
 PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
 ```
 
-Data and model extras are installed explicitly with `.[data]` and `.[models]`.
+The core package itself has no dependencies; the full test suite needs the data
+and model extras. See `docs/offline-work.md` for a verified offline restoration.
 Native Apple MPS and Linux/CUDA use separate environments with the same code
 and data contracts. Installing the package does not download pretrained models,
 fetch research data, provision cloud resources or start a training campaign.
@@ -56,6 +57,10 @@ Raw datasets, checkpoints, credentials, local paths and dependency caches are
 excluded from this public repository. Public reports contain aggregate check
 results, source hashes and logical identities. Run `scripts/publication_check.py`
 before staging a release.
+
+Hosted CI is supplied as `docs/ci/core-workflow.yml`. It has not been activated:
+the current GitHub credential does not have the workflow scope. Local checks and
+portable receipts are available in `reports/`.
 
 The AGU draft target is November 6, 2026; presentation date is December 11.
 Paid compute remains unbudgeted. Cloud execution requires a measured, bounded

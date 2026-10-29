@@ -1,0 +1,209 @@
+{
+  "schema": "hydra-directflow-offline-readiness/v1",
+  "status": "VERIFIED_FRESH_MACOS_ARM64_PY311_OFFLINE_INSTALL_AND_TESTS",
+  "created_UTC": "2026-10-29T05:23:51.425122+00:00",
+  "files": [
+    {
+      "path": ".cache/wheels/MarkupSafe-3.0.2-cp311-cp311-macosx_11_0_arm64.whl",
+      "bytes": 12392,
+      "sha256": "93335ca3812df2f366e80509ae119189886b0f3c2b81325d39efdb84a1e2ae93"
+    },
+    {
+      "path": ".cache/wheels/certifi-2025.8.3-py3-none-any.whl",
+      "bytes": 161216,
+      "sha256": "f6c12493cfb1b06ba2ff328595af9350c65d6644968e5d3a2ffd78699af217a5"
+    },
+    {
+      "path": ".cache/wheels/charset_normalizer-3.4.3-cp311-cp311-macosx_10_9_universal2.whl",
+      "bytes": 204483,
+      "sha256": "b256ee2e749283ef3ddcff51a675ff43798d92d746d1a6e4631bf8c707d22d0b"
+    },
+    {
+      "path": ".cache/wheels/filelock-3.19.1-py3-none-any.whl",
+      "bytes": 15988,
+      "sha256": "d38e30481def20772f5baf097c122c3babc4fcdb7e14e57049eb9d88c6dc017d"
+    },
+    {
+      "path": ".cache/wheels/fsspec-2025.9.0-py3-none-any.whl",
+      "bytes": 199289,
+      "sha256": "530dc2a2af60a414a832059574df4a6e10cce927f6f4a78209390fe38955cfb7"
+    },
+    {
+      "path": ".cache/wheels/hf_xet-1.7.1-cp38-abi3-macosx_11_0_arm64.whl",
+      "bytes": 3573230,
+      "sha256": "46d09bc6200388622f6aeb6db6d7b47060f63c483b6fb637e0e13e87470bfabf"
+    },
+    {
+      "path": ".cache/wheels/huggingface_hub-0.34.4-py3-none-any.whl",
+      "bytes": 561452,
+      "sha256": "9b365d781739c93ff90c359844221beef048403f1bc1f1c123c191257c3c890a"
+    },
+    {
+      "path": ".cache/wheels/idna-3.10-py3-none-any.whl",
+      "bytes": 70442,
+      "sha256": "946d195a0d259cbba61165e88e65941f16e9b36ea6ddb97f00452bae8b1287d3"
+    },
+    {
+      "path": ".cache/wheels/jinja2-3.1.6-py3-none-any.whl",
+      "bytes": 134899,
+      "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
+    },
+    {
+      "path": ".cache/wheels/mpmath-1.3.0-py3-none-any.whl",
+      "bytes": 536198,
+      "sha256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c"
+    },
+    {
+      "path": ".cache/wheels/networkx-3.5-py3-none-any.whl",
+      "bytes": 2034406,
+      "sha256": "0030d386a9a06dee3565298b4a734b68589749a544acbb6c412dc9e2489ec6ec"
+    },
+    {
+      "path": ".cache/wheels/numcodecs-0.16.3-cp311-cp311-macosx_11_0_arm64.whl",
+      "bytes": 1169186,
+      "sha256": "e2afe73d5ebaf9ca0cd5c83aad945da80d29a33d860a80d43a7248491d8813ff"
+    },
+    {
+      "path": ".cache/wheels/numpy-2.3.3-cp311-cp311-macosx_14_0_arm64.whl",
+      "bytes": 5379709,
+      "sha256": "cd4260f64bc794c3390a63bf0728220dd1a68170c169088a1e0dfa2fde1be12f"
+    },
+    {
+      "path": ".cache/wheels/packaging-25.0-py3-none-any.whl",
+      "bytes": 66469,
+      "sha256": "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484"
+    },
+    {
+      "path": ".cache/wheels/psutil-7.0.0-cp36-abi3-macosx_11_0_arm64.whl",
+      "bytes": 239535,
+      "sha256": "39db632f6bb862eeccf56660871433e111b6ea58f2caea825571951d4b6aa3da"
+    },
+    {
+      "path": ".cache/wheels/pyarrow-21.0.0-cp311-cp311-macosx_12_0_arm64.whl",
+      "bytes": 31243234,
+      "sha256": "c077f48aab61738c237802836fc3844f85409a46015635198761b0d6a688f87b"
+    },
+    {
+      "path": ".cache/wheels/pyyaml-6.0.3-cp311-cp311-macosx_11_0_arm64.whl",
+      "bytes": 175577,
+      "sha256": "652cb6edd41e718550aad172851962662ff2681490a8a711af6a4d288dd96824"
+    },
+    {
+      "path": ".cache/wheels/regex-2025.9.18-cp311-cp311-macosx_11_0_arm64.whl",
+      "bytes": 286619,
+      "sha256": "c28821d5637866479ec4cc23b8c990f5bc6dd24e5e4384ba4a11d38a526e1414"
+    },
+    {
+      "path": ".cache/wheels/requests-2.32.5-py3-none-any.whl",
+      "bytes": 64738,
+      "sha256": "2462f94637a34fd532264295e186976db0f5d453d1cdd31473c85a6a161affb6"
+    },
+    {
+      "path": ".cache/wheels/safetensors-0.6.2-cp38-abi3-macosx_11_0_arm64.whl",
+      "bytes": 432206,
+      "sha256": "d6675cf4b39c98dbd7d940598028f3742e0375a6b4d4277e76beb0c35f4b843b"
+    },
+    {
+      "path": ".cache/wheels/setuptools-80.9.0-py3-none-any.whl",
+      "bytes": 1201486,
+      "sha256": "062d34222ad13e0cc312a4c02d73f059e86a4acbfbdea8f8f76b28c99f306922"
+    },
+    {
+      "path": ".cache/wheels/sympy-1.14.0-py3-none-any.whl",
+      "bytes": 6299353,
+      "sha256": "e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5"
+    },
+    {
+      "path": ".cache/wheels/tokenizers-0.21.4-cp39-abi3-macosx_11_0_arm64.whl",
+      "bytes": 2732457,
+      "sha256": "5e2f601a8e0cd5be5cc7506b20a79112370b9b3e9cb5f13f68ab11acd6ca7d60"
+    },
+    {
+      "path": ".cache/wheels/torch-2.8.0-cp311-none-macosx_11_0_arm64.whl",
+      "bytes": 73621174,
+      "sha256": "5ae0524688fb6707c57a530c2325e13bb0090b745ba7b4a2cd6a3ce262572916"
+    },
+    {
+      "path": ".cache/wheels/tqdm-4.67.1-py3-none-any.whl",
+      "bytes": 78540,
+      "sha256": "26445eca388f82e72884e0d580d5464cd801a3ea01e63e5601bdff9ba6a48de2"
+    },
+    {
+      "path": ".cache/wheels/transformers-4.55.4-py3-none-any.whl",
+      "bytes": 11269659,
+      "sha256": "df28f3849665faba4af5106f0db4510323277c4bb595055340544f7e59d06458"
+    },
+    {
+      "path": ".cache/wheels/typing_extensions-4.15.0-py3-none-any.whl",
+      "bytes": 44614,
+      "sha256": "f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548"
+    },
+    {
+      "path": ".cache/wheels/typing_extensions-4.16.0-py3-none-any.whl",
+      "bytes": 45571,
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+    },
+    {
+      "path": ".cache/wheels/urllib3-2.5.0-py3-none-any.whl",
+      "bytes": 129795,
+      "sha256": "e6b01673c0fa6a13e374b50871808eb3bf7046c4b125b216f6bf1cc604cff0dc"
+    },
+    {
+      "path": ".cache/wheels/wheel-0.45.1-py3-none-any.whl",
+      "bytes": 72494,
+      "sha256": "708e7481cc80179af0e556bbf0cc00b8444c7321e2700b8d8580231d13017248"
+    },
+    {
+      "path": ".local/inputs/2021-08.parquet",
+      "bytes": 73458,
+      "sha256": "16f1dcbc063fed46a72ce286571c3b78fc2c199fce24e07aa76cdd03318c6d2b"
+    },
+    {
+      "path": ".local/inputs/MANIFEST.json",
+      "bytes": 822,
+      "sha256": "127e9c08cdc0ecaec83dc4bb6e7a419078b9e6c802eccefabcca2f0a23ef98da"
+    },
+    {
+      "path": ".local/inputs/hrrr-20210823_00Z.tar",
+      "bytes": 5150720,
+      "sha256": "6f34151174311054173b03dc32bcb4080b9244537c24f9a45f7746c6be6cdf00"
+    },
+    {
+      "path": ".local/inputs/qualified-hrrr-index.jsonl",
+      "bytes": 112202255,
+      "sha256": "75469df20f79d94ffb058f439f1ac873f0cf4164c1417eec7298a6641a35baa5"
+    },
+    {
+      "path": ".local/inputs/qualified-hrrr-manifest.json",
+      "bytes": 489687,
+      "sha256": "f5b130263ec3d449528b205fc2c6534bed93b8cd9513f8ef84e243187f0f8e2b"
+    },
+    {
+      "path": ".local/inputs/usgs-source-manifest.json",
+      "bytes": 1092392,
+      "sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a"
+    },
+    {
+      "path": ".local/inputs/weights.csv",
+      "bytes": 62601,
+      "sha256": "9eaaf3b221360ed6faaa0376e953fd0c2d0356fb419df96daed9107404283a74"
+    }
+  ],
+  "wheel_count": 30,
+  "cache_bytes": 261128346,
+  "checks": {
+    "fresh_environment_without_system_site_packages": true,
+    "pip_no_index_install_returncode": 0,
+    "project_no_index_editable_install_returncode": 0,
+    "unit_tests_passed": 55,
+    "unit_test_optimizer_updates": 0,
+    "research_training_runs": 0
+  },
+  "limitations": [
+    "Requires already installed Python3.11 and compatible macOSarm64.",
+    "Does not establish Linux/CUDA environment readiness.",
+    "Local fixture is not the full historical weather dataset.",
+    "Private cache bytes are excluded from Git."
+  ],
+  "lock_sha256": "b211d083c4684d1562ee7950da26d1e810bf4c0a13ad820928209d0c238db56b"
+}
