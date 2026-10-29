@@ -1,0 +1,81 @@
+{
+  "schema": "hydra-directflow-development-candidate/v1",
+  "status": "DEVELOPMENT_CANDIDATE_NOT_MAIN_STUDY_FREEZE",
+  "confirmed_scope": {
+    "gauge_ids": ["03161000", "03164000", "03479000"],
+    "horizons_hours": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
+    "architectures": ["LSTM", "Transformer", "GRU_Transformer", "Mamba2_Transformer"]
+  },
+  "clock": {
+    "mode": "retrospective_simulated",
+    "nominal_origin_equals_information_cutoff": true,
+    "history_lag_hours": 2,
+    "weather_lag_hours": 2,
+    "soil_lag_hours": 2,
+    "actual_artifact_creation_recorded_separately": true,
+    "historical_provider_publication_guarantee": false,
+    "historical_observation_revision_reconstruction": false
+  },
+  "history": {
+    "smoke_hours": 24,
+    "comparison_candidates_hours": [24, 168],
+    "last_history_time": "C - history_lag_hours, inclusive",
+    "exact_hour_join": true,
+    "imputation": false,
+    "search_back_to_replace_missing_hours": false
+  },
+  "weather": {
+    "required_features": ["precip_mm", "temp_k", "specific_humidity", "swe_kg_m2"],
+    "selection": "latest_eligible_complete_single_cycle",
+    "allow_older_extended_cycles": true,
+    "require_all_fields_at_all_H18_target_times": true,
+    "stitch_cycles": false,
+    "missing_precipitation_as_zero": false,
+    "nwm_predictors": false,
+    "retain_original_source_quality_flags": true
+  },
+  "soil": {
+    "representation": "separate_latest_available_initial_state_with_age",
+    "initialization_hours_UTC": [0, 6, 12, 18],
+    "maximum_age_hours_development_candidate": 8,
+    "future_soil_fill": false
+  },
+  "quality": {
+    "retain_verbatim_flags": true,
+    "input_policy": "explicit_caller_admission_required",
+    "label_policy": "explicit_caller_admission_required",
+    "smoke_complete_inputs_required": true,
+    "target_fill": false
+  },
+  "basins": {
+    "development_smoke_only": true,
+    "reuse_existing_candidate_weight_rows": 514,
+    "claim": "approximate independent study basins",
+    "force_nesting_or_clip_original_polygons": false,
+    "preserve_original_weights_and_prior_specific_acceptances": true,
+    "whole_study_spatial_admission": "NOT_ASSERTED"
+  },
+  "development_splits": {
+    "status": "CANDIDATE_NOT_FROZEN",
+    "train_start_inclusive_UTC": "2018-07-12T00:00:00Z",
+    "train_end_exclusive_UTC": "2023-07-31T00:00:00Z",
+    "validation_start_inclusive_UTC": "2023-07-31T00:00:00Z",
+    "validation_end_exclusive_UTC": "2024-07-31T00:00:00Z",
+    "purge_all_cross_boundary_targets": true
+  },
+  "protected_assessment": {
+    "origin_start_inclusive_UTC": "2024-07-31T00:00:00Z",
+    "origin_end_exclusive_UTC": "2025-07-31T00:00:00Z",
+    "requested_hourly_origins": 8760,
+    "last_label_time_UTC": "2025-07-31T17:00:00Z",
+    "scoring_enabled": false,
+    "requires_locked_protocol_digest": true,
+    "requires_locked_selection_digest": true
+  },
+  "execution": {
+    "paid_resources_enabled": false,
+    "training_enabled": false,
+    "budget": "UNDECIDED",
+    "real_data_processing": "SEPARATELY_BOUNDED_LOCAL_SMOKE_ONLY"
+  }
+}
