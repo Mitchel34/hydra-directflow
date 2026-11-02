@@ -27,7 +27,7 @@ Actual artifact creation timestamps are distinct from simulated historical
 information cutoffs.
 
 See [the completed work ledger](docs/work-ledger.md) for commits and evidence.
-The integrated offline-environment suite passes **233 tests**. Current reports
+The integrated offline-environment suite passes **315 tests**. Current reports
 include four-model CPU/MPS qualification, a bounded real-data engineering probe,
 fresh-process recovery and a 20-case synthetic local throughput benchmark.
 Discharge-only ablation and source-aware NWM evaluation helpers are implemented.
@@ -56,6 +56,13 @@ controls, assessment gates and the figure/edge-research plans. The confirmed
 A/A+R quality rule is implemented with independent input/target policy arguments;
 persistence is excluded from the active experiment. Full scientific fitting,
 CV adoption and protected assessment remain pending.
+
+The [execution-readiness update](docs/execution-readiness.md) includes a refined
+development eligibility inventory, the approved July development-only export,
+fresh-process trainer recovery and the completed 24-case real-batch benchmark.
+The 36-fit main matrix has conditional local runtimes of about9.5–10.5hours at
+20epochs, or23.8–26.2hours at50epochs, before CV and controls. A proposed$150
+staging/compute/contingency ceiling remains unapproved; no paid cloud job started.
 
 ## Local use
 

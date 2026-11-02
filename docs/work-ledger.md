@@ -18,7 +18,7 @@ Each code chunk has been tested locally and committed separately. Raw data and l
 | `b2c2f64` | Development availability | Quality/timestamp columns only; 12 comparisons, one month |
 | `cd02171` | Q-only control | 11 ablation tests and two zero-update model forwards |
 
-The October 29 suite passed **114 tests** (`reports/release-check.json`), the first November continuation passed **154** (`reports/continuation-check.json`), cache/month preparation passed **211** (`reports/cache-month-readiness-check.json`), and the real-month exercise passed **217** (`reports/month-execution-check.json`). The confirmed quality adapter now passes **233 tests** (`reports/primary-quality-release.json`). These are local checks; hosted CI remains inactive.
+The October 29 suite passed **114 tests** (`reports/release-check.json`), the first November continuation passed **154** (`reports/continuation-check.json`), cache/month preparation passed **211** (`reports/cache-month-readiness-check.json`), the real-month exercise passed **217** (`reports/month-execution-check.json`), and the quality adapter passed **233** (`reports/primary-quality-release.json`). The eligibility/boundary/trainer/real-batch sequence now passes **315 tests** (`reports/implementation-sequence-check.json`). These are local checks; hosted CI remains inactive.
 
 Qualification accounting: 878 synthetic optimizer updates across the model, recovery and benchmark attempts; four completed real-data engineering updates on one repeated observed case. One earlier failed engineering admission precharged two updates but failed before optimizer entry; its record remains. These are not scientific campaign fits or forecast-skill results.
 
@@ -130,3 +130,30 @@ permission. It specifies controlled hypotheses, actual model mechanisms/counts,
 component-control estimates, expanding-window CV dates, fit counts, uncertainty,
 figures, milestones and a separate future edge-AI outline. The accepted abstract
 still requires coauthor alignment with the current direct-forecast framing.
+
+## Highest-value implementation sequence — November 2
+
+| Commit/artifact | Completed work | Evidence |
+|---|---|---|
+| `0f3da47` | Full development metadata inventory and tri-state eligibility |62/73 native months verified,11 nonresident;25 initial tests; no flow columns decoded |
+| `72240d0` | Correct source-init guard and separately gated July export |17 boundary/export tests plus4 cache/export tests; protected target guards retained |
+| `55c9172` | Train-only transforms and restartable training mechanics |10 pure tests;6 synthetic updates qualify exact fresh-process next update/sample/scaler/optimizer/RNG/stopping recovery |
+| `db12e93` | Real August CPU/MPS B16/32/64 benchmark |24cases/600updates,120.15s,1.66GiB;17 zero-update guard tests; exact checkpoint replay |
+| `20c1684` and follow-up CLI publication | Aggregate metadata refinement and runtime/budget proposal |34 eligibility tests;29/33 unread gauge-month admission axes proven; original audit preserved |
+
+The user separately approved the July2024 administrative export. It produced only
+preboundary development rows and no protected values in logs/results. Subsequent
+cache ingestion/reuse verified2,160 exact-hour observations; scoring stayed off.
+
+Runtime scenarios now use actual B64 batches and refined case counts. The best
+tested local mixture uses CPU forLSTM/GRU–Transformer andMPS forTransformer/Mamba2.
+That is a throughput decision, not forecast selection. The36-fit main-matrix
+scenarios are9.54/10.49h at20epochs and23.83/26.20h at50epochs. CV,controls,
+convergence and complete data materialization are additional work.
+
+Update accounting is now **652 completed real-data engineering updates** and
+**884 synthetic updates**. This sequence added600 real benchmark updates and6
+synthetic recovery updates, not scientific campaign fits. The earlier failed
+two-update allowance remains separate. No protected scores or paid cloud jobs
+were produced. Additional data staging and the proposed$150 funding envelope
+remain pending authorization; scientific protocol freeze remains independent.

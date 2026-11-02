@@ -62,6 +62,7 @@ def main():
     parser.add_argument("--source-manifest", type=Path, required=True)
     parser.add_argument("--splits", type=Path, required=True, help="JSON array of name/start_utc/end_utc split objects")
     parser.add_argument("--local-request", type=Path, action="append", default=[], help="Existing private builder request; first source wins on duplicate USGS months")
+    parser.add_argument("--aggregate-admission-proofs", action="store_true", help="Explicitly use pinned exhaustive aggregate counts plus exact-hour gaps for unread native months")
     parser.add_argument("--report", type=Path, required=True)
     parser.add_argument("--private-inventory", type=Path, required=True)
     args = parser.parse_args()
@@ -71,7 +72,8 @@ def main():
     source_paths += [spec[key] for spec in archives for key in ("archive_path", "commit_path") if key in spec]
     report_path, private_path = validate_outputs(args.report, args.private_inventory, source_paths)
     report, private = audit_development_eligibility(qualified_index_path=args.index, usgs_manifest_path=args.source_manifest,
-                                                   splits=splits, usgs_paths=usgs, local_archive_specs=archives)
+                                                   splits=splits, usgs_paths=usgs, local_archive_specs=archives,
+                                                   use_aggregate_admission_proofs=args.aggregate_admission_proofs)
     report["implementation_sha256"]["scripts/audit_development_eligibility.py"] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     private_raw = (json.dumps(private, indent=2, sort_keys=True, allow_nan=False) + "\n").encode()
     report["private_inventory_identity"] = {"sha256": hashlib.sha256(private_raw).hexdigest(), "bytes": len(private_raw)}

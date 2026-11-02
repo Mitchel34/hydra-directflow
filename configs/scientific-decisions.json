@@ -38,5 +38,31 @@
     "scope": "No persistence baseline in model selection, evaluation, figures, or active poster narrative",
     "historical_receipts_preserved": true,
     "learned_discharge_only_control_retained": true
+  },
+  "implementation_progress": {
+    "eligibility_audit": "NATIVE_AND_AGGREGATE_METADATA_PROOFS_WITH_EXPLICIT_UNKNOWNS",
+    "development_boundary_guard": "IMPLEMENTED_TESTED",
+    "july2024_administrative_export": "USER_APPROVED_AND_EXECUTED_DEVELOPMENT_ONLY_NO_SCORING",
+    "train_only_scaling_and_recovery": "IMPLEMENTED_SYNTHETICALLY_QUALIFIED",
+    "real_batch_benchmark": "24_CASES_600_ENGINEERING_UPDATES_PASSED",
+    "scientific_protocol_freeze": "PENDING",
+    "real_train_only_scientific_scalers_fitted": false
+  },
+  "recommended_local_execution": {
+    "status": "THROUGHPUT_RECOMMENDATION_NOT_FORECAST_SELECTION",
+    "batch_size": 64,
+    "dtype": "float32",
+    "devices": {
+      "LSTM": "cpu",
+      "Transformer": "mps",
+      "GRU_Transformer": "cpu",
+      "Mamba2_Transformer": "mps"
+    },
+    "evidence": "reports/real-batch-benchmark.json"
+  },
+  "execution_budget_proposal": {
+    "total_usd": 150,
+    "status": "PENDING_USER_APPROVAL",
+    "artifact": "reports/execution-budget-proposal.json"
   }
 }

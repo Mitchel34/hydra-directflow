@@ -102,3 +102,13 @@ complete time-coordinate columns first. Any out-of-boundary row fails before
 the discharge column is decoded. Only then are the development observations
 returned to the ordinary quality/window adapter. Original raw files and sealed
 manifests remain unchanged throughout.
+# Approved local execution
+
+After the separate November2 user approval, the July export executed once.
+It wrote8,640 native development rows and excluded579 rows outside its selection
+(including protected dates and source padding). No protected values were returned
+or logged. The source hash remained unchanged. A subsequent cache check admitted
+2,160 exact hourly gauge observations throughJuly30 at23Z and verified reuse.
+See `reports/july-development-export.json` and
+`reports/july-development-cache-integration.json`. This does not authorize
+assessment scoring or further mixed-month administrative operations.
