@@ -1,4 +1,4 @@
-# Execution readiness and a single proposed budget envelope
+# Execution readiness and approved conditional budget
 
 Updated November 2, 2026. Engineering measurements below are complete; scientific
 fits, CV adoption, full-cohort numerical admission and protected assessment are
@@ -74,13 +74,16 @@ could threaten the dates. Recompute after exact admission counts and the approve
 matrix are available. `scripts/estimate_training_runtime.py` reproduces the
 scenarios without fitting models.
 
-## Proposed additional funding: $150 total ceiling
+## Approved additional funding: $150 total ceiling
 
-**Not yet authorized.** This is one incremental envelope for the existing study,
-including contingency, not a predicted bill. The already completed August
-allowance and historical acquisition liabilities are separate.
+**User approved November 2, 2026:** “Approve $150 combined ceiling.”
+`reports/execution-budget-approval.json` records the authorization and its phase
+conditions. This is one incremental envelope for the existing study, including
+contingency, not a predicted bill. The completed August allowance and historical
+acquisition liabilities are separate. Development staging is released; cloud
+funding remains reserved pending measured need and qualification.
 
-| Allocation | Proposed allowance | Conditions |
+| Allocation | Approved allowance | Conditions |
 |---|---:|---|
 | Development source staging | $35 | Existing generation/hash-pinned objects only; up to100GiB total response bodies, bounded2GiB raw staging; materialize only the identified owned USGS files; no new acquisition |
 | CUDA qualification/timing pilot | $10 | Only if local availability/runtime threatens readiness; at most one worker and4machine-hours; no scientific selection |
@@ -96,7 +99,7 @@ The staging allowance uses conservative transfer/retrieval rates up to$0.23+
 $0.05/GiB plus request charges; storage class/location must be verified.
 [Google Storage pricing](https://cloud.google.com/storage/pricing).
 
-The proposal permits staged release under one approved ceiling: stage sources,
+The approval permits staged release under one ceiling: stage sources,
 qualify local execution, and keep cloud allocation reserved unless needed. The
 pilot must establish CUDA correctness and measured throughput before main cloud
 fits. Reserve can cover retries or setup without another budget request, but
@@ -110,10 +113,29 @@ artifacts immutable; remove only newly created raw staging copies after verified
 reductions commit. Existing source caches and unrelated resources are not cleanup
 targets. Do not rely on billing alerts alone as a spending control. Current GPU
 quota, IAM and regional capacity have not been checked; access/security changes
-need separate authorization if required. This budget proposal does not authorize
+need separate authorization if required. This budget approval does not authorize
 protected assessment access, scoring, new model families or hosted monitoring.
 
-A local-only alternative is **$35 for development staging**, with cloud funds
-unapproved. Choosing it may require a later compute decision if the expanded
-matrix cannot meet the schedule. In either case, scientific choices and the
-assessment gate remain independent of funding.
+Local execution remains the measured first option. The reserved cloud allowance
+can be released within the approved conditions if measured need develops;
+scientific choices and the assessment gate remain independent of funding.
+
+## Staging implementation and evidence versions
+
+The approved source plan contains 8,841 retained development HRRR cycles and
+73 USGS month entries, with July 2024 routed only through the verified development
+export. Three warmup cycles precede the acquired calendar and remain explicit
+unavailable inputs. No upstream acquisition is repeated.
+
+The corpus plan preserves 53,028 candidate origins after 36 H18 boundary purges,
+across 477 resumable chunks. L168 and the complete-case admission count remain
+engineering candidates, not frozen protocol choices. The shared source budget
+precharges each GET before transport and retains failed charges across resumes.
+Only owned raw staging copies may be removed, after a verified derived cache
+commit. Original artifacts are retained. See `docs/development-staging.md`.
+
+Earlier inventories, timing measurements and failed increments retain their
+original implementation hashes. They are evidence of those executions, not
+claims that all subsequent code was exercised by an earlier receipt. Final
+cohort eligibility and the updated execution ledger supersede planning counts
+only when their own checks finish.

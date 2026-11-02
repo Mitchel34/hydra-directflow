@@ -1,0 +1,29 @@
+{
+  "allocations_usd": {
+    "contingency": 30,
+    "cuda_qualification_pilot": 10,
+    "development_staging": 35,
+    "scientific_compute": 75
+  },
+  "approved_total_incremental_usd": 150,
+  "automatic_budget_increase": false,
+  "cloud_max_workers": 2,
+  "created_at_utc": "2026-11-02T19:56:35.537435+00:00",
+  "data_response_body_cap_bytes": 107374182400,
+  "existing_acquisition_liabilities_included": false,
+  "iam_or_security_changes_authorized": false,
+  "maximum_get_attempts": 20000,
+  "maximum_vm_rate_usd_per_hour": 1,
+  "phase_release": {
+    "contingency": "WITHIN_SAME_SCOPE_AND_TOTAL_ONLY",
+    "cuda_pilot": "CONDITIONAL_ON_MEASURED_LOCAL_NEED_AND_BOUNDED_QUALIFICATION",
+    "development_staging": "AUTHORIZED_WITH_DECLARED_LIMITS",
+    "scientific_compute": "CONDITIONAL_ON_PROTOCOL_COHORT_AND_CUDA_READINESS"
+  },
+  "proposal_sha256": "93b65bcc8877178c9bfac1da6378936c2bc17d38eea07c7d2623afe071de31bb",
+  "protected_assessment_access_authorized": false,
+  "protected_scoring_authorized": false,
+  "raw_staging_cap_bytes": 2147483648,
+  "schema": "hydra-execution-budget-approval/v1",
+  "user_response": "Approve $150 combined ceiling"
+}

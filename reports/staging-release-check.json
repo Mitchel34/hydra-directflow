@@ -1,0 +1,31 @@
+{
+  "actual_evidence": [
+    "reports/development-staging-plan.json",
+    "reports/development-staging-increment-01.json",
+    "reports/development-staging-increment-02.json",
+    "reports/development-staging-increment-03.json",
+    "reports/development-staging-increment-04.json"
+  ],
+  "cloud_jobs_started": 0,
+  "created_at_utc": "2026-11-02T21:16:17.108771+00:00",
+  "implementation_sha256": {
+    "scripts/materialize_owned_usgs.py": "a6369159d5b533bc497d589ddc4432767dc3810d8757a3099de4b564f3bbf4f6",
+    "scripts/plan_development_staging.py": "6dac940c2fddcf16114bd5413479b7f1515f68ff8ac6b1aaf0b8fb25e114366e",
+    "scripts/stage_development.py": "813c4c3609b764a04581be231baa03da5274583eff1ea474f5bd6d63e0dcf073",
+    "src/hydra_directflow/cache.py": "780cedd3d23a3c69d6468979f5f4adfd316dbdea19714118303aa2b38d2308f5",
+    "src/hydra_directflow/corpus.py": "59e7694ad52b92a5bb36f9a929c6a79630907fff2341e0a5d35bc3f3149a5a55",
+    "src/hydra_directflow/staging.py": "6d761f31fec3aae7f50d913fed4fc06ee8710e1ef7cf7350c479e7d0efd56178"
+  },
+  "old_receipts_preserved": true,
+  "protected_assessment_scoring": false,
+  "publication_findings": 0,
+  "qualification": "Tested source staging and incremental engineering preparation; incomplete corpus and no scientific skill finding",
+  "schema": "hydra-staging-release-check/v1",
+  "scientific_fits": 0,
+  "tests": {
+    "command": "PYTHONPATH=src .venv-offline-check/bin/python -B -m unittest discover -s tests",
+    "elapsed_seconds": 3.756,
+    "optimizer_updates": 0,
+    "passed": 406
+  }
+}

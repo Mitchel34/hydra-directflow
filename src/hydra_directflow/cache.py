@@ -66,7 +66,15 @@ def _read(path, maximum):
 def _directory(path, *, create=False):
     path = Path(path)
     if create:
-        path.mkdir(parents=True, exist_ok=True)
+        missing, cursor = [], path
+        while not cursor.exists():
+            require(not cursor.is_symlink(), "Cache parent cannot be a dangling link")
+            missing.append(cursor)
+            cursor = cursor.parent
+        require(cursor.is_dir(), "Cache parent must be a directory")
+        for directory in reversed(missing):
+            directory.mkdir()
+            _sync_directory(directory.parent)
     info = path.lstat()
     require(stat.S_ISDIR(info.st_mode) and not getattr(info, "st_flags", 0) & 0x40000000,
             "Cache directories must be resident real directories")

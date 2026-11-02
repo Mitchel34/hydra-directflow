@@ -1,0 +1,68 @@
+{
+  "cloud_jobs": 0,
+  "corpus": {
+    "admitted_cases": 6513,
+    "calendar_unavailable_cycle_ids": [
+      "20180711_06Z",
+      "20180711_12Z",
+      "20180711_18Z"
+    ],
+    "candidate_origins": 53028,
+    "chunks_built": 20,
+    "chunks_reused": 0,
+    "completed_cases": 6912,
+    "completed_origins": 2304,
+    "created_at_utc": "2026-11-02T21:15:09.377039+00:00",
+    "elapsed_seconds": 205.64275066694245,
+    "failure": null,
+    "history_hours": 168,
+    "observed_boundary_peak_rss_bytes": 937000960,
+    "optimizer_updates": 0,
+    "plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+    "post_cache_commit_callback_calls": 384,
+    "protected_assessment_scoring": false,
+    "purged_origins": 36,
+    "raw_files_deleted_by_corpus": false,
+    "requested_origins": 53064,
+    "schema": "hydra-development-corpus/v1",
+    "sealed_index_authentication_passes": 1,
+    "source_calendar_counts": {
+      "PRE_ACQUISITION_WARMUP_UNRESOLVED_WEATHER": 30,
+      "PRE_ACQUISITION_WARMUP_UNRESOLVED_WEATHER_AND_SOIL": 9,
+      "RESOLVED_WITHIN_ACQUIRED_CALENDAR": 6873
+    },
+    "source_provider_calls": 384,
+    "source_transport_budget_owned_by_caller": true,
+    "status": "STOPPED_AT_CHUNK_BOUNDARY",
+    "total_chunks": 477
+  },
+  "created_at_utc": "2026-11-02T21:15:09.389453+00:00",
+  "execution_plan_sha256": "726b8c58cb080b58e3b2b85eed7b50f7762939121097c5117de9df1ac81919eb",
+  "owned_usgs_reserved_bytes": 20971520,
+  "protected_scoring": false,
+  "schema": "hydra-development-staging-increment/v1",
+  "scientific_training": false,
+  "transport": {
+    "budget": {
+      "attempt_states": {
+        "VERIFIED": 838
+      },
+      "attempted_gets": 838,
+      "billing_invoice_reconciled": false,
+      "body_cap": 107353210880,
+      "conservative_precharge_estimate_usd": 0.633458,
+      "cost_estimate_cap_usd": 35.0,
+      "get_cap": 20000,
+      "observed_body_bytes": 2220295776,
+      "precharged_body_bytes": 2220296614
+    },
+    "cloud_jobs": 0,
+    "cloud_writes": 0,
+    "credential_requests": 1,
+    "local_hits": 139,
+    "network_requests": 629,
+    "objects_downloaded": 629,
+    "owned_raw_files_evicted": 382
+  },
+  "unresolved_native_usgs_months": []
+}

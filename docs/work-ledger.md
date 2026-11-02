@@ -157,3 +157,33 @@ synthetic recovery updates, not scientific campaign fits. The earlier failed
 two-update allowance remains separate. No protected scores or paid cloud jobs
 were produced. Additional data staging and the proposed$150 funding envelope
 remain pending authorization; scientific protocol freeze remains independent.
+
+## Approved staging and resumable corpus — November 2, 21:15 UTC
+
+The user approved the combined **$150 incremental ceiling**: $35 development
+staging, $10 conditional CUDA pilot, $75 conditional scientific compute and $30
+contingency. The approval is recorded in `reports/execution-budget-approval.json`.
+Development staging is active; compute release still requires measured need and
+qualification. Protected assessment scoring and IAM/security changes remain off.
+
+The source plan binds8,841 sealed development cycles and73 USGS month entries.
+The candidate L168 corpus contains53,028 origins/159,084 gauge cases in477 chunks,
+after36 H18 split-boundary purges. It is not a protocol freeze. All source attempts
+share a persistent precharge ledger; failed increments do not reset spending.
+
+Three actual historical formats now pass narrow reader checks: zero-record
+metadata-only gaps, original404/component-metadata recovery, and float32 weather
+tiles. Nineteen dedicated regressions pass. A resident-source preflight passes196
+checks across191 unique cycles, rejects two wrong-identity variants and skips35
+without local authority. Old failures and executed-code hashes remain intact.
+
+Increment04 committed20 chunks/2,304 origins/6,912 gauge cases, of which6,513 meet
+the current candidate complete-case rule. Cumulative verified GETs are838 and
+observed response bodies2,220,295,776bytes; the conservative estimate is$0.633458,
+not a billing invoice. No native USGS months remain unresolved by the staging
+resolver. Increment05 continues under the same budget and code-bound v3 plan.
+
+The integrated suite passes406 tests with zero optimizer updates. Staging performs
+no scientific fits or protected scoring. Next: finish and verify the corpus,
+publish exact admission/exclusion counts, qualify its read-only training adapter,
+and resolve the remaining scientific protocol decisions before fitting models.

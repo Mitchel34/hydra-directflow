@@ -1,0 +1,81 @@
+{
+  "cloud_jobs": 0,
+  "corpus": {
+    "admitted_cases": 0,
+    "calendar_unavailable_cycle_ids": [
+      "20180711_06Z",
+      "20180711_12Z",
+      "20180711_18Z"
+    ],
+    "candidate_origins": 53028,
+    "chunks_built": 0,
+    "chunks_reused": 0,
+    "completed_cases": 0,
+    "completed_origins": 0,
+    "created_at_utc": "2026-11-02T20:27:11.217563+00:00",
+    "elapsed_seconds": 2.354245000053197,
+    "failure": {
+      "cause_type": "ValueError",
+      "cycle_id": "20180712_00Z",
+      "error_type": "SourceUnavailable",
+      "source_status": "SOURCE_ADMISSION_FAILED"
+    },
+    "history_hours": 168,
+    "observed_boundary_peak_rss_bytes": 255262720,
+    "optimizer_updates": 0,
+    "plan_sha256": "269367c1e6862f9b25dc0cdc10c11d07b7a4ff51753dbdcf5acb28cd4eabbbb1",
+    "post_cache_commit_callback_calls": 0,
+    "protected_assessment_scoring": false,
+    "purged_origins": 36,
+    "raw_files_deleted_by_corpus": false,
+    "requested_origins": 53064,
+    "schema": "hydra-development-corpus/v1",
+    "sealed_index_authentication_passes": 1,
+    "source_calendar_counts": {},
+    "source_provider_calls": 1,
+    "source_transport_budget_owned_by_caller": true,
+    "status": "STOPPED_WITH_EXPLICIT_FAILURE",
+    "total_chunks": 477
+  },
+  "created_at_utc": "2026-11-02T20:27:11.230811+00:00",
+  "execution_plan_sha256": "92856c73c88a9c262f9f655e6008cbbcfacae919efc582418d11bbddf8bc7bed",
+  "owned_usgs_reserved_bytes": 20971520,
+  "protected_scoring": false,
+  "schema": "hydra-development-staging-increment/v1",
+  "scientific_training": false,
+  "transport": {
+    "budget": {
+      "attempt_states": {
+        "VERIFIED": 2
+      },
+      "attempted_gets": 2,
+      "billing_invoice_reconciled": false,
+      "body_cap": 107353210880,
+      "conservative_precharge_estimate_usd": 0.000165,
+      "cost_estimate_cap_usd": 35.0,
+      "get_cap": 20000,
+      "observed_body_bytes": 133933,
+      "precharged_body_bytes": 133935
+    },
+    "cloud_jobs": 0,
+    "cloud_writes": 0,
+    "credential_requests": 1,
+    "local_hits": 0,
+    "network_requests": 2,
+    "objects_downloaded": 2,
+    "owned_raw_files_evicted": 0
+  },
+  "unresolved_native_usgs_months": [
+    "2018-12",
+    "2019-06",
+    "2019-09",
+    "2021-06",
+    "2021-07",
+    "2021-11",
+    "2021-12",
+    "2022-02",
+    "2022-04",
+    "2023-03",
+    "2023-12"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "allocations_usd": {
+    "contingency": 30,
+    "cuda_qualification_pilot": 10,
+    "development_staging": 35,
+    "scientific_compute": 75
+  },
+  "approved_staging_ceiling_usd": 35,
+  "combined_ceiling_usd": 150,
+  "created_at_utc": "2026-11-02T20:01:37.693708+00:00",
+  "dependency_sha256": {
+    "development_export.py": "472149f464d5634298ca9ad6d42b17f24270d9d56634226b7b4ab2c58efb0ab5",
+    "eligibility.py": "83c74a7b85e0034f4d829b0d3a9580b55ee5a5c53149602b572abd9356ec6155",
+    "local_data.py": "6ed7927b7388e7115f713353fa103ee01df03bac2183788ebf1aedb620daa662",
+    "reference.py": "7c21deee40c04bc72bc5cfcb190a39792c94ab65115c16ca03da551296575135"
+  },
+  "excluded_outside_calendar": [
+    {
+      "cycle_id": "20180711_06Z",
+      "fetch_authorized": false,
+      "reason": "OUTSIDE_SEALED_ACQUISITION_CALENDAR"
+    },
+    {
+      "cycle_id": "20180711_12Z",
+      "fetch_authorized": false,
+      "reason": "OUTSIDE_SEALED_ACQUISITION_CALENDAR"
+    },
+    {
+      "cycle_id": "20180711_18Z",
+      "fetch_authorized": false,
+      "reason": "OUTSIDE_SEALED_ACQUISITION_CALENDAR"
+    }
+  ],
+  "execution": {
+    "authentication_requests": 0,
+    "cloud_jobs": 0,
+    "flow_columns_decoded": false,
+    "hydrations": 0,
+    "network_requests": 0,
+    "weather_payload_reads": 0
+  },
+  "july2024_route": "VERIFIED_DEVELOPMENT_EXPORT_ONLY_RAW_MIXED_MONTH_EXCLUDED",
+  "limits": {
+    "archive_response_body_bytes": 16777216,
+    "commit_response_body_bytes": 16384,
+    "download_body_bytes": 107374182400,
+    "get_attempts": 20000,
+    "raw_hotset_bytes": 2147483648
+  },
+  "plan_sha256": "fe37385705e184221ad0c9f4f1fb1d8ddcb1e141ccb7e7b14ccc9b186555247b",
+  "planner_sha256": "6dac940c2fddcf16114bd5413479b7f1515f68ff8ac6b1aaf0b8fb25e114366e",
+  "private_plan_identity": {
+    "bytes": 15914455,
+    "sha256": "419cbab85776400bf002f5a183e5aa4bfd27c7318485fe2758691696645048fb"
+  },
+  "qualification": "Plan construction only; dollar ceilings are approved limits, not an invoice or cloud phase release",
+  "schema": "hydra-development-staging-plan-summary/v1",
+  "sources": {
+    "budget_approval": {
+      "bytes": 1155,
+      "sha256": "bccf4ccefcd847920c9fcc203ad5b7c49b8c696a45bb0f2a5a351feca5ab5f00"
+    },
+    "eligibility_inventory": {
+      "bytes": 11105074,
+      "sha256": "c2cb073c56104835c70aceec160c9460fc6e5d57b8fcb67d4bae8dca2b4482a8"
+    },
+    "july_export_reference": {
+      "bytes": 277,
+      "sha256": "d2cd22271703ea2407ddc777e8f999ab96c4c90c9c7e50d66187c8be527018bb"
+    },
+    "qualified_index": {
+      "bytes": 112202255,
+      "sha256": "75469df20f79d94ffb058f439f1ac873f0cf4164c1417eec7298a6641a35baa5"
+    },
+    "resident_archive_header_inventory": {
+      "bytes": 460665,
+      "sha256": "03f9de39b34b1ad7ce72768f45f092b466b769b92750eea43f371c15b348b788"
+    },
+    "resident_commit_proof": {
+      "bytes": 5075780,
+      "sha256": "51cfa1c64bcf98ff43f8ce3000e4559c159a5cc8410d1de2721b32fdac8955ee"
+    },
+    "usgs_manifest": {
+      "bytes": 1092392,
+      "sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a"
+    }
+  },
+  "status": "PLAN_ONLY_NOT_EXECUTED",
+  "summary": {
+    "all_sources_body_upper_bound_bytes": 94297251176,
+    "all_sources_get_upper_bound": 17755,
+    "archive_body_upper_bound_bytes": 94279806976,
+    "bounds_ignore_local_hits_conservatively": true,
+    "commit_body_upper_bound_bytes": 12228474,
+    "known_bundle_bytes": 26566963200,
+    "known_bundle_identities": 4805,
+    "local_archive_status_counts": {
+      "RESIDENT_SIZE_MISMATCH": 1,
+      "RESIDENT_UNVERIFIED_SHA": 231
+    },
+    "local_commit_status_counts": {
+      "VERIFIED_COMMIT_METADATA": 4480
+    },
+    "sealed_development_cycles": 8841,
+    "unresolved_bundle_identities": 4036,
+    "usgs_encoded_payload_bytes": 5197971,
+    "usgs_months_with_resident_candidate": 62,
+    "usgs_stage_kinds": {
+      "RETAINED_NATIVE_DEVELOPMENT_ONLY": 72,
+      "VERIFIED_DEVELOPMENT_EXPORT_ONLY": 1
+    }
+  }
+}

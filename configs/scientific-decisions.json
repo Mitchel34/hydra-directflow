@@ -25,7 +25,7 @@
   "remaining_protocol_choices_frozen": false,
   "scientific_training_enabled": false,
   "protected_assessment_scoring_enabled": false,
-  "additional_source_downloads_authorized": false,
+  "additional_source_downloads_authorized": true,
   "paid_cloud_compute_authorized": false,
   "persistence_baseline": {
     "status": "EXCLUDED_FROM_ACTIVE_STUDY",
@@ -62,7 +62,10 @@
   },
   "execution_budget_proposal": {
     "total_usd": 150,
-    "status": "PENDING_USER_APPROVAL",
-    "artifact": "reports/execution-budget-proposal.json"
-  }
+    "status": "USER_APPROVED_WITH_CONDITIONAL_CLOUD_RELEASE",
+    "artifact": "reports/execution-budget-proposal.json",
+    "approval_artifact": "reports/execution-budget-approval.json"
+  },
+  "additional_source_download_scope": "Existing development objects/owned USGS partitions under approved35USD staging allocation and100GiB/20000GET/2GiBhotset limits; July2024onlyverifieddevelopmentexport",
+  "cloud_funding_status": "RESERVED_CONDITIONAL_NOT_RELEASED_FOR_EXECUTION"
 }
