@@ -301,6 +301,16 @@ def read_budget(database, expected_approval_sha256=None):
         require(bad == 0 and type(sums[2]) is int and sums[2] >= 0, "INVALID_ATTEMPT_ACCOUNTING")
         states = dict(connection.execute("SELECT status,COUNT(*) FROM attempts GROUP BY status").fetchall())
         pending = connection.execute("SELECT COALESCE(SUM(reserved),0) FROM attempts WHERE status='PRECHARGED'").fetchone()[0]
+        # Classify within SQLite so arbitrary error text never enters output.
+        diagnostics = dict(connection.execute("""
+            SELECT CASE
+                WHEN error_type='HTTPError' THEN 'UNSPECIFIED'
+                WHEN error_type GLOB 'HTTPError_[1-5][0-9][0-9]' THEN substr(error_type,11,3)
+                ELSE 'OTHER' END AS category, COUNT(*)
+            FROM attempts WHERE status='FAILED' GROUP BY category
+        """).fetchall())
+        other_failures = diagnostics.pop("OTHER", 0)
+        require(sum(diagnostics.values()) + other_failures == states.get("FAILED", 0), "FAILED_DIAGNOSTICS_DO_NOT_RECONCILE")
         latest_created = datetime.fromtimestamp(timestamp(sums[3]), timezone.utc).isoformat() if sums[3] is not None else None
         connection.commit()
         estimate_micro = (charged * 280000 + 1024**3 - 1) // 1024**3 + attempts * 65
@@ -309,6 +319,7 @@ def read_budget(database, expected_approval_sha256=None):
                     body_cap_bytes=body_cap, get_cap=get_cap, cost_estimate_cap_usd=cost_cap / 1e6,
                     precharged_body_bytes=charged, observed_settled_body_bytes=sums[2], attempted_gets=attempts,
                     attempt_states=states, pending_precharged_bytes=pending, latest_attempt_created_utc=latest_created,
+                    failed_http_status_counts=diagnostics, other_failed_attempts=other_failures,
                     conservative_precharge_estimate_usd=estimate_micro / 1e6,
                     estimate_basis="Existing staging rate model:0.28USD/GiB plus0.000065USD/GET; not a provider invoice",
                     scope="This SQLite retained-object staging budget only; other combined-envelope allocations and FileProvider transport are excluded",

@@ -1,0 +1,24 @@
+{
+  "archive_sha256": "9cb5ee502e5a07388f00b2779e23493876060332f861909d5a629c7bd325c2c7",
+  "arrays_exact": [
+    "means",
+    "masks",
+    "coverage"
+  ],
+  "cache_commit_sha256": "ae5b75d7c19c2b7359f610665d9d6efe681b2909e06b2d7a1ee17f659be32359",
+  "cache_key": "26dc0e9f0683e3335a029232b69e2742a9b803c277010d04c4e738046d70489a",
+  "created_at_utc": "2026-11-02T22:38:46.098802+00:00",
+  "cycle_id": "20210903_06Z",
+  "elapsed_seconds": 0.5707000839756802,
+  "entry_source_files_modified": false,
+  "network_requests": 0,
+  "optimizer_updates": 0,
+  "original_failure_cause": "NOT_RECORDED_PRECISE_TRIGGER_UNCONFIRMED",
+  "protected_scoring": false,
+  "quarantine_or_repair_performed": false,
+  "record_count": 145,
+  "retained_entry_was_last_published_before_stop": true,
+  "schema": "hydra-cache-verification-diagnostic/v1",
+  "source_receipt_exact": true,
+  "status": "RETAINED_ENTRY_VERIFIED_AND_EXACT_RAW_TO_BASIN_PARITY"
+}

@@ -68,9 +68,9 @@ def budget(directory):
     path = Path(directory) / "source-budget.sqlite3"
     with test_database(path) as db:
         db.execute("CREATE TABLE budget(id INTEGER,approval TEXT,body_cap INTEGER,get_cap INTEGER,cost_cap_micro INTEGER,charged_body INTEGER,attempts INTEGER)")
-        db.execute("CREATE TABLE attempts(id INTEGER,reserved INTEGER,observed INTEGER,status TEXT,created_utc TEXT)")
+        db.execute("CREATE TABLE attempts(id INTEGER,reserved INTEGER,observed INTEGER,status TEXT,created_utc TEXT,error_type TEXT)")
         db.execute("INSERT INTO budget VALUES(1,?,1000,10,1000000,25,2)", ("a" * 64,))
-        db.executemany("INSERT INTO attempts VALUES(?,?,?,?,?)", [(1, 10, 9, "VERIFIED", "2021-01-01T00:00:00Z"), (2, 15, 0, "PRECHARGED", "2021-01-01T00:00:01Z")])
+        db.executemany("INSERT INTO attempts VALUES(?,?,?,?,?,?)", [(1, 10, 9, "VERIFIED", "2021-01-01T00:00:00Z", None), (2, 15, 0, "PRECHARGED", "2021-01-01T00:00:01Z", None)])
     return path
 
 
@@ -170,6 +170,27 @@ class ProgressTests(unittest.TestCase):
             missing = Path(directory) / "missing.sqlite3"
             self.assertIsNone(INSPECT.read_budget(missing)["totals"])
             self.assertFalse(missing.exists())
+
+    def test_failed_http_counts_are_exact_and_arbitrary_errors_stay_private(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = budget(directory)
+            secret = "PRIVATE_URL_WITH_FAKE_BEARER_SECRET"
+            errors = ["HTTPError_401", "HTTPError_401", "HTTPError_403", "HTTPError_100", "HTTPError_599", "HTTPError",
+                      "HTTPError_099", "HTTPError_600", "HTTPError_401_suffix", secret]
+            with test_database(path) as db:
+                db.executemany("INSERT INTO attempts VALUES(?,?,?,?,?,?)",
+                    [(index + 3, 10, 0, "FAILED", "2021-01-01T00:00:02Z", error) for index, error in enumerate(errors)])
+                db.execute("UPDATE budget SET charged_body=125,attempts=12,get_cap=20")
+            before = INSPECT.sha(path.read_bytes())
+            result = INSPECT.read_budget(path, "a" * 64)
+            self.assertEqual(result["failed_http_status_counts"], {"100": 1, "401": 2, "403": 1, "599": 1, "UNSPECIFIED": 1})
+            self.assertEqual(result["other_failed_attempts"], 4)
+            self.assertEqual(result["attempt_states"]["FAILED"], 10)
+            self.assertEqual(result["pending_precharged_bytes"], 15)
+            self.assertEqual(result["settlements_performed"], 0)
+            self.assertEqual(before, INSPECT.sha(path.read_bytes()))
+            for private in (secret, "HTTPError_099", "HTTPError_600", "HTTPError_401_suffix"):
+                self.assertNotIn(private, json.dumps(result))
 
     def test_failure_snapshot_is_attributed_stale_and_redacts_unapproved_text(self):
         with tempfile.TemporaryDirectory() as directory:

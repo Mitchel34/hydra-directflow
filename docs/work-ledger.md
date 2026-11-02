@@ -373,3 +373,23 @@ The earlier failure's unrecorded HTTP status remains unknown.
 The integrated suite passes 503 tests. Increment08 uses a new provider execution
 plan while retaining the same v4 corpus plan, source identities and persistent
 budget. No scientific fits or protected scores have been produced.
+
+## Cache verification diagnostic and protocol packet — November 2
+
+Increment08 stopped at 248 committed chunks with a `CacheCorruption` exception.
+The last published entry, for `20210903_06Z`, then passed its stored checksums and
+schema validation. Independent recomputation from the retained authenticated raw
+archive exactly matched its means, masks, coverage and original source receipt.
+Neither the cache nor raw source was changed or quarantined. The precise original
+trigger was not retained and remains unconfirmed. Increment09 resumes unchanged
+verification; this processing exception is separate from storage-request errors.
+
+The status inspector now aggregates only recognized HTTP status labels, reports
+legacy unqualified HTTP errors as `UNSPECIFIED`, and groups other failures without
+returning arbitrary error text. Its 13 focused tests pass; the database remains
+read-only. The earlier failed request remains charged.
+
+`docs/protocol-decision-packet.md` provides a reviewed proposal for the remaining
+settings and the shared 108-fit final-development core. The 108/180/288 scope
+question remains open. The packet does not freeze choices, enable fitting or
+assessment, launch a cloud job, or send a coauthor message.
