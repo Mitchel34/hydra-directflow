@@ -1,0 +1,122 @@
+{
+  "available_source_shards": 1,
+  "cases": 120,
+  "comparison_cohort_sha256": "0133f4985a5e63252c9600bc38437fd38a5b37a7778b9418c10b90f0bd40814d",
+  "elapsed_seconds_total": 0.14888158300891519,
+  "execution": {
+    "network_requests": 0,
+    "optimizer_updates": 0,
+    "raw_source_reads": 0,
+    "scaler_fits": 0,
+    "source_corpus_modified": false
+  },
+  "existing_split_validator": {
+    "direct_concrete_tuple_inputs": true,
+    "full_and_q_only_passed": true,
+    "repeat_calls_per_view": 2
+  },
+  "full": {
+    "construction": {
+      "batch_reads": 2,
+      "dense_array_bytes": 656980,
+      "elapsed_seconds": 0.009638832998462021,
+      "max_batch_reads": 4,
+      "max_rss_bytes": 1073741824,
+      "max_total_bytes": 2097152,
+      "network_requests": 0,
+      "observed_peak_rss_bytes": 47562752,
+      "optimizer_updates": 0,
+      "scaler_fits": 0,
+      "source_files_written": false,
+      "working_read_reserve_bytes": 67108864
+    },
+    "source_identity": "c0b9504f5c8cda6dbde2e78d4f6db69c304d19f9056c956088c32dc28b6220e1"
+  },
+  "implementation_sha256": {
+    "src/hydra_directflow/trainer_bundle.py": "d3ce39417d17308609e165386bb3e5f78d1b7de971a1585f0040a39a9756e9b5"
+  },
+  "matching_full_q_only_history_labels_masks_clocks": true,
+  "missing_source_shards": 476,
+  "partial_snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+  "prior_receipt": {
+    "file": "trainer-bundle-check-v1.json",
+    "preserved": true,
+    "sha256": "8eca4b04666d78bc58ca8d76469d81fc1ef666ec34b63ba406932f0b3b6ceb2c"
+  },
+  "q_only": {
+    "construction": {
+      "batch_reads": 2,
+      "dense_array_bytes": 596512,
+      "elapsed_seconds": 0.010920917033217847,
+      "max_batch_reads": 4,
+      "max_rss_bytes": 1073741824,
+      "max_total_bytes": 2097152,
+      "network_requests": 0,
+      "observed_peak_rss_bytes": 50511872,
+      "optimizer_updates": 0,
+      "scaler_fits": 0,
+      "source_files_written": false,
+      "working_read_reserve_bytes": 67108864
+    },
+    "source_identity": "93a11a3c81704133ad9593928a875318099e5ab5dffec50c22a47eeda7da8def"
+  },
+  "role_assignment_sha256": "ecea4cd25e343b9b95aaa24dd5d9650534f124abba89ef1dbf011577ae631f2d",
+  "roles": {
+    "fit": {
+      "case_count": 54,
+      "case_ids_sha256": "560e60f2c313dd0c10f4523f14f0950249377b11136c5d65ac3d63a971455e33",
+      "cases_with_observed_labels": 54,
+      "complete_target_cases": 54,
+      "end_exclusive_utc": "2018-07-15T00:00:00Z",
+      "index_ranges": [
+        [
+          0,
+          54
+        ]
+      ],
+      "observed_target_cells": 972,
+      "origin_window_cases": 72,
+      "start_utc": "2018-07-12T00:00:00Z",
+      "target_boundary_purged_cases": 18,
+      "zero_row_support": false
+    },
+    "inner_stop": {
+      "case_count": 30,
+      "case_ids_sha256": "f9a29be4404b118d79e379ea2255020a4978e5c94af17b040af1abdfc7e91398",
+      "cases_with_observed_labels": 30,
+      "complete_target_cases": 30,
+      "end_exclusive_utc": "2018-07-17T00:00:00Z",
+      "index_ranges": [
+        [
+          72,
+          102
+        ]
+      ],
+      "observed_target_cells": 540,
+      "origin_window_cases": 48,
+      "start_utc": "2018-07-15T00:00:00Z",
+      "target_boundary_purged_cases": 18,
+      "zero_row_support": false
+    },
+    "outer": {
+      "case_count": 0,
+      "case_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "cases_with_observed_labels": 0,
+      "complete_target_cases": 0,
+      "end_exclusive_utc": "2018-07-19T00:00:00Z",
+      "index_ranges": [],
+      "observed_target_cells": 0,
+      "origin_window_cases": 0,
+      "start_utc": "2018-07-17T00:00:00Z",
+      "target_boundary_purged_cases": 0,
+      "zero_row_support": true
+    }
+  },
+  "schema": "hydra-typed-trainer-bundle-qualification/v1",
+  "scope": "EXPLICIT_PARTIAL_ONE_SHARD_ENGINEERING_ONLY",
+  "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+  "source_shard_commits": [
+    "981fd797ef66a1a6cc915aecf4de37dbee24e49c5c407b2b8c46946e207cfb27"
+  ],
+  "unassigned_cases": 36
+}

@@ -336,3 +336,21 @@ At 50 epochs, the calendar scenarios are 61.36 hours for 108 final fits and
 geometries throughout. The 288-fit factorial is 135.66 hours; its 72 Q-only/L24
 fits still use an explicit full-L168 proxy. No CUDA speedup, final admission,
 convergence, CV adoption or scientific result is inferred from these estimates.
+
+## Typed trainer bundles with explicit role boundaries — November 2
+
+The bounded adapter combines verified selections from one gauge/history/snapshot
+into the trainer's typed mapping while retaining separate source provenance.
+Caller-specified UTC windows govern both origins and all H18 targets. Missing
+early observations cannot move a boundary; crossing/out-of-window rows remain
+unassigned. Empty roles stay visible, and outer validation never substitutes for
+an absent inner stopping set. Partial snapshots are refused by default.
+
+Ten focused tests and independent review pass, including direct repeated use of
+the adapter's concrete index tuples with the existing split validator. The v2
+engineering qualification uses one copied immutable derived shard: 120 cases,
+54 fit, 30 inner-stop, zero outer, and 36 retained unassigned rows. Full/Q-only
+tensors, membership and role identities match. It took 0.149 seconds and peaked
+at 48.2 MiB RSS, with no scaler fitting, optimizer, network or raw-source reads.
+Both qualification receipts remain preserved. The optional simulated refit-label
+availability convention is explicitly deferred, not inferred by this adapter.
