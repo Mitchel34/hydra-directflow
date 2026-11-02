@@ -1,0 +1,315 @@
+{
+  "schema": "hydra-real-month-timing-campaign/v1",
+  "status": "PASSED_REAL_MONTH_COLD_RESUME_WARM_AND_VERIFICATION",
+  "month": "2023-08",
+  "created_at_utc": "2026-11-02T15:43:42.432577+00:00",
+  "plan_sha256": "e49e33f044a9365e44cca87343ca3b0f63369e50abef34b34e736ccbcb4610a1",
+  "phases": [
+    {
+      "name": "cold_first_chunk",
+      "external_process_wall_seconds": 2.362495332956314,
+      "observed_process_peak_rss_bytes": 615858176,
+      "result": {
+        "cache_counts": {
+          "bytes_read": 3124775,
+          "bytes_written": 3124775,
+          "hits": 0,
+          "memory_hits": 0,
+          "misses": 25,
+          "repairs": 0
+        },
+        "chunk_array_digests": [
+          "eb25194d6964630242741cb84bde2b3944403dac94d6ca599401540828b126bc"
+        ],
+        "chunks_built": 1,
+        "chunks_reused": 0,
+        "cloud_jobs": 0,
+        "complete_case_count": 360,
+        "completed_cases": 360,
+        "completed_origins": 120,
+        "created_at_utc": "2026-11-02T15:43:44.709688+00:00",
+        "elapsed_seconds": 2.15668416605331,
+        "eligibility_counts": {
+          "COMPLETE": 360
+        },
+        "history_hours": 168,
+        "implementation_sha256": {
+          "cache.py": "279148bbce4f7a6ce1dc9f9f43223237605c27a640aacee320656abdbce14ac0",
+          "contract.py": "e3f1a5e988e02a11da19cc2aec80cfd860e4867d68c14d12bdaba706a85513e8",
+          "lineage.py": "3508bcc0b676614527deedaa0868d93c8378912fa49c74f024dbd83297e27cf3",
+          "local_data.py": "6ed7927b7388e7115f713353fa103ee01df03bac2183788ebf1aedb620daa662",
+          "monthly.py": "1fdd01a7ccae71127a6a61632be72cc4357201a8352891ba6765fee4a18fc61f",
+          "multicycle.py": "0a40229ff6b171833e761c71f3a2620ccfba43605c179841c72e3119d08ea8ac",
+          "pipeline_timing.py": "fee331e948ab35d61b4a32e266423542dbf3da132a5c667f722113d067bd003c",
+          "reference.py": "7c21deee40c04bc72bc5cfcb190a39792c94ab65115c16ca03da551296575135",
+          "telemetry.py": "50e28d1fcbbde444c6199324155a4114cae77ac2461e4f6b331933a2748e2791"
+        },
+        "month": "2023-08",
+        "network_requests": 0,
+        "observed_boundary_peak_rss_bytes": 599523328,
+        "optimizer_updates": 0,
+        "plan_sha256": "e49e33f044a9365e44cca87343ca3b0f63369e50abef34b34e736ccbcb4610a1",
+        "qualification": "One actual development calendar month; masks retained. Runtime does not establish scientific skill or every-season throughput.",
+        "requested_cases": 2232,
+        "requested_origins": 744,
+        "required_source_cycles": 127,
+        "required_usgs_months": [
+          "2023-07",
+          "2023-08",
+          "2023-09"
+        ],
+        "resource_qualification": "Cooperative wall/RSS checks at chunk boundaries; peaks between checks may be higher",
+        "schema": "hydra-month-preprocessing/v1",
+        "scientific_training": false,
+        "selection_scope": "PARTIAL_CHUNK_CALENDAR",
+        "session_initialization_seconds": 0.4485472919186577,
+        "stage_seconds_new_chunks": {
+          "basin_store": 0.5359273329377174,
+          "case_assembly": 0.6356012499891222,
+          "discharge_store": 0.31626620900351554,
+          "total": 1.4880978330038488
+        },
+        "status": "STOPPED_AT_EXPLICIT_CHUNK_BOUNDARY"
+      }
+    },
+    {
+      "name": "cold_resume",
+      "external_process_wall_seconds": 6.862402125028893,
+      "observed_process_peak_rss_bytes": 890306560,
+      "result": {
+        "cache_counts": {
+          "bytes_read": 17041091,
+          "bytes_written": 13916316,
+          "hits": 25,
+          "memory_hits": 25,
+          "misses": 105,
+          "repairs": 0
+        },
+        "chunk_array_digests": [
+          "eb25194d6964630242741cb84bde2b3944403dac94d6ca599401540828b126bc",
+          "050a854e8f0f46d9c3e7ce6d9f310cdc64a92606cff1ac2236e2a467bad06029",
+          "144e4da196c73ab09f9eac585c968b38c49046cbb4fa20bdc479f6252fee30c8",
+          "b2b8db05e1cd81cd473297666bfcc53d6efc15c74225aa685ad96386ee1ff446",
+          "a0c03a46fe4ba6260f548ebee8ae170b1163f1484231c45ad83bd65af03bea87",
+          "5f79762dd328c967fde0bac497c417a59fc317ea768cee58fb94e0f0b409cb7a",
+          "90506718d8104492b9c427158b18ba86124cf687b33bd9d74f6d11d90d7d03d5"
+        ],
+        "chunks_built": 6,
+        "chunks_reused": 1,
+        "cloud_jobs": 0,
+        "complete_case_count": 2046,
+        "completed_cases": 2232,
+        "completed_origins": 744,
+        "created_at_utc": "2026-11-02T15:43:51.594317+00:00",
+        "elapsed_seconds": 6.666892665904015,
+        "eligibility_counts": {
+          "COMPLETE": 2046,
+          "HISTORY_INCOMPLETE": 168,
+          "TARGET_INCOMPLETE": 18
+        },
+        "history_hours": 168,
+        "implementation_sha256": {
+          "cache.py": "279148bbce4f7a6ce1dc9f9f43223237605c27a640aacee320656abdbce14ac0",
+          "contract.py": "e3f1a5e988e02a11da19cc2aec80cfd860e4867d68c14d12bdaba706a85513e8",
+          "lineage.py": "3508bcc0b676614527deedaa0868d93c8378912fa49c74f024dbd83297e27cf3",
+          "local_data.py": "6ed7927b7388e7115f713353fa103ee01df03bac2183788ebf1aedb620daa662",
+          "monthly.py": "1fdd01a7ccae71127a6a61632be72cc4357201a8352891ba6765fee4a18fc61f",
+          "multicycle.py": "0a40229ff6b171833e761c71f3a2620ccfba43605c179841c72e3119d08ea8ac",
+          "pipeline_timing.py": "fee331e948ab35d61b4a32e266423542dbf3da132a5c667f722113d067bd003c",
+          "reference.py": "7c21deee40c04bc72bc5cfcb190a39792c94ab65115c16ca03da551296575135",
+          "telemetry.py": "50e28d1fcbbde444c6199324155a4114cae77ac2461e4f6b331933a2748e2791"
+        },
+        "month": "2023-08",
+        "network_requests": 0,
+        "observed_boundary_peak_rss_bytes": 874086400,
+        "optimizer_updates": 0,
+        "plan_sha256": "e49e33f044a9365e44cca87343ca3b0f63369e50abef34b34e736ccbcb4610a1",
+        "qualification": "One actual development calendar month; masks retained. Runtime does not establish scientific skill or every-season throughput.",
+        "requested_cases": 2232,
+        "requested_origins": 744,
+        "required_source_cycles": 127,
+        "required_usgs_months": [
+          "2023-07",
+          "2023-08",
+          "2023-09"
+        ],
+        "resource_qualification": "Cooperative wall/RSS checks at chunk boundaries; peaks between checks may be higher",
+        "schema": "hydra-month-preprocessing/v1",
+        "scientific_training": false,
+        "selection_scope": "ALL_REQUIRED_SIX_HOUR_CANDIDATES_FOR_FIXED_2H_LAG_H18_36_RETAINED_LEADS",
+        "session_initialization_seconds": 0.4394527920521796,
+        "stage_seconds_new_chunks": {
+          "basin_store": 2.233707750099711,
+          "case_assembly": 2.871587707195431,
+          "discharge_store": 0.23433183308225125,
+          "total": 5.3411052480805665
+        },
+        "status": "COMPLETED_FULL_MONTH"
+      }
+    },
+    {
+      "name": "warm_full_assembly",
+      "external_process_wall_seconds": 5.123547125025652,
+      "observed_process_peak_rss_bytes": 442941440,
+      "result": {
+        "cache_counts": {
+          "bytes_read": 17041091,
+          "bytes_written": 0,
+          "hits": 130,
+          "memory_hits": 25,
+          "misses": 0,
+          "repairs": 0
+        },
+        "chunk_array_digests": [
+          "eb25194d6964630242741cb84bde2b3944403dac94d6ca599401540828b126bc",
+          "050a854e8f0f46d9c3e7ce6d9f310cdc64a92606cff1ac2236e2a467bad06029",
+          "144e4da196c73ab09f9eac585c968b38c49046cbb4fa20bdc479f6252fee30c8",
+          "b2b8db05e1cd81cd473297666bfcc53d6efc15c74225aa685ad96386ee1ff446",
+          "a0c03a46fe4ba6260f548ebee8ae170b1163f1484231c45ad83bd65af03bea87",
+          "5f79762dd328c967fde0bac497c417a59fc317ea768cee58fb94e0f0b409cb7a",
+          "90506718d8104492b9c427158b18ba86124cf687b33bd9d74f6d11d90d7d03d5"
+        ],
+        "chunks_built": 7,
+        "chunks_reused": 0,
+        "cloud_jobs": 0,
+        "complete_case_count": 2046,
+        "completed_cases": 2232,
+        "completed_origins": 744,
+        "created_at_utc": "2026-11-02T15:43:56.712458+00:00",
+        "elapsed_seconds": 4.925745791988447,
+        "eligibility_counts": {
+          "COMPLETE": 2046,
+          "HISTORY_INCOMPLETE": 168,
+          "TARGET_INCOMPLETE": 18
+        },
+        "history_hours": 168,
+        "implementation_sha256": {
+          "cache.py": "279148bbce4f7a6ce1dc9f9f43223237605c27a640aacee320656abdbce14ac0",
+          "contract.py": "e3f1a5e988e02a11da19cc2aec80cfd860e4867d68c14d12bdaba706a85513e8",
+          "lineage.py": "3508bcc0b676614527deedaa0868d93c8378912fa49c74f024dbd83297e27cf3",
+          "local_data.py": "6ed7927b7388e7115f713353fa103ee01df03bac2183788ebf1aedb620daa662",
+          "monthly.py": "1fdd01a7ccae71127a6a61632be72cc4357201a8352891ba6765fee4a18fc61f",
+          "multicycle.py": "0a40229ff6b171833e761c71f3a2620ccfba43605c179841c72e3119d08ea8ac",
+          "pipeline_timing.py": "fee331e948ab35d61b4a32e266423542dbf3da132a5c667f722113d067bd003c",
+          "reference.py": "7c21deee40c04bc72bc5cfcb190a39792c94ab65115c16ca03da551296575135",
+          "telemetry.py": "50e28d1fcbbde444c6199324155a4114cae77ac2461e4f6b331933a2748e2791"
+        },
+        "month": "2023-08",
+        "network_requests": 0,
+        "observed_boundary_peak_rss_bytes": 522633216,
+        "optimizer_updates": 0,
+        "plan_sha256": "e49e33f044a9365e44cca87343ca3b0f63369e50abef34b34e736ccbcb4610a1",
+        "qualification": "One actual development calendar month; masks retained. Runtime does not establish scientific skill or every-season throughput.",
+        "requested_cases": 2232,
+        "requested_origins": 744,
+        "required_source_cycles": 127,
+        "required_usgs_months": [
+          "2023-07",
+          "2023-08",
+          "2023-09"
+        ],
+        "resource_qualification": "Cooperative wall/RSS checks at chunk boundaries; peaks between checks may be higher",
+        "schema": "hydra-month-preprocessing/v1",
+        "scientific_training": false,
+        "selection_scope": "ALL_REQUIRED_SIX_HOUR_CANDIDATES_FOR_FIXED_2H_LAG_H18_36_RETAINED_LEADS",
+        "session_initialization_seconds": 0.4759153339546174,
+        "stage_seconds_new_chunks": {
+          "basin_store": 0.1499806670472026,
+          "case_assembly": 3.3043213771888986,
+          "discharge_store": 0.11508733301889151,
+          "total": 3.571016873815097
+        },
+        "status": "COMPLETED_FULL_MONTH"
+      }
+    },
+    {
+      "name": "verification_only_resume",
+      "external_process_wall_seconds": 0.7840553750284016,
+      "observed_process_peak_rss_bytes": 86933504,
+      "result": {
+        "cache_counts": {
+          "bytes_read": 17041091,
+          "bytes_written": 0,
+          "hits": 130,
+          "memory_hits": 25,
+          "misses": 0,
+          "repairs": 0
+        },
+        "chunk_array_digests": [
+          "eb25194d6964630242741cb84bde2b3944403dac94d6ca599401540828b126bc",
+          "050a854e8f0f46d9c3e7ce6d9f310cdc64a92606cff1ac2236e2a467bad06029",
+          "144e4da196c73ab09f9eac585c968b38c49046cbb4fa20bdc479f6252fee30c8",
+          "b2b8db05e1cd81cd473297666bfcc53d6efc15c74225aa685ad96386ee1ff446",
+          "a0c03a46fe4ba6260f548ebee8ae170b1163f1484231c45ad83bd65af03bea87",
+          "5f79762dd328c967fde0bac497c417a59fc317ea768cee58fb94e0f0b409cb7a",
+          "90506718d8104492b9c427158b18ba86124cf687b33bd9d74f6d11d90d7d03d5"
+        ],
+        "chunks_built": 0,
+        "chunks_reused": 7,
+        "cloud_jobs": 0,
+        "complete_case_count": 2046,
+        "completed_cases": 2232,
+        "completed_origins": 744,
+        "created_at_utc": "2026-11-02T15:43:57.515196+00:00",
+        "elapsed_seconds": 0.6098472090670839,
+        "eligibility_counts": {
+          "COMPLETE": 2046,
+          "HISTORY_INCOMPLETE": 168,
+          "TARGET_INCOMPLETE": 18
+        },
+        "history_hours": 168,
+        "implementation_sha256": {
+          "cache.py": "279148bbce4f7a6ce1dc9f9f43223237605c27a640aacee320656abdbce14ac0",
+          "contract.py": "e3f1a5e988e02a11da19cc2aec80cfd860e4867d68c14d12bdaba706a85513e8",
+          "lineage.py": "3508bcc0b676614527deedaa0868d93c8378912fa49c74f024dbd83297e27cf3",
+          "local_data.py": "6ed7927b7388e7115f713353fa103ee01df03bac2183788ebf1aedb620daa662",
+          "monthly.py": "1fdd01a7ccae71127a6a61632be72cc4357201a8352891ba6765fee4a18fc61f",
+          "multicycle.py": "0a40229ff6b171833e761c71f3a2620ccfba43605c179841c72e3119d08ea8ac",
+          "pipeline_timing.py": "fee331e948ab35d61b4a32e266423542dbf3da132a5c667f722113d067bd003c",
+          "reference.py": "7c21deee40c04bc72bc5cfcb190a39792c94ab65115c16ca03da551296575135",
+          "telemetry.py": "50e28d1fcbbde444c6199324155a4114cae77ac2461e4f6b331933a2748e2791"
+        },
+        "month": "2023-08",
+        "network_requests": 0,
+        "observed_boundary_peak_rss_bytes": 88866816,
+        "optimizer_updates": 0,
+        "plan_sha256": "e49e33f044a9365e44cca87343ca3b0f63369e50abef34b34e736ccbcb4610a1",
+        "qualification": "One actual development calendar month; masks retained. Runtime does not establish scientific skill or every-season throughput.",
+        "requested_cases": 2232,
+        "requested_origins": 744,
+        "required_source_cycles": 127,
+        "required_usgs_months": [
+          "2023-07",
+          "2023-08",
+          "2023-09"
+        ],
+        "resource_qualification": "Cooperative wall/RSS checks at chunk boundaries; peaks between checks may be higher",
+        "schema": "hydra-month-preprocessing/v1",
+        "scientific_training": false,
+        "selection_scope": "ALL_REQUIRED_SIX_HOUR_CANDIDATES_FOR_FIXED_2H_LAG_H18_36_RETAINED_LEADS",
+        "session_initialization_seconds": 0.43581766600254923,
+        "stage_seconds_new_chunks": {
+          "basin_store": 0,
+          "case_assembly": 0,
+          "discharge_store": 0,
+          "total": 0
+        },
+        "status": "COMPLETED_FULL_MONTH"
+      }
+    }
+  ],
+  "optimizer_updates": 0,
+  "cloud_jobs": 0,
+  "network_requests": 0,
+  "derived_cache_initially_absent": true,
+  "os_page_cache_flushed": false,
+  "elapsed_seconds": 15.136965624988079,
+  "completed_at_utc": "2026-11-02T15:43:57.569577+00:00",
+  "cold_two_attempt_external_seconds": 9.224897457985207,
+  "cold_two_attempt_worker_seconds": 8.823576831957325,
+  "warm_full_assembly_external_seconds": 5.123547125025652,
+  "verification_only_external_seconds": 0.7840553750284016,
+  "all_chunk_arrays_exact_across_completed_modes": true,
+  "calendar_origins": 744,
+  "gauge_cases": 2232
+}

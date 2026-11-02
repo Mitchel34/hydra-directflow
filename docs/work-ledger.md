@@ -18,7 +18,7 @@ Each code chunk has been tested locally and committed separately. Raw data and l
 | `b2c2f64` | Development availability | Quality/timestamp columns only; 12 comparisons, one month |
 | `cd02171` | Q-only control | 11 ablation tests and two zero-update model forwards |
 
-The October 29 integrated offline-environment suite passed **114 tests**. See `reports/release-check.json` for that historical tested code revision and source hashes. The first November continuation passed **154 tests** (`reports/continuation-check.json`). The later cache/month preparation checkpoint passes **211 tests** (`reports/cache-month-readiness-check.json`).
+The October 29 suite passed **114 tests** (`reports/release-check.json`), the first November continuation passed **154** (`reports/continuation-check.json`), and cache/month preparation passed **211** (`reports/cache-month-readiness-check.json`). The completed real-month exercise passes **217 tests** (`reports/month-execution-check.json`). These are local checks; hosted CI remains inactive.
 
 Qualification accounting: 878 synthetic optimizer updates across the model, recovery and benchmark attempts; four completed real-data engineering updates on one repeated observed case. One earlier failed engineering admission precharged two updates but failed before optimizer entry; its record remains. These are not scientific campaign fits or forecast-skill results.
 
@@ -79,3 +79,26 @@ job was started, and optimizer-update totals are unchanged.
 Next: complete the approved storage reads if authorized, then cold/interrupted,
 resumed, warm full-month and verification-only timing. Preserve the distinction
 between those timing modes and between source gaps and incomplete acquisition.
+
+## Approved August execution — November 2
+
+- `12b3613`: approved storage retrieval completed; 137 verified requests,
+  634.52 MiB transferred, 51.46 seconds, estimated incremental fees $0.1804.
+- `7b5fe0b`: added narrow admission for original census-proof files in the
+  genuine soil-only HRRR gap archive. Six regressions and actual source checks
+  pass; the first failed monthly attempt remains in its own receipt.
+- `reports/month-timing.json`: all 744 origins and 2,232 gauge cases processed;
+  2,046 complete cases, 168 missing-history and 18 missing-target cases preserved.
+  Cold stop/resume 9.22 s, warm full assembly 5.12 s, verification-only 0.78 s.
+  All chunk digests match; all 130 cache entries verified.
+
+The source download allowance was used only for the approved month. The cloud
+compute budget remains undecided and no VMs/cloud training jobs were started.
+Optimizer totals remain 52 real-data engineering updates and 878 synthetic
+updates from earlier work; this month exercise added zero. Scientific training,
+protocol freeze and protected assessment remain pending.
+
+Next: use this observed month to refine a bounded full-corpus preprocessing and
+model-training proposal. Account for legacy/gap variants, full source sizes,
+data-transfer location, eligibility, batching and the remaining scientific
+choices before requesting any additional downloads or paid compute.

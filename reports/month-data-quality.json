@@ -1,0 +1,71 @@
+{
+  "availability": "Simulated two-hour lag; historical publication unknown",
+  "basin_cycle_entries": 127,
+  "cache_quarantines": 0,
+  "case_ids_unique": true,
+  "cold_warm_array_digests_exact": true,
+  "complete_cases": 2046,
+  "created_at_utc": "2026-11-02T15:47:36.617518+00:00",
+  "derived_cache_bytes_including_commits": 17041091,
+  "derived_cache_entries": 130,
+  "eligibility_by_gauge": {
+    "03161000": {
+      "COMPLETE": 744
+    },
+    "03164000": {
+      "COMPLETE": 744
+    },
+    "03479000": {
+      "COMPLETE": 558,
+      "HISTORY_INCOMPLETE": 168,
+      "TARGET_INCOMPLETE": 18
+    }
+  },
+  "explicit_hrrr_gap": {
+    "available_groups": [
+      "soil_moisture"
+    ],
+    "cycle_id": "20230817_06Z",
+    "data_complete": false,
+    "fallback_gauge_cases": 18,
+    "origin_range_utc": [
+      "2023-08-17T08:00:00Z",
+      "2023-08-17T13:00:00Z"
+    ],
+    "soil_source_cycle": "20230817_06Z",
+    "weather_source_cycle": "20230817_00Z",
+    "weather_stitched": false
+  },
+  "gauge_cases": 2232,
+  "geometry": "Development-only approximate independent basins",
+  "missing_native_usgs_observation": {
+    "gauge": "03479000",
+    "history_incomplete_origins": 168,
+    "history_origin_range_utc": [
+      "2023-08-14T20:00:00Z",
+      "2023-08-21T19:00:00Z"
+    ],
+    "target_incomplete_origins": 18,
+    "target_origin_range_utc": [
+      "2023-08-14T00:00:00Z",
+      "2023-08-14T17:00:00Z"
+    ],
+    "time_utc": "2023-08-14T18:00:00Z"
+  },
+  "month": "2023-08",
+  "optimizer_updates": 0,
+  "origin_count": 744,
+  "protected_assessment_scores": 0,
+  "quality_policy": "Strict exact A-only at case assembly",
+  "schema": "hydra-real-month-data-quality/v1",
+  "scope": "DEVELOPMENT_ENGINEERING_MONTH_NOT_SCIENTIFIC_SKILL",
+  "source_payload_values_rewritten": false,
+  "supporting_usgs_months": [
+    "2023-07",
+    "2023-08",
+    "2023-09"
+  ],
+  "timing_report_sha256": "f184ba1b771bedb13c90538709beeeaa7a7424c781838958fc101aa3557b5b95",
+  "uncommitted_cache_stages": 0,
+  "usgs_month_entries": 3
+}

@@ -95,5 +95,10 @@ windows from case indices. It must checkpoint chunk completion, authenticate
 the index once per worker, and resolve all required candidates before claiming
 globally latest selection. July 2024 also needs a separate protected-data
 boundary because its USGS monthly partition overlaps the assessment start.
-Then time a representative month and propose a capped cloud comparison using
-the measured workload. No paid job has been started.
+The November 2 continuation completed the legacy adapter, resumable caches and
+an actual August 2023 timing exercise. See [month preprocessing](month-preprocessing.md):
+9.22 seconds with an empty derived cache including stop/resume, 5.12 seconds
+for warm full assembly, and 0.78 seconds for verification-only resume. These
+observations replace the earlier single-fixture preprocessing evidence for this
+month; the full corpus and cloud hardware remain unmeasured. A separately
+approved, capped storage read supplied the month. No cloud compute job has started.

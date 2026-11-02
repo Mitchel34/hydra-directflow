@@ -27,7 +27,7 @@ Actual artifact creation timestamps are distinct from simulated historical
 information cutoffs.
 
 See [the completed work ledger](docs/work-ledger.md) for commits and evidence.
-The integrated offline-environment suite passes **211 tests**. Current reports
+The integrated offline-environment suite passes **217 tests**. Current reports
 include four-model CPU/MPS qualification, a bounded real-data engineering probe,
 fresh-process recovery and a 20-case synthetic local throughput benchmark.
 Discharge-only ablation and source-aware NWM evaluation helpers are implemented.
@@ -40,9 +40,11 @@ conditional local projections and the remaining cloud-budget uncertainties.
 
 [Older index/payload formats](docs/legacy-lineage.md) and
 [resumable basin/discharge stores](docs/cache.md) are tested on resident source
-data. The [August 2023 month runner](docs/month-preprocessing.md) is prepared and
-tested; its actual month timing awaits approval for bounded reads of the 124
-missing local HRRR archives. No cloud compute jobs have been started.
+data. The [August 2023 month runner](docs/month-preprocessing.md) now passes a real
+744-origin / 2,232-case cold, resumed and warm processing exercise. The approved
+storage download stayed below 1 GiB; no cloud compute jobs were started.
+Preprocessing took 9.22 seconds with an empty derived cache including stop/resume,
+5.12 seconds for warm full assembly and 0.78 seconds for verification-only resume.
 
 ## Local use
 

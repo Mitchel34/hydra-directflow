@@ -7,13 +7,13 @@ H18 targets need the retained six-hour runs from July 31 at 06Z through August
 gap. L168 history and the H18 label tail require July, August and September USGS
 partitions. All three USGS partitions are resident and authenticated.
 
-Only three of the required HRRR archives are currently resident. The remaining
-124 require reads from the existing private storage archive. Consequently,
-**full-month timing has not yet run**. This is an actual month selected for an
-engineering throughput exercise, not evidence of representative performance
-across all seasons. No repeated-cycle substitute is used.
+All 127 required HRRR archives are now resident and authenticated. The approved
+download fetched 124 archives and 13 previously uncached commits; three archives
+and 114 commits were reused locally. **Full-month timing passed on November 2,
+2026.** This is an actual engineering month, not evidence of representative
+performance across all seasons. No repeated-cycle substitute was used.
 
-## Prepared bounded storage read
+## Completed bounded storage read
 
 `scripts/fetch_month_inputs.py` defaults to planning. It binds the private object
 inventory to the sealed index, then authenticates original commits and their
@@ -23,17 +23,27 @@ bodies**, **137 object attempts**, and **900 seconds** per invocation, with a
 persistent byte/attempt ledger across resumes. Failed attempts retain their
 precharge. HTTP redirects and automatic retries are disabled.
 
-The requested incremental read/transfer allowance is **$1 estimated**, still
-awaiting approval. Byte and request limits are enforced locally; this is not a
-provider billing cap. No credentials are requested in plan mode or mocked tests.
-No cloud compute is provisioned and no cloud object is written. The existing
-acquisition spending allowance is not reused.
+The user approved **1 GiB and $1 estimated incremental read/transfer fees**.
+Execution completed 137 successful GETs in **51.46 seconds**, transferring
+665,344,706 bytes (**634.52 MiB**). The ledger conservatively charged one extra
+byte per request: 665,344,843 bytes total, below the cap. There were no failed or
+unsettled requests, cloud compute jobs or cloud writes. The existing acquisition
+spending allowance was not reused.
 
-The private inventory has exact identities for 114 of the 127 bundles; the
-remaining 13 commit reads resolve their bundle identities. Its conservative
-response-body requirement is 812,032,000 bytes, within the proposed 1 GiB cap.
-See `reports/month-readiness.json` for the portable plan and explicit pending
-state. Neither that report nor a plan digest grants spending authority.
+A conservative read/transfer estimate is **$0.1804**, using published upper
+rates of $0.23/GiB transfer, $0.05/GiB retrieval and $0.05 per 1,000 Class B
+operations. This is an estimate, not a provider invoice; existing storage and
+other project costs are outside this incremental allowance.
+[Google Cloud Storage pricing](https://cloud.google.com/storage/pricing).
+
+Before execution, the private inventory had exact identities for 114 of the
+127 bundles; the remaining 13 commit reads resolved their bundle identities.
+Its conservative response-body requirement was 812,032,000 bytes, within the
+approved 1 GiB cap.
+`reports/month-readiness.json` preserves the historical pending plan. The later
+approval and completed read are recorded in `reports/month-storage-approval.json`
+and `reports/month-storage-transfer.json`. Plan mode and mocked tests still make
+no credential or network requests. A plan digest alone grants no spending authority.
 
 ## Monthly processing
 
@@ -69,7 +79,7 @@ and 4 GiB RSS. Measurements report their sampling limitations. No model updates,
 fitted scalers, protected assessment scoring or network access occur in the
 month-processing function.
 
-## Timing and recovery checks to execute once inputs are available
+## Completed timing and recovery checks
 
 1. Use a new derived cache and run directory; stop after one chunk with
    `--stop-after-chunks 1`. Confirm that its completed stores and chunk persist.
@@ -83,3 +93,35 @@ month-processing function.
 The current calendar, missing data and cache policies are development settings.
 Complete-month processing does not imply that all cases have complete inputs or
 that the main scientific split, quality policy or basin geometry is frozen.
+
+| Executed mode | Process wall time | Chunk behavior |
+|---|---:|---|
+| Empty derived cache, deliberate stop plus resumed completion | 9.2249 s | One chunk, then six new chunks and one verified reuse |
+| Populated cache, new run directory, full window assembly | 5.1235 s | All seven chunks reconstructed |
+| Completed run directory, verification only | 0.7841 s | Seven chunks verified; none rebuilt |
+
+The cold number sums two fresh process invocations, including their startup;
+worker-only elapsed time was 8.8236 seconds. Source download is excluded. The OS
+page cache was not flushed, so "cold" refers only to the derived cache. Maximum
+observed worker RSS across boundary checks and external sampling was **849 MiB**;
+sampling can miss short peaks. All seven chunk array digests matched between
+completed cold, warm and verification modes. The 130 shared entries (127 basin
+cycles and three USGS months) total 17,041,091 bytes including commit metadata.
+
+There are **2,046 complete cases**: all 744 at Jefferson, all 744 at Galax and
+558 at Sugar Grove. Sugar Grove's missing observation at August 14, 18Z affects
+18 target windows and 168 L168 history windows. Every requested case survives
+with its masks. The August 17 06Z HRRR gap stays soil-only; 18 gauge cases at
+origins 08Z–13Z correctly use the older complete 00Z weather run and separate
+06Z soil state. No forecast stitching or observation filling occurred.
+
+The first attempt stopped at that gap because its archive included additional
+manifest-bound census-evidence files. The reader now admits only the exact
+date-matched JSON/XML pair with the original proof hashes. That failed attempt
+and its three completed chunks are preserved in `reports/month-timing-attempt-1.json`.
+The successful timing uses a fresh cache and new code identity; failed-attempt
+time is not silently folded into the successful timing or discarded.
+
+See `reports/month-timing.json`, `reports/month-data-quality.json` and
+`reports/month-execution-check.json`. No optimizer updates, scientific model
+selection or protected assessment scoring occurred during this month exercise.
