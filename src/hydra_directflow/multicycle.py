@@ -106,11 +106,19 @@ def load_authenticated_cycle(spec, index_row):
     members, manifest, lineage = read_authenticated_bundle(spec, index_row)
     summary = lineage["normalized_summary"]
     n = summary["record_count"]
-    require(manifest["raw_shape"] == [n, 957] and manifest["mask_shape"] == [n, 120],
-            "Cycle array shapes differ")
+    raw_payload_present = "raw_values.npy" in members
+    if raw_payload_present:
+        require(manifest["raw_shape"] == [n, 957] and manifest["mask_shape"] == [n, 120],
+                "Cycle array shapes differ")
+        values = bounded_npy(members["raw_values.npy"], shape=(n, 957), dtype="<f8")
+        bits = bounded_npy(members["raw_missing_bits.npy"], shape=(n, 120), dtype="u1")
+    else:
+        # read_cycle_tar already authenticated the exact metadata-only gap
+        # contract. Zero rows are an in-memory interface, never invented data.
+        require(n == 0 and manifest["raw_shape"] is None and manifest["mask_shape"] is None,
+                "Metadata-only gap has inconsistent shapes")
+        values, bits = np.empty((0, 957), dtype="<f8"), np.empty((0, 120), dtype="u1")
     require(manifest["assets"]["grid_sha256"] == GRID_SHA256, "Candidate acquisition grid differs")
-    values = bounded_npy(members["raw_values.npy"], shape=(n, 957), dtype="<f8")
-    bits = bounded_npy(members["raw_missing_bits.npy"], shape=(n, 120), dtype="u1")
     missing = np.unpackbits(bits, axis=1, bitorder="little")
     require(not missing[:, 957:].any(), "Nonzero unused mask padding")
     present = ~missing[:, :957].astype(bool)
@@ -158,6 +166,8 @@ def load_authenticated_cycle(spec, index_row):
                "commit_sha256": lineage["commit"]["sha256"] if lineage["commit"] else None,
                "manifest_sha256": lineage["manifest_sha256"], "lineage": lineage,
                "record_count": n, "data_complete": summary["data_complete"],
+               "raw_payload_present": raw_payload_present, "numeric_records_decoded": n,
+               "in_memory_empty_inventory_only": not raw_payload_present,
                "weather_source_slots": sorted({f["spec"]["chunks"][0] for f in fields.values()}),
                "groups_available": sorted(present_groups),
                "weather_tiles_redecoded": bool(fields), "soil_values_record_hash_verified": "soil_moisture" in present_groups}

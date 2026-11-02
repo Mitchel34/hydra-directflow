@@ -116,12 +116,42 @@ def read_cycle_tar(path, expected_sha256=ARCHIVE_SHA256, *, cycle_id=CYCLE_ID, a
             require(len(value) == member.size, "Truncated archive member")
             result[relative] = value
     require(type(allow_legacy) is bool, "Explicit legacy archive permission required")
-    base = fixed - {"AVAILABILITY.json", "POST_FETCH_CACHE_PROVENANCE.json"}
-    require((base if allow_legacy else fixed) <= result.keys(), "Required archive members missing")
+    require("CYCLE_MANIFEST.json" in result, "Required archive manifest missing")
     manifest = json.loads(result["CYCLE_MANIFEST.json"])
-    if not fixed <= result.keys():
-        require(allow_legacy and manifest.get("schema") == "HRRR-raw-cycle-acquisition/v1"
-                and "AVAILABILITY.json" not in result, "Unsupported legacy archive schema/members")
+    arrays = {"raw_values.npy", "raw_missing_bits.npy"}
+    present_arrays = arrays & result.keys()
+    require(not present_arrays or present_arrays == arrays, "Raw values/mask files must be present or absent together")
+    metadata_only_gap = not present_arrays and allow_legacy
+    if metadata_only_gap:
+        require(fixed - arrays <= result.keys(), "Required source-gap metadata members missing")
+        require(manifest.get("schema") == "HRRR-gap-aware-raw-cycle-acquisition/v1"
+                and type(manifest.get("record_count")) is int and manifest["record_count"] == 0
+                and manifest.get("data_complete") is False and manifest.get("coverage_status") == "CONFIRMED_GAPS"
+                and manifest.get("groups") == [] and manifest.get("raw_shape") is None and manifest.get("mask_shape") is None,
+                "Absent raw arrays require an exact zero-record source-gap manifest")
+        require(json.loads(result["RAW_PROVENANCE.json"]) == [] and json.loads(result["FIELD_SOURCES.json"]) == {},
+                "Metadata-only source gap cannot contain acquired records or fields")
+        availability = json.loads(result["AVAILABILITY.json"])
+        expected = {"temperature", "humidity", "precipitation", "snow_water_equivalent"}
+        if int(cycle_id[9:11]) % 6 == 0:
+            expected.add("soil_moisture")
+        groups = availability.get("groups", [])
+        require(availability == manifest.get("availability") and availability.get("cycle") == cycle_id
+                and availability.get("data_complete") is False and availability.get("coverage_status") == "CONFIRMED_GAPS"
+                and set(availability.get("expected_groups", [])) == expected
+                and set(manifest.get("expected_groups", [])) == expected
+                and len(groups) == len(expected) and {group.get("group") for group in groups} == expected,
+                "Metadata-only source-gap availability inventory differs")
+        require(all(type(group.get("record_count")) is int and group["record_count"] == 0
+                    and isinstance(group.get("status"), str) and group["status"]
+                    and group["status"] != "AVAILABLE_VERIFIED" and not group.get("leads") for group in groups),
+                "Metadata-only source gap cannot claim available groups or leads")
+    else:
+        base = fixed - {"AVAILABILITY.json", "POST_FETCH_CACHE_PROVENANCE.json"}
+        require((base if allow_legacy else fixed) <= result.keys(), "Required archive members missing")
+        if not fixed <= result.keys():
+            require(allow_legacy and manifest.get("schema") == "HRRR-raw-cycle-acquisition/v1"
+                    and "AVAILABILITY.json" not in result, "Unsupported legacy archive schema/members")
     require(manifest["cycle"] == cycle_id, "Manifest cycle differs")
     require(set(manifest["files"]) == set(result) - {"CYCLE_MANIFEST.json"},
             "Manifest inventory differs from archive")
@@ -186,9 +216,56 @@ def _coordinate(members, field, metadata, name, *, cycle_id=CYCLE_ID):
     return np.frombuffer(data, dtype=dtype)
 
 
+def _field_metadata(members, field, *, cycle_id=CYCLE_ID):
+    """Read consolidated metadata or the original authenticated 404 recovery.
+
+    The component dictionary is a local view, never a replacement source file.
+    Original missing receipts and all component receipts remain unchanged.
+    """
+    sources = field["metadata_sources"]
+    first = sources[0]
+    if "relative_path" in first and first.get("missing") is not True:
+        # Preserve the previously qualified consolidated path exactly.
+        return json.loads(_source_bytes(members, first, cycle_id=cycle_id))["metadata"]
+    require(first.get("missing") is True and first.get("http_status") == 404
+            and first.get("missing_proof", {}).get("http_status") == 404
+            and first.get("missing_proof", {}).get("outcome") == "MISSING_404",
+            "Metadata recovery requires the original consolidated-metadata 404 proof")
+    paths = {"temperature": "2m_above_ground/TMP", "humidity": "2m_above_ground/SPFH",
+             "precipitation": "surface/APCP_1hr_acc_fcst", "snow_water_equivalent": "surface/WEASD"}
+    pieces = first["key"].split("/")
+    require(len(pieces) == 4 and pieces[0] == cycle_id[:8] and pieces[1] == cycle_id[9:11]
+            and pieces[2] in paths and pieces[3] == "zmetadata"
+            and field["field_source_id"] == f"{pieces[0]}_{pieces[1]}_{pieces[2]}",
+            "Recovered metadata belongs to another cycle or field")
+    prefix = "/".join(pieces[:3]) + "/"
+    require(first["url"].endswith("/.zmetadata"), "Unexpected consolidated metadata URL")
+    base_url = first["url"][:-len(".zmetadata")]
+    field_path = paths[pieces[2]]
+    require(field["source"]["url"] == base_url + field_path + "/0.3.9",
+            "Recovered metadata root differs from original field tile")
+    arrays = (field_path, "forecast_period", "time", "forecast_reference_time",
+              "projection_x_coordinate", "projection_y_coordinate")
+    expected = {name + "/" + suffix for name in arrays for suffix in (".zarray", ".zattrs")}
+    require(len(sources) == 1 + len(expected), "Recovered metadata requires exactly twelve component receipts")
+    metadata = {}
+    for source in sources[1:]:
+        require(source["key"].startswith(prefix), "Recovered metadata component has a different field root")
+        key = source["key"][len(prefix):]
+        require(key in expected and key not in metadata and source["url"] == base_url + key
+                and source.get("missing") is not True, "Duplicate, missing or unapproved recovered metadata component")
+        value = json.loads(_source_bytes(members, source, cycle_id=cycle_id))
+        require(isinstance(value, dict), "Recovered metadata component must be an original JSON object")
+        metadata[key] = value
+    require(set(metadata) == expected and metadata[field_path + "/.zarray"] == field["spec"]
+            and metadata[field_path + "/.zattrs"] == field["attrs"],
+            "Recovered metadata does not match the retained field specification/attributes")
+    return metadata
+
+
 def _verify_grid_and_clocks(members, fields, reference, *, cycle_id=CYCLE_ID, minimum_leads=36):
     for field in fields.values():
-        metadata = json.loads(_source_bytes(members, field["metadata_sources"][0], cycle_id=cycle_id))["metadata"]
+        metadata = _field_metadata(members, field, cycle_id=cycle_id)
         require(field["spec"]["shape"][1:] == [1059, 1799], "Weather native grid shape differs")
         require(field["spec"]["order"] == "C", "Weather grid scan order differs")
         require(utc_epoch(field["source_reference_UTC"]) == reference, "Field reference time differs")
@@ -232,17 +309,18 @@ def _verify_weather_crop(members, fields, records, values, present, *, cycle_id=
     for field_id, field in fields.items():
         spec = field["spec"]
         slots = spec["chunks"][0]
-        require(slots in (18, 36, 47, 48) and spec["chunks"] == [slots, 150, 150] and spec["dtype"] == "<f2"
+        require(slots in (18, 36, 47, 48) and spec["chunks"] == [slots, 150, 150] and spec["dtype"] in ("<f2", "<f4")
                 and spec["filters"] is None and spec["compressor"]["id"] == "blosc",
                 "Unexpected bounded source tile encoding")
         require(field["source"]["url"].endswith("/0.3.9"), "Source tile indices differ from candidate crop")
         raw = _source_bytes(members, field["source"], cycle_id=cycle_id)
-        expected_size = slots * 150 * 150 * 2
+        source_dtype = np.dtype(spec["dtype"])
+        expected_size = slots * 150 * 150 * source_dtype.itemsize
         require(len(raw) >= 16 and struct.unpack_from("<I", raw, 4)[0] == expected_size,
                 "Source tile expansion bound differs")
         decoded = Blosc().decode(raw)
         require(len(decoded) == expected_size, "Decoded source tile size differs")
-        tile = np.frombuffer(decoded, dtype="<f2").reshape(slots, 150, 150)
+        tile = np.frombuffer(decoded, dtype=source_dtype).reshape(slots, 150, 150)
         # Tile (j=3, i=9) starts at native (j=450, i=1350).
         crop = tile[:, 28:61, 14:43].reshape(slots, 957)
         for index, record in enumerate(records):

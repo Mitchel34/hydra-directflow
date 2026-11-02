@@ -1,0 +1,2376 @@
+{
+  "checks": [
+    {
+      "archive_sha256": "2a8585a535e59068cc11a68bf9c0363e69443d8038c6ab78e265ccd202c6e43e",
+      "cycle_id": "20180712_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "8806118b67bbeb8fc96f2f42a4de81f48b74610ae91148490f3eeaa59bdcd5f9",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "4580017fbf1b5e9322fc9682517706388ce3efecf03beffac8fffa40933634b7",
+      "cycle_id": "20180713_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "2582342b707e9073eac6f4840048c038953feadb3e91b8a7c8e4b6bc0e93f327",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "f9a63ff814cb48c95a1f0e66b675b7d235f1c552692fe27336ba32680826b13f",
+      "cycle_id": "20180807_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 2,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "56912992f72e13a89cadb13234ac2c058fbe3d0d288b99cdd9e64756d0d8ed8e",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "3176f5bfde65e03f0ff68cb57d732e7b023f0c4b9645a32b20d9a5f538f62ddd",
+      "cycle_id": "20190119_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "798458afbcf8eb1f74176ae9a771978a218db8457cc8c259d755584ef127c6a2",
+      "records": 145,
+      "route": "PINNED_BUNDLE",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "3176f5bfde65e03f0ff68cb57d732e7b023f0c4b9645a32b20d9a5f538f62ddd",
+      "cycle_id": "20190119_00Z",
+      "error_type": "ValueError",
+      "phase": "ARCHIVE_IDENTITY",
+      "route": "PINNED_BUNDLE",
+      "status": "FAILED_OR_IDENTITY_MISMATCH"
+    },
+    {
+      "archive_sha256": "3176f5bfde65e03f0ff68cb57d732e7b023f0c4b9645a32b20d9a5f538f62ddd",
+      "cycle_id": "20190119_00Z",
+      "error_type": "ValueError",
+      "phase": "ARCHIVE_IDENTITY",
+      "route": "PINNED_BUNDLE",
+      "status": "FAILED_OR_IDENTITY_MISMATCH"
+    },
+    {
+      "archive_sha256": "bb70e763d8043f9ae634baf0ad1b74a56a73aa439c50fb60d02afdc881a2b73e",
+      "cycle_id": "20200301_00Z",
+      "mask_sha256": "ee97385fae27c6782d2569020d0fdd8deaa9a77ca76003197fb9687d20b74745",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "a596a9a2096cb85a368ee9c6936289510db21b8579fe721f3882906a08c15103",
+      "records": 73,
+      "route": "PINNED_BUNDLE",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "cycle_id": "20200402_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "cycle_id": "20200416_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "cycle_id": "20200430_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "cycle_id": "20200528_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "cycle_id": "20200703_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "cycle_id": "20200801_06Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "cycle_id": "20200820_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "cycle_id": "20200903_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "cycle_id": "20200917_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "cycle_id": "20201001_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "cycle_id": "20201112_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "cycle_id": "20201126_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "archive_sha256": "02f34687c92c12a1c289e3399c21edb1ad1ebaca1b2dd70c4d5ce1de0b876e7b",
+      "cycle_id": "20201210_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "0b9666bd681785d4ba371546d2c22f08511cc11f6db74ba01d57903af64e1198",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "91edf9b8e214d77df0f8481f14bd206c5f47fcaeb6d99d0dd9ac40c2a0bc9786",
+      "cycle_id": "20201224_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "19f0cefe5491c8366f2ebf244ceebb1dca9acc48ff22b16bfc482be2508e901b",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "cycle_id": "20210107_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "cycle_id": "20210204_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "cycle_id": "20210304_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "cycle_id": "20210318_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "archive_sha256": "c4a805fb79ace3342df407c6d7537dc4de807fe08d154387ae97a763c19e6f90",
+      "cycle_id": "20210401_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "1982a1889f1d8610cc6ea01cc3d7cf958e805f5e0283690558feaf243f09bcb3",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "cycle_id": "20210415_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "archive_sha256": "8eb0a6b52d7f9677c21ae45db6389d74f37e62e675ffa0282be771db3eea3620",
+      "cycle_id": "20210513_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "4395e3257bdc12ea95830a77164a740082ebec7f9179640bc07a58eaafcb00b5",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "ec295aaac77fdf9553bdd4bf390e8741aee4c9a07e69c61f540d7aa13c0df91e",
+      "cycle_id": "20210527_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "068ef372269b037d8a3f62cf3ba217e18ddc5cc67a7a28b02d84556d97ec3c28",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "e1f620afe1d279bc3b3a623fe45f0485f367b74d12d4455c63711236db9a2aad",
+      "cycle_id": "20210610_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "7d18495d27bd484af480783cd05ceace70dfb7894dc08cb3204c9e6f233623c3",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "6686ebd6d7ecee977191736e1291ee4232dc96b09dd7d5fe808dbbd05aaf591c",
+      "cycle_id": "20210624_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "6d9262f09d8fe7484184cd820bc0f8b34665bb54f8416fb65de16c0aef4dd29c",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "cycle_id": "20210708_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "archive_sha256": "b5ee9d6304218e3c13cc5442c376d149efcadee726860ed262173f0397540de3",
+      "cycle_id": "20210726_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "400d84b5ef3e02c60c4bd86f5565c3003ff8cbed81ab19100401707b3b7bbc25",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "3a4de8d42df23f3a0cb968e39da09b3fe9e949f6c970f4f242f88f2a6863d43b",
+      "cycle_id": "20210805_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "452d8910eb2fff71e77cec431a2142c7211240a64080aaf9b9a3f987278c746c",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "76cb268c45ba31df9317f0df6579899e59ad0adc9e7e8b6a7074ed5db2d20ea6",
+      "cycle_id": "20210819_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "a1ae1182f9dac4dd6e97390b69800d183fe85960e3b0a037c2eb109433dcd101",
+      "records": 145,
+      "route": "PINNED_BUNDLE",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "6f34151174311054173b03dc32bcb4080b9244537c24f9a45f7746c6be6cdf00",
+      "cycle_id": "20210823_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "45c1db117631a10f788202a574a12c7b7c32842c9dab38a876e941486998fd02",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "6f34151174311054173b03dc32bcb4080b9244537c24f9a45f7746c6be6cdf00",
+      "cycle_id": "20210823_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "45c1db117631a10f788202a574a12c7b7c32842c9dab38a876e941486998fd02",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "cycle_id": "20210902_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "archive_sha256": "27deedc966d387e8013a65dbdb0d2592aa2145b7bf3f7d2f4e7dd3bac80f0dd3",
+      "cycle_id": "20210929_06Z",
+      "mask_sha256": "16c4eca11ec82ecba68002862f1c002330d0b0455aff2df64d7e3c31cf30e359",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "39a846fc805c3bbc83804ec6b7edf8189570cdf3d3a0cf270308df5e178f360d",
+      "records": 1,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "321e27ec8eaa3d0ac8ea700b541992f0b27e684544ba3f2000f7e1737458a1a0",
+      "cycle_id": "20210930_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "eb55224932344ac793d56dd2a94eb7f6c231f608e0de5effd6c70b009fff6ffa",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "94785b2a952608e6407b7e1372317411d6566a8ae418874697a2817b3070f61f",
+      "cycle_id": "20211028_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "5aa29490c518892e1aa7c0b7444d7cdb7b92bdf7c232e069dd6558705c2a8508",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "cycle_id": "20211111_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "archive_sha256": "e690e3d712c82f1dfb754a7653d11690025b64c9aed0dc9f5ff2c6d95b68363b",
+      "cycle_id": "20211125_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "0f9e96d8bcfd4c1df21bd4ce64a9e082f48120eb8925bf6d256b2d09e225173c",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "7c506b9a1d95b3462c96d0bb2d128e481169c28e2cff2837322db297c0d20e9d",
+      "cycle_id": "20211211_00Z",
+      "mask_sha256": "16c4eca11ec82ecba68002862f1c002330d0b0455aff2df64d7e3c31cf30e359",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "93b9e9a1c56b18d40e5dbace291b9f6549268c0700d5286fe1dfd85749bf328a",
+      "records": 1,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "f6a8e36eb19537e269ea94a2d6944fcf45e546b5c12e2b97c5206b19026366ed",
+      "cycle_id": "20220120_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "dc7f913c938ec1ac3bbc91e5b801f4b6c5d1da391e5bfc3445658cbff0bc589c",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "cycle_id": "20220203_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "archive_sha256": "588e483cfe0bae5f11d08cf8eb3cb7d3480cf6fdead5b8eae98967540fb966c4",
+      "cycle_id": "20220301_18Z",
+      "mask_sha256": "16c4eca11ec82ecba68002862f1c002330d0b0455aff2df64d7e3c31cf30e359",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "66dc21b904d1cb923e3133ec3231dcea57777417445cc31c2e484eab47ba4795",
+      "records": 1,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "70eb9a41257547d01951ac8aae269288166e249d7e2bdba412780dffd4fa0a6e",
+      "cycle_id": "20220303_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "2fbab72c41f104ada826145ca36964e75e826b4f00a511bb1d2cd0ccbf2086b8",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "78e2b2190a3c51e8b9d70e87e0724f9073f26bdaae858616aa8a26d9bac26d7d",
+      "cycle_id": "20220317_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "ba93e04311fbbd8fe0820e17d1a1f323dfbebe92c4ac4f821cd356561a2fcf47",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "78e2b2190a3c51e8b9d70e87e0724f9073f26bdaae858616aa8a26d9bac26d7d",
+      "cycle_id": "20220317_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "ba93e04311fbbd8fe0820e17d1a1f323dfbebe92c4ac4f821cd356561a2fcf47",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "64945b30ab59731a90e38b32229f4759551659ce79f7f6cc00198da4a1f84d96",
+      "cycle_id": "20220402_06Z",
+      "mask_sha256": "16c4eca11ec82ecba68002862f1c002330d0b0455aff2df64d7e3c31cf30e359",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "caaa8597e67be38f9f0416710f5e048cbc61082273a6328ed677a15d02be3c62",
+      "records": 1,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "d58769c691661d03d5865f7f8fa21552d6b75b2dd19f84bdf8e87d2eb1f1aa03",
+      "cycle_id": "20220414_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "b148d2040494187a3cf8b707db72c33bd8493561bae5562c43217ee238890e38",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "d2e415ab11afffafbf723f6a82098ffb55c57a605a1eb7a754643693eb79dc0e",
+      "cycle_id": "20220502_00Z",
+      "mask_sha256": "16c4eca11ec82ecba68002862f1c002330d0b0455aff2df64d7e3c31cf30e359",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "0f2f333d2f20912fcdf9230161ea9f3f3215ba3a6908f4fa5971a968cbc40f9b",
+      "records": 1,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "25ee84ac280bda1a06fb7a29e2e86c22cde987aa77d069424f8e7d66928bc149",
+      "cycle_id": "20220512_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "bf7a52978c277387cb02fd030494570b3657ef2a28ac731a316c48afe2419c0c",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "da89e0c0e8a2d53ecc6ec4a336c8e85f726fe04acc15373ef23365055681c50b",
+      "cycle_id": "20220526_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "93cf9e09b84a86ba1da9a09a0f85217afba861e075ef36d2eb48678e457c0b4d",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "4f17a46121540b371c9ba18c40f5eb75607afbd295bb2ca9d6bd82e4a36b6435",
+      "cycle_id": "20220609_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "b908f5dd1234f5c479a8c54a4af40adf2bcb2905096d647a462343e6cfb7d583",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "54e6203816693a2a06655f5339d70d1dc5536ff5609846537104f3e27a2bb0e3",
+      "cycle_id": "20220623_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "6dd2c059c5045857b9aa2b87999323caf47f6463f195569cdd43f6f673370c92",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "7c61e392e3407733e37478f96c535d5e90c017abc1269aab1309c43aa7768575",
+      "cycle_id": "20220707_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "dc693984bbb0b60f45bf73ca13df33cb86dc0e344dc4d5dae8f5c2ebe9f39a29",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "3bdad7fb47601c6e315ff237c6a272e41357b932789a1945130afd95b96f6efb",
+      "cycle_id": "20220721_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "43cd01645ee83ec0cadf74d3d5c849e346ad3c7c792cc5082f0baac2c2329883",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "97a1af16997f860304b97d8f026dcb74f98c75b3ffc54e3b29ddf1a864517f4c",
+      "cycle_id": "20220804_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "7f058ed7d0d5f231ac40db02cd79bc95a36c0174feb2283b488aa5a041558790",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "cycle_id": "20220818_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "archive_sha256": "50bc178897ac10ee3edf5109bcb633ae518c71057f797f951a5a84e14579a331",
+      "cycle_id": "20220915_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "612a0016a66b81ac78b4424fdf5e65eb6511631d610f951721662d53b6bca530",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "8aa88d437b87c6bb6ef4e7b8252872091ec22892574030dcf1b978c674f6d0e7",
+      "cycle_id": "20220929_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "5fc87d3d072802a7646c2757731bffecbd9479baa6fe4b13655013db69aa5fc7",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "da764a65b7c1ac53f41c91ccb24f13d8e9772f69de87d01352341dea8072e1c9",
+      "cycle_id": "20221013_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "ed3bf5a566940fc567f75a31b5d893435147dd59b40cda34046f3332aca6c894",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "d752127162f28570012ebf2f221d453d462c195e959162488d0bebbf91d48949",
+      "cycle_id": "20221027_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "9bd4a99e10efd7b2afce76d0e557b49abbd32acb5a03c7692e2b7862e4bcbec3",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "d6de670d78f943ceb3766fdc1a3c2cba057a383ea58d50c715d4075360dac76b",
+      "cycle_id": "20221110_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "817737c795e19209d7937c73aaf366007068f76d554880c22ce7ce70f6b913cf",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "4bad20e163bda6e367adc1c36b7c132b53812e74f0436c1299a7c3a9989c0478",
+      "cycle_id": "20221124_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "aa817b81eb58595d5a101ca4ae85feb19c689f446fed65d3955ebf90ad177e2f",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "cycle_id": "20221208_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "archive_sha256": "4ed0f0f714703677738b5013499895e1a1e00ef5eaffe0a803c8065880f80435",
+      "cycle_id": "20230105_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "87ba39b2ea0de36178a6aeb6f1d9c096ba59b7f62da69d6a15b626e8ed3125e9",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "b048cd45344a8df3fba6312f50fa19cf0ec601496132d90c67883aac0cf8b711",
+      "cycle_id": "20230126_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "855ca8fca64e65c7e91cb6f5af8af09bc92ee28280afcffa83b81a485b730f9c",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "b048cd45344a8df3fba6312f50fa19cf0ec601496132d90c67883aac0cf8b711",
+      "cycle_id": "20230126_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "855ca8fca64e65c7e91cb6f5af8af09bc92ee28280afcffa83b81a485b730f9c",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "497172e9cb6cada23d33800abac064136a22bb45d16abf0d4dce63e0b8e443d3",
+      "cycle_id": "20230202_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "d577d07d8205e9fdad78ffe13a035d9100aa60b3c84ef884f174de115af49ac3",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "cycle_id": "20230216_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "archive_sha256": "ee9a9cbe8cc808a5472afca184e86fe3ccbd452d8783f52a2cd997701e8ac04a",
+      "cycle_id": "20230302_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "04a6f838672546941cdaa4438b8b4cd22dd143e86f2a9411ca9ff59136e11279",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "02809e44bd16592399fc12667717462aec5786ff8fc3d4aaca1ca86a29918a26",
+      "cycle_id": "20230316_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "c608d4676e4f4a4ea84a87aeb65354fa6b5d6e44ea26bc5dbd9c1c5047a62a0d",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "f5e5adfa4ca2ac32458aab67438c269b5f9d0082e3f35d6dcd48c59ab287b217",
+      "cycle_id": "20230330_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "74e635362657de05e55b9ef34cb54a3209a39558719a774a7048bb34a3c07225",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "cycle_id": "20230413_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "archive_sha256": "671297ba3698cdc4be95fe9ab591c64907e532c464ac59c48802c97bec98b86a",
+      "cycle_id": "20230427_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "3488e8d9185649e74bbb25c92c8e24b09cd0d8d4e4b08abb9192fdcb906f592b",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "cycle_id": "20230511_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "archive_sha256": "d57a467fba5e02556cec94730bfec4a3f36eb1ce535bebf2ad265a091ee1a056",
+      "cycle_id": "20230525_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "de83bec8cb1eaf7a8ba46b305f9f6b72c17ce6a31ac29c00a6098b9039f457a7",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "a2d12527f6c044508e4232ee4156f75f0fa7079cb564ae8e55a22173c2f329dd",
+      "cycle_id": "20230608_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "d7fdf9f62f356961a7a2f0192f0d7351bb69148c398846f4ea57b3488dab4469",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "c7471f0f172192b2c181323194b3044927fce069ab8d35776b263bbd4f19951b",
+      "cycle_id": "20230622_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "8499ddba99cb530444e126fa084dc269ee30a677dae21a01d998f38a52d69f15",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "cycle_id": "20230706_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "cycle_id": "20230720_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "archive_sha256": "99a00f8c0c06af051a8ee560379262fe8cc0d53ed2b909e5ba2eded3a79ca646",
+      "cycle_id": "20230731_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "257e66d708bf8489cce2df4d0c30376784f7cda331254929455957cfd6776d77",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "3009a7f19e2a627575a8cc11187c0f10ac708dff4589f965eb664d60e71cece1",
+      "cycle_id": "20230731_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "5a492661485bb586be0bd08e1f2725809198b017d3504599c6d88e0866245d86",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "37b7e4b2158167ac4f4824ef455fe9eceb1dfc4d05772172205c1b195ab75dda",
+      "cycle_id": "20230731_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "899623e7394ced815eb859a273f156c5472d4ab3d0a1ae59cddb1e9d2d237607",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "8a53c5ef60b87e172ffdd0ab0b5b1f6138fd72ff58b1080eefa47774aec0bb55",
+      "cycle_id": "20230801_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "ed41affa827c74930fd3d320b3b4035c462b6c0e2115051692e501610c9dc4d9",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "3c24167de548c5864140aee9336808f86d181d5dce570e9df91d4e2dad29dc9e",
+      "cycle_id": "20230801_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "c1dc746501d48a5a46e46c3810356734c8b29cd038c5255a42549adec7e42c82",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "24e5d0ddf7e3fa0e68f2cc98ea0b305b986e3aaeaef31b6c60faef85557abb33",
+      "cycle_id": "20230801_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "327f0bf96421152370d050105e646322128489b98389e050a95dc90332fdba88",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "5d7b101e9d5f2dfa086c22d780f1e7e0758b8a52dd28ebfb309eb41a7d5e1afe",
+      "cycle_id": "20230801_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "dfd1b97b9a1e45c9568fa34ce4d2b834054eb925d389f70de6171636b2c532bb",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "e068328adb82b39a28b2ffce0b781df1c2bcaba0772e6a907363a589f460a2b4",
+      "cycle_id": "20230802_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "af4f9c51accb83e412bc68edba5d6cde5e3ae1f7c9b19c01885383832ec5aa8e",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "c493fe22741f3a91971331ae96468268bdee7dc36cf691cf4eeefdc45bfb54f2",
+      "cycle_id": "20230802_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "6c8939380a512ebd2f1a49398788d6cb187f5248314417e0df5cf7ea89bae08b",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "ac1071b500c2f8b27458fd76de48451c30eb43f17275f2c964891bbf37e47bfe",
+      "cycle_id": "20230802_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "03ff24801ff19d693f5784bb55ab4db0d4e99bbd2fb39f830f5dbaa753223652",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "2158a98ca30c4d6c170934791ac13a4bfee49993a04c2b40ff0e47da181b45b6",
+      "cycle_id": "20230802_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "bf3b010f83631fbe63a513d4643609689a58db79c5e543a69b3709e45ebc13d6",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "fb1c288224a945faea1f38079834785093e774accf742637988168347424234c",
+      "cycle_id": "20230803_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "3a3fe28cadb5fb96301f04b2271d3ed89b30bdb0bb4074082db690f08b674790",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "91501b326199c1d867c673a16cd4182cc0f9689d0dcddf0448ee37c5afe6eed6",
+      "cycle_id": "20230803_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "3c7721e9c4aceb36bede8f90a9662392b61881f54ebde163d04148d04897f8cd",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "1b1ade81ab452664d3427bfd52d47ed4c2e59dec2c6da8c3ca9d33cdfbac2639",
+      "cycle_id": "20230803_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "9b8edd4853b2365c15e36f3e2ec35370e93ebd05b170b518811ab653666c8b71",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "a8ded19eaa1bf0dc94a01389943a92d6df2e07b9162f1db8ee45c4a09c09326a",
+      "cycle_id": "20230803_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "80b680c7eed72f9059c6b8dfb3eeff08350b8724a80c5890e1614234c537ac65",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "b43d588208d0cac9eaedc210fa250c7962188a4d31adc299d70cb8970a6e1d14",
+      "cycle_id": "20230804_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "cfd2b445231d04274c09293e684bc8305a1b9cfec085517ac337f93354dbe4c9",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "1714c100708523b07e560c84a08ad6ae2b862c85e0d86dc771cd0e511c0a0357",
+      "cycle_id": "20230804_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "91aa44bce4e0ac83384194f48c6245a2a0ff15fffd1e74fd8cb32ce07881f5ab",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "4c42f4114c119b37e9cd9d025ec7ce9a1d23630b91753caac515dacec2285771",
+      "cycle_id": "20230804_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "afe4fe7fabe8b6a748d3d90847703e57767bad916d8bb5ff1a6fcfdda57ebfea",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "f60dad59024fb8427cf6612fc209e87c2703ceec90a6f194063a7a915e9fb87b",
+      "cycle_id": "20230804_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "d96350c4ff496d467f71a575089081cc6cb9164a00f6b6ba23ba5bb3631bd856",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "1ad3a2d7aebb7d76d84f9c4ca79621b1e3933da7456b548388fd357ee07a994a",
+      "cycle_id": "20230805_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "fcc7e39cbd7341f7ba7d7961ebf2eb662ceed9b8c60a85a1a9978686a2fa49cc",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "8ab8bf5d80e5f9fc8897d869474c691bdd499e650a93a570c5132c82f9f9a96a",
+      "cycle_id": "20230805_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "45a501620070ccd2235757477d7c3684d89f83ff5468b0a9e85e97df2ac3061d",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "0976b20b586e43bb40daed1aa87b1df616b07509fc83647ef69bad7a0ae1cce9",
+      "cycle_id": "20230805_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "9bcf0185b9fe3fb27f4b5aa82bd956e5733e6c3cf0a46d65e127a6f9f6bdce58",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "c34f7a5bdfeaf221a3dbf7a903da1cbc96fc7074cc628931715946a1302af87d",
+      "cycle_id": "20230805_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "e125a779085f258a2f36c01e2685034f0877b8ade9991ef2efa3b858836fda50",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "8ebb1d3ba2509b49a8f4df48b82312f72552c4d1bfa1820c70809179d78f36ff",
+      "cycle_id": "20230806_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "c42413cb1c658baca83e0ad0772629019cf2320475ceddc79771cb4f9a6b08fe",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "bf3254443ae9f8eea989e212eeae6f08ba9018d207985479dd5a445e56260f0f",
+      "cycle_id": "20230806_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "2a49c8106d31d78a99e2f1fd94bf6c6cac8de9c6c824e5f47b34548a16b741b5",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "2555ec61e542d391fc1b9710e8f6d4bc05836b78b8bdc993518c0b140261cd84",
+      "cycle_id": "20230806_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "c73219bcc05602bd1d351f714333d6439225e5d3a094b1be7621f0c9fee554eb",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "5f251012d2e10609667df5f7c2f0977884a840c8408113e5a8e6cff4184a171e",
+      "cycle_id": "20230806_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "1df8e685d0004c8ee3fb98db4f16e9e68e2f507589afef034b8bab4d974ecacb",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "3942bc7dae53fc96a16aa5734904bff1ccb671f4057b856d7b55be3952d72965",
+      "cycle_id": "20230807_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "5e2f810b6e4c9e522f3aea559326e5245b3111959c67dafd8e52a1650fe1efe9",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "7be4b3987c308549c66ff12d04f7be0de49ba89b3c7e4e9965494c3ca5414659",
+      "cycle_id": "20230807_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "dd91d4826fa047f09b6325c9b54b6a6d94bbfbb80941c06ec6735b82d6a64d42",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "5b2cb01217434c1bef61c52fa482d312cbb991d6f8e9ba7af66810d05cd6f92d",
+      "cycle_id": "20230807_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "0c5777a3cdba37927c83585d65e8b3141d2a1de0b8fe729500b26928043cf23e",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "8f7731a2eb16bedb28fd53abdcb220ff566e44053d83bcdcbac85b7e57b70d72",
+      "cycle_id": "20230807_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "b1099e7689392ec12c3c88557ddddc3779c3b13f0e71d48c048991f35bebe7f9",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "3c55803c03816d21019550742b824a85f6ff6248aae662f0f5b493d9445941bb",
+      "cycle_id": "20230808_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "971de01292de2b28205fef7755745266389bfeba367ddaea63d16f649a48e8f8",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "8578acc0bb520eb8024493ae9121fe6e5d306afbab307750d9d3baa1ea708941",
+      "cycle_id": "20230808_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "1f20079d72e2ad8fbf033dab381ce541c317b4d5da32b65a10d89041cad328c7",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "e21ede0fb0cc8ed8f9a53a337c28da90f25d48945f6c806b9d1da194275a7110",
+      "cycle_id": "20230808_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "4bfb66227e5c37777430b21d188efcb9a42954599d75c68626e169736c03bf32",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "5d41899429e6daabc550b232cf72c8f458f9558b8f80a4ea8ddaae0d17f10770",
+      "cycle_id": "20230808_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "ab57a4724fb900fc2783d57ecfc3c3c767035b939fde7142c23fc561528fb345",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "4dcbd7db63835c871e737fc2cf3340ec15ccbae2144561fba745e295048bbc71",
+      "cycle_id": "20230809_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "273d45cf8c002f3feb0292126f254c20416a466393c2c1bb518f56d5d2f7210e",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "23b074660ff461f6db4aabcd5d51b71a10826d86a785e1ab506993e6e90b44dc",
+      "cycle_id": "20230809_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "f37c11555c9864382739179c0e489dd1a030e0ab6dd4c6a07ecd5ed462c0064c",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "a7cbfda24a1562fb20880ab87cf394d1bb8608fb2402bab9fd3d369aa1cb95dd",
+      "cycle_id": "20230809_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "cd8034a772829e5495846f0fa3c41e79d798a80e8f6364b8e8692cfc3422bf25",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "0a2badb1de6a6b6b3fdfe4050394899275acd1b30d1b8fa5d9b64f7a191bca6c",
+      "cycle_id": "20230809_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "19f5d810962edd009d7a8f120eee738c941e55dd986e36fec5bbecfc41361c5e",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "48569078641f5d752ad85b3b09cb5179c128a22e17ca975633ac15fdc496a9f0",
+      "cycle_id": "20230810_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "5ee207f25e0529ebad2912532cb9a571781e850ee4c472d8cb95415d08802d94",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "c35fac948aced02a0c203689e71db40c00bc6ee97d23bda9e23f3408cbe2aa89",
+      "cycle_id": "20230810_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "6ae24d30c5efa4decb13cbe01e2ddc3b7a512eba314d1c0f3edee2f8e88eb7e5",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "f07df7fb70a9c6319ac3c85383f183ae7596910f23f372af27ec5780389ff748",
+      "cycle_id": "20230810_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "bd057ccc22a01b62b1be847fb9ed1cf35ff1c47ce9534c6c07e4f304c6f18aac",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "02ca3fc95f398109c7f823d173267103dfdba9a5384df0432e927824a128a706",
+      "cycle_id": "20230810_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "20668eb5724da995efeec2eb9015beb8d685c9f0b96446915d06c74d5df0d2c3",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "52698300ce627acef288be3d1b82190891de8d7dde53aedd9166123f8e5d6a5a",
+      "cycle_id": "20230811_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "82e2316c9f49f5ca8be2b068d956c6a20024c1d522723f72d8a2da1df8a1fc7c",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "2d6a09e961381ccba451558f307ba5ed1c6bb7d97aceaa016aa50de36dd54f30",
+      "cycle_id": "20230811_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "98ac2202536428aa2d1a2dd3ed570e12fac85a1f312e585a495c19b95880fc83",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "da72e9e3d05d4aa135067fb4470c249585b1e353927048fa19f180de1e41553c",
+      "cycle_id": "20230811_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "de4d37a6ea876871208b981655feaa77d5ab4ec6251c941cf552b510676d4fb8",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "efbeaf79cef1c4576e2034c149dc096a69beac99d728c41d339fc57850eecff0",
+      "cycle_id": "20230811_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "7b3c77ca8242b7c2a0a4c1a0369ee2e60dda4c9ec0bd88244207a2b2fa90dbc1",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "0c4f563973f8ecf96ab8a66601f755a26940937df8f2ea8518faa8ea14b22dac",
+      "cycle_id": "20230812_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "5976591080a2221e69469dbd2ea305bba7f02a801e743288d17fce47be30938d",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "ef5a84bf22329ee3bd8b2ba73f7561bf71430e4da72efca2975076c56f2a7784",
+      "cycle_id": "20230812_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "b17fee3bf67fe5e397ec8f3e98ca5240f5b818b0097dc5fb383313e987f3a5af",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "8cb51f8f2c50ea6db83fcfbddb198251cddcee2d450caa6a6874a16fb9d28bee",
+      "cycle_id": "20230812_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "59036f12938e2abe177eac1a20f8beeae05880919b68aee930d53aaaed29a75a",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "5ef6fa5d57c1593f9cb3049d071077655e50f02c5cc1d11419d3e162254c9201",
+      "cycle_id": "20230812_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "3262f4c4b5d33cc9050189b84e3b519d99708efcf0602e8edb604726e9903d53",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "dc8ab7fa0742e07838260e994b6f6ac178a22525a05e23d18971ca840013c47b",
+      "cycle_id": "20230813_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "d324d86644d8cc7239853125d8e8f350f34ce647c2b722672d2e243fc72a5bb2",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "26fd1042235ec3fc0d720c9cd30a19baef9107154dd562469f8f7be25f228dcf",
+      "cycle_id": "20230813_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "4f5c235cd7245a4ed0f65e86d35f4cd0d6e9addf025dd14fb9596dc4f2a47989",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "40a4d0a075a1c021c33ceb839bbf5a40de36bc11d0564f5be15ed99ad460e85f",
+      "cycle_id": "20230813_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "214928acfd9c034ab4d1ad97bd2939237b8860cb8cac969a25faf2a64f84c045",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "b446098c320cf88d5031bdd1f50136d1f8adaecfe9a368c1f9c12479a1ae9e8d",
+      "cycle_id": "20230813_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "d0739ab7287a019f2a8a8e8546590ed840c602c5e83274001a070f5882984b0a",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "ea7cf5dcee80b95ce821bf1b98780235653d7bf6af7c93be04f4bb6e57529adf",
+      "cycle_id": "20230814_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "f0acc0fd809f187acb7bf3ca38e26f5acf32e3347266ff64abf32df036883038",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "2bf3d1b50bb6d7f8edd3d76b6480bea6ea9b3929bb3c390ccecfb5d5695ce54b",
+      "cycle_id": "20230814_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "eb1ec1d2a69c09c35237c8d346288b0849def46e4cbe4a17a216358bd2c08ae2",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "9a9b3782c2412215bebeacf39b3c391d505ececdbea28241d77b9d4c74691956",
+      "cycle_id": "20230814_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "f8852ccf0c08706a3e615ec3ed7c6acc7a16bfbf9e7526619c5292a8f105470e",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "20c1a0f66fdf0b0ecad10c028fe538d9cfe978359de1147f0d351dca78bba995",
+      "cycle_id": "20230814_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "6d34a74e51941fec57e0a0ad85e8e3620bd24de2a37d048d560b741af10f5d1c",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "bfc7ebc4b0060f6a04033545e5a7ca561984067311aab8b749aea48b35777506",
+      "cycle_id": "20230815_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "f3ce8172be019a0007b4c1af58b790bf4dbd2fc34053c6592526c7918f701c9a",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "dcbddc05fa05baef912f3c91d6018ec4edbdf8d3ee627b4edc9304796a986523",
+      "cycle_id": "20230815_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "682bf04e80e14a9099957c6f10d99bac2615582bb9000c5c09707db78f5a964a",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "1a2c12a49790d84e96c89b1eb90257955551e02f639968f8ba1afe1dbdeac27e",
+      "cycle_id": "20230815_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "4e9a806d8904661c8ef0c5e322cdf319465d120cd22aa972ebd745a65dfcac46",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "67a9e8b0f0a4607257238de27f3d1da837d98752dd8f3c767d384ea876c1c439",
+      "cycle_id": "20230815_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "33fada07ccfffb82298c04eef4ff90671d7ae755d68fc3f6e5c2e212e8246c6d",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "374d75a51a4a8beac9952da13c8997e202fffbd6f05626b835f576adf8516013",
+      "cycle_id": "20230816_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "d727a09a0270a2b5c9c030c1cb444a1b454680e2ad9892f4cf587f4a8754746d",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "fae4334a0509ded478f589bfb3af0132c3c1993185eb9de89e37bdb6a69612ac",
+      "cycle_id": "20230816_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "dd458f93307fc49d931eb1e58f043321de0f6408a4b45af7116cc590c3de32ce",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "ce765e70bb1c17f17df8f3c7adc7c2b545602b4706ce68d8e81d2adb8d845eeb",
+      "cycle_id": "20230816_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "fb2385161d4d5707f124f63267b399fad5a2381f52459c78eea12585dbc3bef3",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "caec94381b4a9943820122fcef55f7bc0a7f2ae447cea45747077daeeafc1d96",
+      "cycle_id": "20230816_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "9fffd54fb1aadba0750ce1be13e07681b925a0fdf474e1dbb3b51ce7dc7fa5e1",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "d42744f0992584ba3b624e67d62c8ce838d37f84ede85c70a44033088afe6992",
+      "cycle_id": "20230817_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "871203c951e806f0d78eb5e6001f6237137148e7c0aab1dcec6db6854fa516d4",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "d42744f0992584ba3b624e67d62c8ce838d37f84ede85c70a44033088afe6992",
+      "cycle_id": "20230817_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "871203c951e806f0d78eb5e6001f6237137148e7c0aab1dcec6db6854fa516d4",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "f4e8aba95b1fa84979d290d9a8033db89dc1ce996ef5cb8f65e69c5273aa64e2",
+      "cycle_id": "20230817_06Z",
+      "mask_sha256": "16c4eca11ec82ecba68002862f1c002330d0b0455aff2df64d7e3c31cf30e359",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "7a2e0b8b5a3606c12d1eb02f5656e7ddd4c777fadeeef327871908bbef4f18b0",
+      "records": 1,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "52c0f8b54a02aa47cab9a0b63ded450a0902c7d0c6af9fb250000effdb2acd53",
+      "cycle_id": "20230817_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "a19045f4fa2ca2344da6c671da0d93e9eb1e5498a4c40387c863c254bd43102f",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "6137221c8f143f408f27843d5d2f8dca3ae87511b5c463901a340c9dca26fe13",
+      "cycle_id": "20230817_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "1ef649296ae27c51084d3d39546b865923fce1dd83883085a5780e8642e90106",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "4d948d1cca5feef6c639740eea1aa76facce32807c5765ddf769b4d400edc7c0",
+      "cycle_id": "20230818_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "f7253ce58944812275e391aa155e19db09c819e5d05083781f6c6f48214d00b6",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "e07f6659244a18c7f397530a9cab9491cc11701cae987bc2623f0e8c516ac862",
+      "cycle_id": "20230818_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "b310ffe9e4ae4c61523f7c30c229fd632faede156ac9a222a04a6d8b580ea00d",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "0f984411cc4fd51411bde912d3cc767b5a56b8f51e5aa99d2c505325db3d988a",
+      "cycle_id": "20230818_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "5d30bed364d7ed6666072b814e3b688b8d2fdd37f8695ed2b858cbb3cb2ede75",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "33adc7d61407dbedec1156d46d89b464d35ec23286b6263044f94b79e6bbfd36",
+      "cycle_id": "20230818_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "b2b05eedc9b7bea22c20e8708bc474b30c5168e10c68c610525f190462f6013f",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "fe1d5a4a6996c12dd1c0433d175f25f352cd9c20cc930e79ee42f433ca258544",
+      "cycle_id": "20230819_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "783e7ba6cfab44738cfd5f82b4369d2d9b1d667c80eb46a88b45e860e2cdaa7c",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "3bfd3434a562656c16fd6cf524119149b02ab9c7531e71724cb4fbc0cccac0e9",
+      "cycle_id": "20230819_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "225d5c90d871b7fd3f4126468d91706d2566d8816932d9b474fe9413c6bab1a5",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "1d6138680b177edfe2aaa15c8fc736c11876081514a38e16c011e80705e90b4a",
+      "cycle_id": "20230819_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "bb2c74bea18332c79b97dba334abdb2611345a203258aaa610efa70ade4c86c2",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "2259462b142f1a3204754c0ecbc9b61a06ec5fe725b4b7ee0fdf86ed251ae358",
+      "cycle_id": "20230819_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "cf97790a3412b229988c556825e2afabd8a59c4afb537f9090bb33d8411f5dd6",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "6a35c85ab5d60049748a580fed8502276d864a92a54a25efcb1c25b6ed5feef0",
+      "cycle_id": "20230820_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "cc53836b1eb8b4140cb6eff227db9e2492cc9aed40583aff1f613d1925311451",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "0c8beedf7fa3112957bbc587cadc77a573aa427441b2472115bb6b07f4154a2f",
+      "cycle_id": "20230820_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "19cb64f3ded9159604418a2d126b7a88f2417842cc3d73e77c1875f6f0e9344e",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "6a74ae92bcdc2ac554cbc8a1f382248c8d8e937886e97d85fb3ff873245d4fc9",
+      "cycle_id": "20230820_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "5da1715af55858bbf991b69d5596107fae119d21f2590db9bcc91687ad51d056",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "35e5d4737f862e8ce2e2cd7b9369e453998477590b81385ffbd44e995d5a7827",
+      "cycle_id": "20230820_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "59c3a75ae3db2c63153ee1b1aad778f119e1bf6acd4dde937eb3590a8a666ac0",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "4ececfcc12a6ee6516920c935d530c4f36c068c1f1852d91573532719d501beb",
+      "cycle_id": "20230821_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "166b180411d889dff434e160f7af2ab3984483ea71be7c48da0a1ba8e27487fe",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "ce6749639c26bbca00f0c797300eaf458e895819b0d5f875d1880fc2f0ac75dd",
+      "cycle_id": "20230821_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "ec602bf6f303a03eb3cc51653a930386a7b29fbcf828dd25a6722c6acba0679a",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "a848fa2c4f4e4523e07128f240adc749f9af028e622f495c7f41a260681f62cb",
+      "cycle_id": "20230821_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "f0df465b14235f3ffa6780e7154f2586ed70b56de37b913e2615f8afab45c63e",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "058db1a64dd0b915ad8dc80dbaa2987a3d5d9e5a7100c793b397e4e6afcb140f",
+      "cycle_id": "20230821_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "484de2be087aad52c793e1fa6d0e563170e67b9972e7368777a61ff66bb3fbe8",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "6ddc0d5866ffb8dd01aaffc079d17165954bcc16ddda204f648f6bdaa6be1af7",
+      "cycle_id": "20230822_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "6c23383321d6a34ecfa79df614ecb0f5a2e03f82adbe2461b4085a8b39e511a9",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "f1b9b4ded2438147bec46894d608bf5b7640c2fbd019ff3040d9fd7c6df36024",
+      "cycle_id": "20230822_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "45c3f97d545768cdb61584be66691b5c1e490fc8ae0d64ab1c136ead088af6eb",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "bc9499a6bf84414b492d15db7e56fe1e7d05d80f8d02559afb16bed4cec56928",
+      "cycle_id": "20230822_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "4a38745d68c393156b3fb2c3354ffedf9063b63236607b73c1c465aff3b3848d",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "519c2a5971d02f5894ba87c31d83939d10bd8658ed57a8f6d8db1a868ed126d9",
+      "cycle_id": "20230822_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "8761f9e297b9d4c5e61e2a20d91f3a582bc40ccec4b0675973f6850859710e17",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "b7810c95c902a7d0a292ee6956779f0c953c8183ac80c3da1065e473e695704b",
+      "cycle_id": "20230823_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "4210572b15ad7f20149fe02ea30c07dc03505bd894f28367eaeead27d605bb5b",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "f696176dc42a0216814e4c303a945cd16a9b559410bb7e9c313a451383733620",
+      "cycle_id": "20230823_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "16f059c075ade3c0a13653d7aa029a64768289be2fd1c14f01ebc20b195f6de2",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "4a16565b14e3f19eebbf106316aa82b61277eb4afa050b369c36e6b037750186",
+      "cycle_id": "20230823_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "77592e89238ba5c8a589544de2e8b8a08290e80fe35ac859a48ef54b190ebcab",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "f15681ad2ef715f25725cdcd4dcdad92865285bcb4d4221939b6baf3e73e8651",
+      "cycle_id": "20230823_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "500c1b1bc7c057da9ed7300f9e0a23fbc8e8d0880277774ea9aa089d7dfe2378",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "c346cdc6e67390e2016dc36aaa678634e0d3be9dcab1e7fa8c0890724cf71829",
+      "cycle_id": "20230824_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "d646d9555bd8b3eb0a290597eb0d2a8595ff914bc4f897e0a54716f9ea000279",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "68fd7be1a6c1a22738363c73e8a9aa3d2ec7b8942b592f12fed1ee53c2c0b753",
+      "cycle_id": "20230824_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "ecd171c669c18b7090ecab88d3ddf904702046b09c3a00317a9f75b1b3d7318d",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "b3b10f433c292962a2ee9fb627892799ae644bcc0f7ee32980b247a167a3446c",
+      "cycle_id": "20230824_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "70edeb47ef9567f24282c389269d006f27f49f2b31897f94c3485ad558c143c2",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "8d22cd9bf3f52490b4777a94306196bfb11560e5b7d01cc90b4790e3affdf2a2",
+      "cycle_id": "20230824_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "dcda987e0ac4e7fb81350d645b65ee36d59a66dee83c6cb79839fe850b676abb",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "082cd6dc5e7b1a34bea1ddcc5bbaf905faf57e14364469d17a17eca3b1286e5b",
+      "cycle_id": "20230825_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "fc1823c2c0b4276479f838a030387ca90bd436757592faaa0c75a7a333192eeb",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "8216673223cc9d54317cb818397a4a5e13e952bec821327cd89945ae2a2c2de0",
+      "cycle_id": "20230825_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "991da9110dd046f0b71a0ce03654a6da75fe1552bbed863376459e585efb59a0",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "c6224c74a402d6572c1c7c641f3b9ee03d46d5d2aa00f255b50f3e25a1c96769",
+      "cycle_id": "20230825_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "4031bcd6fb532317a31588fa04401a7ffa2105a911db9db6fd10de62e10575ab",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "f8cc8f77240db3c11eda7ecb4aee54c67cd63f3e769ada0de9677f948aafd797",
+      "cycle_id": "20230825_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "b415b11cdc7451ee3135cea76d1c1836aac6486839e0b356128221a386b17b50",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "8c404b989fb1c2446845fa1b0e173fb94fd704dd932829826e7fdf53afe43004",
+      "cycle_id": "20230826_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "d6950e67a42d5aef9c74747be13b31bebf69993ab23e57d441b2a781c5fa7090",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "8a91c1e651c26ec500a3b5da756cda54f884335728e0630dd377b475a911ac9b",
+      "cycle_id": "20230826_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "4ec7d4c44680f5a45c84914d2b995c381da2ba9fdb797a00ed17f5c93aae86c2",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "47959917df80fa754dc9cc2a46536858a750b6becd31a37fa478edc5ae3045ec",
+      "cycle_id": "20230826_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "84e15ffa40a5f278cf690b7900fb5c975914a065bab92e959ec9aa8abc16a87b",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "f33cd291b47a3724f314413e915426ceaf879e9a80c57da7737d8d1913ec9127",
+      "cycle_id": "20230826_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "15b4845e7d6c94f0007aa67cefda7faaac42d2bdd9542431dce718b9a5679d12",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "8e1738e50e0bb05ee081d92af8498c502b1e7441be0c1432aaed9e7a1fe59d3f",
+      "cycle_id": "20230827_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "10e471ec13099a754d4087a859a53625aaddd08a2dab2d52ea0cda40d7758762",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "315fd8181c63afb2c76dc3e51139fb10d61fe21015343c9a65fca23fce063fcf",
+      "cycle_id": "20230827_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "d5f4c6d7672837b2101054bbcfdef94d8b2014cf66ee7cc19f75a1ecbd79c466",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "b3430fe866d9f0f13b8a2bb4ede357a8e2c0eff5c7f97406c5e3d62efbe6bf5a",
+      "cycle_id": "20230827_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "abd7d8533e31a62ecb4f81bb4738a110463248b14119649bf4cd8f3d9b4b0153",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "2429550578b928dad053d80d3874c84e190b300c2b55fab61c990dd2cb304e74",
+      "cycle_id": "20230827_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "ae06a2d138b2679bd5cb220ef60a01754f425c0a47b6855e1effde5fadbc9d3b",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "4e0df359d9be568acb6b15fab67e4c07b173cbdbd8d7e29d652d1016e27299ce",
+      "cycle_id": "20230828_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "9103312649d4412b530ea085cfba278423105a8a9a4b051590b7e2b539a84242",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "9a7fb57c75b9d7629082dc9561e0ac510f91af2f63871a4f6640ef2f9298205e",
+      "cycle_id": "20230828_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "7e9da3683d0b72fe635eed0034c08552b73216664a06992ccc184934b056a8d9",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "25fd93e7b263eb94fa767e9128343c9c41dd270d0b81a2003dff2b0f13e67708",
+      "cycle_id": "20230828_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "f8997c81ebc5dbf3dde085c12cdcc4b54e1470af85bbeaeda5e819b890654b9a",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "221186c7e986875555e7fae18d86408cfda699479a17693a198d28c16115601c",
+      "cycle_id": "20230828_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "5d24314223d7f849a8acb23d9db69befadb3d56ad27d0d1f722dfcfe83180c59",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "a5788da3e656c3d366fcf4d83f7496781719ad5c6750c286b6b12d5ab67328da",
+      "cycle_id": "20230829_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "c122be2afc87bf3f5a2b1b33a0475c525b62b5793292f4a84605039784053dfd",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "5c8c0364e326334a4be4e718bb749d5ccee05925decc2895e3c23fe2fff08d73",
+      "cycle_id": "20230829_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "73250b38e5b1fd5be8354bb4c374d1cd574c03b85cebae0243427cef6bd399db",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "fee1371742233b4aeb126e46a6a23c142ec3e9e65b31e5c7242a3a061865d7bf",
+      "cycle_id": "20230829_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "75fe0eb3ef0b435a9458c7832ec3874a69ca5609273a4a2a50063d90fa4b979d",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "8a5873c7142404f6ff7b6d67c2df075b54c5fcf23afd14519a0a13e5d048ba14",
+      "cycle_id": "20230829_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "b103893644ccfba543c7636b1d0059e1ad2b8bb77b7c6bee6cf5db9745ca2e3b",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "21b34db8af7d399a28a0b1245d9cd3dd3dd94c204a6803745ee284a7792dc024",
+      "cycle_id": "20230830_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "0efea08bad99c85df8a454ecb636fd52fba94c2777ee85504f796a5e4a958524",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "15a74737ad9f18f80b01b3b81220f54c76de616f9ea216d39c900ce84496bee8",
+      "cycle_id": "20230830_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "94079c41d44788e90bd8e107b473e14093b0cc87ce73dedf6346d739e2726e4c",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "498f34dce44af83f276318af13dfb9ee596e19f881d36a15be7ec5834f89d11d",
+      "cycle_id": "20230830_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "6b214edba87466539265f0e8b5feb65fd6cee058d58c8286697ce899921b728a",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "b673bf018eaecfc1041832078e93da1af77d0049f786e94b04ee87c91e15be56",
+      "cycle_id": "20230830_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "efc1d1a95bb3c2193800ebe40e30d5f946a07e4400e45c638ca408ebc8f51465",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "64e49e369e4d36907892eb0503fe23be7fab9f35b600274c6908aa1101218567",
+      "cycle_id": "20230831_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "a7319ee98f6cde826dc2e9f976aecca39bcf3464987436b23c7cec726f4bd843",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "c839179d53ad6152305c7a95571b3c8375526dba00a43335da273faccc4bef9e",
+      "cycle_id": "20230831_06Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "72211fe9847d0c23dc3e8f44bf5e85cd6b7231f2d95dd477649fdcfa5c0ead23",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "495287a79a4d5d3758e8b21ace5c94fe0faad21305227e5ba5e501fb342f6b52",
+      "cycle_id": "20230831_12Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "a48a62825918dea1d013b4e7f48c746d5b79fc2bd11f0bb79e04009304a2c0d0",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "2f9bb6c149f0a746ec59b46d242a78ccbf198313d03d36721a14f46ed4ee3469",
+      "cycle_id": "20230831_18Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "aa24572e1fb206866993ae792aeec4cd3429dc3a3f985aaf176b92d0d3eeeffb",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "70ed1280ed968df867e1f488b1f4f00ad82243e3d05efddb00a2314950bbeb4c",
+      "cycle_id": "20230914_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "584e0e7ebbe36fdb61d30305b29306b65addc0994f933dbbf501023f437d209a",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "0994c4389d29286d86570d5a972cb3d060291e64662324a93f7fad79e5310a2e",
+      "cycle_id": "20230928_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "ff507d11044a7a7799dbd7e0c1651bb119045d0bd321542b015ea6bb548a762a",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "1791499abbe649d70c4efbdf26d27f8d5b195b79bc5fa2a4129681fb011dd075",
+      "cycle_id": "20231012_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "e88eda3324029d84c4102e6fa8072a64dd0251bc4461a83a5914646dd2b7ba35",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "36533d8be1f3ac03caadc5083b82221a3d2a3b6305091b789be9e364ab43f856",
+      "cycle_id": "20231026_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "c05d6a9b4dc4c281896bd72d8009291983b5a88b0484290f6d14d923caf22bea",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "cycle_id": "20231109_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "archive_sha256": "b7be98bfdbd43fac751d8320a68277f8e39b3350ad6f2f9e199e0150f809d89b",
+      "cycle_id": "20231207_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "7ac8b191ad4db8922405ffa99c8f320898e3bac7645fe02a7f6f8ef9ea6ca221",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "cycle_id": "20231221_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "cycle_id": "20240104_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "archive_sha256": "ead5f27fa463407427b9da5bee7666b6cb7bb5f2bec326d40a758b3d91aa58cc",
+      "cycle_id": "20240118_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "c1588f9d24430554176cde7ba8fc4ae0749d53b56eea66148b2ab84897944d0b",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "cycle_id": "20240201_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "archive_sha256": "a9446b8859baad5133f7dec76e811a8651dff676c20fdde2f7bf020f62f5e511",
+      "cycle_id": "20240229_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "1eefced0cae4430d2ecd5f680b059c75275b73e487e87e7ae171f2230923aa30",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "a9446b8859baad5133f7dec76e811a8651dff676c20fdde2f7bf020f62f5e511",
+      "cycle_id": "20240229_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "1eefced0cae4430d2ecd5f680b059c75275b73e487e87e7ae171f2230923aa30",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "ecb2f198b34ada2e01c238449bcc535d682b5bb60999e07c0fda4cd714fb0cc3",
+      "cycle_id": "20240314_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "289689a47a60f8cce36a7cbd3f2535c1cc88ab78734da366db87aa6a15fa437e",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "78eab10d0edf3bd211990c2a3d40998936a379a5d423f1aa765c080e760d27a5",
+      "cycle_id": "20240328_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "9a4a854e2ee6c31e16951a0b30e475ae98928fe5934d13e24317dee474f3e563",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "d4fbd50736c43dd997494b7282c6046bb55cfff9f35dfab0d300611122e7e19b",
+      "cycle_id": "20240411_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "55c8c8cfb8cd31d99c44f3f6dd39ce4d88e12392282dfa91b184aee9c4d7fea6",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "cycle_id": "20240426_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "cycle_id": "20240509_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    },
+    {
+      "archive_sha256": "f7ce176824a85e78c85f0c08077b0831e86fb578dde150362794bfc4d51ccdb1",
+      "cycle_id": "20240606_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "434b993d0c7fdd6735f56730bbca59d4dfc9aeaebc9c6b32319ee79354131f6c",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "6a7fe23d951a50eafda65e9ecabca33a8848bdc0f0c65b8835aa0790a983703e",
+      "cycle_id": "20240620_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "11c7ca994d79d258197396be30c4dae1e84785f251d7c52ca651eab04b778b08",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "archive_sha256": "bc7c6267a90ea2ead9061fa9676b710bde24e959c2a47a722e61b44d081eb33e",
+      "cycle_id": "20240704_00Z",
+      "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+      "metadata_recovered_fields": 0,
+      "phase": "NUMERIC_FORMAT",
+      "raw_values_sha256": "24b3f931785b4273e857b2895fb78040d7e171026b01d7a73487cd60f81c0906",
+      "records": 145,
+      "route": "ORIGINAL_COMMIT",
+      "status": "PASSED_BOUNDED_NUMERIC_CHECKS"
+    },
+    {
+      "cycle_id": "20240718_00Z",
+      "route": "NO_LOCAL_AUTHORITY",
+      "status": "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE"
+    }
+  ],
+  "counts": {
+    "FAILED_OR_IDENTITY_MISMATCH": 2,
+    "PASSED_BOUNDED_NUMERIC_CHECKS": 196,
+    "SKIPPED_NO_LOCAL_COMMIT_OR_PINNED_BUNDLE": 35
+  },
+  "elapsed_seconds": 4.555050167022273,
+  "execution": {
+    "USGS_or_protected_observations_read": 0,
+    "network_requests": 0,
+    "new_downloads": 0,
+    "optimizer_updates": 0,
+    "source_files_modified": false
+  },
+  "implementation_sha256": {
+    ".local/preflight_resident_formats.py": "e3172d75d4f9d3fde07e3cfe74e1c4761031d5574ee09946835150c5b91d94fd",
+    "src/hydra_directflow/local_data.py": "ed999095fde7e0825426ab499b8a876a25bb04ed752b94d09cc0fc9634a47084",
+    "src/hydra_directflow/multicycle.py": "6028dbd8374e28a5cfbaea0108ebbdf770e1da66473a111b78f29c5a5a5e1879"
+  },
+  "limits": {
+    "rss_bytes": 4294967296,
+    "wall_seconds": 300
+  },
+  "peak_rss_bytes": 521699328,
+  "schema": "hydra-resident-development-format-preflight/v1",
+  "scope": "RESIDENT_APPROVED_SOURCES_ONLY_NOT_WHOLE_CORPUS_QUALIFICATION"
+}
