@@ -178,7 +178,7 @@ def estimate_workflow(measurement, *, train_cases, validation_cases, epochs, tri
 def _implementation():
     package = Path(__file__).resolve().parent
     return {name: sha(_local_bytes(package / name, 256 * 1024)) for name in
-            ("pipeline_timing.py", "multicycle.py", "local_data.py", "lineage.py", "contract.py", "reference.py", "telemetry.py",
+            ("pipeline_timing.py", "multicycle.py", "local_data.py", "lineage.py", "quality.py", "contract.py", "reference.py", "telemetry.py",
              "engineering.py", "models/directflow.py", "models/mamba2_math.py")}
 
 

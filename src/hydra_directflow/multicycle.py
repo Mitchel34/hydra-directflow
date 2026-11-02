@@ -20,6 +20,7 @@ import numpy as np
 
 from .contract import DevelopmentProtocol, TensorSpec
 from .lineage import availability_view, read_authenticated_bundle
+from .quality import STRICT_A, quality_admitter, quality_policy_binding
 from .local_data import (
     GAUGES, FEATURE_GROUPS, GRID_SHA256, USGS_MANIFEST_SHA256, WEIGHTS_SHA256,
     DEVELOPMENT_QUALIFICATION, CFS_TO_CMS, LocalCycle, basin_reduce, bounded_npy,
@@ -225,7 +226,10 @@ def load_usgs_windows(paths, manifest_path, windows):
             exact += 1
             value = row["discharge_cfs"]
             usable = row["numeric_valid"] and type(value) in (int, float) and math.isfinite(value) and value >= 0
-            flags = tuple(json.loads(row["source_qualifiers_json"]))
+            original_flags = json.loads(row["source_qualifiers_json"])
+            require(type(original_flags) is list and all(type(flag) is str for flag in original_flags),
+                    "Original USGS qualifiers must be a JSON array of strings")
+            flags = tuple(original_flags)
             observations.append(Observation(site, t, None, float(value) * CFS_TO_CMS if usable else None,
                                             flags, "usgs-wire-sha256:" + row["source_wire_sha256"]))
         metadata.append({"month": month, "sha256": entry["sha256"], "bytes": entry["bytes"],
@@ -242,12 +246,14 @@ def _metadata_record(cycle_id, cycle, record):
     return json.dumps(result, sort_keys=True, separators=(",", ":"), allow_nan=False)
 
 
-def assemble_cases(cycles, reduced, observations, origins, protocol):
+def assemble_cases(cycles, reduced, observations, origins, protocol, *,
+                   input_quality_policy=STRICT_A, target_quality_policy=STRICT_A):
     """Pure case assembly; no files or fitted transforms. Missing cases survive."""
     require(protocol == DevelopmentProtocol(history_hours=protocol.history_hours),
             "Only the fixed development candidate protocol is implemented")
     policy = AvailabilityPolicy("development_simulated_lag_2h_v1", "retrospective_simulated", 7200)
-    strict_a = lambda flags: flags == ("A",)
+    admit_input = quality_admitter(input_quality_policy)
+    admit_target = quality_admitter(target_quality_policy)
     metadata, metadata_indices, row_indexes = [], {}, {}
     for cycle_id, cycle in sorted(cycles.items()):
         row_indexes[cycle_id] = {(r["group"], r["lead"]): i for i, r in enumerate(cycle.records)}
@@ -284,9 +290,9 @@ def assemble_cases(cycles, reduced, observations, origins, protocol):
         for site_index, site in enumerate(GAUGES):
             h = history_window(observations, site=site, origin_anchor=origin, cutoff=origin,
                                lookback_hours=protocol.history_hours, history_lag_hours=2,
-                               policy=policy, admit_quality=strict_a)
+                               policy=policy, admit_quality=admit_input)
             t = target_window(observations, site=site, origin_anchor=origin,
-                              horizons_hours=protocol.horizons_hours, admit_quality=strict_a)
+                              horizons_hours=protocol.horizons_hours, admit_quality=admit_target)
             chosen = latest_weather_run(runs_by_site[site], cutoff=origin, origin_anchor=origin,
                          policy=policy, horizons_hours=protocol.horizons_hours,
                          allow_older_extended_cycles=True)
@@ -342,9 +348,17 @@ def assemble_cases(cycles, reduced, observations, origins, protocol):
 
 
 def build_multicycle_development(*, archive_specs, qualified_index_path, weights_path,
-                                usgs_paths, usgs_manifest_path, origins_utc, history_hours=24):
-    """Return private arrays and a portable aggregate preprocessing receipt."""
+                                usgs_paths, usgs_manifest_path, origins_utc, history_hours=24,
+                                input_quality_policy=STRICT_A, target_quality_policy=STRICT_A):
+    """Return private arrays and a portable aggregate preprocessing receipt.
+
+    Opt in to PRIMARY_APPROVED_A_OPTIONAL_R_V1 separately for input history and
+    targets. Defaults preserve the exact-A engineering behavior. Source flags
+    stay original; missing targets are never filled or used as model inputs.
+    """
     started = time.monotonic()
+    quality = quality_policy_binding(input_quality_policy=input_quality_policy,
+                                     target_quality_policy=target_quality_policy)
     protocol, origins = validate_request(archive_specs, origins_utc, history_hours)
     stages = {}
     mark = time.monotonic()
@@ -364,7 +378,8 @@ def build_multicycle_development(*, archive_specs, qualified_index_path, weights
     observations, partitions = load_usgs_windows(usgs_paths, usgs_manifest_path, windows)
     stages["usgs_load"] = time.monotonic() - mark
     mark = time.monotonic()
-    arrays = assemble_cases(cycles, reduced, observations, origins, protocol)
+    arrays = assemble_cases(cycles, reduced, observations, origins, protocol,
+                            input_quality_policy=input_quality_policy, target_quality_policy=target_quality_policy)
     stages["case_assembly"] = time.monotonic() - mark
     stages["total"] = time.monotonic() - started
     complete = arrays["eligibility_reason"] == "COMPLETE"
@@ -378,7 +393,7 @@ def build_multicycle_development(*, archive_specs, qualified_index_path, weights
         "origin_count": len(origins), "case_count": len(complete), "complete_case_count": int(complete.sum()),
         "origins_utc": [iso(origin) for origin in origins], "gauges": list(GAUGES),
         "history_hours": history_hours, "horizons_hours": list(protocol.horizons_hours),
-        "quality_policy": "STRICT_EXACT_A_ONLY_DEVELOPMENT", "availability_policy": "RETROSPECTIVE_SIMULATED_LAG_2H",
+        **quality, "availability_policy": "RETROSPECTIVE_SIMULATED_LAG_2H",
         "history_end": "C_MINUS_2_HOURS_INCLUSIVE", "max_soil_age_hours": protocol.max_soil_age_hours,
         "missing_case_policy": "RETAIN_REQUESTED_CASES_WITH_MASKS_NO_SILENT_DROP",
         "eligibility_counts": dict(Counter(arrays["eligibility_reason"].tolist())),
@@ -393,5 +408,6 @@ def build_multicycle_development(*, archive_specs, qualified_index_path, weights
         "qualification": "Development engineering only; approximate independent non-nesting basins; local candidates only; no historical real-time availability, global archive coverage, trained model or forecast-skill claim",
     }
     report["case_source_digest"] = digest({"case_ids": arrays["case_id"].tolist(), "weather_cycles": arrays["source_cycle"].tolist(),
-                "soil_cycles": arrays["soil_source_cycle"].tolist(), "history_hours": history_hours, "sources": report["sources"]})
+                "soil_cycles": arrays["soil_source_cycle"].tolist(), "history_hours": history_hours,
+                "quality": quality, "sources": report["sources"]})
     return arrays, report

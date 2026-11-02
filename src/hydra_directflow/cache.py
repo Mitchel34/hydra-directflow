@@ -28,6 +28,7 @@ from .local_data import (DEVELOPMENT_QUALIFICATION, GAUGES, USGS_MANIFEST_SHA256
 from .multicycle import (INDEX_SHA256, INDEX_BYTES, SELECTION_SCOPE, _months_for_windows, assemble_cases,
                          load_authenticated_cycle, load_usgs_windows, qualified_cycle_rows, validate_request)
 from .reference import ASSESSMENT_START, Observation, digest, require
+from .quality import STRICT_A, quality_admitter, quality_policy_binding
 from .telemetry import canonical
 
 MAX_OBJECT_BYTES = 16 * 1024**2
@@ -88,7 +89,7 @@ def _sync_directory(path):
 
 def implementation_identity():
     root = Path(__file__).resolve().parent
-    names = ("cache.py", "lineage.py", "multicycle.py", "local_data.py", "contract.py", "reference.py", "telemetry.py")
+    names = ("cache.py", "lineage.py", "multicycle.py", "local_data.py", "quality.py", "contract.py", "reference.py", "telemetry.py")
     return {name: _sha(_read(root / name, 256 * 1024)) for name in names}
 
 
@@ -349,7 +350,7 @@ class CachedDevelopmentSession:
                 month = Path(entry["path"]).stem
                 require(month not in self.partitions, "Duplicate source month in manifest")
                 self.partitions[month] = {"sha256": entry["sha256"], "bytes": entry["bytes"]}
-            self.policy = {"geometry": DEVELOPMENT_QUALIFICATION, "quality": "PRESERVE_NATIVE_FLAGS_STRICT_A_AT_CASE_ASSEMBLY",
+            self.policy = {"geometry": DEVELOPMENT_QUALIFICATION, "quality": "PRESERVE_ALL_NATIVE_FLAGS_ADMISSION_AT_CASE_ASSEMBLY",
                            "units": "PHYSICAL_UNSCALED", "availability": "UNKNOWN_HISTORICAL_PUBLICATION_SIMULATED_LAG_2H"}
             self.opened = True
             self.initialization_seconds = time.monotonic() - started
@@ -395,7 +396,10 @@ class CachedDevelopmentSession:
         self.months[month] = result
         return result
 
-    def build(self, *, origins_utc, history_hours=24, archive_cycle_ids=None):
+    def build(self, *, origins_utc, history_hours=24, archive_cycle_ids=None,
+              input_quality_policy=STRICT_A, target_quality_policy=STRICT_A):
+        quality = quality_policy_binding(input_quality_policy=input_quality_policy,
+                                         target_quality_policy=target_quality_policy)
         require(self.opened, "Use the session as a context manager")
         selected = list(self.specs) if archive_cycle_ids is None else list(archive_cycle_ids)
         require(all(cycle in self.specs for cycle in selected), "Unknown session cycle selected")
@@ -418,7 +422,8 @@ class CachedDevelopmentSession:
             month_keys[month] = key
         month_seconds = time.monotonic() - mark
         mark = time.monotonic()
-        arrays = assemble_cases(cycles, reduced, observations, origins, protocol)
+        arrays = assemble_cases(cycles, reduced, observations, origins, protocol,
+                                input_quality_policy=input_quality_policy, target_quality_policy=target_quality_policy)
         assembly_seconds = time.monotonic() - mark
         complete = arrays["eligibility_reason"] == "COMPLETE"
         report = dict(schema="hydra-cached-development/v1", status="COMPLETED_WITH_EXPLICIT_MASKS" if not complete.all() else "PASSED_COMPLETE_DEVELOPMENT_CASES",
@@ -434,17 +439,22 @@ class CachedDevelopmentSession:
                       sources=dict(qualified_index_sha256=INDEX_SHA256, qualified_index_bytes=INDEX_BYTES,
                                    cycles=source_receipts, usgs_manifest_sha256=USGS_MANIFEST_SHA256, usgs_partitions=monthly_receipts,
                                    candidate_weights_sha256=WEIGHTS_SHA256), implementation_sha256=self.code,
-                      policy=self.policy, execution=dict(network_requests=0, cloud_jobs=0, optimizer_updates=0,
+                      policy=self.policy, **quality, execution=dict(network_requests=0, cloud_jobs=0, optimizer_updates=0,
                                                          protected_assessment_values_decoded=0, source_files_modified=False),
                       qualification="Development only; private immutable derived stores; original candidate geometry and provenance remain unchanged")
         report["case_source_digest"] = digest(dict(case_ids=arrays["case_id"].tolist(), weather_cycles=arrays["source_cycle"].tolist(),
-                                                 soil_cycles=arrays["soil_source_cycle"].tolist(), history_hours=history_hours, sources=report["sources"]))
+                                                 soil_cycles=arrays["soil_source_cycle"].tolist(), history_hours=history_hours,
+                                                 quality=quality, sources=report["sources"]))
         return arrays, report
 
 
 def build_cached_development(*, archive_specs, qualified_index_path, weights_path, usgs_paths,
-                             usgs_manifest_path, origins_utc, history_hours=24, cache_directory, repair_corrupt=False):
+                             usgs_manifest_path, origins_utc, history_hours=24, cache_directory, repair_corrupt=False,
+                             input_quality_policy=STRICT_A, target_quality_policy=STRICT_A):
+    quality_admitter(input_quality_policy)
+    quality_admitter(target_quality_policy)
     with CachedDevelopmentSession(archive_specs=archive_specs, qualified_index_path=qualified_index_path, weights_path=weights_path,
                                   usgs_paths=usgs_paths, usgs_manifest_path=usgs_manifest_path, cache_directory=cache_directory,
                                   repair_corrupt=repair_corrupt) as session:
-        return session.build(origins_utc=origins_utc, history_hours=history_hours)
+        return session.build(origins_utc=origins_utc, history_hours=history_hours,
+                             input_quality_policy=input_quality_policy, target_quality_policy=target_quality_policy)

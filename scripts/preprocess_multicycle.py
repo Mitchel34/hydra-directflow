@@ -67,16 +67,20 @@ def validate_outputs(request, tensor_path, report_path):
 
 
 def main():
+    from hydra_directflow.quality import STRICT_A, PRIMARY_APPROVED
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--request", type=Path, required=True)
     parser.add_argument("--tensor-output", type=Path, required=True)
     parser.add_argument("--report", type=Path, required=True)
+    parser.add_argument("--input-quality-policy", choices=(STRICT_A, PRIMARY_APPROVED), default=STRICT_A)
+    parser.add_argument("--target-quality-policy", choices=(STRICT_A, PRIMARY_APPROVED), default=STRICT_A)
     args = parser.parse_args()
     request = load_request(args.request)
     tensor, receipt = validate_outputs(request, args.tensor_output, args.report)
     from hydra_directflow.multicycle import build_multicycle_development
     import numpy as np
-    arrays, report = build_multicycle_development(**request)
+    arrays, report = build_multicycle_development(**request, input_quality_policy=args.input_quality_policy,
+                                                 target_quality_policy=args.target_quality_policy)
     tensor.parent.mkdir(parents=True, exist_ok=True)
     receipt.parent.mkdir(parents=True, exist_ok=True)
     with tensor.open("xb") as stream:
@@ -89,6 +93,7 @@ def main():
         for path in (Path(__file__).resolve(),
                      Path(__file__).resolve().parents[1] / "src/hydra_directflow/multicycle.py",
                      Path(__file__).resolve().parents[1] / "src/hydra_directflow/local_data.py",
+                     Path(__file__).resolve().parents[1] / "src/hydra_directflow/quality.py",
                      Path(__file__).resolve().parents[1] / "src/hydra_directflow/lineage.py",
                      Path(__file__).resolve().parents[1] / "src/hydra_directflow/contract.py",
                      Path(__file__).resolve().parents[1] / "src/hydra_directflow/reference.py")}

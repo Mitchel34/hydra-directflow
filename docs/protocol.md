@@ -54,6 +54,22 @@ and may differ. A complete-input smoke rejects incomplete input cases; it must
 not count model-boundary numerical placeholders as observed values. Existing
 masked tensor encoding is only a network representation.
 
+The confirmed primary observation rule is implemented as
+`PRIMARY_APPROVED_A_OPTIONAL_R_V1` in `quality.py`: A must be present and every
+flag must be A or R. P, e, unknown, empty and malformed qualifiers are rejected;
+order and repeated original flags are preserved. The multicycle and cached APIs
+accept separate `input_quality_policy` and `target_quality_policy` arguments.
+Their historical default stays `STRICT_EXACT_A_ONLY_DEVELOPMENT` so old engineering
+recipes retain their meaning. A scientific caller must explicitly select the
+confirmed primary policy. Quality admission does not decide missing-input
+eligibility, fill a target or enable protected scoring.
+
+Persistence is excluded from the active DirectFlow experiment following the
+user's reported advisor Zoom guidance. Historical helper code and dated receipts
+are retained as provenance, not as an enabled baseline. The learned discharge-only
+control remains. Delays/outages must be considered for every model using USGS
+history; excluding persistence does not remove that dependency.
+
 ## Development and protected assessment
 
 Development folds require every target to remain inside the same half-open split

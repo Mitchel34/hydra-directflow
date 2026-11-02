@@ -1,0 +1,27 @@
+{
+  "baseline_commit": "a4d3fd1f542af3d619485168f20573fbffdd5d63",
+  "cloud_jobs": 0,
+  "confirmed_policy_exercised_on_local_fixture": true,
+  "created_at_utc": "2026-11-02T17:59:04.380602+00:00",
+  "historical_default": "STRICT_EXACT_A_ONLY_DEVELOPMENT",
+  "independent_input_target_policies": true,
+  "new_quality_tests_passed": 16,
+  "new_real_optimizer_updates": 0,
+  "new_scientific_source_downloads": 0,
+  "original_qualifiers_preserved": true,
+  "primary_policy": "PRIMARY_APPROVED_A_OPTIONAL_R_V1",
+  "protected_values_decoded": 0,
+  "schema": "hydra-primary-quality-release/v1",
+  "source_hashes": {
+    "scripts/preprocess_multicycle.py": "e6683b620d22292f31f2f4319ca1e7eb27433e9cf082cef78e3d6cf9b1607ccd",
+    "src/hydra_directflow/cache.py": "e6418b5a91ee794356fd0a8d723713529abb84a184f32964c8233507a213b38f",
+    "src/hydra_directflow/multicycle.py": "270cae162b3c73cdde1b2bfb02c07faf7d113b8014133a484b906fda93aa919a",
+    "src/hydra_directflow/pipeline_timing.py": "27c4eea8a9276fee3ae4a8cc3b8f2e94997ba7d235e2ff3393aefd3fa29bf6d6",
+    "src/hydra_directflow/quality.py": "d978db5fa454e040b92544bb9dbbabe332cb575c56d150a2e616e172c33fec31",
+    "tests/test_quality.py": "0904c91cf23ede0dcceac58f876c4d8b6e766fa302ceffa305ddd81802f9d9f7"
+  },
+  "targets_never_filled": true,
+  "test_log_sha256": "0f4eabd271f5ef0298baa591cd2820cd3225da543a0c18f30481030d19192511",
+  "tests_passed": 233,
+  "unit_optimizer_updates": 0
+}

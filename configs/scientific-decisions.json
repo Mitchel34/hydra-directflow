@@ -7,17 +7,36 @@
     "timezone": "America/Chicago",
     "scope": "Primary experiment USGS observations",
     "required_flag": "A",
-    "permitted_additional_flags": ["R"],
-    "excluded_flags": ["P", "e"],
+    "permitted_additional_flags": [
+      "R"
+    ],
+    "excluded_flags": [
+      "P",
+      "e"
+    ],
     "unrecognized_flags_admitted": false,
     "retain_original_qualifiers": true,
     "target_filling": false,
-    "implementation_status": "CONFIRMED_FOR_NEXT_SCIENTIFIC_ADAPTER_CHUNK",
-    "historical_engineering_receipts_rewritten": false
+    "implementation_status": "IMPLEMENTED_TESTED_EXPLICIT_INPUT_AND_TARGET_POLICIES",
+    "historical_engineering_receipts_rewritten": false,
+    "policy_id": "PRIMARY_APPROVED_A_OPTIONAL_R_V1",
+    "historical_engineering_default": "STRICT_EXACT_A_ONLY_DEVELOPMENT"
   },
   "remaining_protocol_choices_frozen": false,
   "scientific_training_enabled": false,
   "protected_assessment_scoring_enabled": false,
   "additional_source_downloads_authorized": false,
-  "paid_cloud_compute_authorized": false
+  "paid_cloud_compute_authorized": false,
+  "persistence_baseline": {
+    "status": "EXCLUDED_FROM_ACTIVE_STUDY",
+    "decision_date_local": "2026-11-02",
+    "source": "USER_REPORTED_ADVISOR_ZOOM_GUIDANCE_NOT_TRANSCRIPT_VERIFIED",
+    "rationale": [
+      "Observation delivery delays",
+      "Gauge damage or outages during rare high flows"
+    ],
+    "scope": "No persistence baseline in model selection, evaluation, figures, or active poster narrative",
+    "historical_receipts_preserved": true,
+    "learned_discharge_only_control_retained": true
+  }
 }

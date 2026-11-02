@@ -51,8 +51,9 @@ need review; they do not change `configs/development.json` or enable scoring.
   and optional R flags for the primary experiment; exclude provisional and
   estimated observations. Preserve every flag and never fill targets. Decide
   input missingness admission separately from label masking. The next adapter
-  chunk will implement this rule; historical exact-A engineering receipts stay
-  unchanged. The decision is recorded in `configs/scientific-decisions.json`.
+  adapter now implements this rule through explicit input and target policy
+  arguments; historical exact-A engineering receipts stay unchanged. The
+  decision is recorded in `configs/scientific-decisions.json`.
 - Retain the explicit two-hour availability scenario, complete single-run H18
   weather selection, independent soil state and the existing approximate basin
   weights with their limitations. Final spatial admission is a documented study
@@ -61,8 +62,9 @@ need review; they do not change `configs/development.json` or enable scoring.
   output constraints and validation selection metric before full fits. A simple
   standardized-discharge MSE baseline is a candidate; log-flow sensitivity should
   not expand into an uncontrolled search.
-- Use persistence from the last admissible observation and a matched
-  discharge-only neural control. A comparison against the full input bundle
+- Use a matched discharge-only neural control. Persistence is excluded from the
+  active study following the user's November 2 account of advisor Zoom guidance
+  about delayed observations and gauge failures during high flows. A comparison against the full input bundle
   measures HRRR weather plus soil information together; it cannot isolate future
   weather from soil without an additional control. Predeclare that claim scope.
 - Use the same admission cohort and comparable tuning opportunities for all
