@@ -40,13 +40,15 @@
     "learned_discharge_only_control_retained": true
   },
   "implementation_progress": {
-    "eligibility_audit": "NATIVE_AND_AGGREGATE_METADATA_PROOFS_WITH_EXPLICIT_UNKNOWNS",
+    "eligibility_audit": "ALL_73_USGS_DEVELOPMENT_MONTHS_VERIFIED_METADATA_ONLY",
     "development_boundary_guard": "IMPLEMENTED_TESTED",
     "july2024_administrative_export": "USER_APPROVED_AND_EXECUTED_DEVELOPMENT_ONLY_NO_SCORING",
-    "train_only_scaling_and_recovery": "IMPLEMENTED_SYNTHETICALLY_QUALIFIED",
+    "train_only_scaling_and_recovery": "V2_FULL_AND_MATCHED_Q_ONLY_SYNTHETIC_RECOVERY_QUALIFIED",
     "real_batch_benchmark": "24_CASES_600_ENGINEERING_UPDATES_PASSED",
     "scientific_protocol_freeze": "PENDING",
-    "real_train_only_scientific_scalers_fitted": false
+    "real_train_only_scientific_scalers_fitted": false,
+    "eligibility_evidence": "reports/development-eligibility-owned-metadata-v2.json",
+    "numerical_corpus": "BOUNDED_STAGING_NOT_YET_COMPLETE"
   },
   "recommended_local_execution": {
     "status": "THROUGHPUT_RECOMMENDATION_NOT_FORECAST_SELECTION",
@@ -67,5 +69,10 @@
     "approval_artifact": "reports/execution-budget-approval.json"
   },
   "additional_source_download_scope": "Existing development objects/owned USGS partitions under approved35USD staging allocation and100GiB/20000GET/2GiBhotset limits; July2024onlyverifieddevelopmentexport",
-  "cloud_funding_status": "RESERVED_CONDITIONAL_NOT_RELEASED_FOR_EXECUTION"
+  "cloud_funding_status": "RESERVED_CONDITIONAL_NOT_RELEASED_FOR_EXECUTION",
+  "cloud_quota_snapshot": {
+    "artifact": "reports/cloud-readonly-readiness.json",
+    "observed_global_gpu_limit": 1,
+    "gpu_launch_or_runtime_qualified": false
+  }
 }

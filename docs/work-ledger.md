@@ -232,3 +232,24 @@ precise transient/authentication cause is unconfirmed. No identity or generation
 was substituted. Increment06 resumes the same v3 corpus and persistent budget.
 Cumulative precharges after the diagnostic are7,864,343,921bytes/3,138GETs with
 one failed attempt and a conservative$2.254758 estimate, not an invoice.
+
+## Proposed workload arithmetic and cloud inventory — November 2
+
+The non-executing workload planner passes15 tests and independent date/rate/fit
+arithmetic review. It separates gradient fitting, inner stopping and outer
+prediction. Strict H18 partition ends purge18 origins; the proposed simulated
+two-hour label-availability rule at refit purges19 from the inner stopping tail.
+The planning calculation does not establish historical model-selection readiness.
+
+At50 epochs, calendar-count scenarios are23.94h/36 full-input final fits,
+47.88h/72 matched full/Q-only final fits,76.16h/144 fits including paired annual
+CV, and152.31h/288 fits for both histories with paired CV. A final-only full-input
+L24 contrast adds36 fits:108 fits/71.82h without CV, or180 fits/100.10h with paired
+L168 CV. Q-only/L24 timings remain explicit full-L168 proxies. The user scope
+preference is pending; no CV or scientific fitting was executed.
+
+The21:31UTC read-only Compute Engine snapshot found22 acquisition-labelled
+instances, all terminated; global GPU and us-central1 L4 quotas each have limit1
+and usage0. No resources or permissions were changed. One GPU is the current
+planning limit, not a capacity reservation or successful CUDA qualification.
+Retained disks/storage liabilities and provider invoices were not reconciled.

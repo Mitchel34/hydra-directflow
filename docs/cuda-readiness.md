@@ -23,3 +23,10 @@ CUDA allocator counters exclude context/driver allocations and non-PyTorch VRAM.
 The next integration should be a separate, reviewed trainer/checkpoint version: include `devices.py` in implementation fingerprints; replace hardcoded MPS branches with selected-device RNG/runtime helpers; preserve model, AdamW, train-only transform, sampler cursor/permutation and stopping state; restore RNG only after model/optimizer construction; and verify fresh-process next-update parity. Do not relabel old CPU/MPS checkpoints as CUDA-qualified or silently migrate across backends. Use the existing exact math Mamba implementation until a separate fused-kernel comparison qualifies an alternative.
 
 The 13 device tests exercise real CPU RNG replay and mocked CUDA/MPS behavior, funding/limit gates and the non-executing command. They perform zero model forwards and zero optimizer updates. They do not establish real CUDA availability, numerical equivalence, throughput, cost or readiness to launch.
+
+`reports/cloud-readonly-readiness.json` records a November2 21:31UTC API snapshot:
+all22 acquisition VMs were terminated; us-central1 L4 quota and global GPU quota
+were each1 with usage0. No resources, quotas or permissions were changed. Use a
+single-GPU planning assumption under existing quota. This establishes neither
+zonal capacity nor a successful launch, and terminated instances do not prove
+zero retained-disk or other storage costs.

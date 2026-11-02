@@ -117,9 +117,13 @@ Owned cloud resources would need labels, checkpoint/artifact verification,
 explicit lifetime/hour limits and independent shutdown/cleanup. Keep source
 artifacts immutable; remove only newly created raw staging copies after verified
 reductions commit. Existing source caches and unrelated resources are not cleanup
-targets. Do not rely on billing alerts alone as a spending control. Current GPU
-quota, IAM and regional capacity have not been checked; access/security changes
-need separate authorization if required. This budget approval does not authorize
+targets. Do not rely on billing alerts alone as a spending control. A read-only
+21:31UTC snapshot found all22 acquisition instances terminated and zero GPU quota
+usage, with a limit of one L4 in us-central1 and one GPU globally. Plan around one
+GPU under existing quota; the approved two-worker ceiling is not reserved capacity.
+Zonal capacity, launch permissions and runtime qualification remain unverified;
+quota/access/security changes require separate review and authorization if needed.
+The snapshot does not reconcile retained disks/storage or invoices. This budget approval does not authorize
 protected assessment access, scoring, new model families or hosted monitoring.
 
 Local execution remains the measured first option. The reserved cloud allowance

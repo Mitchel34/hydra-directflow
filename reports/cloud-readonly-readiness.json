@@ -1,0 +1,49 @@
+{
+  "acquisition_labelled_instances": 22,
+  "created_at_utc": "2026-11-02T21:31:10.307786+00:00",
+  "global_quota": [
+    {
+      "limit": 1.0,
+      "metric": "GPUS_ALL_REGIONS",
+      "usage": 0.0
+    }
+  ],
+  "iam_changes": 0,
+  "instance_status_counts": {
+    "TERMINATED": 22
+  },
+  "qualification": [
+    "Timestamped API snapshot, not future resource status",
+    "Terminated instances do not imply zero disk/storage liabilities",
+    "Not a provider invoice or full inventory of other cloud services",
+    "Quota is not zonal GPU capacity, a reservation, numerical qualification or authorization to launch"
+  ],
+  "quota_changes": 0,
+  "regional_quota": [
+    {
+      "limit": 1.0,
+      "metric": "NVIDIA_L4_GPUS",
+      "usage": 0.0
+    },
+    {
+      "limit": 1.0,
+      "metric": "PREEMPTIBLE_NVIDIA_L4_GPUS",
+      "usage": 0.0
+    },
+    {
+      "limit": 1.0,
+      "metric": "COMMITTED_NVIDIA_L4_GPUS",
+      "usage": 0.0
+    }
+  ],
+  "resource_creations": 0,
+  "resource_mutations": 0,
+  "schema": "hydra-cloud-readonly-readiness-snapshot/v1",
+  "scope": "Existing project Compute Engine instances and us-central1/global quota metadata only",
+  "source_object_downloads": 0,
+  "source_sha256": {
+    "cloud-global-quota-20261102.json": "d2727a04113c97ec4f9a5b6b1d69f3d80011e86a11651afb38326dc484425ebb",
+    "cloud-instance-inventory-20261102.json": "a0b4539136ede01b91abef42c0f9aa082932aae3bba31ed1217e125777e77509",
+    "cloud-us-central1-quota-20261102.json": "a2a8a8c2cf3678470d423a95ea87de1cc81a41aac8c01b170e7acb506b259dea"
+  }
+}
