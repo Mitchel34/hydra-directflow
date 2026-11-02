@@ -135,19 +135,19 @@ def bounded_npy(data, *, shape, dtype):
     return np.load(io.BytesIO(data), allow_pickle=False)
 
 
-def _source_bytes(members, source):
-    prefix = f"cycles/{CYCLE_ID}/"
+def _source_bytes(members, source, *, cycle_id=CYCLE_ID):
+    prefix = f"cycles/{cycle_id}/"
     require(source["relative_path"].startswith(prefix), "Source member belongs to a different cycle")
     value = members[source["relative_path"][len(prefix):]]
     require(len(value) == source["bytes"] and sha256(value) == source["sha256"], "Source hash differs")
     return value
 
 
-def _coordinate(members, field, metadata, name):
+def _coordinate(members, field, metadata, name, *, cycle_id=CYCLE_ID):
     """Decode only bounded 1D clocks/axes, never arbitrary Zarr objects."""
     from numcodecs import Blosc
     spec = metadata[name + "/.zarray"]
-    data = _source_bytes(members, field["coordinate_sources"][name])
+    data = _source_bytes(members, field["coordinate_sources"][name], cycle_id=cycle_id)
     shape, dtype = spec["shape"], np.dtype(spec["dtype"])
     require(dtype.str in ("<f8", "<i8") and len(shape) <= 1 and spec["order"] == "C"
             and spec["filters"] is None, "Unsupported coordinate encoding")
@@ -163,21 +163,21 @@ def _coordinate(members, field, metadata, name):
     return np.frombuffer(data, dtype=dtype)
 
 
-def _verify_grid_and_clocks(members, fields, reference):
+def _verify_grid_and_clocks(members, fields, reference, *, cycle_id=CYCLE_ID, minimum_leads=36):
     for field in fields.values():
-        metadata = json.loads(_source_bytes(members, field["metadata_sources"][0]))["metadata"]
+        metadata = json.loads(_source_bytes(members, field["metadata_sources"][0], cycle_id=cycle_id))["metadata"]
         require(field["spec"]["shape"][1:] == [1059, 1799], "Weather native grid shape differs")
         require(field["spec"]["order"] == "C", "Weather grid scan order differs")
         require(utc_epoch(field["source_reference_UTC"]) == reference, "Field reference time differs")
         for name, expected_hash in AXIS_SHA256.items():
             require(field["coordinate_sources"][name]["sha256"] == expected_hash, "Candidate grid axis hash differs")
-            axis = _coordinate(members, field, metadata, name)
+            axis = _coordinate(members, field, metadata, name, cycle_id=cycle_id)
             require(sha256(axis.astype("<f8", copy=False).tobytes()) == DECODED_AXIS_SHA256[name],
                     "Decoded candidate grid coordinates differ")
             require(np.all(np.diff(axis) == 3000), "Native grid spacing differs")
-        lead = _coordinate(members, field, metadata, "forecast_period")
-        valid = _coordinate(members, field, metadata, "time")
-        ref = _coordinate(members, field, metadata, "forecast_reference_time")
+        lead = _coordinate(members, field, metadata, "forecast_period", cycle_id=cycle_id)
+        valid = _coordinate(members, field, metadata, "time", cycle_id=cycle_id)
+        ref = _coordinate(members, field, metadata, "forecast_reference_time", cycle_id=cycle_id)
         require(metadata["forecast_period/.zattrs"]["units"] == "hours", "Forecast period units differ")
         for name in ("time", "forecast_reference_time"):
             attrs = metadata[name + "/.zattrs"]
@@ -186,7 +186,7 @@ def _verify_grid_and_clocks(members, fields, reference):
         require(ref.shape == (1,) and ref[0] * 3600 == reference, "Numeric initialization clock differs")
         require(np.array_equal(lead, np.arange(1, len(lead) + 1)), "Numeric source lead axis differs")
         require(np.array_equal(valid * 3600, reference + lead * 3600), "Numeric source valid clock differs")
-        require(len(lead) >= 36, "Source does not support the retained extended forecast")
+        require(len(lead) >= minimum_leads, "Source does not support the retained forecast")
 
 
 def _verify_soil_grid(data):
@@ -203,24 +203,25 @@ def _verify_soil_grid(data):
     require(pos == len(data) - 4 and found == [SOIL_SECTION3_SHA256], "Soil grid definition differs from candidate weights")
 
 
-def _verify_weather_crop(members, fields, records, values, present):
+def _verify_weather_crop(members, fields, records, values, present, *, cycle_id=CYCLE_ID):
     """Reconstruct the 29x33 crop from authenticated tiles to prove cell order."""
     from numcodecs import Blosc
     for field_id, field in fields.items():
         spec = field["spec"]
-        require(spec["chunks"] == [47, 150, 150] and spec["dtype"] == "<f2"
+        slots = spec["chunks"][0]
+        require(slots in (18, 36, 47, 48) and spec["chunks"] == [slots, 150, 150] and spec["dtype"] == "<f2"
                 and spec["filters"] is None and spec["compressor"]["id"] == "blosc",
                 "Unexpected bounded source tile encoding")
         require(field["source"]["url"].endswith("/0.3.9"), "Source tile indices differ from candidate crop")
-        raw = _source_bytes(members, field["source"])
-        expected_size = 47 * 150 * 150 * 2
+        raw = _source_bytes(members, field["source"], cycle_id=cycle_id)
+        expected_size = slots * 150 * 150 * 2
         require(len(raw) >= 16 and struct.unpack_from("<I", raw, 4)[0] == expected_size,
                 "Source tile expansion bound differs")
         decoded = Blosc().decode(raw)
         require(len(decoded) == expected_size, "Decoded source tile size differs")
-        tile = np.frombuffer(decoded, dtype="<f2").reshape(47, 150, 150)
+        tile = np.frombuffer(decoded, dtype="<f2").reshape(slots, 150, 150)
         # Tile (j=3, i=9) starts at native (j=450, i=1350).
-        crop = tile[:, 28:61, 14:43].reshape(47, 957)
+        crop = tile[:, 28:61, 14:43].reshape(slots, 957)
         for index, record in enumerate(records):
             if record.get("field_source_id") != field_id:
                 continue

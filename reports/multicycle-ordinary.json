@@ -1,0 +1,158 @@
+{
+  "artifact_created_at_utc": "2026-11-02T00:28:38Z",
+  "availability_policy": "RETROSPECTIVE_SIMULATED_LAG_2H",
+  "case_count": 3,
+  "case_source_digest": "c9315f98236665642ac9f47a1790546abc9b2d48fd372c112fcaf2d246a8b244",
+  "complete_case_count": 0,
+  "eligibility_counts": {
+    "NO_COMPLETE_SINGLE_WEATHER_RUN|SOIL_UNAVAILABLE_OR_STALE": 3
+  },
+  "execution": {
+    "cloud_operations": 0,
+    "network_requests": 0,
+    "protected_assessment_values_decoded": 0,
+    "scaler_fits": 0,
+    "source_files_modified": false,
+    "training_steps": 0
+  },
+  "gauges": [
+    "03161000",
+    "03164000",
+    "03479000"
+  ],
+  "history_end": "C_MINUS_2_HOURS_INCLUSIVE",
+  "history_hours": 24,
+  "horizons_hours": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "implementation_sha256": {
+    "scripts/preprocess_multicycle.py": "790df8769bad3b027ee473cb7094f4156493652d71ccd97fdbbf37f6859dedfd",
+    "src/hydra_directflow/contract.py": "e3f1a5e988e02a11da19cc2aec80cfd860e4867d68c14d12bdaba706a85513e8",
+    "src/hydra_directflow/local_data.py": "9ce7b65d2649a220a05f5552c8548ea0bcf3ba1dd9323a47a4cc816c526645c1",
+    "src/hydra_directflow/multicycle.py": "dd440f9f2cbeb16dc53c989a82a1f504287205144a6b9e59c08e6c771755014b",
+    "src/hydra_directflow/reference.py": "7c21deee40c04bc72bc5cfcb190a39792c94ab65115c16ca03da551296575135"
+  },
+  "max_soil_age_hours": 8,
+  "missing_case_policy": "RETAIN_REQUESTED_CASES_WITH_MASKS_NO_SILENT_DROP",
+  "origin_count": 1,
+  "origins_utc": [
+    "2022-03-02T02:00:00Z"
+  ],
+  "private_tensor_artifact": {
+    "bytes": 274057,
+    "format": "npz",
+    "sha256": "b73a7ac208346e9655f30c934ce144b5f479170ef0a7acbefb1e2686531b27e1"
+  },
+  "provenance": "Original records/group/field metadata in private dictionary; per-case weather/soil indices; original USGS qualifiers and wire IDs",
+  "qualification": "Development engineering only; approximate independent non-nesting basins; local candidates only; no historical real-time availability, global archive coverage, trained model or forecast-skill claim",
+  "quality_policy": "STRICT_EXACT_A_ONLY_DEVELOPMENT",
+  "schema": "hydra-directflow-multicycle-development/v1",
+  "selected_cycle_case_counts": {
+    "": 3
+  },
+  "selected_soil_cycle_case_counts": {
+    "": 3
+  },
+  "selection_scope": "OFFLINE_SUPPLIED_CANDIDATES",
+  "sources": {
+    "candidate_weights_sha256": "9eaaf3b221360ed6faaa0376e953fd0c2d0356fb419df96daed9107404283a74",
+    "cycles": [
+      {
+        "archive_bytes": 1781760,
+        "archive_sha256": "39d5ace9bea693f2f86f39a9ce3040a531ab0b16828aa299aa2e4296ef9ecff4",
+        "commit_sha256": "4aba76bd2420f4a94e1d403965c63210f63366e9075349d8f0813d22208f5501",
+        "cycle_id": "20220301_19Z",
+        "data_complete": true,
+        "groups_available": [
+          "humidity",
+          "precipitation",
+          "snow_water_equivalent",
+          "temperature"
+        ],
+        "manifest_sha256": "794b6fa2748da578f041fcee1899703b9a176590d17aec33dd11fabc542f7c9d",
+        "record_count": 72,
+        "soil_values_record_hash_verified": false,
+        "weather_source_slots": [
+          18
+        ],
+        "weather_tiles_redecoded": true
+      }
+    ],
+    "qualified_index_bytes": 112202255,
+    "qualified_index_sha256": "75469df20f79d94ffb058f439f1ac873f0cf4164c1417eec7298a6641a35baa5",
+    "usgs_manifest_sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a",
+    "usgs_partitions": [
+      {
+        "bytes": 79473,
+        "exact_core_rows": 132,
+        "month": "2022-03",
+        "returned_rows": 519,
+        "sha256": "881bcfceda16342836f7c6e3d04f31528ef9c09c5c9c064f7ae28594368576a7"
+      }
+    ]
+  },
+  "stage_seconds": {
+    "case_assembly": 0.004798625013791025,
+    "cycle_auth_decode_reduce": 0.053945292020216584,
+    "index_auth": 0.4345891249831766,
+    "total": 0.587851749965921,
+    "usgs_load": 0.09371745795942843
+  },
+  "status": "COMPLETED_WITH_EXPLICIT_MASKS",
+  "supplied_cycle_ids": [
+    "20220301_19Z"
+  ],
+  "tensors": {
+    "history": {
+      "mask_total": 144,
+      "mask_true": 144,
+      "shape": [
+        3,
+        24,
+        2
+      ]
+    },
+    "state": {
+      "mask_total": 6,
+      "mask_true": 0,
+      "shape": [
+        3,
+        2
+      ]
+    },
+    "target": {
+      "mask_total": 54,
+      "mask_true": 54,
+      "shape": [
+        3,
+        18
+      ]
+    },
+    "weather": {
+      "mask_total": 216,
+      "mask_true": 0,
+      "shape": [
+        3,
+        18,
+        4
+      ]
+    }
+  }
+}

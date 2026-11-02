@@ -1,0 +1,303 @@
+{
+  "artifact_created_at_utc": "2026-11-02T00:28:35Z",
+  "availability_policy": "RETROSPECTIVE_SIMULATED_LAG_2H",
+  "case_count": 60,
+  "case_source_digest": "a86d7c2fbc31adfcb986e21f34d02f9430c4747f06bde5e4f8973e711eac1a7c",
+  "complete_case_count": 56,
+  "eligibility_counts": {
+    "COMPLETE": 56,
+    "HISTORY_INCOMPLETE": 4
+  },
+  "execution": {
+    "cloud_operations": 0,
+    "network_requests": 0,
+    "protected_assessment_values_decoded": 0,
+    "scaler_fits": 0,
+    "source_files_modified": false,
+    "training_steps": 0
+  },
+  "gauges": [
+    "03161000",
+    "03164000",
+    "03479000"
+  ],
+  "history_end": "C_MINUS_2_HOURS_INCLUSIVE",
+  "history_hours": 168,
+  "horizons_hours": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "implementation_sha256": {
+    "scripts/preprocess_multicycle.py": "790df8769bad3b027ee473cb7094f4156493652d71ccd97fdbbf37f6859dedfd",
+    "src/hydra_directflow/contract.py": "e3f1a5e988e02a11da19cc2aec80cfd860e4867d68c14d12bdaba706a85513e8",
+    "src/hydra_directflow/local_data.py": "9ce7b65d2649a220a05f5552c8548ea0bcf3ba1dd9323a47a4cc816c526645c1",
+    "src/hydra_directflow/multicycle.py": "dd440f9f2cbeb16dc53c989a82a1f504287205144a6b9e59c08e6c771755014b",
+    "src/hydra_directflow/reference.py": "7c21deee40c04bc72bc5cfcb190a39792c94ab65115c16ca03da551296575135"
+  },
+  "max_soil_age_hours": 8,
+  "missing_case_policy": "RETAIN_REQUESTED_CASES_WITH_MASKS_NO_SILENT_DROP",
+  "origin_count": 20,
+  "origins_utc": [
+    "2021-08-23T02:00:00Z",
+    "2021-08-23T03:00:00Z",
+    "2021-08-23T04:00:00Z",
+    "2021-08-23T05:00:00Z",
+    "2022-03-17T02:00:00Z",
+    "2022-03-17T03:00:00Z",
+    "2022-03-17T04:00:00Z",
+    "2022-03-17T05:00:00Z",
+    "2023-01-26T02:00:00Z",
+    "2023-01-26T03:00:00Z",
+    "2023-01-26T04:00:00Z",
+    "2023-01-26T05:00:00Z",
+    "2023-08-17T02:00:00Z",
+    "2023-08-17T03:00:00Z",
+    "2023-08-17T04:00:00Z",
+    "2023-08-17T05:00:00Z",
+    "2024-02-29T02:00:00Z",
+    "2024-02-29T03:00:00Z",
+    "2024-02-29T04:00:00Z",
+    "2024-02-29T05:00:00Z"
+  ],
+  "private_tensor_artifact": {
+    "bytes": 2873613,
+    "format": "npz",
+    "sha256": "253b913efceb88305df4f0d95554ea129855ab30774a1f09f35c533329d9c2e9"
+  },
+  "provenance": "Original records/group/field metadata in private dictionary; per-case weather/soil indices; original USGS qualifiers and wire IDs",
+  "qualification": "Development engineering only; approximate independent non-nesting basins; local candidates only; no historical real-time availability, global archive coverage, trained model or forecast-skill claim",
+  "quality_policy": "STRICT_EXACT_A_ONLY_DEVELOPMENT",
+  "schema": "hydra-directflow-multicycle-development/v1",
+  "selected_cycle_case_counts": {
+    "20210823_00Z": 12,
+    "20220317_00Z": 12,
+    "20230126_00Z": 12,
+    "20230817_00Z": 12,
+    "20240229_00Z": 12
+  },
+  "selected_soil_cycle_case_counts": {
+    "20210823_00Z": 12,
+    "20220317_00Z": 12,
+    "20230126_00Z": 12,
+    "20230817_00Z": 12,
+    "20240229_00Z": 12
+  },
+  "selection_scope": "OFFLINE_SUPPLIED_CANDIDATES",
+  "sources": {
+    "candidate_weights_sha256": "9eaaf3b221360ed6faaa0376e953fd0c2d0356fb419df96daed9107404283a74",
+    "cycles": [
+      {
+        "archive_bytes": 5150720,
+        "archive_sha256": "6f34151174311054173b03dc32bcb4080b9244537c24f9a45f7746c6be6cdf00",
+        "commit_sha256": "41c3bae92f29b2aa1ffe1276a5d410609083ed1d85eefecdd4535434d0853672",
+        "cycle_id": "20210823_00Z",
+        "data_complete": true,
+        "groups_available": [
+          "humidity",
+          "precipitation",
+          "snow_water_equivalent",
+          "soil_moisture",
+          "temperature"
+        ],
+        "manifest_sha256": "d2c022f212331c61090132da96280cdf1c4d866599277a5cac6ffcbf5aaad917",
+        "record_count": 145,
+        "soil_values_record_hash_verified": true,
+        "weather_source_slots": [
+          47
+        ],
+        "weather_tiles_redecoded": true
+      },
+      {
+        "archive_bytes": 5621760,
+        "archive_sha256": "78e2b2190a3c51e8b9d70e87e0724f9073f26bdaae858616aa8a26d9bac26d7d",
+        "commit_sha256": "364ec8f70923911006ce2f5a91b84c1cc38215ed0f302f197b4fb7d2e3b47123",
+        "cycle_id": "20220317_00Z",
+        "data_complete": true,
+        "groups_available": [
+          "humidity",
+          "precipitation",
+          "snow_water_equivalent",
+          "soil_moisture",
+          "temperature"
+        ],
+        "manifest_sha256": "cc081c4d51f0afc8b30321d4283131495cb59c628e173abc04582c604ef54ded",
+        "record_count": 145,
+        "soil_values_record_hash_verified": true,
+        "weather_source_slots": [
+          48
+        ],
+        "weather_tiles_redecoded": true
+      },
+      {
+        "archive_bytes": 5775360,
+        "archive_sha256": "b048cd45344a8df3fba6312f50fa19cf0ec601496132d90c67883aac0cf8b711",
+        "commit_sha256": "b0984d7cd4975b181632e1fbb8794c429aa7bde591cc436e8ca3470980e1e19b",
+        "cycle_id": "20230126_00Z",
+        "data_complete": true,
+        "groups_available": [
+          "humidity",
+          "precipitation",
+          "snow_water_equivalent",
+          "soil_moisture",
+          "temperature"
+        ],
+        "manifest_sha256": "201f30cbb5dcd68e28ef2b1b5f0b48aa29be172abdb04ab331d9fcffe0867400",
+        "record_count": 145,
+        "soil_values_record_hash_verified": true,
+        "weather_source_slots": [
+          48
+        ],
+        "weather_tiles_redecoded": true
+      },
+      {
+        "archive_bytes": 5273600,
+        "archive_sha256": "d42744f0992584ba3b624e67d62c8ce838d37f84ede85c70a44033088afe6992",
+        "commit_sha256": "be2514d17bff260e013dab12ce66110b7c51db5448cb6cb6c65d7c8be0db5643",
+        "cycle_id": "20230817_00Z",
+        "data_complete": true,
+        "groups_available": [
+          "humidity",
+          "precipitation",
+          "snow_water_equivalent",
+          "soil_moisture",
+          "temperature"
+        ],
+        "manifest_sha256": "4eeccd04bfb128bf6df7535ba396c49122ee159443b7e6ed7ffcfa6eb0cb887e",
+        "record_count": 145,
+        "soil_values_record_hash_verified": true,
+        "weather_source_slots": [
+          48
+        ],
+        "weather_tiles_redecoded": true
+      },
+      {
+        "archive_bytes": 5304320,
+        "archive_sha256": "a9446b8859baad5133f7dec76e811a8651dff676c20fdde2f7bf020f62f5e511",
+        "commit_sha256": "6437321209190d1a4c1851dbcce04295013cf8d25df119847dae69c35fc19c47",
+        "cycle_id": "20240229_00Z",
+        "data_complete": true,
+        "groups_available": [
+          "humidity",
+          "precipitation",
+          "snow_water_equivalent",
+          "soil_moisture",
+          "temperature"
+        ],
+        "manifest_sha256": "73412d9021a98e1f831eba161ec711b45f74922db7564983af440a159dab469f",
+        "record_count": 145,
+        "soil_values_record_hash_verified": true,
+        "weather_source_slots": [
+          48
+        ],
+        "weather_tiles_redecoded": true
+      }
+    ],
+    "qualified_index_bytes": 112202255,
+    "qualified_index_sha256": "75469df20f79d94ffb058f439f1ac873f0cf4164c1417eec7298a6641a35baa5",
+    "usgs_manifest_sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a",
+    "usgs_partitions": [
+      {
+        "bytes": 73458,
+        "exact_core_rows": 573,
+        "month": "2021-08",
+        "returned_rows": 2283,
+        "sha256": "16f1dcbc063fed46a72ce286571c3b78fc2c199fce24e07aa76cdd03318c6d2b"
+      },
+      {
+        "bytes": 79473,
+        "exact_core_rows": 573,
+        "month": "2022-03",
+        "returned_rows": 2283,
+        "sha256": "881bcfceda16342836f7c6e3d04f31528ef9c09c5c9c064f7ae28594368576a7"
+      },
+      {
+        "bytes": 72704,
+        "exact_core_rows": 573,
+        "month": "2023-01",
+        "returned_rows": 2283,
+        "sha256": "5d9bb435b1e0053fbed0cd7b65fdedabcc1a45faa2b7c3dd9a49ac42f451aed3"
+      },
+      {
+        "bytes": 74004,
+        "exact_core_rows": 572,
+        "month": "2023-08",
+        "returned_rows": 2280,
+        "sha256": "dd13695b8780c1e79ab203d53aa905e11770666244d634e320f4387df5165db4"
+      },
+      {
+        "bytes": 67678,
+        "exact_core_rows": 573,
+        "month": "2024-02",
+        "returned_rows": 2283,
+        "sha256": "ea95a47fc856f416ca52f993b08f8eb928ab5e9c178fdfab401ebd033efb95cb"
+      }
+    ]
+  },
+  "stage_seconds": {
+    "case_assembly": 0.1641639160225168,
+    "cycle_auth_decode_reduce": 0.16014441708102822,
+    "index_auth": 0.45863899996038526,
+    "total": 1.1100707500008866,
+    "usgs_load": 0.32578854192979634
+  },
+  "status": "COMPLETED_WITH_EXPLICIT_MASKS",
+  "supplied_cycle_ids": [
+    "20210823_00Z",
+    "20220317_00Z",
+    "20230126_00Z",
+    "20230817_00Z",
+    "20240229_00Z"
+  ],
+  "tensors": {
+    "history": {
+      "mask_total": 20160,
+      "mask_true": 20152,
+      "shape": [
+        60,
+        168,
+        2
+      ]
+    },
+    "state": {
+      "mask_total": 120,
+      "mask_true": 120,
+      "shape": [
+        60,
+        2
+      ]
+    },
+    "target": {
+      "mask_total": 1080,
+      "mask_true": 1080,
+      "shape": [
+        60,
+        18
+      ]
+    },
+    "weather": {
+      "mask_total": 4320,
+      "mask_true": 4320,
+      "shape": [
+        60,
+        18,
+        4
+      ]
+    }
+  }
+}
