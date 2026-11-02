@@ -1,6 +1,7 @@
 # Next steps toward the November 6 scientific poster draft
 
-Status: **proposed plan, not a frozen scientific protocol or execution budget**.
+Status: **proposed plan with primary USGS quality confirmed; not a full protocol
+freeze or execution budget**.
 This planning update starts no training, additional storage downloads or cloud
 jobs. The November 6 draft and December 11 AGU presentation remain the targets.
 
@@ -46,10 +47,12 @@ need review; they do not change `configs/development.json` or enable scoring.
   2025, with the declared final label tail through July 31, 2025 at 17Z.
 - Start with per-gauge fits. Audit complete-input retention at both L24 and L168
   before choosing the primary lookback; compare lookbacks on a shared cohort.
-- Prefer approved non-estimated observations with A and optional R flags for
-  primary labels. Preserve every flag, keep provisional/estimated records
-  separate, and never fill targets. Decide input missingness admission separately
-  from label masking. The current exact-A smoke rule is not the study policy.
+- **Confirmed by the user on November 2:** admit approved observations with A
+  and optional R flags for the primary experiment; exclude provisional and
+  estimated observations. Preserve every flag and never fill targets. Decide
+  input missingness admission separately from label masking. The next adapter
+  chunk will implement this rule; historical exact-A engineering receipts stay
+  unchanged. The decision is recorded in `configs/scientific-decisions.json`.
 - Retain the explicit two-hour availability scenario, complete single-run H18
   weather selection, independent soil state and the existing approximate basin
   weights with their limitations. Final spatial admission is a documented study

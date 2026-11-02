@@ -1,0 +1,23 @@
+{
+  "schema": "hydra-scientific-decisions/v1",
+  "status": "PARTIALLY_CONFIRMED_NOT_A_FULL_PROTOCOL_FREEZE",
+  "primary_usgs_quality": {
+    "status": "USER_CONFIRMED",
+    "decision_date_local": "2026-11-02",
+    "timezone": "America/Chicago",
+    "scope": "Primary experiment USGS observations",
+    "required_flag": "A",
+    "permitted_additional_flags": ["R"],
+    "excluded_flags": ["P", "e"],
+    "unrecognized_flags_admitted": false,
+    "retain_original_qualifiers": true,
+    "target_filling": false,
+    "implementation_status": "CONFIRMED_FOR_NEXT_SCIENTIFIC_ADAPTER_CHUNK",
+    "historical_engineering_receipts_rewritten": false
+  },
+  "remaining_protocol_choices_frozen": false,
+  "scientific_training_enabled": false,
+  "protected_assessment_scoring_enabled": false,
+  "additional_source_downloads_authorized": false,
+  "paid_cloud_compute_authorized": false
+}
