@@ -289,3 +289,39 @@ without the later nested proof. A narrow reader extension and exact-code reuse
 of already qualified basin entries are being prepared. This is an explicit
 format stop, not an upstream weather gap or acquisition incompleteness. Original
 v3 artifacts, failed-run receipts and budget charges remain intact.
+
+## Qualified compatibility recovery and exact prefix parity — November 2
+
+The compact404 branch is now tested against the original raw-v1 manifest/source
+receipt and its unique settled GET404 request. Modern nested-proof checks and all
+twelve component/numeric checks remain.23 reader regressions pass; the actual
+20200422 source passes145 records/four recovered fields. The resident preflight
+passes198 checks across193 unique cycles, with only the two known wrong-identity
+variants rejected and33 absent-local-authority skips.
+
+The exact v3→v4 basin-cache rule passed13 dedicated tests and independent review.
+It returns original keys/receipts under the existing cache lock, records separate
+per-use provenance and never creates a relabeled cache entry. Source fetches were
+disabled for two prefix reconstructions. All140 typed model payloads then matched
+v3 byte-for-byte:15,576 origins/46,728 cases,42,696 candidate complete cases and
+2,596 unique original basin entries reverified. Network requests were zero;
+local USGS reprocessing was permitted. Original v3 files remain intact.
+
+The integrated suite passed482 tests. The v4 corpus plan is
+`0dad073824984fd7eeba88e4c313d77b4015dcccb94e8eb27297fcf7c6b39b0f`;
+increment07 resumes it under the same approved budget and source scope.
+
+## Measured Q-only and L24 timing controls — November 2
+
+The separate reviewed200-update benchmark passed8 B64 cases on the fixed earlier
+device policy. It preserves the sealed558/168/18 August cohort and target IDs.
+Q-only L168 uses known horizon tokens and no weather/soil predictors; full L24
+uses the exact final24 history slots. All observed parameter counts and checkpoint
+forward replays pass. Execution took32.18s and1.68GiB observed combined peak, with
+40 warmup plus160 measured updates, zero retries/network/cloud jobs and no
+scientific selection. The original600-update benchmark remains unchanged.
+
+Cumulative accounting is now **852 real-data engineering updates** and
+**896 synthetic updates**, with zero scientific campaign fits. Mode-specific
+timing estimates will replace the corresponding sizing proxies in a new report;
+the earlier proposal remains an attributable planning snapshot.

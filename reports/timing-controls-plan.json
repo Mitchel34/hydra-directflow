@@ -1,0 +1,204 @@
+{
+  "cloud_jobs": 0,
+  "network_requests": 0,
+  "optimizer_updates": 0,
+  "plan_sha256": "adeadd2c4b6f686266f4e2f1ca7f82d4789870434c471b67bdc0ba90d6a6bad1",
+  "schema": "hydra-timing-controls-plan/v1",
+  "spec": {
+    "L24_rule": "Exact last24 original history values, masks and UTC slots; no case readmission or relabeling",
+    "combined_parent_worker_rss_mps_bytes": 4294967296,
+    "device_policy": "Prior full-L168 B64 recommendations held fixed; not a new device-optimality search",
+    "dropout": 0.1,
+    "dtype": "float32",
+    "expected_purged_cases": 18,
+    "expected_training_cases": 558,
+    "expected_validation_cases": 168,
+    "fixed_unit_mapping": {
+      "history": [
+        [
+          0.0,
+          100.0
+        ],
+        [
+          0.0,
+          168.0
+        ]
+      ],
+      "state": [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          24.0
+        ]
+      ],
+      "target": [
+        [
+          0.0,
+          100.0
+        ]
+      ],
+      "weather": [
+        [
+          0.0,
+          10.0
+        ],
+        [
+          273.15,
+          30.0
+        ],
+        [
+          0.0,
+          0.01
+        ],
+        [
+          0.0,
+          100.0
+        ]
+      ]
+    },
+    "fixture_receipt_sha256": "73ad91b9d587dade528bc94e3a530f249aa4509c5490afbbb226efe7fd2cd2b2",
+    "implementation_sha256": {
+      "scripts/benchmark_real_batches.py": "5c26e53eef461860758ae6b24eeca575027d98f6ac188ee66733c6da2c3ab7e8",
+      "scripts/benchmark_timing_controls.py": "253744794d34915b8519043248775417570769bc0ccdce066ccd7060be5430ec",
+      "src/hydra_directflow/ablations.py": "d091a9a2b15872eef4a0d9bd94a79457f3686cdd577e3b355af8ea2b397655de",
+      "src/hydra_directflow/engineering.py": "fa05a5bb0199d77411f30625fb1439a3a9a7b3a16f4325fdd6505396e892646c",
+      "src/hydra_directflow/models/directflow.py": "ad767e49021f144402de669ddd50080c86d3b76cb5724afdfb9bec01a29c23a5",
+      "src/hydra_directflow/models/mamba2_math.py": "e467b5de664bd0bc7f517c246bceb0c4dc777b1b63cf819effbf7eb5ee94b7aa",
+      "src/hydra_directflow/pipeline_timing.py": "afad23d073b14de9071b42c6704f2c33f819baf8b7a718461d0e6da988b5d617",
+      "src/hydra_directflow/quality.py": "d978db5fa454e040b92544bb9dbbabe332cb575c56d150a2e616e172c33fec31",
+      "src/hydra_directflow/telemetry.py": "50e28d1fcbbde444c6199324155a4114cae77ac2461e4f6b331933a2748e2791",
+      "src/hydra_directflow/training.py": "582f00c3033f97a7440fe06fd7ecf2733045874d11f7c6f37d124f7857b7e3f5"
+    },
+    "inference_samples": 20,
+    "labels_used_as_predictors": false,
+    "learning_rate": 0.0001,
+    "matrix": [
+      {
+        "architecture": "LSTM",
+        "batch_size": 64,
+        "device": "cpu",
+        "expected_parameter_count": 67265,
+        "history_hours": 168,
+        "id": "Q_ONLY_L168-LSTM-cpu-B64",
+        "input_mode": "Q_ONLY_L168"
+      },
+      {
+        "architecture": "Transformer",
+        "batch_size": 64,
+        "device": "mps",
+        "expected_parameter_count": 84417,
+        "history_hours": 168,
+        "id": "Q_ONLY_L168-Transformer-mps-B64",
+        "input_mode": "Q_ONLY_L168"
+      },
+      {
+        "architecture": "GRU_Transformer",
+        "batch_size": 64,
+        "device": "cpu",
+        "expected_parameter_count": 75905,
+        "history_hours": 168,
+        "id": "Q_ONLY_L168-GRU_Transformer-cpu-B64",
+        "input_mode": "Q_ONLY_L168"
+      },
+      {
+        "architecture": "Mamba2_Transformer",
+        "batch_size": 64,
+        "device": "mps",
+        "expected_parameter_count": 85453,
+        "history_hours": 168,
+        "id": "Q_ONLY_L168-Mamba2_Transformer-mps-B64",
+        "input_mode": "Q_ONLY_L168"
+      },
+      {
+        "architecture": "LSTM",
+        "batch_size": 64,
+        "device": "cpu",
+        "expected_parameter_count": 67905,
+        "history_hours": 24,
+        "id": "FULL_L24-LSTM-cpu-B64",
+        "input_mode": "FULL_L24"
+      },
+      {
+        "architecture": "Transformer",
+        "batch_size": 64,
+        "device": "mps",
+        "expected_parameter_count": 85057,
+        "history_hours": 24,
+        "id": "FULL_L24-Transformer-mps-B64",
+        "input_mode": "FULL_L24"
+      },
+      {
+        "architecture": "GRU_Transformer",
+        "batch_size": 64,
+        "device": "cpu",
+        "expected_parameter_count": 76545,
+        "history_hours": 24,
+        "id": "FULL_L24-GRU_Transformer-cpu-B64",
+        "input_mode": "FULL_L24"
+      },
+      {
+        "architecture": "Mamba2_Transformer",
+        "batch_size": 64,
+        "device": "mps",
+        "expected_parameter_count": 86093,
+        "history_hours": 24,
+        "id": "FULL_L24-Mamba2_Transformer-mps-B64",
+        "input_mode": "FULL_L24"
+      }
+    ],
+    "maximum_campaign_wall_seconds": 900,
+    "maximum_optimizer_updates": 200,
+    "measured_updates": 20,
+    "mps_driver_cap_bytes": 2147483648,
+    "optimizer": "AdamW_foreach_false",
+    "original_full_cohort_preserved": true,
+    "parameter_matching": "Not exact across input arms: Q-only removes640 projection parameters at width64",
+    "parent_full_L168_plan_sha256": "b614b62089bce0a47fecda6967a5ae5c3d2d9c7fb6d626b6ae7781770cf17b27",
+    "q_only_horizon_mapping": "DECLARED_HORIZON_DIV18",
+    "q_only_weather_soil_passed_to_model": false,
+    "qualification": "MATCHED_COHORT_TIMING_CONTROLS_NOT_FORECAST_SKILL_OR_SCIENTIFIC_SELECTION",
+    "seed": 1729,
+    "source": {
+      "arrays_sha256": "373c971825c6e8c4b3ebc3c6925badbe576e12195314c5e287267cd6109ee1e8",
+      "case_source_digest": "b2974e90b24c00aad521852fc1c5e23353c403c945438ec92b4c097a3fd1bc67",
+      "gauge_id": "03161000",
+      "history_hours": 168,
+      "horizons_hours": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "input_quality_policy": "PRIMARY_APPROVED_A_OPTIONAL_R_V1",
+      "npz": {
+        "bytes": 300350,
+        "sha256": "f3a90c0136dad12d68f7274bacdf111c30c27d84b373a0d53ee3a83db704e7e0"
+      },
+      "schema": "hydra-real-batch-fixture/v1",
+      "target_quality_policy": "PRIMARY_APPROVED_A_OPTIONAL_R_V1"
+    },
+    "source_receipts_sha256": "2f4624e4793a31ce10039785fdf1b44eb909c62b7a1f940f1b7ea8f338276530",
+    "validation_origin_utc": "2023-08-25T00:00:00Z",
+    "validation_samples": 20,
+    "warmup_updates": 5,
+    "width": 64
+  },
+  "status": "PLANNED_NOT_EXECUTED"
+}
