@@ -27,7 +27,7 @@ Actual artifact creation timestamps are distinct from simulated historical
 information cutoffs.
 
 See [the completed work ledger](docs/work-ledger.md) for commits and evidence.
-The integrated offline-environment suite passes **217 tests**. Current reports
+The integrated offline-environment suite passes **233 tests**. Current reports
 include four-model CPU/MPS qualification, a bounded real-data engineering probe,
 fresh-process recovery and a 20-case synthetic local throughput benchmark.
 Discharge-only ablation and source-aware NWM evaluation helpers are implemented.
@@ -49,6 +49,13 @@ Preprocessing took 9.22 seconds with an empty derived cache including stop/resum
 The [November 2 next-steps plan](docs/next-steps-20261102.md) proposes the scientific
 protocol, cohort preparation, realistic training benchmark and November 6 poster
 schedule. It does not freeze scientific choices or authorize further spending.
+
+The [reconciled scientific study design](docs/scientific-study-design.md) records
+hypotheses, actual architecture counts, proposed expanding CV, component/input
+controls, assessment gates and the figure/edge-research plans. The confirmed
+A/A+R quality rule is implemented with independent input/target policy arguments;
+persistence is excluded from the active experiment. Full scientific fitting,
+CV adoption and protected assessment remain pending.
 
 ## Local use
 

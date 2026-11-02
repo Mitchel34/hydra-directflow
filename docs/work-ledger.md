@@ -18,7 +18,7 @@ Each code chunk has been tested locally and committed separately. Raw data and l
 | `b2c2f64` | Development availability | Quality/timestamp columns only; 12 comparisons, one month |
 | `cd02171` | Q-only control | 11 ablation tests and two zero-update model forwards |
 
-The October 29 suite passed **114 tests** (`reports/release-check.json`), the first November continuation passed **154** (`reports/continuation-check.json`), and cache/month preparation passed **211** (`reports/cache-month-readiness-check.json`). The completed real-month exercise passes **217 tests** (`reports/month-execution-check.json`). These are local checks; hosted CI remains inactive.
+The October 29 suite passed **114 tests** (`reports/release-check.json`), the first November continuation passed **154** (`reports/continuation-check.json`), cache/month preparation passed **211** (`reports/cache-month-readiness-check.json`), and the real-month exercise passed **217** (`reports/month-execution-check.json`). The confirmed quality adapter now passes **233 tests** (`reports/primary-quality-release.json`). These are local checks; hosted CI remains inactive.
 
 Qualification accounting: 878 synthetic optimizer updates across the model, recovery and benchmark attempts; four completed real-data engineering updates on one repeated observed case. One earlier failed engineering admission precharged two updates but failed before optimizer entry; its record remains. These are not scientific campaign fits or forecast-skill results.
 
@@ -102,3 +102,31 @@ Next: use this observed month to refine a bounded full-corpus preprocessing and
 model-training proposal. Account for legacy/gap variants, full source sizes,
 data-transfer location, eligibility, batching and the remaining scientific
 choices before requesting any additional downloads or paid compute.
+
+## Scientific reconciliation and quality adapter — November 2
+
+Baseline at 11:44 Central: clean local/remote `a4d3fd1`, no newer implementation,
+five acquisition authorities and all retained August/cache identities verified,
+and no related local worker observed. No current cloud-resource query was made.
+The old acquisition report and October pause fields do not supersede the current
+repository and November checkpoint. See `reports/study-reconciliation-20261102.json`.
+
+The confirmed A-required/optional-R policy is now implemented and tested. P, e,
+unknown, empty and malformed qualifiers are rejected. Source ordering/duplicates
+are preserved, input and target policies are independent, and no target is filled.
+Historical default/receipts remain strict-A; new scientific callers must select
+the primary policy explicitly. All arrays from the saved local L168 fixture match
+under the unchanged default. Policy-specific source tests and 16 new regressions
+pass; full-cohort eligibility remains to be audited. No optimizer updates or new
+scientific-data downloads occurred.
+
+Persistence is excluded from the active study following the user's account of
+advisor Zoom guidance, with delayed observations and gauge outages as the stated
+concerns. This is user-reported guidance, not transcript verification. The learned
+Q-only control remains. No advisor message was sent.
+
+`docs/scientific-study-design.md` is a proposal, not a protocol freeze or assessment
+permission. It specifies controlled hypotheses, actual model mechanisms/counts,
+component-control estimates, expanding-window CV dates, fit counts, uncertainty,
+figures, milestones and a separate future edge-AI outline. The accepted abstract
+still requires coauthor alignment with the current direct-forecast framing.

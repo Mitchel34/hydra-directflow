@@ -1,0 +1,106 @@
+{
+  "captured_at_central": "2026-11-02T11:44:42.153595-06:00",
+  "captured_at_utc": "2026-11-02T17:44:42.153595+00:00",
+  "derived_cache": {
+    "bytes_including_commits": 17041091,
+    "counts": {
+      "basin_cycle": 127,
+      "usgs_month": 3
+    },
+    "quarantine_count": 0,
+    "raw_source_redecoded_this_audit": false,
+    "staging_count": 0,
+    "status": "COMPLETE_VERIFIED_CURRENT_PAYLOADS"
+  },
+  "git": {
+    "branch": "main",
+    "clean": true,
+    "head": "a4d3fd1f542af3d619485168f20573fbffdd5d63",
+    "matches": true,
+    "remote_main": "a4d3fd1f542af3d619485168f20573fbffdd5d63"
+  },
+  "legacy_status_cautions": [
+    "HRRR_COMPLETION_REPORT preprocessing/model qualification fields predate the repository implementation",
+    "ACTIVE_ACQUISITION_HANDOFF preserves October pause and old recovery fields; its current_implementation_checkpoint is the newer authority",
+    "Old resource counts and 60 USD acquisition exposure are dated snapshots, not current provider state or invoices"
+  ],
+  "month_preprocessing": {
+    "all_chunk_arrays_exact_across_modes": true,
+    "cold_stop_resume_seconds": 9.224897457985207,
+    "complete_cases": 2046,
+    "completed_at_utc": "2026-11-02T15:43:57.569577+00:00",
+    "gauge_cases": 2232,
+    "new_optimizer_updates": 0,
+    "origins": 744,
+    "quality_policy_used": "Strict exact A-only at case assembly",
+    "scientific_fit_or_skill_claim": false,
+    "status": "PASSED_REAL_MONTH_COLD_RESUME_WARM_AND_VERIFICATION",
+    "verification_only_seconds": 0.7840553750284016,
+    "warm_full_assembly_seconds": 5.123547125025652
+  },
+  "newer_work_check": "No commits after a4d3fd1 at baseline; separate context-review thread reported only read-only checks",
+  "process_snapshot": {
+    "captured_at_utc": "2026-11-02T17:44:43.826646+00:00",
+    "cloud_processes_or_VMs_queried": false,
+    "matching_local_workers": [],
+    "scope": "Known project acquisition, retrieval, preprocessing, and timing worker names in local ps snapshot"
+  },
+  "schema": "hydra-readonly-status-reconciliation/v1",
+  "scientific_status_at_baseline": {
+    "CI": "PENDING_WORKFLOW_SCOPED_CREDENTIALS",
+    "cloud_compute_authorization": "PENDING_UNDECIDED",
+    "cumulative_real_engineering_updates": 52,
+    "cumulative_synthetic_updates": 878,
+    "observability": "LOCAL_JOURNALS_AND_GRAFANA_TEMPLATE_IMPLEMENTED_NO_HOSTED_SERVICE_RECEIPT",
+    "protected_assessment_scoring": "PENDING_DISABLED",
+    "provider_current_resources": "NOT_QUERIED",
+    "scientific_training": "PENDING_NOT_STARTED_IN_CURRENT_RECEIPTS"
+  },
+  "scope": "Baseline reconciliation before the separately recorded quality implementation in this turn; no protected values or provider resource status queried",
+  "source_acquisition": {
+    "accounted_cycles": 61824,
+    "authority_artifacts": [
+      {
+        "matches": true,
+        "name": "QUALIFIED_CYCLES.jsonl",
+        "sha256": "75469df20f79d94ffb058f439f1ac873f0cf4164c1417eec7298a6641a35baa5"
+      },
+      {
+        "matches": true,
+        "name": "MANIFEST.json",
+        "sha256": "f5b130263ec3d449528b205fc2c6534bed93b8cd9513f8ef84e243187f0f8e2b"
+      },
+      {
+        "matches": true,
+        "name": "NATIVE_COMPLETION_AUDIT.json",
+        "sha256": "de32d625f98b21ea18abf2ecb6a8ac6af11fa79825520dad9f61f4abb5d6f31e"
+      },
+      {
+        "matches": true,
+        "name": "INDEX_AUDIT.json",
+        "sha256": "593989f401fb4306f9fa82b692acca83a09dc88f5dc61b1f81988269206aed1b"
+      },
+      {
+        "matches": true,
+        "name": "FINAL_JOIN.json",
+        "sha256": "eabbb5c4b56eee63e9ae63b49419e44952cc9cdb2643094ad58a24a5cdd7e521"
+      }
+    ],
+    "cloud_inventory_requeried": false,
+    "explicit_upstream_gap_cycles": 166,
+    "remaining_cycles": 0,
+    "sealed_at_utc": "2026-10-27T09:47:57.974242+00:00",
+    "status": "COMPLETE_SEALED_QUALIFIED_CALENDAR_WITH_EXPLICIT_SOURCE_GAPS",
+    "verified_data_complete_cycles": 61658
+  },
+  "tests": {
+    "all_code_hashes_match": true,
+    "code_files_checked": 50,
+    "executed_at_utc": "2026-11-02T15:43:41.887117+00:00",
+    "rerun_during_this_audit": false,
+    "test_log_current_sha_matches": true,
+    "test_log_sha256": "831788e1fe6c29a139aff910774d2735a548276526c9efe718a23661d0bb56b3",
+    "tests_passed": 217,
+    "unit_suite_optimizer_updates": 0
+  }
+}
