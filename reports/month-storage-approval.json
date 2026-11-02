@@ -1,0 +1,12 @@
+{
+  "approved_estimated_read_transfer_usd": 1,
+  "approved_response_body_bytes": 1073741824,
+  "conservative_estimated_maximum_usd": 0.3,
+  "estimate_basis": "At most1GiB at $0.23/GiB internet egress plus $0.05/GiB retrieval and137 classB reads at $0.05/1000; rounded up. No discounts assumed. Estimate is not an invoice.",
+  "plan_sha256": "1ff7cd522b458af45c6057ece40259ecd1403be91b8d0bd212712b40c007fd73",
+  "planning_price_source": "https://cloud.google.com/storage/pricing",
+  "recorded_at_utc": "2026-11-02T15:34:38.155737+00:00",
+  "schema": "hydra-approved-month-storage-read/v1",
+  "scope": "Existing generation-pinned August2023 HRRR objects only; no VMs/cloud training/cloud writes",
+  "user_approval": "Approve capped storage download"
+}
