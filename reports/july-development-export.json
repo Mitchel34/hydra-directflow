@@ -1,0 +1,29 @@
+{
+  "administrative_decode_executed": true,
+  "approval_scope": "One local administrative mixed-month export only; no scoring/download/spending authority",
+  "cloud_operations": 0,
+  "commit_sha256": "d186e7a2c57815b127f1c79ed7978bc607dc90a07bcbb5e6dedfa69c4bc929bd",
+  "created_at_utc": "2026-11-02T19:29:37.905071+00:00",
+  "cutoff_exclusive_utc": "2024-07-31T00:00:00Z",
+  "excluded_rows": 579,
+  "exported_rows": 8640,
+  "implementation_sha256": {
+    "development_export.py": "472149f464d5634298ca9ad6d42b17f24270d9d56634226b7b4ab2c58efb0ab5",
+    "local_data.py": "6ed7927b7388e7115f713353fa103ee01df03bac2183788ebf1aedb620daa662",
+    "reference.py": "7c21deee40c04bc72bc5cfcb190a39792c94ab65115c16ca03da551296575135"
+  },
+  "input_source_unchanged": true,
+  "month": "2024-07",
+  "network_requests": 0,
+  "payload_sha256": "5d20def8093ef9e3fc97e971e27c7225a850b7defc657fdf88fb4e9dd9b4930d",
+  "physical_decode_scope": "MIXED_SOURCE_ROW_GROUPS_MAY_INCLUDE_PROTECTED_VALUES",
+  "protected_scoring_permitted": false,
+  "protected_values_returned_or_logged": false,
+  "schema": "hydra-development-boundary-export/v1",
+  "scientific_scoring_executed": false,
+  "source_manifest_sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a",
+  "source_partition_sha256": "de5761fbd420c1ba538180d1dfad8e9d4d0150e871cfa5132c96c8662f1e1966",
+  "status": "COMPLETE_DEVELOPMENT_ONLY",
+  "token_is_human_authorization": false,
+  "user_approval": "Approve development-only export"
+}

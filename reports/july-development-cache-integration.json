@@ -1,0 +1,93 @@
+{
+  "export_commit_sha256": "d186e7a2c57815b127f1c79ed7978bc607dc90a07bcbb5e6dedfa69c4bc929bd",
+  "network_requests": 0,
+  "optimizer_updates": 0,
+  "protected_assessment_scored": false,
+  "protected_values_decoded_by_cache": false,
+  "runs": [
+    {
+      "cache_key": "d638a613534c793aef04a8b9bdedac00335289b4940d839b324b55dc06dcfbbf",
+      "counts": {
+        "bytes_read": 11184,
+        "bytes_written": 11184,
+        "hits": 0,
+        "memory_hits": 0,
+        "misses": 1,
+        "repairs": 0
+      },
+      "last_epoch": 1722380400,
+      "returned_exact_hour_rows": 2160,
+      "source_receipt": {
+        "bytes": 73234,
+        "development_export": {
+          "commit_sha256": "d186e7a2c57815b127f1c79ed7978bc607dc90a07bcbb5e6dedfa69c4bc929bd",
+          "cutoff_exclusive_epoch": 1722384000,
+          "exported_rows": 8640,
+          "month": "2024-07",
+          "payload": {
+            "bytes": 26755,
+            "name": "data.parquet",
+            "sha256": "5d20def8093ef9e3fc97e971e27c7225a850b7defc657fdf88fb4e9dd9b4930d"
+          },
+          "physical_decode_scope": "MIXED_SOURCE_ROW_GROUPS_MAY_INCLUDE_PROTECTED_VALUES",
+          "plan_sha256": "e6210652e6c7c3a3132f9315ef631752708b59ce68b34651cf22fda4d888874b",
+          "protected_scoring_permitted": false,
+          "source_manifest_sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a",
+          "source_partition": {
+            "bytes": 73234,
+            "month": "2024-07",
+            "sha256": "de5761fbd420c1ba538180d1dfad8e9d4d0150e871cfa5132c96c8662f1e1966"
+          },
+          "start_inclusive_epoch": 1719792000
+        },
+        "exact_core_rows": 2160,
+        "month": "2024-07",
+        "returned_rows": 8631,
+        "sha256": "de5761fbd420c1ba538180d1dfad8e9d4d0150e871cfa5132c96c8662f1e1966"
+      }
+    },
+    {
+      "cache_key": "d638a613534c793aef04a8b9bdedac00335289b4940d839b324b55dc06dcfbbf",
+      "counts": {
+        "bytes_read": 11184,
+        "bytes_written": 0,
+        "hits": 1,
+        "memory_hits": 0,
+        "misses": 0,
+        "repairs": 0
+      },
+      "last_epoch": 1722380400,
+      "returned_exact_hour_rows": 2160,
+      "source_receipt": {
+        "bytes": 73234,
+        "development_export": {
+          "commit_sha256": "d186e7a2c57815b127f1c79ed7978bc607dc90a07bcbb5e6dedfa69c4bc929bd",
+          "cutoff_exclusive_epoch": 1722384000,
+          "exported_rows": 8640,
+          "month": "2024-07",
+          "payload": {
+            "bytes": 26755,
+            "name": "data.parquet",
+            "sha256": "5d20def8093ef9e3fc97e971e27c7225a850b7defc657fdf88fb4e9dd9b4930d"
+          },
+          "physical_decode_scope": "MIXED_SOURCE_ROW_GROUPS_MAY_INCLUDE_PROTECTED_VALUES",
+          "plan_sha256": "e6210652e6c7c3a3132f9315ef631752708b59ce68b34651cf22fda4d888874b",
+          "protected_scoring_permitted": false,
+          "source_manifest_sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a",
+          "source_partition": {
+            "bytes": 73234,
+            "month": "2024-07",
+            "sha256": "de5761fbd420c1ba538180d1dfad8e9d4d0150e871cfa5132c96c8662f1e1966"
+          },
+          "start_inclusive_epoch": 1719792000
+        },
+        "exact_core_rows": 2160,
+        "month": "2024-07",
+        "returned_rows": 8631,
+        "sha256": "de5761fbd420c1ba538180d1dfad8e9d4d0150e871cfa5132c96c8662f1e1966"
+      }
+    }
+  ],
+  "schema": "hydra-real-boundary-cache-integration/v1",
+  "status": "PASSED_PREBOUNDARY_ONLY_CACHE_AND_REUSE"
+}

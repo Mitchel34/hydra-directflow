@@ -268,6 +268,77 @@ class HrrrInventory(unittest.TestCase):
                 audit.read_required_index(path, ["20230801_00Z"])
 
 
+class AggregateAdmissionProofs(unittest.TestCase):
+    def coverage(self, *, month="2023-08", site=GAUGES[0], hours=744, native=2976, invalid=0, categories=None):
+        start, end = audit.month_bounds(month)
+        return {"site": site, "chunk": month, "core_start_utc": audit.iso(start), "core_end_exclusive_utc": audit.iso(end),
+                "native_rows": str(native), "exact_hour_rows": str(hours), "numeric_invalid": str(invalid),
+                "qualifier_counts_json": json.dumps(categories or {json.dumps(["A"]): native})}
+
+    def gap(self, stamp, site=GAUGES[0]):
+        return {"site": site, "sample_epoch": str(stamp), "sample_time_utc": audit.iso(stamp)}
+
+    def test_uniform_native_admission_and_gap_census_prove_boolean_axis_only(self):
+        missing = BASE + (9 * 24 + 18) * H
+        proof = audit.prove_aggregate_admission([self.coverage(hours=743, native=2972)], [self.gap(missing)], {"2023-08"})
+        item = proof[GAUGES[0]]["2023-08"]
+        self.assertEqual(item["status"], "PROVEN_ADMISSION_AXIS")
+        self.assertEqual(item["gap_epochs"], [missing])
+        self.assertFalse(item["native_qualifier_sequences_reconstructed"])
+        self.assertFalse(item["values_or_source_ids_reconstructed"])
+        split = {"name": "synthetic", "start": BASE + 9 * 24 * H, "end": BASE + 11 * 24 * H}
+        empty = {site: {} for site in GAUGES}
+        before = audit.count_split(split, empty, set(), [], history_hours=24)
+        after = audit.count_split(split, empty, set(), [], history_hours=24, aggregate_proofs=proof)
+        self.assertEqual(before[0]["joint_usgs_metadata"][audit.UNKNOWN], 30)
+        self.assertEqual(after[0]["joint_usgs_metadata"], {audit.ELIGIBLE: 2, audit.INELIGIBLE: 28, audit.UNKNOWN: 0})
+        self.assertEqual(after[1]["joint_usgs_metadata"][audit.UNKNOWN], 30)
+        self.assertEqual(empty, {site: {} for site in GAUGES})
+
+    def test_mixed_estimated_counts_do_not_invent_hourly_flag_placement(self):
+        row = self.coverage(categories={json.dumps(["A"]): 2975, json.dumps(["A", "e"]): 1})
+        item = audit.prove_aggregate_admission([row], [], {"2023-08"})[GAUGES[0]]["2023-08"]
+        self.assertEqual(item["status"], "UNKNOWN")
+        self.assertIsNone(item["proof_kind"])
+
+    def test_any_unknown_numeric_failure_location_keeps_admission_unknown(self):
+        item = audit.prove_aggregate_admission([self.coverage(invalid=1)], [], {"2023-08"})[GAUGES[0]]["2023-08"]
+        self.assertEqual(item["status"], "UNKNOWN")
+
+    def test_exact_count_gap_mismatch_rejected(self):
+        with self.assertRaisesRegex(ValueError, "gap census"):
+            audit.prove_aggregate_admission([self.coverage(hours=743)], [], {"2023-08"})
+
+    def test_qualifier_counts_must_exhaust_native_rows(self):
+        with self.assertRaisesRegex(ValueError, "exhaust"):
+            audit.prove_aggregate_admission([self.coverage(categories={json.dumps(["A"]): 2975})], [], {"2023-08"})
+
+    def test_duplicate_gap_coordinates_rejected(self):
+        gap = self.gap(BASE)
+        with self.assertRaisesRegex(ValueError, "Duplicate exact-hour gap"):
+            audit.prove_aggregate_admission([self.coverage(hours=743)], [gap, gap], {"2023-08"})
+
+    def test_duplicate_coverage_and_overlapping_intervals_rejected(self):
+        row = self.coverage()
+        with self.assertRaisesRegex(ValueError, "Duplicate"):
+            audit.prove_aggregate_admission([row, row], [], {"2023-08"})
+        overlap = self.coverage(month="2023-09", hours=720, native=2880)
+        overlap["core_start_utc"] = "2023-08-31T00:00:00Z"
+        with self.assertRaisesRegex(ValueError, "Overlapping"):
+            audit.prove_aggregate_admission([row, overlap], [], {"2023-08"})
+
+    def test_escaped_original_category_keys_and_duplicate_r_flags_are_supported(self):
+        encoded = json.dumps(["R", "A", "R"], separators=(",", ":")).replace('"', '\\"')
+        row = self.coverage(native=2975, categories={encoded: 2975})
+        item = audit.prove_aggregate_admission([row], [], {"2023-08"})[GAUGES[0]]["2023-08"]
+        self.assertEqual(item["status"], "PROVEN_ADMISSION_AXIS")
+        self.assertEqual(item["qualifier_counts_verbatim"], row["qualifier_counts_json"])
+
+    def test_mixed_boundary_month_is_not_inferred_from_whole_month_counts(self):
+        proof = audit.prove_aggregate_admission([], [], {"2024-07"})
+        self.assertTrue(all(proof[site]["2024-07"]["status"] == "UNKNOWN" for site in GAUGES))
+
+
 class EligibilityCLI(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

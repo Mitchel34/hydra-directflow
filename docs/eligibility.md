@@ -52,3 +52,15 @@ Available-group summaries establish structural weather/soil support, not numeric
 Known bundle bytes come only from the sealed index or SHA-authenticated resident original commits. Commit object bytes are never mistaken for weather payload bytes. Archive paths are inspected with filesystem metadata only: a resident archive is labeled stat-only because its payload is neither opened nor hashed here. Exact known byte totals are lower bounds, not a full-corpus download budget. The inventory makes no cloud listing, credential request, network call, or modification to source artifacts.
 
 `full_model_numeric_input_eligibility` therefore remains unestablished. The combined USGS-plus-HRRR structural counts are a preparation screen, not proof that those cases can enter a scientific fit. Resolve unknown metadata coverage and perform numerical source validation before freezing that cohort.
+
+## Optional aggregate admission proof
+
+`--aggregate-admission-proofs` explicitly enables a second evidence route for unread native months. The original report remains preserved; use new output names, such as `reports/development-eligibility-refined.json` and an ignored private inventory with a matching suffix.
+
+The pinned source manifest also authenticates `coverage_by_station_chunk.csv` and `exact_hour_gaps.csv`. A gauge-month is eligible for this route only when its coverage interval is the exact full month, qualifier-category counts exhaust all native rows, every nonzero category satisfies the confirmed A/A+R policy, the recorded native numeric-invalid count is zero, and the exact-hour count plus the authenticated gap census equals the calendar's expected hours. Duplicate gap coordinates, duplicate gauge-month rows, overlapping coverage intervals, and inconsistent counts are rejected.
+
+These conditions prove an **admission boolean**: listed gaps are absent, and every other exact hour is present and admissible under the retained QA. No discharge value, original per-hour qualifier sequence, or source ID is reconstructed. The proof is separately labeled `ALL_NATIVE_ROWS_ADMITTED_PLUS_EXACT_HOUR_GAP_CENSUS` and binds both artifact hashes. Native metadata takes precedence whenever it was decoded directly.
+
+Mixed A/e counts cannot identify which hours carry estimated flags, so they remain unknown. The proof also leaves unknown any nonzero numeric-invalid count with no time placement, missing coverage evidence, or a month crossing the protected boundary. Uncertainty is tracked separately for each gauge-month; it is not propagated to a fully proven neighboring gauge.
+
+The refined execution proves 29 of the original 33 unread gauge-month admission axes. February 2022 remains unknown for all three gauges, and December 2023 remains unknown for Sugar Grove. The 11 native Parquet files remain dataless: this metadata proof does **not** make their discharge values resident or available for training. Full numerical preprocessing still requires authenticated source values, and the unchanged HRRR structural limitations still apply.

@@ -1,0 +1,29 @@
+{
+  "bounded_reader_size_scenario_bytes": 94279806976,
+  "created_at_utc": "2026-11-02T19:18:31.839186+00:00",
+  "discovery_counters": {
+    "candidate_path_absent": 16873,
+    "dataless_skipped": 948,
+    "resident_commit_bytes_read": 3768648,
+    "resident_commit_reads": 4479
+  },
+  "elapsed_seconds": 2.0074935420416296,
+  "hydrations": 0,
+  "known_bundle_bytes": 26566963200,
+  "known_bundle_count": 4805,
+  "network_requests": 0,
+  "new_exact_bundle_bytes": 24046622720,
+  "new_exact_bundle_count": 4325,
+  "previous_known_bundle_bytes": 2520340480,
+  "previous_known_bundle_count": 480,
+  "private_evidence_sha256": "51cfa1c64bcf98ff43f8ce3000e4559c159a5cc8410d1de2721b32fdac8955ee",
+  "qualified_index_sha256": "75469df20f79d94ffb058f439f1ac873f0cf4164c1417eec7298a6641a35baa5",
+  "remaining_unknown_bundle_count": 4039,
+  "remaining_unknown_sealed_rows": 4036,
+  "required_cycle_slots": 8844,
+  "schema": "hydra-private-resident-commit-byte-augmentation/v1",
+  "scope": "Guided original-commit paths derived from sealed proof locations, plus known stage1 commit directory; no broad content scans",
+  "sealed_rows": 8841,
+  "size_scenario_qualification": "Conditional ceiling if every remaining sealed archive satisfies the existing16MiB bounded-reader contract; not an exact inventory",
+  "weather_payloads_read": 0
+}

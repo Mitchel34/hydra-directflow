@@ -1,0 +1,4348 @@
+{
+  "cloud_jobs": 0,
+  "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+  "hardware": {
+    "cpu": "Apple M1 Pro",
+    "cpu_cores": 8,
+    "cpu_threads_per_worker": 1,
+    "ram_gib": 32
+  },
+  "implementation_sha256": {
+    "scripts/benchmark_real_batches.py": "5c26e53eef461860758ae6b24eeca575027d98f6ac188ee66733c6da2c3ab7e8",
+    "scripts/estimate_training_runtime.py": "3cdd4bdd9bd7673e74dfa49e5ad27461be9577477f23e3b819c6f152974a2422"
+  },
+  "measurements_sha256": "008364afd040be959d30949197b561596bc0c2953937c51b52be9474ffe0b801",
+  "optimizer_updates": 0,
+  "qualifications": [
+    "Known-count and calendar calculations are scenarios, not confidence or runtime bounds",
+    "Full-model numerical eligibility, transforms, losses, seeds and trial budgets remain unfrozen",
+    "Full-cohort loading/materialization, convergence, failures, thermal/sleep delays and plotting excluded",
+    "Sequential CPU/MPS execution assumed; no concurrent speedup or CUDA extrapolation",
+    "CV, lookback/input controls and extra architectures add work and require their declared budgets"
+  ],
+  "scenarios": [
+    {
+      "base_fit_count": 36,
+      "batch_size": 64,
+      "count_scenario": "known_joint_usgs",
+      "device_policy": "CPU",
+      "epochs": 20,
+      "per_model_gauge": [
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03161000",
+          "per_epoch_seconds": 24.717083889665084,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.4127694180804634,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.0406743943458423,
+          "gauge": "03161000",
+          "per_epoch_seconds": 84.46984610897489,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.408709342769871,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03161000",
+          "per_epoch_seconds": 34.62903615471441,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.5779956860399155,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.04288345577078871,
+          "gauge": "03161000",
+          "per_epoch_seconds": 186.9904397260339,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.118010138556239,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03164000",
+          "per_epoch_seconds": 22.194528351875487,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.3707268257839702,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.0406743943458423,
+          "gauge": "03164000",
+          "per_epoch_seconds": 75.75419223788194,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.2634484449183219,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03164000",
+          "per_epoch_seconds": 31.068572405987652,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.5186546235611361,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.04288345577078871,
+          "gauge": "03164000",
+          "per_epoch_seconds": 167.84845672945374,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 2.798977088613236,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03479000",
+          "per_epoch_seconds": 23.533758832351307,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.39304733379190054,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.0406743943458423,
+          "gauge": "03479000",
+          "per_epoch_seconds": 80.97957474677824,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.3505381533999268,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03479000",
+          "per_epoch_seconds": 33.12578670337098,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.5529415285175249,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.04288345577078871,
+          "gauge": "03479000",
+          "per_epoch_seconds": 178.36619304144403,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 2.9742726938130746,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        }
+      ],
+      "plus_matching_q_only_sizing_hours": 31.480182555691158,
+      "q_only_sizing_qualification": "Uses full-input cost as a transparent sizing proxy, not measured Q-only throughput",
+      "total_hours": 15.740091277845579
+    },
+    {
+      "base_fit_count": 36,
+      "batch_size": 64,
+      "count_scenario": "known_joint_usgs",
+      "device_policy": "MPS",
+      "epochs": 20,
+      "per_model_gauge": [
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.2534203649905976,
+          "gauge": "03161000",
+          "per_epoch_seconds": 38.779227443988205,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.6473248849264491,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03161000",
+          "per_epoch_seconds": 63.404987453011564,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.0579471380045435,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.395631183241494,
+          "gauge": "03161000",
+          "per_epoch_seconds": 107.72730650188753,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.796613347822432,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03161000",
+          "per_epoch_seconds": 77.54385523420642,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.294479881445101,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.2534203649905976,
+          "gauge": "03164000",
+          "per_epoch_seconds": 34.80239851942169,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.5810444028503406,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03164000",
+          "per_epoch_seconds": 56.879918003914646,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.9491959805195949,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.395631183241494,
+          "gauge": "03164000",
+          "per_epoch_seconds": 96.63063391242177,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.6116688046646694,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03164000",
+          "per_epoch_seconds": 69.5769041682419,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.1616973636790255,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.2534203649905976,
+          "gauge": "03479000",
+          "per_epoch_seconds": 37.04151532867109,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.6183630163378306,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03479000",
+          "per_epoch_seconds": 60.703851115243744,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.0129281990417465,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.395631183241494,
+          "gauge": "03479000",
+          "per_epoch_seconds": 103.17836380409427,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.7207976361925446,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03479000",
+          "per_epoch_seconds": 74.15627493435167,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.2380202097808555,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        }
+      ],
+      "plus_matching_q_only_sizing_hours": 27.38016173053027,
+      "q_only_sizing_qualification": "Uses full-input cost as a transparent sizing proxy, not measured Q-only throughput",
+      "total_hours": 13.690080865265134
+    },
+    {
+      "base_fit_count": 36,
+      "batch_size": 64,
+      "count_scenario": "known_joint_usgs",
+      "device_policy": "MIXED_THROUGHPUT",
+      "epochs": 20,
+      "per_model_gauge": [
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03161000",
+          "per_epoch_seconds": 24.717083889665084,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.4127694180804634,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03161000",
+          "per_epoch_seconds": 34.62903615471441,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.5779956860399155,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03161000",
+          "per_epoch_seconds": 63.404987453011564,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.0579471380045435,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03161000",
+          "per_epoch_seconds": 77.54385523420642,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.294479881445101,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03164000",
+          "per_epoch_seconds": 22.194528351875487,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.3707268257839702,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03164000",
+          "per_epoch_seconds": 31.068572405987652,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.5186546235611361,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03164000",
+          "per_epoch_seconds": 56.879918003914646,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.9491959805195949,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03164000",
+          "per_epoch_seconds": 69.5769041682419,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.1616973636790255,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03479000",
+          "per_epoch_seconds": 23.533758832351307,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.39304733379190054,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03479000",
+          "per_epoch_seconds": 33.12578670337098,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.5529415285175249,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03479000",
+          "per_epoch_seconds": 60.703851115243744,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.0129281990417465,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03479000",
+          "per_epoch_seconds": 74.15627493435167,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.2380202097808555,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        }
+      ],
+      "plus_matching_q_only_sizing_hours": 19.080808376491554,
+      "q_only_sizing_qualification": "Uses full-input cost as a transparent sizing proxy, not measured Q-only throughput",
+      "total_hours": 9.540404188245777
+    },
+    {
+      "base_fit_count": 36,
+      "batch_size": 64,
+      "count_scenario": "known_joint_usgs",
+      "device_policy": "CPU",
+      "epochs": 50,
+      "per_model_gauge": [
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03161000",
+          "per_epoch_seconds": 24.717083889665084,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.0306965153220906,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.0406743943458423,
+          "gauge": "03161000",
+          "per_epoch_seconds": 84.46984610897489,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.520455495494243,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03161000",
+          "per_epoch_seconds": 34.62903615471441,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.4437215899077758,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.04288345577078871,
+          "gauge": "03161000",
+          "per_epoch_seconds": 186.9904397260339,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 7.792771131707088,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03164000",
+          "per_epoch_seconds": 22.194528351875487,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.9255900345808575,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.0406743943458423,
+          "gauge": "03164000",
+          "per_epoch_seconds": 75.75419223788194,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.15730325086537,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03164000",
+          "per_epoch_seconds": 31.068572405987652,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.2953689337108274,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.04288345577078871,
+          "gauge": "03164000",
+          "per_epoch_seconds": 167.84845672945374,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 6.995188506849582,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03479000",
+          "per_epoch_seconds": 23.533758832351307,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.9813913046006832,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.0406743943458423,
+          "gauge": "03479000",
+          "per_epoch_seconds": 80.97957474677824,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.375027522069383,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03479000",
+          "per_epoch_seconds": 33.12578670337098,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.3810861961017993,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.04288345577078871,
+          "gauge": "03479000",
+          "per_epoch_seconds": 178.36619304144403,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 7.433427519849176,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        }
+      ],
+      "plus_matching_q_only_sizing_hours": 78.66405600211775,
+      "q_only_sizing_qualification": "Uses full-input cost as a transparent sizing proxy, not measured Q-only throughput",
+      "total_hours": 39.33202800105887
+    },
+    {
+      "base_fit_count": 36,
+      "batch_size": 64,
+      "count_scenario": "known_joint_usgs",
+      "device_policy": "MPS",
+      "epochs": 50,
+      "per_model_gauge": [
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.2534203649905976,
+          "gauge": "03161000",
+          "per_epoch_seconds": 38.779227443988205,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.6168055710261544,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03161000",
+          "per_epoch_seconds": 63.404987453011564,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 2.643071824329832,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.395631183241494,
+          "gauge": "03161000",
+          "per_epoch_seconds": 107.72730650188753,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 4.48979601036962,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03161000",
+          "per_epoch_seconds": 77.54385523420642,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.2330762623002616,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.2534203649905976,
+          "gauge": "03164000",
+          "per_epoch_seconds": 34.80239851942169,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.4511043658358833,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03164000",
+          "per_epoch_seconds": 56.879918003914646,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 2.3711939306174603,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.395631183241494,
+          "gauge": "03164000",
+          "per_epoch_seconds": 96.63063391242177,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 4.027434652475214,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03164000",
+          "per_epoch_seconds": 69.5769041682419,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 2.9011199678850734,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.2534203649905976,
+          "gauge": "03479000",
+          "per_epoch_seconds": 37.04151532867109,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.544400899554608,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03479000",
+          "per_epoch_seconds": 60.703851115243744,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 2.5305244769228397,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.395631183241494,
+          "gauge": "03479000",
+          "per_epoch_seconds": 103.17836380409427,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 4.300256731294902,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03479000",
+          "per_epoch_seconds": 74.15627493435167,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.091927083139647,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        }
+      ],
+      "plus_matching_q_only_sizing_hours": 68.40142355150299,
+      "q_only_sizing_qualification": "Uses full-input cost as a transparent sizing proxy, not measured Q-only throughput",
+      "total_hours": 34.20071177575149
+    },
+    {
+      "base_fit_count": 36,
+      "batch_size": 64,
+      "count_scenario": "known_joint_usgs",
+      "device_policy": "MIXED_THROUGHPUT",
+      "epochs": 50,
+      "per_model_gauge": [
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03161000",
+          "per_epoch_seconds": 24.717083889665084,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.0306965153220906,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03161000",
+          "per_epoch_seconds": 34.62903615471441,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.4437215899077758,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03161000",
+          "per_epoch_seconds": 63.404987453011564,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 2.643071824329832,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03161000",
+          "per_epoch_seconds": 77.54385523420642,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.2330762623002616,
+          "train_cases": 42215,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03164000",
+          "per_epoch_seconds": 22.194528351875487,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.9255900345808575,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03164000",
+          "per_epoch_seconds": 31.068572405987652,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.2953689337108274,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03164000",
+          "per_epoch_seconds": 56.879918003914646,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 2.3711939306174603,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03164000",
+          "per_epoch_seconds": 69.5769041682419,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 2.9011199678850734,
+          "train_cases": 37791,
+          "trials": 1,
+          "validation_cases": 8125
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03479000",
+          "per_epoch_seconds": 23.533758832351307,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.9813913046006832,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03479000",
+          "per_epoch_seconds": 33.12578670337098,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.3810861961017993,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03479000",
+          "per_epoch_seconds": 60.703851115243744,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 2.5305244769228397,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "known_joint_usgs: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03479000",
+          "per_epoch_seconds": 74.15627493435167,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.091927083139647,
+          "train_cases": 40791,
+          "trials": 1,
+          "validation_cases": 6798
+        }
+      ],
+      "plus_matching_q_only_sizing_hours": 47.65753623883829,
+      "q_only_sizing_qualification": "Uses full-input cost as a transparent sizing proxy, not measured Q-only throughput",
+      "total_hours": 23.828768119419145
+    },
+    {
+      "base_fit_count": 36,
+      "batch_size": 64,
+      "count_scenario": "post_purge_calendar",
+      "device_policy": "CPU",
+      "epochs": 20,
+      "per_model_gauge": [
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03161000",
+          "per_epoch_seconds": 25.821402429090814,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.4311747270708923,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.0406743943458423,
+          "gauge": "03161000",
+          "per_epoch_seconds": 88.38884117943235,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.4740259272774954,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03161000",
+          "per_epoch_seconds": 36.21660662733484,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.6044551939169226,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.04288345577078871,
+          "gauge": "03161000",
+          "per_epoch_seconds": 195.43181525989783,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.2586997307873045,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03164000",
+          "per_epoch_seconds": 25.821402429090814,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.4311747270708923,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.0406743943458423,
+          "gauge": "03164000",
+          "per_epoch_seconds": 88.38884117943235,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.4740259272774954,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03164000",
+          "per_epoch_seconds": 36.21660662733484,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.6044551939169226,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.04288345577078871,
+          "gauge": "03164000",
+          "per_epoch_seconds": 195.43181525989783,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.2586997307873045,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03479000",
+          "per_epoch_seconds": 25.821402429090814,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.4311747270708923,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.0406743943458423,
+          "gauge": "03479000",
+          "per_epoch_seconds": 88.38884117943235,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.4740259272774954,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03479000",
+          "per_epoch_seconds": 36.21660662733484,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.6044551939169226,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.04288345577078871,
+          "gauge": "03479000",
+          "per_epoch_seconds": 195.43181525989783,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.2586997307873045,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        }
+      ],
+      "plus_matching_q_only_sizing_hours": 34.61013347431569,
+      "q_only_sizing_qualification": "Uses full-input cost as a transparent sizing proxy, not measured Q-only throughput",
+      "total_hours": 17.305066737157844
+    },
+    {
+      "base_fit_count": 36,
+      "batch_size": 64,
+      "count_scenario": "post_purge_calendar",
+      "device_policy": "MPS",
+      "epochs": 20,
+      "per_model_gauge": [
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.2534203649905976,
+          "gauge": "03161000",
+          "per_epoch_seconds": 40.54230197949219,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.6767094605181821,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03161000",
+          "per_epoch_seconds": 66.32374585465877,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.1065931113653302,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.395631183241494,
+          "gauge": "03161000",
+          "per_epoch_seconds": 112.69873570328929,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.879470501179128,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03161000",
+          "per_epoch_seconds": 81.09209703278611,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.3536172447547627,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.2534203649905976,
+          "gauge": "03164000",
+          "per_epoch_seconds": 40.54230197949219,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.6767094605181821,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03164000",
+          "per_epoch_seconds": 66.32374585465877,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.1065931113653302,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.395631183241494,
+          "gauge": "03164000",
+          "per_epoch_seconds": 112.69873570328929,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.879470501179128,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03164000",
+          "per_epoch_seconds": 81.09209703278611,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.3536172447547627,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.2534203649905976,
+          "gauge": "03479000",
+          "per_epoch_seconds": 40.54230197949219,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.6767094605181821,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03479000",
+          "per_epoch_seconds": 66.32374585465877,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.1065931113653302,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.395631183241494,
+          "gauge": "03479000",
+          "per_epoch_seconds": 112.69873570328929,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.879470501179128,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03479000",
+          "per_epoch_seconds": 81.09209703278611,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.3536172447547627,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        }
+      ],
+      "plus_matching_q_only_sizing_hours": 30.098341906904416,
+      "q_only_sizing_qualification": "Uses full-input cost as a transparent sizing proxy, not measured Q-only throughput",
+      "total_hours": 15.049170953452208
+    },
+    {
+      "base_fit_count": 36,
+      "batch_size": 64,
+      "count_scenario": "post_purge_calendar",
+      "device_policy": "MIXED_THROUGHPUT",
+      "epochs": 20,
+      "per_model_gauge": [
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03161000",
+          "per_epoch_seconds": 25.821402429090814,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.4311747270708923,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03161000",
+          "per_epoch_seconds": 36.21660662733484,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.6044551939169226,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03161000",
+          "per_epoch_seconds": 66.32374585465877,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.1065931113653302,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03161000",
+          "per_epoch_seconds": 81.09209703278611,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.3536172447547627,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03164000",
+          "per_epoch_seconds": 25.821402429090814,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.4311747270708923,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03164000",
+          "per_epoch_seconds": 36.21660662733484,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.6044551939169226,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03164000",
+          "per_epoch_seconds": 66.32374585465877,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.1065931113653302,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03164000",
+          "per_epoch_seconds": 81.09209703278611,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.3536172447547627,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03479000",
+          "per_epoch_seconds": 25.821402429090814,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.4311747270708923,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03479000",
+          "per_epoch_seconds": 36.21660662733484,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 0.6044551939169226,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03479000",
+          "per_epoch_seconds": 66.32374585465877,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.1065931113653302,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 20,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03479000",
+          "per_epoch_seconds": 81.09209703278611,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.3536172447547627,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        }
+      ],
+      "plus_matching_q_only_sizing_hours": 20.97504166264745,
+      "q_only_sizing_qualification": "Uses full-input cost as a transparent sizing proxy, not measured Q-only throughput",
+      "total_hours": 10.487520831323724
+    },
+    {
+      "base_fit_count": 36,
+      "batch_size": 64,
+      "count_scenario": "post_purge_calendar",
+      "device_policy": "CPU",
+      "epochs": 50,
+      "per_model_gauge": [
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03161000",
+          "per_epoch_seconds": 25.821402429090814,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.0767097877981626,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.0406743943458423,
+          "gauge": "03161000",
+          "per_epoch_seconds": 88.38884117943235,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.683746956763304,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03161000",
+          "per_epoch_seconds": 36.21660662733484,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.5098703596002936,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.04288345577078871,
+          "gauge": "03161000",
+          "per_epoch_seconds": 195.43181525989783,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 8.144495112284751,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03164000",
+          "per_epoch_seconds": 25.821402429090814,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.0767097877981626,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.0406743943458423,
+          "gauge": "03164000",
+          "per_epoch_seconds": 88.38884117943235,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.683746956763304,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03164000",
+          "per_epoch_seconds": 36.21660662733484,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.5098703596002936,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.04288345577078871,
+          "gauge": "03164000",
+          "per_epoch_seconds": 195.43181525989783,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 8.144495112284751,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03479000",
+          "per_epoch_seconds": 25.821402429090814,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.0767097877981626,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.0406743943458423,
+          "gauge": "03479000",
+          "per_epoch_seconds": 88.38884117943235,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.683746956763304,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03479000",
+          "per_epoch_seconds": 36.21660662733484,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.5098703596002936,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.04288345577078871,
+          "gauge": "03479000",
+          "per_epoch_seconds": 195.43181525989783,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 8.144495112284751,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        }
+      ],
+      "plus_matching_q_only_sizing_hours": 86.48893329867906,
+      "q_only_sizing_qualification": "Uses full-input cost as a transparent sizing proxy, not measured Q-only throughput",
+      "total_hours": 43.24446664933953
+    },
+    {
+      "base_fit_count": 36,
+      "batch_size": 64,
+      "count_scenario": "post_purge_calendar",
+      "device_policy": "MPS",
+      "epochs": 50,
+      "per_model_gauge": [
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.2534203649905976,
+          "gauge": "03161000",
+          "per_epoch_seconds": 40.54230197949219,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.690267010005487,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03161000",
+          "per_epoch_seconds": 66.32374585465877,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 2.7646867577317993,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.395631183241494,
+          "gauge": "03161000",
+          "per_epoch_seconds": 112.69873570328929,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 4.69693889376136,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03161000",
+          "per_epoch_seconds": 81.09209703278611,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.3809196705744156,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.2534203649905976,
+          "gauge": "03164000",
+          "per_epoch_seconds": 40.54230197949219,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.690267010005487,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03164000",
+          "per_epoch_seconds": 66.32374585465877,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 2.7646867577317993,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.395631183241494,
+          "gauge": "03164000",
+          "per_epoch_seconds": 112.69873570328929,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 4.69693889376136,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03164000",
+          "per_epoch_seconds": 81.09209703278611,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.3809196705744156,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.2534203649905976,
+          "gauge": "03479000",
+          "per_epoch_seconds": 40.54230197949219,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.690267010005487,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03479000",
+          "per_epoch_seconds": 66.32374585465877,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 2.7646867577317993,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.395631183241494,
+          "gauge": "03479000",
+          "per_epoch_seconds": 112.69873570328929,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 4.69693889376136,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03479000",
+          "per_epoch_seconds": 81.09209703278611,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.3809196705744156,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        }
+      ],
+      "plus_matching_q_only_sizing_hours": 75.19687399243837,
+      "q_only_sizing_qualification": "Uses full-input cost as a transparent sizing proxy, not measured Q-only throughput",
+      "total_hours": 37.598436996219185
+    },
+    {
+      "base_fit_count": 36,
+      "batch_size": 64,
+      "count_scenario": "post_purge_calendar",
+      "device_policy": "MIXED_THROUGHPUT",
+      "epochs": 50,
+      "per_model_gauge": [
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03161000",
+          "per_epoch_seconds": 25.821402429090814,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.0767097877981626,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03161000",
+          "per_epoch_seconds": 36.21660662733484,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.5098703596002936,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03161000",
+          "per_epoch_seconds": 66.32374585465877,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 2.7646867577317993,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03161000",
+          "per_epoch_seconds": 81.09209703278611,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.3809196705744156,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03164000",
+          "per_epoch_seconds": 25.821402429090814,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.0767097877981626,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03164000",
+          "per_epoch_seconds": 36.21660662733484,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.5098703596002936,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03164000",
+          "per_epoch_seconds": 66.32374585465877,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 2.7646867577317993,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03164000",
+          "per_epoch_seconds": 81.09209703278611,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.3809196705744156,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "LSTM",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.00792511027539149,
+          "gauge": "03479000",
+          "per_epoch_seconds": 25.821402429090814,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.0767097877981626,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "GRU_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "cpu",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.012530820706160739,
+          "gauge": "03479000",
+          "per_epoch_seconds": 36.21660662733484,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 1.5098703596002936,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.42742983626085335,
+          "gauge": "03479000",
+          "per_epoch_seconds": 66.32374585465877,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 2.7646867577317993,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        },
+        {
+          "architecture": "Mamba2_Transformer",
+          "assumptions": [
+            "Observed batch rates remain stable",
+            "Validation and checkpoint write each epoch",
+            "Partial final batches charged as full batches"
+          ],
+          "batch_size": 64,
+          "count_audit_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+          "count_qualification": "post_purge_calendar: not final HRRR numeric eligibility or convergence",
+          "device": "mps",
+          "epochs": 50,
+          "exclusions": [
+            "Full-corpus I/O and cache materialization",
+            "Convergence",
+            "Cloud runtime and price",
+            "Fault/restart overhead",
+            "Difference between month-sized and full-corpus startup/cache read"
+          ],
+          "first_use_excess_seconds": 0.6812749250093475,
+          "gauge": "03479000",
+          "per_epoch_seconds": 81.09209703278611,
+          "seeds": 3,
+          "status": "CONDITIONAL_LOCAL_RUNTIME_SCENARIO",
+          "total_hours": 3.3809196705744156,
+          "train_cases": 44262,
+          "trials": 1,
+          "validation_cases": 8766
+        }
+      ],
+      "plus_matching_q_only_sizing_hours": 52.393119454228014,
+      "q_only_sizing_qualification": "Uses full-input cost as a transparent sizing proxy, not measured Q-only throughput",
+      "total_hours": 26.196559727114007
+    }
+  ],
+  "schema": "hydra-measured-local-training-scenarios/v1",
+  "scientific_scope": "Four current architectures x three gauges x three seeds, one configuration; no CV or additional architectures",
+  "status": "CONDITIONAL_SCENARIOS_NOT_FINAL_STUDY_BUDGET"
+}

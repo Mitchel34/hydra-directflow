@@ -1,0 +1,47 @@
+{
+  "allocations_usd": {
+    "contingency": 30,
+    "cuda_qualification_pilot": 10,
+    "development_staging": 35,
+    "scientific_compute": 75
+  },
+  "allowed_vm_families": [
+    "g2-standard-4",
+    "g2-standard-8"
+  ],
+  "automatic_budget_increase": false,
+  "cloud_current_capacity_verified": false,
+  "cloud_jobs_authorized": false,
+  "cloud_trigger": "Use only if measured local runtime or machine availability threatens readiness",
+  "created_at_utc": "2026-11-02T19:32:26.275108+00:00",
+  "data_response_body_cap_bytes": 107374182400,
+  "global_budget_includes_reserve": true,
+  "iam_or_security_changes_authorized": false,
+  "incremental_total_usd": 150,
+  "local_only_alternative_usd": 35,
+  "main_max_workers": 2,
+  "maximum_vm_rate_usd_per_hour": 1,
+  "measured_runtime_report_sha256": "466cb38b672503a55de516b1271fb17e6ad33ec8939d2eda0387b3a90068daf6",
+  "pilot_max_machine_hours": 4,
+  "pilot_max_workers": 1,
+  "previous_august_allowance_is_separate": true,
+  "protected_assessment_authorized": false,
+  "qualification": "One proposed budget envelope with conditional phase release, not spending approval or a provider quote. Existing account-wide liabilities excluded.",
+  "raw_staging_cap_bytes": 2147483648,
+  "schema": "hydra-execution-budget-proposal/v1",
+  "scientific_scope": "Existing four-model three-gauge DirectFlow study; CV/ablations only after protocol adoption",
+  "source_downloads_authorized": false,
+  "source_prices": [
+    {
+      "g2_standard_4_displayed_hourly_usd": 0.706832276,
+      "g2_standard_8_displayed_hourly_usd": 0.853624312,
+      "url": "https://cloud.google.com/products/compute/pricing/accelerator-optimized"
+    },
+    {
+      "conservative_retrieval_per_gib_usd": 0.05,
+      "conservative_transfer_per_gib_usd": 0.23,
+      "url": "https://cloud.google.com/storage/pricing"
+    }
+  ],
+  "status": "PROPOSED_NOT_AUTHORIZED"
+}

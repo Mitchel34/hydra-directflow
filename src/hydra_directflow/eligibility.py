@@ -7,6 +7,8 @@ establish structural support only; numeric basin masks still need validation.
 from __future__ import annotations
 
 from collections import Counter
+import csv
+import io
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -180,6 +182,97 @@ def inventory_usgs(manifest_path, paths=None):
     return exact, known_months, inventory
 
 
+AGGREGATE_PROOF_KIND = "ALL_NATIVE_ROWS_ADMITTED_PLUS_EXACT_HOUR_GAP_CENSUS"
+
+
+def _nonnegative_count(value):
+    require(type(value) in (str, int) and re.fullmatch(r"[0-9]+", str(value)), "Nonnegative integral metadata count required")
+    return int(value)
+
+
+def _aggregate_flags(encoded):
+    """Decode the historical coverage file's literal escaped JSON-array keys."""
+    try:
+        flags = json.loads(encoded)
+    except json.JSONDecodeError:
+        flags = json.loads(json.loads('"' + encoded + '"'))
+    require(type(flags) is list and all(type(flag) is str for flag in flags), "Aggregate qualifier category is malformed")
+    return flags
+
+
+def prove_aggregate_admission(coverage_rows, gap_rows, months):
+    """Prove admission booleans only; never reconstruct per-hour qualifiers."""
+    coverage, intervals = {}, {site: [] for site in GAUGES}
+    for row in coverage_rows:
+        site, month = row["site"], row["chunk"]
+        require(site in GAUGES and (site, month) not in coverage, "Duplicate or unknown gauge/month coverage")
+        start, end = utc_hour(row["core_start_utc"]), utc_hour(row["core_end_exclusive_utc"])
+        require(start < end, "Coverage interval must be nonempty")
+        intervals[site].append((start, end))
+        coverage[site, month] = row
+    for spans in intervals.values():
+        ordered = sorted(spans)
+        require(all(previous[1] <= following[0] for previous, following in zip(ordered, ordered[1:])),
+                "Overlapping aggregate coverage intervals")
+    gaps = {site: set() for site in GAUGES}
+    for row in gap_rows:
+        site = row["site"]
+        stamp = _nonnegative_count(row["sample_epoch"])
+        require(site in GAUGES and stamp % HOUR == 0 and utc_hour(row["sample_time_utc"]) == stamp,
+                "Invalid exact-hour gap coordinate")
+        require(stamp not in gaps[site], "Duplicate exact-hour gap coordinate")
+        gaps[site].add(stamp)
+    admit, proofs = quality_admitter(PRIMARY_APPROVED), {site: {} for site in GAUGES}
+    for month in sorted(months):
+        start, end = month_bounds(month)
+        if end > DEVELOPMENT_END:
+            for site in GAUGES:
+                proofs[site][month] = {"status": "UNKNOWN", "reason": "MIXED_BOUNDARY_MONTH_NOT_PROVEN_BY_FULL_MONTH_COUNTS"}
+            continue
+        expected = (end - start) // HOUR
+        for site in GAUGES:
+            row = coverage.get((site, month))
+            if row is None:
+                proofs[site][month] = {"status": "UNKNOWN", "reason": "NO_AUTHENTICATED_COVERAGE_ROW"}
+                continue
+            require(utc_hour(row["core_start_utc"]) == start and utc_hour(row["core_end_exclusive_utc"]) == end,
+                    "Aggregate proof must cover the exact full month")
+            native, hours, invalid = (_nonnegative_count(row[key]) for key in ("native_rows", "exact_hour_rows", "numeric_invalid"))
+            require(hours <= native and hours <= expected and invalid <= native, "Aggregate count bounds differ")
+            categories = json.loads(row["qualifier_counts_json"])
+            require(type(categories) is dict and sum(_nonnegative_count(value) for value in categories.values()) == native,
+                    "Aggregate qualifier counts do not exhaust native rows")
+            selected_gaps = sorted(stamp for stamp in gaps[site] if start <= stamp < end)
+            require(hours + len(selected_gaps) == expected, "Exact-hour count and gap census disagree")
+            all_admitted = all(admit(_aggregate_flags(key)) for key, value in categories.items() if _nonnegative_count(value))
+            proved = invalid == 0 and all_admitted
+            proofs[site][month] = {"status": "PROVEN_ADMISSION_AXIS" if proved else "UNKNOWN",
+                "proof_kind": AGGREGATE_PROOF_KIND if proved else None,
+                "reason": None if proved else "MIXED_OR_REJECTED_QUALIFIERS_OR_NUMERIC_FAILURE_PLACEMENT_UNKNOWN",
+                "expected_exact_hours": expected, "native_rows": native, "present_exact_hours": hours,
+                "numeric_invalid_native_rows": invalid, "qualifier_counts_verbatim": row["qualifier_counts_json"],
+                "gap_epochs": selected_gaps, "native_qualifier_sequences_reconstructed": False,
+                "values_or_source_ids_reconstructed": False}
+    return proofs
+
+
+def load_aggregate_admission_proofs(manifest_path, months):
+    raw = verified_local_bytes(manifest_path, USGS_MANIFEST_SHA256, max_bytes=2 * 1024**2)
+    manifest = json.loads(raw)
+    names = ("coverage_by_station_chunk.csv", "exact_hour_gaps.csv")
+    tables, identities = {}, {}
+    for name in names:
+        matches = [entry for entry in manifest["artifacts"] if Path(entry["path"]).name == name]
+        require(len(matches) == 1, "Aggregate proof artifact must have one pinned identity")
+        entry = matches[0]
+        state = inspect_local(entry["path"], expected_bytes=entry["bytes"])
+        require(state["status"] == "RESIDENT_UNVERIFIED_SHA", "Aggregate proof artifact is not resident; no hydration allowed")
+        body = verified_local_bytes(entry["path"], entry["sha256"], expected_bytes=entry["bytes"], max_bytes=2 * 1024**2)
+        tables[name] = list(csv.DictReader(io.StringIO(body.decode())))
+        identities[name] = {"sha256": entry["sha256"], "bytes": entry["bytes"], "path": entry["path"]}
+    return prove_aggregate_admission(tables[names[0]], tables[names[1]], months), identities
+
+
 def required_six_hour_cycles(start=DEVELOPMENT_START, end=DEVELOPMENT_END):
     """Sources for H18-purged origins: age at least two and at most 18 hours."""
     require(start % HOUR == end % HOUR == 0 and start < end, "Exact hourly interval required")
@@ -320,16 +413,29 @@ def window_status(known, admitted, first, after):
     return ELIGIBLE if admitted[after] - admitted[first] == size else INELIGIBLE
 
 
-def build_prefixes(exact, known_months, start, end):
+def build_prefixes(exact, known_months, start, end, *, aggregate_proofs=None):
     require(start % HOUR == end % HOUR == 0 and start < end, "Exact hourly metadata axis required")
     times = range(start, end, HOUR)
-    known = [datetime.fromtimestamp(value, timezone.utc).strftime("%Y-%m") in known_months for value in times]
-    admit = quality_admitter(PRIMARY_APPROVED)
-    admitted = {}
+    months = [datetime.fromtimestamp(value, timezone.utc).strftime("%Y-%m") for value in times]
+    admit, known, admitted = quality_admitter(PRIMARY_APPROVED), {}, {}
     for site in GAUGES:
-        admitted[site] = prefix(bool((row := exact[site].get(value)) is not None
-                                    and row["numeric_valid"] and admit(row["qualifiers"])) for value in times)
-    return prefix(known), admitted
+        supplements = (aggregate_proofs or {}).get(site, {})
+        proved_gaps = {month: set(proof["gap_epochs"]) for month, proof in supplements.items()
+                       if proof["status"] == "PROVEN_ADMISSION_AXIS"}
+        known_slots, admitted_slots = [], []
+        for value, month in zip(times, months):
+            if month in known_months:
+                row = exact[site].get(value)
+                known_slots.append(True)
+                admitted_slots.append(bool(row is not None and row["numeric_valid"] and admit(row["qualifiers"])))
+            elif month in proved_gaps:
+                known_slots.append(True)
+                admitted_slots.append(value not in proved_gaps[month])
+            else:
+                known_slots.append(False)
+                admitted_slots.append(False)
+        known[site], admitted[site] = prefix(known_slots), prefix(admitted_slots)
+    return known, admitted
 
 
 def hrrr_structural_status(origin, by_reference):
@@ -345,12 +451,12 @@ def hrrr_structural_status(origin, by_reference):
     return weather, soil
 
 
-def count_split(split, exact, known_months, hrrr_inventory, *, history_hours):
+def count_split(split, exact, known_months, hrrr_inventory, *, history_hours, aggregate_proofs=None):
     require(history_hours in (24, 168), "L24 or L168 required")
     start, end = split["start"], split["end"]
     origins = range(start, max(start, end - 18 * HOUR), HOUR)
     axis_start = start - (history_hours + 1) * HOUR
-    known, admitted = build_prefixes(exact, known_months, axis_start, end)
+    known, admitted = build_prefixes(exact, known_months, axis_start, end, aggregate_proofs=aggregate_proofs)
     hrrr = {item["reference_epoch"]: item for item in hrrr_inventory}
     structure = {origin: hrrr_structural_status(origin, hrrr) for origin in origins}
     output = []
@@ -359,8 +465,8 @@ def count_split(split, exact, known_months, hrrr_inventory, *, history_hours):
                   ("input_history_metadata", "target_metadata", "joint_usgs_metadata", "weather_structural_support", "soil_structural_support", "usgs_and_hrrr_structure")}
         for origin in origins:
             center = (origin - axis_start) // HOUR
-            history = window_status(known, admitted[site], center - history_hours - 1, center - 1)
-            target = window_status(known, admitted[site], center + 1, center + 19)
+            history = window_status(known[site], admitted[site], center - history_hours - 1, center - 1)
+            target = window_status(known[site], admitted[site], center + 1, center + 19)
             joint = combine_status(history, target)
             weather, soil = structure[origin]
             values = {"input_history_metadata": history, "target_metadata": target, "joint_usgs_metadata": joint,
@@ -380,15 +486,20 @@ def count_split(split, exact, known_months, hrrr_inventory, *, history_hours):
 
 
 def audit_development_eligibility(*, qualified_index_path, usgs_manifest_path, splits,
-                                  usgs_paths=None, local_archive_specs=None):
+                                  usgs_paths=None, local_archive_specs=None, use_aggregate_admission_proofs=False):
     started = time.monotonic()
+    require(type(use_aggregate_admission_proofs) is bool, "Aggregate proof use must be an explicit boolean")
     parsed = validate_splits(splits)
     exact, known, usgs = inventory_usgs(usgs_manifest_path, usgs_paths)
+    aggregate, aggregate_sources = {}, {}
+    if use_aggregate_admission_proofs:
+        unknown_months = {item["month"] for item in usgs if not item["metadata_known"]}
+        aggregate, aggregate_sources = load_aggregate_admission_proofs(usgs_manifest_path, unknown_months)
     required = required_six_hour_cycles()
     rows = read_required_index(qualified_index_path, required)
     weather = inventory_hrrr(rows, required, local_archive_specs)
     results = [row for split in parsed for length in (24, 168)
-               for row in count_split(split, exact, known, weather, history_hours=length)]
+               for row in count_split(split, exact, known, weather, history_hours=length, aggregate_proofs=aggregate)]
     code = {name: hashlib.sha256((Path(__file__).parent / name).read_bytes()).hexdigest()
             for name in ("eligibility.py", "quality.py")}
     monthly_hrrr = {}
@@ -408,6 +519,9 @@ def audit_development_eligibility(*, qualified_index_path, usgs_manifest_path, s
         summary["weather_structure_counts"][item["weather_group_support"]] += 1
         summary["soil_structure_counts"][item["soil_group_support"]] += 1
     public_months = [{key: value for key, value in item.items() if key != "path"} for item in usgs]
+    proof_rows = [{"site": site, "month": month, **{key: value for key, value in proof.items() if key != "gap_epochs"},
+                   "exact_gap_count": len(proof.get("gap_epochs", []))}
+                  for site in GAUGES for month, proof in aggregate.get(site, {}).items()]
     report = {"schema": "hydra-development-eligibility-metadata/v1", "status": "COMPLETED_WITH_EXPLICIT_UNKNOWN_COVERAGE" if len(known) < len(usgs) else "COMPLETED_USGS_METADATA_INVENTORY",
               "created_at_utc": datetime.now(timezone.utc).isoformat(),
               "scope": "USGS metadata eligibility and HRRR structural inventory; not a frozen scientific cohort or forecast skill",
@@ -427,6 +541,13 @@ def audit_development_eligibility(*, qualified_index_path, usgs_manifest_path, s
                                  "by_month": monthly_hrrr,
                                  "ordinary_18h_runs_excluded": "A two-hour availability lag leaves at most16 target hours; native18 runs cannot supply direct H18",
                                  "numeric_weather_masks_verified": False, "local_payload_presence_is_stat_only": True},
+              "aggregate_admission_proofs": {"enabled": use_aggregate_admission_proofs,
+                    "proof_kind": AGGREGATE_PROOF_KIND, "gauge_months_considered": len(proof_rows),
+                    "proven_gauge_months": sum(row["status"] == "PROVEN_ADMISSION_AXIS" for row in proof_rows),
+                    "unknown_gauge_months": sum(row["status"] != "PROVEN_ADMISSION_AXIS" for row in proof_rows),
+                    "source_artifacts": {name: {key: value for key, value in identity.items() if key != "path"}
+                                         for name, identity in aggregate_sources.items()}, "proofs": proof_rows,
+                    "native_partition_residency_unchanged": True, "native_flags_values_or_source_ids_reconstructed": False},
               "results": results, "metadata_columns_decoded": list(METADATA_COLUMNS),
               "source_identities": {"usgs_manifest_sha256": USGS_MANIFEST_SHA256, "qualified_index_sha256": INDEX_SHA256,
                                     "qualified_index_bytes": INDEX_BYTES}, "implementation_sha256": code,
@@ -440,5 +561,6 @@ def audit_development_eligibility(*, qualified_index_path, usgs_manifest_path, s
                             "protected_numeric_values_decoded": False, "whole_file_encoded_bytes_hashed_for_identity": True, "hrrr_payloads_read": 0, "network_requests": 0,
                             "model_operations": 0, "scaler_fits": 0, "imputation": False, "source_files_modified": False}}
     private = {"schema": "hydra-private-development-source-inventory/v1", "created_at_utc": report["created_at_utc"],
-               "source_identities": report["source_identities"], "usgs_partitions": usgs, "hrrr_cycles": weather}
+               "source_identities": report["source_identities"], "usgs_partitions": usgs, "hrrr_cycles": weather,
+               "aggregate_admission_proofs": aggregate, "aggregate_source_artifacts": aggregate_sources}
     return report, private
