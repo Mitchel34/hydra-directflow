@@ -1,0 +1,40 @@
+{
+  "compact404_fields": [
+    "20200422_00_temperature",
+    "20200422_00_humidity",
+    "20200422_00_precipitation",
+    "20200422_00_snow_water_equivalent"
+  ],
+  "cycle_id": "20200422_00Z",
+  "execution": {
+    "bound_code_files_modified": false,
+    "model_operations": 0,
+    "network_requests": 0,
+    "source_files_modified": false
+  },
+  "matching_manifest_get404_receipts": 4,
+  "old_decoder_sha256": "ed999095fde7e0825426ab499b8a876a25bb04ed752b94d09cc0fc9634a47084",
+  "original_manifest_sha256": "d726e7f23a93cfb464bd15a86002e995c4034ebf419d9db5ebe083c21fd31196",
+  "producer_local_source_sha256": "c0d381578381e455a4be2439933bb3eb193c134b28502834b54a2a16fafba86c",
+  "producer_sha256": "c0d381578381e455a4be2439933bb3eb193c134b28502834b54a2a16fafba86c",
+  "proposed_decoder_sha256": "adb2fe589fe92e1598e7e21f9955af9c9e53fa6eb5266e52dd10f2d12c0d5045",
+  "proposed_patch_sha256": "814d95180832acdcb1ca4dcb0278103ef8d596ed1d8a6e68c4846bc68443fd60",
+  "record_count": 145,
+  "retained_receipt_counts": {
+    "20200422_00_humidity": 13,
+    "20200422_00_precipitation": 13,
+    "20200422_00_snow_water_equivalent": 13,
+    "20200422_00_temperature": 13
+  },
+  "schema": "hydra-legacy-compact-404-diagnosis/v1",
+  "source_schema": "HRRR-raw-cycle-acquisition/v1",
+  "status": "PROPOSAL_NOT_APPLIED",
+  "tests_to_add": [
+    "Authentic compact404 plus matching RAW-v1 manifest/source/request admits all12components",
+    "Modern schema withoutnestedproof rejected",
+    "Present malformednestedproof cannotfall backtolegacy",
+    "Missing/duplicate/wrongmethod/wrongURL/non404 original request rejected",
+    "Original source receipt mismatch rejected",
+    "Legacy andmodern recovery preserve alloriginalmetadata andexactnumeric checks"
+  ]
+}

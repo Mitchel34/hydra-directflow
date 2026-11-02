@@ -1,0 +1,22 @@
+{
+  "created_at_utc": "2026-11-02T22:04:10.961040+00:00",
+  "implementation_sha256": {
+    "src/hydra_directflow/cache_reuse.py": "ddbf80537f563912dc7eeb4f05671cd17adf21edc020a53ef6551cca6491d470",
+    "src/hydra_directflow/corpus.py": "5f2846d008e927ab55e9a6fbc70d5cbe0ea797f3a444bc1d291f60de8ed53080",
+    "src/hydra_directflow/local_data.py": "adb2fe589fe92e1598e7e21f9955af9c9e53fa6eb5266e52dd10f2d12c0d5045",
+    "tests/test_cache_reuse.py": "da5514020523f0429a9a7fc953b33a786af23c3bfb1cd7e3f9a04e3a55a9dbb7",
+    "tests/test_corpus.py": "1544d333e39fcc7e850de670b3bc00e919fa8b525e3b9c3271b6698dd56e0ada",
+    "tests/test_recovered_metadata.py": "46065529d6a7fe9a0ae0dc856cd83bb7b2e452341eca8063c1b57838894428e0"
+  },
+  "independent_focused_tests_passed": 54,
+  "original_artifacts_preserved": true,
+  "prefix_parity_sha256": "e4cf59e804b2e4d5ff92ad18d2b8407d90c88790dd3f4bbef1a098df3568bb00",
+  "protected_scoring": false,
+  "schema": "hydra-qualified-cache-recovery-check/v1",
+  "scientific_training": false,
+  "source_fetches_in_prefix_qualification": 0,
+  "source_requalification_sha256": "4afd0aca02a940d4e6bf780514471e63a1f95ed0f7705e1dd42df7f1785b30d0",
+  "status": "PASSED_TESTS_SOURCE_REQUALIFICATION_AND_EXACT_PREFIX_PARITY",
+  "test_elapsed_seconds": 3.787,
+  "tests_passed": 482
+}

@@ -227,10 +227,30 @@ def _field_metadata(members, field, *, cycle_id=CYCLE_ID):
     if "relative_path" in first and first.get("missing") is not True:
         # Preserve the previously qualified consolidated path exactly.
         return json.loads(_source_bytes(members, first, cycle_id=cycle_id))["metadata"]
-    require(first.get("missing") is True and first.get("http_status") == 404
-            and first.get("missing_proof", {}).get("http_status") == 404
-            and first.get("missing_proof", {}).get("outcome") == "MISSING_404",
+    require(first.get("missing") is True and first.get("http_status") == 404,
             "Metadata recovery requires the original consolidated-metadata 404 proof")
+    if "missing_proof" in first:
+        require(isinstance(first["missing_proof"], dict)
+                and first["missing_proof"].get("http_status") == 404
+                and first["missing_proof"].get("outcome") == "MISSING_404",
+                "Metadata recovery requires the original consolidated-metadata 404 proof")
+    else:
+        # The original raw-cycle writer kept the settled HTTP receipt in its
+        # manifest request log, before nested missing_proof existed. Validate
+        # that exact retained evidence without adding fields to the source.
+        manifest = json.loads(members.get("CYCLE_MANIFEST.json", b"{}"))
+        require(manifest.get("schema") == "HRRR-raw-cycle-acquisition/v1"
+                and manifest.get("cycle") == cycle_id
+                and manifest.get("sources", {}).get(first.get("key")) == first,
+                "Compact metadata 404 requires matching original legacy manifest/source receipt")
+        matching = [request for request in manifest.get("requests", [])
+                    if request.get("logical_key") == first.get("key")
+                    and request.get("url") == first.get("url")
+                    and request.get("method") == "GET"
+                    and request.get("http_status") == 404
+                    and request.get("outcome") == "MISSING_404"]
+        require(len(matching) == 1 and matching[0].get("actual_body_bytes") == 0,
+                "Compact metadata 404 requires one matching retained settled GET receipt")
     paths = {"temperature": "2m_above_ground/TMP", "humidity": "2m_above_ground/SPFH",
              "precipitation": "surface/APCP_1hr_acc_fcst", "snow_water_equivalent": "surface/WEASD"}
     pieces = first["key"].split("/")

@@ -1,0 +1,47 @@
+{
+  "corpus": {
+    "admitted_cases": 30078,
+    "calendar_unavailable_cycle_ids": [
+      "20180711_06Z",
+      "20180711_12Z",
+      "20180711_18Z"
+    ],
+    "candidate_origins": 53028,
+    "chunks_built": 100,
+    "chunks_reused": 0,
+    "completed_cases": 33552,
+    "completed_origins": 11184,
+    "created_at_utc": "2026-11-02T21:56:57.510894+00:00",
+    "elapsed_seconds": 58.92645620799158,
+    "failure": null,
+    "history_hours": 168,
+    "observed_boundary_peak_rss_bytes": 2190295040,
+    "optimizer_updates": 0,
+    "plan_sha256": "0dad073824984fd7eeba88e4c313d77b4015dcccb94e8eb27297fcf7c6b39b0f",
+    "post_cache_commit_callback_calls": 0,
+    "protected_assessment_scoring": false,
+    "purged_origins": 36,
+    "qualified_basin_cache_loads": 1909,
+    "raw_files_deleted_by_corpus": false,
+    "requested_origins": 53064,
+    "schema": "hydra-development-corpus/v1",
+    "sealed_index_authentication_passes": 1,
+    "source_calendar_counts": {
+      "PRE_ACQUISITION_WARMUP_UNRESOLVED_WEATHER": 30,
+      "PRE_ACQUISITION_WARMUP_UNRESOLVED_WEATHER_AND_SOIL": 9,
+      "RESOLVED_WITHIN_ACQUIRED_CALENDAR": 33513
+    },
+    "source_provider_calls": 0,
+    "source_transport_budget_owned_by_caller": true,
+    "status": "STOPPED_AT_CHUNK_BOUNDARY",
+    "total_chunks": 477
+  },
+  "created_at_utc": "2026-11-02T21:56:57.523487+00:00",
+  "execution_plan_sha256": "f9745987f22890fb9ae89c07f282a07c2d5a43d22317a6643cc068511a76676a",
+  "forbidden_provider_calls": [],
+  "network_calls": 0,
+  "protected_scoring": false,
+  "raw_eviction_callbacks": 0,
+  "schema": "hydra-qualified-cache-prefix-rebuild/v1",
+  "scientific_training": false
+}

@@ -1,0 +1,80 @@
+{
+  "basin_means_sha256": "c701324bb6783f160b45d81f2ba0d280013a4086342d3129e26c26f6457e0258",
+  "compact_receipts_unchanged": true,
+  "cycle_id": "20200422_00Z",
+  "elapsed_seconds": 0.08200716692954302,
+  "execution": {
+    "USGS_or_protected_observations_read": 0,
+    "network_requests": 0,
+    "optimizer_updates": 0,
+    "raw_source_files_modified": false
+  },
+  "implementation_sha256": {
+    "src/hydra_directflow/local_data.py": "adb2fe589fe92e1598e7e21f9955af9c9e53fa6eb5266e52dd10f2d12c0d5045"
+  },
+  "mask_sha256": "8ff06baa2d3bea5e67100802c781a18920a4d63847a250cf444823f3da5ea04d",
+  "raw_values_sha256": "b954ba39ebd33cc51ca4884df687a4adfec41cb83fbb728c7143bbe05c19a777",
+  "receipt": {
+    "archive_bytes": 4894720,
+    "archive_sha256": "464514e88a162e91e04ebe0abc7736617dfef77f051e7999d71c8debc6c3c4e5",
+    "commit_sha256": "17b7174aebfde47597ad85a0ff06ce071936c4ca683ab4e4aeaf8826aab157b9",
+    "cycle_id": "20200422_00Z",
+    "data_complete": true,
+    "groups_available": [
+      "humidity",
+      "precipitation",
+      "snow_water_equivalent",
+      "soil_moisture",
+      "temperature"
+    ],
+    "in_memory_empty_inventory_only": false,
+    "lineage": {
+      "archive_bytes": 4894720,
+      "archive_sha256": "464514e88a162e91e04ebe0abc7736617dfef77f051e7999d71c8debc6c3c4e5",
+      "availability_metadata_origin": "ADAPTER_DERIVED_FROM_ORIGINAL_MANIFEST_AND_RECORDS",
+      "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+      "commit": {
+        "byte_count_source": "AUTHENTICATED_LOCAL_BYTES",
+        "bytes": 748,
+        "sha256": "17b7174aebfde47597ad85a0ff06ce071936c4ca683ab4e4aeaf8826aab157b9"
+      },
+      "cycle_id": "20200422_00Z",
+      "index_location_kind": "commit",
+      "manifest_sha256": "d726e7f23a93cfb464bd15a86002e995c4034ebf419d9db5ebe083c21fd31196",
+      "normalized_summary": {
+        "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+        "data_complete": true,
+        "derived_summary_keys": [
+          "coverage_status",
+          "groups_available"
+        ],
+        "groups_available": [
+          "humidity",
+          "precipitation",
+          "snow_water_equivalent",
+          "soil_moisture",
+          "temperature"
+        ],
+        "groups_missing": {},
+        "record_count": 145
+      },
+      "payload_schema": "HRRR-raw-cycle-acquisition/v1",
+      "schema": "hydra-directflow-lineage-adapter/v1",
+      "source_summaries_rewritten": false,
+      "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_RECORDS"
+    },
+    "manifest_sha256": "d726e7f23a93cfb464bd15a86002e995c4034ebf419d9db5ebe083c21fd31196",
+    "numeric_records_decoded": 145,
+    "raw_payload_present": true,
+    "record_count": 145,
+    "soil_values_record_hash_verified": true,
+    "weather_source_slots": [
+      36
+    ],
+    "weather_tiles_redecoded": true
+  },
+  "record_count": 145,
+  "recovered_field_count": 4,
+  "schema": "hydra-legacy-compact-404-requalification/v1",
+  "status": "PASSED_ORIGINAL_SOURCE_NUMERIC_AND_BASIN_CHECKS"
+}

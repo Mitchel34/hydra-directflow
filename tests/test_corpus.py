@@ -220,6 +220,7 @@ class FakeSession:
     fail_on_build = None
     def __init__(self, **kwargs):
         self.provider_calls = self.finalization_calls = 0
+        self.qualified_cache_reuse = {}
         self.exports = kwargs.get("usgs_development_exports") or {}
         self.specs = kwargs["archive_specs"]
     def __enter__(self): return self

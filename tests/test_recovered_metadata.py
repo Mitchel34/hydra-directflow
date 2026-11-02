@@ -32,6 +32,18 @@ def fixture():
     return members, field, components
 
 
+def legacy_fixture():
+    members, field, expected = fixture()
+    first = field["metadata_sources"][0]
+    del first["missing_proof"]
+    manifest = {"schema": "HRRR-raw-cycle-acquisition/v1", "cycle": CYCLE,
+                "sources": {first["key"]: deepcopy(first)},
+                "requests": [{"logical_key": first["key"], "url": first["url"], "method": "GET",
+                              "http_status": 404, "outcome": "MISSING_404", "actual_body_bytes": 0}]}
+    members["CYCLE_MANIFEST.json"] = json.dumps(manifest).encode()
+    return members, field, expected, manifest
+
+
 class RecoveredMetadataTests(unittest.TestCase):
     def test_exact_twelve_components_rebuild_view_without_rewriting_receipts(self):
         members, field, expected = fixture()
@@ -50,6 +62,43 @@ class RecoveredMetadataTests(unittest.TestCase):
         field["metadata_sources"] = [{"relative_path": "cycles/" + CYCLE + "/source_bytes/" + "a" * 64 + ".bin",
                                        "bytes": len(raw), "sha256": sha256(raw)}]
         self.assertEqual(_field_metadata(members, field, cycle_id=CYCLE), expected)
+
+    def test_legacy_compact_receipt_uses_original_manifest_evidence_without_rewriting(self):
+        members, field, expected, _ = legacy_fixture()
+        before = deepcopy((members, field))
+        self.assertEqual(_field_metadata(members, field, cycle_id=CYCLE), expected)
+        self.assertEqual((members, field), before)
+        self.assertNotIn("missing_proof", field["metadata_sources"][0])
+
+    def test_legacy_requires_one_exact_settled_get_404_request(self):
+        changes = [lambda m: m.update(requests=[]), lambda m: m["requests"].append(deepcopy(m["requests"][0])),
+                   lambda m: m["requests"][0].update(method="POST"),
+                   lambda m: m["requests"][0].update(url="https://example.invalid/other/.zmetadata"),
+                   lambda m: m["requests"][0].update(http_status=403),
+                   lambda m: m["requests"][0].update(outcome="FAILED_PRESERVED"),
+                   lambda m: m["requests"][0].update(actual_body_bytes=1)]
+        for change in changes:
+            members, field, _, manifest = legacy_fixture(); change(manifest)
+            members["CYCLE_MANIFEST.json"] = json.dumps(manifest).encode()
+            with self.subTest(change=change), self.assertRaisesRegex(ValueError, "matching retained settled GET"):
+                _field_metadata(members, field, cycle_id=CYCLE)
+
+    def test_compact_receipt_must_match_original_legacy_manifest_and_source(self):
+        for change in (lambda m: m.update(schema="HRRR-gap-aware-raw-cycle-acquisition/v1"),
+                       lambda m: m.update(cycle="20180808_18Z"), lambda m: m.update(sources={}),
+                       lambda m: next(iter(m["sources"].values())).update(http_status=403)):
+            members, field, _, manifest = legacy_fixture(); change(manifest)
+            members["CYCLE_MANIFEST.json"] = json.dumps(manifest).encode()
+            with self.subTest(change=change), self.assertRaisesRegex(ValueError, "original legacy manifest/source"):
+                _field_metadata(members, field, cycle_id=CYCLE)
+
+    def test_present_malformed_nested_proof_cannot_fall_back_to_legacy(self):
+        for malformed in (None, {}, {"http_status": 403, "outcome": "MISSING_404"},
+                          {"http_status": 404, "outcome": "UNKNOWN"}):
+            members, field, _, _ = legacy_fixture()
+            field["metadata_sources"][0]["missing_proof"] = malformed
+            with self.subTest(malformed=malformed), self.assertRaisesRegex(ValueError, "404 proof"):
+                _field_metadata(members, field, cycle_id=CYCLE)
 
     def test_missing_or_wrong_original_404_proof_is_not_inferred(self):
         for change in ({"missing": False}, {"http_status": 403}, {"missing_proof": {"http_status": 404, "outcome": "UNKNOWN"}}):

@@ -1,0 +1,585 @@
+{
+  "checks": [
+    {
+      "chunk": "candidate_training__2018-07__L168/000",
+      "model_payload_sha256": "8e53f265382c74cd31b5da25a58d5e8806b0dc2ee6209c36c3e14cd5e17e52b9"
+    },
+    {
+      "chunk": "candidate_training__2018-07__L168/001",
+      "model_payload_sha256": "ae45102d174ddcedca74085ed9d4fffff98bc330047b2c444690ad958bf6152b"
+    },
+    {
+      "chunk": "candidate_training__2018-07__L168/002",
+      "model_payload_sha256": "182859f3936d6a5db0e4bfe29ca79d703e20299958d81578399caaa122e6768b"
+    },
+    {
+      "chunk": "candidate_training__2018-07__L168/003",
+      "model_payload_sha256": "a3edee2c6ddb351440b9749311a6edc11fce2868ef5c9d9f6584695f92f935b5"
+    },
+    {
+      "chunk": "candidate_training__2018-08__L168/000",
+      "model_payload_sha256": "fca20b9c641c13d44886de16d1187fe3bc9011dfd38c27799ef42fad5d515429"
+    },
+    {
+      "chunk": "candidate_training__2018-08__L168/001",
+      "model_payload_sha256": "7015f00dccb569b99960439011b65d8ddea37b8b35dff6ced759424903232db8"
+    },
+    {
+      "chunk": "candidate_training__2018-08__L168/002",
+      "model_payload_sha256": "e3a0c61b17ffec0399a8e10618ab5eb96e73eb2180695311f047f04517040f89"
+    },
+    {
+      "chunk": "candidate_training__2018-08__L168/003",
+      "model_payload_sha256": "f6571543fc9a6e74d2579fe6e1650a828ae30d9a928f0d1aa353ef60cde04a2e"
+    },
+    {
+      "chunk": "candidate_training__2018-08__L168/004",
+      "model_payload_sha256": "c8a3d9a75a7e682264d2b44fb90f0d9b1cdbf5131f716e7b90e131eabe46eef5"
+    },
+    {
+      "chunk": "candidate_training__2018-08__L168/005",
+      "model_payload_sha256": "10dcfaa842ba9068521be43bf1d37a55a4792982434907263be5f820345e9c09"
+    },
+    {
+      "chunk": "candidate_training__2018-08__L168/006",
+      "model_payload_sha256": "69bd5a0038bb6b594f2643ec9a5d37e002a227d2a76196153f8d277f6cd68034"
+    },
+    {
+      "chunk": "candidate_training__2018-09__L168/000",
+      "model_payload_sha256": "8b3f53c82e35ffcf7324fd78b96041f338d1aa76f24e62fa7dccc1f001c7996a"
+    },
+    {
+      "chunk": "candidate_training__2018-09__L168/001",
+      "model_payload_sha256": "e9ee9377d2c46ebe8d1e17b5d985f039ebeb9fe8bb2d357a42e149dfaac28ffe"
+    },
+    {
+      "chunk": "candidate_training__2018-09__L168/002",
+      "model_payload_sha256": "4e224121bfc1a3b4cc9a683961e7e4bbf0660f8c74973ec859604dbbaba495fb"
+    },
+    {
+      "chunk": "candidate_training__2018-09__L168/003",
+      "model_payload_sha256": "b467cab29f7be9fa89a38bc24927021f8b01608b284d058a4eac795d66842bb4"
+    },
+    {
+      "chunk": "candidate_training__2018-09__L168/004",
+      "model_payload_sha256": "02289c2ffeb4cc6ffebb13627166f0fd60a2988f31a5d052997afc9cbb6409f1"
+    },
+    {
+      "chunk": "candidate_training__2018-09__L168/005",
+      "model_payload_sha256": "59f68788bb14511b3f5466f01f804b796ac6fc13176ca309ab22eddda869d051"
+    },
+    {
+      "chunk": "candidate_training__2018-10__L168/000",
+      "model_payload_sha256": "b1c7697b96f6a3998547052034ce869054fc410d5d4014e06925cef8cda7a81e"
+    },
+    {
+      "chunk": "candidate_training__2018-10__L168/001",
+      "model_payload_sha256": "d0da2b0aa828d45e6f135bf94aac9908b3c6dc53a9f54c07334c5e41c71a1c1a"
+    },
+    {
+      "chunk": "candidate_training__2018-10__L168/002",
+      "model_payload_sha256": "d5d4a99a52f08cec2845ae11fefc731ca6d83aa48bb31446dd37abd755edb854"
+    },
+    {
+      "chunk": "candidate_training__2018-10__L168/003",
+      "model_payload_sha256": "b62df7f151947987eadc560545ba5255a61ff164ef9eca697dfb586ee5371107"
+    },
+    {
+      "chunk": "candidate_training__2018-10__L168/004",
+      "model_payload_sha256": "0a0208922bdb4e309ff2a8d79bd2dc80eb2a417f80960e6d5b807f15dda5fe28"
+    },
+    {
+      "chunk": "candidate_training__2018-10__L168/005",
+      "model_payload_sha256": "036c55be8ebf2584220a10c8d92c2228640aeadc8b3f7e3317a2ecd92b4e467b"
+    },
+    {
+      "chunk": "candidate_training__2018-10__L168/006",
+      "model_payload_sha256": "fad0f074255c5f28015b1056a6c4e7a6c7de032b36fa71565eb0c78b8720f560"
+    },
+    {
+      "chunk": "candidate_training__2018-11__L168/000",
+      "model_payload_sha256": "871ea19341da3c924439945c08e96fbc7171aaff099cf30c9abec7855d69eac7"
+    },
+    {
+      "chunk": "candidate_training__2018-11__L168/001",
+      "model_payload_sha256": "e1c14a99f467a599ff568c6ac1a971e6f254c2949ae5bbd107f04788647a43d6"
+    },
+    {
+      "chunk": "candidate_training__2018-11__L168/002",
+      "model_payload_sha256": "1e6366cce64ddd1c972c765dad2fb4f87e48d0056f98dc9d4f31d72b486319c0"
+    },
+    {
+      "chunk": "candidate_training__2018-11__L168/003",
+      "model_payload_sha256": "57d8e9ff436b6bc4fbd8f0d82c21fc460db2d87048ff0db705957db533d158c9"
+    },
+    {
+      "chunk": "candidate_training__2018-11__L168/004",
+      "model_payload_sha256": "3aa19095ad1e5b403a2f609f0191f503c0b7a4a0eb061d0ff12b8751eb6aea93"
+    },
+    {
+      "chunk": "candidate_training__2018-11__L168/005",
+      "model_payload_sha256": "f559868478d908b2927fa5014e11801181ed15737eb4a1f52045b411a31a2114"
+    },
+    {
+      "chunk": "candidate_training__2018-12__L168/000",
+      "model_payload_sha256": "ca9411c75f62aad2f95c314de2d033ca40e8cb985405de23265775a94492bfa1"
+    },
+    {
+      "chunk": "candidate_training__2018-12__L168/001",
+      "model_payload_sha256": "16ca0240a9cdf3de3c023321245ea276cedbb1d533a4791b712443b16c4936f3"
+    },
+    {
+      "chunk": "candidate_training__2018-12__L168/002",
+      "model_payload_sha256": "dabe1a59b32a9f760243bd35b3d284a01f061366902918111b007e6d2adf0532"
+    },
+    {
+      "chunk": "candidate_training__2018-12__L168/003",
+      "model_payload_sha256": "72038df7aaae50ce762f91284c9fe75c0c01a3e65fb29359cc0740e2d81fe3f9"
+    },
+    {
+      "chunk": "candidate_training__2018-12__L168/004",
+      "model_payload_sha256": "c993fccca15fb8b031acb0dbc595e21e4d65d541b25c3b172bb6b25f3970bf66"
+    },
+    {
+      "chunk": "candidate_training__2018-12__L168/005",
+      "model_payload_sha256": "d2676ba55d4acc331c116807442a85bcca448b1125c6b76abf654e79b36054d9"
+    },
+    {
+      "chunk": "candidate_training__2018-12__L168/006",
+      "model_payload_sha256": "a2a1d983d606a549a847a1982b8dc818ba5073b2fa74d215c650e07263e1709f"
+    },
+    {
+      "chunk": "candidate_training__2019-01__L168/000",
+      "model_payload_sha256": "077568658def9ef9dd8848f4f4028f8aa5e96613e1455386f99f06eaecbe78f3"
+    },
+    {
+      "chunk": "candidate_training__2019-01__L168/001",
+      "model_payload_sha256": "5dfc31e692806f5401943c2496db5d493b9ac6b226ba662c3aff20c35a335e6c"
+    },
+    {
+      "chunk": "candidate_training__2019-01__L168/002",
+      "model_payload_sha256": "e21382a08920cc2ea11f20ed6a22ddec493e05908a2371510bef67e3c51586ca"
+    },
+    {
+      "chunk": "candidate_training__2019-01__L168/003",
+      "model_payload_sha256": "390f1c1110b1d6ac6f91e6ed0ff24681839e3166a125cdf7b1fc1901433f9034"
+    },
+    {
+      "chunk": "candidate_training__2019-01__L168/004",
+      "model_payload_sha256": "08f69baac064fc01f77c5aacfdaf4a1543c9e430eddb643e17c834ac97733265"
+    },
+    {
+      "chunk": "candidate_training__2019-01__L168/005",
+      "model_payload_sha256": "c994aaf0317123a4ca0bdf7850d713f369a2616e1387f36a6860730ade5ccb73"
+    },
+    {
+      "chunk": "candidate_training__2019-01__L168/006",
+      "model_payload_sha256": "6798b81fb28decf8f3fa5e8c80ce5f9bb815d53f5b36de732ba6009599596599"
+    },
+    {
+      "chunk": "candidate_training__2019-02__L168/000",
+      "model_payload_sha256": "94727114938e7cdf7187feed1c129ee071e0ff5f1958b80bc9da1919caf2b72e"
+    },
+    {
+      "chunk": "candidate_training__2019-02__L168/001",
+      "model_payload_sha256": "e7fbb73157efaa95abdd8c5eaf24bb4744c329c48c8ab11de07352cbaa4ff47c"
+    },
+    {
+      "chunk": "candidate_training__2019-02__L168/002",
+      "model_payload_sha256": "75e575b0141ee3c6909eca4a6e2cb3d63d4dd8c3413bd676ac4b72f60f4fb4f2"
+    },
+    {
+      "chunk": "candidate_training__2019-02__L168/003",
+      "model_payload_sha256": "5b473852abda15ff880824b1ee6738aca3ce9314c462eeabb47b0414652f4493"
+    },
+    {
+      "chunk": "candidate_training__2019-02__L168/004",
+      "model_payload_sha256": "09f431f7d160bbc10790721c0d4085ac16391c714b38389e9e066fd935cfdd01"
+    },
+    {
+      "chunk": "candidate_training__2019-02__L168/005",
+      "model_payload_sha256": "ade84e906d4821ef09b4491928562a7e842d4112dcf4b03cb796d7e6d7370bff"
+    },
+    {
+      "chunk": "candidate_training__2019-03__L168/000",
+      "model_payload_sha256": "483f683453acdc5612d95da5d470a8d9f847d1efdc90aecff41334bcd91a5e2c"
+    },
+    {
+      "chunk": "candidate_training__2019-03__L168/001",
+      "model_payload_sha256": "bcbebc1430dd32f1c44d8cb54c3a486a12f56e9faa06f325dceeda532b24d135"
+    },
+    {
+      "chunk": "candidate_training__2019-03__L168/002",
+      "model_payload_sha256": "76388505cc7be465cdedc888a8e6203216bbd5c8a2c26c8ebe5a3dad927102ae"
+    },
+    {
+      "chunk": "candidate_training__2019-03__L168/003",
+      "model_payload_sha256": "56cb2209cacf652d527373fd9f20357edb65f0160ddc20591e4679d8eb2f269e"
+    },
+    {
+      "chunk": "candidate_training__2019-03__L168/004",
+      "model_payload_sha256": "8c75ab1cbd181431f62cd1d2617e4fc3db48ea82e5bb81646f161b93795cdd40"
+    },
+    {
+      "chunk": "candidate_training__2019-03__L168/005",
+      "model_payload_sha256": "10e3b5330b6ea7b8da5bb6e18634f3d7f61195ceccf653d08e9fb00fceecdb01"
+    },
+    {
+      "chunk": "candidate_training__2019-03__L168/006",
+      "model_payload_sha256": "300451f0d85f06ae890867fe5b594c30eb689b8101d64a67be8196f7370a25e5"
+    },
+    {
+      "chunk": "candidate_training__2019-04__L168/000",
+      "model_payload_sha256": "3771c5a34aeb8cfcbdf2e2aeff787f51669a17bcdf83c1a87bf0f30cee37ab63"
+    },
+    {
+      "chunk": "candidate_training__2019-04__L168/001",
+      "model_payload_sha256": "53ee92fd6999629566a4ec757273770042969540e7dc0ce37e2ecc348f389d5c"
+    },
+    {
+      "chunk": "candidate_training__2019-04__L168/002",
+      "model_payload_sha256": "87986770b39f5203775d52c2a3c7c41c0f444ed8ee7550cee24a6be74b5207f5"
+    },
+    {
+      "chunk": "candidate_training__2019-04__L168/003",
+      "model_payload_sha256": "fc5c3f3ecf3d1958dbd288f9ea4da972a2f9823c24c54d6b2d6e4314d036a652"
+    },
+    {
+      "chunk": "candidate_training__2019-04__L168/004",
+      "model_payload_sha256": "7c6b0a1270bee19f062d5a25d71bfe6d922a4daaa95a3dc5c506b5e9be6e8c82"
+    },
+    {
+      "chunk": "candidate_training__2019-04__L168/005",
+      "model_payload_sha256": "5c0317aec1797dfdc33cfe10e3cd763245e4ab2d2106a3b445fd4559d9ca6359"
+    },
+    {
+      "chunk": "candidate_training__2019-05__L168/000",
+      "model_payload_sha256": "855d033c68df29fea0c07133a507e84ae34d50565c7ae4ddb713c242a023a246"
+    },
+    {
+      "chunk": "candidate_training__2019-05__L168/001",
+      "model_payload_sha256": "353eb251f615ab56b089fcc1a417af204dc823d2ce5334d5db29f1d00ca47832"
+    },
+    {
+      "chunk": "candidate_training__2019-05__L168/002",
+      "model_payload_sha256": "8fd5d25286ead595a2885387f8e70e4321fb463cff82fa050af52053ed885f42"
+    },
+    {
+      "chunk": "candidate_training__2019-05__L168/003",
+      "model_payload_sha256": "4aabc9c550af19a7f6d38978cdc5386d842126f13097f91c43f69d791a72f45a"
+    },
+    {
+      "chunk": "candidate_training__2019-05__L168/004",
+      "model_payload_sha256": "6ed80a68ecd347fe4ebc72d21518c0cbb590cd7dddd5fbb48157bfc9b0387675"
+    },
+    {
+      "chunk": "candidate_training__2019-05__L168/005",
+      "model_payload_sha256": "d292c93548ef1220a3e1692789389ae930baae7e8c63096003188492abba2e81"
+    },
+    {
+      "chunk": "candidate_training__2019-05__L168/006",
+      "model_payload_sha256": "d71009d1ede965865434c8b85aef541e0d3c20703d0fcac77a84df1f2f751869"
+    },
+    {
+      "chunk": "candidate_training__2019-06__L168/000",
+      "model_payload_sha256": "f4e8afb6aad4da5981fab519744e0a1c48eab2e963c82d48e98285f618e44055"
+    },
+    {
+      "chunk": "candidate_training__2019-06__L168/001",
+      "model_payload_sha256": "58c59d0e97ba4e94fee7f4e44361be116b98dbd075a099d155a57a36c4553aa7"
+    },
+    {
+      "chunk": "candidate_training__2019-06__L168/002",
+      "model_payload_sha256": "21a8b2a951c9ecd4de4bd0dab1d53e40ac3a8ada88f010e321a894126e25d9ff"
+    },
+    {
+      "chunk": "candidate_training__2019-06__L168/003",
+      "model_payload_sha256": "e9487e2c1b60df48d8329d27ce25699084e71d27f3a58d94bfdfb22969bfd4dd"
+    },
+    {
+      "chunk": "candidate_training__2019-06__L168/004",
+      "model_payload_sha256": "96412a3f5655b9cb55ce943e6b20c420cf9249b7f6ae906ea9e8c3b41881d82a"
+    },
+    {
+      "chunk": "candidate_training__2019-06__L168/005",
+      "model_payload_sha256": "0afa51e8c1d17b69ede2999589472416f91c7ff4d6386f4f568eb1632e64bb89"
+    },
+    {
+      "chunk": "candidate_training__2019-07__L168/000",
+      "model_payload_sha256": "1b0c4be71a98635fbcacb46f296fa8462be7d8c7488d6bc4bfd85c626337f747"
+    },
+    {
+      "chunk": "candidate_training__2019-07__L168/001",
+      "model_payload_sha256": "463b9273645c13490bddc77af5e354d3ea82eec5b8cf11eb1359ced391e08258"
+    },
+    {
+      "chunk": "candidate_training__2019-07__L168/002",
+      "model_payload_sha256": "44e62089013ef49cd6d507ca30892e70e26bf89d01f064f459e0c43d82ba77d6"
+    },
+    {
+      "chunk": "candidate_training__2019-07__L168/003",
+      "model_payload_sha256": "4036c6aeb97cb0eca570c4d1c77dd0d15d29e31a6ff504e1f91107e8d6fea5bd"
+    },
+    {
+      "chunk": "candidate_training__2019-07__L168/004",
+      "model_payload_sha256": "4d2660c4448d92095406032612a2588226d29f3fcffd927d935ef2b4f7f5e9bf"
+    },
+    {
+      "chunk": "candidate_training__2019-07__L168/005",
+      "model_payload_sha256": "bc6eb636ce13d84e5545496e549497415dde6eea02cb86e084c3186608e678a8"
+    },
+    {
+      "chunk": "candidate_training__2019-07__L168/006",
+      "model_payload_sha256": "bb311e8ba5d3f04452ebc25bfea587e64df5f99db255ba74c0b8e99edd662274"
+    },
+    {
+      "chunk": "candidate_training__2019-08__L168/000",
+      "model_payload_sha256": "3e4f4d5fa7c20d192a2bb6ec2ed530e56d3296bea578abaf76d5e1e83581a1a7"
+    },
+    {
+      "chunk": "candidate_training__2019-08__L168/001",
+      "model_payload_sha256": "3f3a67bbef8cfe5ae8b55ccb921a3c048f9e468b9fdc6784ca0add461f775f46"
+    },
+    {
+      "chunk": "candidate_training__2019-08__L168/002",
+      "model_payload_sha256": "720d69491310c084d54bb056adef30e53890455572700deccce351fd55af59c5"
+    },
+    {
+      "chunk": "candidate_training__2019-08__L168/003",
+      "model_payload_sha256": "d4af30d49f6c4b9f34df64f4ccc815f0c524d9ed5990e55a9cd99a637bd97858"
+    },
+    {
+      "chunk": "candidate_training__2019-08__L168/004",
+      "model_payload_sha256": "f5adeec1ca9eaad3a372aa84915631ef7aef2b8b830682e45e73a973a89cb7f6"
+    },
+    {
+      "chunk": "candidate_training__2019-08__L168/005",
+      "model_payload_sha256": "2bf8cc524ad042cffdf41f967b6050560e9b2937da0dc5fe526338c8ff674a8f"
+    },
+    {
+      "chunk": "candidate_training__2019-08__L168/006",
+      "model_payload_sha256": "27487e64ca5405065eba84b37005ad49cde640cc5fc189a786f89f674690a735"
+    },
+    {
+      "chunk": "candidate_training__2019-09__L168/000",
+      "model_payload_sha256": "0b465da6f34a2a23ced97593ffe1ef63736c89af35bcd57e0e1c67bdecb4277b"
+    },
+    {
+      "chunk": "candidate_training__2019-09__L168/001",
+      "model_payload_sha256": "a508fde2818c12515095039943d744d3cee33a6f7a7432862d08aa6ba60af335"
+    },
+    {
+      "chunk": "candidate_training__2019-09__L168/002",
+      "model_payload_sha256": "503360d40885f07b63c0ddca99b6e37012b308c1612783ac6639e0170bbecfb3"
+    },
+    {
+      "chunk": "candidate_training__2019-09__L168/003",
+      "model_payload_sha256": "69b37450be80168999e81f9d3793e06c81de2a76bae5d5064b62d1119f6d1c80"
+    },
+    {
+      "chunk": "candidate_training__2019-09__L168/004",
+      "model_payload_sha256": "af525b47b2cfe9b83d3230fb02058cdc42a28cf14a55a4f8c911030aa6fa2acd"
+    },
+    {
+      "chunk": "candidate_training__2019-09__L168/005",
+      "model_payload_sha256": "bed838995a16dbb1a4f581d031e38b4966ef82878cf264d3fcad40dec80415ca"
+    },
+    {
+      "chunk": "candidate_training__2019-10__L168/000",
+      "model_payload_sha256": "6ee5848c6b8523805ce0705b02824d15e966e8ac301d5ad0298c15055fcb02a0"
+    },
+    {
+      "chunk": "candidate_training__2019-10__L168/001",
+      "model_payload_sha256": "2744caf562f59413c9135b2008adc2b13f6757865438536b3eb5632b2d7dfef5"
+    },
+    {
+      "chunk": "candidate_training__2019-10__L168/002",
+      "model_payload_sha256": "57b225230c017859ce9aed7521a96110b623d2b795a073e2d04e42e1f464a0bb"
+    },
+    {
+      "chunk": "candidate_training__2019-10__L168/003",
+      "model_payload_sha256": "73efe7947b87af1b42d1cedce5d2ec0482801d8458d117ade007cb15b142886b"
+    },
+    {
+      "chunk": "candidate_training__2019-10__L168/004",
+      "model_payload_sha256": "957169f610fd1427e516a9d96766b7e07821481e73c3d1cd8b105b242cc28c48"
+    },
+    {
+      "chunk": "candidate_training__2019-10__L168/005",
+      "model_payload_sha256": "fc4df050559140566f3163ec4b30fbaba53561dc56cec4f27c8a522ea0140577"
+    },
+    {
+      "chunk": "candidate_training__2019-10__L168/006",
+      "model_payload_sha256": "7380a132d2e65428b09c4528ae86a0dfde8e9be36302cdc5f6f191504b9357fc"
+    },
+    {
+      "chunk": "candidate_training__2019-11__L168/000",
+      "model_payload_sha256": "1c51f81d2b22ea8f0b7ba1321707672b6413c4b5677d7a0ffbf5012a54b78bf9"
+    },
+    {
+      "chunk": "candidate_training__2019-11__L168/001",
+      "model_payload_sha256": "d2f0ac76bf63f47543a4d4c28736b2bcce3be5f808dbbb477d91b6783b48592b"
+    },
+    {
+      "chunk": "candidate_training__2019-11__L168/002",
+      "model_payload_sha256": "219ae0671cca9da7e9a3172d2c6e661b185a9c57664a5d5e830ed1f35169787d"
+    },
+    {
+      "chunk": "candidate_training__2019-11__L168/003",
+      "model_payload_sha256": "bea9a0e671981a9973e8f8d60a2ae9249302f5a4fd0c2b9829eea39c477d9ee0"
+    },
+    {
+      "chunk": "candidate_training__2019-11__L168/004",
+      "model_payload_sha256": "20cabe1698b4f12b599f8dbc16c719b8d3262534e36df686fde1c51493554e89"
+    },
+    {
+      "chunk": "candidate_training__2019-11__L168/005",
+      "model_payload_sha256": "e08983dcb21da4065ec89e324ca50210a48552198770a208a8c44f9c94f0a614"
+    },
+    {
+      "chunk": "candidate_training__2019-12__L168/000",
+      "model_payload_sha256": "82f67deaebeaf9b78b10828af502855ce0e6be60023863987b0f7428facba457"
+    },
+    {
+      "chunk": "candidate_training__2019-12__L168/001",
+      "model_payload_sha256": "e5c45d90bea4ad41a811ab9506d46fa2451a46f1a9b7bbbaad20fcb40c7a32ad"
+    },
+    {
+      "chunk": "candidate_training__2019-12__L168/002",
+      "model_payload_sha256": "5d2b5146bce22fd6bdf116128eda7b1ee1c2583365c3213e6d6afcffbc9fcd2c"
+    },
+    {
+      "chunk": "candidate_training__2019-12__L168/003",
+      "model_payload_sha256": "b0cf15422c1ffeb606755ceee58747cd1cadde333e2c2d343273a8b8a7cfd47c"
+    },
+    {
+      "chunk": "candidate_training__2019-12__L168/004",
+      "model_payload_sha256": "4da8e03025a5c190efbbccca974f8e7b3c95cb4089f25dcbfd7c168b1ec848e3"
+    },
+    {
+      "chunk": "candidate_training__2019-12__L168/005",
+      "model_payload_sha256": "e86789d81e1abc8e13d39f5b0c7c8eddaf51383e620e6e9d61c32e7c19c3c2f3"
+    },
+    {
+      "chunk": "candidate_training__2019-12__L168/006",
+      "model_payload_sha256": "ff81a7e5a7b084da1c1e71d60906623a3d8c6847d415fb24df23a6c0bfaa9f65"
+    },
+    {
+      "chunk": "candidate_training__2020-01__L168/000",
+      "model_payload_sha256": "584e00fd667ddcd20821f35430751fa997280504e5696855063041fb2975df08"
+    },
+    {
+      "chunk": "candidate_training__2020-01__L168/001",
+      "model_payload_sha256": "5050d280a2c5ea68ad1f27d308c94a5b1f513f8ea17061e58dc9b8179bfb98b8"
+    },
+    {
+      "chunk": "candidate_training__2020-01__L168/002",
+      "model_payload_sha256": "1a18daca65d5582fe69fc4d837d653429f1d1ad35fdb0f8062196e43459f3a9d"
+    },
+    {
+      "chunk": "candidate_training__2020-01__L168/003",
+      "model_payload_sha256": "ae74339a3dad781cdb4e115c76b6932d64cd377bc75557810a3d5cef2623f420"
+    },
+    {
+      "chunk": "candidate_training__2020-01__L168/004",
+      "model_payload_sha256": "0dc9b4ea59575b8982ea17267b23f800d2166684ef8cec6d0f678c874c6a3f63"
+    },
+    {
+      "chunk": "candidate_training__2020-01__L168/005",
+      "model_payload_sha256": "36941ff45ace8cdf8c0c797aa29fca26b0d408226ebb391387d36c10b92deef7"
+    },
+    {
+      "chunk": "candidate_training__2020-01__L168/006",
+      "model_payload_sha256": "07a715d9d0258b31af0c891ba70062d437a058273b134bcaa04345e0a8c19553"
+    },
+    {
+      "chunk": "candidate_training__2020-02__L168/000",
+      "model_payload_sha256": "0a6163e0d9f0340c4a1fd4ee21b132786b744e870451038bb8a7ff6bca6cadf3"
+    },
+    {
+      "chunk": "candidate_training__2020-02__L168/001",
+      "model_payload_sha256": "a1935a6d27780775c0731c2a103202d0de09a38df4386d1a21aab14b817e7be7"
+    },
+    {
+      "chunk": "candidate_training__2020-02__L168/002",
+      "model_payload_sha256": "f6a3256d88cac587f83fdc37226cfba0698bb23525422063232ef157e951ab58"
+    },
+    {
+      "chunk": "candidate_training__2020-02__L168/003",
+      "model_payload_sha256": "09ef4176ad71e61c56e5f26b4070c393a0e1e476ed98597c9a010174b3d17b45"
+    },
+    {
+      "chunk": "candidate_training__2020-02__L168/004",
+      "model_payload_sha256": "34d06aac4065e23a89695b213f20e3e63bed41c3ad6909bf950f75aae97f837f"
+    },
+    {
+      "chunk": "candidate_training__2020-02__L168/005",
+      "model_payload_sha256": "ddf67ef5fb129b3b0cb20e6a06793981a0d1486448075a2169e3ad55e948dd28"
+    },
+    {
+      "chunk": "candidate_training__2020-03__L168/000",
+      "model_payload_sha256": "4c07adbfa47da72d49334a624bcf7a24788a5a2e28ccfb51896cc1d653b34062"
+    },
+    {
+      "chunk": "candidate_training__2020-03__L168/001",
+      "model_payload_sha256": "422d9f8380e7d219e438d53990d879cbae471262ca8045ffd76ffda39ccbcb69"
+    },
+    {
+      "chunk": "candidate_training__2020-03__L168/002",
+      "model_payload_sha256": "8ad957392203ca9fa20ac53fd8a3ca64b2a64ee5869de355de98d4dd7f4b1d57"
+    },
+    {
+      "chunk": "candidate_training__2020-03__L168/003",
+      "model_payload_sha256": "a7bfaafdd5b15a890123d4de45375c86b5383b850f2e530f015b496cd29d156e"
+    },
+    {
+      "chunk": "candidate_training__2020-03__L168/004",
+      "model_payload_sha256": "5e581ea38d00e856bfdcfd11f6ac132743b03a13e61ec26baaf24dd7398b53ca"
+    },
+    {
+      "chunk": "candidate_training__2020-03__L168/005",
+      "model_payload_sha256": "e150718339a1eeadd5e72b10f8d77f8890bfb80f2af0e1dde487f3aae4a7f62f"
+    },
+    {
+      "chunk": "candidate_training__2020-03__L168/006",
+      "model_payload_sha256": "bab09adccf6869e6d416aa843c3bcae40de535c67f03e7904932db7da365bd77"
+    },
+    {
+      "chunk": "candidate_training__2020-04__L168/000",
+      "model_payload_sha256": "ea8f9b30a7641dfb05fd0e40dffec35886110e7fa7ed413d6cd36d82cf689428"
+    },
+    {
+      "chunk": "candidate_training__2020-04__L168/001",
+      "model_payload_sha256": "887143036d1b4836522c10a484deb05494dfaa1eb602adfc90e8eb87469af03f"
+    },
+    {
+      "chunk": "candidate_training__2020-04__L168/002",
+      "model_payload_sha256": "2065c371065764ca9f107467f8b8fd58324dab28fb3c04a1567048e016c0bacb"
+    },
+    {
+      "chunk": "candidate_training__2020-04__L168/003",
+      "model_payload_sha256": "6f57881d529b624c0fa70de0df1e47b182864ee90f5296f28dee6bdcecbd69e3"
+    }
+  ],
+  "created_at_utc": "2026-11-02T21:59:28.104031+00:00",
+  "elapsed_seconds": 3.9245721659390256,
+  "local_usgs_reprocessing_permitted": true,
+  "matched_candidate_admitted_cases": 42696,
+  "matched_cases": 46728,
+  "matched_chunks": 140,
+  "matched_origins": 15576,
+  "network_requests": 0,
+  "new_plan_sha256": "0dad073824984fd7eeba88e4c313d77b4015dcccb94e8eb27297fcf7c6b39b0f",
+  "new_snapshot_sha256": "f6d194f4517d11da273649e8c053187e2bcc5a33855c2313857fe6c091a4ac5f",
+  "old_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+  "old_snapshot_sha256": "24da7d014e909377f23698ca45cfc9a8f7b81f567b3a17205942057189dbf82a",
+  "optimizer_updates": 0,
+  "original_source_receipt_digests_match": true,
+  "peak_rss_bytes": 61849600,
+  "protected_scoring": false,
+  "qualification": "Exact completed-prefix parity and qualified original-cache provenance; corpus still incomplete",
+  "raw_hrrr_source_redecodes": 0,
+  "schema": "hydra-corpus-prefix-parity/v1",
+  "status": "VERIFIED_ALL_140_TYPED_SHARDS_BYTE_IDENTICAL",
+  "unique_original_basin_entries_reverified": 2596
+}

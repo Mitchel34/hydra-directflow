@@ -25,6 +25,7 @@ import numpy as np
 
 from .cache import (CachedDevelopmentSession, _read, _sync_directory, _write_durable,
                     implementation_identity, pack_cycle, unpack_cycle)
+from .cache_reuse import qualified_basin_reuse
 from .contract import require, DevelopmentProtocol
 from .eligibility import read_required_index
 from .local_data import (GAUGES, USGS_MANIFEST_SHA256, WEIGHTS_SHA256, DEVELOPMENT_QUALIFICATION,
@@ -131,6 +132,7 @@ def plan_corpus(*, history_hours=168, chunk_hours=120):
     code["corpus.py"] = hashlib.sha256(_read(Path(__file__), 256 * 1024)).hexdigest()
     code["monthly.py"] = hashlib.sha256(_read(Path(__file__).with_name("monthly.py"), 256 * 1024)).hexdigest()
     code["eligibility.py"] = hashlib.sha256(_read(Path(__file__).with_name("eligibility.py"), 256 * 1024)).hexdigest()
+    code["cache_reuse.py"] = hashlib.sha256(_read(Path(__file__).with_name("cache_reuse.py"), 256 * 1024)).hexdigest()
     identity = dict(schema=SCHEMA, splits=list(DEFAULT_SPLITS), history_hours=history_hours, chunk_hours=chunk_hours,
                     input_quality_policy=PRIMARY_APPROVED, target_quality_policy=PRIMARY_APPROVED,
                     qualified_index_sha256=INDEX_SHA256, usgs_manifest_sha256=USGS_MANIFEST_SHA256,
@@ -155,6 +157,7 @@ class SourceBackedSession(CachedDevelopmentSession):
                 "Only a factory-authenticated index snapshot can be reused")
         self.authenticated_index = authenticated_index
         self.provider_calls, self.finalization_calls = 0, 0
+        self.qualified_cache_reuse = {}
 
     def __enter__(self):
         if self.authenticated_index is None:
@@ -189,6 +192,17 @@ class SourceBackedSession(CachedDevelopmentSession):
         identity = dict(cycle_id=cycle_id, qualified_index_sha256=INDEX_SHA256,
                         sealed_row_sha256=digest(self.index[cycle_id]), candidate_weights_sha256=WEIGHTS_SHA256,
                         implementation_sha256=self.code, policy=self.policy)
+        # The one reviewed compatibility rule returns the ORIGINAL key and
+        # source receipt. No existing entry is relabeled as newly decoded.
+        reused = qualified_basin_reuse(self.cache, identity)
+        if reused is not None:
+            arrays, metadata, key, proof = reused
+            cycle, reduced = unpack_cycle(arrays, metadata)
+            result = cycle, reduced, metadata["source_receipt"], key
+            self.qualified_cache_reuse[cycle_id] = proof
+            self.cycles[cycle_id] = result
+            self.guard()
+            return result
         lease = {}
         def build():
             if not callable(self.source_provider):
@@ -234,6 +248,12 @@ class SourceBackedSession(CachedDevelopmentSession):
                 raise SourceUnavailable(cycle_id, "OWNED_STAGE_FINALIZATION_FAILED_AFTER_CACHE_COMMIT", type(error).__name__) from error
         self.guard()
         return result
+
+    def build(self, **kwargs):
+        arrays, receipt = super().build(**kwargs)
+        receipt["qualified_cache_reuse"] = {cycle: self.qualified_cache_reuse[cycle]
+            for cycle in receipt["cache"]["cycle_keys"] if cycle in self.qualified_cache_reuse}
+        return arrays, receipt
 
     def _month(self, month):
         self.guard()
@@ -357,6 +377,7 @@ def _shard_write(root, plan_sha, unit, chunk, arrays, receipt):
                    input_quality_policy=PRIMARY_APPROVED, target_quality_policy=PRIMARY_APPROVED,
                    case_source_digest=receipt["case_source_digest"], cycle_keys=receipt["cache"]["cycle_keys"],
                    month_keys=receipt["cache"]["month_keys"], stage_seconds=receipt["stage_seconds"],
+                   qualified_cache_reuse=receipt.get("qualified_cache_reuse", {}),
                    provenance="Original per-cycle records/fields and hourly qualifiers/IDs remain in referenced shared stores")
     summary_raw = canonical(summary)
     _write_durable(stage / "model.npz", payload)
@@ -437,7 +458,7 @@ def run_corpus(*, qualified_index_path, weights_path, usgs_paths, usgs_manifest_
     require(not root.is_symlink(), "Corpus run must be a real directory")
     descriptor = os.open(root / ".writer.lock", os.O_CREAT | os.O_RDWR | getattr(os, "O_NOFOLLOW", 0), 0o600)
     started, built, reused, peak = time.monotonic(), 0, 0, 0
-    payloads, failure, provider_calls, finalization_calls = [], None, 0, 0
+    payloads, failure, provider_calls, finalization_calls, qualified_loads = [], None, 0, 0, 0
     admitted_run, locked = False, False
     import psutil
     process = psutil.Process()
@@ -482,6 +503,10 @@ def run_corpus(*, qualified_index_path, weights_path, usgs_paths, usgs_manifest_
                             payload = _shard_read(path, plan["plan_sha256"], unit, chunk)
                             for cycle, key in payload["cycle_keys"].items():
                                 require(session._cycle(cycle)[3] == key, "Dependent basin cache identity differs")
+                            expected_reuse = {cycle: session.qualified_cache_reuse[cycle]
+                                for cycle in payload["cycle_keys"] if cycle in session.qualified_cache_reuse}
+                            require(payload.get("qualified_cache_reuse", {}) == expected_reuse,
+                                    "Qualified producer reuse provenance changed")
                             for month, key in payload["month_keys"].items():
                                 require(session._month(month)[2] == key, "Dependent discharge cache identity differs")
                             reused += 1
@@ -498,6 +523,7 @@ def run_corpus(*, qualified_index_path, weights_path, usgs_paths, usgs_manifest_
                 finally:
                     provider_calls += session.provider_calls
                     finalization_calls += session.finalization_calls
+                    qualified_loads += len(session.qualified_cache_reuse)
             if stop:
                 break
     except BaseException as error:
@@ -518,6 +544,7 @@ def run_corpus(*, qualified_index_path, weights_path, usgs_paths, usgs_manifest_
                   completed_cases=sum(p["case_count"] for p in payloads), admitted_cases=sum(p["admitted_cases"] for p in payloads),
                   chunks_built=built, chunks_reused=reused, total_chunks=total_chunks,
                   source_provider_calls=provider_calls, post_cache_commit_callback_calls=finalization_calls,
+                  qualified_basin_cache_loads=qualified_loads,
                   sealed_index_authentication_passes=1,
                   calendar_unavailable_cycle_ids=plan["calendar_unavailable_cycle_ids"],
                   source_calendar_counts=dict(sum((Counter(p["source_calendar_counts"]) for p in payloads), Counter())),
