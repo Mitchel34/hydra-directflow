@@ -1,6 +1,6 @@
 # One reviewed reader-compatibility rule
 
-The original20200422_00Z raw-cycle archive retains compact consolidated-metadata
+The original `20200422_00Z` raw-cycle archive retains compact consolidated-metadata
 404 receipts. The later reader expected an additional nested proof field. The
 original producer and authenticated manifest instead preserve matching source
 records and settled GET404 request evidence. The new branch requires that exact

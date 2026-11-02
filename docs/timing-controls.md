@@ -25,10 +25,10 @@ Timing includes fixture verification, mode transformation, tensorization, model 
 
 The default command prints a plan only. Execution requires the original `--receipt`, `--fixture`, a new private `--run-directory`, a new `--report`, `--execute` and the exact `--approved-plan-sha256`. Root execution follows review. Preparing this code performs no optimizer update, cloud operation or new source download, and does not choose a scientific normalization or winning architecture.
 
-The reviewed execution in `reports/timing-controls.json` passed all8 cases:
-200 precharged/entered/confirmed updates, including40 warmup and160 measured,
-in32.18seconds with1.68GiB observed combined peak. All checkpoint forward replays
+The reviewed execution in `reports/timing-controls.json` passed all 8 cases:
+200 precharged/entered/confirmed updates, including 40 warmup and 160 measured,
+in 32.18 seconds with a 1.68 GiB observed combined peak. All checkpoint forward replays
 and cohort/target identity checks passed. No case was unstarted or retried;
 network requests and cloud jobs were zero. Scientific fits, fitted scientific
 scalers, architecture selection and protected scoring remain absent. The prior
-600-update receipt is preserved, and these200 updates have their own ledger.
+600-update receipt is preserved, and these 200 updates have their own ledger.

@@ -325,3 +325,14 @@ Cumulative accounting is now **852 real-data engineering updates** and
 **896 synthetic updates**, with zero scientific campaign fits. Mode-specific
 timing estimates will replace the corresponding sizing proxies in a new report;
 the earlier proposal remains an attributable planning snapshot.
+
+## Workload update using measured controls — November 2
+
+The geometry-specific planner passes 21 tests and independent receipt/arithmetic
+review. It binds both benchmark receipts, their common fixture/cohort/targets,
+device policy and model geometry. The original proxy-only report is unchanged.
+At 50 epochs, the calendar scenarios are 61.36 hours for 108 final fits and
+89.34 hours for the 180-fit paired-CV plus final-L24 contrast. Both use measured
+geometries throughout. The 288-fit factorial is 135.66 hours; its 72 Q-only/L24
+fits still use an explicit full-L168 proxy. No CUDA speedup, final admission,
+convergence, CV adoption or scientific result is inferred from these estimates.

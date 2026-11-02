@@ -80,6 +80,16 @@ earlier scenarios without fitting models. The separate proposed-CV workload
 arithmetic in `docs/workload-planning.md` distinguishes gradient fitting, inner
 stopping and outer inference and reports the additional input/lookback arms.
 
+The subsequently executed 200-update controls replace Q-only L168 and full L24
+timing proxies with measurements. At the 50-epoch cap, the 108-fit final-only
+scope is now 61.36 hours and the 180-fit paired-CV plus final-lookback scope is
+89.34 hours. The 288-fit factorial is 135.66 hours, still including 72 unmeasured
+Q-only/L24 fits represented by an explicit full-L168 proxy. These remain calendar
+count scenarios before final numerical admission and exclude full-corpus loading,
+failures, interruptions and scientific review/figure preparation. See
+`reports/proposed-scientific-workload-measured-controls.json`. The scope preference
+is pending, and these arithmetic scenarios do not adopt CV or start fitting.
+
 ## Approved additional funding: $150 total ceiling
 
 **User approved November 2, 2026:** “Approve $150 combined ceiling.”
