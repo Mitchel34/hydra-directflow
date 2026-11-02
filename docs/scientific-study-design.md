@@ -89,6 +89,9 @@ causal explanation; use ablation/perturbation and stability diagnostics:
 
 Current schema: history has discharge and age; forecasts have precipitation,
 temperature, specific humidity and SWE; initial state has soil fraction and age.
+Weather cycle age and native source leads are retained in provenance but are not
+currently extra model input channels. Any addition must be a declared schema
+change with updated parameter counts and common comparison inputs.
 Boolean masks are concatenated as input channels, not attention-padding masks.
 Masked numerical placeholders must be zero. Soil is repeated as conditioning
 information on horizon tokens, not represented as a predicted future soil state.
@@ -172,7 +175,8 @@ report natural-cohort coverage separately. The final development check uses the
 canonical training interval, with May–July 2023 as its internal stopping tail,
 and `[2023-07-31,2024-07-31)` for validation. It may support selection but is not
 an untouched assessment. Primary proposal: no post-validation refit; freeze the
-selected training-period checkpoints. Any combined-development refit needs a
+training-period checkpoints for every predeclared seed, without selecting a
+favorable seed. Any combined-development refit needs a
 reviewed protocol amendment before assessment access.
 
 Initial budget: one common configuration and one CV seed, expanding only after
