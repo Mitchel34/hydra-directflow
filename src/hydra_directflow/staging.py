@@ -177,6 +177,10 @@ class GCSClient:
         self.credential_requests = self.network_requests = 0
         self.opener = urllib.request.build_opener(DenyRedirect())
 
+    def invalidate_token(self):
+        """Discard only this process's token; the next open uses the same CLI."""
+        self.token, self.token_time = None, 0.
+
     def open(self, identity):
         if self.token is None or time.monotonic() - self.token_time > 2700:
             executable = shutil.which("gcloud")
@@ -256,6 +260,7 @@ class DevelopmentSourceProvider:
                         for p in folder.iterdir() if p.is_file())
         require(raw_bytes + limit <= RAW_HOTSET and shutil.disk_usage(self.directory).free > limit * 2 + 256 * 1024**2,
                 "Raw staging or free disk limit reached")
+        refreshed_after_401 = False
         for retry in range(self.max_attempts_per_object):
             attempt = self.budget.reserve(identity, limit + 1, kind)
             temporary = destination.with_name(destination.name + ".partial-" + uuid.uuid4().hex)
@@ -281,8 +286,21 @@ class DevelopmentSourceProvider:
                 self.budget.settle(attempt, "VERIFIED", observed)
                 self.downloads += 1; return
             except BaseException as error:
-                self.budget.settle(attempt, "FAILED", observed, type(error).__name__)
+                http_status = error.code if isinstance(error, urllib.error.HTTPError) else None
+                error_type = f"HTTPError_{http_status}" if type(http_status) is int and 100 <= http_status <= 599 else type(error).__name__
+                self.budget.settle(attempt, "FAILED", observed, error_type)
                 if temporary.exists(): temporary.unlink()
+                if isinstance(error, urllib.error.HTTPError):
+                    # Do not read/log the error body, URL, headers or token.
+                    error.close()
+                if http_status == 401 and not refreshed_after_401 and retry + 1 < self.max_attempts_per_object:
+                    invalidate = getattr(self.client, "invalidate_token", None)
+                    if callable(invalidate):
+                        invalidate()
+                        refreshed_after_401 = True
+                        # Retry only through the next normal iteration: reserve
+                        # first, then refresh with the existing credential CLI.
+                        continue
                 # Integrity, disk, interruption and budget failures never retry.
                 transient = isinstance(error, (TimeoutError, ConnectionError, urllib.error.URLError))
                 if isinstance(error, urllib.error.HTTPError):

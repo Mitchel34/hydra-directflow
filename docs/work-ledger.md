@@ -354,3 +354,22 @@ tensors, membership and role identities match. It took 0.149 seconds and peaked
 at 48.2 MiB RSS, with no scaler fitting, optimizer, network or raw-source reads.
 Both qualification receipts remain preserved. The optional simulated refit-label
 availability convention is explicitly deferred, not inferred by this adapter.
+
+## Bounded token refresh and next staging increment — November 2
+
+Increment07 finished normally at 240 committed chunks and 26,760 origins.
+Cumulative storage accounting is 8,030 attempted GETs: 8,029 verified and one
+earlier failed request. Observed response bodies total 22,659,534,392 bytes;
+the conservative precharge estimate is $6.431802, not an invoice.
+
+The provider now permits one HTTP 401 token refresh within its existing
+three-attempt limit. It clears only the process's cached token, precharges the
+next attempt, then uses the unchanged credential command. Repeated 401 and all
+403 responses stop. Failed charges remain, and sanitized HTTP status labels use
+the existing database column. Fourteen mocked tests and independent review pass;
+no new authentication, IAM or configuration action was performed by the tests.
+The earlier failure's unrecorded HTTP status remains unknown.
+
+The integrated suite passes 503 tests. Increment08 uses a new provider execution
+plan while retaining the same v4 corpus plan, source identities and persistent
+budget. No scientific fits or protected scores have been produced.

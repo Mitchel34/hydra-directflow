@@ -1,0 +1,21 @@
+{
+  "cloud_jobs_started": 0,
+  "corpus_plan_sha256": "0dad073824984fd7eeba88e4c313d77b4015dcccb94e8eb27297fcf7c6b39b0f",
+  "created_at_utc": "2026-11-02T22:32:56.242007+00:00",
+  "cumulative_real_engineering_updates": 852,
+  "cumulative_synthetic_updates": 896,
+  "implementation_sha256": {
+    "scripts/benchmark_timing_controls.py": "253744794d34915b8519043248775417570769bc0ccdce066ccd7060be5430ec",
+    "scripts/plan_scientific_workload.py": "fbf7cc13dc6ae3fd91e225d735cf205dae04570d53244ff178f95174c09c6683",
+    "src/hydra_directflow/staging.py": "1518512085ce3619452e8c529d19249bc7f3fb4c37353837c746d4c4e910a6f4",
+    "src/hydra_directflow/trainer_bundle.py": "d3ce39417d17308609e165386bb3e5f78d1b7de971a1585f0040a39a9756e9b5",
+    "tests/test_staging.py": "2e70154d19e2088ddadaf6c4d5d29983746856138e77ab2cecc338ebc4057f7d"
+  },
+  "protected_scores": 0,
+  "provider_execution_plan_sha256": "e652a878d8c377eb228a903244449eedcf655a5f225264561e30f3f548bd8153",
+  "qualification": "Engineering preparation and bounded source staging; incomplete scientific cohort/protocol",
+  "schema": "hydra-preparation-continuation-check/v1",
+  "scientific_fits": 0,
+  "test_elapsed_seconds": 4.401,
+  "tests_passed": 503
+}

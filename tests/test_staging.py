@@ -4,11 +4,15 @@ import io
 import json
 from pathlib import Path
 import tempfile
+import time
+import urllib.error
 import unittest
 from unittest.mock import patch
+from contextlib import redirect_stdout, redirect_stderr
+from types import SimpleNamespace
 
 from hydra_directflow.staging import (SourceBudget, DevelopmentSourceProvider, object_identity,
-                                     conservative_cost_microusd, MAX_BODY, MAX_GETS)
+                                     conservative_cost_microusd, MAX_BODY, MAX_GETS, GCSClient)
 
 
 def identity(raw, *, size=True):
@@ -76,15 +80,41 @@ class StagingTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             object_identity({**valid, "generation": ""}, 16, bytes_required=False, allowed_buckets={"test-bucket"})
 
-    def provider(self, folder, raw, callback=None):
+    def provider(self, folder, raw, callback=None, *, get_cap=3, max_attempts=3):
         root = Path(folder)
         fake_file = root / "src/hydra_directflow/staging.py"
         plan = dict(schema="hydra-development-staging-plan/v1", sources={"budget_approval": {"sha256": "a" * 64}, "qualified_index": {"sha256": "b" * 64}},
                     cycles=[dict(cycle_id="20230801_00Z", bundle_identity=identity(raw), local_archive_candidates=[])])
-        budget = SourceBudget(root / "budget", "a" * 64, body_cap=100, get_cap=3)
+        budget = SourceBudget(root / "budget", "a" * 64, body_cap=100, get_cap=get_cap)
         with patch("hydra_directflow.staging.__file__", str(fake_file)):
-            provider = DevelopmentSourceProvider(plan=plan, directory=root / ".local/stage", budget=budget, client=Client(raw, callback))
+            provider = DevelopmentSourceProvider(plan=plan, directory=root / ".local/stage", budget=budget, client=Client(raw, callback),
+                                                  max_attempts_per_object=max_attempts)
         return provider, budget
+
+    def token_client(self, budget, statuses):
+        client = GCSClient()
+        old, new = "OLD_FAKE_PRIVATE_TOKEN_123456789", "NEW_FAKE_PRIVATE_TOKEN_123456789"
+        client.token, client.token_time = old, time.monotonic()
+        requests, sequence = [], iter(statuses)
+        def open_response(request, timeout):
+            requests.append(request)
+            # Every HTTP attempt, including one after credential refresh, has
+            # its own committed reservation before reaching this fake opener.
+            self.assertEqual(budget.snapshot()["attempted_gets"], len(requests))
+            self.assertEqual(budget.snapshot()["precharged_body_bytes"], 4 * len(requests))
+            self.assertEqual(budget.snapshot()["attempt_states"].get("PRECHARGED"), 1)
+            code = next(sequence)
+            if code != 200:
+                raise urllib.error.HTTPError("https://example.invalid/FAKE_PRIVATE_PATH", code,
+                    "FAKE_PRIVATE_ERROR_BODY_TOKEN", {"private": old}, io.BytesIO(b"FAKE_PRIVATE_BODY"))
+            return Response(b"abc")
+        client.opener = SimpleNamespace(open=open_response)
+        def credential_command(command, **kwargs):
+            self.assertEqual(command, ["/mock/gcloud", "auth", "print-access-token"])
+            self.assertEqual(kwargs, {"capture_output": True, "text": True, "timeout": 20})
+            self.assertEqual(budget.snapshot()["attempt_states"].get("PRECHARGED"), 1)
+            return SimpleNamespace(returncode=0, stdout=new, stderr="FAKE_PRIVATE_STDERR")
+        return client, requests, old, new, credential_command
 
     def test_durable_precharge_exists_before_mock_http_and_verified_hit_has_no_get(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -142,6 +172,96 @@ class StagingTests(unittest.TestCase):
                                              "cache_key": "c" * 64, "cache_commit_sha256": "d" * 64}, {"ownership": ownership})
                 self.assertFalse(target.exists())
             budget.close()
+
+    def test_401_refreshes_once_through_same_cli_after_new_precharge_and_keeps_failed_charge(self):
+        with tempfile.TemporaryDirectory() as folder:
+            provider, budget = self.provider(folder, b"abc")
+            client, requests, old, new, credential = self.token_client(budget, [401, 200])
+            provider.client = client
+            output, errors = io.StringIO(), io.StringIO()
+            with provider, patch("hydra_directflow.staging.shutil.which", return_value="/mock/gcloud"), \
+                 patch("hydra_directflow.staging.subprocess.run", side_effect=credential) as command, \
+                 patch.object(client, "invalidate_token", wraps=client.invalidate_token) as invalidated, \
+                 redirect_stdout(output), redirect_stderr(errors):
+                target = provider.directory / "raw/20230801_00Z.tar"
+                provider._transfer(identity(b"abc"), target, 16, "archive")
+                self.assertEqual(target.read_bytes(), b"abc")
+            self.assertEqual((client.network_requests, client.credential_requests, invalidated.call_count, command.call_count), (2, 1, 1, 1))
+            self.assertEqual(requests[0].get_header("Authorization"), "Bearer " + old)
+            self.assertEqual(requests[1].get_header("Authorization"), "Bearer " + new)
+            self.assertEqual(budget.snapshot()["precharged_body_bytes"], 8)
+            self.assertEqual(budget.snapshot()["attempt_states"], {"FAILED": 1, "VERIFIED": 1})
+            rows = budget.connection.execute("SELECT status,error_type,observed FROM attempts ORDER BY id").fetchall()
+            self.assertEqual(rows, [("FAILED", "HTTPError_401", 0), ("VERIFIED", None, 3)])
+            public = json.dumps({"budget": budget.snapshot(), "errors": rows}) + output.getvalue() + errors.getvalue()
+            for secret in (old, new, "FAKE_PRIVATE_PATH", "FAKE_PRIVATE_ERROR_BODY_TOKEN", "FAKE_PRIVATE_BODY", "FAKE_PRIVATE_STDERR"):
+                self.assertNotIn(secret, public)
+            budget.close()
+
+    def test_repeated401_stops_after_single_refresh_and_two_charged_gets(self):
+        with tempfile.TemporaryDirectory() as folder:
+            provider, budget = self.provider(folder, b"abc")
+            client, _, _, _, credential = self.token_client(budget, [401, 401, 200])
+            provider.client = client
+            with provider, patch("hydra_directflow.staging.shutil.which", return_value="/mock/gcloud"), \
+                 patch("hydra_directflow.staging.subprocess.run", side_effect=credential) as command, \
+                 patch.object(client, "invalidate_token", wraps=client.invalidate_token) as invalidated:
+                target = provider.directory / "raw/20230801_00Z.tar"
+                with self.assertRaises(urllib.error.HTTPError) as error:
+                    provider._transfer(identity(b"abc"), target, 16, "archive")
+                self.assertEqual(error.exception.code, 401)
+                self.assertFalse(target.exists())
+            self.assertEqual((client.network_requests, command.call_count, invalidated.call_count), (2, 1, 1))
+            self.assertEqual(budget.snapshot()["precharged_body_bytes"], 8)
+            self.assertEqual(budget.snapshot()["attempt_states"], {"FAILED": 2})
+            self.assertEqual(budget.connection.execute("SELECT error_type FROM attempts ORDER BY id").fetchall(), [("HTTPError_401",), ("HTTPError_401",)])
+            budget.close()
+
+    def test_403_never_refreshes_or_retries(self):
+        with tempfile.TemporaryDirectory() as folder:
+            provider, budget = self.provider(folder, b"abc")
+            client, _, old, _, credential = self.token_client(budget, [403, 200])
+            provider.client = client
+            with provider, patch("hydra_directflow.staging.subprocess.run", side_effect=credential) as command, \
+                 patch.object(client, "invalidate_token", wraps=client.invalidate_token) as invalidated:
+                with self.assertRaises(urllib.error.HTTPError) as error:
+                    provider._transfer(identity(b"abc"), provider.directory / "raw/20230801_00Z.tar", 16, "archive")
+                self.assertEqual(error.exception.code, 403)
+            command.assert_not_called(); invalidated.assert_not_called()
+            self.assertEqual(client.token, old)
+            self.assertEqual(budget.snapshot()["attempted_gets"], 1)
+            self.assertEqual(budget.connection.execute("SELECT error_type FROM attempts").fetchone()[0], "HTTPError_403")
+            budget.close()
+
+    def test_auth_refresh_and_transient_retry_share_the_existing_three_attempt_limit(self):
+        with tempfile.TemporaryDirectory() as folder:
+            provider, budget = self.provider(folder, b"abc")
+            client, _, _, _, credential = self.token_client(budget, [503, 401, 200])
+            provider.client = client
+            with provider, patch("hydra_directflow.staging.shutil.which", return_value="/mock/gcloud"), \
+                 patch("hydra_directflow.staging.subprocess.run", side_effect=credential) as command, \
+                 patch("hydra_directflow.staging.time.sleep") as sleep, patch.object(client, "invalidate_token", wraps=client.invalidate_token) as invalidated:
+                provider._transfer(identity(b"abc"), provider.directory / "raw/20230801_00Z.tar", 16, "archive")
+            self.assertEqual((client.network_requests, command.call_count, invalidated.call_count), (3, 1, 1))
+            self.assertEqual(budget.snapshot()["precharged_body_bytes"], 12)
+            self.assertEqual(budget.snapshot()["attempt_states"], {"FAILED": 2, "VERIFIED": 1})
+            sleep.assert_called_once_with(1)
+            budget.close()
+
+    def test_existing_attempt_or_budget_limits_prevent_an_extra_get_without_refund(self):
+        for max_attempts, get_cap, expected_error in ((1, 3, urllib.error.HTTPError), (3, 1, ValueError)):
+            with self.subTest(max_attempts=max_attempts, get_cap=get_cap), tempfile.TemporaryDirectory() as folder:
+                provider, budget = self.provider(folder, b"abc", get_cap=get_cap, max_attempts=max_attempts)
+                client, _, _, _, credential = self.token_client(budget, [401, 200])
+                provider.client = client
+                with provider, patch("hydra_directflow.staging.subprocess.run", side_effect=credential) as command:
+                    with self.assertRaises(expected_error):
+                        provider._transfer(identity(b"abc"), provider.directory / "raw/20230801_00Z.tar", 16, "archive")
+                command.assert_not_called()
+                self.assertEqual(client.network_requests, 1)
+                self.assertEqual(budget.snapshot()["precharged_body_bytes"], 4)
+                self.assertEqual(budget.snapshot()["attempt_states"], {"FAILED": 1})
+                budget.close()
 
 
 if __name__ == "__main__":
