@@ -1,0 +1,32 @@
+{
+  "cloud_jobs": 0,
+  "created_at_utc": "2026-11-02T21:28:58.405353+00:00",
+  "cycle_id": "20190730_18Z",
+  "schema": "hydra-bounded-storage-diagnostic/v1",
+  "scope": "EXACT_PINNED_COMMIT_ONLY_EXISTING_APPROVAL",
+  "source_values_decoded": false,
+  "status": "PINNED_COMMIT_VERIFIED_WITH_FRESH_CLIENT",
+  "transport": {
+    "budget": {
+      "attempt_states": {
+        "FAILED": 1,
+        "VERIFIED": 3137
+      },
+      "attempted_gets": 3138,
+      "billing_invoice_reconciled": false,
+      "body_cap": 107353210880,
+      "conservative_precharge_estimate_usd": 2.254758,
+      "cost_estimate_cap_usd": 35.0,
+      "get_cap": 20000,
+      "observed_body_bytes": 7863886506,
+      "precharged_body_bytes": 7864343921
+    },
+    "cloud_jobs": 0,
+    "cloud_writes": 0,
+    "credential_requests": 1,
+    "local_hits": 0,
+    "network_requests": 1,
+    "objects_downloaded": 1,
+    "owned_raw_files_evicted": 0
+  }
+}

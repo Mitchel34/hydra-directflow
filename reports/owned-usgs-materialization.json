@@ -1,0 +1,137 @@
+{
+  "approval_sha256": "bccf4ccefcd847920c9fcc203ad5b7c49b8c696a45bb0f2a5a351feca5ab5f00",
+  "attempt_states": {
+    "VERIFIED": 11
+  },
+  "copied_bytes_match_original_manifest": true,
+  "created_at_utc": "2026-11-02T21:18:47.374745+00:00",
+  "direct_gcs_calls_by_materializer": 0,
+  "executed_dependency_sha256": {
+    "local_data.py": "ed999095fde7e0825426ab499b8a876a25bb04ed752b94d09cc0fc9634a47084",
+    "reference.py": "7c21deee40c04bc72bc5cfcb190a39792c94ab65115c16ca03da551296575135",
+    "staging.py": "6d761f31fec3aae7f50d913fed4fc06ee8710e1ef7cf7350c479e7d0efd56178"
+  },
+  "executed_script_sha256": "a6369159d5b533bc497d589ddc4432767dc3810d8757a3099de4b564f3bbf4f6",
+  "execution_completed_at_utc": "2026-11-02T21:04:19.536982+00:00",
+  "failed_or_unsettled_attempts": 0,
+  "fileprovider_http_requests": null,
+  "fileprovider_wire_bytes": null,
+  "files": [
+    {
+      "bytes": 82507,
+      "copy_resident": true,
+      "month": "2018-12",
+      "original_source_hash_reverified": true,
+      "sha256": "8b5fae81493ebdea329f54e5951b5aae7aa73a220318ace33816a97894d5f131",
+      "source_currently_resident": true,
+      "source_was_dataless_at_execution": true
+    },
+    {
+      "bytes": 78075,
+      "copy_resident": true,
+      "month": "2019-06",
+      "original_source_hash_reverified": true,
+      "sha256": "6240996206fdcb1312eed8c72bbc1a3225e2f1ec5363768a7baacd1b299ef566",
+      "source_currently_resident": true,
+      "source_was_dataless_at_execution": true
+    },
+    {
+      "bytes": 62860,
+      "copy_resident": true,
+      "month": "2019-09",
+      "original_source_hash_reverified": true,
+      "sha256": "e02ecaca0a1866883a364f847b569f769f16f704d9921b134d3befe14d6b7334",
+      "source_currently_resident": true,
+      "source_was_dataless_at_execution": true
+    },
+    {
+      "bytes": 70298,
+      "copy_resident": true,
+      "month": "2021-06",
+      "original_source_hash_reverified": true,
+      "sha256": "dd3156c89cb06023d68cb328d71a2fe3a66ab176149ad7402b1dee51a3b02a6d",
+      "source_currently_resident": true,
+      "source_was_dataless_at_execution": true
+    },
+    {
+      "bytes": 72655,
+      "copy_resident": true,
+      "month": "2021-07",
+      "original_source_hash_reverified": true,
+      "sha256": "c1c42c6a72d6b0f36d14bb70dfa48334b4eb25df00892c74c990c869d022a154",
+      "source_currently_resident": true,
+      "source_was_dataless_at_execution": true
+    },
+    {
+      "bytes": 66351,
+      "copy_resident": true,
+      "month": "2021-11",
+      "original_source_hash_reverified": true,
+      "sha256": "bea122b3e4de63cb37efab9f0ff9fdfbcb55eedb972198d454b5175edcf05402",
+      "source_currently_resident": true,
+      "source_was_dataless_at_execution": true
+    },
+    {
+      "bytes": 63780,
+      "copy_resident": true,
+      "month": "2021-12",
+      "original_source_hash_reverified": true,
+      "sha256": "d2d851976d45a45e9d00f192f4cc7c0fc4b59ae462503e61807dd5f50dfda4e8",
+      "source_currently_resident": true,
+      "source_was_dataless_at_execution": true
+    },
+    {
+      "bytes": 64627,
+      "copy_resident": true,
+      "month": "2022-02",
+      "original_source_hash_reverified": true,
+      "sha256": "916db21778700bb0c46605e2247ac1f360153f3a8030f2adcffb3591b99d8267",
+      "source_currently_resident": true,
+      "source_was_dataless_at_execution": true
+    },
+    {
+      "bytes": 67483,
+      "copy_resident": true,
+      "month": "2022-04",
+      "original_source_hash_reverified": true,
+      "sha256": "d89b80a33e4b3f4fb7376d16e6effd6631112c031145eb9d2df267c5c2127864",
+      "source_currently_resident": true,
+      "source_was_dataless_at_execution": true
+    },
+    {
+      "bytes": 72307,
+      "copy_resident": true,
+      "month": "2023-03",
+      "original_source_hash_reverified": true,
+      "sha256": "bb40c16d53ad0ba160b21ec058378c89b6c8897491f86a80c97c96f613e1ab9a",
+      "source_currently_resident": true,
+      "source_was_dataless_at_execution": true
+    },
+    {
+      "bytes": 73273,
+      "copy_resident": true,
+      "month": "2023-12",
+      "original_source_hash_reverified": true,
+      "sha256": "e1c0d8d2542462992cf765ed66d9f4ce6bb30337c7e73d08a808744cbe775a62",
+      "source_currently_resident": true,
+      "source_was_dataless_at_execution": true
+    }
+  ],
+  "flow_or_other_numeric_value_columns_decoded_by_audit": false,
+  "materialization_plan_sha256": "18f8ddd35f90189e6c396b91b1bc6dddb0810c436c015cfecef6d55b3bf953cb",
+  "network_or_hydration_calls_by_audit": 0,
+  "precharge_ceiling_bytes": 2322681,
+  "precharged_encoded_bytes": 774227,
+  "raw_july2024_read_by_audit": false,
+  "schema": "hydra-owned-usgs-materialization-audit/v1",
+  "source_content_rewrites": false,
+  "source_ledger_sha256": "28f8e436a35aae3a07f372525f0875f4fc68ebcda4fe128387ceeeb45e86167b",
+  "source_manifest_sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a",
+  "source_summary_sha256": "45ca346323b52bf36477c9a7a3c243f9eac575e3b47caf5f69085d3e7c4c22b6",
+  "staging_plan_sha256": "fe37385705e184221ad0c9f4f1fb1d8ddcb1e141ccb7e7b14ccc9b186555247b",
+  "status": "VERIFIED_ALL_11_OWNED_COPIES",
+  "transport_qualification": "Opaque owned-file reads may invoke FileProvider; internal HTTP and wire bytes were not observed. Encoded file bytes are not claimed as network-wire totals.",
+  "unique_attempt_ids": true,
+  "verified_encoded_bytes": 774216,
+  "verified_files": 11
+}

@@ -1,0 +1,5159 @@
+{
+  "aggregate_admission_proofs": {
+    "enabled": false,
+    "proofs": [],
+    "proven_gauge_months": 0,
+    "reason": "DIRECT_NATIVE_OR_VERIFIED_EXPORT_METADATA_NOW_AVAILABLE"
+  },
+  "created_at_utc": "2026-11-02T21:27:21.656585+00:00",
+  "development_interval": {
+    "end_exclusive_utc": "2024-07-31T00:00:00Z",
+    "start_utc": "2018-07-12T00:00:00Z"
+  },
+  "execution": {
+    "discharge_value_columns_decoded": false,
+    "elapsed_seconds": 4.900979166966863,
+    "hrrr_payloads_read": 0,
+    "hydrations": 0,
+    "imputation": false,
+    "model_operations": 0,
+    "network_requests": 0,
+    "protected_numeric_values_decoded": false,
+    "raw_july2024_read": false,
+    "scaler_fits": 0,
+    "source_files_modified": false,
+    "whole_file_encoded_bytes_hashed_for_identity": true
+  },
+  "frozen_core_unchanged": true,
+  "history_end": "C_MINUS_2_HOURS_INCLUSIVE",
+  "hrrr_inventory": {
+    "by_month": {
+      "2018-07": {
+        "complete_summary": 70,
+        "cycles": 83,
+        "explicit_gap_summary": 10,
+        "index_absent": 3,
+        "known_bundle_bytes": 18237440,
+        "known_bundle_count": 4,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 83
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 67,
+          "INELIGIBLE": 8,
+          "UNKNOWN": 8
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 70,
+          "INELIGIBLE": 5,
+          "UNKNOWN": 8
+        }
+      },
+      "2018-08": {
+        "complete_summary": 110,
+        "cycles": 124,
+        "explicit_gap_summary": 14,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 94,
+          "INELIGIBLE": 4,
+          "UNKNOWN": 26
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 88,
+          "INELIGIBLE": 10,
+          "UNKNOWN": 26
+        }
+      },
+      "2018-09": {
+        "complete_summary": 113,
+        "cycles": 120,
+        "explicit_gap_summary": 7,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 72,
+          "INELIGIBLE": 1,
+          "UNKNOWN": 47
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 66,
+          "INELIGIBLE": 7,
+          "UNKNOWN": 47
+        }
+      },
+      "2018-10": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "UNKNOWN": 124
+        },
+        "weather_structure_counts": {
+          "UNKNOWN": 124
+        }
+      },
+      "2018-11": {
+        "complete_summary": 120,
+        "cycles": 120,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120
+        }
+      },
+      "2018-12": {
+        "complete_summary": 122,
+        "cycles": 124,
+        "explicit_gap_summary": 2,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 122,
+          "INELIGIBLE": 2
+        }
+      },
+      "2019-01": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 164034560,
+        "known_bundle_count": 32,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 92,
+          "UNKNOWN": 32
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 92,
+          "UNKNOWN": 32
+        }
+      },
+      "2019-02": {
+        "complete_summary": 112,
+        "cycles": 112,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 112
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 112
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 112
+        }
+      },
+      "2019-03": {
+        "complete_summary": 120,
+        "cycles": 124,
+        "explicit_gap_summary": 4,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120,
+          "INELIGIBLE": 4
+        }
+      },
+      "2019-04": {
+        "complete_summary": 120,
+        "cycles": 120,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120
+        }
+      },
+      "2019-05": {
+        "complete_summary": 122,
+        "cycles": 124,
+        "explicit_gap_summary": 2,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 122,
+          "INELIGIBLE": 2
+        }
+      },
+      "2019-06": {
+        "complete_summary": 120,
+        "cycles": 120,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120
+        }
+      },
+      "2019-07": {
+        "complete_summary": 123,
+        "cycles": 124,
+        "explicit_gap_summary": 1,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 123,
+          "INELIGIBLE": 1
+        }
+      },
+      "2019-08": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 124
+        }
+      },
+      "2019-09": {
+        "complete_summary": 119,
+        "cycles": 120,
+        "explicit_gap_summary": 1,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 119,
+          "INELIGIBLE": 1
+        }
+      },
+      "2019-10": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 124
+        }
+      },
+      "2019-11": {
+        "complete_summary": 120,
+        "cycles": 120,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120
+        }
+      },
+      "2019-12": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 124
+        }
+      },
+      "2020-01": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 124
+        }
+      },
+      "2020-02": {
+        "complete_summary": 116,
+        "cycles": 116,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 204134400,
+        "known_bundle_count": 40,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 116
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 116
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 116
+        }
+      },
+      "2020-03": {
+        "complete_summary": 121,
+        "cycles": 124,
+        "explicit_gap_summary": 3,
+        "index_absent": 0,
+        "known_bundle_bytes": 354263040,
+        "known_bundle_count": 72,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 121,
+          "INELIGIBLE": 3
+        }
+      },
+      "2020-04": {
+        "complete_summary": 120,
+        "cycles": 120,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 139253760,
+        "known_bundle_count": 28,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 92,
+          "UNKNOWN": 28
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 92,
+          "UNKNOWN": 28
+        }
+      },
+      "2020-05": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 124
+        }
+      },
+      "2020-06": {
+        "complete_summary": 120,
+        "cycles": 120,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120
+        }
+      },
+      "2020-07": {
+        "complete_summary": 120,
+        "cycles": 124,
+        "explicit_gap_summary": 4,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120,
+          "INELIGIBLE": 4
+        }
+      },
+      "2020-08": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 124
+        }
+      },
+      "2020-09": {
+        "complete_summary": 120,
+        "cycles": 120,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120
+        }
+      },
+      "2020-10": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 124
+        }
+      },
+      "2020-11": {
+        "complete_summary": 120,
+        "cycles": 120,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120
+        }
+      },
+      "2020-12": {
+        "complete_summary": 123,
+        "cycles": 124,
+        "explicit_gap_summary": 1,
+        "index_absent": 0,
+        "known_bundle_bytes": 174878720,
+        "known_bundle_count": 32,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 92,
+          "UNKNOWN": 32
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 91,
+          "INELIGIBLE": 1,
+          "UNKNOWN": 32
+        }
+      },
+      "2021-01": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 24258560,
+        "known_bundle_count": 4,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120,
+          "UNKNOWN": 4
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120,
+          "UNKNOWN": 4
+        }
+      },
+      "2021-02": {
+        "complete_summary": 112,
+        "cycles": 112,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 112
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 112
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 112
+        }
+      },
+      "2021-03": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 124
+        }
+      },
+      "2021-04": {
+        "complete_summary": 120,
+        "cycles": 120,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120
+        }
+      },
+      "2021-05": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 124
+        }
+      },
+      "2021-06": {
+        "complete_summary": 120,
+        "cycles": 120,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120
+        }
+      },
+      "2021-07": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 145459200,
+        "known_bundle_count": 28,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 96,
+          "UNKNOWN": 28
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 96,
+          "UNKNOWN": 28
+        }
+      },
+      "2021-08": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 91023360,
+        "known_bundle_count": 17,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 123,
+          "RESIDENT_STAT_ONLY_PAYLOAD_NOT_READ": 1
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 124
+        }
+      },
+      "2021-09": {
+        "complete_summary": 119,
+        "cycles": 120,
+        "explicit_gap_summary": 1,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 119,
+          "INELIGIBLE": 1
+        }
+      },
+      "2021-10": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 124
+        }
+      },
+      "2021-11": {
+        "complete_summary": 120,
+        "cycles": 120,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120
+        }
+      },
+      "2021-12": {
+        "complete_summary": 123,
+        "cycles": 124,
+        "explicit_gap_summary": 1,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 123,
+          "INELIGIBLE": 1
+        }
+      },
+      "2022-01": {
+        "complete_summary": 118,
+        "cycles": 124,
+        "explicit_gap_summary": 6,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 118,
+          "INELIGIBLE": 6
+        }
+      },
+      "2022-02": {
+        "complete_summary": 111,
+        "cycles": 112,
+        "explicit_gap_summary": 1,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 112
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 112
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 111,
+          "INELIGIBLE": 1
+        }
+      },
+      "2022-03": {
+        "complete_summary": 123,
+        "cycles": 124,
+        "explicit_gap_summary": 1,
+        "index_absent": 0,
+        "known_bundle_bytes": 5621760,
+        "known_bundle_count": 1,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 123,
+          "RESIDENT_STAT_ONLY_PAYLOAD_NOT_READ": 1
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 123,
+          "INELIGIBLE": 1
+        }
+      },
+      "2022-04": {
+        "complete_summary": 118,
+        "cycles": 120,
+        "explicit_gap_summary": 2,
+        "index_absent": 0,
+        "known_bundle_bytes": 21237760,
+        "known_bundle_count": 4,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 116,
+          "UNKNOWN": 4
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 114,
+          "INELIGIBLE": 2,
+          "UNKNOWN": 4
+        }
+      },
+      "2022-05": {
+        "complete_summary": 123,
+        "cycles": 124,
+        "explicit_gap_summary": 1,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 123,
+          "INELIGIBLE": 1
+        }
+      },
+      "2022-06": {
+        "complete_summary": 118,
+        "cycles": 120,
+        "explicit_gap_summary": 2,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 118,
+          "INELIGIBLE": 2
+        }
+      },
+      "2022-07": {
+        "complete_summary": 121,
+        "cycles": 124,
+        "explicit_gap_summary": 3,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 121,
+          "INELIGIBLE": 3
+        }
+      },
+      "2022-08": {
+        "complete_summary": 123,
+        "cycles": 124,
+        "explicit_gap_summary": 1,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 123,
+          "INELIGIBLE": 1
+        }
+      },
+      "2022-09": {
+        "complete_summary": 120,
+        "cycles": 120,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120
+        }
+      },
+      "2022-10": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 145653760,
+        "known_bundle_count": 28,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 96,
+          "UNKNOWN": 28
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 96,
+          "UNKNOWN": 28
+        }
+      },
+      "2022-11": {
+        "complete_summary": 120,
+        "cycles": 120,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120
+        }
+      },
+      "2022-12": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 124
+        }
+      },
+      "2023-01": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 167792640,
+        "known_bundle_count": 29,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 123,
+          "RESIDENT_STAT_ONLY_PAYLOAD_NOT_READ": 1
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 96,
+          "UNKNOWN": 28
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 96,
+          "UNKNOWN": 28
+        }
+      },
+      "2023-02": {
+        "complete_summary": 112,
+        "cycles": 112,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 112
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 112
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 112
+        }
+      },
+      "2023-03": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 124
+        }
+      },
+      "2023-04": {
+        "complete_summary": 120,
+        "cycles": 120,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120
+        }
+      },
+      "2023-05": {
+        "complete_summary": 123,
+        "cycles": 124,
+        "explicit_gap_summary": 1,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 123,
+          "INELIGIBLE": 1
+        }
+      },
+      "2023-06": {
+        "complete_summary": 120,
+        "cycles": 120,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120
+        }
+      },
+      "2023-07": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 16117760,
+        "known_bundle_count": 3,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 121,
+          "RESIDENT_STAT_ONLY_PAYLOAD_NOT_READ": 3
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 124
+        }
+      },
+      "2023-08": {
+        "complete_summary": 123,
+        "cycles": 124,
+        "explicit_gap_summary": 1,
+        "index_absent": 0,
+        "known_bundle_bytes": 665794560,
+        "known_bundle_count": 124,
+        "local_status_counts": {
+          "RESIDENT_STAT_ONLY_PAYLOAD_NOT_READ": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 123,
+          "INELIGIBLE": 1
+        }
+      },
+      "2023-09": {
+        "complete_summary": 119,
+        "cycles": 120,
+        "explicit_gap_summary": 1,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 119,
+          "INELIGIBLE": 1
+        }
+      },
+      "2023-10": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 21923840,
+        "known_bundle_count": 4,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120,
+          "UNKNOWN": 4
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120,
+          "UNKNOWN": 4
+        }
+      },
+      "2023-11": {
+        "complete_summary": 120,
+        "cycles": 120,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120
+        }
+      },
+      "2023-12": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 124
+        }
+      },
+      "2024-01": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 124
+        }
+      },
+      "2024-02": {
+        "complete_summary": 116,
+        "cycles": 116,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 5304320,
+        "known_bundle_count": 1,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 115,
+          "RESIDENT_STAT_ONLY_PAYLOAD_NOT_READ": 1
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 116
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 116
+        }
+      },
+      "2024-03": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 124
+        }
+      },
+      "2024-04": {
+        "complete_summary": 120,
+        "cycles": 120,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 147435520,
+        "known_bundle_count": 28,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 92,
+          "UNKNOWN": 28
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 92,
+          "UNKNOWN": 28
+        }
+      },
+      "2024-05": {
+        "complete_summary": 124,
+        "cycles": 124,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 124
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 124
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 124
+        }
+      },
+      "2024-06": {
+        "complete_summary": 120,
+        "cycles": 120,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 0,
+        "known_bundle_count": 0,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 120
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 120
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 120
+        }
+      },
+      "2024-07": {
+        "complete_summary": 117,
+        "cycles": 117,
+        "explicit_gap_summary": 0,
+        "index_absent": 0,
+        "known_bundle_bytes": 7915520,
+        "known_bundle_count": 1,
+        "local_status_counts": {
+          "NO_LOCAL_PATH_SUPPLIED": 117
+        },
+        "soil_structure_counts": {
+          "ELIGIBLE": 116,
+          "UNKNOWN": 1
+        },
+        "weather_structure_counts": {
+          "ELIGIBLE": 116,
+          "UNKNOWN": 1
+        }
+      }
+    },
+    "known_bundle_bytes_lower_bound": 2520340480,
+    "known_bundle_count": 480,
+    "local_payload_presence_is_stat_only": true,
+    "local_status_counts": {
+      "NO_LOCAL_PATH_SUPPLIED": 8713,
+      "RESIDENT_STAT_ONLY_PAYLOAD_NOT_READ": 131
+    },
+    "numeric_weather_masks_verified": false,
+    "ordinary_18h_runs_excluded": "A two-hour availability lag leaves at most16 target hours; native18 runs cannot supply direct H18",
+    "required_six_hour_cycles": 8844,
+    "sealed_rows_present": 8841,
+    "warmup_or_calendar_rows_absent": 3
+  },
+  "hrrr_inventory_reused_from_authenticated_base": true,
+  "hrrr_inventory_snapshot_at_utc": "2026-11-02T19:16:56.132463+00:00",
+  "implementation_sha256": {
+    "development_export.py": "472149f464d5634298ca9ad6d42b17f24270d9d56634226b7b4ab2c58efb0ab5",
+    "eligibility.py": "83c74a7b85e0034f4d829b0d3a9580b55ee5a5c53149602b572abd9356ec6155",
+    "quality.py": "d978db5fa454e040b92544bb9dbbabe332cb575c56d150a2e616e172c33fec31",
+    "scripts/audit_development_eligibility.py": "8afc91ef0a9c4f10e753e778fa15017334c4a3f6ee45f9ff6b587dd40fff97e3",
+    "scripts/audit_owned_development_eligibility.py": "51bb12825cd767dfcccb68bc3cdbab72e3c4e1c909e4722a1fd34b5ead7a9071"
+  },
+  "input_quality_policy": "PRIMARY_APPROVED_A_OPTIONAL_R_V1",
+  "interpretation": [
+    "UNKNOWN includes unread/dataless/missing or identity-failed partitions; it is never converted to an absent observation or zero eligible count",
+    "Known missing exact hours are distinguished from unknown monthly coverage",
+    "numeric_valid is retained acquisition metadata; discharge sign, magnitude and units are not recomputed",
+    "HRRR structural support may use an older single extended run; unknown summaries are not inferred from a legacy complete flag",
+    "Different lookbacks are counted on identical split origins; compare their common eligible cohort before scientific contrasts",
+    "Known byte totals are lower bounds, not full-corpus download estimates; no local path supplied is not a claim of cloud absence",
+    "All development USGS admission metadata is known through72 native months and the verified July export; HRRR structural counts reuse the earlier inventory and remain separate from numeric case admission."
+  ],
+  "july_export_reference_sha256": "d2cd22271703ea2407ddc777e8f999ab96c4c90c9c7e50d66187c8be527018bb",
+  "materialization_receipt_sha256": "7f8c296033b96601e148ef7def10153b3c498a796eaf2cf81a24cf8422eec5fd",
+  "metadata_columns_decoded": [
+    "site",
+    "sample_epoch",
+    "sample_time_utc",
+    "is_exact_utc_hour",
+    "numeric_valid",
+    "source_qualifiers_json",
+    "is_core"
+  ],
+  "private_inventory_identity": {
+    "bytes": 11098547,
+    "sha256": "e5a75e301e411d4286440ef890d31b2eb1cdf1ebc828ea9dde63283d0dbc4dd1"
+  },
+  "purge_rule": "C+18h must be strictly before each split end; prior observations may precede split start",
+  "quality_implementation_sha256": {
+    "quality.py": "d978db5fa454e040b92544bb9dbbabe332cb575c56d150a2e616e172c33fec31"
+  },
+  "quality_policy": "PRIMARY_APPROVED_A_OPTIONAL_R_V1",
+  "results": [
+    {
+      "candidate_origins_after_purge": 44262,
+      "full_model_numeric_input_eligibility": "NOT_ESTABLISHED_REQUIRES_HRRR_BASIN_MASKS_AND_NUMERIC_SOURCE_QA",
+      "gauge": "03161000",
+      "history_hours": 24,
+      "input_history_metadata": {
+        "ELIGIBLE": 43480,
+        "INELIGIBLE": 782,
+        "UNKNOWN": 0
+      },
+      "joint_usgs_metadata": {
+        "ELIGIBLE": 43404,
+        "INELIGIBLE": 858,
+        "UNKNOWN": 0
+      },
+      "purged_h18_boundary_origins": 18,
+      "requested_origins": 44280,
+      "soil_structural_support": {
+        "ELIGIBLE": 41891,
+        "INELIGIBLE": 67,
+        "UNKNOWN": 2304
+      },
+      "split": "candidate_training",
+      "target_metadata": {
+        "ELIGIBLE": 43504,
+        "INELIGIBLE": 758,
+        "UNKNOWN": 0
+      },
+      "usgs_and_hrrr_structure": {
+        "ELIGIBLE": 40975,
+        "INELIGIBLE": 958,
+        "UNKNOWN": 2329
+      },
+      "weather_structural_support": {
+        "ELIGIBLE": 42013,
+        "INELIGIBLE": 50,
+        "UNKNOWN": 2199
+      }
+    },
+    {
+      "candidate_origins_after_purge": 44262,
+      "full_model_numeric_input_eligibility": "NOT_ESTABLISHED_REQUIRES_HRRR_BASIN_MASKS_AND_NUMERIC_SOURCE_QA",
+      "gauge": "03164000",
+      "history_hours": 24,
+      "input_history_metadata": {
+        "ELIGIBLE": 42070,
+        "INELIGIBLE": 2192,
+        "UNKNOWN": 0
+      },
+      "joint_usgs_metadata": {
+        "ELIGIBLE": 41416,
+        "INELIGIBLE": 2846,
+        "UNKNOWN": 0
+      },
+      "purged_h18_boundary_origins": 18,
+      "requested_origins": 44280,
+      "soil_structural_support": {
+        "ELIGIBLE": 41891,
+        "INELIGIBLE": 67,
+        "UNKNOWN": 2304
+      },
+      "split": "candidate_training",
+      "target_metadata": {
+        "ELIGIBLE": 42363,
+        "INELIGIBLE": 1899,
+        "UNKNOWN": 0
+      },
+      "usgs_and_hrrr_structure": {
+        "ELIGIBLE": 39350,
+        "INELIGIBLE": 2583,
+        "UNKNOWN": 2329
+      },
+      "weather_structural_support": {
+        "ELIGIBLE": 42013,
+        "INELIGIBLE": 50,
+        "UNKNOWN": 2199
+      }
+    },
+    {
+      "candidate_origins_after_purge": 44262,
+      "full_model_numeric_input_eligibility": "NOT_ESTABLISHED_REQUIRES_HRRR_BASIN_MASKS_AND_NUMERIC_SOURCE_QA",
+      "gauge": "03479000",
+      "history_hours": 24,
+      "input_history_metadata": {
+        "ELIGIBLE": 43420,
+        "INELIGIBLE": 842,
+        "UNKNOWN": 0
+      },
+      "joint_usgs_metadata": {
+        "ELIGIBLE": 43168,
+        "INELIGIBLE": 1094,
+        "UNKNOWN": 0
+      },
+      "purged_h18_boundary_origins": 18,
+      "requested_origins": 44280,
+      "soil_structural_support": {
+        "ELIGIBLE": 41891,
+        "INELIGIBLE": 67,
+        "UNKNOWN": 2304
+      },
+      "split": "candidate_training",
+      "target_metadata": {
+        "ELIGIBLE": 43498,
+        "INELIGIBLE": 764,
+        "UNKNOWN": 0
+      },
+      "usgs_and_hrrr_structure": {
+        "ELIGIBLE": 40798,
+        "INELIGIBLE": 1135,
+        "UNKNOWN": 2329
+      },
+      "weather_structural_support": {
+        "ELIGIBLE": 42013,
+        "INELIGIBLE": 50,
+        "UNKNOWN": 2199
+      }
+    },
+    {
+      "candidate_origins_after_purge": 44262,
+      "full_model_numeric_input_eligibility": "NOT_ESTABLISHED_REQUIRES_HRRR_BASIN_MASKS_AND_NUMERIC_SOURCE_QA",
+      "gauge": "03161000",
+      "history_hours": 168,
+      "input_history_metadata": {
+        "ELIGIBLE": 42904,
+        "INELIGIBLE": 1358,
+        "UNKNOWN": 0
+      },
+      "joint_usgs_metadata": {
+        "ELIGIBLE": 42828,
+        "INELIGIBLE": 1434,
+        "UNKNOWN": 0
+      },
+      "purged_h18_boundary_origins": 18,
+      "requested_origins": 44280,
+      "soil_structural_support": {
+        "ELIGIBLE": 41891,
+        "INELIGIBLE": 67,
+        "UNKNOWN": 2304
+      },
+      "split": "candidate_training",
+      "target_metadata": {
+        "ELIGIBLE": 43504,
+        "INELIGIBLE": 758,
+        "UNKNOWN": 0
+      },
+      "usgs_and_hrrr_structure": {
+        "ELIGIBLE": 40399,
+        "INELIGIBLE": 1534,
+        "UNKNOWN": 2329
+      },
+      "weather_structural_support": {
+        "ELIGIBLE": 42013,
+        "INELIGIBLE": 50,
+        "UNKNOWN": 2199
+      }
+    },
+    {
+      "candidate_origins_after_purge": 44262,
+      "full_model_numeric_input_eligibility": "NOT_ESTABLISHED_REQUIRES_HRRR_BASIN_MASKS_AND_NUMERIC_SOURCE_QA",
+      "gauge": "03164000",
+      "history_hours": 168,
+      "input_history_metadata": {
+        "ELIGIBLE": 38743,
+        "INELIGIBLE": 5519,
+        "UNKNOWN": 0
+      },
+      "joint_usgs_metadata": {
+        "ELIGIBLE": 38403,
+        "INELIGIBLE": 5859,
+        "UNKNOWN": 0
+      },
+      "purged_h18_boundary_origins": 18,
+      "requested_origins": 44280,
+      "soil_structural_support": {
+        "ELIGIBLE": 41891,
+        "INELIGIBLE": 67,
+        "UNKNOWN": 2304
+      },
+      "split": "candidate_training",
+      "target_metadata": {
+        "ELIGIBLE": 42363,
+        "INELIGIBLE": 1899,
+        "UNKNOWN": 0
+      },
+      "usgs_and_hrrr_structure": {
+        "ELIGIBLE": 36579,
+        "INELIGIBLE": 5354,
+        "UNKNOWN": 2329
+      },
+      "weather_structural_support": {
+        "ELIGIBLE": 42013,
+        "INELIGIBLE": 50,
+        "UNKNOWN": 2199
+      }
+    },
+    {
+      "candidate_origins_after_purge": 44262,
+      "full_model_numeric_input_eligibility": "NOT_ESTABLISHED_REQUIRES_HRRR_BASIN_MASKS_AND_NUMERIC_SOURCE_QA",
+      "gauge": "03479000",
+      "history_hours": 168,
+      "input_history_metadata": {
+        "ELIGIBLE": 41650,
+        "INELIGIBLE": 2612,
+        "UNKNOWN": 0
+      },
+      "joint_usgs_metadata": {
+        "ELIGIBLE": 41445,
+        "INELIGIBLE": 2817,
+        "UNKNOWN": 0
+      },
+      "purged_h18_boundary_origins": 18,
+      "requested_origins": 44280,
+      "soil_structural_support": {
+        "ELIGIBLE": 41891,
+        "INELIGIBLE": 67,
+        "UNKNOWN": 2304
+      },
+      "split": "candidate_training",
+      "target_metadata": {
+        "ELIGIBLE": 43498,
+        "INELIGIBLE": 764,
+        "UNKNOWN": 0
+      },
+      "usgs_and_hrrr_structure": {
+        "ELIGIBLE": 39206,
+        "INELIGIBLE": 2727,
+        "UNKNOWN": 2329
+      },
+      "weather_structural_support": {
+        "ELIGIBLE": 42013,
+        "INELIGIBLE": 50,
+        "UNKNOWN": 2199
+      }
+    },
+    {
+      "candidate_origins_after_purge": 8766,
+      "full_model_numeric_input_eligibility": "NOT_ESTABLISHED_REQUIRES_HRRR_BASIN_MASKS_AND_NUMERIC_SOURCE_QA",
+      "gauge": "03161000",
+      "history_hours": 24,
+      "input_history_metadata": {
+        "ELIGIBLE": 8766,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 0
+      },
+      "joint_usgs_metadata": {
+        "ELIGIBLE": 8766,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 0
+      },
+      "purged_h18_boundary_origins": 18,
+      "requested_origins": 8784,
+      "soil_structural_support": {
+        "ELIGIBLE": 8573,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 193
+      },
+      "split": "candidate_validation",
+      "target_metadata": {
+        "ELIGIBLE": 8766,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 0
+      },
+      "usgs_and_hrrr_structure": {
+        "ELIGIBLE": 8573,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 193
+      },
+      "weather_structural_support": {
+        "ELIGIBLE": 8596,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 170
+      }
+    },
+    {
+      "candidate_origins_after_purge": 8766,
+      "full_model_numeric_input_eligibility": "NOT_ESTABLISHED_REQUIRES_HRRR_BASIN_MASKS_AND_NUMERIC_SOURCE_QA",
+      "gauge": "03164000",
+      "history_hours": 24,
+      "input_history_metadata": {
+        "ELIGIBLE": 8613,
+        "INELIGIBLE": 153,
+        "UNKNOWN": 0
+      },
+      "joint_usgs_metadata": {
+        "ELIGIBLE": 8557,
+        "INELIGIBLE": 209,
+        "UNKNOWN": 0
+      },
+      "purged_h18_boundary_origins": 18,
+      "requested_origins": 8784,
+      "soil_structural_support": {
+        "ELIGIBLE": 8573,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 193
+      },
+      "split": "candidate_validation",
+      "target_metadata": {
+        "ELIGIBLE": 8631,
+        "INELIGIBLE": 135,
+        "UNKNOWN": 0
+      },
+      "usgs_and_hrrr_structure": {
+        "ELIGIBLE": 8364,
+        "INELIGIBLE": 209,
+        "UNKNOWN": 193
+      },
+      "weather_structural_support": {
+        "ELIGIBLE": 8596,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 170
+      }
+    },
+    {
+      "candidate_origins_after_purge": 8766,
+      "full_model_numeric_input_eligibility": "NOT_ESTABLISHED_REQUIRES_HRRR_BASIN_MASKS_AND_NUMERIC_SOURCE_QA",
+      "gauge": "03479000",
+      "history_hours": 24,
+      "input_history_metadata": {
+        "ELIGIBLE": 8392,
+        "INELIGIBLE": 374,
+        "UNKNOWN": 0
+      },
+      "joint_usgs_metadata": {
+        "ELIGIBLE": 8237,
+        "INELIGIBLE": 529,
+        "UNKNOWN": 0
+      },
+      "purged_h18_boundary_origins": 18,
+      "requested_origins": 8784,
+      "soil_structural_support": {
+        "ELIGIBLE": 8573,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 193
+      },
+      "split": "candidate_validation",
+      "target_metadata": {
+        "ELIGIBLE": 8446,
+        "INELIGIBLE": 320,
+        "UNKNOWN": 0
+      },
+      "usgs_and_hrrr_structure": {
+        "ELIGIBLE": 8044,
+        "INELIGIBLE": 529,
+        "UNKNOWN": 193
+      },
+      "weather_structural_support": {
+        "ELIGIBLE": 8596,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 170
+      }
+    },
+    {
+      "candidate_origins_after_purge": 8766,
+      "full_model_numeric_input_eligibility": "NOT_ESTABLISHED_REQUIRES_HRRR_BASIN_MASKS_AND_NUMERIC_SOURCE_QA",
+      "gauge": "03161000",
+      "history_hours": 168,
+      "input_history_metadata": {
+        "ELIGIBLE": 8766,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 0
+      },
+      "joint_usgs_metadata": {
+        "ELIGIBLE": 8766,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 0
+      },
+      "purged_h18_boundary_origins": 18,
+      "requested_origins": 8784,
+      "soil_structural_support": {
+        "ELIGIBLE": 8573,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 193
+      },
+      "split": "candidate_validation",
+      "target_metadata": {
+        "ELIGIBLE": 8766,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 0
+      },
+      "usgs_and_hrrr_structure": {
+        "ELIGIBLE": 8573,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 193
+      },
+      "weather_structural_support": {
+        "ELIGIBLE": 8596,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 170
+      }
+    },
+    {
+      "candidate_origins_after_purge": 8766,
+      "full_model_numeric_input_eligibility": "NOT_ESTABLISHED_REQUIRES_HRRR_BASIN_MASKS_AND_NUMERIC_SOURCE_QA",
+      "gauge": "03164000",
+      "history_hours": 168,
+      "input_history_metadata": {
+        "ELIGIBLE": 8181,
+        "INELIGIBLE": 585,
+        "UNKNOWN": 0
+      },
+      "joint_usgs_metadata": {
+        "ELIGIBLE": 8125,
+        "INELIGIBLE": 641,
+        "UNKNOWN": 0
+      },
+      "purged_h18_boundary_origins": 18,
+      "requested_origins": 8784,
+      "soil_structural_support": {
+        "ELIGIBLE": 8573,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 193
+      },
+      "split": "candidate_validation",
+      "target_metadata": {
+        "ELIGIBLE": 8631,
+        "INELIGIBLE": 135,
+        "UNKNOWN": 0
+      },
+      "usgs_and_hrrr_structure": {
+        "ELIGIBLE": 7955,
+        "INELIGIBLE": 618,
+        "UNKNOWN": 193
+      },
+      "weather_structural_support": {
+        "ELIGIBLE": 8596,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 170
+      }
+    },
+    {
+      "candidate_origins_after_purge": 8766,
+      "full_model_numeric_input_eligibility": "NOT_ESTABLISHED_REQUIRES_HRRR_BASIN_MASKS_AND_NUMERIC_SOURCE_QA",
+      "gauge": "03479000",
+      "history_hours": 168,
+      "input_history_metadata": {
+        "ELIGIBLE": 7365,
+        "INELIGIBLE": 1401,
+        "UNKNOWN": 0
+      },
+      "joint_usgs_metadata": {
+        "ELIGIBLE": 7229,
+        "INELIGIBLE": 1537,
+        "UNKNOWN": 0
+      },
+      "purged_h18_boundary_origins": 18,
+      "requested_origins": 8784,
+      "soil_structural_support": {
+        "ELIGIBLE": 8573,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 193
+      },
+      "split": "candidate_validation",
+      "target_metadata": {
+        "ELIGIBLE": 8446,
+        "INELIGIBLE": 320,
+        "UNKNOWN": 0
+      },
+      "usgs_and_hrrr_structure": {
+        "ELIGIBLE": 7128,
+        "INELIGIBLE": 1445,
+        "UNKNOWN": 193
+      },
+      "weather_structural_support": {
+        "ELIGIBLE": 8596,
+        "INELIGIBLE": 0,
+        "UNKNOWN": 170
+      }
+    }
+  ],
+  "schema": "hydra-owned-development-eligibility-metadata/v1",
+  "scope": "USGS metadata eligibility and HRRR structural inventory; not a frozen scientific cohort or forecast skill",
+  "source_base_inventory_sha256": "c2cb073c56104835c70aceec160c9460fc6e5d57b8fcb67d4bae8dca2b4482a8",
+  "source_base_report_sha256": "6a8e26710796d1532a49d55eccf839508befe06c6a5df8854cf83c2ad6cac576",
+  "source_identities": {
+    "qualified_index_bytes": 112202255,
+    "qualified_index_sha256": "75469df20f79d94ffb058f439f1ac873f0cf4164c1417eec7298a6641a35baa5",
+    "usgs_manifest_sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a"
+  },
+  "split_status": "CALLER_SUPPLIED_COUNTING_RANGES_NOT_A_PROTOCOL_FREEZE",
+  "splits": [
+    {
+      "end_utc": "2023-07-31T00:00:00Z",
+      "name": "candidate_training",
+      "start_utc": "2018-07-12T00:00:00Z"
+    },
+    {
+      "end_utc": "2024-07-31T00:00:00Z",
+      "name": "candidate_validation",
+      "start_utc": "2023-07-31T00:00:00Z"
+    }
+  ],
+  "status": "COMPLETED_ALL_DEVELOPMENT_USGS_METADATA_KNOWN",
+  "target_horizons_hours": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "target_quality_policy": "PRIMARY_APPROVED_A_OPTIONAL_R_V1",
+  "usgs_inventory": {
+    "months": [
+      {
+        "bytes": 71347,
+        "expected_bytes": 71347,
+        "metadata_known": true,
+        "month": "2018-07",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2975,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2975,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8927,
+        "sha256": "af8b3c4377c24911725080d06f05fe9638caa05ad09bb219cc4d6b7c52f60191",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 77248,
+        "expected_bytes": 77248,
+        "metadata_known": true,
+        "month": "2018-08",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2971,
+            "exact_core_rows": 743,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 743
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 1,
+            "native_rows_returned": 2971,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8923,
+        "sha256": "a4b9a212534cdd9d0d052c63161254e61fc85a38dc3dc1f25d18cbe91efa620b",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 77230,
+        "expected_bytes": 77230,
+        "metadata_known": true,
+        "month": "2018-09",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8640,
+        "sha256": "58e542fcfcfe5aa85a9c9ebff4d4435cd896baeba0378a2ea6ae58a0bf36ba62",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 77479,
+        "expected_bytes": 77479,
+        "metadata_known": true,
+        "month": "2018-10",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2926,
+            "exact_core_rows": 731,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 731
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 13,
+            "native_rows_returned": 2926,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8878,
+        "sha256": "49be247cf24e73279251f4430f56197b690f92ee12e3d2fed63e2e5ef3eb3071",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 69540,
+        "expected_bytes": 69540,
+        "metadata_known": true,
+        "month": "2018-11",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2723,
+            "exact_core_rows": 688,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 688
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 32,
+            "native_rows_returned": 2723,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8483,
+        "sha256": "bbde1dfaaa8e4c3ac37d35affe3cade2fce4bda59c1e4d492ad0e2589f81d7f3",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 82507,
+        "expected_bytes": 82507,
+        "metadata_known": true,
+        "month": "2018-12",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2950,
+            "exact_core_rows": 735,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 735
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 9,
+            "native_rows_returned": 2950,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8902,
+        "sha256": "8b5fae81493ebdea329f54e5951b5aae7aa73a220318ace33816a97894d5f131",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 75313,
+        "expected_bytes": 75313,
+        "metadata_known": true,
+        "month": "2019-01",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2955,
+            "exact_core_rows": 742,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\",\"e\"]": 6,
+              "[\"A\"]": 736
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 2,
+            "native_rows_returned": 2955,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2713,
+            "exact_core_rows": 673,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 673
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 71,
+            "native_rows_returned": 2713,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8644,
+        "sha256": "b1bc3b58162000e1dab8e638ea7aa487fbf3ee6931eac86f150de437cc598204",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 69353,
+        "expected_bytes": 69353,
+        "metadata_known": true,
+        "month": "2019-02",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2688,
+            "exact_core_rows": 672,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 672
+            },
+            "expected_exact_core_hours_before_assessment": 672,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2688,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2639,
+            "exact_core_rows": 656,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 656
+            },
+            "expected_exact_core_hours_before_assessment": 672,
+            "missing_exact_core_hours": 16,
+            "native_rows_returned": 2639,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2623,
+            "exact_core_rows": 654,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 654
+            },
+            "expected_exact_core_hours_before_assessment": 672,
+            "missing_exact_core_hours": 18,
+            "native_rows_returned": 2623,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 7950,
+        "sha256": "c03fe174306708674d119e3acf78580c63e5a46febc152497faee0250e498f12",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 70693,
+        "expected_bytes": 70693,
+        "metadata_known": true,
+        "month": "2019-03",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2975,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2975,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8927,
+        "sha256": "dc4707d869622a2d26c299caa20b3fae37e2e84a36995616463d4c928ff39314",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 73709,
+        "expected_bytes": 73709,
+        "metadata_known": true,
+        "month": "2019-04",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8640,
+        "sha256": "722b3bf0e3ad312b7c596d3a5287f83517f7b2e16b2d93c1d6da375689d7e66d",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 70630,
+        "expected_bytes": 70630,
+        "metadata_known": true,
+        "month": "2019-05",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8928,
+        "sha256": "b7dee83da1ab8bf87444511db9846f968ce79dca347590e6a8c60c4ca2e39f50",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 78075,
+        "expected_bytes": 78075,
+        "metadata_known": true,
+        "month": "2019-06",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8640,
+        "sha256": "6240996206fdcb1312eed8c72bbc1a3225e2f1ec5363768a7baacd1b299ef566",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 72069,
+        "expected_bytes": 72069,
+        "metadata_known": true,
+        "month": "2019-07",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2971,
+            "exact_core_rows": 743,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 743
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 1,
+            "native_rows_returned": 2971,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8923,
+        "sha256": "9ce082aa9a04228a35d16b4b83191f00e133eb0b038dd51c27496923c62ae0a9",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 71318,
+        "expected_bytes": 71318,
+        "metadata_known": true,
+        "month": "2019-08",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2696,
+            "exact_core_rows": 664,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 664
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 80,
+            "native_rows_returned": 2696,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8648,
+        "sha256": "aa47d49897f06bb00de7f0bddfd9f5a8ac22843c0f6695f511c27a6136f786ec",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 62860,
+        "expected_bytes": 62860,
+        "metadata_known": true,
+        "month": "2019-09",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8640,
+        "sha256": "e02ecaca0a1866883a364f847b569f769f16f704d9921b134d3befe14d6b7334",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 74528,
+        "expected_bytes": 74528,
+        "metadata_known": true,
+        "month": "2019-10",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8928,
+        "sha256": "6b408dfdd8c53e117ac613324139d26f92c20bfb1be11d621777e58f5376985d",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 70144,
+        "expected_bytes": 70144,
+        "metadata_known": true,
+        "month": "2019-11",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8640,
+        "sha256": "aa0af0fa83a2c2ef46749ac34c0c31511ca7ff42418664ca2ed4f55c2c80bda3",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 74213,
+        "expected_bytes": 74213,
+        "metadata_known": true,
+        "month": "2019-12",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8928,
+        "sha256": "0171534aafd2f4e98202109c8e29002d599512794d858a39fedec1fff3148aae",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 75256,
+        "expected_bytes": 75256,
+        "metadata_known": true,
+        "month": "2020-01",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2973,
+            "exact_core_rows": 743,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 743
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 1,
+            "native_rows_returned": 2973,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8925,
+        "sha256": "099e641b3646694ea1305649a3629960c6e618fb12d55c5fa5f1951d97dd6e9b",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 74905,
+        "expected_bytes": 74905,
+        "metadata_known": true,
+        "month": "2020-02",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2784,
+            "exact_core_rows": 696,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 696
+            },
+            "expected_exact_core_hours_before_assessment": 696,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2784,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2784,
+            "exact_core_rows": 696,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 696
+            },
+            "expected_exact_core_hours_before_assessment": 696,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2784,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2782,
+            "exact_core_rows": 695,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 695
+            },
+            "expected_exact_core_hours_before_assessment": 696,
+            "missing_exact_core_hours": 1,
+            "native_rows_returned": 2782,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8350,
+        "sha256": "41b09b1d55ecdcf1f1958b32df73177611bfb1ea7e3788cd919dbf1a73a0adbd",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 72812,
+        "expected_bytes": 72812,
+        "metadata_known": true,
+        "month": "2020-03",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8928,
+        "sha256": "2762486cd462c9cace23392bb43a4b9251ae175021e64f6a91a5315bd3dded82",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 75886,
+        "expected_bytes": 75886,
+        "metadata_known": true,
+        "month": "2020-04",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2879,
+            "exact_core_rows": 719,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 719
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 1,
+            "native_rows_returned": 2879,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8639,
+        "sha256": "5cee4fceec31ef0fd402e6651880c07f290e9b6242f6982995997d4933dc5e7c",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 81410,
+        "expected_bytes": 81410,
+        "metadata_known": true,
+        "month": "2020-05",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8928,
+        "sha256": "48f44ba106bdef301428d761e1aa73c92a0070056bd22880d7752e688d93f2a0",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 70094,
+        "expected_bytes": 70094,
+        "metadata_known": true,
+        "month": "2020-06",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8640,
+        "sha256": "2858350eef5c289e1faf809c281a22bdea75d26087e614d549d8c596c467075d",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 71351,
+        "expected_bytes": 71351,
+        "metadata_known": true,
+        "month": "2020-07",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2970,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2970,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8922,
+        "sha256": "93814edb3b4ad9d8530cbb0108111822c90e5e10c78e4de90b2e0b9f3c873c3f",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 77677,
+        "expected_bytes": 77677,
+        "metadata_known": true,
+        "month": "2020-08",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8928,
+        "sha256": "3e66da63a5c9f0181bc489ab85a1588f4910072ebd03bb66045dcb0b78cdc309",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 73621,
+        "expected_bytes": 73621,
+        "metadata_known": true,
+        "month": "2020-09",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2878,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2878,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2877,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2877,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8635,
+        "sha256": "dd631d2e1bb531ec6f2e13992eccb2a77d19aa6ec2ed63aea288a8922e1be7bc",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 75022,
+        "expected_bytes": 75022,
+        "metadata_known": true,
+        "month": "2020-10",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8928,
+        "sha256": "b4594dc5ce1f94fe19dd9cdfed7679cbe58db9857e3a2f2952b358732dbdc48a",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 73183,
+        "expected_bytes": 73183,
+        "metadata_known": true,
+        "month": "2020-11",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2881,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2881,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8641,
+        "sha256": "4d96516a64aa2f435eac8c4e4724083c11153b364ad6c9046f957c2fcd054fa1",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 73416,
+        "expected_bytes": 73416,
+        "metadata_known": true,
+        "month": "2020-12",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8928,
+        "sha256": "bd1846e7a0fd9d33c5faabb8539b0a0f7720f4014352d06de6e9a6dfd8f04b1c",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 71887,
+        "expected_bytes": 71887,
+        "metadata_known": true,
+        "month": "2021-01",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8928,
+        "sha256": "77186a2c00a98579448c792c636175d2caad4f9100701681bdb9ecd3dd43d9fa",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 69946,
+        "expected_bytes": 69946,
+        "metadata_known": true,
+        "month": "2021-02",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2688,
+            "exact_core_rows": 672,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 672
+            },
+            "expected_exact_core_hours_before_assessment": 672,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2688,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2663,
+            "exact_core_rows": 667,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\",\"e\"]": 3,
+              "[\"A\"]": 664
+            },
+            "expected_exact_core_hours_before_assessment": 672,
+            "missing_exact_core_hours": 5,
+            "native_rows_returned": 2663,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2552,
+            "exact_core_rows": 633,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 633
+            },
+            "expected_exact_core_hours_before_assessment": 672,
+            "missing_exact_core_hours": 39,
+            "native_rows_returned": 2552,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 7903,
+        "sha256": "c7a78bf1a9b3159c042b213a93131aa6cfb124fc54d8369ccf31662661b631a3",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 75379,
+        "expected_bytes": 75379,
+        "metadata_known": true,
+        "month": "2021-03",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2956,
+            "exact_core_rows": 743,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 743
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 1,
+            "native_rows_returned": 2956,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8908,
+        "sha256": "e3e96afc708d687aa1551600de7de288443be3adf5d2e4a64296ed97f44edd0b",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 72659,
+        "expected_bytes": 72659,
+        "metadata_known": true,
+        "month": "2021-04",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2876,
+            "exact_core_rows": 719,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 719
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 1,
+            "native_rows_returned": 2876,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8636,
+        "sha256": "3561f9e8c02b8609dae5fa1bf2a456c93fd38fdc3b044b86c632212f4b25a080",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 69206,
+        "expected_bytes": 69206,
+        "metadata_known": true,
+        "month": "2021-05",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8928,
+        "sha256": "6f8b1b8f22ed497d332ae6dc54c4fae07ad9454071e3382fcbe9444571394fa1",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 70298,
+        "expected_bytes": 70298,
+        "metadata_known": true,
+        "month": "2021-06",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8640,
+        "sha256": "dd3156c89cb06023d68cb328d71a2fe3a66ab176149ad7402b1dee51a3b02a6d",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 72655,
+        "expected_bytes": 72655,
+        "metadata_known": true,
+        "month": "2021-07",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8928,
+        "sha256": "c1c42c6a72d6b0f36d14bb70dfa48334b4eb25df00892c74c990c869d022a154",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 73458,
+        "expected_bytes": 73458,
+        "metadata_known": true,
+        "month": "2021-08",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8928,
+        "sha256": "16f1dcbc063fed46a72ce286571c3b78fc2c199fce24e07aa76cdd03318c6d2b",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 67674,
+        "expected_bytes": 67674,
+        "metadata_known": true,
+        "month": "2021-09",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8640,
+        "sha256": "7d5bc6dab03e12ef537548c4302f256894471b6f98bfae686667fc2958241d1c",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 72859,
+        "expected_bytes": 72859,
+        "metadata_known": true,
+        "month": "2021-10",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2932,
+            "exact_core_rows": 729,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 729
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 15,
+            "native_rows_returned": 2932,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2973,
+            "exact_core_rows": 743,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 743
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 1,
+            "native_rows_returned": 2973,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8881,
+        "sha256": "912de6d3ba9471e333158d3fedfa47f77e40d807b6887935379bddd7bdf2ad8f",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 66351,
+        "expected_bytes": 66351,
+        "metadata_known": true,
+        "month": "2021-11",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8640,
+        "sha256": "bea122b3e4de63cb37efab9f0ff9fdfbcb55eedb972198d454b5175edcf05402",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 63780,
+        "expected_bytes": 63780,
+        "metadata_known": true,
+        "month": "2021-12",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2975,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2975,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8927,
+        "sha256": "d2d851976d45a45e9d00f192f4cc7c0fc4b59ae462503e61807dd5f50dfda4e8",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 55602,
+        "expected_bytes": 55602,
+        "metadata_known": true,
+        "month": "2022-01",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 1584,
+            "exact_core_rows": 373,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 373
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 371,
+            "native_rows_returned": 1584,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 1608,
+            "exact_core_rows": 471,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\",\"e\"]": 92,
+              "[\"A\"]": 379
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 273,
+            "native_rows_returned": 1608,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2473,
+            "exact_core_rows": 640,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\",\"e\"]": 29,
+              "[\"A\"]": 611
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 104,
+            "native_rows_returned": 2473,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 5665,
+        "sha256": "c07724fd31f433720edfd253dbbdc412e01bf9909bed40ddc11fbb975be9288a",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 64627,
+        "expected_bytes": 64627,
+        "metadata_known": true,
+        "month": "2022-02",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2469,
+            "exact_core_rows": 613,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 613
+            },
+            "expected_exact_core_hours_before_assessment": 672,
+            "missing_exact_core_hours": 59,
+            "native_rows_returned": 2469,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2466,
+            "exact_core_rows": 627,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\",\"e\"]": 15,
+              "[\"A\"]": 612
+            },
+            "expected_exact_core_hours_before_assessment": 672,
+            "missing_exact_core_hours": 45,
+            "native_rows_returned": 2466,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2624,
+            "exact_core_rows": 659,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\",\"e\"]": 5,
+              "[\"A\"]": 654
+            },
+            "expected_exact_core_hours_before_assessment": 672,
+            "missing_exact_core_hours": 13,
+            "native_rows_returned": 2624,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 7559,
+        "sha256": "916db21778700bb0c46605e2247ac1f360153f3a8030f2adcffb3591b99d8267",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 79473,
+        "expected_bytes": 79473,
+        "metadata_known": true,
+        "month": "2022-03",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2970,
+            "exact_core_rows": 743,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 743
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 1,
+            "native_rows_returned": 2970,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8922,
+        "sha256": "881bcfceda16342836f7c6e3d04f31528ef9c09c5c9c064f7ae28594368576a7",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 67483,
+        "expected_bytes": 67483,
+        "metadata_known": true,
+        "month": "2022-04",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2878,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2878,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2879,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2879,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2875,
+            "exact_core_rows": 719,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 719
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 1,
+            "native_rows_returned": 2875,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8632,
+        "sha256": "d89b80a33e4b3f4fb7376d16e6effd6631112c031145eb9d2df267c5c2127864",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 78531,
+        "expected_bytes": 78531,
+        "metadata_known": true,
+        "month": "2022-05",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2967,
+            "exact_core_rows": 742,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 742
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 2,
+            "native_rows_returned": 2967,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8919,
+        "sha256": "35abec5e9bf14544f3f680ee9dd8c1dc1fd2ff411651bd8cdf8e505eeac2e519",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 68378,
+        "expected_bytes": 68378,
+        "metadata_known": true,
+        "month": "2022-06",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8640,
+        "sha256": "ea847d93ed078ad5d145d179e5fb83072e50a39df1536c9e6abfbf3e604b41b0",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 72930,
+        "expected_bytes": 72930,
+        "metadata_known": true,
+        "month": "2022-07",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8928,
+        "sha256": "af5a0c647c8ef2697ef87f490e1271bd32a15cf1285c30dc8d65acfbeed83a50",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 73028,
+        "expected_bytes": 73028,
+        "metadata_known": true,
+        "month": "2022-08",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8928,
+        "sha256": "4ce7823cfbe45d957ca6ca15140a8b1ecef1c9007e82d5eed4f59af342542ffe",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 71388,
+        "expected_bytes": 71388,
+        "metadata_known": true,
+        "month": "2022-09",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8640,
+        "sha256": "9a2d4dbd6920436012ccc37153140bc83029236702b644db353508c006f10b36",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 68299,
+        "expected_bytes": 68299,
+        "metadata_known": true,
+        "month": "2022-10",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8928,
+        "sha256": "003bd5e4a975dd9d9ca1bbaca51b96c17b51a18ee3c0c4a71dad7947e2eff904",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 74783,
+        "expected_bytes": 74783,
+        "metadata_known": true,
+        "month": "2022-11",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8640,
+        "sha256": "21df3ec327bc49ee4966eff88f12f7052d47bddabcc6a801f307cc1fc79af616",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 59466,
+        "expected_bytes": 59466,
+        "metadata_known": true,
+        "month": "2022-12",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2223,
+            "exact_core_rows": 594,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\",\"e\"]": 51,
+              "[\"A\"]": 543
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 150,
+            "native_rows_returned": 2223,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2336,
+            "exact_core_rows": 653,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\",\"e\"]": 92,
+              "[\"A\"]": 561
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 91,
+            "native_rows_returned": 2336,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2303,
+            "exact_core_rows": 609,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\",\"e\"]": 45,
+              "[\"A\"]": 564
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 135,
+            "native_rows_returned": 2303,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 6862,
+        "sha256": "040f5bbc09bcdf1983592112623069dda61f253ddb4e56c1e48510ea259cd8a7",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 72704,
+        "expected_bytes": 72704,
+        "metadata_known": true,
+        "month": "2023-01",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2765,
+            "exact_core_rows": 701,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\",\"e\"]": 14,
+              "[\"A\"]": 687
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 43,
+            "native_rows_returned": 2765,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2926,
+            "exact_core_rows": 736,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\",\"e\"]": 7,
+              "[\"A\"]": 729
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 8,
+            "native_rows_returned": 2926,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8667,
+        "sha256": "5d9bb435b1e0053fbed0cd7b65fdedabcc1a45faa2b7c3dd9a49ac42f451aed3",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 62469,
+        "expected_bytes": 62469,
+        "metadata_known": true,
+        "month": "2023-02",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2688,
+            "exact_core_rows": 672,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 672
+            },
+            "expected_exact_core_hours_before_assessment": 672,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2688,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2638,
+            "exact_core_rows": 655,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 655
+            },
+            "expected_exact_core_hours_before_assessment": 672,
+            "missing_exact_core_hours": 17,
+            "native_rows_returned": 2638,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2688,
+            "exact_core_rows": 672,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 672
+            },
+            "expected_exact_core_hours_before_assessment": 672,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2688,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8014,
+        "sha256": "8e911a5f0935f23ef11973cd2419c51b04d3035790e4064103ae11346269cdc3",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 72307,
+        "expected_bytes": 72307,
+        "metadata_known": true,
+        "month": "2023-03",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2971,
+            "exact_core_rows": 743,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 743
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 1,
+            "native_rows_returned": 2971,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8923,
+        "sha256": "bb40c16d53ad0ba160b21ec058378c89b6c8897491f86a80c97c96f613e1ab9a",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 69217,
+        "expected_bytes": 69217,
+        "metadata_known": true,
+        "month": "2023-04",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2876,
+            "exact_core_rows": 719,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 719
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 1,
+            "native_rows_returned": 2876,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2878,
+            "exact_core_rows": 719,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 719
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 1,
+            "native_rows_returned": 2878,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8634,
+        "sha256": "2eb78bc1f0dea1805e1cd351e9ca24e4c5f702748c03b58386d04a95ba074172",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 72925,
+        "expected_bytes": 72925,
+        "metadata_known": true,
+        "month": "2023-05",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2965,
+            "exact_core_rows": 740,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 740
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 4,
+            "native_rows_returned": 2965,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8917,
+        "sha256": "58c6a2b3034500202a4d5f5ac010ae9bce2c74c3efe98674966ae1be4784b614",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 73277,
+        "expected_bytes": 73277,
+        "metadata_known": true,
+        "month": "2023-06",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2879,
+            "exact_core_rows": 719,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 719
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 1,
+            "native_rows_returned": 2879,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8639,
+        "sha256": "dfc330682200641c64c29fa05fa92f75147ee1d905c40e7f2b0fd44cc272ed43",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 71497,
+        "expected_bytes": 71497,
+        "metadata_known": true,
+        "month": "2023-07",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8928,
+        "sha256": "e2782dba5ea1b3faaeb6d77d349d189a9cc0f346e818e7516300ae162ba49087",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 74004,
+        "expected_bytes": 74004,
+        "metadata_known": true,
+        "month": "2023-08",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2973,
+            "exact_core_rows": 743,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 743
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 1,
+            "native_rows_returned": 2973,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8925,
+        "sha256": "dd13695b8780c1e79ab203d53aa905e11770666244d634e320f4387df5165db4",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 68726,
+        "expected_bytes": 68726,
+        "metadata_known": true,
+        "month": "2023-09",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8640,
+        "sha256": "3257453b619d9d046117272ec9b81c64bc9e08785e5ea5e503bd6ec5c08aef38",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 63887,
+        "expected_bytes": 63887,
+        "metadata_known": true,
+        "month": "2023-10",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2971,
+            "exact_core_rows": 743,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 743
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 1,
+            "native_rows_returned": 2971,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8923,
+        "sha256": "49bb7b539cd52fbd10bd54a56c952fe816e72afe5e0adb58a7e420d063787c0e",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 63182,
+        "expected_bytes": 63182,
+        "metadata_known": true,
+        "month": "2023-11",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2812,
+            "exact_core_rows": 701,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 701
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 19,
+            "native_rows_returned": 2812,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8572,
+        "sha256": "62d926cc0b98924f130c5cece90d9fe19d21dfe08034974cf090101fd34e7a9a",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 73273,
+        "expected_bytes": 73273,
+        "metadata_known": true,
+        "month": "2023-12",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2963,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2963,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2915,
+            "exact_core_rows": 726,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 726
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 18,
+            "native_rows_returned": 2915,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8854,
+        "sha256": "e1c0d8d2542462992cf765ed66d9f4ce6bb30337c7e73d08a808744cbe775a62",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 80951,
+        "expected_bytes": 80951,
+        "metadata_known": true,
+        "month": "2024-01",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2685,
+            "exact_core_rows": 661,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 661
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 83,
+            "native_rows_returned": 2685,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2598,
+            "exact_core_rows": 678,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\",\"e\"]": 43,
+              "[\"A\"]": 635
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 66,
+            "native_rows_returned": 2598,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8259,
+        "sha256": "95b9dd1a3cb628acde22d039ba4d5c54e17ff3e41aa2de8e0a16e30f5aa08a5c",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 67678,
+        "expected_bytes": 67678,
+        "metadata_known": true,
+        "month": "2024-02",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2784,
+            "exact_core_rows": 696,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 696
+            },
+            "expected_exact_core_hours_before_assessment": 696,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2784,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2784,
+            "exact_core_rows": 696,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 696
+            },
+            "expected_exact_core_hours_before_assessment": 696,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2784,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2784,
+            "exact_core_rows": 696,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 696
+            },
+            "expected_exact_core_hours_before_assessment": 696,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2784,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8352,
+        "sha256": "ea95a47fc856f416ca52f993b08f8eb928ab5e9c178fdfab401ebd033efb95cb",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 75934,
+        "expected_bytes": 75934,
+        "metadata_known": true,
+        "month": "2024-03",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8928,
+        "sha256": "dc4d0f7710a29ac974a93f343b9255bb9d7002b2e9bc6a68da53ddbec1170843",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 72234,
+        "expected_bytes": 72234,
+        "metadata_known": true,
+        "month": "2024-04",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2876,
+            "exact_core_rows": 718,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 718
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 2,
+            "native_rows_returned": 2876,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8636,
+        "sha256": "63c3c9373f7b2e3512d1409149a29b2e248eeb67242eb2a6c9b990f3b62732bc",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 76305,
+        "expected_bytes": 76305,
+        "metadata_known": true,
+        "month": "2024-05",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2976,
+            "exact_core_rows": 744,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 744
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2976,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2975,
+            "exact_core_rows": 743,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 743
+            },
+            "expected_exact_core_hours_before_assessment": 744,
+            "missing_exact_core_hours": 1,
+            "native_rows_returned": 2975,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8927,
+        "sha256": "2d5cbe9a53e1ebb243867f7809bff184d7ffc5b46f4796499fa092dae606c464",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 67617,
+        "expected_bytes": 67617,
+        "metadata_known": true,
+        "month": "2024-06",
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8640,
+        "sha256": "acf9e719a141cf4a903316b8429269799b83cd403d44dcf177c17a0f4233a7d8",
+        "status": "VERIFIED_METADATA_READ"
+      },
+      {
+        "bytes": 26755,
+        "development_export_identity": {
+          "commit_sha256": "d186e7a2c57815b127f1c79ed7978bc607dc90a07bcbb5e6dedfa69c4bc929bd",
+          "cutoff_exclusive_epoch": 1722384000,
+          "exported_rows": 8640,
+          "month": "2024-07",
+          "payload": {
+            "bytes": 26755,
+            "name": "data.parquet",
+            "sha256": "5d20def8093ef9e3fc97e971e27c7225a850b7defc657fdf88fb4e9dd9b4930d"
+          },
+          "physical_decode_scope": "MIXED_SOURCE_ROW_GROUPS_MAY_INCLUDE_PROTECTED_VALUES",
+          "plan_sha256": "e6210652e6c7c3a3132f9315ef631752708b59ce68b34651cf22fda4d888874b",
+          "protected_scoring_permitted": false,
+          "source_manifest_sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a",
+          "source_partition": {
+            "bytes": 73234,
+            "month": "2024-07",
+            "sha256": "de5761fbd420c1ba538180d1dfad8e9d4d0150e871cfa5132c96c8662f1e1966"
+          },
+          "start_inclusive_epoch": 1719792000
+        },
+        "expected_bytes": 26755,
+        "metadata_known": true,
+        "month": "2024-07",
+        "original_source_identity": {
+          "bytes": 73234,
+          "sha256": "de5761fbd420c1ba538180d1dfad8e9d4d0150e871cfa5132c96c8662f1e1966"
+        },
+        "profile": {
+          "03161000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03164000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          },
+          "03479000": {
+            "core_native_rows_returned": 2880,
+            "exact_core_rows": 720,
+            "exact_qualifier_counts_verbatim": {
+              "[\"A\"]": 720
+            },
+            "expected_exact_core_hours_before_assessment": 720,
+            "missing_exact_core_hours": 0,
+            "native_rows_returned": 2880,
+            "numeric_valid_false": 0
+          }
+        },
+        "returned_metadata_rows": 8640,
+        "sha256": "5d20def8093ef9e3fc97e971e27c7225a850b7defc657fdf88fb4e9dd9b4930d",
+        "status": "VERIFIED_DEVELOPMENT_EXPORT_METADATA_READ"
+      }
+    ],
+    "required_months": 73,
+    "status_counts": {
+      "VERIFIED_DEVELOPMENT_EXPORT_METADATA_READ": 1,
+      "VERIFIED_METADATA_READ": 72
+    },
+    "unknown_metadata_months": 0,
+    "verified_metadata_months": 73
+  }
+}

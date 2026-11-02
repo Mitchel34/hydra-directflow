@@ -63,4 +63,15 @@ These conditions prove an **admission boolean**: listed gaps are absent, and eve
 
 Mixed A/e counts cannot identify which hours carry estimated flags, so they remain unknown. The proof also leaves unknown any nonzero numeric-invalid count with no time placement, missing coverage evidence, or a month crossing the protected boundary. Uncertainty is tracked separately for each gauge-month; it is not propagated to a fully proven neighboring gauge.
 
-The refined execution proves 29 of the original 33 unread gauge-month admission axes. February 2022 remains unknown for all three gauges, and December 2023 remains unknown for Sugar Grove. The 11 native Parquet files remain dataless: this metadata proof does **not** make their discharge values resident or available for training. Full numerical preprocessing still requires authenticated source values, and the unchanged HRRR structural limitations still apply.
+The refined execution proves 29 of the original 33 unread gauge-month admission axes. February 2022 remains unknown for all three gauges, and December 2023 remains unknown for Sugar Grove. At that refinement checkpoint, the 11 native Parquet files remained dataless: the metadata proof did **not** make their discharge values resident or available for training. Full numerical preprocessing still requires authenticated source values, and the unchanged HRRR structural limitations still apply.
+
+
+## Verified owned copies and safe July metadata
+
+`reports/owned-usgs-materialization.json` independently verifies all eleven subsequently materialized owned copies against their original pinned partition identities. The 774,216 encoded bytes match both the copies and the resident originals. All eleven uniquely claimed attempts settled as verified, with 774,227 bytes retained in the precharge ledger. FileProvider HTTP requests and wire bytes remain unobserved; encoded-file counts are not network-wire totals.
+
+`scripts/audit_owned_development_eligibility.py` is a separate adapter for the active corpus's frozen eligibility core. It validates the exact eleven unique approved months and their individual manifest-bound sizes/hashes **before** forming or reading owned paths. It does not edit or monkey-patch the core. It explicitly withholds raw July 2024 from the native loader and reads only metadata columns from the authenticated development-only July export, validating every exported coordinate against the cutoff.
+
+The guarded execution is recorded in `reports/development-eligibility-owned-metadata-v2.json`. All **73 development months now have known USGS admission metadata**: 72 authenticated native monthly partitions and the verified July export. The earlier native-only, aggregate-refined, and first owned-adapter reports remain unchanged. The v2 receipt binds the adapter code, source receipts, and a new private inventory. No discharge columns or raw July source bytes were read during this audit.
+
+The HRRR structural inventory is explicitly reused from the earlier authenticated snapshot; this does not update live source residency or establish complete numerical weather eligibility. Full model admission still requires the separately staged and validated basin inputs. If a future run lacks a native month or the safe export, it must retain explicit unknown coverage instead of repeating this completed snapshot's conclusion.

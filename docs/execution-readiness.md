@@ -7,9 +7,9 @@ not. There is no need to wait for November 4 or6 if the prerequisites finish ear
 ## Completed implementation
 
 - Confirmed A/A+R metadata admission audit for both development splits, all
-  gauges and L24/L168. Native metadata was read for62 of73 USGS months. Additional
-  authenticated count/gap proofs resolve29 of33 unread gauge-month admission
-  masks. Four mixed A/e axes remain unknown; native-value residency is unchanged.
+  gauges and L24/L168. After the approved owned-file materialization,72 native
+  months and the verified July export resolve all73 development months, with
+  zero unknown metadata months. Earlier native/aggregate audits remain preserved.
 - Corrected the over-conservative weather initialization guard. Actual targets
   must still remain before protected assessment. A separately authorized local
   July2024 export now contains only preboundary rows; protected scoring remains off.
@@ -22,17 +22,19 @@ not. There is no need to wait for November 4 or6 if the prerequisites finish ear
 
 ## Data coverage and storage
 
-Known joint USGS metadata admission at L168 is:
+Joint USGS metadata admission at L168 is now fully enumerated:
 
 | Gauge | Training known eligible / unknown | Validation known eligible / unknown |
 |---|---:|---:|
-| 03161000 | 42,215 /859 | 8,766 /0 |
-| 03164000 | 37,791 /859 | 8,125 /0 |
-| 03479000 | 40,791 /859 | 6,798 /931 |
+| 03161000 | 42,828 /0 | 8,766 /0 |
+| 03164000 | 38,403 /0 | 8,125 /0 |
+| 03479000 | 41,445 /0 | 7,229 /0 |
 
 These are not final full-model cohorts: HRRR numerical basin masks remain to be
-verified. UNKNOWN describes incomplete metadata inspection, not an absent
-observation or permission to train. The current complete-input/complete-target
+verified. The evidence is `reports/development-eligibility-owned-metadata-v2.json`;
+its audit reads no discharge-value columns or raw July2024. UNKNOWN in older
+reports described incomplete inspection, not an absent observation or permission
+to train. The current complete-input/complete-target
 count scenario also differs from a future policy allowing partial histories or
 partially labelled targets.
 
@@ -41,9 +43,11 @@ slots, totaling26,566,963,200bytes (24.74GiB). Another4,036 sealed rows lack exa
 bundle sizes in this inventory; three candidate warmup slots precede the acquired
 calendar. If every remaining archive satisfies the16MiB reader bound, the sealed
 source-size scenario is87.80GiB. This is a conditional ceiling, not an exact full
-inventory. A one-month average suggested about44–46GiB; verify exact manifests
-before reading bulk data. Materializing the11 owned nonresident USGS files is
-also outside the completed August download allowance.
+inventory. A one-month average suggested about44–46GiB. The approved streaming
+stager verifies exact manifests before each archive read. The11 owned USGS files
+were materialized under the new approval, totaling774,216 encoded bytes; their
+FileProvider wire transfer was not observed. All copies match the original
+manifest, and the original contents are unchanged.
 
 ## Measured local execution settings
 
@@ -72,7 +76,9 @@ The main matrix therefore appears locally feasible once the cohort and protocol
 are ready. The expanded investigation, travel interruptions or slow convergence
 could threaten the dates. Recompute after exact admission counts and the approved
 matrix are available. `scripts/estimate_training_runtime.py` reproduces the
-scenarios without fitting models.
+earlier scenarios without fitting models. The separate proposed-CV workload
+arithmetic in `docs/workload-planning.md` distinguishes gradient fitting, inner
+stopping and outer inference and reports the additional input/lookback arms.
 
 ## Approved additional funding: $150 total ceiling
 

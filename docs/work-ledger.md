@@ -209,3 +209,26 @@ The new device helpers and CUDA plan are non-executing preparation. The trainer
 still refuses CUDA; no hardware, GPU throughput or cloud execution is claimed.
 The reserved pilot remains conditional on measured need and bounded runtime,
 budget, correctness and recovery qualification.
+
+## Complete USGS metadata coverage and storage interruption — November 2
+
+The approved owned-file materialization and independent audit verify all11 copies
+and original contents:774,216 encoded bytes,11 verified attempts,774,227 retained
+precharged bytes. FileProvider wire/HTTP accounting remains unobserved. The new
+script-only metadata adapter validates the exact source set before reads and
+uses July's safe export. Its8 tests pass; the corpus-bound core is unchanged.
+
+`reports/development-eligibility-owned-metadata-v2.json` now resolves all73 months,
+with zero unknown USGS metadata windows. L168 joint eligible training counts are
+42,828/38,403/41,445 for Jefferson/Galax/Sugar Grove; validation counts are
+8,766/8,125/7,229. These are metadata counts, not final numerical HRRR cohorts.
+The audit reads no discharge-value columns and no raw July source bytes.
+
+Increment05 stopped at21:27:39UTC on an HTTPError for a pinned20190730_18Z commit,
+after61 new chunks and81 total committed chunks/9,096 origins. The failed request
+remains charged. A separately recorded bounded diagnostic verified that exact
+commit with a fresh client; the original HTTP status was not retained, so the
+precise transient/authentication cause is unconfirmed. No identity or generation
+was substituted. Increment06 resumes the same v3 corpus and persistent budget.
+Cumulative precharges after the diagnostic are7,864,343,921bytes/3,138GETs with
+one failed attempt and a conservative$2.254758 estimate, not an invoice.
