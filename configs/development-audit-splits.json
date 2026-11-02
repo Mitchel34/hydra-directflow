@@ -1,0 +1,4 @@
+[
+  {"name": "candidate_training", "start_utc": "2018-07-12T00:00:00Z", "end_utc": "2023-07-31T00:00:00Z"},
+  {"name": "candidate_validation", "start_utc": "2023-07-31T00:00:00Z", "end_utc": "2024-07-31T00:00:00Z"}
+]
