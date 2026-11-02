@@ -1,0 +1,110 @@
+{
+  "cloud_jobs": 0,
+  "created_at_utc": "2026-11-02T15:38:00.001732+00:00",
+  "derived_cache_initially_absent": true,
+  "elapsed_seconds": 5.978435292025097,
+  "failure_analysis": {
+    "additional_downloads_required": false,
+    "committed_basin_entries": 68,
+    "committed_complete_cases": 1034,
+    "committed_eligibility_counts": {
+      "COMPLETE": 1034,
+      "HISTORY_INCOMPLETE": 28,
+      "TARGET_INCOMPLETE": 18
+    },
+    "committed_gauge_cases": 1080,
+    "committed_origins": 360,
+    "committed_usgs_month_entries": 2,
+    "completed_chunk_count": 3,
+    "cycle_id": "20230817_06Z",
+    "new_implementation_requires_fresh_cache_identity": true,
+    "reason": "Authenticated soil-only source-gap archive contains manifest-bound census_evidence JSON/XML not yet admitted by directory whitelist",
+    "source_data_modified": false,
+    "uncommitted_staging_entries": 1
+  },
+  "month": "2023-08",
+  "network_requests": 0,
+  "optimizer_updates": 0,
+  "os_page_cache_flushed": false,
+  "phases": [
+    {
+      "external_process_wall_seconds": 2.5306033750530332,
+      "name": "cold_first_chunk",
+      "observed_process_peak_rss_bytes": 613974016,
+      "result": {
+        "cache_counts": {
+          "bytes_read": 3124775,
+          "bytes_written": 3124775,
+          "hits": 0,
+          "memory_hits": 0,
+          "misses": 25,
+          "repairs": 0
+        },
+        "chunk_array_digests": [
+          "eb25194d6964630242741cb84bde2b3944403dac94d6ca599401540828b126bc"
+        ],
+        "chunks_built": 1,
+        "chunks_reused": 0,
+        "cloud_jobs": 0,
+        "complete_case_count": 360,
+        "completed_cases": 360,
+        "completed_origins": 120,
+        "created_at_utc": "2026-11-02T15:38:02.431652+00:00",
+        "elapsed_seconds": 2.30114237498492,
+        "eligibility_counts": {
+          "COMPLETE": 360
+        },
+        "history_hours": 168,
+        "implementation_sha256": {
+          "cache.py": "279148bbce4f7a6ce1dc9f9f43223237605c27a640aacee320656abdbce14ac0",
+          "contract.py": "e3f1a5e988e02a11da19cc2aec80cfd860e4867d68c14d12bdaba706a85513e8",
+          "lineage.py": "3508bcc0b676614527deedaa0868d93c8378912fa49c74f024dbd83297e27cf3",
+          "local_data.py": "c8c3b28fc9634fc85625314f9ee33603e81c7270e39db2e1cd4e1d628d0770ae",
+          "monthly.py": "1fdd01a7ccae71127a6a61632be72cc4357201a8352891ba6765fee4a18fc61f",
+          "multicycle.py": "0a40229ff6b171833e761c71f3a2620ccfba43605c179841c72e3119d08ea8ac",
+          "pipeline_timing.py": "fee331e948ab35d61b4a32e266423542dbf3da132a5c667f722113d067bd003c",
+          "reference.py": "7c21deee40c04bc72bc5cfcb190a39792c94ab65115c16ca03da551296575135",
+          "telemetry.py": "50e28d1fcbbde444c6199324155a4114cae77ac2461e4f6b331933a2748e2791"
+        },
+        "month": "2023-08",
+        "network_requests": 0,
+        "observed_boundary_peak_rss_bytes": 597737472,
+        "optimizer_updates": 0,
+        "plan_sha256": "69b957f46167f6013fa702dc2ed712acdb398ee4ec26b4ae9d83c6e6ff80b042",
+        "qualification": "One actual development calendar month; masks retained. Runtime does not establish scientific skill or every-season throughput.",
+        "requested_cases": 2232,
+        "requested_origins": 744,
+        "required_source_cycles": 127,
+        "required_usgs_months": [
+          "2023-07",
+          "2023-08",
+          "2023-09"
+        ],
+        "resource_qualification": "Cooperative wall/RSS checks at chunk boundaries; peaks between checks may be higher",
+        "schema": "hydra-month-preprocessing/v1",
+        "scientific_training": false,
+        "selection_scope": "PARTIAL_CHUNK_CALENDAR",
+        "session_initialization_seconds": 0.4703945000655949,
+        "stage_seconds_new_chunks": {
+          "basin_store": 0.6015409170649946,
+          "case_assembly": 0.5909387910505757,
+          "discharge_store": 0.40952183306217194,
+          "total": 1.603907542070374
+        },
+        "status": "STOPPED_AT_EXPLICIT_CHUNK_BOUNDARY"
+      }
+    },
+    {
+      "external_process_wall_seconds": 3.444068083073944,
+      "name": "cold_resume",
+      "observed_process_peak_rss_bytes": 888668160,
+      "result": {
+        "exit_code": 1,
+        "status": "FAILED_BEFORE_RESULT"
+      }
+    }
+  ],
+  "plan_sha256": "69b957f46167f6013fa702dc2ed712acdb398ee4ec26b4ae9d83c6e6ff80b042",
+  "schema": "hydra-real-month-timing-campaign/v1",
+  "status": "FAILED_PHASE"
+}

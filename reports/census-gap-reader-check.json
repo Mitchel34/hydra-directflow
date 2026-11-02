@@ -1,0 +1,67 @@
+{
+  "cycle_id": "20230817_06Z",
+  "execution": {
+    "cloud_operations": 0,
+    "network_requests": 0,
+    "optimizer_updates": 0,
+    "source_files_modified": false
+  },
+  "implementation_sha256": {
+    "src/hydra_directflow/local_data.py": "6ed7927b7388e7115f713353fa103ee01df03bac2183788ebf1aedb620daa662"
+  },
+  "receipt": {
+    "archive_bytes": 1413120,
+    "archive_sha256": "f4e8aba95b1fa84979d290d9a8033db89dc1ce996ef5cb8f65e69c5273aa64e2",
+    "commit_sha256": "af2972f3d976da260435bab96aed2cd8e9019b571b20a26716ee0e69d417b50e",
+    "cycle_id": "20230817_06Z",
+    "data_complete": false,
+    "groups_available": [
+      "soil_moisture"
+    ],
+    "lineage": {
+      "archive_bytes": 1413120,
+      "archive_sha256": "f4e8aba95b1fa84979d290d9a8033db89dc1ce996ef5cb8f65e69c5273aa64e2",
+      "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+      "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+      "commit": {
+        "byte_count_source": "SEALED_INDEX",
+        "bytes": 840,
+        "sha256": "af2972f3d976da260435bab96aed2cd8e9019b571b20a26716ee0e69d417b50e"
+      },
+      "cycle_id": "20230817_06Z",
+      "index_location_kind": "commit",
+      "manifest_sha256": "2241ef1d3fc4419cfa7cd43c1fb13455fee31f4b459f24672eeedf2ba5d405ac",
+      "normalized_summary": {
+        "coverage_status": "CONFIRMED_GAPS",
+        "data_complete": false,
+        "derived_summary_keys": [],
+        "groups_available": [
+          "soil_moisture"
+        ],
+        "groups_missing": {
+          "humidity": "MISSING_FORECAST_ROOT_CENSUS",
+          "precipitation": "MISSING_FORECAST_ROOT_CENSUS",
+          "snow_water_equivalent": "MISSING_FORECAST_ROOT_CENSUS",
+          "temperature": "MISSING_FORECAST_ROOT_CENSUS"
+        },
+        "record_count": 1
+      },
+      "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+      "schema": "hydra-directflow-lineage-adapter/v1",
+      "source_summaries_rewritten": false,
+      "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+    },
+    "manifest_sha256": "2241ef1d3fc4419cfa7cd43c1fb13455fee31f4b459f24672eeedf2ba5d405ac",
+    "record_count": 1,
+    "soil_values_record_hash_verified": true,
+    "weather_source_slots": [],
+    "weather_tiles_redecoded": false
+  },
+  "shape": [
+    1,
+    957
+  ],
+  "source_present_sha256": "16c4eca11ec82ecba68002862f1c002330d0b0455aff2df64d7e3c31cf30e359",
+  "source_values_sha256": "7a2e0b8b5a3606c12d1eb02f5656e7ddd4c777fadeeef327871908bbef4f18b0",
+  "status": "PASSED_NUMERIC_SOIL_AND_ORIGINAL_CENSUS_GAP_CHECKS"
+}

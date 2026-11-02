@@ -84,6 +84,7 @@ def read_cycle_tar(path, expected_sha256=ARCHIVE_SHA256, *, cycle_id=CYCLE_ID, a
     fixed = {"CYCLE_MANIFEST.json", "AVAILABILITY.json", "FIELD_SOURCES.json",
              "RAW_PROVENANCE.json", "POST_FETCH_CACHE_PROVENANCE.json",
              "raw_values.npy", "raw_missing_bits.npy"}
+    census_names = {f"census_evidence/{cycle_id[:8]}.json", f"census_evidence/{cycle_id[:8]}.xml"}
     result = {}
     seen = set()
     total = 0
@@ -97,12 +98,14 @@ def read_cycle_tar(path, expected_sha256=ARCHIVE_SHA256, *, cycle_id=CYCLE_ID, a
             require(name not in seen, "Duplicate archive member")
             seen.add(name)
             if member.isdir():
-                require(name in (cycle_id, cycle_id + "/source_bytes"), "Unknown archive directory")
+                require(name in (cycle_id, cycle_id + "/source_bytes", cycle_id + "/census_evidence"),
+                        "Unknown archive directory")
                 continue
             require(member.isfile() and not member.issparse(), "Only regular nonsparse archive files allowed")
             require(name.startswith(cycle_id + "/"), "Unexpected cycle member")
             relative = name[len(cycle_id) + 1:]
-            require(relative in fixed or re.fullmatch(r"source_bytes/[0-9a-f]{64}\.bin", relative),
+            require(relative in fixed or relative in census_names
+                    or re.fullmatch(r"source_bytes/[0-9a-f]{64}\.bin", relative),
                     "Archive member outside whitelist")
             total += member.size
             require(0 <= member.size <= 8 * 1024 * 1024 and total <= MAX_BYTES,
@@ -125,6 +128,21 @@ def read_cycle_tar(path, expected_sha256=ARCHIVE_SHA256, *, cycle_id=CYCLE_ID, a
     for name, identity in manifest["files"].items():
         require(len(result[name]) == identity["bytes"] and sha256(result[name]) == identity["sha256"],
                 "Archive member hash mismatch")
+    if census_names & result.keys() or cycle_id + "/census_evidence" in seen:
+        require(census_names <= result.keys(), "Census evidence requires the exact current-day JSON/XML pair")
+        require(manifest.get("schema") == "HRRR-gap-aware-raw-cycle-acquisition/v1"
+                and manifest.get("data_complete") is False, "Census evidence requires an original source-gap manifest")
+        availability = json.loads(result["AVAILABILITY.json"])
+        require(availability == manifest.get("availability") and availability.get("data_complete") is False,
+                "Census availability differs from original manifest")
+        gaps = [group for group in availability["groups"] if group.get("status") == "MISSING_FORECAST_ROOT_CENSUS"]
+        require(gaps, "Census evidence requires an original missing forecast-root status")
+        receipt_hash = sha256(result[f"census_evidence/{cycle_id[:8]}.json"])
+        raw_hash = sha256(result[f"census_evidence/{cycle_id[:8]}.xml"])
+        for group in gaps:
+            proof = group.get("proof", {})
+            require(proof.get("receipt_sha256") == receipt_hash and proof.get("raw_sha256") == raw_hash,
+                    "Census evidence hashes differ from original source-gap proof")
     return result, manifest
 
 
