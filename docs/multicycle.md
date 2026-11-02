@@ -65,6 +65,10 @@ aggregate counts, implementation hashes, stage timings and the exact cache
 digest; it is suitable for review before publication. The input request, raw
 data and tensor/provenance cache remain private.
 
+See [legacy lineage support](legacy-lineage.md) for older payloads and direct
+bundle rows. Only direct bundle rows can omit `commit_path` in their archive
+specifications; commit-bound rows still require their original commit.
+
 ## Observed integration sample
 
 The five resident extended cycles are `20210823_00Z`, `20220317_00Z`,

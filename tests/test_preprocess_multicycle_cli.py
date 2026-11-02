@@ -35,10 +35,18 @@ class PreprocessCLI(unittest.TestCase):
                 if change == "extra":
                     request["allow_protected"] = True
                 else:
-                    del request["archive_specs"][0]["commit_path"]
+                    del request["archive_specs"][0]["archive_path"]
                 path.write_text(json.dumps(request))
                 with self.assertRaises(ValueError):
                     cli.load_request(path)
+
+    def test_bundle_kind_request_can_omit_commit_path_for_later_index_validation(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "request.json"
+            request = self.request()
+            del request["archive_specs"][0]["commit_path"]
+            path.write_text(json.dumps(request))
+            self.assertNotIn("commit_path", cli.load_request(path)["archive_specs"][0])
 
     def test_symlinked_request_rejected(self):
         with tempfile.TemporaryDirectory() as folder:

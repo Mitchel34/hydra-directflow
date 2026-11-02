@@ -21,8 +21,8 @@ def load_request(path):
     if not isinstance(request["archive_specs"], list) or not request["archive_specs"]:
         raise ValueError("At least one archive specification is required")
     for spec in request["archive_specs"]:
-        if not isinstance(spec, dict) or set(spec) != {"cycle_id", "archive_path", "commit_path"}:
-            raise ValueError("Archive specs require cycle_id, archive_path and commit_path")
+        if not isinstance(spec, dict) or set(spec) not in ({"cycle_id", "archive_path"}, {"cycle_id", "archive_path", "commit_path"}):
+            raise ValueError("Archive specs require cycle_id and archive_path; commit_path is required for commit lineage")
     if "usgs_paths" in request and (not isinstance(request["usgs_paths"], dict)
                                    or not request["usgs_paths"]):
         raise ValueError("usgs_paths must map month names to local paths")
@@ -39,7 +39,8 @@ def load_request(path):
         request["usgs_paths"] = {month: local(value) for month, value in request["usgs_paths"].items()}
     for spec in request["archive_specs"]:
         for key in ("archive_path", "commit_path"):
-            spec[key] = local(spec[key])
+            if key in spec:
+                spec[key] = local(spec[key])
     return request
 
 
@@ -56,7 +57,7 @@ def validate_outputs(request, tensor_path, report_path):
                     ("qualified_index_path", "weights_path", "usgs_manifest_path")
                     if key in request]
     source_paths += list(request.get("usgs_paths", {}).values())
-    source_paths += [spec[key] for spec in request["archive_specs"] for key in ("archive_path", "commit_path")]
+    source_paths += [spec[key] for spec in request["archive_specs"] for key in ("archive_path", "commit_path") if key in spec]
     sources = {Path(source).resolve() for source in source_paths}
     if tensor.resolve() == report.resolve() or any(path.resolve() in sources for path in (tensor, report)):
         raise ValueError("Output paths must be distinct from each other and all sources")
@@ -88,6 +89,7 @@ def main():
         for path in (Path(__file__).resolve(),
                      Path(__file__).resolve().parents[1] / "src/hydra_directflow/multicycle.py",
                      Path(__file__).resolve().parents[1] / "src/hydra_directflow/local_data.py",
+                     Path(__file__).resolve().parents[1] / "src/hydra_directflow/lineage.py",
                      Path(__file__).resolve().parents[1] / "src/hydra_directflow/contract.py",
                      Path(__file__).resolve().parents[1] / "src/hydra_directflow/reference.py")}
     with receipt.open("x") as stream:

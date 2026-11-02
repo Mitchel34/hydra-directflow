@@ -189,7 +189,7 @@ class MultiCycleAdmissionTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             p = Path(tmp) / "commit"
             p.write_text('{}')
-            row = {"cycle": "20210823_00Z", "location_kind": "commit", "original_quality_flags_rewritten": False,
+            row = {"cycle": "20210823_00Z", "location_kind": "commit", "data_complete": True, "original_quality_flags_rewritten": False,
                    "source_locations": {"commit": {"sha256": "0" * 64, "bytes": 2}}}
             with self.assertRaisesRegex(ValueError, "SHA256 mismatch"):
                 load_authenticated_cycle({"cycle_id": row["cycle"], "commit_path": p, "archive_path": "absent"}, row)

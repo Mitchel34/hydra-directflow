@@ -178,7 +178,7 @@ def estimate_workflow(measurement, *, train_cases, validation_cases, epochs, tri
 def _implementation():
     package = Path(__file__).resolve().parent
     return {name: sha(_local_bytes(package / name, 256 * 1024)) for name in
-            ("pipeline_timing.py", "multicycle.py", "local_data.py", "contract.py", "reference.py", "telemetry.py",
+            ("pipeline_timing.py", "multicycle.py", "local_data.py", "lineage.py", "contract.py", "reference.py", "telemetry.py",
              "engineering.py", "models/directflow.py", "models/mamba2_math.py")}
 
 
@@ -198,9 +198,10 @@ def load_builder_request(path):
         request[key] = local(request[key])
     request["usgs_paths"] = {month: local(value) for month, value in request["usgs_paths"].items()}
     for source in request["archive_specs"]:
-        require(isinstance(source, dict) and set(source) == {"cycle_id", "archive_path", "commit_path"}, "Exact archive specification keys required")
+        require(isinstance(source, dict) and set(source) in ({"cycle_id", "archive_path"}, {"cycle_id", "archive_path", "commit_path"}), "Exact archive specification keys required")
         for key in ("archive_path", "commit_path"):
-            source[key] = local(source[key])
+            if key in source:
+                source[key] = local(source[key])
     return raw, request
 
 

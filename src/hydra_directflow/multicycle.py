@@ -19,6 +19,7 @@ import time
 import numpy as np
 
 from .contract import DevelopmentProtocol, TensorSpec
+from .lineage import availability_view, read_authenticated_bundle
 from .local_data import (
     GAUGES, FEATURE_GROUPS, GRID_SHA256, USGS_MANIFEST_SHA256, WEIGHTS_SHA256,
     DEVELOPMENT_QUALIFICATION, CFS_TO_CMS, LocalCycle, basin_reduce, bounded_npy,
@@ -100,27 +101,11 @@ def load_authenticated_cycle(spec, index_row):
     """Bind sealed index -> original commit -> tar -> members -> source clocks/tiles."""
     cycle_id = spec["cycle_id"]
     reference = cycle_reference(cycle_id)
-    require(index_row["cycle"] == cycle_id and index_row["location_kind"] == "commit"
-            and index_row["original_quality_flags_rewritten"] is False, "Unsupported qualified cycle lineage")
-    identity = index_row["source_locations"]["commit"]
-    commit_raw = verified_local_bytes(spec["commit_path"], identity["sha256"],
-                                      expected_bytes=identity["bytes"], max_bytes=16384)
-    commit = json.loads(commit_raw)
-    require(commit["schema"] == "hrrr-verified-cloud-cycle/v1" and commit["cycle"] == cycle_id,
-            "Commit cycle/schema differs")
-    bundle, worker = commit["bundle"], commit["worker_manifest"]
-    require(bundle["verified"] is True and bundle["bytes"] == worker["bundle_bytes"]
-            and bundle["sha256"] == worker["bundle_sha256"] and worker["cycle"] == cycle_id,
-            "Commit bundle identity differs")
-    # read_cycle_tar authenticates exact bytes plus all whitelisted members.
-    require(Path(spec["archive_path"]).lstat().st_size == bundle["bytes"], "Archive byte count differs")
-    members, manifest = read_cycle_tar(spec["archive_path"], bundle["sha256"], cycle_id=cycle_id)
-    require(sha256(members["CYCLE_MANIFEST.json"]) == worker["manifest_sha256"], "Commit manifest binding differs")
-    n = manifest["record_count"]
-    require(type(n) is int and 1 <= n <= 145 and n == worker["record_count"] == index_row["record_count"],
-            "Cycle record count differs from sealed lineage")
-    require(manifest["raw_shape"] == [n, 957] and manifest["mask_shape"] == [n, 120]
-            and manifest["data_complete"] is index_row["data_complete"], "Cycle shapes/completeness differ")
+    members, manifest, lineage = read_authenticated_bundle(spec, index_row)
+    summary = lineage["normalized_summary"]
+    n = summary["record_count"]
+    require(manifest["raw_shape"] == [n, 957] and manifest["mask_shape"] == [n, 120],
+            "Cycle array shapes differ")
     require(manifest["assets"]["grid_sha256"] == GRID_SHA256, "Candidate acquisition grid differs")
     values = bounded_npy(members["raw_values.npy"], shape=(n, 957), dtype="<f8")
     bits = bounded_npy(members["raw_missing_bits.npy"], shape=(n, 120), dtype="u1")
@@ -130,8 +115,8 @@ def load_authenticated_cycle(spec, index_row):
     require(np.isfinite(values[present]).all(), "Nonfinite admitted source value")
     records = json.loads(members["RAW_PROVENANCE.json"])
     fields = json.loads(members["FIELD_SOURCES.json"])
-    availability = json.loads(members["AVAILABILITY.json"])
-    require(len(records) == n and availability == manifest["availability"] and availability["cycle"] == cycle_id,
+    availability = availability_view(index_row, manifest, members)
+    require(len(records) == n and availability["cycle"] == cycle_id,
             "Original source/availability inventory differs")
     expected_leads = 36 if reference % (6 * 3600) == 0 else 18
     _verify_grid_and_clocks(members, fields, reference, cycle_id=cycle_id, minimum_leads=expected_leads)
@@ -157,18 +142,20 @@ def load_authenticated_cycle(spec, index_row):
                     "Unexpected precipitation interval")
             require(record["field_source_id"] in fields, "Missing original field source")
     present_groups = {group for group, _ in seen}
-    require(present_groups == set(index_row["groups_available"]), "Available groups differ from sealed index")
+    require(present_groups == set(summary["groups_available"]), "Available groups differ from authenticated lineage")
     for group in present_groups:
         leads = [0] if group == "soil_moisture" else list(range(1, expected_leads + 1))
         require(sorted(lead for g, lead in seen if g == group) == leads,
                 "Available group has incomplete source lead support")
         require(groups[group]["leads"] == leads and groups[group]["record_count"] == len(leads)
-                and groups[group]["status"] == "AVAILABLE_VERIFIED", "Original available group contract differs")
+                and groups[group]["status"] in ("AVAILABLE_VERIFIED", "ADAPTER_DERIVED_COMPLETE_GROUP"),
+                "Available group contract differs")
     _verify_weather_crop(members, fields, records, values, present, cycle_id=cycle_id)
     cycle = LocalCycle(reference, values, present, tuple(records), len(members), fields, availability)
-    receipt = {"cycle_id": cycle_id, "archive_sha256": bundle["sha256"], "archive_bytes": bundle["bytes"],
-               "commit_sha256": identity["sha256"], "manifest_sha256": worker["manifest_sha256"],
-               "record_count": n, "data_complete": manifest["data_complete"],
+    receipt = {"cycle_id": cycle_id, "archive_sha256": lineage["archive_sha256"], "archive_bytes": lineage["archive_bytes"],
+               "commit_sha256": lineage["commit"]["sha256"] if lineage["commit"] else None,
+               "manifest_sha256": lineage["manifest_sha256"], "lineage": lineage,
+               "record_count": n, "data_complete": summary["data_complete"],
                "weather_source_slots": sorted({f["spec"]["chunks"][0] for f in fields.values()}),
                "groups_available": sorted(present_groups),
                "weather_tiles_redecoded": bool(fields), "soil_values_record_hash_verified": "soil_moisture" in present_groups}
@@ -247,7 +234,7 @@ def load_usgs_windows(paths, manifest_path, windows):
 
 
 def _metadata_record(cycle_id, cycle, record):
-    """Original complete record plus original group/field metadata, kept privately."""
+    """Original records/fields plus original or labeled adapter group metadata."""
     group = next(g for g in cycle.availability["groups"] if g["group"] == record["group"])
     result = {"cycle_id": cycle_id, "record": record, "group_availability": group}
     if "field_source_id" in record:
@@ -400,7 +387,7 @@ def build_multicycle_development(*, archive_specs, qualified_index_path, weights
                     "usgs_partitions": partitions, "candidate_weights_sha256": WEIGHTS_SHA256},
         "tensors": {key: {"shape": list(arrays[key].shape), "mask_true": int(arrays[key + "_mask"].sum()),
                           "mask_total": int(arrays[key + "_mask"].size)} for key in ("history", "weather", "state", "target")},
-        "provenance": "Original records/group/field metadata in private dictionary; per-case weather/soil indices; original USGS qualifiers and wire IDs",
+        "provenance": "Original records/field metadata and original or explicitly adapter-derived legacy group availability in private dictionary; per-case weather/soil indices; original USGS qualifiers and wire IDs",
         "execution": {"network_requests": 0, "cloud_operations": 0, "training_steps": 0, "scaler_fits": 0,
                       "protected_assessment_values_decoded": 0, "source_files_modified": False},
         "qualification": "Development engineering only; approximate independent non-nesting basins; local candidates only; no historical real-time availability, global archive coverage, trained model or forecast-skill claim",

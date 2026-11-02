@@ -78,7 +78,7 @@ def verified_local_bytes(path, expected_sha256, *, expected_bytes=None, max_byte
     return data
 
 
-def read_cycle_tar(path, expected_sha256=ARCHIVE_SHA256, *, cycle_id=CYCLE_ID):
+def read_cycle_tar(path, expected_sha256=ARCHIVE_SHA256, *, cycle_id=CYCLE_ID, allow_legacy=False):
     """Never extract; accept only bounded regular members in the cycle whitelist."""
     raw = verified_local_bytes(path, expected_sha256)
     fixed = {"CYCLE_MANIFEST.json", "AVAILABILITY.json", "FIELD_SOURCES.json",
@@ -112,8 +112,13 @@ def read_cycle_tar(path, expected_sha256=ARCHIVE_SHA256, *, cycle_id=CYCLE_ID):
             value = stream.read(member.size + 1)
             require(len(value) == member.size, "Truncated archive member")
             result[relative] = value
-    require(fixed <= result.keys(), "Required archive members missing")
+    require(type(allow_legacy) is bool, "Explicit legacy archive permission required")
+    base = fixed - {"AVAILABILITY.json", "POST_FETCH_CACHE_PROVENANCE.json"}
+    require((base if allow_legacy else fixed) <= result.keys(), "Required archive members missing")
     manifest = json.loads(result["CYCLE_MANIFEST.json"])
+    if not fixed <= result.keys():
+        require(allow_legacy and manifest.get("schema") == "HRRR-raw-cycle-acquisition/v1"
+                and "AVAILABILITY.json" not in result, "Unsupported legacy archive schema/members")
     require(manifest["cycle"] == cycle_id, "Manifest cycle differs")
     require(set(manifest["files"]) == set(result) - {"CYCLE_MANIFEST.json"},
             "Manifest inventory differs from archive")
