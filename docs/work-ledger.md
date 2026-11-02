@@ -18,7 +18,7 @@ Each code chunk has been tested locally and committed separately. Raw data and l
 | `b2c2f64` | Development availability | Quality/timestamp columns only; 12 comparisons, one month |
 | `cd02171` | Q-only control | 11 ablation tests and two zero-update model forwards |
 
-The October 29 integrated offline-environment suite passed **114 tests**. See `reports/release-check.json` for that historical tested code revision and source hashes. The November continuation passes **154 tests**; its receipt is `reports/continuation-check.json`.
+The October 29 integrated offline-environment suite passed **114 tests**. See `reports/release-check.json` for that historical tested code revision and source hashes. The first November continuation passed **154 tests** (`reports/continuation-check.json`). The later cache/month preparation checkpoint passes **211 tests** (`reports/cache-month-readiness-check.json`).
 
 Qualification accounting: 878 synthetic optimizer updates across the model, recovery and benchmark attempts; four completed real-data engineering updates on one repeated observed case. One earlier failed engineering admission precharged two updates but failed before optimizer entry; its record remains. These are not scientific campaign fits or forecast-skill results.
 
@@ -54,3 +54,28 @@ checkpoints remain outside Git. Paid cloud jobs remain on hold.
 Next: authenticated legacy-index adapters and resumable per-cycle basin/hourly
 discharge caches, followed by a representative-month timing run. See
 `docs/runtime-and-budget.md` for scale estimates and current limitations.
+
+## Legacy and cache continuation
+
+| Commit or artifact | Tested chunk | Evidence |
+|---|---|---|
+| `dce3e1f` | Legacy index and payload adapter | Three actual numeric cases, one additional identity-only case; 16 dedicated tests; 171 integrated tests |
+| `90b2ba5` | Resumable basin/discharge caches | Exact L24/L168 uncached/cache/resume array parity; 16 cache tests; 187 integrated tests |
+| `scripts/time_month.py` and `scripts/fetch_month_inputs.py` | Complete-month runner and bounded existing-object retrieval preparation | 5 monthly/checkpoint tests and 19 mocked retrieval tests; 211 integrated tests; no month execution yet |
+
+The caches materialize five basin cycles and five full USGS months in 718,453
+bytes including commit metadata. Subsequent parity runs reused all ten entries
+without source reduction or cache writes. Source qualifiers, masks and identities
+remain preserved. Route-specific receipt row counts differ between full-month
+stores and window-filtered readers, so array parity is reported separately.
+
+August 2023 requires 127 six-hour cycles and 744 hourly origins, with July/August/
+September USGS support. Three archives are resident; the 124 missing archives
+need the separately requested storage-read approval (1 GiB and $1 estimated
+read/transfer allowance). The actual full-month timing is pending that approval.
+No credentials or storage downloads were requested by this preparation, no cloud
+job was started, and optimizer-update totals are unchanged.
+
+Next: complete the approved storage reads if authorized, then cold/interrupted,
+resumed, warm full-month and verification-only timing. Preserve the distinction
+between those timing modes and between source gaps and incomplete acquisition.

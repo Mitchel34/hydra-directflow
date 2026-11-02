@@ -27,7 +27,7 @@ Actual artifact creation timestamps are distinct from simulated historical
 information cutoffs.
 
 See [the completed work ledger](docs/work-ledger.md) for commits and evidence.
-The integrated offline-environment suite passes **154 tests**. Current reports
+The integrated offline-environment suite passes **211 tests**. Current reports
 include four-model CPU/MPS qualification, a bounded real-data engineering probe,
 fresh-process recovery and a 20-case synthetic local throughput benchmark.
 Discharge-only ablation and source-aware NWM evaluation helpers are implemented.
@@ -37,6 +37,12 @@ development cycles across 2021–2024, preserving missing history masks. All fou
 models passed bounded CPU/MPS end-to-end timing and checkpoint replay. See the
 [runtime and budget inputs](docs/runtime-and-budget.md) for measured stage costs,
 conditional local projections and the remaining cloud-budget uncertainties.
+
+[Older index/payload formats](docs/legacy-lineage.md) and
+[resumable basin/discharge stores](docs/cache.md) are tested on resident source
+data. The [August 2023 month runner](docs/month-preprocessing.md) is prepared and
+tested; its actual month timing awaits approval for bounded reads of the 124
+missing local HRRR archives. No cloud compute jobs have been started.
 
 ## Local use
 
