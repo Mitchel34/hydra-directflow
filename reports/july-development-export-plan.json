@@ -1,0 +1,45 @@
+{
+  "administrative_plan_token": "ADMIN_DEVELOPMENT_EXPORT:e6210652e6c7c3a3132f9315ef631752708b59ce68b34651cf22fda4d888874b",
+  "cloud_operations": 0,
+  "columns": [
+    "site",
+    "sample_epoch",
+    "sample_time_utc",
+    "source_units",
+    "discharge_cfs",
+    "source_qualifiers_json",
+    "numeric_valid",
+    "is_exact_utc_hour",
+    "is_core",
+    "source_wire_sha256",
+    "historical_available_at_utc"
+  ],
+  "cutoff_exclusive_utc": "2024-07-31T00:00:00Z",
+  "implementation_sha256": {
+    "development_export.py": "472149f464d5634298ca9ad6d42b17f24270d9d56634226b7b4ab2c58efb0ab5",
+    "local_data.py": "6ed7927b7388e7115f713353fa103ee01df03bac2183788ebf1aedb620daa662",
+    "reference.py": "7c21deee40c04bc72bc5cfcb190a39792c94ab65115c16ca03da551296575135"
+  },
+  "month": "2024-07",
+  "network_requests": 0,
+  "output_already_exists": false,
+  "output_location_sha256": "6dd4b437a08d016c714327476d86cc5db1479d52339d582d60004cb4cb6bd9c6",
+  "physical_decode_scope": "MIXED_SOURCE_ROW_GROUPS_MAY_INCLUDE_PROTECTED_VALUES",
+  "plan_sha256": "e6210652e6c7c3a3132f9315ef631752708b59ce68b34651cf22fda4d888874b",
+  "protected_scoring_permitted": false,
+  "ready_for_separately_authorized_execution": true,
+  "schema": "hydra-development-boundary-export-plan/v1",
+  "selection_rule": "ORIGINAL_CORE_ROWS_IN_MONTH_STRICTLY_BEFORE_PROTECTED_START",
+  "source_location_sha256": "4fe6c26b1d689a25740fa5fb6f7bca3b4a2660c76de36c615db8298750f69248",
+  "source_manifest_sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a",
+  "source_partition": {
+    "bytes": 73234,
+    "month": "2024-07",
+    "sha256": "de5761fbd420c1ba538180d1dfad8e9d4d0150e871cfa5132c96c8662f1e1966"
+  },
+  "source_residency": "RESIDENT_UNVERIFIED",
+  "source_values_decoded": false,
+  "start_inclusive_utc": "2024-07-01T00:00:00Z",
+  "status": "PLAN_ONLY_NOT_EXECUTED",
+  "token_is_human_authorization": false
+}

@@ -21,6 +21,7 @@ import numpy as np
 from .contract import DevelopmentProtocol, TensorSpec
 from .lineage import availability_view, read_authenticated_bundle
 from .quality import STRICT_A, quality_admitter, quality_policy_binding
+from .development_export import MONTH as BOUNDARY_MONTH, read_development_export
 from .local_data import (
     GAUGES, FEATURE_GROUPS, GRID_SHA256, USGS_MANIFEST_SHA256, WEIGHTS_SHA256,
     DEVELOPMENT_QUALIFICATION, CFS_TO_CMS, LocalCycle, basin_reduce, bounded_npy,
@@ -49,7 +50,7 @@ def cycle_reference(cycle_id):
         reference = int(datetime.strptime(cycle_id, "%Y%m%d_%HZ").replace(tzinfo=timezone.utc).timestamp())
     except ValueError as exc:
         raise ValueError("Invalid cycle ID clock") from exc
-    require(reference + 48 * 3600 < ASSESSMENT_START, "Protected assessment archive access is disabled")
+    require(reference < ASSESSMENT_START, "Protected assessment archive initialization is disabled")
     return reference
 
 
@@ -163,7 +164,9 @@ def load_authenticated_cycle(spec, index_row):
     return cycle, receipt
 
 
-def _months_for_windows(windows):
+def _months_for_windows(windows, *, development_export_months=()):
+    allowed = set(development_export_months)
+    require(allowed <= {BOUNDARY_MONTH}, "Only the declared boundary month can use a development export")
     result = set()
     for start, end in windows:
         require(start <= end < ASSESSMENT_START, "Protected USGS window disabled")
@@ -173,7 +176,8 @@ def _months_for_windows(windows):
             result.add(stamp)
             next_year, next_month = (year + 1, 1) if month == 12 else (year, month + 1)
             next_start = int(datetime(next_year, next_month, 1, tzinfo=timezone.utc).timestamp())
-            require(next_start <= ASSESSMENT_START, "Monthly partition overlaps protected assessment")
+            require(next_start <= ASSESSMENT_START or stamp in allowed,
+                    "Monthly partition overlaps protected assessment; verified development export required")
             if next_start > end:
                 break
             year, month = next_year, next_month
@@ -181,16 +185,19 @@ def _months_for_windows(windows):
     return result
 
 
-def load_usgs_windows(paths, manifest_path, windows):
+def load_usgs_windows(paths, manifest_path, windows, *, development_exports=None):
     """Authenticate native monthly partitions and return only requested windows.
 
-    Parquet may decode complete row groups before filtering. All admitted months
-    therefore precede the protected assessment, even for pre-boundary windows.
+    Raw Parquet may decode complete row groups before filtering. A mixed month
+    is therefore admitted only via an explicitly pinned development-only export.
+    This function never performs the administrative source export itself.
     """
     from pyarrow import BufferReader
     import pyarrow.parquet as pq
-    needed = _months_for_windows(windows)
-    require(needed <= set(paths), "Required local USGS month is absent")
+    exports = {} if development_exports is None else development_exports
+    require(isinstance(exports, dict), "Development exports must be an explicit month mapping")
+    needed = _months_for_windows(windows, development_export_months=exports)
+    require(needed - set(exports) <= set(paths), "Required local USGS month is absent")
     manifest = json.loads(verified_local_bytes(manifest_path, USGS_MANIFEST_SHA256, max_bytes=2 * 1024 * 1024))
     partition_map = {}
     for entry in manifest["native_partitions"]:
@@ -206,8 +213,13 @@ def load_usgs_windows(paths, manifest_path, windows):
     for month in sorted(needed):
         entry = partition_map.get(month + ".parquet")
         require(entry is not None, "Month absent from pinned USGS source manifest")
-        raw = verified_local_bytes(paths[month], entry["sha256"], expected_bytes=entry["bytes"], max_bytes=512 * 1024)
-        rows = pq.read_table(BufferReader(raw), columns=columns, filters=filters).to_pylist()
+        export_identity = None
+        if month in exports:
+            rows, export_identity = read_development_export(exports[month], entry)
+            rows = [row for row in rows if any(start <= row["sample_epoch"] <= end for start, end in windows)]
+        else:
+            raw = verified_local_bytes(paths[month], entry["sha256"], expected_bytes=entry["bytes"], max_bytes=512 * 1024)
+            rows = pq.read_table(BufferReader(raw), columns=columns, filters=filters).to_pylist()
         require(len(rows) <= 30000, "USGS decoded row bound exceeded")
         exact = 0
         for row in rows:
@@ -232,8 +244,11 @@ def load_usgs_windows(paths, manifest_path, windows):
             flags = tuple(original_flags)
             observations.append(Observation(site, t, None, float(value) * CFS_TO_CMS if usable else None,
                                             flags, "usgs-wire-sha256:" + row["source_wire_sha256"]))
-        metadata.append({"month": month, "sha256": entry["sha256"], "bytes": entry["bytes"],
-                         "returned_rows": len(rows), "exact_core_rows": exact})
+        receipt = {"month": month, "sha256": entry["sha256"], "bytes": entry["bytes"],
+                   "returned_rows": len(rows), "exact_core_rows": exact}
+        if export_identity is not None:
+            receipt["development_export"] = export_identity
+        metadata.append(receipt)
     return observations, metadata
 
 
@@ -349,7 +364,8 @@ def assemble_cases(cycles, reduced, observations, origins, protocol, *,
 
 def build_multicycle_development(*, archive_specs, qualified_index_path, weights_path,
                                 usgs_paths, usgs_manifest_path, origins_utc, history_hours=24,
-                                input_quality_policy=STRICT_A, target_quality_policy=STRICT_A):
+                                input_quality_policy=STRICT_A, target_quality_policy=STRICT_A,
+                                usgs_development_exports=None):
     """Return private arrays and a portable aggregate preprocessing receipt.
 
     Opt in to PRIMARY_APPROVED_A_OPTIONAL_R_V1 separately for input history and
@@ -375,7 +391,8 @@ def build_multicycle_development(*, archive_specs, qualified_index_path, weights
     stages["cycle_auth_decode_reduce"] = time.monotonic() - mark
     mark = time.monotonic()
     windows = [(origin - (history_hours + 1) * 3600, origin + 18 * 3600) for origin in origins]
-    observations, partitions = load_usgs_windows(usgs_paths, usgs_manifest_path, windows)
+    observations, partitions = load_usgs_windows(usgs_paths, usgs_manifest_path, windows,
+                                                development_exports=usgs_development_exports)
     stages["usgs_load"] = time.monotonic() - mark
     mark = time.monotonic()
     arrays = assemble_cases(cycles, reduced, observations, origins, protocol,

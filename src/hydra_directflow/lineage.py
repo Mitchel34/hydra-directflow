@@ -24,7 +24,7 @@ def _cycle_guard(cycle_id):
         reference = int(datetime.strptime(cycle_id, "%Y%m%d_%HZ").replace(tzinfo=timezone.utc).timestamp())
     except ValueError as exc:
         raise ValueError("Invalid cycle clock") from exc
-    require(reference + 48 * 3600 < ASSESSMENT_START, "Protected assessment archive access is disabled")
+    require(reference < ASSESSMENT_START, "Protected assessment archive initialization is disabled")
 
 
 def _identity(identity, *, name, byte_limit, bytes_required):

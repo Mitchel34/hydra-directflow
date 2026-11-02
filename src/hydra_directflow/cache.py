@@ -29,6 +29,7 @@ from .multicycle import (INDEX_SHA256, INDEX_BYTES, SELECTION_SCOPE, _months_for
                          load_authenticated_cycle, load_usgs_windows, qualified_cycle_rows, validate_request)
 from .reference import ASSESSMENT_START, Observation, digest, require
 from .quality import STRICT_A, quality_admitter, quality_policy_binding
+from .development_export import MONTH as BOUNDARY_MONTH, inspect_development_export
 from .telemetry import canonical
 
 MAX_OBJECT_BYTES = 16 * 1024**2
@@ -89,7 +90,7 @@ def _sync_directory(path):
 
 def implementation_identity():
     root = Path(__file__).resolve().parent
-    names = ("cache.py", "lineage.py", "multicycle.py", "local_data.py", "quality.py", "contract.py", "reference.py", "telemetry.py")
+    names = ("cache.py", "lineage.py", "multicycle.py", "local_data.py", "quality.py", "development_export.py", "contract.py", "reference.py", "telemetry.py")
     return {name: _sha(_read(root / name, 256 * 1024)) for name in names}
 
 
@@ -237,18 +238,21 @@ class DerivedCache:
         return checked_arrays, checked_metadata, key, "built"
 
 
-def _month_bounds(month):
+def _month_bounds(month, *, development_cutoff=None):
     require(isinstance(month, str) and re.fullmatch(r"\d{4}-\d{2}", month), "Explicit month required")
     year, number = map(int, month.split("-"))
     start = int(datetime(year, number, 1, tzinfo=timezone.utc).timestamp())
     following = datetime(year + (number == 12), 1 if number == 12 else number + 1, 1, tzinfo=timezone.utc)
     end = int(following.timestamp()) - 3600
+    if development_cutoff is not None:
+        require(month == BOUNDARY_MONTH and development_cutoff == ASSESSMENT_START, "Only the exact development export cutoff is admitted")
+        end = development_cutoff - 3600
     require(end < ASSESSMENT_START, "Entire cached monthly partition must precede protected assessment")
     return start, end
 
 
-def pack_month(month, observations, receipt):
-    start, end = _month_bounds(month)
+def pack_month(month, observations, receipt, *, development_cutoff=None):
+    start, end = _month_bounds(month, development_cutoff=development_cutoff)
     times = np.arange(start, end + 1, 3600, dtype=np.int64)
     shape = (3, len(times))
     values = np.full(shape, np.nan)
@@ -271,11 +275,16 @@ def pack_month(month, observations, receipt):
             sources.append(row.source_id)
         quality[i, j], source[i, j] = qualities.index(flags), sources.index(row.source_id)
     return dict(times=times, values=values, row_present=present, numeric_valid=valid, quality_index=quality, source_index=source), \
-           dict(month=month, qualities=qualities, sources=sources, source_receipt=receipt)
+           dict(month=month, qualities=qualities, sources=sources, source_receipt=receipt,
+                development_cutoff_exclusive_epoch=development_cutoff)
 
 
 def unpack_month(arrays, metadata):
-    start, end = _month_bounds(metadata["month"])
+    cutoff = metadata.get("development_cutoff_exclusive_epoch")
+    if cutoff is not None:
+        require(metadata.get("source_receipt", {}).get("development_export", {}).get("cutoff_exclusive_epoch") == cutoff,
+                "Boundary cache lacks its export commitment")
+    start, end = _month_bounds(metadata["month"], development_cutoff=cutoff)
     expected_times = np.arange(start, end + 1, 3600, dtype=np.int64)
     require(set(arrays) == {"times", "values", "row_present", "numeric_valid", "quality_index", "source_index"}, "Hourly store arrays differ")
     require(np.array_equal(arrays["times"], expected_times) and arrays["times"].dtype == np.dtype("int64"), "Monthly time axis differs")
@@ -327,12 +336,14 @@ def unpack_cycle(arrays, metadata):
 class CachedDevelopmentSession:
     """Authenticate index once, then assemble bounded chunks from shared stores."""
     def __init__(self, *, archive_specs, qualified_index_path, weights_path, usgs_paths,
-                 usgs_manifest_path, cache_directory, repair_corrupt=False):
+                 usgs_manifest_path, cache_directory, repair_corrupt=False, usgs_development_exports=None):
         require(isinstance(archive_specs, (list, tuple)) and 1 <= len(archive_specs) <= 1024, "One to 1024 local session cycles required")
         self.specs = {item["cycle_id"]: dict(item) for item in archive_specs}
         require(len(self.specs) == len(archive_specs), "Duplicate session cycle")
         self.index_path, self.weights_path = qualified_index_path, weights_path
         self.usgs_paths, self.manifest_path = dict(usgs_paths), usgs_manifest_path
+        self.exports = {} if usgs_development_exports is None else dict(usgs_development_exports)
+        require(set(self.exports) <= {BOUNDARY_MONTH}, "Unknown development export month")
         self.cache = DerivedCache(cache_directory, repair_corrupt=repair_corrupt)
         self.cycles, self.months, self.opened = {}, {}, False
 
@@ -383,14 +394,18 @@ class CachedDevelopmentSession:
         if month in self.months:
             self.cache.counts["memory_hits"] += 1
             return self.months[month]
-        require(month in self.usgs_paths and month in self.partitions, "Required local monthly USGS source missing")
-        start, end = _month_bounds(month)
+        require((month in self.usgs_paths or month in self.exports) and month in self.partitions, "Required local monthly USGS source missing")
+        export_identity = inspect_development_export(self.exports[month], self.partitions[month]) if month in self.exports else None
+        cutoff = export_identity["cutoff_exclusive_epoch"] if export_identity else None
+        start, end = _month_bounds(month, development_cutoff=cutoff)
         identity = dict(month=month, source_manifest_sha256=USGS_MANIFEST_SHA256, source_partition=self.partitions[month],
                         implementation_sha256=self.code, policy=self.policy)
+        if export_identity is not None:
+            identity["development_export"] = export_identity
         def build():
-            observations, receipts = load_usgs_windows(self.usgs_paths, self.manifest_path, [(start, end)])
+            observations, receipts = load_usgs_windows(self.usgs_paths, self.manifest_path, [(start, end)], development_exports=self.exports)
             require(len(receipts) == 1 and receipts[0]["month"] == month, "Monthly source receipt differs")
-            return pack_month(month, observations, receipts[0])
+            return pack_month(month, observations, receipts[0], development_cutoff=cutoff)
         arrays, metadata, key, reuse = self.cache.get_or_build("usgs_month", identity, build, validator=unpack_month)
         result = unpack_month(arrays, metadata), metadata["source_receipt"], key
         self.months[month] = result
@@ -415,7 +430,7 @@ class CachedDevelopmentSession:
         windows = [(origin - (history_hours + 1) * 3600, origin + 18 * 3600) for origin in origins]
         mark = time.monotonic()
         observations, monthly_receipts, month_keys = [], [], {}
-        for month in sorted(_months_for_windows(windows)):
+        for month in sorted(_months_for_windows(windows, development_export_months=self.exports)):
             rows, receipt, key = self._month(month)
             observations.extend(row for row in rows if any(start <= row.valid_at <= end for start, end in windows))
             monthly_receipts.append(receipt)
@@ -450,11 +465,11 @@ class CachedDevelopmentSession:
 
 def build_cached_development(*, archive_specs, qualified_index_path, weights_path, usgs_paths,
                              usgs_manifest_path, origins_utc, history_hours=24, cache_directory, repair_corrupt=False,
-                             input_quality_policy=STRICT_A, target_quality_policy=STRICT_A):
+                             input_quality_policy=STRICT_A, target_quality_policy=STRICT_A, usgs_development_exports=None):
     quality_admitter(input_quality_policy)
     quality_admitter(target_quality_policy)
     with CachedDevelopmentSession(archive_specs=archive_specs, qualified_index_path=qualified_index_path, weights_path=weights_path,
                                   usgs_paths=usgs_paths, usgs_manifest_path=usgs_manifest_path, cache_directory=cache_directory,
-                                  repair_corrupt=repair_corrupt) as session:
+                                  repair_corrupt=repair_corrupt, usgs_development_exports=usgs_development_exports) as session:
         return session.build(origins_utc=origins_utc, history_hours=history_hours,
                              input_quality_policy=input_quality_policy, target_quality_policy=target_quality_policy)

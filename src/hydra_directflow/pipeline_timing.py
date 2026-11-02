@@ -178,7 +178,7 @@ def estimate_workflow(measurement, *, train_cases, validation_cases, epochs, tri
 def _implementation():
     package = Path(__file__).resolve().parent
     return {name: sha(_local_bytes(package / name, 256 * 1024)) for name in
-            ("pipeline_timing.py", "multicycle.py", "local_data.py", "lineage.py", "quality.py", "contract.py", "reference.py", "telemetry.py",
+            ("pipeline_timing.py", "multicycle.py", "local_data.py", "lineage.py", "quality.py", "development_export.py", "contract.py", "reference.py", "telemetry.py",
              "engineering.py", "models/directflow.py", "models/mamba2_math.py")}
 
 
@@ -187,7 +187,7 @@ def load_builder_request(path):
     raw = _local_bytes(path, 128 * 1024)
     request = json.loads(raw)
     required = {"archive_specs", "qualified_index_path", "weights_path", "usgs_manifest_path", "usgs_paths", "origins_utc", "history_hours"}
-    require(isinstance(request, dict) and set(request) == required, "Exact documented builder request keys required")
+    require(isinstance(request, dict) and required <= set(request) and set(request) <= required | {"usgs_development_exports"}, "Exact documented builder request keys required")
     require(isinstance(request["archive_specs"], list) and request["archive_specs"], "Explicit archive specifications required")
     require(isinstance(request["usgs_paths"], dict) and request["usgs_paths"], "Monthly USGS local path map required")
     def local(value):
@@ -197,6 +197,11 @@ def load_builder_request(path):
     for key in ("qualified_index_path", "weights_path", "usgs_manifest_path"):
         request[key] = local(request[key])
     request["usgs_paths"] = {month: local(value) for month, value in request["usgs_paths"].items()}
+    if "usgs_development_exports" in request:
+        require(isinstance(request["usgs_development_exports"], dict), "Export map required")
+        for reference in request["usgs_development_exports"].values():
+            require(isinstance(reference, dict) and set(reference) == {"directory", "commit_sha256"}, "Pinned export reference required")
+            reference["directory"] = local(reference["directory"])
     for source in request["archive_specs"]:
         require(isinstance(source, dict) and set(source) in ({"cycle_id", "archive_path"}, {"cycle_id", "archive_path", "commit_path"}), "Exact archive specification keys required")
         for key in ("archive_path", "commit_path"):

@@ -32,14 +32,14 @@ def cycle_ids_for_origins(origins):
     return [datetime.fromtimestamp(t, timezone.utc).strftime("%Y%m%d_%HZ") for t in range(first, last + 1, step)]
 
 
-def month_calendar(month, history_hours=168, chunk_hours=120):
+def month_calendar(month, history_hours=168, chunk_hours=120, *, development_export_months=()):
     DevelopmentProtocol(history_hours=history_hours)
     require(isinstance(month, str) and re.fullmatch(r"\d{4}-\d{2}", month), "Explicit YYYY-MM required")
     require(type(chunk_hours) is int and 1 <= chunk_hours <= 128, "Chunk must contain one to 128 origins")
     first = datetime.strptime(month, "%Y-%m").replace(tzinfo=timezone.utc)
     following = first.replace(year=first.year + 1, month=1) if first.month == 12 else first.replace(month=first.month + 1)
     origins = list(range(int(first.timestamp()), int(following.timestamp()), HOUR))
-    months = sorted(_months_for_windows([(origins[0] - (history_hours + 1) * HOUR, origins[-1] + 18 * HOUR)]))
+    months = sorted(_months_for_windows([(origins[0] - (history_hours + 1) * HOUR, origins[-1] + 18 * HOUR)], development_export_months=development_export_months))
     cycles = cycle_ids_for_origins(origins)
     for cycle in cycles:
         cycle_reference(cycle)
@@ -57,12 +57,12 @@ def month_calendar(month, history_hours=168, chunk_hours=120):
 
 def plan_month(request_path, *, month, chunk_hours=120):
     raw, request = load_builder_request(request_path)
-    calendar = month_calendar(month, request["history_hours"], chunk_hours)
+    calendar = month_calendar(month, request["history_hours"], chunk_hours, development_export_months=request.get("usgs_development_exports", {}))
     require(request["origins_utc"] == calendar["origins_utc"], "Request must contain every month origin exactly once")
     supplied = [row["cycle_id"] for row in request["archive_specs"]]
     require(len(set(supplied)) == len(supplied), "Duplicate source cycle")
     missing = sorted(set(calendar["required_cycle_ids"]) - set(supplied))
-    absent_months = sorted(set(calendar["required_usgs_months"]) - set(request["usgs_paths"]))
+    absent_months = sorted(set(calendar["required_usgs_months"]) - set(request["usgs_paths"]) - set(request.get("usgs_development_exports", {})))
     code = implementation_identity()
     code["monthly.py"] = hashlib.sha256(_read(Path(__file__), 256 * 1024)).hexdigest()
     code["pipeline_timing.py"] = hashlib.sha256(_read(Path(__file__).with_name("pipeline_timing.py"), 256 * 1024)).hexdigest()
@@ -144,6 +144,8 @@ def run_month(*, request_path, month, cache_directory, run_directory, chunk_hour
             path.mkdir(exist_ok=True)
             require(not path.is_symlink(), "Month stage must be a real directory")
         shared = {key: request[key] for key in ("archive_specs", "qualified_index_path", "weights_path", "usgs_paths", "usgs_manifest_path")}
+        if "usgs_development_exports" in request:
+            shared["usgs_development_exports"] = request["usgs_development_exports"]
         with CachedDevelopmentSession(**shared, cache_directory=cache_directory) as session:
             for chunk in plan["calendar"]["chunks"]:
                 peak = max(peak, process.memory_info().rss)

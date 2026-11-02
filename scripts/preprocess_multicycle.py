@@ -16,7 +16,7 @@ def load_request(path):
     request = json.loads(path.read_text())
     required = {"archive_specs", "qualified_index_path", "weights_path",
                 "usgs_manifest_path", "usgs_paths", "origins_utc", "history_hours"}
-    if not isinstance(request, dict) or set(request) != required:
+    if not isinstance(request, dict) or not required <= set(request) or not set(request) <= required | {"usgs_development_exports"}:
         raise ValueError("Request must contain exactly the documented builder keys")
     if not isinstance(request["archive_specs"], list) or not request["archive_specs"]:
         raise ValueError("At least one archive specification is required")
@@ -37,6 +37,13 @@ def load_request(path):
             request[key] = local(request[key])
     if "usgs_paths" in request:
         request["usgs_paths"] = {month: local(value) for month, value in request["usgs_paths"].items()}
+    if "usgs_development_exports" in request:
+        if not isinstance(request["usgs_development_exports"], dict):
+            raise ValueError("Export map required")
+        for reference in request["usgs_development_exports"].values():
+            if not isinstance(reference, dict) or set(reference) != {"directory", "commit_sha256"}:
+                raise ValueError("Pinned export reference required")
+            reference["directory"] = local(reference["directory"])
     for spec in request["archive_specs"]:
         for key in ("archive_path", "commit_path"):
             if key in spec:
@@ -94,6 +101,7 @@ def main():
                      Path(__file__).resolve().parents[1] / "src/hydra_directflow/multicycle.py",
                      Path(__file__).resolve().parents[1] / "src/hydra_directflow/local_data.py",
                      Path(__file__).resolve().parents[1] / "src/hydra_directflow/quality.py",
+                     Path(__file__).resolve().parents[1] / "src/hydra_directflow/development_export.py",
                      Path(__file__).resolve().parents[1] / "src/hydra_directflow/lineage.py",
                      Path(__file__).resolve().parents[1] / "src/hydra_directflow/contract.py",
                      Path(__file__).resolve().parents[1] / "src/hydra_directflow/reference.py")}
