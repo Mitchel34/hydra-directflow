@@ -1,0 +1,70 @@
+{
+  "cloud_jobs": 0,
+  "corpus": {
+    "admitted_cases": 146464,
+    "calendar_unavailable_cycle_ids": [
+      "20180711_06Z",
+      "20180711_12Z",
+      "20180711_18Z"
+    ],
+    "candidate_origins": 53028,
+    "chunks_built": 36,
+    "chunks_reused": 441,
+    "completed_cases": 159084,
+    "completed_origins": 53028,
+    "created_at_utc": "2026-11-02T23:21:33.757947+00:00",
+    "elapsed_seconds": 361.9148995409487,
+    "failure": null,
+    "history_hours": 168,
+    "observed_boundary_peak_rss_bytes": 848494592,
+    "optimizer_updates": 0,
+    "plan_sha256": "0dad073824984fd7eeba88e4c313d77b4015dcccb94e8eb27297fcf7c6b39b0f",
+    "post_cache_commit_callback_calls": 681,
+    "protected_assessment_scoring": false,
+    "purged_origins": 36,
+    "qualified_basin_cache_loads": 2663,
+    "raw_files_deleted_by_corpus": false,
+    "requested_origins": 53064,
+    "schema": "hydra-development-corpus/v1",
+    "sealed_index_authentication_passes": 1,
+    "source_calendar_counts": {
+      "PRE_ACQUISITION_WARMUP_UNRESOLVED_WEATHER": 30,
+      "PRE_ACQUISITION_WARMUP_UNRESOLVED_WEATHER_AND_SOIL": 9,
+      "RESOLVED_WITHIN_ACQUIRED_CALENDAR": 159045
+    },
+    "source_provider_calls": 681,
+    "source_transport_budget_owned_by_caller": true,
+    "status": "COMPLETED_DEVELOPMENT_CORPUS",
+    "total_chunks": 477
+  },
+  "created_at_utc": "2026-11-02T23:21:34.125849+00:00",
+  "execution_plan_sha256": "e652a878d8c377eb228a903244449eedcf655a5f225264561e30f3f548bd8153",
+  "owned_usgs_reserved_bytes": 20971520,
+  "protected_scoring": false,
+  "schema": "hydra-development-staging-increment/v1",
+  "scientific_training": false,
+  "transport": {
+    "budget": {
+      "attempt_states": {
+        "FAILED": 4,
+        "VERIFIED": 13067
+      },
+      "attempted_gets": 13071,
+      "billing_invoice_reconciled": false,
+      "body_cap": 107353210880,
+      "conservative_precharge_estimate_usd": 12.907585,
+      "cost_estimate_cap_usd": 35.0,
+      "get_cap": 20000,
+      "observed_body_bytes": 46218766666,
+      "precharged_body_bytes": 46239807442
+    },
+    "cloud_jobs": 0,
+    "cloud_writes": 0,
+    "credential_requests": 1,
+    "local_hits": 504,
+    "network_requests": 858,
+    "objects_downloaded": 858,
+    "owned_raw_files_evicted": 671
+  },
+  "unresolved_native_usgs_months": []
+}

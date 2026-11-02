@@ -1,0 +1,93 @@
+{
+  "archive_payload_schema_counts": {
+    "HRRR-gap-aware-raw-cycle-acquisition/v1": 8422,
+    "HRRR-raw-cycle-acquisition/v1": 419
+  },
+  "binding_route_counts": {
+    "SEALED_INDEX_BUNDLE": 16,
+    "SEALED_INDEX_COMMIT_BUNDLE": 8825
+  },
+  "candidate_cases": 159084,
+  "candidate_origins": 53028,
+  "complete_cycle_count": 8770,
+  "confirmed_gap_cycle_count": 71,
+  "corpus_shards": 477,
+  "created_at_utc": "2026-11-02T23:46:04.599191+00:00",
+  "excluded_outside_calendar_cycle_ids": [
+    "20180711_06Z",
+    "20180711_12Z",
+    "20180711_18Z"
+  ],
+  "execution": {
+    "cloud_jobs": 0,
+    "elapsed_seconds": 13.093185083940625,
+    "metadata_only": true,
+    "network_requests": 0,
+    "numerical_array_bytes_read": 0,
+    "optimizer_updates": 0,
+    "original_metadata_modified": false,
+    "protected_assessment_access": false,
+    "raw_archive_bytes_read": 0
+  },
+  "identities": {
+    "admission_content_sha256": "998b3536b6aaaab37e908a8fcb900bea51d1ae74b1b1f1674850abeb7d55074a",
+    "admission_report_sha256": "da8d75ccd48c624fa15b34dec332b0d0ea29ba94d257d765608750b01691917c",
+    "candidate_weights_sha256": "9eaaf3b221360ed6faaa0376e953fd0c2d0356fb419df96daed9107404283a74",
+    "corpus_implementation_sha256": {
+      "cache.py": "780cedd3d23a3c69d6468979f5f4adfd316dbdea19714118303aa2b38d2308f5",
+      "cache_reuse.py": "ddbf80537f563912dc7eeb4f05671cd17adf21edc020a53ef6551cca6491d470",
+      "contract.py": "e3f1a5e988e02a11da19cc2aec80cfd860e4867d68c14d12bdaba706a85513e8",
+      "corpus.py": "5f2846d008e927ab55e9a6fbc70d5cbe0ea797f3a444bc1d291f60de8ed53080",
+      "development_export.py": "472149f464d5634298ca9ad6d42b17f24270d9d56634226b7b4ab2c58efb0ab5",
+      "eligibility.py": "83c74a7b85e0034f4d829b0d3a9580b55ee5a5c53149602b572abd9356ec6155",
+      "lineage.py": "d0c8a5e0f68c1b0315336f00e93fd1a7469d192d7e78a263eefc481852979a66",
+      "local_data.py": "adb2fe589fe92e1598e7e21f9955af9c9e53fa6eb5266e52dd10f2d12c0d5045",
+      "monthly.py": "d6cefbd824df1581a6f34d83a096010bb8800a98b5197688831fbe75348bb486",
+      "multicycle.py": "6028dbd8374e28a5cfbaea0108ebbdf770e1da66473a111b78f29c5a5a5e1879",
+      "quality.py": "d978db5fa454e040b92544bb9dbbabe332cb575c56d150a2e616e172c33fec31",
+      "reference.py": "7c21deee40c04bc72bc5cfcb190a39792c94ab65115c16ca03da551296575135",
+      "telemetry.py": "50e28d1fcbbde444c6199324155a4114cae77ac2461e4f6b331933a2748e2791"
+    },
+    "corpus_plan_file_sha256": "c1e5b8d475f0f346fea5a2a71a92cb10970df8642ce17ea1ae9eb29ea5c5c7cd",
+    "corpus_plan_sha256": "0dad073824984fd7eeba88e4c313d77b4015dcccb94e8eb27297fcf7c6b39b0f",
+    "corpus_snapshot_sha256": "b41630b7df9a216874eb4ba38a10176d4b72092bd6f1ce2ad4c4f369db56948c",
+    "input_quality_policy": "PRIMARY_APPROVED_A_OPTIONAL_R_V1",
+    "inventory_implementation_sha256": {
+      "scripts/inspect_staging_progress.py": "f88f09e9a178ea9872c6e5397338d0fd78056cc5a0896d12ecd9e0e83a73e9e1",
+      "scripts/inventory_development_sources.py": "fc19f5659bcda5f4f612a6a77959adc7b9374662da545ba4aa309a0f2ee9ce70",
+      "src/hydra_directflow/cache_reuse.py": "ddbf80537f563912dc7eeb4f05671cd17adf21edc020a53ef6551cca6491d470",
+      "src/hydra_directflow/lineage.py": "d0c8a5e0f68c1b0315336f00e93fd1a7469d192d7e78a263eefc481852979a66",
+      "src/hydra_directflow/multicycle.py": "6028dbd8374e28a5cfbaea0108ebbdf770e1da66473a111b78f29c5a5a5e1879"
+    },
+    "qualified_index_bytes": 112202255,
+    "qualified_index_sha256": "75469df20f79d94ffb058f439f1ac873f0cf4164c1417eec7298a6641a35baa5",
+    "staging_plan_file_sha256": "419cbab85776400bf002f5a183e5aa4bfd27c7318485fe2758691696645048fb",
+    "staging_plan_sha256": "fe37385705e184221ad0c9f4f1fb1d8ddcb1e141ccb7e7b14ccc9b186555247b",
+    "target_quality_policy": "PRIMARY_APPROVED_A_OPTIONAL_R_V1",
+    "usgs_manifest_sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a"
+  },
+  "inventory_content_sha256": "14cb6d07587c59ac45126cbd1207476f3298d38c189b4e976b87c8eb0ec2d88e",
+  "per_cycle_archive_bytes": 46942832640,
+  "private_catalog": {
+    "bytes": 38136088,
+    "sha256": "870cc94a4f6f7857ca1dd49d29ae4b37371470a452f2c5e58ac08dfcfa788095"
+  },
+  "producer_identity_counts": {
+    "9f58f6eb9ad78385bfd444515626a98b49e03ba0d83a1cf69be8b35f4fb451ec": 2600,
+    "dcad7c57d253f68e118dd72a7f0b1453ba4ef8a068f6056253f0cb6c55d7ef60": 6241
+  },
+  "producer_local_data_sha256_counts": {
+    "adb2fe589fe92e1598e7e21f9955af9c9e53fa6eb5266e52dd10f2d12c0d5045": 6241,
+    "ed999095fde7e0825426ab499b8a876a25bb04ed752b94d09cc0fc9634a47084": 2600
+  },
+  "qualification": "Exact retained development archive identities from committed lineage, not additional acquisition, current cloud existence, billing reconciliation or scientific admission; numerical payloads were not reverified in this metadata inventory.",
+  "required_cycles": 8841,
+  "resolved_archive_identities": 8841,
+  "schema": "hydra-development-source-final-inventory/v1",
+  "status": "COMPLETE_METADATA_SOURCE_INVENTORY",
+  "unique_archive_bytes": 46942832640,
+  "unique_archive_object_generations": 8841,
+  "unique_archive_sha256_count": 8841,
+  "unique_object_archive_bytes": 46942832640,
+  "unresolved_archive_identities": 0
+}

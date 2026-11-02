@@ -1,0 +1,11 @@
+# Final development source inventory
+
+`scripts/inventory_development_sources.py` resolves the exact retained archive identities used by the completed development corpus. It reads the pinned corpus PLAN, shard COMMIT/case-index files, referenced cache COMMIT/JSON metadata, the sealed index, and authenticated original source commit JSON. It never opens a model/cache NPZ or raw weather archive, contacts storage, hydrates dataless files, or changes original metadata.
+
+The complete snapshot must match the published admission audit. Every required cycle must have one consistent cache key and reuse proof across all shards. The inventory checks the sealed-row, source, weight, policy and reviewed producer-code identities; preserved older cache entries keep their original identity. Missing metadata or conflicting identities stop publication. Original source summaries retain their recorded meaning, including confirmed gaps.
+
+The private catalog includes every source archive URI, generation, SHA256 and exact byte count, plus original commit and cache lineage evidence. The portable report includes its file hash, source and implementation identities, complete/gap counts, producer-version counts and archive totals. `unique_archive_bytes` deduplicates by archive SHA256; the report separately counts object generations and per-cycle bytes. These are retained archive sizes, **not** downloaded body bytes, disk usage or invoiced storage/egress costs.
+
+The public completion artifact is `reports/development-source-final-inventory.json`. Earlier planning reports retain their historical unknown-size estimates. The three pre-acquisition warmup cycles remain explicitly outside the acquired calendar. This inventory closes development-source byte accounting; it does not acquire new data, verify current cloud existence, repeat numerical validation, adopt a scientific cohort, or authorize training or assessment.
+
+All CLI source paths and expected hashes must be supplied explicitly. Use a new `.local/*.json` destination for the private catalog and a new JSON report destination. Outputs are published atomically without overwriting existing reports. A 900-second wall limit bounds the metadata pass.
