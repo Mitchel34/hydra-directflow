@@ -1,0 +1,75 @@
+{
+  "cloud_jobs": 0,
+  "corpus": {
+    "admitted_cases": 105789,
+    "calendar_unavailable_cycle_ids": [
+      "20180711_06Z",
+      "20180711_12Z",
+      "20180711_18Z"
+    ],
+    "candidate_origins": 53028,
+    "chunks_built": 93,
+    "chunks_reused": 248,
+    "completed_cases": 113616,
+    "completed_origins": 37872,
+    "created_at_utc": "2026-11-02T22:55:50.015353+00:00",
+    "elapsed_seconds": 977.0371363339946,
+    "failure": {
+      "cause_type": "URLError",
+      "cycle_id": "20221106_18Z",
+      "error_type": "SourceUnavailable",
+      "source_status": "SOURCE_TRANSPORT_FAILED"
+    },
+    "history_hours": 168,
+    "observed_boundary_peak_rss_bytes": 857325568,
+    "optimizer_updates": 0,
+    "plan_sha256": "0dad073824984fd7eeba88e4c313d77b4015dcccb94e8eb27297fcf7c6b39b0f",
+    "post_cache_commit_callback_calls": 1717,
+    "protected_assessment_scoring": false,
+    "purged_origins": 36,
+    "qualified_basin_cache_loads": 2663,
+    "raw_files_deleted_by_corpus": false,
+    "requested_origins": 53064,
+    "schema": "hydra-development-corpus/v1",
+    "sealed_index_authentication_passes": 1,
+    "source_calendar_counts": {
+      "PRE_ACQUISITION_WARMUP_UNRESOLVED_WEATHER": 30,
+      "PRE_ACQUISITION_WARMUP_UNRESOLVED_WEATHER_AND_SOIL": 9,
+      "RESOLVED_WITHIN_ACQUIRED_CALENDAR": 113577
+    },
+    "source_provider_calls": 1718,
+    "source_transport_budget_owned_by_caller": true,
+    "status": "STOPPED_WITH_EXPLICIT_FAILURE",
+    "total_chunks": 477
+  },
+  "created_at_utc": "2026-11-02T22:55:50.061069+00:00",
+  "execution_plan_sha256": "e652a878d8c377eb228a903244449eedcf655a5f225264561e30f3f548bd8153",
+  "owned_usgs_reserved_bytes": 20971520,
+  "protected_scoring": false,
+  "schema": "hydra-development-staging-increment/v1",
+  "scientific_training": false,
+  "transport": {
+    "budget": {
+      "attempt_states": {
+        "FAILED": 4,
+        "VERIFIED": 10191
+      },
+      "attempted_gets": 10195,
+      "billing_invoice_reconciled": false,
+      "body_cap": 107353210880,
+      "conservative_precharge_estimate_usd": 9.165681,
+      "cost_estimate_cap_usd": 35.0,
+      "get_cap": 20000,
+      "observed_body_bytes": 32587096060,
+      "precharged_body_bytes": 32607258344
+    },
+    "cloud_jobs": 0,
+    "cloud_writes": 0,
+    "credential_requests": 1,
+    "local_hits": 1423,
+    "network_requests": 2015,
+    "objects_downloaded": 2012,
+    "owned_raw_files_evicted": 1691
+  },
+  "unresolved_native_usgs_months": []
+}

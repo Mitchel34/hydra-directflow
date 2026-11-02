@@ -393,3 +393,21 @@ read-only. The earlier failed request remains charged.
 settings and the shared 108-fit final-development core. The 108/180/288 scope
 question remains open. The packet does not freeze choices, enable fitting or
 assessment, launch a cloud job, or send a coauthor message.
+
+## Full admission audit preparation and connection interruption — November 2
+
+The admission-audit script passes 10 focused tests and independent review. Its
+default requires every planned shard. It will report per-gauge/split natural and
+common cohorts, masks/exclusions, weather fallback and soil ages, and broad
+physical-domain diagnostics without changing admission. It emits no discharge
+magnitude summaries and fits no statistics or models. The explicitly partial
+one-shard check covers 360 candidates and 300 complete cases; it is not a full
+corpus qualification. Full execution waits for all 477 shards.
+
+Increment09 reached 341 committed chunks/37,872 origins, then stopped after three
+bounded connection failures for the same pinned `20221106_18Z` archive. The four
+cumulative failed GETs remain charged. A subsequent DNS/TCP/TLS probe passed with
+certificate verification intact and no source GET or credential request.
+Increment10 resumes under the same execution plan and budget. At the stop,
+10,195 attempts reconciled, observed bodies were 32,587,096,060 bytes, and the
+conservative precharge estimate was $9.165681, not an invoice.

@@ -1,0 +1,2740 @@
+{
+  "all_candidate_cases": 360,
+  "audit_content_sha256": "92f120f5a205202d08f0d9664ec8172b297bb67902bcb27593a5a95e8491bf2c",
+  "bounds": {
+    "batch_size": 128,
+    "max_shard_expanded_bytes": 16777216,
+    "max_shards": 1024
+  },
+  "calendar_unavailable_cycle_ids": [
+    "20180711_06Z",
+    "20180711_12Z",
+    "20180711_18Z"
+  ],
+  "counting": {
+    "cells_are_unique_observations": false,
+    "exclusion_dimensions_may_overlap": true,
+    "physical_domain_scope": "MASK_ADMITTED_INPUT_CELLS_WITH_SEPARATE_COMMON_L168_CASE_COUNTS",
+    "unit": "GAUGE_ORIGIN_CASES_AND_REPEATED_TENSOR_CELLS"
+  },
+  "domain_rules": {
+    "precip_mm": ">=0",
+    "soil_fraction": "0..1 inclusive",
+    "specific_humidity": "0..1 inclusive",
+    "swe_kg_m2": ">=0",
+    "temp_k": ">0 K"
+  },
+  "execution": {
+    "derived_discharge_values_decoded_by_existing_validation": true,
+    "discharge_magnitude_summaries_computed": false,
+    "network_requests": 0,
+    "optimizer_updates": 0,
+    "protected_assessment_access": false,
+    "raw_source_reads": 0,
+    "scaler_fits": 0,
+    "scientific_cohort_adopted": false,
+    "source_files_written": false,
+    "upstream_sources_reaudited": false
+  },
+  "implementation_sha256": {
+    "scripts/audit_corpus_admission.py": "2d39b2f14f2f10b9a5d5ab1a3daa450e7cac1631703f8c8884f8016e5eead3e8",
+    "src/hydra_directflow/contract.py": "e3f1a5e988e02a11da19cc2aec80cfd860e4867d68c14d12bdaba706a85513e8",
+    "src/hydra_directflow/corpus_dataset.py": "cc91fc2d8f7da57cac8eb0a123a1209daee1d84a11dc967663c510b661577e84",
+    "src/hydra_directflow/local_data.py": "adb2fe589fe92e1598e7e21f9955af9c9e53fa6eb5266e52dd10f2d12c0d5045",
+    "src/hydra_directflow/multicycle.py": "6028dbd8374e28a5cfbaea0108ebbdf770e1da66473a111b78f29c5a5a5e1879",
+    "src/hydra_directflow/quality.py": "d978db5fa454e040b92544bb9dbbabe332cb575c56d150a2e616e172c33fec31",
+    "src/hydra_directflow/reference.py": "7c21deee40c04bc72bc5cfcb190a39792c94ab65115c16ca03da551296575135"
+  },
+  "physical_domain_review_needed": false,
+  "producer_implementation_sha256": {
+    "cache.py": "780cedd3d23a3c69d6468979f5f4adfd316dbdea19714118303aa2b38d2308f5",
+    "contract.py": "e3f1a5e988e02a11da19cc2aec80cfd860e4867d68c14d12bdaba706a85513e8",
+    "corpus.py": "59e7694ad52b92a5bb36f9a929c6a79630907fff2341e0a5d35bc3f3149a5a55",
+    "development_export.py": "472149f464d5634298ca9ad6d42b17f24270d9d56634226b7b4ab2c58efb0ab5",
+    "eligibility.py": "83c74a7b85e0034f4d829b0d3a9580b55ee5a5c53149602b572abd9356ec6155",
+    "lineage.py": "d0c8a5e0f68c1b0315336f00e93fd1a7469d192d7e78a263eefc481852979a66",
+    "local_data.py": "ed999095fde7e0825426ab499b8a876a25bb04ed752b94d09cc0fc9634a47084",
+    "monthly.py": "d6cefbd824df1581a6f34d83a096010bb8800a98b5197688831fbe75348bb486",
+    "multicycle.py": "6028dbd8374e28a5cfbaea0108ebbdf770e1da66473a111b78f29c5a5a5e1879",
+    "quality.py": "d978db5fa454e040b92544bb9dbbabe332cb575c56d150a2e616e172c33fec31",
+    "reference.py": "7c21deee40c04bc72bc5cfcb190a39792c94ab65115c16ca03da551296575135",
+    "telemetry.py": "50e28d1fcbbde444c6199324155a4114cae77ac2461e4f6b331933a2748e2791"
+  },
+  "quality": {
+    "input_policy": "PRIMARY_APPROVED_A_OPTIONAL_R_V1",
+    "original_flags_reconstructed": false,
+    "target_policy": "PRIMARY_APPROVED_A_OPTIONAL_R_V1"
+  },
+  "results": [
+    {
+      "batch_reads": 1,
+      "candidate_cases": 120,
+      "candidate_counts": {
+        "all_candidates": 120,
+        "common_L168": 100,
+        "common_L24": 100,
+        "natural_L168": 100,
+        "natural_L24": 100
+      },
+      "candidate_selections": {
+        "all_candidates": {
+          "case_count": 120,
+          "cohort_admission_digest": "d200461c370411ff4fb94b5aa4671ab032765e66d70128c561944c2cd82f746a",
+          "cohort_mode": "all_candidates",
+          "final_scientific_cohort": false,
+          "gauge_id": "03161000",
+          "history_hours": 168,
+          "selection_digest": "f6f30303c16efa2cbb82da15317986ccd0547edd4697b27b4881117c8653d0c7",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_training",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "common_L168": {
+          "case_count": 100,
+          "cohort_admission_digest": "947c330f0d9e709b15e4932705389b2dced7decb9f7dd9e6812de14d9a07dac9",
+          "cohort_mode": "common_l168_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03161000",
+          "history_hours": 168,
+          "selection_digest": "8cebd04a048000ac5999c6276a81b17aebd26f8019a1e4a6a34e1ef3271017c2",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_training",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "common_L24": {
+          "case_count": 100,
+          "cohort_admission_digest": "947c330f0d9e709b15e4932705389b2dced7decb9f7dd9e6812de14d9a07dac9",
+          "cohort_mode": "common_l168_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03161000",
+          "history_hours": 24,
+          "selection_digest": "aba72bde4df7e277060c86be4b3268d469abe8fb665c1e7ccf0fdf86c1bd2766",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_training",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "natural_L168": {
+          "case_count": 100,
+          "cohort_admission_digest": "947c330f0d9e709b15e4932705389b2dced7decb9f7dd9e6812de14d9a07dac9",
+          "cohort_mode": "natural_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03161000",
+          "history_hours": 168,
+          "selection_digest": "5d4de9ad309582de6745c3614eab26b0305a882b158aeeca0956cc767462ba7b",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_training",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "natural_L24": {
+          "case_count": 100,
+          "cohort_admission_digest": "947c330f0d9e709b15e4932705389b2dced7decb9f7dd9e6812de14d9a07dac9",
+          "cohort_mode": "natural_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03161000",
+          "history_hours": 24,
+          "selection_digest": "b430255816813b81d9d56ed1e9477098578ebff201deeb8452803bf8bac2242f",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_training",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        }
+      },
+      "gauge_id": "03161000",
+      "mask_counts": {
+        "history_L168_age_hours": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 20160,
+          "total_cells": 20160
+        },
+        "history_L168_discharge": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 20160,
+          "total_cells": 20160
+        },
+        "history_L24_age_hours": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 2880,
+          "total_cells": 2880
+        },
+        "history_L24_discharge": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 2880,
+          "total_cells": 2880
+        },
+        "precip_mm": {
+          "complete_cases": 100,
+          "missing_cells": 360,
+          "observed_cells": 1800,
+          "total_cells": 2160
+        },
+        "soil_age_hours": {
+          "complete_cases": 100,
+          "missing_cells": 20,
+          "observed_cells": 100,
+          "total_cells": 120
+        },
+        "soil_fraction": {
+          "complete_cases": 100,
+          "missing_cells": 20,
+          "observed_cells": 100,
+          "total_cells": 120
+        },
+        "specific_humidity": {
+          "complete_cases": 100,
+          "missing_cells": 360,
+          "observed_cells": 1800,
+          "total_cells": 2160
+        },
+        "swe_kg_m2": {
+          "complete_cases": 100,
+          "missing_cells": 360,
+          "observed_cells": 1800,
+          "total_cells": 2160
+        },
+        "target": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 2160,
+          "total_cells": 2160
+        },
+        "target_H01": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H02": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H03": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H04": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H05": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H06": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H07": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H08": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H09": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H10": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H11": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H12": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H13": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H14": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H15": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H16": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H17": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H18": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "temp_k": {
+          "complete_cases": 100,
+          "missing_cells": 360,
+          "observed_cells": 1800,
+          "total_cells": 2160
+        }
+      },
+      "natural_L24_cases_rescued_from_L168": 0,
+      "outside_calendar_warmup": {
+        "soil_unresolved_cases": 3,
+        "unresolved_cases": 13,
+        "weather_unresolved_cases": 13
+      },
+      "physical_domain_diagnostics": {
+        "precip_mm": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 1800,
+          "violation_cells": 0
+        },
+        "soil_fraction": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 100,
+          "violation_cells": 0
+        },
+        "specific_humidity": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 1800,
+          "violation_cells": 0
+        },
+        "swe_kg_m2": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 1800,
+          "violation_cells": 0
+        },
+        "temp_k": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 1800,
+          "violation_cells": 0
+        }
+      },
+      "physical_domain_review_needed": false,
+      "soil": {
+        "age_hours_counts": {
+          "2": 17,
+          "3": 17,
+          "4": 17,
+          "5": 17,
+          "6": 16,
+          "7": 16
+        },
+        "differs_from_weather_cycle_cases": 0,
+        "observed_cases": 100,
+        "selected_cycle_cases": 100,
+        "selected_cycle_without_observation_cases": 0,
+        "unavailable_cases": 20
+      },
+      "source_calendar_counts": {
+        "PRE_ACQUISITION_WARMUP_UNRESOLVED_WEATHER": 10,
+        "PRE_ACQUISITION_WARMUP_UNRESOLVED_WEATHER_AND_SOIL": 3,
+        "RESOLVED_WITHIN_ACQUIRED_CALENDAR": 107
+      },
+      "source_eligibility_counts": {
+        "COMPLETE": 100,
+        "NO_COMPLETE_SINGLE_WEATHER_RUN|SOIL_UNAVAILABLE_OR_STALE": 20
+      },
+      "split": "candidate_training",
+      "view_exclusion_dimensions": {
+        "L168": {
+          "HISTORY_INCOMPLETE": 0,
+          "NO_COMPLETE_SINGLE_WEATHER_RUN": 20,
+          "SOIL_UNAVAILABLE_OR_STALE": 20,
+          "TARGET_INCOMPLETE": 0
+        },
+        "L24": {
+          "HISTORY_INCOMPLETE": 0,
+          "NO_COMPLETE_SINGLE_WEATHER_RUN": 20,
+          "SOIL_UNAVAILABLE_OR_STALE": 20,
+          "TARGET_INCOMPLETE": 0
+        }
+      },
+      "view_reason_counts": {
+        "L168": {
+          "COMPLETE": 100,
+          "NO_COMPLETE_SINGLE_WEATHER_RUN|SOIL_UNAVAILABLE_OR_STALE": 20
+        },
+        "L24": {
+          "COMPLETE": 100,
+          "NO_COMPLETE_SINGLE_WEATHER_RUN|SOIL_UNAVAILABLE_OR_STALE": 20
+        }
+      },
+      "weather": {
+        "age_hours_counts": {
+          "2": 17,
+          "3": 17,
+          "4": 17,
+          "5": 17,
+          "6": 16,
+          "7": 16
+        },
+        "common_l168_older_than_nominal_cases": 0,
+        "common_l168_selected_cases": 100,
+        "first_native_lead_counts": {
+          "3": 17,
+          "4": 17,
+          "5": 17,
+          "6": 17,
+          "7": 16,
+          "8": 16
+        },
+        "last_native_lead_counts": {
+          "20": 17,
+          "21": 17,
+          "22": 17,
+          "23": 17,
+          "24": 16,
+          "25": 16
+        },
+        "latest_nominal_cases": 100,
+        "nominal_cycle_before_acquisition_cases": 2,
+        "older_by_hours_counts": {},
+        "older_than_latest_nominal_cases": 0,
+        "selected_cases": 100,
+        "unavailable_cases": 20
+      }
+    },
+    {
+      "batch_reads": 1,
+      "candidate_cases": 120,
+      "candidate_counts": {
+        "all_candidates": 120,
+        "common_L168": 100,
+        "common_L24": 100,
+        "natural_L168": 100,
+        "natural_L24": 100
+      },
+      "candidate_selections": {
+        "all_candidates": {
+          "case_count": 120,
+          "cohort_admission_digest": "7d1230c31098edcf7fc930d7e949d985cbd690f6e500cf9886eb4e1cb2acd4af",
+          "cohort_mode": "all_candidates",
+          "final_scientific_cohort": false,
+          "gauge_id": "03164000",
+          "history_hours": 168,
+          "selection_digest": "1fd01141d0683282d498332dbcc9ef75c75d211f1f1711c47d82d62ac84bab8f",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_training",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "common_L168": {
+          "case_count": 100,
+          "cohort_admission_digest": "b1250334e0ee656105fac125f31965b2157e73cac367fe63184fe0aa98425123",
+          "cohort_mode": "common_l168_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03164000",
+          "history_hours": 168,
+          "selection_digest": "646c48c8371b89b6cf9e2deb37b8317737395b783ee6fe2612d5438b79e71da2",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_training",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "common_L24": {
+          "case_count": 100,
+          "cohort_admission_digest": "b1250334e0ee656105fac125f31965b2157e73cac367fe63184fe0aa98425123",
+          "cohort_mode": "common_l168_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03164000",
+          "history_hours": 24,
+          "selection_digest": "3f1beb1b90259903bd7c47983e79bd60da9543bad30020cb573dd1311f7cdb06",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_training",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "natural_L168": {
+          "case_count": 100,
+          "cohort_admission_digest": "b1250334e0ee656105fac125f31965b2157e73cac367fe63184fe0aa98425123",
+          "cohort_mode": "natural_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03164000",
+          "history_hours": 168,
+          "selection_digest": "e4eac37d57c64936adb659b5c8ac97a024f76c693729c3d3c166c1d04e2aaae3",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_training",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "natural_L24": {
+          "case_count": 100,
+          "cohort_admission_digest": "b1250334e0ee656105fac125f31965b2157e73cac367fe63184fe0aa98425123",
+          "cohort_mode": "natural_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03164000",
+          "history_hours": 24,
+          "selection_digest": "0524d381f436ae13a59399c9f59af08724df4998360fa2f3f73b228e4ddd0d88",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_training",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        }
+      },
+      "gauge_id": "03164000",
+      "mask_counts": {
+        "history_L168_age_hours": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 20160,
+          "total_cells": 20160
+        },
+        "history_L168_discharge": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 20160,
+          "total_cells": 20160
+        },
+        "history_L24_age_hours": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 2880,
+          "total_cells": 2880
+        },
+        "history_L24_discharge": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 2880,
+          "total_cells": 2880
+        },
+        "precip_mm": {
+          "complete_cases": 100,
+          "missing_cells": 360,
+          "observed_cells": 1800,
+          "total_cells": 2160
+        },
+        "soil_age_hours": {
+          "complete_cases": 100,
+          "missing_cells": 20,
+          "observed_cells": 100,
+          "total_cells": 120
+        },
+        "soil_fraction": {
+          "complete_cases": 100,
+          "missing_cells": 20,
+          "observed_cells": 100,
+          "total_cells": 120
+        },
+        "specific_humidity": {
+          "complete_cases": 100,
+          "missing_cells": 360,
+          "observed_cells": 1800,
+          "total_cells": 2160
+        },
+        "swe_kg_m2": {
+          "complete_cases": 100,
+          "missing_cells": 360,
+          "observed_cells": 1800,
+          "total_cells": 2160
+        },
+        "target": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 2160,
+          "total_cells": 2160
+        },
+        "target_H01": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H02": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H03": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H04": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H05": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H06": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H07": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H08": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H09": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H10": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H11": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H12": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H13": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H14": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H15": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H16": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H17": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H18": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "temp_k": {
+          "complete_cases": 100,
+          "missing_cells": 360,
+          "observed_cells": 1800,
+          "total_cells": 2160
+        }
+      },
+      "natural_L24_cases_rescued_from_L168": 0,
+      "outside_calendar_warmup": {
+        "soil_unresolved_cases": 3,
+        "unresolved_cases": 13,
+        "weather_unresolved_cases": 13
+      },
+      "physical_domain_diagnostics": {
+        "precip_mm": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 1800,
+          "violation_cells": 0
+        },
+        "soil_fraction": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 100,
+          "violation_cells": 0
+        },
+        "specific_humidity": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 1800,
+          "violation_cells": 0
+        },
+        "swe_kg_m2": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 1800,
+          "violation_cells": 0
+        },
+        "temp_k": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 1800,
+          "violation_cells": 0
+        }
+      },
+      "physical_domain_review_needed": false,
+      "soil": {
+        "age_hours_counts": {
+          "2": 17,
+          "3": 17,
+          "4": 17,
+          "5": 17,
+          "6": 16,
+          "7": 16
+        },
+        "differs_from_weather_cycle_cases": 0,
+        "observed_cases": 100,
+        "selected_cycle_cases": 100,
+        "selected_cycle_without_observation_cases": 0,
+        "unavailable_cases": 20
+      },
+      "source_calendar_counts": {
+        "PRE_ACQUISITION_WARMUP_UNRESOLVED_WEATHER": 10,
+        "PRE_ACQUISITION_WARMUP_UNRESOLVED_WEATHER_AND_SOIL": 3,
+        "RESOLVED_WITHIN_ACQUIRED_CALENDAR": 107
+      },
+      "source_eligibility_counts": {
+        "COMPLETE": 100,
+        "NO_COMPLETE_SINGLE_WEATHER_RUN|SOIL_UNAVAILABLE_OR_STALE": 20
+      },
+      "split": "candidate_training",
+      "view_exclusion_dimensions": {
+        "L168": {
+          "HISTORY_INCOMPLETE": 0,
+          "NO_COMPLETE_SINGLE_WEATHER_RUN": 20,
+          "SOIL_UNAVAILABLE_OR_STALE": 20,
+          "TARGET_INCOMPLETE": 0
+        },
+        "L24": {
+          "HISTORY_INCOMPLETE": 0,
+          "NO_COMPLETE_SINGLE_WEATHER_RUN": 20,
+          "SOIL_UNAVAILABLE_OR_STALE": 20,
+          "TARGET_INCOMPLETE": 0
+        }
+      },
+      "view_reason_counts": {
+        "L168": {
+          "COMPLETE": 100,
+          "NO_COMPLETE_SINGLE_WEATHER_RUN|SOIL_UNAVAILABLE_OR_STALE": 20
+        },
+        "L24": {
+          "COMPLETE": 100,
+          "NO_COMPLETE_SINGLE_WEATHER_RUN|SOIL_UNAVAILABLE_OR_STALE": 20
+        }
+      },
+      "weather": {
+        "age_hours_counts": {
+          "2": 17,
+          "3": 17,
+          "4": 17,
+          "5": 17,
+          "6": 16,
+          "7": 16
+        },
+        "common_l168_older_than_nominal_cases": 0,
+        "common_l168_selected_cases": 100,
+        "first_native_lead_counts": {
+          "3": 17,
+          "4": 17,
+          "5": 17,
+          "6": 17,
+          "7": 16,
+          "8": 16
+        },
+        "last_native_lead_counts": {
+          "20": 17,
+          "21": 17,
+          "22": 17,
+          "23": 17,
+          "24": 16,
+          "25": 16
+        },
+        "latest_nominal_cases": 100,
+        "nominal_cycle_before_acquisition_cases": 2,
+        "older_by_hours_counts": {},
+        "older_than_latest_nominal_cases": 0,
+        "selected_cases": 100,
+        "unavailable_cases": 20
+      }
+    },
+    {
+      "batch_reads": 1,
+      "candidate_cases": 120,
+      "candidate_counts": {
+        "all_candidates": 120,
+        "common_L168": 100,
+        "common_L24": 100,
+        "natural_L168": 100,
+        "natural_L24": 100
+      },
+      "candidate_selections": {
+        "all_candidates": {
+          "case_count": 120,
+          "cohort_admission_digest": "17c8a631e2f853655cbdf3e6966de89f9071f7d6d0d56cd1cc6fd9f5c89f89f2",
+          "cohort_mode": "all_candidates",
+          "final_scientific_cohort": false,
+          "gauge_id": "03479000",
+          "history_hours": 168,
+          "selection_digest": "bdf315f47ef4a20cd9458cd2b803773d294d9fcf5fbc9652cb487fccfa01e1d3",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_training",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "common_L168": {
+          "case_count": 100,
+          "cohort_admission_digest": "f4ad3e1936e25b065e67363923d9fca0f6ff3eb78e3b3ecf1923686a14f71a67",
+          "cohort_mode": "common_l168_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03479000",
+          "history_hours": 168,
+          "selection_digest": "6b0af0f529c9f3c6ff13c3531aec466b6889e97bbf32aa2c4e1871796ac62648",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_training",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "common_L24": {
+          "case_count": 100,
+          "cohort_admission_digest": "f4ad3e1936e25b065e67363923d9fca0f6ff3eb78e3b3ecf1923686a14f71a67",
+          "cohort_mode": "common_l168_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03479000",
+          "history_hours": 24,
+          "selection_digest": "c23626c3b4dc23fb985ed5eb615f38676f8e6e079a5dc72fd67ac08b860edebb",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_training",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "natural_L168": {
+          "case_count": 100,
+          "cohort_admission_digest": "f4ad3e1936e25b065e67363923d9fca0f6ff3eb78e3b3ecf1923686a14f71a67",
+          "cohort_mode": "natural_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03479000",
+          "history_hours": 168,
+          "selection_digest": "c579c3c2460bdb71b9470fab5802cb69fa1bea30b544b26908704729ec8b62ad",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_training",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "natural_L24": {
+          "case_count": 100,
+          "cohort_admission_digest": "f4ad3e1936e25b065e67363923d9fca0f6ff3eb78e3b3ecf1923686a14f71a67",
+          "cohort_mode": "natural_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03479000",
+          "history_hours": 24,
+          "selection_digest": "2e5deb0d0c60d8c284e013eeb9efdcb738fd5a0d3db87c81fbaf93e7785682bb",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_training",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        }
+      },
+      "gauge_id": "03479000",
+      "mask_counts": {
+        "history_L168_age_hours": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 20160,
+          "total_cells": 20160
+        },
+        "history_L168_discharge": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 20160,
+          "total_cells": 20160
+        },
+        "history_L24_age_hours": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 2880,
+          "total_cells": 2880
+        },
+        "history_L24_discharge": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 2880,
+          "total_cells": 2880
+        },
+        "precip_mm": {
+          "complete_cases": 100,
+          "missing_cells": 360,
+          "observed_cells": 1800,
+          "total_cells": 2160
+        },
+        "soil_age_hours": {
+          "complete_cases": 100,
+          "missing_cells": 20,
+          "observed_cells": 100,
+          "total_cells": 120
+        },
+        "soil_fraction": {
+          "complete_cases": 100,
+          "missing_cells": 20,
+          "observed_cells": 100,
+          "total_cells": 120
+        },
+        "specific_humidity": {
+          "complete_cases": 100,
+          "missing_cells": 360,
+          "observed_cells": 1800,
+          "total_cells": 2160
+        },
+        "swe_kg_m2": {
+          "complete_cases": 100,
+          "missing_cells": 360,
+          "observed_cells": 1800,
+          "total_cells": 2160
+        },
+        "target": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 2160,
+          "total_cells": 2160
+        },
+        "target_H01": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H02": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H03": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H04": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H05": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H06": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H07": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H08": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H09": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H10": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H11": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H12": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H13": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H14": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H15": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H16": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H17": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "target_H18": {
+          "complete_cases": 120,
+          "missing_cells": 0,
+          "observed_cells": 120,
+          "total_cells": 120
+        },
+        "temp_k": {
+          "complete_cases": 100,
+          "missing_cells": 360,
+          "observed_cells": 1800,
+          "total_cells": 2160
+        }
+      },
+      "natural_L24_cases_rescued_from_L168": 0,
+      "outside_calendar_warmup": {
+        "soil_unresolved_cases": 3,
+        "unresolved_cases": 13,
+        "weather_unresolved_cases": 13
+      },
+      "physical_domain_diagnostics": {
+        "precip_mm": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 1800,
+          "violation_cells": 0
+        },
+        "soil_fraction": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 100,
+          "violation_cells": 0
+        },
+        "specific_humidity": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 1800,
+          "violation_cells": 0
+        },
+        "swe_kg_m2": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 1800,
+          "violation_cells": 0
+        },
+        "temp_k": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 1800,
+          "violation_cells": 0
+        }
+      },
+      "physical_domain_review_needed": false,
+      "soil": {
+        "age_hours_counts": {
+          "2": 17,
+          "3": 17,
+          "4": 17,
+          "5": 17,
+          "6": 16,
+          "7": 16
+        },
+        "differs_from_weather_cycle_cases": 0,
+        "observed_cases": 100,
+        "selected_cycle_cases": 100,
+        "selected_cycle_without_observation_cases": 0,
+        "unavailable_cases": 20
+      },
+      "source_calendar_counts": {
+        "PRE_ACQUISITION_WARMUP_UNRESOLVED_WEATHER": 10,
+        "PRE_ACQUISITION_WARMUP_UNRESOLVED_WEATHER_AND_SOIL": 3,
+        "RESOLVED_WITHIN_ACQUIRED_CALENDAR": 107
+      },
+      "source_eligibility_counts": {
+        "COMPLETE": 100,
+        "NO_COMPLETE_SINGLE_WEATHER_RUN|SOIL_UNAVAILABLE_OR_STALE": 20
+      },
+      "split": "candidate_training",
+      "view_exclusion_dimensions": {
+        "L168": {
+          "HISTORY_INCOMPLETE": 0,
+          "NO_COMPLETE_SINGLE_WEATHER_RUN": 20,
+          "SOIL_UNAVAILABLE_OR_STALE": 20,
+          "TARGET_INCOMPLETE": 0
+        },
+        "L24": {
+          "HISTORY_INCOMPLETE": 0,
+          "NO_COMPLETE_SINGLE_WEATHER_RUN": 20,
+          "SOIL_UNAVAILABLE_OR_STALE": 20,
+          "TARGET_INCOMPLETE": 0
+        }
+      },
+      "view_reason_counts": {
+        "L168": {
+          "COMPLETE": 100,
+          "NO_COMPLETE_SINGLE_WEATHER_RUN|SOIL_UNAVAILABLE_OR_STALE": 20
+        },
+        "L24": {
+          "COMPLETE": 100,
+          "NO_COMPLETE_SINGLE_WEATHER_RUN|SOIL_UNAVAILABLE_OR_STALE": 20
+        }
+      },
+      "weather": {
+        "age_hours_counts": {
+          "2": 17,
+          "3": 17,
+          "4": 17,
+          "5": 17,
+          "6": 16,
+          "7": 16
+        },
+        "common_l168_older_than_nominal_cases": 0,
+        "common_l168_selected_cases": 100,
+        "first_native_lead_counts": {
+          "3": 17,
+          "4": 17,
+          "5": 17,
+          "6": 17,
+          "7": 16,
+          "8": 16
+        },
+        "last_native_lead_counts": {
+          "20": 17,
+          "21": 17,
+          "22": 17,
+          "23": 17,
+          "24": 16,
+          "25": 16
+        },
+        "latest_nominal_cases": 100,
+        "nominal_cycle_before_acquisition_cases": 2,
+        "older_by_hours_counts": {},
+        "older_than_latest_nominal_cases": 0,
+        "selected_cases": 100,
+        "unavailable_cases": 20
+      }
+    },
+    {
+      "batch_reads": 0,
+      "candidate_cases": 0,
+      "candidate_counts": {
+        "all_candidates": 0,
+        "common_L168": 0,
+        "common_L24": 0,
+        "natural_L168": 0,
+        "natural_L24": 0
+      },
+      "candidate_selections": {
+        "all_candidates": {
+          "case_count": 0,
+          "cohort_admission_digest": "6bcfad3af2193214f6f85df1158b74aca0922903c6573b275a01a52c1588deff",
+          "cohort_mode": "all_candidates",
+          "final_scientific_cohort": false,
+          "gauge_id": "03161000",
+          "history_hours": 168,
+          "selection_digest": "2fd3412e791ff5ba242de37c0078cf1888c766b52179ba74fb6a34ba04d4e7c7",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_validation",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "common_L168": {
+          "case_count": 0,
+          "cohort_admission_digest": "6bcfad3af2193214f6f85df1158b74aca0922903c6573b275a01a52c1588deff",
+          "cohort_mode": "common_l168_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03161000",
+          "history_hours": 168,
+          "selection_digest": "52a276288789367f12b3ad7c7746a03768855d487137836dcff7ec6b9dabc54c",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_validation",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "common_L24": {
+          "case_count": 0,
+          "cohort_admission_digest": "6bcfad3af2193214f6f85df1158b74aca0922903c6573b275a01a52c1588deff",
+          "cohort_mode": "common_l168_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03161000",
+          "history_hours": 24,
+          "selection_digest": "a1982a7510d16bb2e902feef6927299d3146e44927ffd42d3ec6fdb49d56edd1",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_validation",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "natural_L168": {
+          "case_count": 0,
+          "cohort_admission_digest": "6bcfad3af2193214f6f85df1158b74aca0922903c6573b275a01a52c1588deff",
+          "cohort_mode": "natural_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03161000",
+          "history_hours": 168,
+          "selection_digest": "317b97a36eae6ae82a9aa4f00e1c82306cde0f653b310a9d816ccdb32646cfb8",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_validation",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "natural_L24": {
+          "case_count": 0,
+          "cohort_admission_digest": "6bcfad3af2193214f6f85df1158b74aca0922903c6573b275a01a52c1588deff",
+          "cohort_mode": "natural_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03161000",
+          "history_hours": 24,
+          "selection_digest": "3000c9cd480ace6a7f07f04b60fa0efbf9520d676156547671cc4f339a91bf05",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_validation",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        }
+      },
+      "gauge_id": "03161000",
+      "mask_counts": {
+        "history_L168_age_hours": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "history_L168_discharge": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "history_L24_age_hours": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "history_L24_discharge": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "precip_mm": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "soil_age_hours": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "soil_fraction": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "specific_humidity": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "swe_kg_m2": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H01": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H02": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H03": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H04": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H05": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H06": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H07": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H08": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H09": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H10": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H11": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H12": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H13": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H14": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H15": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H16": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H17": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H18": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "temp_k": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        }
+      },
+      "natural_L24_cases_rescued_from_L168": 0,
+      "outside_calendar_warmup": {
+        "soil_unresolved_cases": 0,
+        "unresolved_cases": 0,
+        "weather_unresolved_cases": 0
+      },
+      "physical_domain_diagnostics": {
+        "precip_mm": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 0,
+          "violation_cells": 0
+        },
+        "soil_fraction": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 0,
+          "violation_cells": 0
+        },
+        "specific_humidity": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 0,
+          "violation_cells": 0
+        },
+        "swe_kg_m2": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 0,
+          "violation_cells": 0
+        },
+        "temp_k": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 0,
+          "violation_cells": 0
+        }
+      },
+      "physical_domain_review_needed": false,
+      "soil": {
+        "age_hours_counts": {},
+        "differs_from_weather_cycle_cases": 0,
+        "observed_cases": 0,
+        "selected_cycle_cases": 0,
+        "selected_cycle_without_observation_cases": 0,
+        "unavailable_cases": 0
+      },
+      "source_calendar_counts": {},
+      "source_eligibility_counts": {},
+      "split": "candidate_validation",
+      "view_exclusion_dimensions": {
+        "L168": {},
+        "L24": {}
+      },
+      "view_reason_counts": {
+        "L168": {},
+        "L24": {}
+      },
+      "weather": {
+        "age_hours_counts": {},
+        "common_l168_older_than_nominal_cases": 0,
+        "common_l168_selected_cases": 0,
+        "first_native_lead_counts": {},
+        "last_native_lead_counts": {},
+        "latest_nominal_cases": 0,
+        "nominal_cycle_before_acquisition_cases": 0,
+        "older_by_hours_counts": {},
+        "older_than_latest_nominal_cases": 0,
+        "selected_cases": 0,
+        "unavailable_cases": 0
+      }
+    },
+    {
+      "batch_reads": 0,
+      "candidate_cases": 0,
+      "candidate_counts": {
+        "all_candidates": 0,
+        "common_L168": 0,
+        "common_L24": 0,
+        "natural_L168": 0,
+        "natural_L24": 0
+      },
+      "candidate_selections": {
+        "all_candidates": {
+          "case_count": 0,
+          "cohort_admission_digest": "04c839e0a204ffc7b19877d01f83d0ea7bf61f497b36a44ede2a83dafc551b4a",
+          "cohort_mode": "all_candidates",
+          "final_scientific_cohort": false,
+          "gauge_id": "03164000",
+          "history_hours": 168,
+          "selection_digest": "09084314bb2a1fee63ccff9342f19aa3d11b482c4e735f1a60539fac465bb9d9",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_validation",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "common_L168": {
+          "case_count": 0,
+          "cohort_admission_digest": "04c839e0a204ffc7b19877d01f83d0ea7bf61f497b36a44ede2a83dafc551b4a",
+          "cohort_mode": "common_l168_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03164000",
+          "history_hours": 168,
+          "selection_digest": "106c272be24b7829ead04400397f55afe966e483aa53d0d00dc5a2f3dfcb9e42",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_validation",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "common_L24": {
+          "case_count": 0,
+          "cohort_admission_digest": "04c839e0a204ffc7b19877d01f83d0ea7bf61f497b36a44ede2a83dafc551b4a",
+          "cohort_mode": "common_l168_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03164000",
+          "history_hours": 24,
+          "selection_digest": "ae903564f655405c740a7de320e607a7736a95d993785cb412170fa98fcceac1",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_validation",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "natural_L168": {
+          "case_count": 0,
+          "cohort_admission_digest": "04c839e0a204ffc7b19877d01f83d0ea7bf61f497b36a44ede2a83dafc551b4a",
+          "cohort_mode": "natural_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03164000",
+          "history_hours": 168,
+          "selection_digest": "fd8edb9d309fbf9424139480e4ec5a4ff684d255396e13ac1b2ad95d961ec6a7",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_validation",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "natural_L24": {
+          "case_count": 0,
+          "cohort_admission_digest": "04c839e0a204ffc7b19877d01f83d0ea7bf61f497b36a44ede2a83dafc551b4a",
+          "cohort_mode": "natural_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03164000",
+          "history_hours": 24,
+          "selection_digest": "03e1491718d47fdd49c62b02205de3be1bdf79371a4eb0a221c3ffba4283d5bd",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_validation",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        }
+      },
+      "gauge_id": "03164000",
+      "mask_counts": {
+        "history_L168_age_hours": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "history_L168_discharge": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "history_L24_age_hours": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "history_L24_discharge": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "precip_mm": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "soil_age_hours": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "soil_fraction": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "specific_humidity": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "swe_kg_m2": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H01": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H02": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H03": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H04": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H05": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H06": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H07": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H08": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H09": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H10": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H11": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H12": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H13": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H14": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H15": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H16": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H17": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H18": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "temp_k": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        }
+      },
+      "natural_L24_cases_rescued_from_L168": 0,
+      "outside_calendar_warmup": {
+        "soil_unresolved_cases": 0,
+        "unresolved_cases": 0,
+        "weather_unresolved_cases": 0
+      },
+      "physical_domain_diagnostics": {
+        "precip_mm": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 0,
+          "violation_cells": 0
+        },
+        "soil_fraction": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 0,
+          "violation_cells": 0
+        },
+        "specific_humidity": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 0,
+          "violation_cells": 0
+        },
+        "swe_kg_m2": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 0,
+          "violation_cells": 0
+        },
+        "temp_k": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 0,
+          "violation_cells": 0
+        }
+      },
+      "physical_domain_review_needed": false,
+      "soil": {
+        "age_hours_counts": {},
+        "differs_from_weather_cycle_cases": 0,
+        "observed_cases": 0,
+        "selected_cycle_cases": 0,
+        "selected_cycle_without_observation_cases": 0,
+        "unavailable_cases": 0
+      },
+      "source_calendar_counts": {},
+      "source_eligibility_counts": {},
+      "split": "candidate_validation",
+      "view_exclusion_dimensions": {
+        "L168": {},
+        "L24": {}
+      },
+      "view_reason_counts": {
+        "L168": {},
+        "L24": {}
+      },
+      "weather": {
+        "age_hours_counts": {},
+        "common_l168_older_than_nominal_cases": 0,
+        "common_l168_selected_cases": 0,
+        "first_native_lead_counts": {},
+        "last_native_lead_counts": {},
+        "latest_nominal_cases": 0,
+        "nominal_cycle_before_acquisition_cases": 0,
+        "older_by_hours_counts": {},
+        "older_than_latest_nominal_cases": 0,
+        "selected_cases": 0,
+        "unavailable_cases": 0
+      }
+    },
+    {
+      "batch_reads": 0,
+      "candidate_cases": 0,
+      "candidate_counts": {
+        "all_candidates": 0,
+        "common_L168": 0,
+        "common_L24": 0,
+        "natural_L168": 0,
+        "natural_L24": 0
+      },
+      "candidate_selections": {
+        "all_candidates": {
+          "case_count": 0,
+          "cohort_admission_digest": "846358e08e1bd7cacdb64defd3d5ad40c3cb03be685edf6a4afce572d09bca86",
+          "cohort_mode": "all_candidates",
+          "final_scientific_cohort": false,
+          "gauge_id": "03479000",
+          "history_hours": 168,
+          "selection_digest": "eb6e78ea5f0c8f0367ccdaa80603347ecaf3b8779f52e82d893e0e0e571cd65e",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_validation",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "common_L168": {
+          "case_count": 0,
+          "cohort_admission_digest": "846358e08e1bd7cacdb64defd3d5ad40c3cb03be685edf6a4afce572d09bca86",
+          "cohort_mode": "common_l168_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03479000",
+          "history_hours": 168,
+          "selection_digest": "cacb218ee53efe0c3bb9cb084c2ded0a070d360a7504bfe1e56998aa7b5e21a9",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_validation",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "common_L24": {
+          "case_count": 0,
+          "cohort_admission_digest": "846358e08e1bd7cacdb64defd3d5ad40c3cb03be685edf6a4afce572d09bca86",
+          "cohort_mode": "common_l168_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03479000",
+          "history_hours": 24,
+          "selection_digest": "9877d7b4993c2f19344953a28906a865dcdf3eab9b9bb9e0b28843b43a7432cf",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_validation",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "natural_L168": {
+          "case_count": 0,
+          "cohort_admission_digest": "846358e08e1bd7cacdb64defd3d5ad40c3cb03be685edf6a4afce572d09bca86",
+          "cohort_mode": "natural_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03479000",
+          "history_hours": 168,
+          "selection_digest": "6ce59080a7cb4f144ab694bc53a6e256ee4b7e2cb8e0f6c6753618bd92b0134b",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_validation",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        },
+        "natural_L24": {
+          "case_count": 0,
+          "cohort_admission_digest": "846358e08e1bd7cacdb64defd3d5ad40c3cb03be685edf6a4afce572d09bca86",
+          "cohort_mode": "natural_complete",
+          "final_scientific_cohort": false,
+          "gauge_id": "03479000",
+          "history_hours": 24,
+          "selection_digest": "1032659eea443a004415b6f8efe4cea0e4e00a66012b05ab7db2a26a7afcf377",
+          "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+          "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+          "split": "candidate_validation",
+          "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+          "upstream_sources_reaudited": false
+        }
+      },
+      "gauge_id": "03479000",
+      "mask_counts": {
+        "history_L168_age_hours": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "history_L168_discharge": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "history_L24_age_hours": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "history_L24_discharge": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "precip_mm": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "soil_age_hours": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "soil_fraction": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "specific_humidity": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "swe_kg_m2": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H01": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H02": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H03": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H04": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H05": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H06": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H07": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H08": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H09": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H10": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H11": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H12": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H13": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H14": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H15": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H16": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H17": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "target_H18": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        },
+        "temp_k": {
+          "complete_cases": 0,
+          "missing_cells": 0,
+          "observed_cells": 0,
+          "total_cells": 0
+        }
+      },
+      "natural_L24_cases_rescued_from_L168": 0,
+      "outside_calendar_warmup": {
+        "soil_unresolved_cases": 0,
+        "unresolved_cases": 0,
+        "weather_unresolved_cases": 0
+      },
+      "physical_domain_diagnostics": {
+        "precip_mm": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 0,
+          "violation_cells": 0
+        },
+        "soil_fraction": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 0,
+          "violation_cells": 0
+        },
+        "specific_humidity": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 0,
+          "violation_cells": 0
+        },
+        "swe_kg_m2": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 0,
+          "violation_cells": 0
+        },
+        "temp_k": {
+          "cases_with_violation": 0,
+          "common_l168_cases_with_violation": 0,
+          "observed_cells": 0,
+          "violation_cells": 0
+        }
+      },
+      "physical_domain_review_needed": false,
+      "soil": {
+        "age_hours_counts": {},
+        "differs_from_weather_cycle_cases": 0,
+        "observed_cases": 0,
+        "selected_cycle_cases": 0,
+        "selected_cycle_without_observation_cases": 0,
+        "unavailable_cases": 0
+      },
+      "source_calendar_counts": {},
+      "source_eligibility_counts": {},
+      "split": "candidate_validation",
+      "view_exclusion_dimensions": {
+        "L168": {},
+        "L24": {}
+      },
+      "view_reason_counts": {
+        "L168": {},
+        "L24": {}
+      },
+      "weather": {
+        "age_hours_counts": {},
+        "common_l168_older_than_nominal_cases": 0,
+        "common_l168_selected_cases": 0,
+        "first_native_lead_counts": {},
+        "last_native_lead_counts": {},
+        "latest_nominal_cases": 0,
+        "nominal_cycle_before_acquisition_cases": 0,
+        "older_by_hours_counts": {},
+        "older_than_latest_nominal_cases": 0,
+        "selected_cases": 0,
+        "unavailable_cases": 0
+      }
+    }
+  ],
+  "runtime": {
+    "elapsed_seconds": 0.1483186660334468,
+    "max_rss_bytes": 1073741824,
+    "max_seconds": 60,
+    "observed_process_peak_rss_bytes": 52101120,
+    "rss_enforcement": "COOPERATIVE_BETWEEN_BOUNDED_SHARD_READS_WITH_PROCESS_HIGH_WATER_CHECK"
+  },
+  "schema": "hydra-corpus-admission-audit/v1",
+  "snapshot": {
+    "available_candidate_cases": 360,
+    "final_scientific_cohort": false,
+    "fitting_performed": false,
+    "missing_chunks": [
+      "candidate_training__2018-07__L168/001",
+      "candidate_training__2018-07__L168/002",
+      "candidate_training__2018-07__L168/003",
+      "candidate_training__2018-08__L168/000",
+      "candidate_training__2018-08__L168/001",
+      "candidate_training__2018-08__L168/002",
+      "candidate_training__2018-08__L168/003",
+      "candidate_training__2018-08__L168/004",
+      "candidate_training__2018-08__L168/005",
+      "candidate_training__2018-08__L168/006",
+      "candidate_training__2018-09__L168/000",
+      "candidate_training__2018-09__L168/001",
+      "candidate_training__2018-09__L168/002",
+      "candidate_training__2018-09__L168/003",
+      "candidate_training__2018-09__L168/004",
+      "candidate_training__2018-09__L168/005",
+      "candidate_training__2018-10__L168/000",
+      "candidate_training__2018-10__L168/001",
+      "candidate_training__2018-10__L168/002",
+      "candidate_training__2018-10__L168/003",
+      "candidate_training__2018-10__L168/004",
+      "candidate_training__2018-10__L168/005",
+      "candidate_training__2018-10__L168/006",
+      "candidate_training__2018-11__L168/000",
+      "candidate_training__2018-11__L168/001",
+      "candidate_training__2018-11__L168/002",
+      "candidate_training__2018-11__L168/003",
+      "candidate_training__2018-11__L168/004",
+      "candidate_training__2018-11__L168/005",
+      "candidate_training__2018-12__L168/000",
+      "candidate_training__2018-12__L168/001",
+      "candidate_training__2018-12__L168/002",
+      "candidate_training__2018-12__L168/003",
+      "candidate_training__2018-12__L168/004",
+      "candidate_training__2018-12__L168/005",
+      "candidate_training__2018-12__L168/006",
+      "candidate_training__2019-01__L168/000",
+      "candidate_training__2019-01__L168/001",
+      "candidate_training__2019-01__L168/002",
+      "candidate_training__2019-01__L168/003",
+      "candidate_training__2019-01__L168/004",
+      "candidate_training__2019-01__L168/005",
+      "candidate_training__2019-01__L168/006",
+      "candidate_training__2019-02__L168/000",
+      "candidate_training__2019-02__L168/001",
+      "candidate_training__2019-02__L168/002",
+      "candidate_training__2019-02__L168/003",
+      "candidate_training__2019-02__L168/004",
+      "candidate_training__2019-02__L168/005",
+      "candidate_training__2019-03__L168/000",
+      "candidate_training__2019-03__L168/001",
+      "candidate_training__2019-03__L168/002",
+      "candidate_training__2019-03__L168/003",
+      "candidate_training__2019-03__L168/004",
+      "candidate_training__2019-03__L168/005",
+      "candidate_training__2019-03__L168/006",
+      "candidate_training__2019-04__L168/000",
+      "candidate_training__2019-04__L168/001",
+      "candidate_training__2019-04__L168/002",
+      "candidate_training__2019-04__L168/003",
+      "candidate_training__2019-04__L168/004",
+      "candidate_training__2019-04__L168/005",
+      "candidate_training__2019-05__L168/000",
+      "candidate_training__2019-05__L168/001",
+      "candidate_training__2019-05__L168/002",
+      "candidate_training__2019-05__L168/003",
+      "candidate_training__2019-05__L168/004",
+      "candidate_training__2019-05__L168/005",
+      "candidate_training__2019-05__L168/006",
+      "candidate_training__2019-06__L168/000",
+      "candidate_training__2019-06__L168/001",
+      "candidate_training__2019-06__L168/002",
+      "candidate_training__2019-06__L168/003",
+      "candidate_training__2019-06__L168/004",
+      "candidate_training__2019-06__L168/005",
+      "candidate_training__2019-07__L168/000",
+      "candidate_training__2019-07__L168/001",
+      "candidate_training__2019-07__L168/002",
+      "candidate_training__2019-07__L168/003",
+      "candidate_training__2019-07__L168/004",
+      "candidate_training__2019-07__L168/005",
+      "candidate_training__2019-07__L168/006",
+      "candidate_training__2019-08__L168/000",
+      "candidate_training__2019-08__L168/001",
+      "candidate_training__2019-08__L168/002",
+      "candidate_training__2019-08__L168/003",
+      "candidate_training__2019-08__L168/004",
+      "candidate_training__2019-08__L168/005",
+      "candidate_training__2019-08__L168/006",
+      "candidate_training__2019-09__L168/000",
+      "candidate_training__2019-09__L168/001",
+      "candidate_training__2019-09__L168/002",
+      "candidate_training__2019-09__L168/003",
+      "candidate_training__2019-09__L168/004",
+      "candidate_training__2019-09__L168/005",
+      "candidate_training__2019-10__L168/000",
+      "candidate_training__2019-10__L168/001",
+      "candidate_training__2019-10__L168/002",
+      "candidate_training__2019-10__L168/003",
+      "candidate_training__2019-10__L168/004",
+      "candidate_training__2019-10__L168/005",
+      "candidate_training__2019-10__L168/006",
+      "candidate_training__2019-11__L168/000",
+      "candidate_training__2019-11__L168/001",
+      "candidate_training__2019-11__L168/002",
+      "candidate_training__2019-11__L168/003",
+      "candidate_training__2019-11__L168/004",
+      "candidate_training__2019-11__L168/005",
+      "candidate_training__2019-12__L168/000",
+      "candidate_training__2019-12__L168/001",
+      "candidate_training__2019-12__L168/002",
+      "candidate_training__2019-12__L168/003",
+      "candidate_training__2019-12__L168/004",
+      "candidate_training__2019-12__L168/005",
+      "candidate_training__2019-12__L168/006",
+      "candidate_training__2020-01__L168/000",
+      "candidate_training__2020-01__L168/001",
+      "candidate_training__2020-01__L168/002",
+      "candidate_training__2020-01__L168/003",
+      "candidate_training__2020-01__L168/004",
+      "candidate_training__2020-01__L168/005",
+      "candidate_training__2020-01__L168/006",
+      "candidate_training__2020-02__L168/000",
+      "candidate_training__2020-02__L168/001",
+      "candidate_training__2020-02__L168/002",
+      "candidate_training__2020-02__L168/003",
+      "candidate_training__2020-02__L168/004",
+      "candidate_training__2020-02__L168/005",
+      "candidate_training__2020-03__L168/000",
+      "candidate_training__2020-03__L168/001",
+      "candidate_training__2020-03__L168/002",
+      "candidate_training__2020-03__L168/003",
+      "candidate_training__2020-03__L168/004",
+      "candidate_training__2020-03__L168/005",
+      "candidate_training__2020-03__L168/006",
+      "candidate_training__2020-04__L168/000",
+      "candidate_training__2020-04__L168/001",
+      "candidate_training__2020-04__L168/002",
+      "candidate_training__2020-04__L168/003",
+      "candidate_training__2020-04__L168/004",
+      "candidate_training__2020-04__L168/005",
+      "candidate_training__2020-05__L168/000",
+      "candidate_training__2020-05__L168/001",
+      "candidate_training__2020-05__L168/002",
+      "candidate_training__2020-05__L168/003",
+      "candidate_training__2020-05__L168/004",
+      "candidate_training__2020-05__L168/005",
+      "candidate_training__2020-05__L168/006",
+      "candidate_training__2020-06__L168/000",
+      "candidate_training__2020-06__L168/001",
+      "candidate_training__2020-06__L168/002",
+      "candidate_training__2020-06__L168/003",
+      "candidate_training__2020-06__L168/004",
+      "candidate_training__2020-06__L168/005",
+      "candidate_training__2020-07__L168/000",
+      "candidate_training__2020-07__L168/001",
+      "candidate_training__2020-07__L168/002",
+      "candidate_training__2020-07__L168/003",
+      "candidate_training__2020-07__L168/004",
+      "candidate_training__2020-07__L168/005",
+      "candidate_training__2020-07__L168/006",
+      "candidate_training__2020-08__L168/000",
+      "candidate_training__2020-08__L168/001",
+      "candidate_training__2020-08__L168/002",
+      "candidate_training__2020-08__L168/003",
+      "candidate_training__2020-08__L168/004",
+      "candidate_training__2020-08__L168/005",
+      "candidate_training__2020-08__L168/006",
+      "candidate_training__2020-09__L168/000",
+      "candidate_training__2020-09__L168/001",
+      "candidate_training__2020-09__L168/002",
+      "candidate_training__2020-09__L168/003",
+      "candidate_training__2020-09__L168/004",
+      "candidate_training__2020-09__L168/005",
+      "candidate_training__2020-10__L168/000",
+      "candidate_training__2020-10__L168/001",
+      "candidate_training__2020-10__L168/002",
+      "candidate_training__2020-10__L168/003",
+      "candidate_training__2020-10__L168/004",
+      "candidate_training__2020-10__L168/005",
+      "candidate_training__2020-10__L168/006",
+      "candidate_training__2020-11__L168/000",
+      "candidate_training__2020-11__L168/001",
+      "candidate_training__2020-11__L168/002",
+      "candidate_training__2020-11__L168/003",
+      "candidate_training__2020-11__L168/004",
+      "candidate_training__2020-11__L168/005",
+      "candidate_training__2020-12__L168/000",
+      "candidate_training__2020-12__L168/001",
+      "candidate_training__2020-12__L168/002",
+      "candidate_training__2020-12__L168/003",
+      "candidate_training__2020-12__L168/004",
+      "candidate_training__2020-12__L168/005",
+      "candidate_training__2020-12__L168/006",
+      "candidate_training__2021-01__L168/000",
+      "candidate_training__2021-01__L168/001",
+      "candidate_training__2021-01__L168/002",
+      "candidate_training__2021-01__L168/003",
+      "candidate_training__2021-01__L168/004",
+      "candidate_training__2021-01__L168/005",
+      "candidate_training__2021-01__L168/006",
+      "candidate_training__2021-02__L168/000",
+      "candidate_training__2021-02__L168/001",
+      "candidate_training__2021-02__L168/002",
+      "candidate_training__2021-02__L168/003",
+      "candidate_training__2021-02__L168/004",
+      "candidate_training__2021-02__L168/005",
+      "candidate_training__2021-03__L168/000",
+      "candidate_training__2021-03__L168/001",
+      "candidate_training__2021-03__L168/002",
+      "candidate_training__2021-03__L168/003",
+      "candidate_training__2021-03__L168/004",
+      "candidate_training__2021-03__L168/005",
+      "candidate_training__2021-03__L168/006",
+      "candidate_training__2021-04__L168/000",
+      "candidate_training__2021-04__L168/001",
+      "candidate_training__2021-04__L168/002",
+      "candidate_training__2021-04__L168/003",
+      "candidate_training__2021-04__L168/004",
+      "candidate_training__2021-04__L168/005",
+      "candidate_training__2021-05__L168/000",
+      "candidate_training__2021-05__L168/001",
+      "candidate_training__2021-05__L168/002",
+      "candidate_training__2021-05__L168/003",
+      "candidate_training__2021-05__L168/004",
+      "candidate_training__2021-05__L168/005",
+      "candidate_training__2021-05__L168/006",
+      "candidate_training__2021-06__L168/000",
+      "candidate_training__2021-06__L168/001",
+      "candidate_training__2021-06__L168/002",
+      "candidate_training__2021-06__L168/003",
+      "candidate_training__2021-06__L168/004",
+      "candidate_training__2021-06__L168/005",
+      "candidate_training__2021-07__L168/000",
+      "candidate_training__2021-07__L168/001",
+      "candidate_training__2021-07__L168/002",
+      "candidate_training__2021-07__L168/003",
+      "candidate_training__2021-07__L168/004",
+      "candidate_training__2021-07__L168/005",
+      "candidate_training__2021-07__L168/006",
+      "candidate_training__2021-08__L168/000",
+      "candidate_training__2021-08__L168/001",
+      "candidate_training__2021-08__L168/002",
+      "candidate_training__2021-08__L168/003",
+      "candidate_training__2021-08__L168/004",
+      "candidate_training__2021-08__L168/005",
+      "candidate_training__2021-08__L168/006",
+      "candidate_training__2021-09__L168/000",
+      "candidate_training__2021-09__L168/001",
+      "candidate_training__2021-09__L168/002",
+      "candidate_training__2021-09__L168/003",
+      "candidate_training__2021-09__L168/004",
+      "candidate_training__2021-09__L168/005",
+      "candidate_training__2021-10__L168/000",
+      "candidate_training__2021-10__L168/001",
+      "candidate_training__2021-10__L168/002",
+      "candidate_training__2021-10__L168/003",
+      "candidate_training__2021-10__L168/004",
+      "candidate_training__2021-10__L168/005",
+      "candidate_training__2021-10__L168/006",
+      "candidate_training__2021-11__L168/000",
+      "candidate_training__2021-11__L168/001",
+      "candidate_training__2021-11__L168/002",
+      "candidate_training__2021-11__L168/003",
+      "candidate_training__2021-11__L168/004",
+      "candidate_training__2021-11__L168/005",
+      "candidate_training__2021-12__L168/000",
+      "candidate_training__2021-12__L168/001",
+      "candidate_training__2021-12__L168/002",
+      "candidate_training__2021-12__L168/003",
+      "candidate_training__2021-12__L168/004",
+      "candidate_training__2021-12__L168/005",
+      "candidate_training__2021-12__L168/006",
+      "candidate_training__2022-01__L168/000",
+      "candidate_training__2022-01__L168/001",
+      "candidate_training__2022-01__L168/002",
+      "candidate_training__2022-01__L168/003",
+      "candidate_training__2022-01__L168/004",
+      "candidate_training__2022-01__L168/005",
+      "candidate_training__2022-01__L168/006",
+      "candidate_training__2022-02__L168/000",
+      "candidate_training__2022-02__L168/001",
+      "candidate_training__2022-02__L168/002",
+      "candidate_training__2022-02__L168/003",
+      "candidate_training__2022-02__L168/004",
+      "candidate_training__2022-02__L168/005",
+      "candidate_training__2022-03__L168/000",
+      "candidate_training__2022-03__L168/001",
+      "candidate_training__2022-03__L168/002",
+      "candidate_training__2022-03__L168/003",
+      "candidate_training__2022-03__L168/004",
+      "candidate_training__2022-03__L168/005",
+      "candidate_training__2022-03__L168/006",
+      "candidate_training__2022-04__L168/000",
+      "candidate_training__2022-04__L168/001",
+      "candidate_training__2022-04__L168/002",
+      "candidate_training__2022-04__L168/003",
+      "candidate_training__2022-04__L168/004",
+      "candidate_training__2022-04__L168/005",
+      "candidate_training__2022-05__L168/000",
+      "candidate_training__2022-05__L168/001",
+      "candidate_training__2022-05__L168/002",
+      "candidate_training__2022-05__L168/003",
+      "candidate_training__2022-05__L168/004",
+      "candidate_training__2022-05__L168/005",
+      "candidate_training__2022-05__L168/006",
+      "candidate_training__2022-06__L168/000",
+      "candidate_training__2022-06__L168/001",
+      "candidate_training__2022-06__L168/002",
+      "candidate_training__2022-06__L168/003",
+      "candidate_training__2022-06__L168/004",
+      "candidate_training__2022-06__L168/005",
+      "candidate_training__2022-07__L168/000",
+      "candidate_training__2022-07__L168/001",
+      "candidate_training__2022-07__L168/002",
+      "candidate_training__2022-07__L168/003",
+      "candidate_training__2022-07__L168/004",
+      "candidate_training__2022-07__L168/005",
+      "candidate_training__2022-07__L168/006",
+      "candidate_training__2022-08__L168/000",
+      "candidate_training__2022-08__L168/001",
+      "candidate_training__2022-08__L168/002",
+      "candidate_training__2022-08__L168/003",
+      "candidate_training__2022-08__L168/004",
+      "candidate_training__2022-08__L168/005",
+      "candidate_training__2022-08__L168/006",
+      "candidate_training__2022-09__L168/000",
+      "candidate_training__2022-09__L168/001",
+      "candidate_training__2022-09__L168/002",
+      "candidate_training__2022-09__L168/003",
+      "candidate_training__2022-09__L168/004",
+      "candidate_training__2022-09__L168/005",
+      "candidate_training__2022-10__L168/000",
+      "candidate_training__2022-10__L168/001",
+      "candidate_training__2022-10__L168/002",
+      "candidate_training__2022-10__L168/003",
+      "candidate_training__2022-10__L168/004",
+      "candidate_training__2022-10__L168/005",
+      "candidate_training__2022-10__L168/006",
+      "candidate_training__2022-11__L168/000",
+      "candidate_training__2022-11__L168/001",
+      "candidate_training__2022-11__L168/002",
+      "candidate_training__2022-11__L168/003",
+      "candidate_training__2022-11__L168/004",
+      "candidate_training__2022-11__L168/005",
+      "candidate_training__2022-12__L168/000",
+      "candidate_training__2022-12__L168/001",
+      "candidate_training__2022-12__L168/002",
+      "candidate_training__2022-12__L168/003",
+      "candidate_training__2022-12__L168/004",
+      "candidate_training__2022-12__L168/005",
+      "candidate_training__2022-12__L168/006",
+      "candidate_training__2023-01__L168/000",
+      "candidate_training__2023-01__L168/001",
+      "candidate_training__2023-01__L168/002",
+      "candidate_training__2023-01__L168/003",
+      "candidate_training__2023-01__L168/004",
+      "candidate_training__2023-01__L168/005",
+      "candidate_training__2023-01__L168/006",
+      "candidate_training__2023-02__L168/000",
+      "candidate_training__2023-02__L168/001",
+      "candidate_training__2023-02__L168/002",
+      "candidate_training__2023-02__L168/003",
+      "candidate_training__2023-02__L168/004",
+      "candidate_training__2023-02__L168/005",
+      "candidate_training__2023-03__L168/000",
+      "candidate_training__2023-03__L168/001",
+      "candidate_training__2023-03__L168/002",
+      "candidate_training__2023-03__L168/003",
+      "candidate_training__2023-03__L168/004",
+      "candidate_training__2023-03__L168/005",
+      "candidate_training__2023-03__L168/006",
+      "candidate_training__2023-04__L168/000",
+      "candidate_training__2023-04__L168/001",
+      "candidate_training__2023-04__L168/002",
+      "candidate_training__2023-04__L168/003",
+      "candidate_training__2023-04__L168/004",
+      "candidate_training__2023-04__L168/005",
+      "candidate_training__2023-05__L168/000",
+      "candidate_training__2023-05__L168/001",
+      "candidate_training__2023-05__L168/002",
+      "candidate_training__2023-05__L168/003",
+      "candidate_training__2023-05__L168/004",
+      "candidate_training__2023-05__L168/005",
+      "candidate_training__2023-05__L168/006",
+      "candidate_training__2023-06__L168/000",
+      "candidate_training__2023-06__L168/001",
+      "candidate_training__2023-06__L168/002",
+      "candidate_training__2023-06__L168/003",
+      "candidate_training__2023-06__L168/004",
+      "candidate_training__2023-06__L168/005",
+      "candidate_training__2023-07__L168/000",
+      "candidate_training__2023-07__L168/001",
+      "candidate_training__2023-07__L168/002",
+      "candidate_training__2023-07__L168/003",
+      "candidate_training__2023-07__L168/004",
+      "candidate_training__2023-07__L168/005",
+      "candidate_validation__2023-07__L168/000",
+      "candidate_validation__2023-08__L168/000",
+      "candidate_validation__2023-08__L168/001",
+      "candidate_validation__2023-08__L168/002",
+      "candidate_validation__2023-08__L168/003",
+      "candidate_validation__2023-08__L168/004",
+      "candidate_validation__2023-08__L168/005",
+      "candidate_validation__2023-08__L168/006",
+      "candidate_validation__2023-09__L168/000",
+      "candidate_validation__2023-09__L168/001",
+      "candidate_validation__2023-09__L168/002",
+      "candidate_validation__2023-09__L168/003",
+      "candidate_validation__2023-09__L168/004",
+      "candidate_validation__2023-09__L168/005",
+      "candidate_validation__2023-10__L168/000",
+      "candidate_validation__2023-10__L168/001",
+      "candidate_validation__2023-10__L168/002",
+      "candidate_validation__2023-10__L168/003",
+      "candidate_validation__2023-10__L168/004",
+      "candidate_validation__2023-10__L168/005",
+      "candidate_validation__2023-10__L168/006",
+      "candidate_validation__2023-11__L168/000",
+      "candidate_validation__2023-11__L168/001",
+      "candidate_validation__2023-11__L168/002",
+      "candidate_validation__2023-11__L168/003",
+      "candidate_validation__2023-11__L168/004",
+      "candidate_validation__2023-11__L168/005",
+      "candidate_validation__2023-12__L168/000",
+      "candidate_validation__2023-12__L168/001",
+      "candidate_validation__2023-12__L168/002",
+      "candidate_validation__2023-12__L168/003",
+      "candidate_validation__2023-12__L168/004",
+      "candidate_validation__2023-12__L168/005",
+      "candidate_validation__2023-12__L168/006",
+      "candidate_validation__2024-01__L168/000",
+      "candidate_validation__2024-01__L168/001",
+      "candidate_validation__2024-01__L168/002",
+      "candidate_validation__2024-01__L168/003",
+      "candidate_validation__2024-01__L168/004",
+      "candidate_validation__2024-01__L168/005",
+      "candidate_validation__2024-01__L168/006",
+      "candidate_validation__2024-02__L168/000",
+      "candidate_validation__2024-02__L168/001",
+      "candidate_validation__2024-02__L168/002",
+      "candidate_validation__2024-02__L168/003",
+      "candidate_validation__2024-02__L168/004",
+      "candidate_validation__2024-02__L168/005",
+      "candidate_validation__2024-03__L168/000",
+      "candidate_validation__2024-03__L168/001",
+      "candidate_validation__2024-03__L168/002",
+      "candidate_validation__2024-03__L168/003",
+      "candidate_validation__2024-03__L168/004",
+      "candidate_validation__2024-03__L168/005",
+      "candidate_validation__2024-03__L168/006",
+      "candidate_validation__2024-04__L168/000",
+      "candidate_validation__2024-04__L168/001",
+      "candidate_validation__2024-04__L168/002",
+      "candidate_validation__2024-04__L168/003",
+      "candidate_validation__2024-04__L168/004",
+      "candidate_validation__2024-04__L168/005",
+      "candidate_validation__2024-05__L168/000",
+      "candidate_validation__2024-05__L168/001",
+      "candidate_validation__2024-05__L168/002",
+      "candidate_validation__2024-05__L168/003",
+      "candidate_validation__2024-05__L168/004",
+      "candidate_validation__2024-05__L168/005",
+      "candidate_validation__2024-05__L168/006",
+      "candidate_validation__2024-06__L168/000",
+      "candidate_validation__2024-06__L168/001",
+      "candidate_validation__2024-06__L168/002",
+      "candidate_validation__2024-06__L168/003",
+      "candidate_validation__2024-06__L168/004",
+      "candidate_validation__2024-06__L168/005",
+      "candidate_validation__2024-07__L168/000",
+      "candidate_validation__2024-07__L168/001",
+      "candidate_validation__2024-07__L168/002",
+      "candidate_validation__2024-07__L168/003",
+      "candidate_validation__2024-07__L168/004",
+      "candidate_validation__2024-07__L168/005"
+    ],
+    "natural_l24_complete_cases": 300,
+    "numerical_payloads_checked": true,
+    "observed_commits": [
+      {
+        "chunk": "candidate_training__2018-07__L168/000",
+        "commit_sha256": "981fd797ef66a1a6cc915aecf4de37dbee24e49c5c407b2b8c46946e207cfb27"
+      }
+    ],
+    "plan_file_sha256": "9566976ad6c42f742a0653d91b784a86c482fcf20638eef004d8e95f924e26fe",
+    "plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+    "planned_cases": 159084,
+    "protected_assessment_access": false,
+    "snapshot_sha256": "1dad5e8a359b1a4c449f9113715884a8715a7d8bc0bdb843832c40af510d0dda",
+    "source_admitted_cases": 300,
+    "status": "PARTIAL_COMMITTED_CORPUS_SNAPSHOT",
+    "stored_history_hours": 168,
+    "upstream_sources_reaudited": false
+  },
+  "source_identities": {
+    "candidate_weights_sha256": "9eaaf3b221360ed6faaa0376e953fd0c2d0356fb419df96daed9107404283a74",
+    "qualified_index_sha256": "75469df20f79d94ffb058f439f1ac873f0cf4164c1417eec7298a6641a35baa5",
+    "usgs_manifest_sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a"
+  },
+  "splits": [
+    {
+      "end_utc": "2023-07-31T00:00:00Z",
+      "name": "candidate_training",
+      "start_utc": "2018-07-12T00:00:00Z"
+    },
+    {
+      "end_utc": "2024-07-31T00:00:00Z",
+      "name": "candidate_validation",
+      "start_utc": "2023-07-31T00:00:00Z"
+    }
+  ],
+  "status": "PARTIAL_DIAGNOSTIC_NOT_FINAL_COHORT",
+  "weather_reference": {
+    "definition": "FLOOR_TO_6H_OF_C_MINUS_2H",
+    "global_source_availability_reaudited": false,
+    "older_cycle_count_is_not_a_gap_cause_diagnosis": true
+  }
+}
