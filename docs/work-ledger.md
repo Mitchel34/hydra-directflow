@@ -187,3 +187,25 @@ The integrated suite passes406 tests with zero optimizer updates. Staging perfor
 no scientific fits or protected scoring. Next: finish and verify the corpus,
 publish exact admission/exclusion counts, qualify its read-only training adapter,
 and resolve the remaining scientific protocol decisions before fitting models.
+
+## Matched Q-only training and conditional CUDA preparation — November 2
+
+Trainer/transform/checkpoint v2 now carries explicit full-input and Q-only schemas
+and a shared cohort admission digest. Q-only never reads the weather/soil values
+or masks and keeps the same cases, labels and training-only history/target
+statistics. The known horizon uses fixed h/18 encoding. Old v1 checkpoints are
+not silently migrated. Scientific transformation/loss choices remain pending.
+
+`reports/trainer-recovery-v2.json` records12 precharged, entered and confirmed
+synthetic updates across full/Q-only CPU LSTM and MPS Mamba2 paths at L24/B4.
+All four fresh-process continuations reproduce the next sample and optimizer
+update exactly, including model/scaler/sampler/RNG/stopping state. Qualification
+took19.45s with551.23MiB sampled peak; it does not establish every model, batch
+or history geometry.44 focused training/ablation/device tests pass without new
+updates. Cumulative accounting is652 real-data engineering and896 synthetic
+updates, with zero scientific campaign fits.
+
+The new device helpers and CUDA plan are non-executing preparation. The trainer
+still refuses CUDA; no hardware, GPU throughput or cloud execution is claimed.
+The reserved pilot remains conditional on measured need and bounded runtime,
+budget, correctness and recovery qualification.

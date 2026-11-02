@@ -27,7 +27,8 @@ Actual artifact creation timestamps are distinct from simulated historical
 information cutoffs.
 
 See [the completed work ledger](docs/work-ledger.md) for commits and evidence.
-The integrated offline-environment suite passes **315 tests**. Current reports
+The integrated offline-environment suite passes **406 tests** at the staging
+release checkpoint. Current reports
 include four-model CPU/MPS qualification, a bounded real-data engineering probe,
 fresh-process recovery and a 20-case synthetic local throughput benchmark.
 Discharge-only ablation and source-aware NWM evaluation helpers are implemented.
@@ -61,8 +62,11 @@ The [execution-readiness update](docs/execution-readiness.md) includes a refined
 development eligibility inventory, the approved July development-only export,
 fresh-process trainer recovery and the completed 24-case real-batch benchmark.
 The 36-fit main matrix has conditional local runtimes of about9.5–10.5hours at
-20epochs, or23.8–26.2hours at50epochs, before CV and controls. A proposed$150
-staging/compute/contingency ceiling remains unapproved; no paid cloud job started.
+20epochs, or23.8–26.2hours at50epochs, before CV and controls. The user approved
+the $150 combined staging/compute/contingency ceiling. Development staging is
+active; cloud funding remains conditional on measured need and qualification.
+No paid cloud job has started. The [staging guide](docs/development-staging.md)
+describes the persistent budget, exact source scope and resumable corpus.
 
 ## Local use
 
@@ -101,5 +105,6 @@ the current GitHub credential does not have the workflow scope. Local checks and
 portable receipts are available in `reports/`.
 
 The AGU draft target is November 6, 2026; presentation date is December 11.
-Paid compute remains unbudgeted. Cloud execution requires a measured, bounded
-execution proposal. See `docs/overnight-plan.md` for the current small-chunk plan.
+Cloud funds are reserved within the approved ceiling; execution still requires
+the recorded phase gates. See `docs/execution-readiness.md` and the work ledger
+for current dependencies. Earlier overnight plans remain historical proposals.

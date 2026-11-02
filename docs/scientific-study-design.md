@@ -6,6 +6,10 @@ is recorded separately. All unconfirmed scientific settings below are proposals.
 This document does not authorize data purchases, further staging, cloud compute,
 protected-data access, assessment scoring, security changes or communications.
 
+The reconciliation table below is the dated baseline, not a live status panel.
+Subsequent implementation and the separately approved $150 conditional budget
+are recorded in `docs/work-ledger.md` and `docs/execution-readiness.md`.
+
 ## Reconciled state
 
 | Work | Status at reconciliation | Timestamp and evidence |
@@ -225,9 +229,11 @@ do not establish validity for this issued-weather overlapping-H18 experiment:
    C-relative leads1–16. Match its actual retained source clocks and the declared
    availability policy; do not relabel native lead18 as C+18.
 
-Local implementation/tests are within the current request. Further scientific
-source downloads, any paid compute/storage service, credential/security changes,
-hosted observability and outbound messages require their separate approvals.
+Local implementation/tests are within the current request. The subsequent
+November 2 budget approval separately permits bounded development staging and
+conditional cloud phases; it does not freeze the scientific choices above.
+Spending or downloads beyond that scope, credential/security changes, hosted
+observability and outbound messages require separate approval.
 The August allowance is consumed for its scoped work, not a standing budget.
 
 ## Dependence, outages and figures

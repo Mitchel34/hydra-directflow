@@ -50,7 +50,9 @@ lacked the workflow scope required to install it under `.github/workflows/`.
 Local checks are verified; no hosted CI run is claimed. Once that permission is
 available, install the template without changing the scientific tests.
 
-No service signup or paid cloud resource was created. Full data processing and
-scientific training need a new bounded execution budget and the remaining study
-choices. Local file residency was checked at preparation time; rerun the cache
-verifier after filesystem/cloud-sync changes.
+No service signup or paid cloud compute resource was created. Development staging
+is now proceeding under the separately approved November 2 budget; see
+`docs/development-staging.md` and its incremental receipts. Scientific training
+still depends on the remaining study choices and cohort qualification. Local file
+residency was checked at preparation time; rerun the cache verifier after
+filesystem/cloud-sync changes.

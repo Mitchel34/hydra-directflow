@@ -7,8 +7,10 @@ protocol, a complete experiment orchestrator or authorization to fit/score.
 The full study still needs admitted cohort manifests, the agreed transforms,
 loss/constraints/metric, CV and trial/seed budgets, and protected-data approval.
 
-The current implementation supports the existing full H2/W4/S2 input schema and
-one gauge per fit. It does not silently add standalone GRU/Mamba2 controls,
+The current v2 implementation supports the full H2/W4/S2 input schema and a
+matched Q-only H2/horizon1/empty-state schema, with one gauge per fit. See
+`docs/q-only-training.md` for their separately bound cohort/feature identities.
+It does not silently add standalone GRU/Mamba2 controls,
 select a Q-only architecture, open protected data or choose a scientific winner.
 
 ## Data isolation and transformations
@@ -60,14 +62,14 @@ Torch CPU/MPS RNG, data/spec identities, implementation hashes, dependency
 versions and runtime thread/dtype settings. A changed source, implementation or
 execution setting is rejected for exact continuation.
 
-`scripts/qualify_training_recovery.py` defaults to plan-only. Its explicitly
-enabled qualification is capped at six synthetic optimizer updates,300seconds
+`scripts/qualify_training_recovery.py` defaults to plan-only. Its current explicitly
+enabled full/Q-only qualification is capped at twelve synthetic optimizer updates,300seconds
 and4GiB observed worker RSS plus reported MPS allocation, with a2GiB MPS allocator
 cap. Failed allowances remain charged. A killed/interrupted worker is reaped and
 its last entered/confirmed counters are recorded. These are sampled/cooperative
 resource observations, not proof that an instantaneous peak was impossible.
 
-The current receipt `reports/trainer-recovery.json` passes CPU LSTM and MPS
+The original v1 receipt `reports/trainer-recovery.json` passed CPU LSTM and MPS
 Mamba2 recovery in separate processes: two reference updates and one replayed
 next update per model, **six synthetic updates total**. The next batch, loss,
 model/optimizer, scaler, sampler, RNG and stopping state match exactly. A
@@ -78,3 +80,7 @@ used. Ordinary `tests/test_training.py` performs zero optimizer updates.
 The benchmark in `benchmark_real_batches.py` is separate: it uses fixed
 engineering unit mappings to measure execution cost. Its timings do not select
 the affine transform or establish full-study convergence.
+
+The v2 full/Q-only extension is documented in `docs/q-only-training.md`; its new
+12-update receipt is `reports/trainer-recovery-v2.json`. The old six-update record
+is retained without being relabeled as a v2 execution.

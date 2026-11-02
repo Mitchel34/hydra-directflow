@@ -6,6 +6,7 @@ cohort, source and execution approval remain external prerequisites. Protected
 coordinates are rejected before numerical training data are inspected.
 """
 from dataclasses import asdict, dataclass
+from collections.abc import Mapping
 import hashlib
 import importlib.metadata
 import io
@@ -23,12 +24,106 @@ INPUTS = ("history", "weather", "state")
 FEATURES = {"history": ("discharge_cms", "age_hours"),
             "weather": ("precip_mm", "temp_k", "specific_humidity", "swe_kg_m2"),
             "state": ("soil_water_fraction", "soil_age_hours")}
+FULL_FEATURE_SCHEMA = "FULL_HRRR_H2_W4_S2_V1"
+Q_ONLY_FEATURE_SCHEMA = "Q_ONLY_H2_HORIZON1_S0_V1"
+CHECKPOINT_SCHEMA = "hydra-development-trainer-checkpoint/v2"
+
+
+def feature_schema_fields(schema=FULL_FEATURE_SCHEMA):
+    require(schema in (FULL_FEATURE_SCHEMA, Q_ONLY_FEATURE_SCHEMA), "Explicit supported feature schema required")
+    if schema == FULL_FEATURE_SCHEMA:
+        return dict(FEATURES)
+    from .ablations import Q_HISTORY_FEATURES, Q_ISSUED_FEATURES, Q_STATE_FEATURES
+    return dict(history=Q_HISTORY_FEATURES, weather=Q_ISSUED_FEATURES, state=Q_STATE_FEATURES)
+
+
+def _text_metadata(arrays, name):
+    if name not in set(iter(arrays)):
+        return None
+    value = np.asarray(arrays[name])
+    require(value.shape == () and value.dtype.kind in "US", "Scalar text metadata required: " + name)
+    text = value.item()
+    return text.decode("utf-8") if isinstance(text, bytes) else text
+
+
+def _cohort_digest(arrays, *, required=False):
+    value = _text_metadata(arrays, "cohort_admission_digest")
+    require(value is not None or not required, "Q-only training requires its original comparison-cohort admission digest")
+    require(value is None or re.fullmatch(r"[0-9a-f]{64}", value), "Invalid comparison-cohort admission digest")
+    return value
+
+
+def _validate_bundle_schema(arrays, schema):
+    feature_schema_fields(schema)
+    declared = _text_metadata(arrays, "feature_schema")
+    require(declared is None or declared == schema, "Bundle feature schema differs from requested training mode")
+    if schema == Q_ONLY_FEATURE_SCHEMA:
+        require(declared == Q_ONLY_FEATURE_SCHEMA, "Use an explicitly identified Q-only training bundle")
+    return _cohort_digest(arrays, required=schema == Q_ONLY_FEATURE_SCHEMA)
+
+
+def q_only_training_bundle(arrays, *, cohort_admission_digest):
+    """Adapt an already admitted full cohort without reading weather/soil data.
+
+    Original weather/state keys must exist, but their values and masks are never
+    fetched. Full-cohort admission belongs upstream. This adapter preserves
+    case order, history clocks, labels/masks and the supplied cohort identity.
+    """
+    from .ablations import q_only_view, Q_HISTORY_FEATURES
+    require(isinstance(arrays, Mapping), "An already admitted full-model mapping is required")
+    keys = set(iter(arrays))
+    require({"history", "history_mask", "weather", "weather_mask", "state", "state_mask"} <= keys,
+            "Q-only adaptation requires the full-model input-key inventory")
+    original_cohort = _validate_bundle_schema(arrays, FULL_FEATURE_SCHEMA)
+    require(original_cohort is None or original_cohort == cohort_admission_digest,
+            "Supplied cohort admission conflicts with the original full-model cohort")
+    history_clock = np.asarray(arrays["history_time"])
+    require(history_clock.ndim == 2 and history_clock.shape[1] in (24, 168), "Prepared L24/L168 history clock required")
+    history_hours = history_clock.shape[1]
+    validate_coordinates(arrays, history_hours)
+    original_ids = np.asarray(arrays["case_id"])
+    ids = tuple(value.decode("utf-8") if isinstance(value, bytes) else str(value) for value in original_ids.tolist())
+    forbidden = object()
+    admitted = dict(history=arrays["history"], history_mask=arrays["history_mask"],
+                    weather=forbidden, weather_mask=forbidden, state=forbidden, state_mask=forbidden,
+                    site_id=np.asarray(arrays["site_id"], dtype=np.int64),
+                    origin_time=np.asarray(arrays["origin_time"], dtype=np.int64), target_time=np.asarray(arrays["target_time"], dtype=np.int64),
+                    case_ids=ids, history_features=Q_HISTORY_FEATURES,
+                    target=arrays["target"], target_mask=arrays["target_mask"])
+    view = q_only_view(admitted, cohort_admission_digest=cohort_admission_digest)
+    result = {name: getattr(view, name) for name in INPUTS + ("target",)}
+    result.update({name + "_mask": getattr(view, name + "_mask") for name in INPUTS + ("target",)})
+    for name in ("site_id", "origin_time", "history_time", "target_time", "case_id"):
+        value = np.array(arrays[name], copy=True)
+        value.setflags(write=False)
+        result[name] = value
+    for name, text in (("feature_schema", Q_ONLY_FEATURE_SCHEMA), ("cohort_admission_digest", cohort_admission_digest)):
+        value = np.array(text)
+        value.setflags(write=False)
+        result[name] = value
+    validate_development_bundle(result, history_hours, feature_schema=Q_ONLY_FEATURE_SCHEMA)
+    return result
+
+
+def validate_checkpoint_mode(value, *, expected_source_identity, expected_feature_schema=FULL_FEATURE_SCHEMA,
+                             expected_cohort_admission_digest=None):
+    """Reject mode/source/cohort substitutions before constructing a trainer."""
+    feature_schema_fields(expected_feature_schema)
+    require(value.get("schema") == CHECKPOINT_SCHEMA and value.get("source_identity") == expected_source_identity,
+            "Checkpoint v2 schema/source identity differs; legacy checkpoints are not silently migrated")
+    require(value.get("spec", {}).get("feature_schema") == expected_feature_schema
+            and value.get("feature_schema") == expected_feature_schema, "Checkpoint feature schema differs from explicitly requested mode")
+    cohort = value.get("cohort_admission_digest")
+    if expected_feature_schema == Q_ONLY_FEATURE_SCHEMA:
+        require(isinstance(expected_cohort_admission_digest, str) and re.fullmatch(r"[0-9a-f]{64}", expected_cohort_admission_digest),
+                "Q-only restore requires an explicit expected comparison-cohort digest")
+    require(cohort == expected_cohort_admission_digest, "Checkpoint comparison-cohort admission differs")
 
 
 def implementation_fingerprint():
     root = Path(__file__).resolve().parent
     return dict(code={name: hashlib.sha256((root / name).read_bytes()).hexdigest()
-                      for name in ("training.py", "contract.py", "reference.py", "models/directflow.py", "models/mamba2_math.py")},
+                      for name in ("training.py", "ablations.py", "contract.py", "reference.py", "models/directflow.py", "models/mamba2_math.py")},
                 dependencies={name: importlib.metadata.version(name) for name in ("numpy", "torch", "transformers")})
 
 
@@ -59,13 +154,20 @@ def validate_coordinates(arrays, history_hours):
     return n
 
 
-def validate_development_bundle(arrays, history_hours):
+def validate_development_bundle(arrays, history_hours, *, feature_schema=FULL_FEATURE_SCHEMA):
     n = validate_coordinates(arrays, history_hours)
-    shapes = {"history": (n, history_hours, 2), "weather": (n, 18, 4), "state": (n, 2), "target": (n, 18)}
+    features = feature_schema_fields(feature_schema)
+    _validate_bundle_schema(arrays, feature_schema)
+    shapes = {"history": (n, history_hours, len(features["history"])), "weather": (n, 18, len(features["weather"])),
+              "state": (n, len(features["state"])), "target": (n, 18)}
     for name, shape in shapes.items():
         values, mask = np.asarray(arrays[name]), np.asarray(arrays[name + "_mask"])
         require(values.shape == mask.shape == shape and values.dtype.kind == "f" and mask.dtype == np.dtype(bool), "Values/mask shape or type differs: " + name)
         require(np.isfinite(values[mask]).all(), "Nonfinite admitted value: " + name)
+    if feature_schema == Q_ONLY_FEATURE_SCHEMA:
+        require(np.asarray(arrays["weather_mask"]).all()
+                and np.array_equal(arrays["weather"], np.broadcast_to(np.arange(1, 19)[None, :, None], (n, 18, 1))),
+                "Q-only forecast tokens must be the known H1-H18 coordinates, never source weather")
     return n
 
 
@@ -97,10 +199,13 @@ class TrainOnlyTransform:
     parameters: dict
     training_case_ids_sha256: str
     training_values_sha256: str
-    schema: str = "hydra-train-only-affine/v1"
+    feature_schema: str = FULL_FEATURE_SCHEMA
+    schema: str = "hydra-train-only-affine/v2"
 
     @classmethod
-    def fit(cls, arrays, train_indices):
+    def fit(cls, arrays, train_indices, *, feature_schema=FULL_FEATURE_SCHEMA):
+        features = feature_schema_fields(feature_schema)
+        _validate_bundle_schema(arrays, feature_schema)
         indices = tuple(train_indices)
         require(indices and all(type(i) is int for i in indices) and len(set(indices)) == len(indices), "Explicit unique training indices required")
         require(all(0 <= i < len(arrays["case_id"]) for i in indices), "Training index outside bundle")
@@ -109,7 +214,13 @@ class TrainOnlyTransform:
             values = np.asarray(arrays[name])[list(indices)]
             mask = np.asarray(arrays[name + "_mask"])[list(indices)]
             require(mask.dtype == np.dtype(bool) and values.shape == mask.shape and np.isfinite(values[mask]).all(), "Training scaler inputs invalid")
+            require(name == "target" or values.shape[-1] == len(features[name]), "Training transform feature geometry differs")
             selected[name], selected[name + "_mask"] = values, mask
+            if feature_schema == Q_ONLY_FEATURE_SCHEMA and name == "weather":
+                require(mask.all() and np.array_equal(values, np.broadcast_to(np.arange(1, 19)[None, :, None], values.shape)),
+                        "Q-only transform admits only known horizon coordinates")
+                parameters[name] = [dict(mean=0., scale=18., constant=False, cells=0, declared="HORIZON_DIV18")]
+                continue
             columns = 1 if name == "target" else values.shape[-1]
             channel = []
             for column in range(columns):
@@ -119,24 +230,37 @@ class TrainOnlyTransform:
                 require(np.isfinite(mean) and np.isfinite(deviation), "Training scaler statistics overflowed")
                 channel.append(dict(mean=mean, scale=deviation if deviation > 0 else 1., constant=deviation == 0, cells=len(observed)))
             parameters[name] = channel
-        return cls(parameters, digest(np.asarray(arrays["case_id"])[list(indices)].tolist()), array_identity(selected))
+        return cls(parameters, digest(np.asarray(arrays["case_id"])[list(indices)].tolist()), array_identity(selected), feature_schema)
 
     @classmethod
     def from_dict(cls, value):
-        require(set(value) == {"parameters", "training_case_ids_sha256", "training_values_sha256", "schema"} and value["schema"] == "hydra-train-only-affine/v1", "Unknown transform state")
+        require(set(value) == {"parameters", "training_case_ids_sha256", "training_values_sha256", "feature_schema", "schema"}
+                and value["schema"] == "hydra-train-only-affine/v2", "Unknown transform v2 state")
         result = cls(**value)
+        features = feature_schema_fields(result.feature_schema)
         for name, channels in result.parameters.items():
-            require(name in INPUTS + ("target",) and len(channels) == (1 if name == "target" else len(FEATURES[name])), "Transform feature schema differs")
+            require(name in INPUTS + ("target",) and len(channels) == (1 if name == "target" else len(features[name])), "Transform feature schema differs")
+            if result.feature_schema == Q_ONLY_FEATURE_SCHEMA and name == "weather":
+                require(channels == [dict(mean=0., scale=18., constant=False, cells=0, declared="HORIZON_DIV18")], "Declared horizon transform changed")
+                continue
             for p in channels:
-                require(np.isfinite(p["mean"]) and np.isfinite(p["scale"]) and p["scale"] > 0 and type(p["cells"]) is int and p["cells"] > 0, "Invalid transform statistics")
+                require(set(p) == {"mean", "scale", "constant", "cells"}
+                        and np.isfinite(p["mean"]) and np.isfinite(p["scale"]) and p["scale"] > 0
+                        and type(p["constant"]) is bool and type(p["cells"]) is int and p["cells"] > 0, "Invalid transform statistics")
         require(set(result.parameters) == set(INPUTS + ("target",)), "Transform channels missing")
         return result
 
     def transform(self, arrays):
+        _validate_bundle_schema(arrays, self.feature_schema)
+        features = feature_schema_fields(self.feature_schema)
         mapped = {}
         for name in INPUTS + ("target",):
             source, mask = np.asarray(arrays[name]), np.asarray(arrays[name + "_mask"])
             require(source.shape == mask.shape and mask.dtype == np.dtype(bool) and np.isfinite(source[mask]).all(), "Transform values/masks differ")
+            require(name == "target" or source.shape[-1] == len(features[name]), "Transform feature geometry differs")
+            if self.feature_schema == Q_ONLY_FEATURE_SCHEMA and name == "weather":
+                require(mask.all() and np.array_equal(source, np.broadcast_to(np.arange(1, 19)[None, :, None], source.shape)),
+                        "Q-only transform admits only known horizon coordinates")
             output = np.full(source.shape, np.nan if name == "target" else 0., dtype=np.float32)
             for column, p in enumerate(self.parameters[name]):
                 if name == "target":
@@ -199,8 +323,10 @@ class TrainerSpec:
     seed: int
     shuffle_training: bool
     max_updates: int
+    feature_schema: str = FULL_FEATURE_SCHEMA
 
     def __post_init__(self):
+        feature_schema_fields(self.feature_schema)
         require(self.architecture in ARCHITECTURES and self.device in ("cpu", "mps"), "Prepared local architecture/device required")
         require(self.history_hours in (24, 168) and type(self.batch_size) is int and 1 <= self.batch_size <= 64, "Bounded training geometry required")
         require(type(self.max_updates) is int and 0 <= self.max_updates <= 100000, "Explicit update ceiling required")
@@ -245,13 +371,14 @@ class DevelopmentTrainer:
     """Explicit mechanics API, with no automatic scientific execution gate bypass."""
     def __init__(self, arrays, *, train_indices, validation_indices, boundary_epoch, spec, source_identity):
         require(isinstance(spec, TrainerSpec), "Explicit trainer specification required")
-        validate_development_bundle(arrays, spec.history_hours)
+        validate_development_bundle(arrays, spec.history_hours, feature_schema=spec.feature_schema)
         self.train, self.validation = validate_split(arrays, train_indices, validation_indices, boundary_epoch=boundary_epoch)
         require(isinstance(source_identity, str) and re.fullmatch(r"[0-9a-f]{64}", source_identity), "Admitted source manifest digest required")
         require(np.all(arrays["target_mask"][list(self.train)].any(axis=1)), "Training case has no observed label")
         self.spec, self.arrays, self.boundary = spec, arrays, boundary_epoch
+        self.cohort_admission_digest = _cohort_digest(arrays, required=spec.feature_schema == Q_ONLY_FEATURE_SCHEMA)
         self.source_identity, self.array_sha256 = source_identity, array_identity(arrays)
-        self.scaler = TrainOnlyTransform.fit(arrays, self.train)
+        self.scaler = TrainOnlyTransform.fit(arrays, self.train, feature_schema=spec.feature_schema)
         self.sampler = EpochSampler(self.train, seed=spec.seed, shuffle=spec.shuffle_training)
         self.updates = 0
         self.stopping, self.best_model_state, self.epoch_records = None, None, []
@@ -264,7 +391,8 @@ class DevelopmentTrainer:
         if spec.device == "mps":
             require(torch.backends.mps.is_available(), "MPS unavailable; no fallback")
             torch.mps.manual_seed(spec.seed)
-        config = ModelConfig(spec.architecture, FEATURES["history"], FEATURES["weather"], FEATURES["state"], spec.history_hours, tuple(range(1, 19)))
+        features = feature_schema_fields(spec.feature_schema)
+        config = ModelConfig(spec.architecture, features["history"], features["weather"], features["state"], spec.history_hours, tuple(range(1, 19)))
         self.model = DirectFlowModel(config).to(spec.device)
         self.optimizer = torch.optim.AdamW(self.model.parameters(), lr=spec.learning_rate, foreach=False)
         self.host = {name: torch.from_numpy(value) for name, value in self.scaler.transform(arrays).items()}
@@ -336,7 +464,8 @@ class DevelopmentTrainer:
     def checkpoint(self, path):
         from .engineering import _cpu_tree
         torch = self.torch
-        value = dict(schema="hydra-development-trainer-checkpoint/v1", spec=asdict(self.spec), source_identity=self.source_identity,
+        value = dict(schema=CHECKPOINT_SCHEMA, spec=asdict(self.spec), source_identity=self.source_identity,
+                     feature_schema=self.spec.feature_schema, cohort_admission_digest=self.cohort_admission_digest,
                      implementation=implementation_fingerprint(), runtime=self.runtime,
                      array_sha256=self.array_sha256, train_indices=list(self.train), validation_indices=list(self.validation), boundary_epoch=self.boundary,
                      transform=asdict(self.scaler), sampler=self.sampler.state(), updates=self.updates,
@@ -360,16 +489,19 @@ class DevelopmentTrainer:
         return hashlib.sha256(path.read_bytes()).hexdigest()
 
     @classmethod
-    def restore(cls, path, arrays, *, expected_sha256, expected_source_identity):
+    def restore(cls, path, arrays, *, expected_sha256, expected_source_identity,
+                expected_feature_schema=FULL_FEATURE_SCHEMA, expected_cohort_admission_digest=None):
         import torch
         from .engineering import _local_bytes
         raw = _local_bytes(path, 16 * 1024**2)
         require(len(raw) <= 16 * 1024**2 and hashlib.sha256(raw).hexdigest() == expected_sha256, "Checkpoint byte identity differs")
         value = torch.load(io.BytesIO(raw), map_location="cpu", weights_only=True)
-        require(value["schema"] == "hydra-development-trainer-checkpoint/v1" and value["source_identity"] == expected_source_identity,
-                "Checkpoint schema/source identity differs")
+        validate_checkpoint_mode(value, expected_source_identity=expected_source_identity, expected_feature_schema=expected_feature_schema,
+                                 expected_cohort_admission_digest=expected_cohort_admission_digest)
         require(value["implementation"] == implementation_fingerprint(), "Trainer/model code or dependencies changed")
         spec = TrainerSpec(**value["spec"])
+        cohort = _validate_bundle_schema(arrays, spec.feature_schema)
+        require(cohort == value["cohort_admission_digest"], "Dataset comparison-cohort admission changed")
         result = cls(arrays, train_indices=value["train_indices"], validation_indices=value["validation_indices"],
                      boundary_epoch=value["boundary_epoch"], spec=spec, source_identity=expected_source_identity)
         require(result.array_sha256 == value["array_sha256"] and asdict(result.scaler) == value["transform"], "Dataset or train-only transform changed")

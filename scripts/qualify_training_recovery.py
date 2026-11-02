@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Explicit six-update synthetic qualification of fresh-process trainer recovery."""
+"""Explicit twelve-update full/Q-only fresh-process trainer recovery qualification."""
 import argparse
 from dataclasses import asdict
 from datetime import datetime, timezone
@@ -67,19 +67,33 @@ def tree_digest(value):
     return out.hexdigest()
 
 
-def worker(mode, directory, architecture, device):
+def worker(mode, directory, architecture, device, feature_schema):
     def deny_network(event, unused):
         if event in ("socket.connect", "socket.getaddrinfo", "socket.sendto"):
             raise RuntimeError("Network is prohibited in synthetic qualification")
     sys.addaudithook(deny_network)
+    precharge = json.loads((directory.parent / "precharge.json").read_text())
+    assert precharge["precharged_optimizer_updates"] == precharge["maximum_optimizer_updates"] == 12
+    assert precharge["implementation_sha256"] == identity()
+    assert dict(architecture=architecture, device=device, feature_schema=feature_schema) in precharge["cases"]
+    assert directory.resolve().is_relative_to((ROOT / ".local").resolve())
+    with (directory / (mode + ".started")).open("x") as stream:
+        stream.write(str(os.getpid())); stream.flush(); os.fsync(stream.fileno())
+    descriptor = os.open(directory, os.O_RDONLY)
+    try: os.fsync(descriptor)
+    finally: os.close(descriptor)
     import torch
-    from hydra_directflow.training import DevelopmentTrainer, TrainerSpec, EarlyStopping, array_identity
+    from hydra_directflow.training import (DevelopmentTrainer, TrainerSpec, EarlyStopping, array_identity,
+        q_only_training_bundle, Q_ONLY_FEATURE_SCHEMA)
     from hydra_directflow.local_data import utc_epoch
     torch.set_num_threads(1); torch.set_num_interop_threads(1)
     if device == "mps":
         torch.mps.set_per_process_memory_fraction(min(1., 2 * 1024**3 / torch.mps.recommended_max_memory()))
     arrays = synthetic_arrays(); source = array_identity(arrays)
-    spec = TrainerSpec(architecture, device, 24, 4, .0001, 17, True, 2)
+    cohort = source if feature_schema == Q_ONLY_FEATURE_SCHEMA else None
+    if cohort is not None:
+        arrays = q_only_training_bundle(arrays, cohort_admission_digest=cohort)
+    spec = TrainerSpec(architecture, device, 24, 4, .0001, 17, True, 2, feature_schema=feature_schema)
     checkpoint = directory / "mid-epoch.pt"
     status = dict(optimizer_updates_entered=0, optimizer_updates_confirmed=0, pid=os.getpid(), mps_driver_bytes=0)
     def update(trainer):
@@ -96,15 +110,18 @@ def worker(mode, directory, architecture, device):
         atomic_json(directory / "checkpoint-identity.json", dict(sha256=sha, source=source))
     else:
         recorded = json.loads((directory / "checkpoint-identity.json").read_text())
-        trainer = DevelopmentTrainer.restore(checkpoint, arrays, expected_sha256=recorded["sha256"], expected_source_identity=source)
+        trainer = DevelopmentTrainer.restore(checkpoint, arrays, expected_sha256=recorded["sha256"], expected_source_identity=source,
+                                              expected_feature_schema=feature_schema, expected_cohort_admission_digest=cohort)
     step = update(trainer)
     # The second batch ends the sole epoch. This evaluates only and adds no step.
     trainer.fit_epochs(EarlyStopping(1, 1, 1, 0.))
     completed = directory / (mode + "-completed.pt")
     completed_sha = trainer.checkpoint(completed)
-    restored = DevelopmentTrainer.restore(completed, arrays, expected_sha256=completed_sha, expected_source_identity=source)
+    restored = DevelopmentTrainer.restore(completed, arrays, expected_sha256=completed_sha, expected_source_identity=source,
+                                          expected_feature_schema=feature_schema, expected_cohort_admission_digest=cohort)
     assert asdict(restored.stopping) == asdict(trainer.stopping) and restored.sampler.state() == trainer.sampler.state()
-    result = dict(pid=os.getpid(), second_update=step, scaler=asdict(trainer.scaler), sampler=trainer.sampler.state(),
+    result = dict(pid=os.getpid(), feature_schema=feature_schema, comparison_cohort_sha256=cohort,
+                  second_update=step, scaler=asdict(trainer.scaler), sampler=trainer.sampler.state(),
                   stopping=asdict(trainer.stopping), model_sha256=tree_digest(trainer.model.state_dict()),
                   optimizer_sha256=tree_digest(trainer.optimizer.state_dict()), best_model_sha256=tree_digest(trainer.best_model_state),
                   cpu_rng_sha256=tree_digest(torch.get_rng_state()),
@@ -122,13 +139,16 @@ def main():
     parser.add_argument("--worker", choices=("reference", "replay"))
     parser.add_argument("--architecture")
     parser.add_argument("--device")
+    parser.add_argument("--feature-schema", choices=("FULL_HRRR_H2_W4_S2_V1", "Q_ONLY_H2_HORIZON1_S0_V1"))
     args = parser.parse_args()
     if args.worker:
-        worker(args.worker, args.run_directory, args.architecture, args.device); return
+        worker(args.worker, args.run_directory, args.architecture, args.device, args.feature_schema); return
     plan = dict(schema="hydra-scientific-trainer-qualification/v1", status="PLANNED_NOT_EXECUTED",
-                source="SYNTHETIC_ONLY", maximum_optimizer_updates=6, maximum_wall_seconds=300,
+                source="SYNTHETIC_ONLY", maximum_optimizer_updates=12, maximum_wall_seconds=300,
                 maximum_worker_bytes=4 * 1024**3, implementation_sha256=identity(),
-                cases=[dict(architecture="LSTM", device="cpu"), dict(architecture="Mamba2_Transformer", device="mps")])
+                cases=[dict(architecture=architecture, device=device, feature_schema=feature)
+                       for feature in ("FULL_HRRR_H2_W4_S2_V1", "Q_ONLY_H2_HORIZON1_S0_V1")
+                       for architecture, device in (("LSTM", "cpu"), ("Mamba2_Transformer", "mps"))])
     if not args.execute:
         print(json.dumps(plan, indent=2)); return
     import psutil
@@ -137,7 +157,7 @@ def main():
     if not directory.resolve().is_relative_to((ROOT / ".local").resolve()) or directory.exists() or args.report.exists():
         parser.error("Use a new ignored .local run directory and new receipt")
     directory.mkdir(parents=True)
-    receipt = {**plan, "status": "RUNNING", "precharged_optimizer_updates": 6, "confirmed_optimizer_updates": 0,
+    receipt = {**plan, "status": "RUNNING", "precharged_optimizer_updates": 12, "confirmed_optimizer_updates": 0,
                "attempts": [], "created_at_utc": datetime.now(timezone.utc).isoformat()}
     atomic_json(args.report, receipt); atomic_json(directory / "precharge.json", receipt)
     env = {**os.environ, "OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1",
@@ -145,14 +165,15 @@ def main():
     started = time.monotonic()
     try:
         for case in plan["cases"]:
-            local = directory / (case["architecture"] + "-" + case["device"]); local.mkdir()
+            local = directory / (case["architecture"] + "-" + case["device"] + "-" + case["feature_schema"]); local.mkdir()
             for mode in ("reference", "replay"):
                 status_path = local / (mode + "-status.json")
                 child, code, peak = None, None, 0
                 try:
                     with (local / (mode + ".log")).open("x") as log:
                         child = subprocess.Popen([sys.executable, "-B", __file__, "--worker", mode, "--run-directory", str(local),
-                                                  "--architecture", case["architecture"], "--device", case["device"]], env=env, stdout=log, stderr=log)
+                                                  "--architecture", case["architecture"], "--device", case["device"],
+                                                  "--feature-schema", case["feature_schema"]], env=env, stdout=log, stderr=log)
                         process = psutil.Process(child.pid)
                         while child.poll() is None:
                             current = json.loads(status_path.read_text()) if status_path.exists() else {}
@@ -181,7 +202,7 @@ def main():
                     assert reference[key] == replay[key], key
             receipt.setdefault("recovery_checks", []).append(dict(**case, distinct_pids=True, exact_next_update_and_sample_order=True,
                         exact_scaler_model_optimizer_rng_and_stopping=True, source_array_sha256=reference["source_array_sha256"]))
-        assert receipt["confirmed_optimizer_updates"] == 6
+        assert receipt["confirmed_optimizer_updates"] == 12
         receipt["status"] = "PASSED_FRESH_PROCESS_TRAINER_RECOVERY"
     except BaseException as error:
         receipt.update(status="FAILED_QUALIFICATION", error_type=type(error).__name__, error=str(error))
