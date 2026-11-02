@@ -46,6 +46,10 @@ storage download stayed below 1 GiB; no cloud compute jobs were started.
 Preprocessing took 9.22 seconds with an empty derived cache including stop/resume,
 5.12 seconds for warm full assembly and 0.78 seconds for verification-only resume.
 
+The [November 2 next-steps plan](docs/next-steps-20261102.md) proposes the scientific
+protocol, cohort preparation, realistic training benchmark and November 6 poster
+schedule. It does not freeze scientific choices or authorize further spending.
+
 ## Local use
 
 ```sh
