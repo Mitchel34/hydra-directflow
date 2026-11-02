@@ -1,0 +1,67 @@
+{
+  "additional_storage_scenario": {
+    "assumption": "Hypothetical new Standard storage in Iowa; not measured current bill or approved allocation",
+    "days": 7,
+    "gib": 50,
+    "storage_only_usd": 0.2301
+  },
+  "authorized_spend_usd": null,
+  "cloud_runtime_measured": false,
+  "compute_duration_scenarios": [
+    {
+      "compute_only_usd": 0.7068,
+      "machine_hours": 1,
+      "scope": "Elapsed cloud hours supplied as a scenario, not predicted from local model throughput"
+    },
+    {
+      "compute_only_usd": 2.8273,
+      "machine_hours": 4,
+      "scope": "Elapsed cloud hours supplied as a scenario, not predicted from local model throughput"
+    },
+    {
+      "compute_only_usd": 8.482,
+      "machine_hours": 12,
+      "scope": "Elapsed cloud hours supplied as a scenario, not predicted from local model throughput"
+    },
+    {
+      "compute_only_usd": 16.964,
+      "machine_hours": 24,
+      "scope": "Elapsed cloud hours supplied as a scenario, not predicted from local model throughput"
+    }
+  ],
+  "created_at_utc": "2026-11-02T00:35:29.402918+00:00",
+  "excluded_costs": [
+    "Persistent boot/data disks",
+    "Requests and any retrieval fees",
+    "Data transfer/egress based on actual locations",
+    "Existing acquisition storage and retained resources",
+    "Taxes and support",
+    "Failed attempts/retries/idle deployment time"
+  ],
+  "full_campaign_compute_budget_usd": null,
+  "missing_for_full_budget": [
+    "Actual data location and storage class",
+    "Complete source payload inventory",
+    "Cloud environment/CUDA correctness and throughput",
+    "Frozen training/validation cohorts and scientific transforms",
+    "Trials,seeds,epochs,early stopping and ablation matrix"
+  ],
+  "price_references": [
+    {
+      "pricing_basis": "Displayed published default on-demand USD machine-hour rate; confirm regional SKU and actual configuration before a pilot",
+      "retrieved_utc": "2026-11-02T00:35:29.403090+00:00",
+      "service": "Compute Engine g2-standard-4, one L4,4vCPU,16GiB",
+      "url": "https://cloud.google.com/products/compute/pricing/accelerator-optimized",
+      "usd_per_machine_hour": 0.706832276
+    },
+    {
+      "retrieved_utc": "2026-11-02T00:35:29.403092+00:00",
+      "service": "Cloud Storage Standard, Iowa us-central1",
+      "url": "https://cloud.google.com/storage/pricing",
+      "usd_per_gib_hour": 2.7397e-05
+    }
+  ],
+  "qualification": "Published unit-price arithmetic only. No assumption that local CPU/MPS seconds equal L4 seconds. No cloud resources started or acquisition allowance reused.",
+  "schema": "hydra-budget-scenarios/v1",
+  "status": "PLANNING_ONLY_NO_CLOUD_EXECUTION_AUTHORIZED"
+}

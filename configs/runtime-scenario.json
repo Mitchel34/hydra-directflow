@@ -1,0 +1,10 @@
+{
+  "train_cases": 10000,
+  "validation_cases": 1000,
+  "epochs": 20,
+  "trials": 1,
+  "seeds": 1,
+  "gauges": 3,
+  "validation_every": 1,
+  "checkpoint_every": 1
+}

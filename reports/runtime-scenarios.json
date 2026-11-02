@@ -1,0 +1,785 @@
+{
+  "all_four_models_total_hours": {
+    "cpu": {
+      "all_samples": 3.2334046754840204,
+      "later_epoch_sensitivity": 2.3167827727927452
+    },
+    "mps": {
+      "all_samples": 21.31464219318525,
+      "later_epoch_sensitivity": 8.12500779256734
+    }
+  },
+  "cloud_campaign_budget": null,
+  "cloud_jobs": 0,
+  "cloud_runtime_estimated": false,
+  "created_at_utc": "2026-11-02T00:33:41.811440+00:00",
+  "implementation_sha256": {
+    "scripts/project_runtime.py": "b8db38d9035fb143662bd7b270f08271f88571b730832633a09d5cb68bfc6329",
+    "src/hydra_directflow/pipeline_timing.py": "a6046c434fccd835b3dc710052f1b40635d1c8266df35fa3dd92caa123101303"
+  },
+  "input_sha256": {
+    "measurements": "d4e0102db82a5aa1dbcebaedda5e5be488a361af628e255501b2aebc10990963",
+    "scenario": "6daa18b6b533b7d30038469a92a235ac91a3e270b368220aafda2e219cf0ce1f"
+  },
+  "optimizer_updates": 0,
+  "projections": [
+    {
+      "all_samples": {
+        "architecture": "LSTM",
+        "assumptions": [
+          "Observed local batch costs remain stable",
+          "Runs execute serially",
+          "Configured epochs/trials/seeds/gauges are scenario inputs, not scientific choices",
+          "Every incomplete final batch charged as one observed batch"
+        ],
+        "basis": "ALL_THREE_EPOCHS_MEAN_BATCH_COST_INCLUDING_FIRST_USE",
+        "device": "cpu",
+        "exclusions": [
+          "Full-corpus source I/O and preprocessing",
+          "Cloud hardware and transfer costs",
+          "Convergence and selected epoch count",
+          "Hyperparameter search/selection overhead",
+          "Fault recovery and scheduling",
+          "Unmeasured larger batch throughput"
+        ],
+        "measured_train_batch_size": 8,
+        "measured_validation_batch_size": 4,
+        "per_fit_components_seconds": {
+          "checkpoint_write": 0.12521999888122082,
+          "startup": 2.390895875170827,
+          "training": 1374.2505199237107,
+          "validation": 389.1368051214764
+        },
+        "per_fit_seconds": 1765.903440919239,
+        "preprocessing_seconds_observed": 1.3922439169837162,
+        "scenario": {
+          "checkpoint_every": 1,
+          "epochs": 20,
+          "gauges": 3,
+          "seeds": 1,
+          "train_cases_per_gauge": 10000,
+          "trials": 1,
+          "validation_cases_per_gauge": 1000,
+          "validation_every": 1
+        },
+        "status": "CONDITIONAL_LOCAL_RUNTIME_PROJECTION_NOT_CONVERGENCE_ESTIMATE",
+        "total_fits": 3,
+        "total_hours": 1.4715862007660325,
+        "total_seconds": 5297.710322757717
+      },
+      "architecture": "LSTM",
+      "device": "cpu",
+      "later_epoch_sensitivity": {
+        "architecture": "LSTM",
+        "assumptions": [
+          "Observed local batch costs remain stable",
+          "Runs execute serially",
+          "Configured epochs/trials/seeds/gauges are scenario inputs, not scientific choices",
+          "Every incomplete final batch charged as one observed batch"
+        ],
+        "basis": "EPOCHS_2_AND_3_BATCH_COSTS_PLUS_POSITIVE_FIRST_EPOCH_EXCESS_ONCE_PER_FIT",
+        "device": "cpu",
+        "exclusions": [
+          "Full-corpus source I/O and preprocessing",
+          "Cloud hardware and transfer costs",
+          "Convergence and selected epoch count",
+          "Hyperparameter search/selection overhead",
+          "Fault recovery and scheduling",
+          "Unmeasured larger batch throughput"
+        ],
+        "first_use_excess_seconds_per_fit": 0.2980225835926831,
+        "measured_train_batch_size": 8,
+        "measured_validation_batch_size": 4,
+        "per_fit_components_seconds": {
+          "checkpoint_write": 0.12521999888122082,
+          "first_use_excess": 0.2980225835926831,
+          "startup": 2.390895875170827,
+          "training": 1037.2203119914047,
+          "validation": 27.244582306593657
+        },
+        "per_fit_seconds": 1067.2790327556431,
+        "preprocessing_seconds_observed": 1.3922439169837162,
+        "scenario": {
+          "checkpoint_every": 1,
+          "epochs": 20,
+          "gauges": 3,
+          "seeds": 1,
+          "train_cases_per_gauge": 10000,
+          "trials": 1,
+          "validation_cases_per_gauge": 1000,
+          "validation_every": 1
+        },
+        "status": "CONDITIONAL_LOCAL_RUNTIME_PROJECTION_NOT_CONVERGENCE_ESTIMATE",
+        "total_fits": 3,
+        "total_hours": 0.8893991939630359,
+        "total_seconds": 3201.8370982669294
+      },
+      "plan_sha256": "08efef5da3286340f4ecba66c630b04db0bd878f1d06a33b376849d617647130"
+    },
+    {
+      "all_samples": {
+        "architecture": "Transformer",
+        "assumptions": [
+          "Observed local batch costs remain stable",
+          "Runs execute serially",
+          "Configured epochs/trials/seeds/gauges are scenario inputs, not scientific choices",
+          "Every incomplete final batch charged as one observed batch"
+        ],
+        "basis": "ALL_THREE_EPOCHS_MEAN_BATCH_COST_INCLUDING_FIRST_USE",
+        "device": "cpu",
+        "exclusions": [
+          "Full-corpus source I/O and preprocessing",
+          "Cloud hardware and transfer costs",
+          "Convergence and selected epoch count",
+          "Hyperparameter search/selection overhead",
+          "Fault recovery and scheduling",
+          "Unmeasured larger batch throughput"
+        ],
+        "measured_train_batch_size": 8,
+        "measured_validation_batch_size": 4,
+        "per_fit_components_seconds": {
+          "checkpoint_write": 0.11245750123634934,
+          "startup": 1.2877544579096138,
+          "training": 589.1680537994641,
+          "validation": 14.568750048056245
+        },
+        "per_fit_seconds": 605.1370158066663,
+        "preprocessing_seconds_observed": 1.1151463340502232,
+        "scenario": {
+          "checkpoint_every": 1,
+          "epochs": 20,
+          "gauges": 3,
+          "seeds": 1,
+          "train_cases_per_gauge": 10000,
+          "trials": 1,
+          "validation_cases_per_gauge": 1000,
+          "validation_every": 1
+        },
+        "status": "CONDITIONAL_LOCAL_RUNTIME_PROJECTION_NOT_CONVERGENCE_ESTIMATE",
+        "total_fits": 3,
+        "total_hours": 0.5042808465055553,
+        "total_seconds": 1815.411047419999
+      },
+      "architecture": "Transformer",
+      "device": "cpu",
+      "later_epoch_sensitivity": {
+        "architecture": "Transformer",
+        "assumptions": [
+          "Observed local batch costs remain stable",
+          "Runs execute serially",
+          "Configured epochs/trials/seeds/gauges are scenario inputs, not scientific choices",
+          "Every incomplete final batch charged as one observed batch"
+        ],
+        "basis": "EPOCHS_2_AND_3_BATCH_COSTS_PLUS_POSITIVE_FIRST_EPOCH_EXCESS_ONCE_PER_FIT",
+        "device": "cpu",
+        "exclusions": [
+          "Full-corpus source I/O and preprocessing",
+          "Cloud hardware and transfer costs",
+          "Convergence and selected epoch count",
+          "Hyperparameter search/selection overhead",
+          "Fault recovery and scheduling",
+          "Unmeasured larger batch throughput"
+        ],
+        "first_use_excess_seconds_per_fit": 0.029680648003704846,
+        "measured_train_batch_size": 8,
+        "measured_validation_batch_size": 4,
+        "per_fit_components_seconds": {
+          "checkpoint_write": 0.11245750123634934,
+          "first_use_excess": 0.029680648003704846,
+          "startup": 1.2877544579096138,
+          "training": 474.16899978998117,
+          "validation": 11.10062497900799
+        },
+        "per_fit_seconds": 486.69951737613883,
+        "preprocessing_seconds_observed": 1.1151463340502232,
+        "scenario": {
+          "checkpoint_every": 1,
+          "epochs": 20,
+          "gauges": 3,
+          "seeds": 1,
+          "train_cases_per_gauge": 10000,
+          "trials": 1,
+          "validation_cases_per_gauge": 1000,
+          "validation_every": 1
+        },
+        "status": "CONDITIONAL_LOCAL_RUNTIME_PROJECTION_NOT_CONVERGENCE_ESTIMATE",
+        "total_fits": 3,
+        "total_hours": 0.40558293114678234,
+        "total_seconds": 1460.0985521284165
+      },
+      "plan_sha256": "e839c17e597309acfea14f9b1ff02dcdd23425eeb23dd4570c90a4bc5c3d4c68"
+    },
+    {
+      "all_samples": {
+        "architecture": "GRU_Transformer",
+        "assumptions": [
+          "Observed local batch costs remain stable",
+          "Runs execute serially",
+          "Configured epochs/trials/seeds/gauges are scenario inputs, not scientific choices",
+          "Every incomplete final batch charged as one observed batch"
+        ],
+        "basis": "ALL_THREE_EPOCHS_MEAN_BATCH_COST_INCLUDING_FIRST_USE",
+        "device": "cpu",
+        "exclusions": [
+          "Full-corpus source I/O and preprocessing",
+          "Cloud hardware and transfer costs",
+          "Convergence and selected epoch count",
+          "Hyperparameter search/selection overhead",
+          "Fault recovery and scheduling",
+          "Unmeasured larger batch throughput"
+        ],
+        "measured_train_batch_size": 8,
+        "measured_validation_batch_size": 4,
+        "per_fit_components_seconds": {
+          "checkpoint_write": 0.08957250043749809,
+          "startup": 1.0441948319785297,
+          "training": 559.0559036742586,
+          "validation": 17.348540131933987
+        },
+        "per_fit_seconds": 577.5382111386086,
+        "preprocessing_seconds_observed": 1.1062138340203092,
+        "scenario": {
+          "checkpoint_every": 1,
+          "epochs": 20,
+          "gauges": 3,
+          "seeds": 1,
+          "train_cases_per_gauge": 10000,
+          "trials": 1,
+          "validation_cases_per_gauge": 1000,
+          "validation_every": 1
+        },
+        "status": "CONDITIONAL_LOCAL_RUNTIME_PROJECTION_NOT_CONVERGENCE_ESTIMATE",
+        "total_fits": 3,
+        "total_hours": 0.4812818426155072,
+        "total_seconds": 1732.614633415826
+      },
+      "architecture": "GRU_Transformer",
+      "device": "cpu",
+      "later_epoch_sensitivity": {
+        "architecture": "GRU_Transformer",
+        "assumptions": [
+          "Observed local batch costs remain stable",
+          "Runs execute serially",
+          "Configured epochs/trials/seeds/gauges are scenario inputs, not scientific choices",
+          "Every incomplete final batch charged as one observed batch"
+        ],
+        "basis": "EPOCHS_2_AND_3_BATCH_COSTS_PLUS_POSITIVE_FIRST_EPOCH_EXCESS_ONCE_PER_FIT",
+        "device": "cpu",
+        "exclusions": [
+          "Full-corpus source I/O and preprocessing",
+          "Cloud hardware and transfer costs",
+          "Convergence and selected epoch count",
+          "Hyperparameter search/selection overhead",
+          "Fault recovery and scheduling",
+          "Unmeasured larger batch throughput"
+        ],
+        "first_use_excess_seconds_per_fit": 0.01931391697144136,
+        "measured_train_batch_size": 8,
+        "measured_validation_batch_size": 4,
+        "per_fit_components_seconds": {
+          "checkpoint_write": 0.08957250043749809,
+          "first_use_excess": 0.01931391697144136,
+          "startup": 1.0441948319785297,
+          "training": 482.98307447112165,
+          "validation": 15.587810194119811
+        },
+        "per_fit_seconds": 499.72396591462893,
+        "preprocessing_seconds_observed": 1.1062138340203092,
+        "scenario": {
+          "checkpoint_every": 1,
+          "epochs": 20,
+          "gauges": 3,
+          "seeds": 1,
+          "train_cases_per_gauge": 10000,
+          "trials": 1,
+          "validation_cases_per_gauge": 1000,
+          "validation_every": 1
+        },
+        "status": "CONDITIONAL_LOCAL_RUNTIME_PROJECTION_NOT_CONVERGENCE_ESTIMATE",
+        "total_fits": 3,
+        "total_hours": 0.4164366382621908,
+        "total_seconds": 1499.1718977438868
+      },
+      "plan_sha256": "bef29ab0501417022587b2644084b8f48d4953349c1cdae368f1ee713622bb6b"
+    },
+    {
+      "all_samples": {
+        "architecture": "Mamba2_Transformer",
+        "assumptions": [
+          "Observed local batch costs remain stable",
+          "Runs execute serially",
+          "Configured epochs/trials/seeds/gauges are scenario inputs, not scientific choices",
+          "Every incomplete final batch charged as one observed batch"
+        ],
+        "basis": "ALL_THREE_EPOCHS_MEAN_BATCH_COST_INCLUDING_FIRST_USE",
+        "device": "cpu",
+        "exclusions": [
+          "Full-corpus source I/O and preprocessing",
+          "Cloud hardware and transfer costs",
+          "Convergence and selected epoch count",
+          "Hyperparameter search/selection overhead",
+          "Fault recovery and scheduling",
+          "Unmeasured larger batch throughput"
+        ],
+        "measured_train_batch_size": 8,
+        "measured_validation_batch_size": 4,
+        "per_fit_components_seconds": {
+          "checkpoint_write": 0.11226415866985917,
+          "startup": 2.247488667140715,
+          "training": 903.1748297275044,
+          "validation": 25.972360162995756
+        },
+        "per_fit_seconds": 931.5069427163107,
+        "preprocessing_seconds_observed": 0.9774176659993827,
+        "scenario": {
+          "checkpoint_every": 1,
+          "epochs": 20,
+          "gauges": 3,
+          "seeds": 1,
+          "train_cases_per_gauge": 10000,
+          "trials": 1,
+          "validation_cases_per_gauge": 1000,
+          "validation_every": 1
+        },
+        "status": "CONDITIONAL_LOCAL_RUNTIME_PROJECTION_NOT_CONVERGENCE_ESTIMATE",
+        "total_fits": 3,
+        "total_hours": 0.7762557855969257,
+        "total_seconds": 2794.520828148932
+      },
+      "architecture": "Mamba2_Transformer",
+      "device": "cpu",
+      "later_epoch_sensitivity": {
+        "architecture": "Mamba2_Transformer",
+        "assumptions": [
+          "Observed local batch costs remain stable",
+          "Runs execute serially",
+          "Configured epochs/trials/seeds/gauges are scenario inputs, not scientific choices",
+          "Every incomplete final batch charged as one observed batch"
+        ],
+        "basis": "EPOCHS_2_AND_3_BATCH_COSTS_PLUS_POSITIVE_FIRST_EPOCH_EXCESS_ONCE_PER_FIT",
+        "device": "cpu",
+        "exclusions": [
+          "Full-corpus source I/O and preprocessing",
+          "Cloud hardware and transfer costs",
+          "Convergence and selected epoch count",
+          "Hyperparameter search/selection overhead",
+          "Fault recovery and scheduling",
+          "Unmeasured larger batch throughput"
+        ],
+        "first_use_excess_seconds_per_fit": 0.04975874943193048,
+        "measured_train_batch_size": 8,
+        "measured_validation_batch_size": 4,
+        "per_fit_components_seconds": {
+          "checkpoint_write": 0.11226415866985917,
+          "first_use_excess": 0.04975874943193048,
+          "startup": 2.247488667140715,
+          "training": 699.5270945481025,
+          "validation": 24.50020518153906
+        },
+        "per_fit_seconds": 726.436811304884,
+        "preprocessing_seconds_observed": 0.9774176659993827,
+        "scenario": {
+          "checkpoint_every": 1,
+          "epochs": 20,
+          "gauges": 3,
+          "seeds": 1,
+          "train_cases_per_gauge": 10000,
+          "trials": 1,
+          "validation_cases_per_gauge": 1000,
+          "validation_every": 1
+        },
+        "status": "CONDITIONAL_LOCAL_RUNTIME_PROJECTION_NOT_CONVERGENCE_ESTIMATE",
+        "total_fits": 3,
+        "total_hours": 0.6053640094207366,
+        "total_seconds": 2179.310433914652
+      },
+      "plan_sha256": "b7b542d4c968b7daa9803f7bc735a8628b63d2844441a571e9a0e8dc1d79ebe3"
+    },
+    {
+      "all_samples": {
+        "architecture": "LSTM",
+        "assumptions": [
+          "Observed local batch costs remain stable",
+          "Runs execute serially",
+          "Configured epochs/trials/seeds/gauges are scenario inputs, not scientific choices",
+          "Every incomplete final batch charged as one observed batch"
+        ],
+        "basis": "ALL_THREE_EPOCHS_MEAN_BATCH_COST_INCLUDING_FIRST_USE",
+        "device": "mps",
+        "exclusions": [
+          "Full-corpus source I/O and preprocessing",
+          "Cloud hardware and transfer costs",
+          "Convergence and selected epoch count",
+          "Hyperparameter search/selection overhead",
+          "Fault recovery and scheduling",
+          "Unmeasured larger batch throughput"
+        ],
+        "measured_train_batch_size": 8,
+        "measured_validation_batch_size": 4,
+        "per_fit_components_seconds": {
+          "checkpoint_write": 0.3064066614024341,
+          "startup": 1.0120961669599637,
+          "training": 6652.581422046449,
+          "validation": 337.98111156405264
+        },
+        "per_fit_seconds": 6991.881036438864,
+        "preprocessing_seconds_observed": 0.9152785410406068,
+        "scenario": {
+          "checkpoint_every": 1,
+          "epochs": 20,
+          "gauges": 3,
+          "seeds": 1,
+          "train_cases_per_gauge": 10000,
+          "trials": 1,
+          "validation_cases_per_gauge": 1000,
+          "validation_every": 1
+        },
+        "status": "CONDITIONAL_LOCAL_RUNTIME_PROJECTION_NOT_CONVERGENCE_ESTIMATE",
+        "total_fits": 3,
+        "total_hours": 5.82656753036572,
+        "total_seconds": 20975.643109316592
+      },
+      "architecture": "LSTM",
+      "device": "mps",
+      "later_epoch_sensitivity": {
+        "architecture": "LSTM",
+        "assumptions": [
+          "Observed local batch costs remain stable",
+          "Runs execute serially",
+          "Configured epochs/trials/seeds/gauges are scenario inputs, not scientific choices",
+          "Every incomplete final batch charged as one observed batch"
+        ],
+        "basis": "EPOCHS_2_AND_3_BATCH_COSTS_PLUS_POSITIVE_FIRST_EPOCH_EXCESS_ONCE_PER_FIT",
+        "device": "mps",
+        "exclusions": [
+          "Full-corpus source I/O and preprocessing",
+          "Cloud hardware and transfer costs",
+          "Convergence and selected epoch count",
+          "Hyperparameter search/selection overhead",
+          "Fault recovery and scheduling",
+          "Unmeasured larger batch throughput"
+        ],
+        "first_use_excess_seconds_per_fit": 1.485868208867032,
+        "measured_train_batch_size": 8,
+        "measured_validation_batch_size": 4,
+        "per_fit_components_seconds": {
+          "checkpoint_write": 0.3064066614024341,
+          "first_use_excess": 1.485868208867032,
+          "startup": 1.0120961669599637,
+          "training": 1119.4244762009475,
+          "validation": 74.7968751238659
+        },
+        "per_fit_seconds": 1197.0257223620429,
+        "preprocessing_seconds_observed": 0.9152785410406068,
+        "scenario": {
+          "checkpoint_every": 1,
+          "epochs": 20,
+          "gauges": 3,
+          "seeds": 1,
+          "train_cases_per_gauge": 10000,
+          "trials": 1,
+          "validation_cases_per_gauge": 1000,
+          "validation_every": 1
+        },
+        "status": "CONDITIONAL_LOCAL_RUNTIME_PROJECTION_NOT_CONVERGENCE_ESTIMATE",
+        "total_fits": 3,
+        "total_hours": 0.9975214353017023,
+        "total_seconds": 3591.0771670861286
+      },
+      "plan_sha256": "46a07be8e71c9dffb0a57b21323d932468bbe8675ccb8550fad6be99dcf2015a"
+    },
+    {
+      "all_samples": {
+        "architecture": "Transformer",
+        "assumptions": [
+          "Observed local batch costs remain stable",
+          "Runs execute serially",
+          "Configured epochs/trials/seeds/gauges are scenario inputs, not scientific choices",
+          "Every incomplete final batch charged as one observed batch"
+        ],
+        "basis": "ALL_THREE_EPOCHS_MEAN_BATCH_COST_INCLUDING_FIRST_USE",
+        "device": "mps",
+        "exclusions": [
+          "Full-corpus source I/O and preprocessing",
+          "Cloud hardware and transfer costs",
+          "Convergence and selected epoch count",
+          "Hyperparameter search/selection overhead",
+          "Fault recovery and scheduling",
+          "Unmeasured larger batch throughput"
+        ],
+        "measured_train_batch_size": 8,
+        "measured_validation_batch_size": 4,
+        "per_fit_components_seconds": {
+          "checkpoint_write": 0.593076660297811,
+          "startup": 1.0343328318558633,
+          "training": 4353.246183503265,
+          "validation": 234.19006979869056
+        },
+        "per_fit_seconds": 4589.0636627941085,
+        "preprocessing_seconds_observed": 1.098254416952841,
+        "scenario": {
+          "checkpoint_every": 1,
+          "epochs": 20,
+          "gauges": 3,
+          "seeds": 1,
+          "train_cases_per_gauge": 10000,
+          "trials": 1,
+          "validation_cases_per_gauge": 1000,
+          "validation_every": 1
+        },
+        "status": "CONDITIONAL_LOCAL_RUNTIME_PROJECTION_NOT_CONVERGENCE_ESTIMATE",
+        "total_fits": 3,
+        "total_hours": 3.82421971899509,
+        "total_seconds": 13767.190988382325
+      },
+      "architecture": "Transformer",
+      "device": "mps",
+      "later_epoch_sensitivity": {
+        "architecture": "Transformer",
+        "assumptions": [
+          "Observed local batch costs remain stable",
+          "Runs execute serially",
+          "Configured epochs/trials/seeds/gauges are scenario inputs, not scientific choices",
+          "Every incomplete final batch charged as one observed batch"
+        ],
+        "basis": "EPOCHS_2_AND_3_BATCH_COSTS_PLUS_POSITIVE_FIRST_EPOCH_EXCESS_ONCE_PER_FIT",
+        "device": "mps",
+        "exclusions": [
+          "Full-corpus source I/O and preprocessing",
+          "Cloud hardware and transfer costs",
+          "Convergence and selected epoch count",
+          "Hyperparameter search/selection overhead",
+          "Fault recovery and scheduling",
+          "Unmeasured larger batch throughput"
+        ],
+        "first_use_excess_seconds_per_fit": 0.7464097506599501,
+        "measured_train_batch_size": 8,
+        "measured_validation_batch_size": 4,
+        "per_fit_components_seconds": {
+          "checkpoint_write": 0.593076660297811,
+          "first_use_excess": 0.7464097506599501,
+          "startup": 1.0343328318558633,
+          "training": 1666.996874700999,
+          "validation": 64.6735422196798
+        },
+        "per_fit_seconds": 1734.0442361634923,
+        "preprocessing_seconds_observed": 1.098254416952841,
+        "scenario": {
+          "checkpoint_every": 1,
+          "epochs": 20,
+          "gauges": 3,
+          "seeds": 1,
+          "train_cases_per_gauge": 10000,
+          "trials": 1,
+          "validation_cases_per_gauge": 1000,
+          "validation_every": 1
+        },
+        "status": "CONDITIONAL_LOCAL_RUNTIME_PROJECTION_NOT_CONVERGENCE_ESTIMATE",
+        "total_fits": 3,
+        "total_hours": 1.445036863469577,
+        "total_seconds": 5202.132708490477
+      },
+      "plan_sha256": "d04bb97e727a7bdeaee44974d16c1716482a9af8e9f409cb0ad1f0c563d69fe5"
+    },
+    {
+      "all_samples": {
+        "architecture": "GRU_Transformer",
+        "assumptions": [
+          "Observed local batch costs remain stable",
+          "Runs execute serially",
+          "Configured epochs/trials/seeds/gauges are scenario inputs, not scientific choices",
+          "Every incomplete final batch charged as one observed batch"
+        ],
+        "basis": "ALL_THREE_EPOCHS_MEAN_BATCH_COST_INCLUDING_FIRST_USE",
+        "device": "mps",
+        "exclusions": [
+          "Full-corpus source I/O and preprocessing",
+          "Cloud hardware and transfer costs",
+          "Convergence and selected epoch count",
+          "Hyperparameter search/selection overhead",
+          "Fault recovery and scheduling",
+          "Unmeasured larger batch throughput"
+        ],
+        "measured_train_batch_size": 8,
+        "measured_validation_batch_size": 4,
+        "per_fit_components_seconds": {
+          "checkpoint_write": 0.5248891608789563,
+          "startup": 0.994183165836148,
+          "training": 7812.454165832605,
+          "validation": 383.27520674405
+        },
+        "per_fit_seconds": 8197.248444903371,
+        "preprocessing_seconds_observed": 0.9164275419898331,
+        "scenario": {
+          "checkpoint_every": 1,
+          "epochs": 20,
+          "gauges": 3,
+          "seeds": 1,
+          "train_cases_per_gauge": 10000,
+          "trials": 1,
+          "validation_cases_per_gauge": 1000,
+          "validation_every": 1
+        },
+        "status": "CONDITIONAL_LOCAL_RUNTIME_PROJECTION_NOT_CONVERGENCE_ESTIMATE",
+        "total_fits": 3,
+        "total_hours": 6.831040370752809,
+        "total_seconds": 24591.74533471011
+      },
+      "architecture": "GRU_Transformer",
+      "device": "mps",
+      "later_epoch_sensitivity": {
+        "architecture": "GRU_Transformer",
+        "assumptions": [
+          "Observed local batch costs remain stable",
+          "Runs execute serially",
+          "Configured epochs/trials/seeds/gauges are scenario inputs, not scientific choices",
+          "Every incomplete final batch charged as one observed batch"
+        ],
+        "basis": "EPOCHS_2_AND_3_BATCH_COSTS_PLUS_POSITIVE_FIRST_EPOCH_EXCESS_ONCE_PER_FIT",
+        "device": "mps",
+        "exclusions": [
+          "Full-corpus source I/O and preprocessing",
+          "Cloud hardware and transfer costs",
+          "Convergence and selected epoch count",
+          "Hyperparameter search/selection overhead",
+          "Fault recovery and scheduling",
+          "Unmeasured larger batch throughput"
+        ],
+        "first_use_excess_seconds_per_fit": 0.9293125625117682,
+        "measured_train_batch_size": 8,
+        "measured_validation_batch_size": 4,
+        "per_fit_components_seconds": {
+          "checkpoint_write": 0.5248891608789563,
+          "first_use_excess": 0.9293125625117682,
+          "startup": 0.994183165836148,
+          "training": 4343.535417865496,
+          "validation": 221.98843507794663
+        },
+        "per_fit_seconds": 4567.97223783267,
+        "preprocessing_seconds_observed": 0.9164275419898331,
+        "scenario": {
+          "checkpoint_every": 1,
+          "epochs": 20,
+          "gauges": 3,
+          "seeds": 1,
+          "train_cases_per_gauge": 10000,
+          "trials": 1,
+          "validation_cases_per_gauge": 1000,
+          "validation_every": 1
+        },
+        "status": "CONDITIONAL_LOCAL_RUNTIME_PROJECTION_NOT_CONVERGENCE_ESTIMATE",
+        "total_fits": 3,
+        "total_hours": 3.8066435315272247,
+        "total_seconds": 13703.916713498009
+      },
+      "plan_sha256": "420a4effb374c945837f6602a4bf195ed5df89c3e252122f70bf6c9c8cfe070a"
+    },
+    {
+      "all_samples": {
+        "architecture": "Mamba2_Transformer",
+        "assumptions": [
+          "Observed local batch costs remain stable",
+          "Runs execute serially",
+          "Configured epochs/trials/seeds/gauges are scenario inputs, not scientific choices",
+          "Every incomplete final batch charged as one observed batch"
+        ],
+        "basis": "ALL_THREE_EPOCHS_MEAN_BATCH_COST_INCLUDING_FIRST_USE",
+        "device": "mps",
+        "exclusions": [
+          "Full-corpus source I/O and preprocessing",
+          "Cloud hardware and transfer costs",
+          "Convergence and selected epoch count",
+          "Hyperparameter search/selection overhead",
+          "Fault recovery and scheduling",
+          "Unmeasured larger batch throughput"
+        ],
+        "measured_train_batch_size": 8,
+        "measured_validation_batch_size": 4,
+        "per_fit_components_seconds": {
+          "checkpoint_write": 0.6033233413472772,
+          "startup": 2.161067541805096,
+          "training": 5505.112333533665,
+          "validation": 291.5007632691413
+        },
+        "per_fit_seconds": 5799.377487685959,
+        "preprocessing_seconds_observed": 0.9945620000362396,
+        "scenario": {
+          "checkpoint_every": 1,
+          "epochs": 20,
+          "gauges": 3,
+          "seeds": 1,
+          "train_cases_per_gauge": 10000,
+          "trials": 1,
+          "validation_cases_per_gauge": 1000,
+          "validation_every": 1
+        },
+        "status": "CONDITIONAL_LOCAL_RUNTIME_PROJECTION_NOT_CONVERGENCE_ESTIMATE",
+        "total_fits": 3,
+        "total_hours": 4.832814573071632,
+        "total_seconds": 17398.132463057875
+      },
+      "architecture": "Mamba2_Transformer",
+      "device": "mps",
+      "later_epoch_sensitivity": {
+        "architecture": "Mamba2_Transformer",
+        "assumptions": [
+          "Observed local batch costs remain stable",
+          "Runs execute serially",
+          "Configured epochs/trials/seeds/gauges are scenario inputs, not scientific choices",
+          "Every incomplete final batch charged as one observed batch"
+        ],
+        "basis": "EPOCHS_2_AND_3_BATCH_COSTS_PLUS_POSITIVE_FIRST_EPOCH_EXCESS_ONCE_PER_FIT",
+        "device": "mps",
+        "exclusions": [
+          "Full-corpus source I/O and preprocessing",
+          "Cloud hardware and transfer costs",
+          "Convergence and selected epoch count",
+          "Hyperparameter search/selection overhead",
+          "Fault recovery and scheduling",
+          "Unmeasured larger batch throughput"
+        ],
+        "first_use_excess_seconds_per_fit": 0.9186906023533083,
+        "measured_train_batch_size": 8,
+        "measured_validation_batch_size": 4,
+        "per_fit_components_seconds": {
+          "checkpoint_write": 0.6033233413472772,
+          "first_use_excess": 0.9186906023533083,
+          "startup": 2.161067541805096,
+          "training": 2141.4823007944506,
+          "validation": 105.80177244264632
+        },
+        "per_fit_seconds": 2250.9671547226026,
+        "preprocessing_seconds_observed": 0.9945620000362396,
+        "scenario": {
+          "checkpoint_every": 1,
+          "epochs": 20,
+          "gauges": 3,
+          "seeds": 1,
+          "train_cases_per_gauge": 10000,
+          "trials": 1,
+          "validation_cases_per_gauge": 1000,
+          "validation_every": 1
+        },
+        "status": "CONDITIONAL_LOCAL_RUNTIME_PROJECTION_NOT_CONVERGENCE_ESTIMATE",
+        "total_fits": 3,
+        "total_hours": 1.8758059622688354,
+        "total_seconds": 6752.901464167808
+      },
+      "plan_sha256": "b3b653a9fd1609700db1c4643947b67b4aa33bbc7c9d50f36e5b71e41d8b9354"
+    }
+  ],
+  "qualification": "Two sensitivity calculations, not confidence bounds or a convergence forecast. Small measured batch geometry and engineering checks are retained. Full-corpus preprocessing, scientific evaluation and cloud hardware remain unmeasured.",
+  "scenario": {
+    "checkpoint_every": 1,
+    "epochs": 20,
+    "gauges": 3,
+    "seeds": 1,
+    "train_cases": 10000,
+    "trials": 1,
+    "validation_cases": 1000,
+    "validation_every": 1
+  },
+  "schema": "hydra-local-runtime-sensitivity/v1",
+  "scientific_choices_frozen": false,
+  "status": "CONDITIONAL_UNFROZEN_SCENARIO"
+}

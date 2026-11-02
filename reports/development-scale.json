@@ -1,0 +1,171 @@
+{
+  "case_upper_bound": {
+    "actual_count_requires_availability_quality_history_and_split_purge": true,
+    "excludes_nothing_except_final18origins": true,
+    "hourly_origins_with_all18targets_strictly_before_protected_start": 53046,
+    "three_gauge_cases": 159138
+  },
+  "compact_cache_sizing": {
+    "basis": "Physical numeric arrays only; source metadata, identities, time coordinates, and compression are excluded.",
+    "extended_weather36lead3gauge4channel_float64_bool_bytes": 34109424,
+    "hourly_discharge3gauge_float64_bool_bytes": 1432728,
+    "materialized_model_arrays_by_lookback": {
+      "168": {
+        "cases_upper_bound": 159138,
+        "uncompressed_float32_plus_bool_model_arrays_bytes": 340555320,
+        "uncompressed_float64_plus_bool_model_arrays_bytes": 612999576
+      },
+      "24": {
+        "cases_upper_bound": 159138,
+        "uncompressed_float32_plus_bool_model_arrays_bytes": 111396600,
+        "uncompressed_float64_plus_bool_model_arrays_bytes": 200513880
+      }
+    },
+    "soil3gauge_float64_bool_bytes": 236871
+  },
+  "created_at_utc": "2026-11-02T00:33:51.818610+00:00",
+  "current_reader_limits": [
+    "32 supplied archives, 128 origins, and 24 USGS months are fixture limits, not a full-corpus scheduler.",
+    "2,532 older index rows omit available groups and 1,188 omit record count; 96 use bundle location kind, and 2,016 commit entries omit byte count. These need an authenticated legacy adapter.",
+    "July 2024 USGS is blocked because its monthly partition includes protected July 31. A segregated input contract is needed before extending development through that month.",
+    "The fixed grid, candidate basin geometry, and known 18/36/47/48-slot layouts are implemented. Main scientific choices remain unfrozen."
+  ],
+  "execution": {
+    "cloud_operations": 0,
+    "network_requests": 0,
+    "protected_values_decoded": 0,
+    "source_payloads_read": 0,
+    "training_steps": 0
+  },
+  "h18_implications": {
+    "metadata_counts_are_not_usable_training_cases": true,
+    "ordinary_native18_run_can_supply_complete_h18": false,
+    "reason": "Earliest C=reference+2 requires native leads 3 through 20, outside an 18-hour run.",
+    "scenario": "C is information cutoff; simulated weather availability is reference plus 2 hours; direct targets are C+1 through C+18.",
+    "six_hour_confirmed_four_weather_groups_but_missing_soil": 9,
+    "six_hour_initializations_complete": 8773
+  },
+  "index_schema_variants": {
+    "available_groups_missing": 2532,
+    "commit_byte_count_missing": 2016,
+    "location_kinds": {
+      "bundle": 96,
+      "commit": 52968
+    },
+    "record_count_histogram": {
+      "0": 69,
+      "1": 52,
+      "109": 5,
+      "144": 9,
+      "145": 8575,
+      "36": 5,
+      "54": 18,
+      "72": 43142,
+      "73": 1,
+      "UNSPECIFIED": 1188
+    },
+    "record_count_missing": 1188
+  },
+  "minimal_next_plan": [
+    "Normalize sealed index lineage variants through an immutable adapter using original commit and manifest identities. Retain missing group states and leave the sealed index unchanged.",
+    "Partition development sources into resumable chunks. Cache authenticated basin reductions once per cycle and USGS values once per hour; assemble windows by case index.",
+    "Reuse one index authentication pass per worker and cache monthly USGS partitions. Store unique source metadata and shared lineage hashes rather than repeated JSON per case.",
+    "Select H18 weather from all required six-hour candidates, with independently selected soil. The sparse local fixture cannot prove globally latest source selection.",
+    "Time a representative month using bounded memory, measuring bytes and authentication, decode, write, loader, validation, and checkpoint stages plus failures.",
+    "After data, split, and runtime scopes are mapped, compare local and cloud hardware using a bounded pilot with an explicit dollar cap."
+  ],
+  "payload_bytes": {
+    "exact_total_from_index": null,
+    "extended_only_fivecycle_size_scenario": {
+      "cycles_assumed": 8773,
+      "mean_sample_bytes_projection": 47594858496.0,
+      "sample_min_max_bytes_scenario": [
+        45187266560,
+        50667233280
+      ]
+    },
+    "known_subset": {
+      "ordinary_initializations": {
+        "bytes_exact": 3382497280,
+        "count": 1760,
+        "dates_first": "20180713_01Z",
+        "dates_last": "20240730_23Z",
+        "max_bytes": 10260480,
+        "mean_bytes": 1921873.4545454546,
+        "median_bytes": 1863680.0,
+        "min_bytes": 1587200
+      },
+      "six_hour_initializations": {
+        "bytes_exact": 1840445440,
+        "count": 352,
+        "dates_first": "20180713_00Z",
+        "dates_last": "20240730_18Z",
+        "max_bytes": 8038400,
+        "mean_bytes": 5228538.181818182,
+        "median_bytes": 5160960.0,
+        "min_bytes": 4075520
+      }
+    },
+    "projection_qualification": "Sample-scaling scenarios only. The 2,112 indexed bundle identities span 2018 through 2024; five numeric fixtures span 2021 through 2024. Gap bundles and ancillary objects are excluded. This is not a complete inventory or provider invoice.",
+    "projections_from_known_subset": {
+      "ordinary_initializations": {
+        "cycles_assumed": 44132,
+        "sample_mean_bytes_projection": 84816119296.0,
+        "sample_min_max_bytes_scenario": [
+          70046310400,
+          452815503360
+        ]
+      },
+      "six_hour_initializations": {
+        "cycles_assumed": 8773,
+        "sample_mean_bytes_projection": 45869965469.090904,
+        "sample_min_max_bytes_scenario": [
+          35754536960,
+          70520883200
+        ]
+      }
+    },
+    "reason": "Only 2,112 preprotected index rows carry bundle bytes; the remaining 50,952 carry commit identity only. Commit object bytes are not payload bytes.",
+    "verified_fivecycle_fixture": {
+      "five_extended_cycle_sample": {
+        "bytes": 27125760,
+        "count": 5,
+        "max_bytes": 5775360,
+        "mean_bytes": 5425152.0,
+        "min_bytes": 5150720
+      },
+      "one_ordinary_cycle_sample_bytes": 1781760
+    }
+  },
+  "schema": "hydra-directflow-development-scale/v1",
+  "scope": "SEALED_INDEX_METADATA_ONLY_NO_WEATHER_OR_DISCHARGE_VALUES_READ",
+  "source": {
+    "qualified_index_bytes": 112202255,
+    "qualified_index_sha256": "75469df20f79d94ffb058f439f1ac873f0cf4164c1417eec7298a6641a35baa5"
+  },
+  "source_initializations": {
+    "by_cadence": {
+      "ordinary_initializations": {
+        "available_groups_present": 42110,
+        "data_complete": 44132,
+        "data_complete_without_available_groups": 2110,
+        "explicit_gap": 88,
+        "record_count_present": 43230,
+        "total": 44220
+      },
+      "six_hour_initializations": {
+        "available_groups_present": 8422,
+        "data_complete": 8773,
+        "data_complete_without_available_groups": 422,
+        "explicit_gap": 71,
+        "record_count_present": 8646,
+        "total": 8844
+      }
+    },
+    "data_complete": 52905,
+    "end_exclusive": "2024-07-31T00:00:00Z",
+    "explicit_gap": 159,
+    "start_inclusive": "2018-07-12T00:00:00Z",
+    "total": 53064
+  }
+}
