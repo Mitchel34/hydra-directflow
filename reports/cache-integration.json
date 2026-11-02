@@ -1,0 +1,1803 @@
+{
+  "cloud_jobs": 0,
+  "optimizer_updates": 0,
+  "runs": [
+    {
+      "array_sha256": "1112217a36fa0895151205db5503c551844178ab45a130025f6b7a81e06d8461",
+      "arrays_exact": true,
+      "elapsed_seconds": 0.9941605839412659,
+      "history_hours": 24,
+      "pass_name": "first",
+      "receipt": {
+        "artifact_created_at_utc": "2026-11-02T01:28:49Z",
+        "cache": {
+          "cumulative": {
+            "bytes_read": 718453,
+            "bytes_written": 718453,
+            "hits": 0,
+            "memory_hits": 0,
+            "misses": 10,
+            "repairs": 0
+          },
+          "cycle_keys": {
+            "20210823_00Z": "fccbcd0614ae6166cc79639e6c7733c1f7fc0a8fc993905d0f57a6a4b222ab84",
+            "20220317_00Z": "e6cbc968e1b07ec81ef5f5d3cda73b6eb01d0574f18fb983125e0d4a464e02eb",
+            "20230126_00Z": "30a6f2af8413ff4adebd999eedea3d7b94d7e6ddd8ab5e2095b8b888e8b1671c",
+            "20230817_00Z": "6f6b62a57d083d60c0c2af1b60dda295a1459935b241118434b7be9b2b93a421",
+            "20240229_00Z": "518111a3043e96802045dd9cf1a8dc1df38a292b72bebee1df9e799ff8e4184b"
+          },
+          "delta": {
+            "bytes_read": 718453,
+            "bytes_written": 718453,
+            "hits": 0,
+            "memory_hits": 0,
+            "misses": 10,
+            "repairs": 0
+          },
+          "month_keys": {
+            "2021-08": "ef828a09d86335f739456c43b5daffab63d64b257c4531cdd3b007119241ea1e",
+            "2022-03": "aa71a6aada6a69f8e59cb1c7b902db3f7af59fb3ab5b064f607b022a815bdb38",
+            "2023-01": "d37d1143e2a97a7427221620d694a2ebeadef01f439df3b8ea0c8e54a88791c8",
+            "2023-08": "5f72160bf971382413df96364ddb042369855c58732bad4fe3aec9b010962cbb",
+            "2024-02": "c08be2599395a18ae72ea95b66ddfd1979d3d60dd8fb58ba69e97057c88446ca"
+          },
+          "uncommitted_staging_directories": 0
+        },
+        "case_count": 60,
+        "case_source_digest": "6fad034d999e2488f1866b66edc554b10ed1e38ce361111bd728f24b74297cca",
+        "complete_case_count": 60,
+        "eligibility_counts": {
+          "COMPLETE": 60
+        },
+        "execution": {
+          "cloud_jobs": 0,
+          "network_requests": 0,
+          "optimizer_updates": 0,
+          "protected_assessment_values_decoded": 0,
+          "source_files_modified": false
+        },
+        "gauges": [
+          "03161000",
+          "03164000",
+          "03479000"
+        ],
+        "history_hours": 24,
+        "horizons_hours": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "implementation_sha256": {
+          "cache.py": "279148bbce4f7a6ce1dc9f9f43223237605c27a640aacee320656abdbce14ac0",
+          "contract.py": "e3f1a5e988e02a11da19cc2aec80cfd860e4867d68c14d12bdaba706a85513e8",
+          "lineage.py": "3508bcc0b676614527deedaa0868d93c8378912fa49c74f024dbd83297e27cf3",
+          "local_data.py": "c8c3b28fc9634fc85625314f9ee33603e81c7270e39db2e1cd4e1d628d0770ae",
+          "multicycle.py": "0a40229ff6b171833e761c71f3a2620ccfba43605c179841c72e3119d08ea8ac",
+          "reference.py": "7c21deee40c04bc72bc5cfcb190a39792c94ab65115c16ca03da551296575135",
+          "telemetry.py": "50e28d1fcbbde444c6199324155a4114cae77ac2461e4f6b331933a2748e2791"
+        },
+        "origin_count": 20,
+        "origins_utc": [
+          "2021-08-23T02:00:00Z",
+          "2021-08-23T03:00:00Z",
+          "2021-08-23T04:00:00Z",
+          "2021-08-23T05:00:00Z",
+          "2022-03-17T02:00:00Z",
+          "2022-03-17T03:00:00Z",
+          "2022-03-17T04:00:00Z",
+          "2022-03-17T05:00:00Z",
+          "2023-01-26T02:00:00Z",
+          "2023-01-26T03:00:00Z",
+          "2023-01-26T04:00:00Z",
+          "2023-01-26T05:00:00Z",
+          "2023-08-17T02:00:00Z",
+          "2023-08-17T03:00:00Z",
+          "2023-08-17T04:00:00Z",
+          "2023-08-17T05:00:00Z",
+          "2024-02-29T02:00:00Z",
+          "2024-02-29T03:00:00Z",
+          "2024-02-29T04:00:00Z",
+          "2024-02-29T05:00:00Z"
+        ],
+        "policy": {
+          "availability": "UNKNOWN_HISTORICAL_PUBLICATION_SIMULATED_LAG_2H",
+          "geometry": "DEVELOPMENT_ONLY_APPROXIMATE_BASINS_SEPARATE_NON_NESTING_GAUGES",
+          "quality": "PRESERVE_NATIVE_FLAGS_STRICT_A_AT_CASE_ASSEMBLY",
+          "units": "PHYSICAL_UNSCALED"
+        },
+        "qualification": "Development only; private immutable derived stores; original candidate geometry and provenance remain unchanged",
+        "schema": "hydra-cached-development/v1",
+        "selected_cycle_case_counts": {
+          "20210823_00Z": 12,
+          "20220317_00Z": 12,
+          "20230126_00Z": 12,
+          "20230817_00Z": 12,
+          "20240229_00Z": 12
+        },
+        "selection_scope": "OFFLINE_SUPPLIED_CANDIDATES",
+        "session_initialization_seconds": 0.4339915419695899,
+        "sources": {
+          "candidate_weights_sha256": "9eaaf3b221360ed6faaa0376e953fd0c2d0356fb419df96daed9107404283a74",
+          "cycles": [
+            {
+              "archive_bytes": 5150720,
+              "archive_sha256": "6f34151174311054173b03dc32bcb4080b9244537c24f9a45f7746c6be6cdf00",
+              "commit_sha256": "41c3bae92f29b2aa1ffe1276a5d410609083ed1d85eefecdd4535434d0853672",
+              "cycle_id": "20210823_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5150720,
+                "archive_sha256": "6f34151174311054173b03dc32bcb4080b9244537c24f9a45f7746c6be6cdf00",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 849,
+                  "sha256": "41c3bae92f29b2aa1ffe1276a5d410609083ed1d85eefecdd4535434d0853672"
+                },
+                "cycle_id": "20210823_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "d2c022f212331c61090132da96280cdf1c4d866599277a5cac6ffcbf5aaad917",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "d2c022f212331c61090132da96280cdf1c4d866599277a5cac6ffcbf5aaad917",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                47
+              ],
+              "weather_tiles_redecoded": true
+            },
+            {
+              "archive_bytes": 5621760,
+              "archive_sha256": "78e2b2190a3c51e8b9d70e87e0724f9073f26bdaae858616aa8a26d9bac26d7d",
+              "commit_sha256": "364ec8f70923911006ce2f5a91b84c1cc38215ed0f302f197b4fb7d2e3b47123",
+              "cycle_id": "20220317_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5621760,
+                "archive_sha256": "78e2b2190a3c51e8b9d70e87e0724f9073f26bdaae858616aa8a26d9bac26d7d",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 842,
+                  "sha256": "364ec8f70923911006ce2f5a91b84c1cc38215ed0f302f197b4fb7d2e3b47123"
+                },
+                "cycle_id": "20220317_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "cc081c4d51f0afc8b30321d4283131495cb59c628e173abc04582c604ef54ded",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "cc081c4d51f0afc8b30321d4283131495cb59c628e173abc04582c604ef54ded",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                48
+              ],
+              "weather_tiles_redecoded": true
+            },
+            {
+              "archive_bytes": 5775360,
+              "archive_sha256": "b048cd45344a8df3fba6312f50fa19cf0ec601496132d90c67883aac0cf8b711",
+              "commit_sha256": "b0984d7cd4975b181632e1fbb8794c429aa7bde591cc436e8ca3470980e1e19b",
+              "cycle_id": "20230126_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5775360,
+                "archive_sha256": "b048cd45344a8df3fba6312f50fa19cf0ec601496132d90c67883aac0cf8b711",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 842,
+                  "sha256": "b0984d7cd4975b181632e1fbb8794c429aa7bde591cc436e8ca3470980e1e19b"
+                },
+                "cycle_id": "20230126_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "201f30cbb5dcd68e28ef2b1b5f0b48aa29be172abdb04ab331d9fcffe0867400",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "201f30cbb5dcd68e28ef2b1b5f0b48aa29be172abdb04ab331d9fcffe0867400",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                48
+              ],
+              "weather_tiles_redecoded": true
+            },
+            {
+              "archive_bytes": 5273600,
+              "archive_sha256": "d42744f0992584ba3b624e67d62c8ce838d37f84ede85c70a44033088afe6992",
+              "commit_sha256": "be2514d17bff260e013dab12ce66110b7c51db5448cb6cb6c65d7c8be0db5643",
+              "cycle_id": "20230817_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5273600,
+                "archive_sha256": "d42744f0992584ba3b624e67d62c8ce838d37f84ede85c70a44033088afe6992",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 842,
+                  "sha256": "be2514d17bff260e013dab12ce66110b7c51db5448cb6cb6c65d7c8be0db5643"
+                },
+                "cycle_id": "20230817_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "4eeccd04bfb128bf6df7535ba396c49122ee159443b7e6ed7ffcfa6eb0cb887e",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "4eeccd04bfb128bf6df7535ba396c49122ee159443b7e6ed7ffcfa6eb0cb887e",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                48
+              ],
+              "weather_tiles_redecoded": true
+            },
+            {
+              "archive_bytes": 5304320,
+              "archive_sha256": "a9446b8859baad5133f7dec76e811a8651dff676c20fdde2f7bf020f62f5e511",
+              "commit_sha256": "6437321209190d1a4c1851dbcce04295013cf8d25df119847dae69c35fc19c47",
+              "cycle_id": "20240229_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5304320,
+                "archive_sha256": "a9446b8859baad5133f7dec76e811a8651dff676c20fdde2f7bf020f62f5e511",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 842,
+                  "sha256": "6437321209190d1a4c1851dbcce04295013cf8d25df119847dae69c35fc19c47"
+                },
+                "cycle_id": "20240229_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "73412d9021a98e1f831eba161ec711b45f74922db7564983af440a159dab469f",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "73412d9021a98e1f831eba161ec711b45f74922db7564983af440a159dab469f",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                48
+              ],
+              "weather_tiles_redecoded": true
+            }
+          ],
+          "qualified_index_bytes": 112202255,
+          "qualified_index_sha256": "75469df20f79d94ffb058f439f1ac873f0cf4164c1417eec7298a6641a35baa5",
+          "usgs_manifest_sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a",
+          "usgs_partitions": [
+            {
+              "bytes": 73458,
+              "exact_core_rows": 2232,
+              "month": "2021-08",
+              "returned_rows": 8919,
+              "sha256": "16f1dcbc063fed46a72ce286571c3b78fc2c199fce24e07aa76cdd03318c6d2b"
+            },
+            {
+              "bytes": 79473,
+              "exact_core_rows": 2231,
+              "month": "2022-03",
+              "returned_rows": 8913,
+              "sha256": "881bcfceda16342836f7c6e3d04f31528ef9c09c5c9c064f7ae28594368576a7"
+            },
+            {
+              "bytes": 72704,
+              "exact_core_rows": 2181,
+              "month": "2023-01",
+              "returned_rows": 8658,
+              "sha256": "5d9bb435b1e0053fbed0cd7b65fdedabcc1a45faa2b7c3dd9a49ac42f451aed3"
+            },
+            {
+              "bytes": 74004,
+              "exact_core_rows": 2231,
+              "month": "2023-08",
+              "returned_rows": 8916,
+              "sha256": "dd13695b8780c1e79ab203d53aa905e11770666244d634e320f4387df5165db4"
+            },
+            {
+              "bytes": 67678,
+              "exact_core_rows": 2088,
+              "month": "2024-02",
+              "returned_rows": 8343,
+              "sha256": "ea95a47fc856f416ca52f993b08f8eb928ab5e9c178fdfab401ebd033efb95cb"
+            }
+          ]
+        },
+        "stage_seconds": {
+          "basin_store": 0.10119391605257988,
+          "case_assembly": 0.05756537499837577,
+          "discharge_store": 0.3397059169365093,
+          "total": 0.4986347910016775
+        },
+        "status": "PASSED_COMPLETE_DEVELOPMENT_CASES"
+      }
+    },
+    {
+      "array_sha256": "1112217a36fa0895151205db5503c551844178ab45a130025f6b7a81e06d8461",
+      "arrays_exact": true,
+      "elapsed_seconds": 0.6026676669716835,
+      "history_hours": 24,
+      "pass_name": "resume",
+      "receipt": {
+        "artifact_created_at_utc": "2026-11-02T01:28:49Z",
+        "cache": {
+          "cumulative": {
+            "bytes_read": 718453,
+            "bytes_written": 0,
+            "hits": 10,
+            "memory_hits": 0,
+            "misses": 0,
+            "repairs": 0
+          },
+          "cycle_keys": {
+            "20210823_00Z": "fccbcd0614ae6166cc79639e6c7733c1f7fc0a8fc993905d0f57a6a4b222ab84",
+            "20220317_00Z": "e6cbc968e1b07ec81ef5f5d3cda73b6eb01d0574f18fb983125e0d4a464e02eb",
+            "20230126_00Z": "30a6f2af8413ff4adebd999eedea3d7b94d7e6ddd8ab5e2095b8b888e8b1671c",
+            "20230817_00Z": "6f6b62a57d083d60c0c2af1b60dda295a1459935b241118434b7be9b2b93a421",
+            "20240229_00Z": "518111a3043e96802045dd9cf1a8dc1df38a292b72bebee1df9e799ff8e4184b"
+          },
+          "delta": {
+            "bytes_read": 718453,
+            "bytes_written": 0,
+            "hits": 10,
+            "memory_hits": 0,
+            "misses": 0,
+            "repairs": 0
+          },
+          "month_keys": {
+            "2021-08": "ef828a09d86335f739456c43b5daffab63d64b257c4531cdd3b007119241ea1e",
+            "2022-03": "aa71a6aada6a69f8e59cb1c7b902db3f7af59fb3ab5b064f607b022a815bdb38",
+            "2023-01": "d37d1143e2a97a7427221620d694a2ebeadef01f439df3b8ea0c8e54a88791c8",
+            "2023-08": "5f72160bf971382413df96364ddb042369855c58732bad4fe3aec9b010962cbb",
+            "2024-02": "c08be2599395a18ae72ea95b66ddfd1979d3d60dd8fb58ba69e97057c88446ca"
+          },
+          "uncommitted_staging_directories": 0
+        },
+        "case_count": 60,
+        "case_source_digest": "6fad034d999e2488f1866b66edc554b10ed1e38ce361111bd728f24b74297cca",
+        "complete_case_count": 60,
+        "eligibility_counts": {
+          "COMPLETE": 60
+        },
+        "execution": {
+          "cloud_jobs": 0,
+          "network_requests": 0,
+          "optimizer_updates": 0,
+          "protected_assessment_values_decoded": 0,
+          "source_files_modified": false
+        },
+        "gauges": [
+          "03161000",
+          "03164000",
+          "03479000"
+        ],
+        "history_hours": 24,
+        "horizons_hours": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "implementation_sha256": {
+          "cache.py": "279148bbce4f7a6ce1dc9f9f43223237605c27a640aacee320656abdbce14ac0",
+          "contract.py": "e3f1a5e988e02a11da19cc2aec80cfd860e4867d68c14d12bdaba706a85513e8",
+          "lineage.py": "3508bcc0b676614527deedaa0868d93c8378912fa49c74f024dbd83297e27cf3",
+          "local_data.py": "c8c3b28fc9634fc85625314f9ee33603e81c7270e39db2e1cd4e1d628d0770ae",
+          "multicycle.py": "0a40229ff6b171833e761c71f3a2620ccfba43605c179841c72e3119d08ea8ac",
+          "reference.py": "7c21deee40c04bc72bc5cfcb190a39792c94ab65115c16ca03da551296575135",
+          "telemetry.py": "50e28d1fcbbde444c6199324155a4114cae77ac2461e4f6b331933a2748e2791"
+        },
+        "origin_count": 20,
+        "origins_utc": [
+          "2021-08-23T02:00:00Z",
+          "2021-08-23T03:00:00Z",
+          "2021-08-23T04:00:00Z",
+          "2021-08-23T05:00:00Z",
+          "2022-03-17T02:00:00Z",
+          "2022-03-17T03:00:00Z",
+          "2022-03-17T04:00:00Z",
+          "2022-03-17T05:00:00Z",
+          "2023-01-26T02:00:00Z",
+          "2023-01-26T03:00:00Z",
+          "2023-01-26T04:00:00Z",
+          "2023-01-26T05:00:00Z",
+          "2023-08-17T02:00:00Z",
+          "2023-08-17T03:00:00Z",
+          "2023-08-17T04:00:00Z",
+          "2023-08-17T05:00:00Z",
+          "2024-02-29T02:00:00Z",
+          "2024-02-29T03:00:00Z",
+          "2024-02-29T04:00:00Z",
+          "2024-02-29T05:00:00Z"
+        ],
+        "policy": {
+          "availability": "UNKNOWN_HISTORICAL_PUBLICATION_SIMULATED_LAG_2H",
+          "geometry": "DEVELOPMENT_ONLY_APPROXIMATE_BASINS_SEPARATE_NON_NESTING_GAUGES",
+          "quality": "PRESERVE_NATIVE_FLAGS_STRICT_A_AT_CASE_ASSEMBLY",
+          "units": "PHYSICAL_UNSCALED"
+        },
+        "qualification": "Development only; private immutable derived stores; original candidate geometry and provenance remain unchanged",
+        "schema": "hydra-cached-development/v1",
+        "selected_cycle_case_counts": {
+          "20210823_00Z": 12,
+          "20220317_00Z": 12,
+          "20230126_00Z": 12,
+          "20230817_00Z": 12,
+          "20240229_00Z": 12
+        },
+        "selection_scope": "OFFLINE_SUPPLIED_CANDIDATES",
+        "session_initialization_seconds": 0.4413199160480872,
+        "sources": {
+          "candidate_weights_sha256": "9eaaf3b221360ed6faaa0376e953fd0c2d0356fb419df96daed9107404283a74",
+          "cycles": [
+            {
+              "archive_bytes": 5150720,
+              "archive_sha256": "6f34151174311054173b03dc32bcb4080b9244537c24f9a45f7746c6be6cdf00",
+              "commit_sha256": "41c3bae92f29b2aa1ffe1276a5d410609083ed1d85eefecdd4535434d0853672",
+              "cycle_id": "20210823_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5150720,
+                "archive_sha256": "6f34151174311054173b03dc32bcb4080b9244537c24f9a45f7746c6be6cdf00",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 849,
+                  "sha256": "41c3bae92f29b2aa1ffe1276a5d410609083ed1d85eefecdd4535434d0853672"
+                },
+                "cycle_id": "20210823_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "d2c022f212331c61090132da96280cdf1c4d866599277a5cac6ffcbf5aaad917",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "d2c022f212331c61090132da96280cdf1c4d866599277a5cac6ffcbf5aaad917",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                47
+              ],
+              "weather_tiles_redecoded": true
+            },
+            {
+              "archive_bytes": 5621760,
+              "archive_sha256": "78e2b2190a3c51e8b9d70e87e0724f9073f26bdaae858616aa8a26d9bac26d7d",
+              "commit_sha256": "364ec8f70923911006ce2f5a91b84c1cc38215ed0f302f197b4fb7d2e3b47123",
+              "cycle_id": "20220317_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5621760,
+                "archive_sha256": "78e2b2190a3c51e8b9d70e87e0724f9073f26bdaae858616aa8a26d9bac26d7d",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 842,
+                  "sha256": "364ec8f70923911006ce2f5a91b84c1cc38215ed0f302f197b4fb7d2e3b47123"
+                },
+                "cycle_id": "20220317_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "cc081c4d51f0afc8b30321d4283131495cb59c628e173abc04582c604ef54ded",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "cc081c4d51f0afc8b30321d4283131495cb59c628e173abc04582c604ef54ded",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                48
+              ],
+              "weather_tiles_redecoded": true
+            },
+            {
+              "archive_bytes": 5775360,
+              "archive_sha256": "b048cd45344a8df3fba6312f50fa19cf0ec601496132d90c67883aac0cf8b711",
+              "commit_sha256": "b0984d7cd4975b181632e1fbb8794c429aa7bde591cc436e8ca3470980e1e19b",
+              "cycle_id": "20230126_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5775360,
+                "archive_sha256": "b048cd45344a8df3fba6312f50fa19cf0ec601496132d90c67883aac0cf8b711",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 842,
+                  "sha256": "b0984d7cd4975b181632e1fbb8794c429aa7bde591cc436e8ca3470980e1e19b"
+                },
+                "cycle_id": "20230126_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "201f30cbb5dcd68e28ef2b1b5f0b48aa29be172abdb04ab331d9fcffe0867400",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "201f30cbb5dcd68e28ef2b1b5f0b48aa29be172abdb04ab331d9fcffe0867400",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                48
+              ],
+              "weather_tiles_redecoded": true
+            },
+            {
+              "archive_bytes": 5273600,
+              "archive_sha256": "d42744f0992584ba3b624e67d62c8ce838d37f84ede85c70a44033088afe6992",
+              "commit_sha256": "be2514d17bff260e013dab12ce66110b7c51db5448cb6cb6c65d7c8be0db5643",
+              "cycle_id": "20230817_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5273600,
+                "archive_sha256": "d42744f0992584ba3b624e67d62c8ce838d37f84ede85c70a44033088afe6992",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 842,
+                  "sha256": "be2514d17bff260e013dab12ce66110b7c51db5448cb6cb6c65d7c8be0db5643"
+                },
+                "cycle_id": "20230817_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "4eeccd04bfb128bf6df7535ba396c49122ee159443b7e6ed7ffcfa6eb0cb887e",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "4eeccd04bfb128bf6df7535ba396c49122ee159443b7e6ed7ffcfa6eb0cb887e",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                48
+              ],
+              "weather_tiles_redecoded": true
+            },
+            {
+              "archive_bytes": 5304320,
+              "archive_sha256": "a9446b8859baad5133f7dec76e811a8651dff676c20fdde2f7bf020f62f5e511",
+              "commit_sha256": "6437321209190d1a4c1851dbcce04295013cf8d25df119847dae69c35fc19c47",
+              "cycle_id": "20240229_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5304320,
+                "archive_sha256": "a9446b8859baad5133f7dec76e811a8651dff676c20fdde2f7bf020f62f5e511",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 842,
+                  "sha256": "6437321209190d1a4c1851dbcce04295013cf8d25df119847dae69c35fc19c47"
+                },
+                "cycle_id": "20240229_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "73412d9021a98e1f831eba161ec711b45f74922db7564983af440a159dab469f",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "73412d9021a98e1f831eba161ec711b45f74922db7564983af440a159dab469f",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                48
+              ],
+              "weather_tiles_redecoded": true
+            }
+          ],
+          "qualified_index_bytes": 112202255,
+          "qualified_index_sha256": "75469df20f79d94ffb058f439f1ac873f0cf4164c1417eec7298a6641a35baa5",
+          "usgs_manifest_sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a",
+          "usgs_partitions": [
+            {
+              "bytes": 73458,
+              "exact_core_rows": 2232,
+              "month": "2021-08",
+              "returned_rows": 8919,
+              "sha256": "16f1dcbc063fed46a72ce286571c3b78fc2c199fce24e07aa76cdd03318c6d2b"
+            },
+            {
+              "bytes": 79473,
+              "exact_core_rows": 2231,
+              "month": "2022-03",
+              "returned_rows": 8913,
+              "sha256": "881bcfceda16342836f7c6e3d04f31528ef9c09c5c9c064f7ae28594368576a7"
+            },
+            {
+              "bytes": 72704,
+              "exact_core_rows": 2181,
+              "month": "2023-01",
+              "returned_rows": 8658,
+              "sha256": "5d9bb435b1e0053fbed0cd7b65fdedabcc1a45faa2b7c3dd9a49ac42f451aed3"
+            },
+            {
+              "bytes": 74004,
+              "exact_core_rows": 2231,
+              "month": "2023-08",
+              "returned_rows": 8916,
+              "sha256": "dd13695b8780c1e79ab203d53aa905e11770666244d634e320f4387df5165db4"
+            },
+            {
+              "bytes": 67678,
+              "exact_core_rows": 2088,
+              "month": "2024-02",
+              "returned_rows": 8343,
+              "sha256": "ea95a47fc856f416ca52f993b08f8eb928ab5e9c178fdfab401ebd033efb95cb"
+            }
+          ]
+        },
+        "stage_seconds": {
+          "basin_store": 0.0050833330024033785,
+          "case_assembly": 0.05619616701733321,
+          "discharge_store": 0.05696004210039973,
+          "total": 0.11835379200056195
+        },
+        "status": "PASSED_COMPLETE_DEVELOPMENT_CASES"
+      }
+    },
+    {
+      "array_sha256": "71a5cce8012fa2af07bef57cc943cf082d2f8e303871c1d8b33391ddb85817e1",
+      "arrays_exact": true,
+      "elapsed_seconds": 0.7045733750564978,
+      "history_hours": 168,
+      "pass_name": "first",
+      "receipt": {
+        "artifact_created_at_utc": "2026-11-02T01:28:51Z",
+        "cache": {
+          "cumulative": {
+            "bytes_read": 718453,
+            "bytes_written": 0,
+            "hits": 10,
+            "memory_hits": 0,
+            "misses": 0,
+            "repairs": 0
+          },
+          "cycle_keys": {
+            "20210823_00Z": "fccbcd0614ae6166cc79639e6c7733c1f7fc0a8fc993905d0f57a6a4b222ab84",
+            "20220317_00Z": "e6cbc968e1b07ec81ef5f5d3cda73b6eb01d0574f18fb983125e0d4a464e02eb",
+            "20230126_00Z": "30a6f2af8413ff4adebd999eedea3d7b94d7e6ddd8ab5e2095b8b888e8b1671c",
+            "20230817_00Z": "6f6b62a57d083d60c0c2af1b60dda295a1459935b241118434b7be9b2b93a421",
+            "20240229_00Z": "518111a3043e96802045dd9cf1a8dc1df38a292b72bebee1df9e799ff8e4184b"
+          },
+          "delta": {
+            "bytes_read": 718453,
+            "bytes_written": 0,
+            "hits": 10,
+            "memory_hits": 0,
+            "misses": 0,
+            "repairs": 0
+          },
+          "month_keys": {
+            "2021-08": "ef828a09d86335f739456c43b5daffab63d64b257c4531cdd3b007119241ea1e",
+            "2022-03": "aa71a6aada6a69f8e59cb1c7b902db3f7af59fb3ab5b064f607b022a815bdb38",
+            "2023-01": "d37d1143e2a97a7427221620d694a2ebeadef01f439df3b8ea0c8e54a88791c8",
+            "2023-08": "5f72160bf971382413df96364ddb042369855c58732bad4fe3aec9b010962cbb",
+            "2024-02": "c08be2599395a18ae72ea95b66ddfd1979d3d60dd8fb58ba69e97057c88446ca"
+          },
+          "uncommitted_staging_directories": 0
+        },
+        "case_count": 60,
+        "case_source_digest": "9f5b02f4ef04b89f230f328576dd9f29623e5ac76d32d91badcb50a4aacedc03",
+        "complete_case_count": 56,
+        "eligibility_counts": {
+          "COMPLETE": 56,
+          "HISTORY_INCOMPLETE": 4
+        },
+        "execution": {
+          "cloud_jobs": 0,
+          "network_requests": 0,
+          "optimizer_updates": 0,
+          "protected_assessment_values_decoded": 0,
+          "source_files_modified": false
+        },
+        "gauges": [
+          "03161000",
+          "03164000",
+          "03479000"
+        ],
+        "history_hours": 168,
+        "horizons_hours": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "implementation_sha256": {
+          "cache.py": "279148bbce4f7a6ce1dc9f9f43223237605c27a640aacee320656abdbce14ac0",
+          "contract.py": "e3f1a5e988e02a11da19cc2aec80cfd860e4867d68c14d12bdaba706a85513e8",
+          "lineage.py": "3508bcc0b676614527deedaa0868d93c8378912fa49c74f024dbd83297e27cf3",
+          "local_data.py": "c8c3b28fc9634fc85625314f9ee33603e81c7270e39db2e1cd4e1d628d0770ae",
+          "multicycle.py": "0a40229ff6b171833e761c71f3a2620ccfba43605c179841c72e3119d08ea8ac",
+          "reference.py": "7c21deee40c04bc72bc5cfcb190a39792c94ab65115c16ca03da551296575135",
+          "telemetry.py": "50e28d1fcbbde444c6199324155a4114cae77ac2461e4f6b331933a2748e2791"
+        },
+        "origin_count": 20,
+        "origins_utc": [
+          "2021-08-23T02:00:00Z",
+          "2021-08-23T03:00:00Z",
+          "2021-08-23T04:00:00Z",
+          "2021-08-23T05:00:00Z",
+          "2022-03-17T02:00:00Z",
+          "2022-03-17T03:00:00Z",
+          "2022-03-17T04:00:00Z",
+          "2022-03-17T05:00:00Z",
+          "2023-01-26T02:00:00Z",
+          "2023-01-26T03:00:00Z",
+          "2023-01-26T04:00:00Z",
+          "2023-01-26T05:00:00Z",
+          "2023-08-17T02:00:00Z",
+          "2023-08-17T03:00:00Z",
+          "2023-08-17T04:00:00Z",
+          "2023-08-17T05:00:00Z",
+          "2024-02-29T02:00:00Z",
+          "2024-02-29T03:00:00Z",
+          "2024-02-29T04:00:00Z",
+          "2024-02-29T05:00:00Z"
+        ],
+        "policy": {
+          "availability": "UNKNOWN_HISTORICAL_PUBLICATION_SIMULATED_LAG_2H",
+          "geometry": "DEVELOPMENT_ONLY_APPROXIMATE_BASINS_SEPARATE_NON_NESTING_GAUGES",
+          "quality": "PRESERVE_NATIVE_FLAGS_STRICT_A_AT_CASE_ASSEMBLY",
+          "units": "PHYSICAL_UNSCALED"
+        },
+        "qualification": "Development only; private immutable derived stores; original candidate geometry and provenance remain unchanged",
+        "schema": "hydra-cached-development/v1",
+        "selected_cycle_case_counts": {
+          "20210823_00Z": 12,
+          "20220317_00Z": 12,
+          "20230126_00Z": 12,
+          "20230817_00Z": 12,
+          "20240229_00Z": 12
+        },
+        "selection_scope": "OFFLINE_SUPPLIED_CANDIDATES",
+        "session_initialization_seconds": 0.4390716659836471,
+        "sources": {
+          "candidate_weights_sha256": "9eaaf3b221360ed6faaa0376e953fd0c2d0356fb419df96daed9107404283a74",
+          "cycles": [
+            {
+              "archive_bytes": 5150720,
+              "archive_sha256": "6f34151174311054173b03dc32bcb4080b9244537c24f9a45f7746c6be6cdf00",
+              "commit_sha256": "41c3bae92f29b2aa1ffe1276a5d410609083ed1d85eefecdd4535434d0853672",
+              "cycle_id": "20210823_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5150720,
+                "archive_sha256": "6f34151174311054173b03dc32bcb4080b9244537c24f9a45f7746c6be6cdf00",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 849,
+                  "sha256": "41c3bae92f29b2aa1ffe1276a5d410609083ed1d85eefecdd4535434d0853672"
+                },
+                "cycle_id": "20210823_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "d2c022f212331c61090132da96280cdf1c4d866599277a5cac6ffcbf5aaad917",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "d2c022f212331c61090132da96280cdf1c4d866599277a5cac6ffcbf5aaad917",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                47
+              ],
+              "weather_tiles_redecoded": true
+            },
+            {
+              "archive_bytes": 5621760,
+              "archive_sha256": "78e2b2190a3c51e8b9d70e87e0724f9073f26bdaae858616aa8a26d9bac26d7d",
+              "commit_sha256": "364ec8f70923911006ce2f5a91b84c1cc38215ed0f302f197b4fb7d2e3b47123",
+              "cycle_id": "20220317_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5621760,
+                "archive_sha256": "78e2b2190a3c51e8b9d70e87e0724f9073f26bdaae858616aa8a26d9bac26d7d",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 842,
+                  "sha256": "364ec8f70923911006ce2f5a91b84c1cc38215ed0f302f197b4fb7d2e3b47123"
+                },
+                "cycle_id": "20220317_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "cc081c4d51f0afc8b30321d4283131495cb59c628e173abc04582c604ef54ded",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "cc081c4d51f0afc8b30321d4283131495cb59c628e173abc04582c604ef54ded",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                48
+              ],
+              "weather_tiles_redecoded": true
+            },
+            {
+              "archive_bytes": 5775360,
+              "archive_sha256": "b048cd45344a8df3fba6312f50fa19cf0ec601496132d90c67883aac0cf8b711",
+              "commit_sha256": "b0984d7cd4975b181632e1fbb8794c429aa7bde591cc436e8ca3470980e1e19b",
+              "cycle_id": "20230126_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5775360,
+                "archive_sha256": "b048cd45344a8df3fba6312f50fa19cf0ec601496132d90c67883aac0cf8b711",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 842,
+                  "sha256": "b0984d7cd4975b181632e1fbb8794c429aa7bde591cc436e8ca3470980e1e19b"
+                },
+                "cycle_id": "20230126_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "201f30cbb5dcd68e28ef2b1b5f0b48aa29be172abdb04ab331d9fcffe0867400",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "201f30cbb5dcd68e28ef2b1b5f0b48aa29be172abdb04ab331d9fcffe0867400",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                48
+              ],
+              "weather_tiles_redecoded": true
+            },
+            {
+              "archive_bytes": 5273600,
+              "archive_sha256": "d42744f0992584ba3b624e67d62c8ce838d37f84ede85c70a44033088afe6992",
+              "commit_sha256": "be2514d17bff260e013dab12ce66110b7c51db5448cb6cb6c65d7c8be0db5643",
+              "cycle_id": "20230817_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5273600,
+                "archive_sha256": "d42744f0992584ba3b624e67d62c8ce838d37f84ede85c70a44033088afe6992",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 842,
+                  "sha256": "be2514d17bff260e013dab12ce66110b7c51db5448cb6cb6c65d7c8be0db5643"
+                },
+                "cycle_id": "20230817_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "4eeccd04bfb128bf6df7535ba396c49122ee159443b7e6ed7ffcfa6eb0cb887e",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "4eeccd04bfb128bf6df7535ba396c49122ee159443b7e6ed7ffcfa6eb0cb887e",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                48
+              ],
+              "weather_tiles_redecoded": true
+            },
+            {
+              "archive_bytes": 5304320,
+              "archive_sha256": "a9446b8859baad5133f7dec76e811a8651dff676c20fdde2f7bf020f62f5e511",
+              "commit_sha256": "6437321209190d1a4c1851dbcce04295013cf8d25df119847dae69c35fc19c47",
+              "cycle_id": "20240229_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5304320,
+                "archive_sha256": "a9446b8859baad5133f7dec76e811a8651dff676c20fdde2f7bf020f62f5e511",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 842,
+                  "sha256": "6437321209190d1a4c1851dbcce04295013cf8d25df119847dae69c35fc19c47"
+                },
+                "cycle_id": "20240229_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "73412d9021a98e1f831eba161ec711b45f74922db7564983af440a159dab469f",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "73412d9021a98e1f831eba161ec711b45f74922db7564983af440a159dab469f",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                48
+              ],
+              "weather_tiles_redecoded": true
+            }
+          ],
+          "qualified_index_bytes": 112202255,
+          "qualified_index_sha256": "75469df20f79d94ffb058f439f1ac873f0cf4164c1417eec7298a6641a35baa5",
+          "usgs_manifest_sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a",
+          "usgs_partitions": [
+            {
+              "bytes": 73458,
+              "exact_core_rows": 2232,
+              "month": "2021-08",
+              "returned_rows": 8919,
+              "sha256": "16f1dcbc063fed46a72ce286571c3b78fc2c199fce24e07aa76cdd03318c6d2b"
+            },
+            {
+              "bytes": 79473,
+              "exact_core_rows": 2231,
+              "month": "2022-03",
+              "returned_rows": 8913,
+              "sha256": "881bcfceda16342836f7c6e3d04f31528ef9c09c5c9c064f7ae28594368576a7"
+            },
+            {
+              "bytes": 72704,
+              "exact_core_rows": 2181,
+              "month": "2023-01",
+              "returned_rows": 8658,
+              "sha256": "5d9bb435b1e0053fbed0cd7b65fdedabcc1a45faa2b7c3dd9a49ac42f451aed3"
+            },
+            {
+              "bytes": 74004,
+              "exact_core_rows": 2231,
+              "month": "2023-08",
+              "returned_rows": 8916,
+              "sha256": "dd13695b8780c1e79ab203d53aa905e11770666244d634e320f4387df5165db4"
+            },
+            {
+              "bytes": 67678,
+              "exact_core_rows": 2088,
+              "month": "2024-02",
+              "returned_rows": 8343,
+              "sha256": "ea95a47fc856f416ca52f993b08f8eb928ab5e9c178fdfab401ebd033efb95cb"
+            }
+          ]
+        },
+        "stage_seconds": {
+          "basin_store": 0.005083917058072984,
+          "case_assembly": 0.15270524995867163,
+          "discharge_store": 0.05613520904444158,
+          "total": 0.2140060419915244
+        },
+        "status": "COMPLETED_WITH_EXPLICIT_MASKS"
+      }
+    },
+    {
+      "array_sha256": "71a5cce8012fa2af07bef57cc943cf082d2f8e303871c1d8b33391ddb85817e1",
+      "arrays_exact": true,
+      "elapsed_seconds": 0.6926270839758217,
+      "history_hours": 168,
+      "pass_name": "resume",
+      "receipt": {
+        "artifact_created_at_utc": "2026-11-02T01:28:52Z",
+        "cache": {
+          "cumulative": {
+            "bytes_read": 718453,
+            "bytes_written": 0,
+            "hits": 10,
+            "memory_hits": 0,
+            "misses": 0,
+            "repairs": 0
+          },
+          "cycle_keys": {
+            "20210823_00Z": "fccbcd0614ae6166cc79639e6c7733c1f7fc0a8fc993905d0f57a6a4b222ab84",
+            "20220317_00Z": "e6cbc968e1b07ec81ef5f5d3cda73b6eb01d0574f18fb983125e0d4a464e02eb",
+            "20230126_00Z": "30a6f2af8413ff4adebd999eedea3d7b94d7e6ddd8ab5e2095b8b888e8b1671c",
+            "20230817_00Z": "6f6b62a57d083d60c0c2af1b60dda295a1459935b241118434b7be9b2b93a421",
+            "20240229_00Z": "518111a3043e96802045dd9cf1a8dc1df38a292b72bebee1df9e799ff8e4184b"
+          },
+          "delta": {
+            "bytes_read": 718453,
+            "bytes_written": 0,
+            "hits": 10,
+            "memory_hits": 0,
+            "misses": 0,
+            "repairs": 0
+          },
+          "month_keys": {
+            "2021-08": "ef828a09d86335f739456c43b5daffab63d64b257c4531cdd3b007119241ea1e",
+            "2022-03": "aa71a6aada6a69f8e59cb1c7b902db3f7af59fb3ab5b064f607b022a815bdb38",
+            "2023-01": "d37d1143e2a97a7427221620d694a2ebeadef01f439df3b8ea0c8e54a88791c8",
+            "2023-08": "5f72160bf971382413df96364ddb042369855c58732bad4fe3aec9b010962cbb",
+            "2024-02": "c08be2599395a18ae72ea95b66ddfd1979d3d60dd8fb58ba69e97057c88446ca"
+          },
+          "uncommitted_staging_directories": 0
+        },
+        "case_count": 60,
+        "case_source_digest": "9f5b02f4ef04b89f230f328576dd9f29623e5ac76d32d91badcb50a4aacedc03",
+        "complete_case_count": 56,
+        "eligibility_counts": {
+          "COMPLETE": 56,
+          "HISTORY_INCOMPLETE": 4
+        },
+        "execution": {
+          "cloud_jobs": 0,
+          "network_requests": 0,
+          "optimizer_updates": 0,
+          "protected_assessment_values_decoded": 0,
+          "source_files_modified": false
+        },
+        "gauges": [
+          "03161000",
+          "03164000",
+          "03479000"
+        ],
+        "history_hours": 168,
+        "horizons_hours": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "implementation_sha256": {
+          "cache.py": "279148bbce4f7a6ce1dc9f9f43223237605c27a640aacee320656abdbce14ac0",
+          "contract.py": "e3f1a5e988e02a11da19cc2aec80cfd860e4867d68c14d12bdaba706a85513e8",
+          "lineage.py": "3508bcc0b676614527deedaa0868d93c8378912fa49c74f024dbd83297e27cf3",
+          "local_data.py": "c8c3b28fc9634fc85625314f9ee33603e81c7270e39db2e1cd4e1d628d0770ae",
+          "multicycle.py": "0a40229ff6b171833e761c71f3a2620ccfba43605c179841c72e3119d08ea8ac",
+          "reference.py": "7c21deee40c04bc72bc5cfcb190a39792c94ab65115c16ca03da551296575135",
+          "telemetry.py": "50e28d1fcbbde444c6199324155a4114cae77ac2461e4f6b331933a2748e2791"
+        },
+        "origin_count": 20,
+        "origins_utc": [
+          "2021-08-23T02:00:00Z",
+          "2021-08-23T03:00:00Z",
+          "2021-08-23T04:00:00Z",
+          "2021-08-23T05:00:00Z",
+          "2022-03-17T02:00:00Z",
+          "2022-03-17T03:00:00Z",
+          "2022-03-17T04:00:00Z",
+          "2022-03-17T05:00:00Z",
+          "2023-01-26T02:00:00Z",
+          "2023-01-26T03:00:00Z",
+          "2023-01-26T04:00:00Z",
+          "2023-01-26T05:00:00Z",
+          "2023-08-17T02:00:00Z",
+          "2023-08-17T03:00:00Z",
+          "2023-08-17T04:00:00Z",
+          "2023-08-17T05:00:00Z",
+          "2024-02-29T02:00:00Z",
+          "2024-02-29T03:00:00Z",
+          "2024-02-29T04:00:00Z",
+          "2024-02-29T05:00:00Z"
+        ],
+        "policy": {
+          "availability": "UNKNOWN_HISTORICAL_PUBLICATION_SIMULATED_LAG_2H",
+          "geometry": "DEVELOPMENT_ONLY_APPROXIMATE_BASINS_SEPARATE_NON_NESTING_GAUGES",
+          "quality": "PRESERVE_NATIVE_FLAGS_STRICT_A_AT_CASE_ASSEMBLY",
+          "units": "PHYSICAL_UNSCALED"
+        },
+        "qualification": "Development only; private immutable derived stores; original candidate geometry and provenance remain unchanged",
+        "schema": "hydra-cached-development/v1",
+        "selected_cycle_case_counts": {
+          "20210823_00Z": 12,
+          "20220317_00Z": 12,
+          "20230126_00Z": 12,
+          "20230817_00Z": 12,
+          "20240229_00Z": 12
+        },
+        "selection_scope": "OFFLINE_SUPPLIED_CANDIDATES",
+        "session_initialization_seconds": 0.4331862910185009,
+        "sources": {
+          "candidate_weights_sha256": "9eaaf3b221360ed6faaa0376e953fd0c2d0356fb419df96daed9107404283a74",
+          "cycles": [
+            {
+              "archive_bytes": 5150720,
+              "archive_sha256": "6f34151174311054173b03dc32bcb4080b9244537c24f9a45f7746c6be6cdf00",
+              "commit_sha256": "41c3bae92f29b2aa1ffe1276a5d410609083ed1d85eefecdd4535434d0853672",
+              "cycle_id": "20210823_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5150720,
+                "archive_sha256": "6f34151174311054173b03dc32bcb4080b9244537c24f9a45f7746c6be6cdf00",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 849,
+                  "sha256": "41c3bae92f29b2aa1ffe1276a5d410609083ed1d85eefecdd4535434d0853672"
+                },
+                "cycle_id": "20210823_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "d2c022f212331c61090132da96280cdf1c4d866599277a5cac6ffcbf5aaad917",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "d2c022f212331c61090132da96280cdf1c4d866599277a5cac6ffcbf5aaad917",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                47
+              ],
+              "weather_tiles_redecoded": true
+            },
+            {
+              "archive_bytes": 5621760,
+              "archive_sha256": "78e2b2190a3c51e8b9d70e87e0724f9073f26bdaae858616aa8a26d9bac26d7d",
+              "commit_sha256": "364ec8f70923911006ce2f5a91b84c1cc38215ed0f302f197b4fb7d2e3b47123",
+              "cycle_id": "20220317_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5621760,
+                "archive_sha256": "78e2b2190a3c51e8b9d70e87e0724f9073f26bdaae858616aa8a26d9bac26d7d",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 842,
+                  "sha256": "364ec8f70923911006ce2f5a91b84c1cc38215ed0f302f197b4fb7d2e3b47123"
+                },
+                "cycle_id": "20220317_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "cc081c4d51f0afc8b30321d4283131495cb59c628e173abc04582c604ef54ded",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "cc081c4d51f0afc8b30321d4283131495cb59c628e173abc04582c604ef54ded",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                48
+              ],
+              "weather_tiles_redecoded": true
+            },
+            {
+              "archive_bytes": 5775360,
+              "archive_sha256": "b048cd45344a8df3fba6312f50fa19cf0ec601496132d90c67883aac0cf8b711",
+              "commit_sha256": "b0984d7cd4975b181632e1fbb8794c429aa7bde591cc436e8ca3470980e1e19b",
+              "cycle_id": "20230126_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5775360,
+                "archive_sha256": "b048cd45344a8df3fba6312f50fa19cf0ec601496132d90c67883aac0cf8b711",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 842,
+                  "sha256": "b0984d7cd4975b181632e1fbb8794c429aa7bde591cc436e8ca3470980e1e19b"
+                },
+                "cycle_id": "20230126_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "201f30cbb5dcd68e28ef2b1b5f0b48aa29be172abdb04ab331d9fcffe0867400",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "201f30cbb5dcd68e28ef2b1b5f0b48aa29be172abdb04ab331d9fcffe0867400",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                48
+              ],
+              "weather_tiles_redecoded": true
+            },
+            {
+              "archive_bytes": 5273600,
+              "archive_sha256": "d42744f0992584ba3b624e67d62c8ce838d37f84ede85c70a44033088afe6992",
+              "commit_sha256": "be2514d17bff260e013dab12ce66110b7c51db5448cb6cb6c65d7c8be0db5643",
+              "cycle_id": "20230817_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5273600,
+                "archive_sha256": "d42744f0992584ba3b624e67d62c8ce838d37f84ede85c70a44033088afe6992",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 842,
+                  "sha256": "be2514d17bff260e013dab12ce66110b7c51db5448cb6cb6c65d7c8be0db5643"
+                },
+                "cycle_id": "20230817_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "4eeccd04bfb128bf6df7535ba396c49122ee159443b7e6ed7ffcfa6eb0cb887e",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "4eeccd04bfb128bf6df7535ba396c49122ee159443b7e6ed7ffcfa6eb0cb887e",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                48
+              ],
+              "weather_tiles_redecoded": true
+            },
+            {
+              "archive_bytes": 5304320,
+              "archive_sha256": "a9446b8859baad5133f7dec76e811a8651dff676c20fdde2f7bf020f62f5e511",
+              "commit_sha256": "6437321209190d1a4c1851dbcce04295013cf8d25df119847dae69c35fc19c47",
+              "cycle_id": "20240229_00Z",
+              "data_complete": true,
+              "groups_available": [
+                "humidity",
+                "precipitation",
+                "snow_water_equivalent",
+                "soil_moisture",
+                "temperature"
+              ],
+              "lineage": {
+                "archive_bytes": 5304320,
+                "archive_sha256": "a9446b8859baad5133f7dec76e811a8651dff676c20fdde2f7bf020f62f5e511",
+                "availability_metadata_origin": "ORIGINAL_AVAILABILITY_JSON",
+                "binding_route": "SEALED_INDEX_COMMIT_BUNDLE",
+                "commit": {
+                  "byte_count_source": "SEALED_INDEX",
+                  "bytes": 842,
+                  "sha256": "6437321209190d1a4c1851dbcce04295013cf8d25df119847dae69c35fc19c47"
+                },
+                "cycle_id": "20240229_00Z",
+                "index_location_kind": "commit",
+                "manifest_sha256": "73412d9021a98e1f831eba161ec711b45f74922db7564983af440a159dab469f",
+                "normalized_summary": {
+                  "coverage_status": "ALL_REQUESTED_GROUPS_AVAILABLE",
+                  "data_complete": true,
+                  "derived_summary_keys": [],
+                  "groups_available": [
+                    "humidity",
+                    "precipitation",
+                    "snow_water_equivalent",
+                    "soil_moisture",
+                    "temperature"
+                  ],
+                  "groups_missing": {},
+                  "record_count": 145
+                },
+                "payload_schema": "HRRR-gap-aware-raw-cycle-acquisition/v1",
+                "schema": "hydra-directflow-lineage-adapter/v1",
+                "source_summaries_rewritten": false,
+                "summary_authority": "ORIGINAL_SHA256_AUTHENTICATED_MANIFEST_AND_AVAILABILITY"
+              },
+              "manifest_sha256": "73412d9021a98e1f831eba161ec711b45f74922db7564983af440a159dab469f",
+              "record_count": 145,
+              "soil_values_record_hash_verified": true,
+              "weather_source_slots": [
+                48
+              ],
+              "weather_tiles_redecoded": true
+            }
+          ],
+          "qualified_index_bytes": 112202255,
+          "qualified_index_sha256": "75469df20f79d94ffb058f439f1ac873f0cf4164c1417eec7298a6641a35baa5",
+          "usgs_manifest_sha256": "4c494b4587c394b1819261f6df0386eba19500a28f0d73aa06543870f933ea2a",
+          "usgs_partitions": [
+            {
+              "bytes": 73458,
+              "exact_core_rows": 2232,
+              "month": "2021-08",
+              "returned_rows": 8919,
+              "sha256": "16f1dcbc063fed46a72ce286571c3b78fc2c199fce24e07aa76cdd03318c6d2b"
+            },
+            {
+              "bytes": 79473,
+              "exact_core_rows": 2231,
+              "month": "2022-03",
+              "returned_rows": 8913,
+              "sha256": "881bcfceda16342836f7c6e3d04f31528ef9c09c5c9c064f7ae28594368576a7"
+            },
+            {
+              "bytes": 72704,
+              "exact_core_rows": 2181,
+              "month": "2023-01",
+              "returned_rows": 8658,
+              "sha256": "5d9bb435b1e0053fbed0cd7b65fdedabcc1a45faa2b7c3dd9a49ac42f451aed3"
+            },
+            {
+              "bytes": 74004,
+              "exact_core_rows": 2231,
+              "month": "2023-08",
+              "returned_rows": 8916,
+              "sha256": "dd13695b8780c1e79ab203d53aa905e11770666244d634e320f4387df5165db4"
+            },
+            {
+              "bytes": 67678,
+              "exact_core_rows": 2088,
+              "month": "2024-02",
+              "returned_rows": 8343,
+              "sha256": "ea95a47fc856f416ca52f993b08f8eb928ab5e9c178fdfab401ebd033efb95cb"
+            }
+          ]
+        },
+        "stage_seconds": {
+          "basin_store": 0.005026541999541223,
+          "case_assembly": 0.15564558294136077,
+          "discharge_store": 0.04979645891580731,
+          "total": 0.21055275003891438
+        },
+        "status": "COMPLETED_WITH_EXPLICIT_MASKS"
+      }
+    }
+  ],
+  "schema": "hydra-cache-real-parity/v1",
+  "scope": "Source tensors,case IDs,provenance arrays and masks match exactly; route-specific receipt row-count scopes are preserved",
+  "status": "PASSED_EXACT_UNCACHED_AND_RESUMED_PARITY"
+}
