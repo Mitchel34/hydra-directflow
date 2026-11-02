@@ -1,8 +1,16 @@
 # Execution readiness and approved conditional budget
 
-Updated November 2, 2026. Engineering measurements below are complete; scientific
-fits, CV adoption, full-cohort numerical admission and protected assessment are
-not. There is no need to wait for November 4 or6 if the prerequisites finish early.
+Updated November 2, 2026. Development data preparation and candidate numerical
+admission are complete. The 180-fit scope is confirmed; detailed protocol adoption,
+scientific fits and protected assessment remain pending. There is no need to wait
+for November 4 or 6 if the prerequisites finish early.
+
+**Completion update:** all 477 development shards are built and the full audit
+passes with 146,464 candidate complete L168 cases and no physical-domain flags.
+The user confirmed 180 fits. Exact admitted-count sizing is now 33.09 hours at
+20 epochs or 82.45 hours at 50 epochs, with the documented overhead exclusions.
+See `docs/development-completion.md`; earlier scenarios below remain attributable
+to their stated counts and assumptions. Methodological adoption remains pending.
 
 ## Completed implementation
 
@@ -88,7 +96,8 @@ Q-only/L24 fits represented by an explicit full-L168 proxy. These remain calenda
 count scenarios before final numerical admission and exclude full-corpus loading,
 failures, interruptions and scientific review/figure preparation. See
 `reports/proposed-scientific-workload-measured-controls.json`. The scope preference
-is pending, and these arithmetic scenarios do not adopt CV or start fitting.
+was subsequently resolved in favor of 180 fits; the arithmetic itself does not
+freeze the remaining protocol or start fitting.
 
 ## Approved additional funding: $150 total ceiling
 

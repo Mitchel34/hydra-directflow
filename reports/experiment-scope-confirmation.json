@@ -1,0 +1,40 @@
+{
+  "approved_combined_incremental_ceiling_usd": 150,
+  "budget_ceiling_changed": false,
+  "cloud_phase_conditions_unchanged": true,
+  "common_case_policy": "L168-admissible common cases for paired input/history comparisons",
+  "cv_arms": [
+    "full_L168",
+    "q_only_L168"
+  ],
+  "cv_fit_count": 72,
+  "cv_folds": 3,
+  "cv_seed_count": 1,
+  "families": [
+    "LSTM",
+    "Transformer",
+    "GRU_Transformer",
+    "Mamba2_Transformer"
+  ],
+  "final_arms": [
+    "full_L168",
+    "q_only_L168",
+    "full_L24"
+  ],
+  "final_fit_count": 108,
+  "final_seed_count": 3,
+  "fit_count": 180,
+  "gauges": [
+    "03161000",
+    "03164000",
+    "03479000"
+  ],
+  "protected_assessment_access_authorized": false,
+  "protected_scoring_authorized": false,
+  "recorded_at_utc": "2026-11-02T23:34:50.151448+00:00",
+  "schema": "hydra-experiment-scope-confirmation/v1",
+  "scientific_fits_started": 0,
+  "scientific_protocol_frozen_by_this_record": false,
+  "status": "USER_CONFIRMED_EXPERIMENT_SCOPE",
+  "user_response": "180 fits: paired CV plus L24 contrast (Recommended)"
+}

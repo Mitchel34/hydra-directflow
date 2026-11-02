@@ -48,7 +48,8 @@
     "scientific_protocol_freeze": "PENDING",
     "real_train_only_scientific_scalers_fitted": false,
     "eligibility_evidence": "reports/development-eligibility-owned-metadata-v2.json",
-    "numerical_corpus": "BOUNDED_STAGING_NOT_YET_COMPLETE"
+    "numerical_corpus": "COMPLETE_477_SHARDS_AUDITED_CANDIDATE_COHORTS",
+    "numerical_corpus_audit": "reports/development-corpus-admission-v1.json"
   },
   "recommended_local_execution": {
     "status": "THROUGHPUT_RECOMMENDATION_NOT_FORECAST_SELECTION",
@@ -74,5 +75,13 @@
     "artifact": "reports/cloud-readonly-readiness.json",
     "observed_global_gpu_limit": 1,
     "gpu_launch_or_runtime_qualified": false
+  },
+  "experiment_scope": {
+    "status": "USER_CONFIRMED",
+    "fit_count": 180,
+    "cv_fits": 72,
+    "final_fits": 108,
+    "artifact": "reports/experiment-scope-confirmation.json",
+    "detailed_protocol_adoption": "PENDING"
   }
 }

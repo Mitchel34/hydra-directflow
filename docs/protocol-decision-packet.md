@@ -1,6 +1,6 @@
 # Protocol decision packet — proposal only
 
-**This packet does not freeze a protocol, select an experimental scope, enable training or assessment, or launch a cloud job.** The pending choice among **108, 180 and 288 fits remains open**. Funding approval and engineering qualification are separate from scientific adoption. This proposal uses the existing [study design](scientific-study-design.md), [confirmed decisions](../configs/scientific-decisions.json), [trainer mechanics](training-runner.md) and [measured workload report](../reports/proposed-scientific-workload-measured-controls.json); it makes no new literature or forecast-skill claim.
+**The user has confirmed the 180-fit scope. This packet does not freeze the remaining protocol settings, enable training or assessment, or launch a cloud job.** The confirmation is recorded in `reports/experiment-scope-confirmation.json`. Funding approval and engineering qualification are separate from scientific adoption. This proposal uses the existing [study design](scientific-study-design.md), [confirmed decisions](../configs/scientific-decisions.json), [trainer mechanics](training-runner.md) and [measured workload report](../reports/proposed-scientific-workload-measured-controls.json); it makes no new literature or forecast-skill claim.
 
 ## Confirmed rules and retained planning boundaries
 
@@ -42,9 +42,9 @@ Strict `C+18h < partition_end` purges18 final hourly origins. Recommend also tes
 
 The 180-fit choice adds72 paired-L168 CV fits to the108 core. The288-fit choice additionally includes paired L24 CV and final Q-only L24, completing the proposed history/input factorial. The annual CV dates remain those proposed in [study design](scientific-study-design.md); no CV execution or adoption is implied here.
 
-## Scope, schedule and conditional one-GPU qualification
+## Confirmed scope, schedule and conditional one-GPU qualification
 
-| Pending scope | 20-epoch sizing | 50-epoch sizing | Timing qualification |
+| Scope comparison | 20-epoch sizing | 50-epoch sizing | Timing qualification |
 |---|---:|---:|---|
 | 108 fits | 24.61h | 61.36h | Full L168, Q-only L168 and full L24 measured |
 | 180 fits | 35.85h | 89.34h | Same measured geometries; adds L168 CV |
@@ -56,6 +56,6 @@ A conditional CUDA pilot may be justified if the chosen scope and documented loc
 
 ## Remaining review decisions
 
-Keep the pending108/180/288 scope question open. User/coauthor review is still needed for the proposed settings above, CV/refit convention, primary output acceptability, whole-study spatial admission, practical-effect/uncertainty rules and any extra controls. Standalone GRU/Mamba2, separate weather-versus-soil arms and attention-component ablations remain outside these counts. Reconcile the direct-HRRR study with the older NWM/ERA5 accepted-abstract framing; no old skill claims transfer to this study and no coauthor message is sent.
+The 180-fit scope is confirmed; the other counts remain comparison scenarios. Methodological review is still needed for the proposed settings above, CV/refit convention, primary output acceptability, whole-study spatial admission, practical-effect/uncertainty rules and any extra controls. Standalone GRU/Mamba2, separate weather-versus-soil arms and attention-component ablations remain outside these counts. Reconcile the direct-HRRR study with the older NWM/ERA5 accepted-abstract framing; no old skill claims transfer to this study and no coauthor message is sent.
 
 After adoption, record a versioned protocol, cohort and selection contract before scientific fits. Lock all selected checkpoints before requesting separate assessment authorization. A budget approval, hash, engineering benchmark or this proposal is not that authorization.

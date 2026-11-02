@@ -11,6 +11,12 @@ do not establish forecast performance.
 
 ## Current work packages
 
+**November 2:** the [complete development corpus](docs/development-completion.md)
+is built and audited: 477 shards, 53,028 origins, 159,084 cases and 146,464
+candidate complete L168 cases. The user confirmed the 180-fit study scope.
+Methodological adoption and scientific fitting remain pending; no protected
+assessment scoring or cloud compute job has started.
+
 | Chunk | Deliverable | Completion evidence |
 |---|---|---|
 | 01 | Installable package and documented study boundary | Package imports and source checks |
@@ -27,8 +33,8 @@ Actual artifact creation timestamps are distinct from simulated historical
 information cutoffs.
 
 See [the completed work ledger](docs/work-ledger.md) for commits and evidence.
-The integrated offline-environment suite passes **406 tests** at the staging
-release checkpoint. Current reports
+The work ledger and versioned release receipts record integrated and focused
+test results at their executed code versions. Current reports
 include four-model CPU/MPS qualification, a bounded real-data engineering probe,
 fresh-process recovery and a 20-case synthetic local throughput benchmark.
 Discharge-only ablation and source-aware NWM evaluation helpers are implemented.

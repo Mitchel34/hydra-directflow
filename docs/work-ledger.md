@@ -411,3 +411,43 @@ certificate verification intact and no source GET or credential request.
 Increment10 resumes under the same execution plan and budget. At the stop,
 10,195 attempts reconciled, observed bodies were 32,587,096,060 bytes, and the
 conservative precharge estimate was $9.165681, not an invoice.
+
+## Development preparation completed — November 2, 23:21 UTC
+
+All 477 shards completed: 53,028 retained origins after 36 H18 boundary purges,
+159,084 gauge cases, and 146,464 candidate complete L168 cases. The independent
+full audit passed in 18.04 seconds with 66.9 MiB peak RSS and zero physical-domain
+flags. Natural L24 support is 153,216 cases; its 6,752 additional cases remain
+separate from the matched L168 comparison cohort. No source masks were changed.
+
+L168 training/validation counts are 42,715/8,766 at Jefferson, 38,297/8,125 at
+Galax, and 41,332/7,229 at Sugar Grove. Common L24/L168 membership hashes match.
+These are candidate admission results, not forecast-skill findings or a protocol
+freeze. All 73 USGS development months are covered through native files or the
+verified July export; protected assessment modeling/scoring remains gated.
+
+The exact metadata inventory resolves all 8,841 development archives: 8,770
+complete cycles and 71 documented gaps, totaling 46,942,832,640 bytes (43.72 GiB).
+It preserves 2,600 v3 and 6,241 current-reader cache entries. The full private
+catalog is hash-bound; original source/plan receipts remain unchanged.
+
+Cumulative GCS accounting is 13,071 attempts, 13,067 verified and four retained
+failed charges. Observed bodies total 46,218,766,666 bytes; the conservative
+estimate is $12.907585 within the $35 allocation. No invoice reconciliation or
+cloud compute execution is claimed. The final integrated suite passes 541 tests
+in 5.074 seconds, including the independently reviewed final inventory and
+actual-count planning components.
+
+## Confirmed 180-fit scope and exact candidate workload
+
+The user confirmed 180 fits: 72 paired L168 CV fits plus 108 final-development
+fits, including the common-case full-input L24 contrast. This confirms scope,
+not the remaining methodological settings or assessment permission.
+
+Exact per-gauge fold counts now replace calendar counts in a separate addendum.
+The confirmed scope sizes to 33.09 local hours at 20 epochs or 82.45 hours at
+50 epochs, before the stated loading/scaling, uncertainty/figures, failures and
+travel overhead. Both proposed refit-label conventions produce the same rounded
+B64 batch counts, while the two-hour convention excludes one additional inner
+stopping case per gauge/fold. Neither convention is silently adopted. There are
+still zero scientific fits, zero protected scores and zero cloud compute jobs.

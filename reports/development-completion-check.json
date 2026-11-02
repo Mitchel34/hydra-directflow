@@ -1,0 +1,60 @@
+{
+  "candidate_complete_l168": 146464,
+  "cloud_compute_jobs_started": 0,
+  "completed_chunks": 477,
+  "completed_origins": 53028,
+  "confirmed_scope_fits": 180,
+  "corpus_plan_sha256": "0dad073824984fd7eeba88e4c313d77b4015dcccb94e8eb27297fcf7c6b39b0f",
+  "created_at_utc": "2026-11-02T23:50:52.356172+00:00",
+  "cumulative_real_engineering_updates": 852,
+  "cumulative_synthetic_updates": 896,
+  "detailed_protocol_frozen": false,
+  "gauge_cases": 159084,
+  "implementation_sha256": {
+    "scripts/audit_corpus_admission.py": "2d39b2f14f2f10b9a5d5ab1a3daa450e7cac1631703f8c8884f8016e5eead3e8",
+    "scripts/inventory_development_sources.py": "fc19f5659bcda5f4f612a6a77959adc7b9374662da545ba4aa309a0f2ee9ce70",
+    "scripts/plan_admitted_workload.py": "01cafd0005a4fae3e401ec800897a0afe85a9ef2335da04e9759b590a54c6686",
+    "scripts/plan_fold_admitted_counts.py": "3541d8c2e4551bc45ff9b567a5e41dc2a535647af21b86d658d164d1cb9f41d9",
+    "src/hydra_directflow/cache_reuse.py": "ddbf80537f563912dc7eeb4f05671cd17adf21edc020a53ef6551cca6491d470",
+    "src/hydra_directflow/corpus.py": "5f2846d008e927ab55e9a6fbc70d5cbe0ea797f3a444bc1d291f60de8ed53080",
+    "src/hydra_directflow/corpus_dataset.py": "cc91fc2d8f7da57cac8eb0a123a1209daee1d84a11dc967663c510b661577e84",
+    "src/hydra_directflow/local_data.py": "adb2fe589fe92e1598e7e21f9955af9c9e53fa6eb5266e52dd10f2d12c0d5045",
+    "src/hydra_directflow/staging.py": "1518512085ce3619452e8c529d19249bc7f3fb4c37353837c746d4c4e910a6f4",
+    "src/hydra_directflow/trainer_bundle.py": "d3ce39417d17308609e165386bb3e5f78d1b7de971a1585f0040a39a9756e9b5"
+  },
+  "natural_complete_l24": 153216,
+  "physical_domain_violations": 0,
+  "protected_scores": 0,
+  "provider_invoice_reconciled": false,
+  "qualification": "Engineering/data-admission evidence; no forecast-skill finding or assessment authorization",
+  "reports_sha256": {
+    "confirmed-180-fit-admitted-runtime.json": "9a8b5526b0956125aecc2ebca9a29d20e90e6b262c136225505cde18cd92b2ec",
+    "development-corpus-admission-v1.json": "da8d75ccd48c624fa15b34dec332b0d0ea29ba94d257d765608750b01691917c",
+    "development-source-final-inventory.json": "a83bb6cf0cf0e4facc76bb19bb3be5f4e3374ba03dbf8200667591b2f4592476",
+    "development-staging-increment-11.json": "3bc6e1fd00eeba70999cae28b63fc1cb0baef39591fe498a03ecf6c8098ce3ec",
+    "experiment-scope-confirmation.json": "4fca81e439d85414bfae7e4402cf2edfd23e619b8a42af97db60261d0017256e",
+    "proposed-fold-admitted-counts.json": "c8b4edb8ca77c06fd42432daa2c23a35b021e205ea2deb7f8e793c0fbc2bd34a",
+    "timing-controls.json": "63df6e08489a26768f3777aaff26576d1c39f5104989f31e7f380eea6430971f"
+  },
+  "schema": "hydra-development-completion-check/v1",
+  "scientific_fits": 0,
+  "snapshot_sha256": "b41630b7df9a216874eb4ba38a10176d4b72092bd6f1ce2ad4c4f369db56948c",
+  "status": "COMPLETE_DEVELOPMENT_PREPARATION_CANDIDATE_COHORT_AUDITED",
+  "storage_budget": {
+    "attempt_states": {
+      "FAILED": 4,
+      "VERIFIED": 13067
+    },
+    "attempted_gets": 13071,
+    "billing_invoice_reconciled": false,
+    "body_cap": 107353210880,
+    "conservative_precharge_estimate_usd": 12.907585,
+    "cost_estimate_cap_usd": 35.0,
+    "get_cap": 20000,
+    "observed_body_bytes": 46218766666,
+    "precharged_body_bytes": 46239807442
+  },
+  "test_elapsed_seconds": 5.074,
+  "test_log_sha256": "75201e1e909ac884d37396ac69599426437c8dd34c88eed7ea1ecb9ff6267c57",
+  "tests_passed": 541
+}
