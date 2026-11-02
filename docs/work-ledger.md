@@ -269,3 +269,23 @@ and42,166 natural L24-complete cases. Sixteen paired full/Q-only batch cases hav
 exactly matching histories, labels, clocks and IDs. Inspection took1.30s and
 50.6MiB peak RSS. These are provisional development counts, not a complete cohort,
 source/cache re-audit, trained result or protocol freeze.
+
+## Progress inspector and legacy-format stop — November 2
+
+The read-only status CLI passes12 focused tests and independent review. It checks
+pinned plan/commit/case-index metadata, stats but never opens numeric shards,
+reconciles the SQLite budget in a read transaction, and keeps worker observation
+separate from old receipts and lockfiles. It never settles pending charges.
+
+Increment06 stopped at21:40:37UTC on legacy20200422_00Z metadata admission. The
+21:47 snapshot verifies140 committed chunks/15,576 origins/46,728 gauge cases,
+with42,696 recorded candidate complete cases and337 chunks still missing. The
+expected worker is no longer observed. All5,266 storage attempts reconcile:
+5,265 verified and one earlier failed request; none pending. Observed bodies are
+13,032,041,830bytes and the conservative precharge estimate is$3.741287.
+
+The original legacy writer and retained request log confirm compact404 records
+without the later nested proof. A narrow reader extension and exact-code reuse
+of already qualified basin entries are being prepared. This is an explicit
+format stop, not an upstream weather gap or acquisition incompleteness. Original
+v3 artifacts, failed-run receipts and budget charges remain intact.
