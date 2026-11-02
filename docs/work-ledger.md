@@ -253,3 +253,19 @@ instances, all terminated; global GPU and us-central1 L4 quotas each have limit1
 and usage0. No resources or permissions were changed. One GPU is the current
 planning limit, not a capacity reservation or successful CUDA qualification.
 Retained disks/storage liabilities and provider invoices were not reconciled.
+
+## Read-only dataset adapter — November 2
+
+The new adapter verifies immutable plans/shards, numerical schemas, clocks,
+masks and source ages before yielding bounded per-gauge batches. It explicitly
+separates all candidates, natural L24/L168 completeness and common L168 case
+membership. Full/Q-only views preserve that membership, history and labels.
+Partial snapshots cannot become final cohorts by default; later appends create
+a new snapshot rather than changing an existing selection.14 tests pass.
+
+`reports/corpus-dataset-partial-check.json` records a bounded earlier snapshot
+of132 committed chunks/44,136 candidate cases, with40,290 candidate L168-complete
+and42,166 natural L24-complete cases. Sixteen paired full/Q-only batch cases have
+exactly matching histories, labels, clocks and IDs. Inspection took1.30s and
+50.6MiB peak RSS. These are provisional development counts, not a complete cohort,
+source/cache re-audit, trained result or protocol freeze.

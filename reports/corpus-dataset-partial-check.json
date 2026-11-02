@@ -1,0 +1,930 @@
+{
+  "bounded_full_q_only_batch_cases": 16,
+  "elapsed_seconds": 1.3015730830375105,
+  "execution": {
+    "network_requests": 0,
+    "optimizer_updates": 0,
+    "raw_source_reads": 0,
+    "scaler_fits": 0,
+    "source_files_modified": false,
+    "upstream_cache_reaudits": 0
+  },
+  "full_q_history_labels_clocks_and_case_ids_exact": true,
+  "implementation_sha256": {
+    "src/hydra_directflow/corpus_dataset.py": "cc91fc2d8f7da57cac8eb0a123a1209daee1d84a11dc967663c510b661577e84"
+  },
+  "limits": {
+    "rss_bytes": 1073741824,
+    "wall_seconds": 30
+  },
+  "peak_rss_bytes": 53084160,
+  "schema": "hydra-corpus-dataset-check/v1",
+  "scope": "PROVISIONAL_COMMITTED_DEVELOPMENT_SNAPSHOT_ONLY",
+  "selection": {
+    "case_count": 14631,
+    "cohort_admission_digest": "62b9aff80e8b372acbf0133519b37c4ef30211895ec62425f3e3e2f0549a8345",
+    "cohort_mode": "common_l168_complete",
+    "final_scientific_cohort": false,
+    "gauge_id": "03161000",
+    "history_hours": 24,
+    "selection_digest": "a207c08acc499b2c3962029105b58e78e15db0de088ad370f01fe39e0ab674e1",
+    "snapshot_sha256": "530fc3b30fe99ac9212ef8a85199cff6e1a653496ec4a1a8ae13162d86b039c6",
+    "source_plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+    "split": "candidate_training",
+    "status": "PARTIAL_SNAPSHOT_CANDIDATE_SELECTION",
+    "upstream_sources_reaudited": false
+  },
+  "snapshot": {
+    "available_candidate_cases": 44136,
+    "final_scientific_cohort": false,
+    "fitting_performed": false,
+    "missing_chunks": [
+      "candidate_training__2020-03__L168/003",
+      "candidate_training__2020-03__L168/004",
+      "candidate_training__2020-03__L168/005",
+      "candidate_training__2020-03__L168/006",
+      "candidate_training__2020-04__L168/000",
+      "candidate_training__2020-04__L168/001",
+      "candidate_training__2020-04__L168/002",
+      "candidate_training__2020-04__L168/003",
+      "candidate_training__2020-04__L168/004",
+      "candidate_training__2020-04__L168/005",
+      "candidate_training__2020-05__L168/000",
+      "candidate_training__2020-05__L168/001",
+      "candidate_training__2020-05__L168/002",
+      "candidate_training__2020-05__L168/003",
+      "candidate_training__2020-05__L168/004",
+      "candidate_training__2020-05__L168/005",
+      "candidate_training__2020-05__L168/006",
+      "candidate_training__2020-06__L168/000",
+      "candidate_training__2020-06__L168/001",
+      "candidate_training__2020-06__L168/002",
+      "candidate_training__2020-06__L168/003",
+      "candidate_training__2020-06__L168/004",
+      "candidate_training__2020-06__L168/005",
+      "candidate_training__2020-07__L168/000",
+      "candidate_training__2020-07__L168/001",
+      "candidate_training__2020-07__L168/002",
+      "candidate_training__2020-07__L168/003",
+      "candidate_training__2020-07__L168/004",
+      "candidate_training__2020-07__L168/005",
+      "candidate_training__2020-07__L168/006",
+      "candidate_training__2020-08__L168/000",
+      "candidate_training__2020-08__L168/001",
+      "candidate_training__2020-08__L168/002",
+      "candidate_training__2020-08__L168/003",
+      "candidate_training__2020-08__L168/004",
+      "candidate_training__2020-08__L168/005",
+      "candidate_training__2020-08__L168/006",
+      "candidate_training__2020-09__L168/000",
+      "candidate_training__2020-09__L168/001",
+      "candidate_training__2020-09__L168/002",
+      "candidate_training__2020-09__L168/003",
+      "candidate_training__2020-09__L168/004",
+      "candidate_training__2020-09__L168/005",
+      "candidate_training__2020-10__L168/000",
+      "candidate_training__2020-10__L168/001",
+      "candidate_training__2020-10__L168/002",
+      "candidate_training__2020-10__L168/003",
+      "candidate_training__2020-10__L168/004",
+      "candidate_training__2020-10__L168/005",
+      "candidate_training__2020-10__L168/006",
+      "candidate_training__2020-11__L168/000",
+      "candidate_training__2020-11__L168/001",
+      "candidate_training__2020-11__L168/002",
+      "candidate_training__2020-11__L168/003",
+      "candidate_training__2020-11__L168/004",
+      "candidate_training__2020-11__L168/005",
+      "candidate_training__2020-12__L168/000",
+      "candidate_training__2020-12__L168/001",
+      "candidate_training__2020-12__L168/002",
+      "candidate_training__2020-12__L168/003",
+      "candidate_training__2020-12__L168/004",
+      "candidate_training__2020-12__L168/005",
+      "candidate_training__2020-12__L168/006",
+      "candidate_training__2021-01__L168/000",
+      "candidate_training__2021-01__L168/001",
+      "candidate_training__2021-01__L168/002",
+      "candidate_training__2021-01__L168/003",
+      "candidate_training__2021-01__L168/004",
+      "candidate_training__2021-01__L168/005",
+      "candidate_training__2021-01__L168/006",
+      "candidate_training__2021-02__L168/000",
+      "candidate_training__2021-02__L168/001",
+      "candidate_training__2021-02__L168/002",
+      "candidate_training__2021-02__L168/003",
+      "candidate_training__2021-02__L168/004",
+      "candidate_training__2021-02__L168/005",
+      "candidate_training__2021-03__L168/000",
+      "candidate_training__2021-03__L168/001",
+      "candidate_training__2021-03__L168/002",
+      "candidate_training__2021-03__L168/003",
+      "candidate_training__2021-03__L168/004",
+      "candidate_training__2021-03__L168/005",
+      "candidate_training__2021-03__L168/006",
+      "candidate_training__2021-04__L168/000",
+      "candidate_training__2021-04__L168/001",
+      "candidate_training__2021-04__L168/002",
+      "candidate_training__2021-04__L168/003",
+      "candidate_training__2021-04__L168/004",
+      "candidate_training__2021-04__L168/005",
+      "candidate_training__2021-05__L168/000",
+      "candidate_training__2021-05__L168/001",
+      "candidate_training__2021-05__L168/002",
+      "candidate_training__2021-05__L168/003",
+      "candidate_training__2021-05__L168/004",
+      "candidate_training__2021-05__L168/005",
+      "candidate_training__2021-05__L168/006",
+      "candidate_training__2021-06__L168/000",
+      "candidate_training__2021-06__L168/001",
+      "candidate_training__2021-06__L168/002",
+      "candidate_training__2021-06__L168/003",
+      "candidate_training__2021-06__L168/004",
+      "candidate_training__2021-06__L168/005",
+      "candidate_training__2021-07__L168/000",
+      "candidate_training__2021-07__L168/001",
+      "candidate_training__2021-07__L168/002",
+      "candidate_training__2021-07__L168/003",
+      "candidate_training__2021-07__L168/004",
+      "candidate_training__2021-07__L168/005",
+      "candidate_training__2021-07__L168/006",
+      "candidate_training__2021-08__L168/000",
+      "candidate_training__2021-08__L168/001",
+      "candidate_training__2021-08__L168/002",
+      "candidate_training__2021-08__L168/003",
+      "candidate_training__2021-08__L168/004",
+      "candidate_training__2021-08__L168/005",
+      "candidate_training__2021-08__L168/006",
+      "candidate_training__2021-09__L168/000",
+      "candidate_training__2021-09__L168/001",
+      "candidate_training__2021-09__L168/002",
+      "candidate_training__2021-09__L168/003",
+      "candidate_training__2021-09__L168/004",
+      "candidate_training__2021-09__L168/005",
+      "candidate_training__2021-10__L168/000",
+      "candidate_training__2021-10__L168/001",
+      "candidate_training__2021-10__L168/002",
+      "candidate_training__2021-10__L168/003",
+      "candidate_training__2021-10__L168/004",
+      "candidate_training__2021-10__L168/005",
+      "candidate_training__2021-10__L168/006",
+      "candidate_training__2021-11__L168/000",
+      "candidate_training__2021-11__L168/001",
+      "candidate_training__2021-11__L168/002",
+      "candidate_training__2021-11__L168/003",
+      "candidate_training__2021-11__L168/004",
+      "candidate_training__2021-11__L168/005",
+      "candidate_training__2021-12__L168/000",
+      "candidate_training__2021-12__L168/001",
+      "candidate_training__2021-12__L168/002",
+      "candidate_training__2021-12__L168/003",
+      "candidate_training__2021-12__L168/004",
+      "candidate_training__2021-12__L168/005",
+      "candidate_training__2021-12__L168/006",
+      "candidate_training__2022-01__L168/000",
+      "candidate_training__2022-01__L168/001",
+      "candidate_training__2022-01__L168/002",
+      "candidate_training__2022-01__L168/003",
+      "candidate_training__2022-01__L168/004",
+      "candidate_training__2022-01__L168/005",
+      "candidate_training__2022-01__L168/006",
+      "candidate_training__2022-02__L168/000",
+      "candidate_training__2022-02__L168/001",
+      "candidate_training__2022-02__L168/002",
+      "candidate_training__2022-02__L168/003",
+      "candidate_training__2022-02__L168/004",
+      "candidate_training__2022-02__L168/005",
+      "candidate_training__2022-03__L168/000",
+      "candidate_training__2022-03__L168/001",
+      "candidate_training__2022-03__L168/002",
+      "candidate_training__2022-03__L168/003",
+      "candidate_training__2022-03__L168/004",
+      "candidate_training__2022-03__L168/005",
+      "candidate_training__2022-03__L168/006",
+      "candidate_training__2022-04__L168/000",
+      "candidate_training__2022-04__L168/001",
+      "candidate_training__2022-04__L168/002",
+      "candidate_training__2022-04__L168/003",
+      "candidate_training__2022-04__L168/004",
+      "candidate_training__2022-04__L168/005",
+      "candidate_training__2022-05__L168/000",
+      "candidate_training__2022-05__L168/001",
+      "candidate_training__2022-05__L168/002",
+      "candidate_training__2022-05__L168/003",
+      "candidate_training__2022-05__L168/004",
+      "candidate_training__2022-05__L168/005",
+      "candidate_training__2022-05__L168/006",
+      "candidate_training__2022-06__L168/000",
+      "candidate_training__2022-06__L168/001",
+      "candidate_training__2022-06__L168/002",
+      "candidate_training__2022-06__L168/003",
+      "candidate_training__2022-06__L168/004",
+      "candidate_training__2022-06__L168/005",
+      "candidate_training__2022-07__L168/000",
+      "candidate_training__2022-07__L168/001",
+      "candidate_training__2022-07__L168/002",
+      "candidate_training__2022-07__L168/003",
+      "candidate_training__2022-07__L168/004",
+      "candidate_training__2022-07__L168/005",
+      "candidate_training__2022-07__L168/006",
+      "candidate_training__2022-08__L168/000",
+      "candidate_training__2022-08__L168/001",
+      "candidate_training__2022-08__L168/002",
+      "candidate_training__2022-08__L168/003",
+      "candidate_training__2022-08__L168/004",
+      "candidate_training__2022-08__L168/005",
+      "candidate_training__2022-08__L168/006",
+      "candidate_training__2022-09__L168/000",
+      "candidate_training__2022-09__L168/001",
+      "candidate_training__2022-09__L168/002",
+      "candidate_training__2022-09__L168/003",
+      "candidate_training__2022-09__L168/004",
+      "candidate_training__2022-09__L168/005",
+      "candidate_training__2022-10__L168/000",
+      "candidate_training__2022-10__L168/001",
+      "candidate_training__2022-10__L168/002",
+      "candidate_training__2022-10__L168/003",
+      "candidate_training__2022-10__L168/004",
+      "candidate_training__2022-10__L168/005",
+      "candidate_training__2022-10__L168/006",
+      "candidate_training__2022-11__L168/000",
+      "candidate_training__2022-11__L168/001",
+      "candidate_training__2022-11__L168/002",
+      "candidate_training__2022-11__L168/003",
+      "candidate_training__2022-11__L168/004",
+      "candidate_training__2022-11__L168/005",
+      "candidate_training__2022-12__L168/000",
+      "candidate_training__2022-12__L168/001",
+      "candidate_training__2022-12__L168/002",
+      "candidate_training__2022-12__L168/003",
+      "candidate_training__2022-12__L168/004",
+      "candidate_training__2022-12__L168/005",
+      "candidate_training__2022-12__L168/006",
+      "candidate_training__2023-01__L168/000",
+      "candidate_training__2023-01__L168/001",
+      "candidate_training__2023-01__L168/002",
+      "candidate_training__2023-01__L168/003",
+      "candidate_training__2023-01__L168/004",
+      "candidate_training__2023-01__L168/005",
+      "candidate_training__2023-01__L168/006",
+      "candidate_training__2023-02__L168/000",
+      "candidate_training__2023-02__L168/001",
+      "candidate_training__2023-02__L168/002",
+      "candidate_training__2023-02__L168/003",
+      "candidate_training__2023-02__L168/004",
+      "candidate_training__2023-02__L168/005",
+      "candidate_training__2023-03__L168/000",
+      "candidate_training__2023-03__L168/001",
+      "candidate_training__2023-03__L168/002",
+      "candidate_training__2023-03__L168/003",
+      "candidate_training__2023-03__L168/004",
+      "candidate_training__2023-03__L168/005",
+      "candidate_training__2023-03__L168/006",
+      "candidate_training__2023-04__L168/000",
+      "candidate_training__2023-04__L168/001",
+      "candidate_training__2023-04__L168/002",
+      "candidate_training__2023-04__L168/003",
+      "candidate_training__2023-04__L168/004",
+      "candidate_training__2023-04__L168/005",
+      "candidate_training__2023-05__L168/000",
+      "candidate_training__2023-05__L168/001",
+      "candidate_training__2023-05__L168/002",
+      "candidate_training__2023-05__L168/003",
+      "candidate_training__2023-05__L168/004",
+      "candidate_training__2023-05__L168/005",
+      "candidate_training__2023-05__L168/006",
+      "candidate_training__2023-06__L168/000",
+      "candidate_training__2023-06__L168/001",
+      "candidate_training__2023-06__L168/002",
+      "candidate_training__2023-06__L168/003",
+      "candidate_training__2023-06__L168/004",
+      "candidate_training__2023-06__L168/005",
+      "candidate_training__2023-07__L168/000",
+      "candidate_training__2023-07__L168/001",
+      "candidate_training__2023-07__L168/002",
+      "candidate_training__2023-07__L168/003",
+      "candidate_training__2023-07__L168/004",
+      "candidate_training__2023-07__L168/005",
+      "candidate_validation__2023-07__L168/000",
+      "candidate_validation__2023-08__L168/000",
+      "candidate_validation__2023-08__L168/001",
+      "candidate_validation__2023-08__L168/002",
+      "candidate_validation__2023-08__L168/003",
+      "candidate_validation__2023-08__L168/004",
+      "candidate_validation__2023-08__L168/005",
+      "candidate_validation__2023-08__L168/006",
+      "candidate_validation__2023-09__L168/000",
+      "candidate_validation__2023-09__L168/001",
+      "candidate_validation__2023-09__L168/002",
+      "candidate_validation__2023-09__L168/003",
+      "candidate_validation__2023-09__L168/004",
+      "candidate_validation__2023-09__L168/005",
+      "candidate_validation__2023-10__L168/000",
+      "candidate_validation__2023-10__L168/001",
+      "candidate_validation__2023-10__L168/002",
+      "candidate_validation__2023-10__L168/003",
+      "candidate_validation__2023-10__L168/004",
+      "candidate_validation__2023-10__L168/005",
+      "candidate_validation__2023-10__L168/006",
+      "candidate_validation__2023-11__L168/000",
+      "candidate_validation__2023-11__L168/001",
+      "candidate_validation__2023-11__L168/002",
+      "candidate_validation__2023-11__L168/003",
+      "candidate_validation__2023-11__L168/004",
+      "candidate_validation__2023-11__L168/005",
+      "candidate_validation__2023-12__L168/000",
+      "candidate_validation__2023-12__L168/001",
+      "candidate_validation__2023-12__L168/002",
+      "candidate_validation__2023-12__L168/003",
+      "candidate_validation__2023-12__L168/004",
+      "candidate_validation__2023-12__L168/005",
+      "candidate_validation__2023-12__L168/006",
+      "candidate_validation__2024-01__L168/000",
+      "candidate_validation__2024-01__L168/001",
+      "candidate_validation__2024-01__L168/002",
+      "candidate_validation__2024-01__L168/003",
+      "candidate_validation__2024-01__L168/004",
+      "candidate_validation__2024-01__L168/005",
+      "candidate_validation__2024-01__L168/006",
+      "candidate_validation__2024-02__L168/000",
+      "candidate_validation__2024-02__L168/001",
+      "candidate_validation__2024-02__L168/002",
+      "candidate_validation__2024-02__L168/003",
+      "candidate_validation__2024-02__L168/004",
+      "candidate_validation__2024-02__L168/005",
+      "candidate_validation__2024-03__L168/000",
+      "candidate_validation__2024-03__L168/001",
+      "candidate_validation__2024-03__L168/002",
+      "candidate_validation__2024-03__L168/003",
+      "candidate_validation__2024-03__L168/004",
+      "candidate_validation__2024-03__L168/005",
+      "candidate_validation__2024-03__L168/006",
+      "candidate_validation__2024-04__L168/000",
+      "candidate_validation__2024-04__L168/001",
+      "candidate_validation__2024-04__L168/002",
+      "candidate_validation__2024-04__L168/003",
+      "candidate_validation__2024-04__L168/004",
+      "candidate_validation__2024-04__L168/005",
+      "candidate_validation__2024-05__L168/000",
+      "candidate_validation__2024-05__L168/001",
+      "candidate_validation__2024-05__L168/002",
+      "candidate_validation__2024-05__L168/003",
+      "candidate_validation__2024-05__L168/004",
+      "candidate_validation__2024-05__L168/005",
+      "candidate_validation__2024-05__L168/006",
+      "candidate_validation__2024-06__L168/000",
+      "candidate_validation__2024-06__L168/001",
+      "candidate_validation__2024-06__L168/002",
+      "candidate_validation__2024-06__L168/003",
+      "candidate_validation__2024-06__L168/004",
+      "candidate_validation__2024-06__L168/005",
+      "candidate_validation__2024-07__L168/000",
+      "candidate_validation__2024-07__L168/001",
+      "candidate_validation__2024-07__L168/002",
+      "candidate_validation__2024-07__L168/003",
+      "candidate_validation__2024-07__L168/004",
+      "candidate_validation__2024-07__L168/005"
+    ],
+    "natural_l24_complete_cases": 42166,
+    "numerical_payloads_checked": true,
+    "observed_commits": [
+      {
+        "chunk": "candidate_training__2018-07__L168/000",
+        "commit_sha256": "981fd797ef66a1a6cc915aecf4de37dbee24e49c5c407b2b8c46946e207cfb27"
+      },
+      {
+        "chunk": "candidate_training__2018-07__L168/001",
+        "commit_sha256": "bda1652fea557b22ef0cc712c07287ca0be665201653000af84848c5fe91183d"
+      },
+      {
+        "chunk": "candidate_training__2018-07__L168/002",
+        "commit_sha256": "aef15b0f9e228bd89adefe43744113c9e8aee538e2730daa419a558a45f48851"
+      },
+      {
+        "chunk": "candidate_training__2018-07__L168/003",
+        "commit_sha256": "1f9e2c87cb121e65f1127c8257b4fc018f57d3e1e4ffc8f72abbde0b47338d22"
+      },
+      {
+        "chunk": "candidate_training__2018-08__L168/000",
+        "commit_sha256": "d0b15cacb4ff2c29f568438b48dafde28e01113ef54916653531f28a63ad8296"
+      },
+      {
+        "chunk": "candidate_training__2018-08__L168/001",
+        "commit_sha256": "9a56eb9b212cf6a24c5033a3548a8768dbf8bdb615dfcae1b7dd0a976a629567"
+      },
+      {
+        "chunk": "candidate_training__2018-08__L168/002",
+        "commit_sha256": "52084635a8b69db01e123b66666db3042ae45959888835e47469487cd2003577"
+      },
+      {
+        "chunk": "candidate_training__2018-08__L168/003",
+        "commit_sha256": "bbf7d11480794c9ab921c206de00dedf1de01b0a0b8509bb37952985c68ca06a"
+      },
+      {
+        "chunk": "candidate_training__2018-08__L168/004",
+        "commit_sha256": "163fa847c05b5664711ba4d82471ea4bf16e3eed9763a49e882b50708f993d8f"
+      },
+      {
+        "chunk": "candidate_training__2018-08__L168/005",
+        "commit_sha256": "eed3e1dda7f30b249ded5e69727ac07250c57e5c3dbe81d3f0d362fe639044fe"
+      },
+      {
+        "chunk": "candidate_training__2018-08__L168/006",
+        "commit_sha256": "4a17433ceee5d28118f9f5d3f5b7041e7769949fba7dcb6204afe4254cc8353e"
+      },
+      {
+        "chunk": "candidate_training__2018-09__L168/000",
+        "commit_sha256": "7f02d65e7a24a09642ee67771fabeebcd2d6bcebd5f6c6cba89e7b50dd6596e0"
+      },
+      {
+        "chunk": "candidate_training__2018-09__L168/001",
+        "commit_sha256": "7d69beabf4fbdbd49e7746aa86a1fb9161dabd6d526636e85351a3f05dc2b53d"
+      },
+      {
+        "chunk": "candidate_training__2018-09__L168/002",
+        "commit_sha256": "db15cdd158ec4b21529b5193145ce5c03ffec8f6698f259835b27cb0f1a4f83b"
+      },
+      {
+        "chunk": "candidate_training__2018-09__L168/003",
+        "commit_sha256": "70a80c6592b58cb754a9dfe5cbeb6e1bc515b6924641fb5df60a248059bf0330"
+      },
+      {
+        "chunk": "candidate_training__2018-09__L168/004",
+        "commit_sha256": "6f249c8b40091d08db9ccf4718abe77df944b6baeea41fdbf3a124c4ec37f650"
+      },
+      {
+        "chunk": "candidate_training__2018-09__L168/005",
+        "commit_sha256": "005675b9884960274d61fd6e3c80231d22a15e0406638d5f41e4e3a93a6c15aa"
+      },
+      {
+        "chunk": "candidate_training__2018-10__L168/000",
+        "commit_sha256": "0e131c18760f969128f5da0e4a4b93f51e36e048e4d1bf2c79ef5a8c7a64fe0b"
+      },
+      {
+        "chunk": "candidate_training__2018-10__L168/001",
+        "commit_sha256": "d8f832b23853af744e4cdffe7ae31de6b570a8ff78f6b9d2f1dcb504a2fa4b41"
+      },
+      {
+        "chunk": "candidate_training__2018-10__L168/002",
+        "commit_sha256": "763029bdc5c29d2672c8c77485fb74e4d22989ecfa3b1278017bd419df3154c0"
+      },
+      {
+        "chunk": "candidate_training__2018-10__L168/003",
+        "commit_sha256": "1c55686186ee5e1a907a9793416fb36c59a98cfc6b45a56e26e06c9e6fac0a23"
+      },
+      {
+        "chunk": "candidate_training__2018-10__L168/004",
+        "commit_sha256": "5de6f8a828e2a7f0b51e1bc8a1b5b10ea44346dd084b49d881c4baafd4e9b941"
+      },
+      {
+        "chunk": "candidate_training__2018-10__L168/005",
+        "commit_sha256": "629270f6d33368cfeed5787cd116ded18eda043a4a5606259aa7096a8754b1db"
+      },
+      {
+        "chunk": "candidate_training__2018-10__L168/006",
+        "commit_sha256": "b33f3e15370c797e693e1f137244c21aaa6f598de4885157bd4ac67e6cec662c"
+      },
+      {
+        "chunk": "candidate_training__2018-11__L168/000",
+        "commit_sha256": "ad1c54df8a4b3554c75de5b31c82acf5a0d3f1aa63e3591b9199bef1eef22321"
+      },
+      {
+        "chunk": "candidate_training__2018-11__L168/001",
+        "commit_sha256": "74e9d810a77131ae81f2e9535256bfdebbb708b211dea49f72d2ffd4316d49dd"
+      },
+      {
+        "chunk": "candidate_training__2018-11__L168/002",
+        "commit_sha256": "72186c8f931a9242f2ac622e1e60646b4d59f53c495c26c0ebd11a9af3426c4c"
+      },
+      {
+        "chunk": "candidate_training__2018-11__L168/003",
+        "commit_sha256": "cbb6a135834271d89eee9206a2fd83d4f777ba3c78297b3230215bf7b1ae761b"
+      },
+      {
+        "chunk": "candidate_training__2018-11__L168/004",
+        "commit_sha256": "d4b3ab2b7fd4d6206030ff2f0e63b450cca4df5bb8f658166d684e870e7cf5eb"
+      },
+      {
+        "chunk": "candidate_training__2018-11__L168/005",
+        "commit_sha256": "360cc822bc638bd7fe3103c1c690a7a0ec693d81e9c64ee26bff2a60e161b62c"
+      },
+      {
+        "chunk": "candidate_training__2018-12__L168/000",
+        "commit_sha256": "17c2b4389fc5d73d20be07a6ab49d53d21cb05a3e543bccd16b1a7b5a43b8e5f"
+      },
+      {
+        "chunk": "candidate_training__2018-12__L168/001",
+        "commit_sha256": "11d4028d725486f5b350e20de42560cbca54387b921453145a1352c90db990a8"
+      },
+      {
+        "chunk": "candidate_training__2018-12__L168/002",
+        "commit_sha256": "3e3be4f9ca3321ca2d781adbdafd207840e877231ad926528ce8f36bdcad47ed"
+      },
+      {
+        "chunk": "candidate_training__2018-12__L168/003",
+        "commit_sha256": "7e36031d39bb72348e6e7cf5629dcf9dabeb8ab939dfebd7f2371d9129b8ba42"
+      },
+      {
+        "chunk": "candidate_training__2018-12__L168/004",
+        "commit_sha256": "6b124701b4598cb1889307b7de565106959e666040016cce5fcaf2b32b45c831"
+      },
+      {
+        "chunk": "candidate_training__2018-12__L168/005",
+        "commit_sha256": "26bdb7ddc96974e5b631dd2c4310226279d510f5209682110015cfa63436781a"
+      },
+      {
+        "chunk": "candidate_training__2018-12__L168/006",
+        "commit_sha256": "7b406e12c4c75b3deb164f03c7940a9df9053c72b10fd6e33e9728db57d73c8e"
+      },
+      {
+        "chunk": "candidate_training__2019-01__L168/000",
+        "commit_sha256": "2cb8ea2a19afb0e0f2122be48065994d04619c202a78a0fc9db5d5dd6f622fd0"
+      },
+      {
+        "chunk": "candidate_training__2019-01__L168/001",
+        "commit_sha256": "b1fb4f1ca6ec311f424ba5a160126e36071a613fb651ace46a68fb6660a48731"
+      },
+      {
+        "chunk": "candidate_training__2019-01__L168/002",
+        "commit_sha256": "325c1acd8ba33ca4c8941aab6cf1bc5e677a7390175b8814eceae948fd28b52c"
+      },
+      {
+        "chunk": "candidate_training__2019-01__L168/003",
+        "commit_sha256": "821bbffe1fba5ff80d77793b64f9a7e2e76ad2a89ce892bfa3363c0004f8a318"
+      },
+      {
+        "chunk": "candidate_training__2019-01__L168/004",
+        "commit_sha256": "e791a19e3a62626ac77b9023374aa5112d8b01f094725c66daaacc85787a4b2e"
+      },
+      {
+        "chunk": "candidate_training__2019-01__L168/005",
+        "commit_sha256": "e22763125809e260d883c1866fd0c132fae6de2a0d5b611e5999c6237bea270c"
+      },
+      {
+        "chunk": "candidate_training__2019-01__L168/006",
+        "commit_sha256": "ade17db43c80c217dda7f1b84d2cf300ac6a56ea2eefe1e0325a52816373b8a9"
+      },
+      {
+        "chunk": "candidate_training__2019-02__L168/000",
+        "commit_sha256": "f87347975e807012650cd9cb97d25f60ebea1ffac55e60495ae0cd8b3b65ec0c"
+      },
+      {
+        "chunk": "candidate_training__2019-02__L168/001",
+        "commit_sha256": "e5b158ce4865fd854e40c9593481ae9603874f3996c65f67979f206a221ea254"
+      },
+      {
+        "chunk": "candidate_training__2019-02__L168/002",
+        "commit_sha256": "4f60f53c8f50657c6eb9291b682e2bc854c5fa0303d48e37a82ae5480893bd88"
+      },
+      {
+        "chunk": "candidate_training__2019-02__L168/003",
+        "commit_sha256": "177c076f4da8680b125bd3041bc47595b7371603682468026e1d1a7c12ad9e34"
+      },
+      {
+        "chunk": "candidate_training__2019-02__L168/004",
+        "commit_sha256": "4fb812b5376961600f98e3e3b18be136449b753cf687bc6780a28c808746b3f4"
+      },
+      {
+        "chunk": "candidate_training__2019-02__L168/005",
+        "commit_sha256": "e278cf0e4fb96484b4066695c4832c5c967fefb08ea228cfbbd7de8559263010"
+      },
+      {
+        "chunk": "candidate_training__2019-03__L168/000",
+        "commit_sha256": "fca01b30183301376086e69a4c1f4b251427b847300d07f399d4214f0f6fd882"
+      },
+      {
+        "chunk": "candidate_training__2019-03__L168/001",
+        "commit_sha256": "604ed11bdd4e3f8b4bfe8a431b928d413590b55b2fddcc0229ccec2d687d3717"
+      },
+      {
+        "chunk": "candidate_training__2019-03__L168/002",
+        "commit_sha256": "15a9c67d54eba00a78a495c3f24fbaee92754083a0bb1ae18c8be3b20d097b82"
+      },
+      {
+        "chunk": "candidate_training__2019-03__L168/003",
+        "commit_sha256": "5e46456b5e00a171ac4a77390f948a09c04418c0ed55b96adf15dcb9e0574c1f"
+      },
+      {
+        "chunk": "candidate_training__2019-03__L168/004",
+        "commit_sha256": "ef60f9590cd5588b1e2d8fd4fc98830c9d6815ee1e877040ca55387ad6872847"
+      },
+      {
+        "chunk": "candidate_training__2019-03__L168/005",
+        "commit_sha256": "9ce9e59ad20009263f4957cc262396452b09227e32e3d6acbfa1d52081d81514"
+      },
+      {
+        "chunk": "candidate_training__2019-03__L168/006",
+        "commit_sha256": "6a91d101a5b5ef2f28638e3125aef6f2a06f83169fcbd8257c806b34830b8213"
+      },
+      {
+        "chunk": "candidate_training__2019-04__L168/000",
+        "commit_sha256": "93b5d8422a63be8b7c040293532a5e55fbacdf8603df4cc8449b4eae5de60476"
+      },
+      {
+        "chunk": "candidate_training__2019-04__L168/001",
+        "commit_sha256": "79d3e80c6a7377cdfad5926085ae3f03ff307e88c1f7f360996198b9d5da17e8"
+      },
+      {
+        "chunk": "candidate_training__2019-04__L168/002",
+        "commit_sha256": "3f97fbbe1d5a361e87f85fb75bf81653415e01a217babd9bdbbb69d6f33a50f6"
+      },
+      {
+        "chunk": "candidate_training__2019-04__L168/003",
+        "commit_sha256": "afaebc768798b27824f648a5db5e4d58b1d8f27014857d99797ec9c8d55a666b"
+      },
+      {
+        "chunk": "candidate_training__2019-04__L168/004",
+        "commit_sha256": "5caadba549bb27d539d889296043a618a1ef21a9f847e7902fe7477a92e58479"
+      },
+      {
+        "chunk": "candidate_training__2019-04__L168/005",
+        "commit_sha256": "01cae5eddbff526f70e28bd9b35519d24ab2a3c202eb163a98cdc7c86dfc12e6"
+      },
+      {
+        "chunk": "candidate_training__2019-05__L168/000",
+        "commit_sha256": "1526805cceb25a2a5f658ff92bc50f0d1382186cd2265e9b6801a843b562af8c"
+      },
+      {
+        "chunk": "candidate_training__2019-05__L168/001",
+        "commit_sha256": "21b0baeece4c94b4c282b77c296637a17aff1939fd34d93977a8c21c7e6a5b92"
+      },
+      {
+        "chunk": "candidate_training__2019-05__L168/002",
+        "commit_sha256": "ca341b774a17dad905d097592fe5fce6540105b6ea41668e9f3a4560d1c446bc"
+      },
+      {
+        "chunk": "candidate_training__2019-05__L168/003",
+        "commit_sha256": "69007bf07d443fd58197b20df483ea2db8e31e3e41d5f668cba41da526aaf85c"
+      },
+      {
+        "chunk": "candidate_training__2019-05__L168/004",
+        "commit_sha256": "83c6adc9ec674ad63bbb71773614b2ccd0687e7e8f5921b8385b9a626ca73159"
+      },
+      {
+        "chunk": "candidate_training__2019-05__L168/005",
+        "commit_sha256": "3b6f027bdfbc8325e81d6f94c62811b08a8b1499f7d5990c6d6fff7ac3f60618"
+      },
+      {
+        "chunk": "candidate_training__2019-05__L168/006",
+        "commit_sha256": "e93df03c39dd1c15484826052d55f6022f172971c6a5bf1838de41e85a8342c6"
+      },
+      {
+        "chunk": "candidate_training__2019-06__L168/000",
+        "commit_sha256": "9dad611510ac925c365f0e5817158c7b8fbe0d0e7e3bde65ca9927070a26ff8f"
+      },
+      {
+        "chunk": "candidate_training__2019-06__L168/001",
+        "commit_sha256": "65d304692726cf6962f5d957b88ac0fa95e82fbdb14b351a49dd960cd7484f3c"
+      },
+      {
+        "chunk": "candidate_training__2019-06__L168/002",
+        "commit_sha256": "a9866a4ea8ee02f247e8622f19395baecaa89e1c9cb6c525a92460749f2aa199"
+      },
+      {
+        "chunk": "candidate_training__2019-06__L168/003",
+        "commit_sha256": "a1079a0299f6c128869c02d747b58d5cb40fbdfe845a3d79710b2603e83da9e8"
+      },
+      {
+        "chunk": "candidate_training__2019-06__L168/004",
+        "commit_sha256": "8a46c2d9256d0eeb5407c8c0f5687a098b54ac6cafb18b4fa442e29b91cc5282"
+      },
+      {
+        "chunk": "candidate_training__2019-06__L168/005",
+        "commit_sha256": "2888237fbcaf9868f99f3b2b21933ca11772caa6ce1c5f168861557d3a4c5192"
+      },
+      {
+        "chunk": "candidate_training__2019-07__L168/000",
+        "commit_sha256": "8a62c1c759585f88870761526aedb560b5749722816c915992c1145bb7f98ef5"
+      },
+      {
+        "chunk": "candidate_training__2019-07__L168/001",
+        "commit_sha256": "b50889df758bdbf58b3c8607244c72cc33e3983c30ffbc7d6fa270fc4e148999"
+      },
+      {
+        "chunk": "candidate_training__2019-07__L168/002",
+        "commit_sha256": "d64270c163d939d98119310f07b06d5c739e30191fb1993d6c221fc27a5f6c0a"
+      },
+      {
+        "chunk": "candidate_training__2019-07__L168/003",
+        "commit_sha256": "4d279d08d4f8b4e7936a09479689c7d3e9044939e074c6d1ac369bdfa1e4e72d"
+      },
+      {
+        "chunk": "candidate_training__2019-07__L168/004",
+        "commit_sha256": "e7692b9c00fb1458df8b51b8400badaff5af93d507d72aa0b226e23c0a36ed4a"
+      },
+      {
+        "chunk": "candidate_training__2019-07__L168/005",
+        "commit_sha256": "4c590b1e6fda1c449924fd3567f80bf37d5a077ca09267c121a167fedc540860"
+      },
+      {
+        "chunk": "candidate_training__2019-07__L168/006",
+        "commit_sha256": "5d3c48f8c35eee0d2cce9882e0b1abbbb584c2649801be61209cff9a0e6a88f9"
+      },
+      {
+        "chunk": "candidate_training__2019-08__L168/000",
+        "commit_sha256": "d8acddcee961755ed68474cf6bc8ddb4519b5690ec8318d45c27076a154dd2b2"
+      },
+      {
+        "chunk": "candidate_training__2019-08__L168/001",
+        "commit_sha256": "90fa9514ab758324aca3039002b24fdbe49d91bd4c8d104e2f03657ef0d0d200"
+      },
+      {
+        "chunk": "candidate_training__2019-08__L168/002",
+        "commit_sha256": "7259bfc3b4c6dedb979e5525243273f951fd546a0979f9378069b9da8db86c24"
+      },
+      {
+        "chunk": "candidate_training__2019-08__L168/003",
+        "commit_sha256": "941931edf39d04d050e0e80b25e36954a420c361647f2c08ef0c21074474ebab"
+      },
+      {
+        "chunk": "candidate_training__2019-08__L168/004",
+        "commit_sha256": "ae1e39851729a2b518f240678f73ba2dd9462ef2afb265ce99206caab90f3030"
+      },
+      {
+        "chunk": "candidate_training__2019-08__L168/005",
+        "commit_sha256": "a991296e5b9c45a5fca3e68bc13bc3e37ccdedb7c9ce52bc77b9079702df2951"
+      },
+      {
+        "chunk": "candidate_training__2019-08__L168/006",
+        "commit_sha256": "d6c59ab2c4a05427a4891a5966b167e0e24943910a0b024ca1fd68ec3eed7eea"
+      },
+      {
+        "chunk": "candidate_training__2019-09__L168/000",
+        "commit_sha256": "a01079012f9ac3ecc4543feb6e53d82a35927b2e4fd10129a786d924763b9c8a"
+      },
+      {
+        "chunk": "candidate_training__2019-09__L168/001",
+        "commit_sha256": "cdf110f81b212c90d6a81ab4b6266faf3e13596e4b94374c0581166e471a07a0"
+      },
+      {
+        "chunk": "candidate_training__2019-09__L168/002",
+        "commit_sha256": "769f4a10cb79dbe33aadf27df48162fabb6726ad295461a709e279b83268888a"
+      },
+      {
+        "chunk": "candidate_training__2019-09__L168/003",
+        "commit_sha256": "e9df7235014d0a073f0e24bfe40b07dbf0a30dace0298850a08e0d3aed247d64"
+      },
+      {
+        "chunk": "candidate_training__2019-09__L168/004",
+        "commit_sha256": "608dc9003fd81df932aea85f443d2eb8e6086632a95b298567a1f0ff16a9a7c9"
+      },
+      {
+        "chunk": "candidate_training__2019-09__L168/005",
+        "commit_sha256": "92a47e3e2779afee4c1510ebfae389943e4670888f5bc70a29d9b493571a0951"
+      },
+      {
+        "chunk": "candidate_training__2019-10__L168/000",
+        "commit_sha256": "677840adc3d10853ffb4e3414989f3daa588f3b09ad905aea2d48844beefc614"
+      },
+      {
+        "chunk": "candidate_training__2019-10__L168/001",
+        "commit_sha256": "c5596c296a12b66f748b742d5f68f6c914b806fd1b9258648e9786b99eb8bff5"
+      },
+      {
+        "chunk": "candidate_training__2019-10__L168/002",
+        "commit_sha256": "1aca6d95fe945609dd6ef6204e6e1ad6a3580472d98595f68c82490ab9fad222"
+      },
+      {
+        "chunk": "candidate_training__2019-10__L168/003",
+        "commit_sha256": "c045f1de350974eb0f697f866922e3ea499198d8872b81ce7b8ecd02de4a4f1a"
+      },
+      {
+        "chunk": "candidate_training__2019-10__L168/004",
+        "commit_sha256": "cfdb16bd4303fa05bd335e9fea5ae7914411c0d18c09bc67141bd589c68301df"
+      },
+      {
+        "chunk": "candidate_training__2019-10__L168/005",
+        "commit_sha256": "4bb7a66f649fdfee50960ebe48a12020d5f40bb9b146ae9f1e4eacff1ac4d4d8"
+      },
+      {
+        "chunk": "candidate_training__2019-10__L168/006",
+        "commit_sha256": "13de1a6cb7c269a4673a35bc94824ef9b1d739f6b504f3afddf648960cdcaa92"
+      },
+      {
+        "chunk": "candidate_training__2019-11__L168/000",
+        "commit_sha256": "160350f06e10187381685372d1b97377446464e90ca27ab837b777eb71105274"
+      },
+      {
+        "chunk": "candidate_training__2019-11__L168/001",
+        "commit_sha256": "8ed913a85c9cfa88f194331934fa3b9382c7f6dd4fe1ff70642c752e9d527e9b"
+      },
+      {
+        "chunk": "candidate_training__2019-11__L168/002",
+        "commit_sha256": "a5def5e3c4b9fed49b1ce8bed28f48f31d8af87060d986a874c0e201864deac3"
+      },
+      {
+        "chunk": "candidate_training__2019-11__L168/003",
+        "commit_sha256": "bd95f3e81a6363fe49c2b4fc64c62a66a5244ae6719d66cd66b6109a00c27170"
+      },
+      {
+        "chunk": "candidate_training__2019-11__L168/004",
+        "commit_sha256": "c25236a6c57d6b3f83a7da00ba7bd0732ecbf117dfbdc73062b2759e305f6e22"
+      },
+      {
+        "chunk": "candidate_training__2019-11__L168/005",
+        "commit_sha256": "d6be382fb1f5b68436fdf5df7b1154b8439be176c584dca4c0e2af17294f0b3e"
+      },
+      {
+        "chunk": "candidate_training__2019-12__L168/000",
+        "commit_sha256": "4f3c8952231da4e504f0b439e77456d91af8d59dc436c2e41c7963fd55b119ea"
+      },
+      {
+        "chunk": "candidate_training__2019-12__L168/001",
+        "commit_sha256": "1f04852e7943e24212c6d2d5c751ed2f4299eaa114d8a0de4049e958183eff0e"
+      },
+      {
+        "chunk": "candidate_training__2019-12__L168/002",
+        "commit_sha256": "781b2da8351e4e84f8379830c76a819d5497c57088db92c8b5a0cc632df67606"
+      },
+      {
+        "chunk": "candidate_training__2019-12__L168/003",
+        "commit_sha256": "9209df54d8a0e30cf31fc16a49e398688a193250e8f47c479b38d8c2f46b9450"
+      },
+      {
+        "chunk": "candidate_training__2019-12__L168/004",
+        "commit_sha256": "a2ae80647d64dca0b0a19570b632215bca217670feb349c9df6e338acc60ff49"
+      },
+      {
+        "chunk": "candidate_training__2019-12__L168/005",
+        "commit_sha256": "8865e3b806cb80d61d1dc01f04a744d603d49529d67ea9a167778f17ac7359d8"
+      },
+      {
+        "chunk": "candidate_training__2019-12__L168/006",
+        "commit_sha256": "749ab290b1221ddaf0a84feb01f60c3f0a2157da9509c677aa0155e1070b14ca"
+      },
+      {
+        "chunk": "candidate_training__2020-01__L168/000",
+        "commit_sha256": "2f327fc5d0103c20e90e72c49eb48b16ac3761ac600ff8e95e8ac549d1067196"
+      },
+      {
+        "chunk": "candidate_training__2020-01__L168/001",
+        "commit_sha256": "7a13a4d424f8b4b37498444f10f692185bcfeaa782933f6c8937c013860217a1"
+      },
+      {
+        "chunk": "candidate_training__2020-01__L168/002",
+        "commit_sha256": "5c486884f04878ad39aa425a0694e189510e7b74e058c93ea67086c3dfce70c7"
+      },
+      {
+        "chunk": "candidate_training__2020-01__L168/003",
+        "commit_sha256": "d135bbb0ae75b275039487815e6ca4b928d3bd3e69d74470207ec9e306d48778"
+      },
+      {
+        "chunk": "candidate_training__2020-01__L168/004",
+        "commit_sha256": "1b4d1fdfee2040af03d0c1c69f415904afdc07239d1cfd13c8430b6b8b1ea578"
+      },
+      {
+        "chunk": "candidate_training__2020-01__L168/005",
+        "commit_sha256": "63b2770ef7d660ee77c21910c3c6c7674a981f18a048a0047cc8d51421d277f5"
+      },
+      {
+        "chunk": "candidate_training__2020-01__L168/006",
+        "commit_sha256": "fb873b0d75802d2a603b51d3e78980df68f68f10612e35deed27f971bad51eef"
+      },
+      {
+        "chunk": "candidate_training__2020-02__L168/000",
+        "commit_sha256": "2d380fe3840a9b636f92accad21706d8fe3f0e608da3c4e87849cb2af35de347"
+      },
+      {
+        "chunk": "candidate_training__2020-02__L168/001",
+        "commit_sha256": "a358a9da924bd5d816a4fbb67b36b724e16e7f40a40ddd1a0aca6f76323c2b76"
+      },
+      {
+        "chunk": "candidate_training__2020-02__L168/002",
+        "commit_sha256": "14a06c9d18f339ce3adc95fe7254f079b40eb965b50c4edad389f6dfc56c7e20"
+      },
+      {
+        "chunk": "candidate_training__2020-02__L168/003",
+        "commit_sha256": "0761e727299c79baeb84ebebd1bd831051234be67021a3dee9ddf3c59ddf1b7c"
+      },
+      {
+        "chunk": "candidate_training__2020-02__L168/004",
+        "commit_sha256": "645652322d9ef003c7d3f9733a34931eb8e40002f84d90e8d0db884a124d3d44"
+      },
+      {
+        "chunk": "candidate_training__2020-02__L168/005",
+        "commit_sha256": "444ad27eed866ef39fdf75274496d603929c43d5a6a8d48185c891371893175e"
+      },
+      {
+        "chunk": "candidate_training__2020-03__L168/000",
+        "commit_sha256": "d6cdd6383b572e00d76649b6af48bb6bcef9bdb48f20e8b8ff47d2bb142c5eaf"
+      },
+      {
+        "chunk": "candidate_training__2020-03__L168/001",
+        "commit_sha256": "df70913039ac871007a84bc0bbe68ddb1727e6dc333f2b13b16e1ac401d71919"
+      },
+      {
+        "chunk": "candidate_training__2020-03__L168/002",
+        "commit_sha256": "2e9963fb0b3890a1e8c1d5065895372313dcd7dfa2cc79923740d0906ddbdedd"
+      }
+    ],
+    "plan_file_sha256": "9566976ad6c42f742a0653d91b784a86c482fcf20638eef004d8e95f924e26fe",
+    "plan_sha256": "4e76a6d74002f628ef1a8c088b7b41d755450f4dda1001331370104eaf69c7b0",
+    "planned_cases": 159084,
+    "protected_assessment_access": false,
+    "snapshot_sha256": "530fc3b30fe99ac9212ef8a85199cff6e1a653496ec4a1a8ae13162d86b039c6",
+    "source_admitted_cases": 40290,
+    "status": "PARTIAL_COMMITTED_CORPUS_SNAPSHOT",
+    "stored_history_hours": 168,
+    "upstream_sources_reaudited": false
+  }
+}
