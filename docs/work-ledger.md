@@ -521,7 +521,7 @@ tests pass with independent review. No study resampling or intervals were produc
 
 The final main suite reports 614 tests: 611 passed and 3 GIS-only tests skipped;
 all 9 spatial tests separately pass in the existing GIS runtime. The numerical
-and implementation checks are ready, but complete-case high-flow representativeness
+and implementation checks are ready, but complete-case high-flow representativeness,
 conditional uncertainty interpretation and the approximate/non-nested spatial
-claim remain material items for user review before freeze. No scientific comparison fits, protected scores or paid cloud jobs
-have started. The 180-fit scope and $150 ceiling are unchanged.
+claim remain material items for user review before freeze. No scientific comparison
+fits, protected scores or paid cloud jobs have started. The 180-fit scope and $150 ceiling are unchanged.
