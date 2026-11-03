@@ -1,6 +1,6 @@
 {
   "schema": "hydra-scientific-decisions/v1",
-  "status": "PARTIALLY_CONFIRMED_NOT_A_FULL_PROTOCOL_FREEZE",
+  "status": "TRAINING_CORE_CONDITIONALLY_ACCEPTED_PENDING_PREFREEZE_CHECKS",
   "primary_usgs_quality": {
     "status": "USER_CONFIRMED",
     "decision_date_local": "2026-11-02",
@@ -49,7 +49,9 @@
     "real_train_only_scientific_scalers_fitted": false,
     "eligibility_evidence": "reports/development-eligibility-owned-metadata-v2.json",
     "numerical_corpus": "COMPLETE_477_SHARDS_AUDITED_CANDIDATE_COHORTS",
-    "numerical_corpus_audit": "reports/development-corpus-admission-v1.json"
+    "numerical_corpus_audit": "reports/development-corpus-admission-v1.json",
+    "refit_availability": "IMPLEMENTED_OPT_IN_TIMESTAMP_GUARD_0_OR_2_HOURS",
+    "label_free_inference": "BEST_STATE_QUALIFIED_SYNTHETIC_ONLY"
   },
   "recommended_local_execution": {
     "status": "THROUGHPUT_RECOMMENDATION_NOT_FORECAST_SELECTION",
@@ -83,5 +85,43 @@
     "final_fits": 108,
     "artifact": "reports/experiment-scope-confirmation.json",
     "detailed_protocol_adoption": "PENDING"
+  },
+  "training_core_conditional_acceptance": {
+    "recorded_at_utc": "2026-11-03T00:59:58.263016+00:00",
+    "source": "DIRECT_USER_REPLY",
+    "core": [
+      "complete common L168 cases",
+      "per-gauge fits",
+      "train-only affine scaling",
+      "current standardized-Q squared-error loss",
+      "equal-lead mean NSE",
+      "final seeds17/29/43 retained",
+      "max50 epochs with inner stopping",
+      "raw unclipped physical predictions plus negative-frequency reporting"
+    ],
+    "required_before_freeze": [
+      "authoritative spatial validation and explanation of holds",
+      "tested timestamp refit availability guard and gradient-only scaling",
+      "tested scoring/aggregation/minimum-support/tie rules and best-checkpoint label-free inference",
+      "season/regime/event/outage coverage and dependence-aware uncertainty predeclaration"
+    ],
+    "material_holds_return_to_user": true,
+    "zero_clipping_sensitivity": "NOT_ADOPTED_PRIMARY_REMAINS_UNCLIPPED"
+  },
+  "prefreeze_checks": {
+    "spatial": "ALL_THREE_NUMERICALLY_REPRODUCED_RETAINED_OFFICIAL_SOURCES_APPROXIMATION_LIMITS_DOCUMENTED",
+    "temporal": "ACTUAL_TIMESTAMP_REFIT_GUARD_IMPLEMENTED_TESTED",
+    "scaling": "GRADIENT_FIT_ONLY_ISOLATION_TESTED",
+    "inference": "SYNTHETIC_EIGHT_UPDATE_FRESH_PROCESS_BEST_STATE_QUALIFIED",
+    "scoring": "RULES_IMPLEMENTED_TESTED_PROPOSED_PENDING_FREEZE",
+    "coverage": "SEASON_REGIME_EVENT_REFERENCE_GAP_AUDIT_COMPLETE",
+    "uncertainty": "DEPENDENCE_AWARE_PROPOSAL_AND_UTILITIES_TESTED_NO_STUDY_INTERVALS",
+    "holds": [
+      "Review high-flow representativeness under common L168 complete cases, particularly Sugar Grove",
+      "Review conditional within-year uncertainty interpretation and any confirmatory multiplicity/practical-effect claim before freeze",
+      "Confirm approximate independent basin footprints and non-nesting interpretation; no exact-outlet or nested-conservation claim"
+    ],
+    "source_geometry_changed": false,
+    "original_weight_hold_flags_changed": false
   }
 }

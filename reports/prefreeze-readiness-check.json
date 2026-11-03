@@ -1,0 +1,44 @@
+{
+  "approved_budget_unchanged_usd": 150,
+  "code_sha256": {
+    "scripts/audit_coverage_regimes.py": "7ade8e7a26646bc459bda8361334ca32bdaba1c4e6ad67cc574c0cde31e02c27",
+    "scripts/audit_spatial_support.py": "2a5f6aa37bed9e0aee4c68c280ded5d67db6c260a619035f8fd76804899c869e",
+    "scripts/qualify_best_inference.py": "fd039b1e8b001c0b0b3d6d6a05ebdbcae9bb8adbbaf1174aa0ac4aff38677d25",
+    "src/hydra_directflow/coverage_analysis.py": "ed8507b28becf752f290999ba150200dce3149f0f4b69e56e98353e7709b2963",
+    "src/hydra_directflow/inference.py": "c46bdb796e8d7087b9a623415942d3caba96b6d89ca6672a55f4445f201a07ef",
+    "src/hydra_directflow/scoring.py": "80c807cb4666cc21d7e2e18e8d89ce66877343cda3eceeb920ac2a368bc6b6d5",
+    "src/hydra_directflow/trainer_bundle.py": "388408c715020a078390b4b51f65e9d857b183e4158ee144d282b78770398a5c",
+    "src/hydra_directflow/uncertainty.py": "2a2bd4c673b22926db91b917ccd71601d6c0200012dd6caa5819ba994b1ce80a"
+  },
+  "confirmed_scope_fits": 180,
+  "cumulative_real_engineering_updates": 852,
+  "cumulative_synthetic_updates": 904,
+  "figure_visual_check": "PASSED_STATIC_PNG_PREVIEWS_OF_SVG_EXPORTS",
+  "new_synthetic_updates": 8,
+  "paid_cloud_jobs_started": 0,
+  "project_tests": {
+    "log_sha256": "2eecd760a83da68b6d7abcb8e4c65db20b986bd41dce268ca79eac0d5907ba7b",
+    "passed": 611,
+    "ran": 614,
+    "seconds": 6.486,
+    "skipped_GIS": 3
+  },
+  "protected_assessment_scores": 0,
+  "protocol_frozen": false,
+  "recorded_at_utc": "2026-11-03T02:06:51.427127+00:00",
+  "report_sha256": {
+    "best-inference-qualification.json": "68411ffce4bc0552cebb824c085cd97480251c4485a0f50ca0e15b822132f7ba",
+    "development-coverage-regimes-v2.json": "8e82f613165a5d452c74a30783b02e1c0ae5fb5d93dbe2e338d0010c215e8c0a",
+    "galax-owned-geometry-materialization.json": "a3795af4a57f70410b7ad6b9fc5c318b034fcc5eb2fcc42e6cfae6ac41b8c272",
+    "spatial-support-audit-full-v3.json": "5e4589e8c1c02bb17a04705820299c14bc7fa50cf38d57450903d59404f7c142"
+  },
+  "schema": "hydra-prefreeze-checkpoint-evidence/v1",
+  "scientific_comparison_fits": 0,
+  "scientific_holds": [
+    "Review high-flow representativeness under common L168 complete cases, particularly Sugar Grove",
+    "Review conditional within-year uncertainty interpretation and any confirmatory multiplicity/practical-effect claim before freeze",
+    "Confirm approximate independent basin footprints and non-nesting interpretation; no exact-outlet or nested-conservation claim"
+  ],
+  "separate_GIS_tests_passed": 9,
+  "status": "NUMERICAL_IMPLEMENTATION_CHECKS_PASSED_MATERIAL_TRADEOFFS_OPEN"
+}

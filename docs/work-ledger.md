@@ -451,3 +451,77 @@ travel overhead. Both proposed refit-label conventions produce the same rounded
 B64 batch counts, while the two-hour convention excludes one additional inner
 stopping case per gauge/fold. Neither convention is silently adopted. There are
 still zero scientific fits, zero protected scores and zero cloud compute jobs.
+
+## Conditional training core: pre-freeze implementation checks — November 2
+
+The user conditionally accepted the recommended core, explicitly requiring
+spatial, temporal, scoring/inference and coverage/uncertainty checks before
+protocol freeze or scientific comparison fits. The 180-fit scope remains
+confirmed; protected assessment and the 2023–24 development-validation role
+are unchanged. No scientific or cloud comparison fit was started.
+
+The new refit guard tests actual last-target timestamps plus the explicit
+simulated delay against refit time, separately from strict role boundaries.
+It affects fit/inner-stop admission only and retains excluded rows unassigned.
+The existing strict-only default is preserved. Tests also establish that
+stopping/outer/unassigned data cannot change gradient-fit scaler parameters.
+
+Best-checkpoint inference is label-free and uses the saved train-only transform.
+An independently reviewed, once-only eight-update synthetic qualification passed
+four fresh-process CPU/MPS full/Q paths in 17.315 seconds. Physical predictions,
+saved transforms and selected best states matched exactly; one fixture selected
+epoch 1 while last state was epoch 2. Inference constructed no optimizer and read
+no labels. Cumulative counts are 852 real-data engineering updates and 904
+synthetic updates; scientific comparison fits remain zero.
+
+The scoring layer has 15 synthetic tests and independent review. It defines
+equal-lead/equal-fold NSE, retains all final seeds, propagates missing/undefined
+primary support, reports physical errors and negative frequency, and loads best
+weights before any label access. Every source row's origin/H18 clocks are gated,
+including unselected rows. Its 168-hour/28-UTC-date primary support rule is a
+proposed reporting floor, not an independence or power guarantee. Checkpoint
+selection uses inner standardized-Q MSE; reporting NSE and physical MSE remain
+distinct. No scoring policy is silently adopted by this implementation.
+
+## Spatial source validation and coverage tradeoffs — November 2
+
+The separately approved 334,177-byte Galax source materialization hit its initial
+60-second child timeout. The original subsequently became resident; an eight-second
+bounded local completion verified its exact retained SHA and copied it without
+another explicit hydration request. No new USGS geometry request or source-content
+change occurred. FileProvider wire bytes remain unknown. The timeout, partial v2
+audit and completed v3 audit are preserved separately.
+
+All three official-source footprints and 514 positive-cell weights now reproduce
+independently, with zero off-crop area and maximum absolute weight error below
+3.4e-14. The accepted Galax 33.73 m outlet offset and Sugar Grove −1.03254% area
+discrepancy remain unchanged. Jefferson's 5.179115 km²/0.975086% area outside
+Galax is reproduced; no forced nesting or geometry repair occurred. Missing any
+positive-weight cell masks the production basin mean; no renormalization occurs.
+Original candidate hold/admission flags are preserved for provenance.
+
+The coverage audit binds the complete corpus and monthly references, gates the
+July export before value reads, and changes no source masks. Thirteen synthetic
+tests and independent review pass. Both executed versions remain. Version 2 adds
+the natural-L24/common-L168 loss by flow regime; thresholds use unique approved
+gradient-calendar reference hours, not stopping/outer values or repeated cells.
+
+In 2023–24 development validation, common L168 support retains 3,024/6,048 high-flow
+target cells at Sugar Grove (50.0%) versus 5,851/6,048 under natural L24 (96.7%).
+Galax retains 2,404/3,474 (69.2%) versus 2,837/3,474 (81.7%). These are repeated
+origin/lead cells, not independent events. Unknown reference regimes remain
+unknown; missing/rejected intervals do not establish instrument damage. The
+observed-peak catalog uses no model errors and retains unsupported peaks.
+
+Seasonal and high-flow availability SVGs were generated from the hash-bound v2
+report with the existing plotting runtime and visually checked. The proposed
+14-day seasonal block approach, 7/28-day sensitivities, distinct-support rules
+and within-year limits are documented; 13 synthetic resampling/weighted-metric
+tests pass with independent review. No study resampling or intervals were produced.
+
+The final main suite reports 614 tests: 611 passed and 3 GIS-only tests skipped;
+all 9 spatial tests separately pass in the existing GIS runtime. The numerical
+and implementation checks are ready, but complete-case high-flow representativeness
+conditional uncertainty interpretation and the approximate/non-nested spatial
+claim remain material items for user review before freeze. No scientific comparison fits, protected scores or paid cloud jobs
+have started. The 180-fit scope and $150 ceiling are unchanged.

@@ -1,6 +1,6 @@
 # Protocol decision packet — proposal only
 
-**The user has confirmed the 180-fit scope. This packet does not freeze the remaining protocol settings, enable training or assessment, or launch a cloud job.** The confirmation is recorded in `reports/experiment-scope-confirmation.json`. Funding approval and engineering qualification are separate from scientific adoption. This proposal uses the existing [study design](scientific-study-design.md), [confirmed decisions](../configs/scientific-decisions.json), [trainer mechanics](training-runner.md) and [measured workload report](../reports/proposed-scientific-workload-measured-controls.json); it makes no new literature or forecast-skill claim.
+**The user has confirmed the 180-fit scope and conditionally accepted the training core subject to pre-freeze checks. This packet does not freeze the remaining settings, enable comparison fits or assessment, or launch a cloud job.** See [the completed checks and material tradeoffs](prefreeze-checks.md). The confirmation is recorded in `reports/experiment-scope-confirmation.json`. Funding approval and engineering qualification are separate from scientific adoption. This proposal uses the existing [study design](scientific-study-design.md), [confirmed decisions](../configs/scientific-decisions.json), [trainer mechanics](training-runner.md) and [measured workload report](../reports/proposed-scientific-workload-measured-controls.json); it makes no new literature or forecast-skill claim.
 
 ## Confirmed rules and retained planning boundaries
 
@@ -38,7 +38,7 @@ All choices contain the same **108-fit final-development core**: 72 full/Q-only 
 3. Train-only transforms, fixed feature schemas, seeded within-training sampling, checkpoint/recovery, explicit best-state export, and per-fit update/resource ceilings.
 4. Development-only metrics, support accounting, paired comparisons and figure inputs, with no assessment access.
 
-Strict `C+18h < partition_end` purges18 final hourly origins. Recommend also testing/adopting the proposed two-hour label-availability condition at simulated refit B for fit/stopping data: `C+18h+2h <= B`, which purges19 at B, not20. The earlier gradient-fit boundary and outer scoring retain the strict18-origin rule. **The typed bundle currently implements strict windows only; the additional refit predicate is not yet implemented/adopted.** Fit/tuning/selection elapsed time is not simulated, so neither convention proves historical operational readiness.
+Strict `C+18h < partition_end` purges18 final hourly origins. Recommend also testing/adopting the proposed two-hour label-availability condition at simulated refit B for fit/stopping data: `C+18h+2h <= B`, which purges19 at B, not20. The earlier gradient-fit boundary and outer scoring retain the strict18-origin rule. **The typed bundle now implements and tests the explicit refit predicate; final protocol adoption remains pending.** Fit/tuning/selection elapsed time is not simulated, so neither convention proves historical operational readiness.
 
 The 180-fit choice adds72 paired-L168 CV fits to the108 core. The288-fit choice additionally includes paired L24 CV and final Q-only L24, completing the proposed history/input factorial. The annual CV dates remain those proposed in [study design](scientific-study-design.md); no CV execution or adoption is implied here.
 

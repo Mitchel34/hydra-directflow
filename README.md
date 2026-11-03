@@ -17,6 +17,14 @@ candidate complete L168 cases. The user confirmed the 180-fit study scope.
 Methodological adoption and scientific fitting remain pending; no protected
 assessment scoring or cloud compute job has started.
 
+The user subsequently accepted the training core subject to pre-freeze checks.
+Those checks now include all three official-source spatial reproductions,
+timestamp-based refit guards, qualified label-free best-checkpoint inference,
+scoring/aggregation tests and seasonal/high-flow coverage diagnostics. See the
+[pre-freeze findings and material tradeoffs](docs/prefreeze-checks.md) before
+adopting the final protocol. The high-flow availability limitation is material;
+these diagnostics are not forecast-skill results.
+
 | Chunk | Deliverable | Completion evidence |
 |---|---|---|
 | 01 | Installable package and documented study boundary | Package imports and source checks |
