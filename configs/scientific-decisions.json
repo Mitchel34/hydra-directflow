@@ -1,6 +1,6 @@
 {
   "schema": "hydra-scientific-decisions/v1",
-  "status": "RESIDENT_RUNTIME_AND_OPTIMIZED_PILOT_REQUALIFIED_SCIENTIFIC_FITS_HELD",
+  "status": "PRIMARY_PROTOCOL_FROZEN_LOCAL_EXECUTION_AUTHORIZED",
   "primary_usgs_quality": {
     "status": "USER_CONFIRMED",
     "decision_date_local": "2026-11-02",
@@ -22,8 +22,8 @@
     "policy_id": "PRIMARY_APPROVED_A_OPTIONAL_R_V1",
     "historical_engineering_default": "STRICT_EXACT_A_ONLY_DEVELOPMENT"
   },
-  "remaining_protocol_choices_frozen": false,
-  "scientific_training_enabled": false,
+  "remaining_protocol_choices_frozen": true,
+  "scientific_training_enabled": true,
   "protected_assessment_scoring_enabled": false,
   "additional_source_downloads_authorized": true,
   "paid_cloud_compute_authorized": false,
@@ -324,7 +324,7 @@
   "local_seed_sequence": {
     "source": "DIRECT_USER_REQUEST",
     "recorded_at_utc": "2026-11-03T19:56:46.934055+00:00",
-    "status": "USER_REQUESTED_ORDER_PREPARED_NOT_EXECUTED",
+    "status": "AUTHORIZED_LOCAL_PRIMARY_PENDING_LAUNCH_RECEIPT",
     "compute_preference": "LOCAL_CPU_MPS",
     "CUDA_speedup_status": "UNMEASURED_NOT_SHOWN_INEFFECTIVE",
     "seed_order": [
@@ -348,16 +348,10 @@
     "report_sha256": "f45aa1afe114db80b194288ecb06c7757ebe3928de3702fac9ff1114238310e9",
     "plan_sha256": "8e087b82797b79e96177cf11c19d5127d74c6f5c09ff6e0680cdbc4b3fc3e43b",
     "document": "docs/local-seed-sequence.md",
-    "runtime_controller_implemented_by_this_chunk": false,
+    "runtime_controller_implemented_by_this_chunk": true,
     "scientific_fits_started": 0,
     "paid_cloud_hold_preserved": true,
-    "remaining_concrete_gates": [
-      "Adopt concrete protocol, epoch limit and actual per-fit/global resource ledger",
-      "Qualify full main-study role-limited bundles and their local execution integration",
-      "Implement and qualify durable job/checkpoint/evaluation receipts and seed-report barriers",
-      "Qualify current primary trainer recovery and best-state inference at the actual planned B64 backend geometries",
-      "Set disabled MPS CPU fallback before fresh worker imports; never silently change a fit backend"
-    ],
+    "remaining_concrete_gates": [],
     "device_policy": "FASTEST_OBSERVED_FULL_L168_B64_MEAN_COPY_PLUS_UPDATE_BY_ARCHITECTURE",
     "selected_devices": {
       "GRU_Transformer": "cpu",
@@ -389,7 +383,7 @@
     "cloud_execution_started": false
   },
   "primary_campaign_readiness": {
-    "recorded_at_utc": "2026-11-03T21:31:28.566278+00:00",
+    "recorded_at_utc": "2026-11-03T23:00:48.597192+00:00",
     "user_requested_start": true,
     "controller_implemented": true,
     "controller_review_and_tests_passed": true,
@@ -398,13 +392,33 @@
     "technical_report": "reports/primary-campaign-controller-check-v1.json",
     "technical_report_sha256": "f980a15712d98df8693fcf8186b07dda1fc500a2319e7e2659f686fdf4ae857b",
     "protocol": "configs/primary-training-protocol-v1.json",
-    "protocol_frozen": false,
-    "awaiting_previously_requested_human_method_confirmation": true,
+    "protocol_frozen": true,
+    "awaiting_previously_requested_human_method_confirmation": false,
     "scientific_fits_started": 0,
     "cumulative_real_engineering_updates": 852,
     "cumulative_synthetic_optimizer_updates": 972,
     "paid_cloud_jobs_started": 0,
     "protected_assessment_access": false,
-    "old_qualification_allowances_replayed": false
+    "old_qualification_allowances_replayed": false,
+    "scientific_training_authorized": true,
+    "max_epochs": 100,
+    "exact_user_reply": "Approved 100epoch"
+  },
+  "primary_protocol_adoption": {
+    "recorded_at_utc": "2026-11-03T23:00:48.597192+00:00",
+    "source": "DIRECT_USER_REPLY",
+    "exact_user_reply": "Approved 100epoch",
+    "protocol": "configs/primary-training-protocol-v1.json",
+    "max_epochs": 100,
+    "min_epochs": 10,
+    "patience": 5,
+    "fits": 180,
+    "logical_update_cap": 9100400,
+    "physical_update_cap": 11830520,
+    "historical200_epoch_proposal_superseded": true,
+    "other_reviewed_methods_retained": true,
+    "ridge_or_gap_pilot_included": false,
+    "protected_assessment_access": false,
+    "paid_cloud_jobs_started": 0
   }
 }

@@ -1,22 +1,23 @@
 # Primary local training protocol v1
 
-**DRAFT_AWAITING_USER_CONFIRMATION.** The user requested training to start, while
-the final method question is still pending. This draft records proposed methods
-and concrete limits; it does not infer an answer to that question. In the
-[machine-readable protocol](../configs/primary-training-protocol-v1.json),
-`protocol_frozen=false` and `scientific_training_authorized=false`.
-Protected assessment stays sealed and paid cloud jobs remain zero.
+**FROZEN_AUTHORIZED_LOCAL_PRIMARY.** On November 3, 2026, the user answered the
+pending method question with “Approved 100epoch.” This adopts a **100-epoch
+ceiling** with the other reviewed choices retained: minimum 10, patience 5,
+strict matched L168 cases without repairs, approximate independent basins,
+conditional within-year exploratory uncertainty, all four model families and
+three final seeds, and raw unclipped outputs.
 
-**Technical update:** the [durable-controller verification](../reports/primary-campaign-controller-check-v1.json)
-has passed its integrated tests and independent reviews. Model and data
-qualifications also passed. The actual human method reply remains outstanding;
-technical verification does not fill that answer or enable fitting by itself.
+The [machine-readable protocol](../configs/primary-training-protocol-v1.json)
+records the exact reply and `protocol_frozen=true` /
+`scientific_training_authorized=true`. The
+[durable-controller verification](../reports/primary-campaign-controller-check-v1.json),
+model qualifications and data qualifications have passed. Local execution is
+authorized; paid cloud jobs and protected assessment remain excluded.
 
-Execution requires both the actual human method confirmation and a passed
-durable-controller qualification. Root will record the real reply, update the
-adoption flags and bind the resulting **file-byte SHA256** to the campaign ledger
-before its first scientific fit. The JSON deliberately contains no self-hash.
-No source values, models, tests, fits or fees were used to prepare these two files.
+The controller binds the resulting **file-byte SHA256** into the private plan
+and durable ledger before the first scientific fit. That binding is enforced at
+every worker launch. The JSON deliberately contains no self-hash. Authorization
+and qualification are distinct from an observed running process or completed fit.
 
 ## Fixed roster and local execution
 
@@ -59,7 +60,7 @@ Exact role case counts/hashes come from
 `9a8b5526b0956125aecc2ebca9a29d20e90e6b262c136225505cde18cd92b2ec`.
 The protocol JSON records all 27 unique fold/gauge/input/history data views.
 
-Proposed primary membership is `common_l168_complete`: complete original L168
+Primary membership is `common_l168_complete`: complete original L168
 history, admitted HRRR/soil inputs and all 18 original admitted targets. Full,
 Q-only and L24 comparisons use the same per-gauge case membership; they do not
 require a cross-gauge intersection. Natural L24's extra cases are coverage
@@ -97,8 +98,8 @@ elapsed time is reconstructed. Store actual artifact times separately.
 
 Use the numerically reproduced 514-row weights unchanged as **approximate
 independent basin footprints**, preserving accepted outlet/area discrepancies
-and original hold flags. The scientific interpretation remains in the pending
-method review. No surveyed exact-outlet, forced-nesting or conservation claim is
+and original hold flags. This scientific interpretation was adopted in the
+November 3 method confirmation. No surveyed exact-outlet, forced-nesting or conservation claim is
 introduced. No protected `[2024-07-31,2025-07-31)` assessment data or its label
 tail enters this execution, including as unselected bundle rows.
 
@@ -129,7 +130,7 @@ MSE with equal lead contribution, without event weights or log-Q. Inverse-transf
 through the saved affine map. Retain raw linear-head predictions without clipping
 and report negative frequency.
 
-The pending proposal is **maximum 200 epochs, minimum 10, patience 5 and
+The adopted stopping rule is **maximum 100 epochs, minimum 10, patience 5 and
 `min_improvement=0`** on clean inner-stopping standardized-Q MSE. Improvement is
 strict: `loss < best_loss − min_improvement`; exact ties retain the earliest best
 state. The selected best epoch can precede 10 although training completes at least
@@ -182,7 +183,7 @@ peak−48h/peak+72h windows clipped to the outer interval, first-three represent
 hydrographs. Keep unsupported events and unavailable metrics; do not select
 replacement events using model errors. Short-window metrics are descriptive.
 
-The pending uncertainty interpretation is **conditional within-year exploratory**:
+The adopted uncertainty interpretation is **conditional within-year exploratory**:
 2,000 paired noncircular moving-block draws by contiguous UTC season segment;
 14-day primary blocks and mandatory 7/28-day sensitivities; seed 20261102;
 2.5th/97.5th percentiles. Keep the complete origin calendar, all 18 leads/models and
@@ -202,14 +203,14 @@ No ridge, repair pilot or excluded persistence baseline is added here.
 
 ## Hard run, recovery and artifact bounds
 
-| Bound | Draft value |
+| Bound | Adopted value |
 |---|---:|
-| Logical maximum epochs per job | 200 |
+| Logical maximum epochs per job | 100 |
 | Explicit resumes per job | At most 3 |
 | Replay reserve per job | At most 30 epoch-equivalents |
-| Logical updates across 180 jobs | 18,200,800 |
-| Physical entered updates including replay/failure reserve | **20,930,920** |
-| Largest per-job logical / physical update ceilings | 126,800 / 145,820 |
+| Logical updates across 180 jobs | 9,100,400 |
+| Physical entered updates including replay/failure reserve | **11,830,520** |
+| Largest per-job logical / physical update ceilings | 63,400 / 82,420 |
 | Wall deadline per job / campaign | **6 hours / 336 hours** |
 | Active parent/child RSS plus MPS driver allocation | **4 GiB** |
 | MPS allocator cap | **2 GiB** |
@@ -217,9 +218,9 @@ No ridge, repair pilot or excluded persistence baseline is added here.
 | Bookkeeping reserved within that output total | **2 GiB** |
 | Required free local disk | At least 8 GiB |
 
-The roster sums to 91,004 gradient batches per epoch. At 200 logical epochs and
-30 replay epoch-equivalents, physical maximum is `91,004 × 230 = 20,930,920`.
-Each job is bounded by its own batch count times 200 logical / 230 physical epochs;
+The roster sums to 91,004 gradient batches per epoch. At 100 logical epochs and
+30 replay epoch-equivalents, physical maximum is `91,004 × 130 = 11,830,520`.
+Each job is bounded by its own batch count times 100 logical / 130 physical epochs;
 the reserve is not extra training epochs or new fitting opportunities. A different
 confirmed epoch ceiling requires recomputing these ceilings before adoption.
 
@@ -230,7 +231,9 @@ budget ledger. Neither a resume nor a fresh process resets the job/campaign
 clock. There is no automatic replacement fit or silent backend switch.
 
 Write an initial checkpoint, then every 10 completed epochs and at termination:
-at most 21 per job (3,780 across 180). At an already saved checkpoint epoch, reuse
+at most 21 per job including recovery reservations (3,780 across 180). A
+100-epoch uninterrupted fit needs at most 11; the larger finite cap preserves
+room for recovery artifacts within the same byte budget. At an already saved checkpoint epoch, reuse
 that checkpoint for the terminal reference; do not add a duplicate or overwrite
 immutable evidence. Each full state retains current/best model, optimizer,
 sampler/RNG, transforms, identities and stopping decisions. Resume from the latest
@@ -241,7 +244,7 @@ The eight-GiB limit includes all new checkpoint/prediction/metric/log/staging
 bytes. Reserve two GiB for bookkeeping, leaving six GiB for other artifacts;
 check actual growth and free space before writes. Time, physical updates, memory
 or disk exhaustion produces a visible unfinished stop, not a claim of complete
-training. These are hard allowances, not promises that every fit reaches 200
+training. These are hard allowances, not promises that every fit reaches 100
 epochs or that the complete campaign finishes within the deadline.
 
 ## Existing evidence and final release gate
@@ -259,9 +262,9 @@ scaler fits and optimizer updates. Its file SHA256 is
 Outer arrays were authenticated; the predictor-slice exercise was limited to
 the first 64 cases per view. This does not claim that scientific fits have run.
 
-The durable controller qualification is a separate pending evidence field in this
-draft. It must pass before execution, along with the actual human method reply,
-updated authorization flags, frozen protocol-file identity and resource preflight.
+The durable controller qualification passed 908 tests with 3 optional GIS skips
+and independent review. The human method reply is recorded; the controller must
+still authenticate the frozen protocol-file identity and resource preflight at launch.
 The root controller consumes exactly the six `training` and six `limits` keys
 listed in JSON; additional methodological detail is outside those strict objects.
 User review of a complete seed report does not reopen methods automatically.

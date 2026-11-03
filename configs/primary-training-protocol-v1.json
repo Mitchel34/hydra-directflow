@@ -1,9 +1,9 @@
 {
   "schema": "hydra-primary-training-protocol/v1",
-  "status": "DRAFT_AWAITING_USER_CONFIRMATION",
+  "status": "FROZEN_AUTHORIZED_LOCAL_PRIMARY",
   "created_at_utc": "2026-11-03T21:02:56.229832+00:00",
-  "protocol_frozen": false,
-  "scientific_training_authorized": false,
+  "protocol_frozen": true,
+  "scientific_training_authorized": true,
   "protected_assessment_access": false,
   "paid_cloud_jobs_started": 0,
   "source_plan_sha256": "0dad073824984fd7eeba88e4c313d77b4015dcccb94e8eb27297fcf7c6b39b0f",
@@ -12,21 +12,23 @@
   "roster_sha256": "f45aa1afe114db80b194288ecb06c7757ebe3928de3702fac9ff1114238310e9",
   "roster_plan_sha256": "8e087b82797b79e96177cf11c19d5127d74c6f5c09ff6e0680cdbc4b3fc3e43b",
   "human_confirmation": {
-    "received": false,
-    "message_reference": null,
-    "confirmed_at_utc": null,
-    "pending_methods": [
-      "200-epoch ceiling with minimum10/patience5 inner MSE stopping",
+    "received": true,
+    "message_reference": "Direct user reply in the HYDRA DirectFlow chat: Approved 100epoch",
+    "confirmed_at_utc": "2026-11-03T23:00:48.597192+00:00",
+    "exact_user_reply": "Approved 100epoch",
+    "selected_max_epochs": 100,
+    "adopted_methods": [
+      "100-epoch ceiling with minimum10/patience5 inner MSE stopping",
       "strict matched L168 cohort without gap repairs",
       "validated approximate independent basin interpretation",
       "conditional within-year exploratory uncertainty",
       "four architecture families and final seeds17/29/43",
       "raw unclipped Q with protected assessment sealed"
     ],
-    "start_training_request_does_not_fill_pending_method_answers": true
+    "approval_scope": "LOCAL_PRIMARY_180_FITS_OTHER_REVIEWED_METHODS_RETAINED_NO_PAID_CLOUD_OR_PROTECTED_ASSESSMENT"
   },
   "training": {
-    "max_epochs": 200,
+    "max_epochs": 100,
     "min_epochs": 10,
     "patience": 5,
     "min_improvement": 0.0,
@@ -34,7 +36,7 @@
     "shuffle_training": true
   },
   "limits": {
-    "max_optimizer_updates": 20930920,
+    "max_optimizer_updates": 11830520,
     "max_job_seconds": 21600,
     "max_campaign_seconds": 1209600,
     "max_output_bytes": 8589934592,
@@ -884,7 +886,7 @@
     }
   },
   "spatial": {
-    "interpretation_pending_confirmation": true,
+    "interpretation_pending_confirmation": false,
     "interpretation": "VALIDATED_APPROXIMATE_INDEPENDENT_BASIN_FOOTPRINTS",
     "original_candidate_weight_rows": 514,
     "original_weights_and_hold_flags_unchanged": true,
@@ -958,7 +960,7 @@
     "short_event_metrics_are_descriptive": true
   },
   "uncertainty": {
-    "interpretation_pending_confirmation": true,
+    "interpretation_pending_confirmation": false,
     "claim": "CONDITIONAL_WITHIN_YEAR_EXPLORATORY",
     "draws": 2000,
     "paired_unit": "WHOLE_HOURLY_ORIGIN_VECTOR_ALL18_LEADS_ALL_MODELS_FIXED_GAUGES",
@@ -993,22 +995,22 @@
     "resume_requires_explicit_request": true,
     "maximum_explicit_resumes_per_job": 3,
     "maximum_replay_epoch_equivalents_per_job": 30,
-    "logical_epoch_cap_proposed": 200,
-    "physical_epoch_equivalent_ceiling": 230,
+    "physical_epoch_equivalent_ceiling": 130,
     "sum_gradient_batches_per_epoch_all_jobs": 91004,
-    "logical_optimizer_updates_max": 18200800,
+    "logical_optimizer_updates_max": 9100400,
     "replay_reserve_optimizer_updates_max": 2730120,
-    "physical_optimizer_updates_max": 20930920,
-    "per_job_logical_update_formula": "200*gradient_batches_per_epoch",
-    "per_job_physical_update_formula": "230*gradient_batches_per_epoch",
-    "largest_per_job_logical_updates": 126800,
-    "largest_per_job_physical_updates": 145820,
+    "physical_optimizer_updates_max": 11830520,
+    "per_job_logical_update_formula": "100*gradient_batches_per_epoch",
+    "per_job_physical_update_formula": "130*gradient_batches_per_epoch",
+    "largest_per_job_logical_updates": 63400,
+    "largest_per_job_physical_updates": 82420,
     "updates_entered_durable_before_optimizer_call": true,
     "failed_or_interrupted_entered_steps_consume_allowance": true,
     "refund_failed_entered_steps": false,
     "reset_job_or_campaign_clock_on_resume": false,
     "reuse_same_protocol_data_spec_backend_sampler_rng_and_ledger": true,
-    "automatic_retry_or_replacement_fit": false
+    "automatic_retry_or_replacement_fit": false,
+    "logical_epoch_cap": 100
   },
   "checkpoints_and_storage": {
     "initial_checkpoint": true,
@@ -1063,13 +1065,13 @@
     }
   },
   "release_requirements": {
-    "actual_human_method_confirmation": false,
-    "draft_flags_updated_by_root_after_actual_reply": false,
-    "frozen_protocol_file_sha_bound_to_ledger_before_first_fit": false,
+    "actual_human_method_confirmation": true,
+    "draft_flags_updated_by_root_after_actual_reply": true,
     "durable_controller_qualification_passed": true,
     "required_current_trainer_qualification_passed": true,
     "required_data_view_qualification_passed": true,
-    "resource_preflight_passed": true
+    "resource_preflight_passed": true,
+    "frozen_protocol_file_sha_binding_required_before_first_fit": true
   },
   "excluded_execution": {
     "ridge_or_H4_gap_pilot": true,
@@ -1116,5 +1118,6 @@
     "minimum_free_bytes": 8589934592,
     "free_space_passed": true,
     "live_worker_guards_still_required": true
-  }
+  },
+  "frozen_at_utc": "2026-11-03T23:00:48.597192+00:00"
 }

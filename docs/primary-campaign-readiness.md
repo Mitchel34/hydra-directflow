@@ -2,8 +2,8 @@
 
 The user requested starting training on the fastest demonstrated local backends,
 in seed order17→29→43. The execution components are now implemented and tested.
-Scientific fits remain unstarted while the explicitly requested final method
-confirmation is pending in [the protocol](primary-training-protocol-v1.md).
+The user confirmed the 100-epoch ceiling and other reviewed methods on November 3.
+The [protocol](primary-training-protocol-v1.md) is frozen and local execution is authorized.
 Paid cloud jobs and protected assessment remain outside this campaign.
 
 ## Executed qualifications
@@ -57,8 +57,8 @@ before the next job advances.
 Initial, every10-epoch and terminal checkpoints are retained, at most21 per job.
 Three explicit same-job resumes can use only the latest authenticated checkpoint;
 the budget includes up to30 epochs of physical replay while logical training
-still obeys the selected ceiling. At200 epochs this is18,200,800 logical updates
-and20,930,920 maximum physical entries across180 fits. Clocks and charges never
+still obeys the selected ceiling. At100 epochs this is9,100,400 logical updates
+and11,830,520 maximum physical entries across180 fits. Clocks and charges never
 reset. There is no automatic retry, backend substitution or deletion of evidence.
 
 Proposed hard guards are6hours per job,336hours for the campaign,4GiB combined
@@ -88,6 +88,7 @@ figures and dependence-aware uncertainty remain explicit postprocessing tasks
 under the predeclared protocol; the initial seed report is not presented as a
 finished scientific poster. The2024–25 assessment remains sealed throughout.
 
-The protocol draft remains unfrozen until the pending method reply is received.
-No primary release marker, campaign ledger, scientific optimizer update or paid
-job has been created by this readiness work.
+The protocol records the exact user reply, “Approved 100epoch.” The original
+200-epoch proposal is superseded. Qualifications are complete and are not rerun.
+The private campaign progress/ledger provides live execution evidence; protocol
+adoption alone does not establish a running or completed fit.

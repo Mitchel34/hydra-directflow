@@ -947,3 +947,24 @@ space floor. At200 epochs, logical updates cap18,200,800; physical replay reserv
 caps20,930,920. No quota is refunded, deadline reset or old qualification rerun.
 No scientific release marker, campaign ledger or study fit has been created
 while human method confirmation is pending.
+
+## Primary 100-epoch protocol adoption — November 3
+
+The user answered the pending method question with “Approved 100epoch.” The
+primary protocol is now frozen for the local 180-fit roster with minimum10,
+patience5 and the other reviewed methodological choices retained. The approved
+ceiling is100, superseding the earlier200 proposal. Logical updates cap9,100,400;
+physical entries including the unchanged30-epoch replay reserve cap11,830,520.
+Largest per-job limits are63,400 logical /82,420 physical. Existing time, memory,
+output, checkpoint and recovery guards are unchanged. Qualification receipts and
+execution code remain unchanged; no consumed qualification is replayed.
+
+This adoption authorizes local scientific execution, not paid cloud, new downloads,
+protected assessment, ridge or gap-repair fits. The next launch records the exact
+protocol/plan hashes and verifies actual optimizer updates in the durable ledger.
+
+The adoption passed all14 focused controller tests and a metadata-only preflight
+that authenticated current model/data/controller qualification receipts, all180
+jobs and the exact100-epoch arithmetic. The publication scan checked379 files
+with0 findings. No model call or qualification allowance was consumed by these
+checks; the execution implementation is unchanged.

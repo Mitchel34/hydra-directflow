@@ -9,13 +9,13 @@ Mamba2–Transformer. NWM is an external comparator. Research skill results are
 not yet available; synthetic model checks and a development data smoke test
 do not establish forecast performance.
 
-The [resident execution recovery](docs/resident-execution.md) now keeps active code and a fully isolated pinned runtime outside cloud storage. [Optimized provenance processing](docs/pilot-provenance-performance-v2.md) passed exact v1 numerical equivalence and a new bounded restart/inference qualification. The six-fit cold-default proxy is now **2.03/4.06 hours at 20/50 epochs**, plus stated unmeasured work. Scientific fits and paid cloud jobs remain held. The [resident development snapshot](reports/resident-optimization-release-v3.json) is now **1,432/1,432 files across 477 shards**, with the exact snapshot integrity check passed. [CV1 real-data assembly and bounded loader checks](docs/pilot-real-data-assembly.md) are complete. The [small-pilot protocol](docs/bounded-gap-pilot-protocol.md) proposes six neural plus three ridge fits, pending user review and qualification of its bounded runner and natural-gap inference wrapper.
+The [resident execution recovery](docs/resident-execution.md) now keeps active code and a fully isolated pinned runtime outside cloud storage. [Optimized provenance processing](docs/pilot-provenance-performance-v2.md) passed exact v1 numerical equivalence and a new bounded restart/inference qualification. The six-fit cold-default proxy is now **2.03/4.06 hours at 20/50 epochs**, plus stated unmeasured work. These pilot timings remain engineering evidence; paid cloud jobs remain held. The [resident development snapshot](reports/resident-optimization-release-v3.json) is now **1,432/1,432 files across 477 shards**, with the exact snapshot integrity check passed. [CV1 real-data assembly and bounded loader checks](docs/pilot-real-data-assembly.md) are complete. The earlier [small-pilot protocol](docs/bounded-gap-pilot-protocol.md) is retained as historical planning; no pilot fits ran.
 
-The user subsequently requested ridge removal, all four deep-learning families and a higher epoch ceiling with early stopping. The [200-epoch proposal](docs/high-epoch-stopping-proposal.md) records its resource implications; the separate-pilot versus direct-primary sequence remains under discussion. The earlier six-neural/three-ridge packet is retained historical planning, not the current execution scope. No scientific execution is released.
+The user subsequently requested ridge removal, all four deep-learning families and a higher epoch ceiling with early stopping. The historical [200-epoch proposal](docs/high-epoch-stopping-proposal.md) records its resource implications; the user subsequently approved a **100-epoch ceiling for the direct primary campaign**. The earlier six-neural/three-ridge packet is retained historical planning, not the current execution scope. The frozen primary protocol now authorizes local scientific execution.
 
-The active [local seed sequence](docs/local-seed-sequence.md) uses the user's latest instruction to select the [fastest demonstrated backends](docs/local-device-policy.md): CPU for LSTM/GRU–Transformer and MPS for Transformer/Mamba-2–Transformer. The all-MPS alternative is retained with its54 unmeasured control jobs explicitly identified. Seed order, cohorts and all180 fits remain unchanged; model execution has not started.
+The active [local seed sequence](docs/local-seed-sequence.md) uses the user's latest instruction to select the [fastest demonstrated backends](docs/local-device-policy.md): CPU for LSTM/GRU–Transformer and MPS for Transformer/Mamba-2–Transformer. The all-MPS alternative is retained with its54 unmeasured control jobs explicitly identified. Seed order, cohorts and all180 fits remain unchanged; actual execution status is recorded in the private campaign progress and ledger.
 
-The [primary campaign runner and qualifications](docs/primary-campaign-readiness.md) are now complete: all12 B64 model geometries passed recovery/best-inference checks, all27 real-data views passed, and908 integrated tests passed with3 optional GIS skips. The [final protocol draft](docs/primary-training-protocol-v1.md) is awaiting the requested method confirmation before the first scientific fit. Paid cloud and protected assessment remain excluded.
+The [primary campaign runner and qualifications](docs/primary-campaign-readiness.md) are now complete: all12 B64 model geometries passed recovery/best-inference checks, all27 real-data views passed, and908 integrated tests passed with3 optional GIS skips. The [final protocol](docs/primary-training-protocol-v1.md) was adopted on November 3 with maximum 100 epochs, minimum 10 and patience 5. Paid cloud and protected assessment remain excluded.
 
 The [v1 implementation and qualification](docs/pilot-implementation-qualification.md), including its earlier 4.22/8.64-hour six-fit estimate, is preserved as historical evidence. Use the v2 performance summary above only for its stated LSTM pilot scope; neither timing applies to an expanded four-family pilot or a200-epoch campaign.
 
@@ -26,8 +26,8 @@ The requested missingness sensitivity now has a [development coverage census](do
 **November 2:** the [complete development corpus](docs/development-completion.md)
 is built and audited: 477 shards, 53,028 origins, 159,084 cases and 146,464
 candidate complete L168 cases. The user confirmed the 180-fit study scope.
-Methodological adoption and scientific fitting remain pending; no protected
-assessment scoring or cloud compute job has started.
+The November 3 protocol now adopts the methods and authorizes local fitting;
+protected assessment scoring and cloud compute remain excluded.
 
 The user subsequently accepted the training core subject to pre-freeze checks.
 Those checks now include all three official-source spatial reproductions,
@@ -81,8 +81,9 @@ The [reconciled scientific study design](docs/scientific-study-design.md) record
 hypotheses, actual architecture counts, proposed expanding CV, component/input
 controls, assessment gates and the figure/edge-research plans. The confirmed
 A/A+R quality rule is implemented with independent input/target policy arguments;
-persistence is excluded from the active experiment. Full scientific fitting,
-CV adoption and protected assessment remain pending.
+persistence is excluded from the active experiment. The frozen primary protocol
+now adopts the expanding CV design and authorizes local scientific fitting;
+protected assessment remains separately gated.
 
 The [execution-readiness update](docs/execution-readiness.md) includes a refined
 development eligibility inventory, the approved July development-only export,
