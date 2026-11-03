@@ -579,3 +579,49 @@ model fits, optimizer updates, new data downloads, paid jobs, or protected
 assessment access/scoring occurred. Cumulative executed engineering update counts
 remain 852 real-data and 904 synthetic. Primary protocol freeze and sensitivity
 expansion await review of the concrete census/method/resource packet.
+
+
+## Pilot implementation and synthetic qualification — November2
+
+The user approved pilot implementation and qualification ONLY. The separate
+scientific six-neural/three-ridge pilot remains held for protocol and tolerance
+review. The primary180 fits, original H2 code/data, protected gate and150USD ceiling
+are unchanged. New code implements causal interior/carry/ridge input handling,
+source/qualifier-preserving H4 masks/age, seventeen deterministic artificial gap
+scenarios, clean/augmented training mechanics and label-free best inference.
+
+Filler13, adapter14, pilot-trainer13 zero-update and qualification-controller7
+focused tests passed with independent reviews. The integrated suite ran689 tests
+in16.807s:686 passed,3 unchangedGIS skips. No optimizer work occurs in those
+ordinary tests; NumPy synthetic ridge fixtures are separate ancillary mechanics.
+
+The once-only qualification precharged and confirmed exactly16 synthetic optimizer
+updates: each arm's4-update uninterrupted run versus a2-update prefix and2-update
+fresh-process continuation. All sample order, masks, loss/model/optimizer state,
+saved transform and best-state predictions match exactly. Both selected epoch1
+while last weights were epoch2. The H4 LSTM has68161parameters. The bounded run
+created one synthetic ridge artifact; later phases loaded it without fitting.
+All17scenarios were exercised perarm:16 had64-case outputs; mixedrecent/ridge
+had56admissible/8unsupportedcases and the requestedbatch was correctly refused,
+not silently filtered or repaired with another method. The run completed34.31s
+at401MiB combinedRSS. Its consumed allowance, checkpoints and source identities
+remain intact; cumulative updates are852real-data engineering and920synthetic.
+
+A separately reviewed forward-only profile used the same qualified synthetic
+checkpoint and completed20calls each acrossfive stages, with100timedcalls and
+no optimizer/backward/scaler/ridgefits. It completed16.24s at287MiBRSS and verified
+the qualification ledger unchanged. Model-onlyforward averaged14.88ms versus
+335.92ms for fullcleanprediction; separately timed provenance normalization/digest
+averaged211.40ms. This is an implementation overhead finding, not a GPU or
+architecture-performance comparison. Original H2 timing measured pre-mapped
+kernels; current H4update times also include preparation and qualification
+status writes. First-use and three-later-sample estimates are kept distinct.
+
+New immutable runtime scenarios using later-three mean updates estimate4.22/8.64h
+for the six-neural pilot at20/50epochs, with the18-neural optionalconfirmation at
+25.28/57.81h. Ancillaryfits/fullscaleprovenance/scoring and other work remain
+unmeasured; these are notconfidencebounds. Earlier2.62/6.24h combined-H2 proxies
+remain historical. Reduce repeated immutable metadata processing and qualify
+full-cohort construction before scientificrelease; no optimization or new update
+allowance has been silently executed. No study-data fit, new download, paid job,
+protected-access/score or securitychange occurred during this work.

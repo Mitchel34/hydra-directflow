@@ -9,6 +9,8 @@ Mamba2–Transformer. NWM is an external comparator. Research skill results are
 not yet available; synthetic model checks and a development data smoke test
 do not establish forecast performance.
 
+The separate H4 pilot components are now [implemented and synthetically qualified](docs/pilot-implementation-qualification.md): exact 16-update restart and best-state inference checks passed. Study-data fits remain held. A zero-update profile identifies repeated provenance processing as the main current overhead; the revised six-fit proxy is 4.22/8.64 hours at 20/50 epochs, with further unmeasured work.
+
 The requested missingness sensitivity now has a [development coverage census](docs/coverage-sensitivity-census.md), [paired experimental proposal](docs/coverage-sensitivity-design.md), and measured-rate cost scenarios. Short Q gaps alone leave substantial Sugar Grove high-flow exclusions; a separate short-gap/L24 route has broader structural support. No numerical imputation or sensitivity training has run, and the strict 180-fit primary remains unchanged.
 
 ## Current work packages

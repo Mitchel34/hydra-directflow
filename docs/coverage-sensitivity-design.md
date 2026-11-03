@@ -7,6 +7,20 @@ historical-Q gaps can be handled without unacceptable loss of forecast quality.
 It cannot establish performance in long outages or reveal unobserved peaks.
 No executed forecast sensitivity or operational 90% coverage achievement exists yet.
 
+## Implementation approval and qualification update
+
+The user subsequently approved **implementation and qualification only**. The
+separate H4 adapter, causal fillers, fixed ridge artifact and pilot training/
+best-inference mechanics are now implemented. The bounded synthetic qualification
+passed all 16 optimizer updates, exact fresh-process recovery and label-free best
+inference; see `reports/gap-pilot-qualification-v1.json`. This does not release the
+six neural or three ridge scientific fits. The protocol, clean-degradation and
+failure tolerances remain pending. The older H2 runtime projections below remain
+historical estimates; the new measured input-preparation overhead is documented in
+`reports/gap-pilot-runtime-reassessment.json` and supersedes their use for pilot scheduling.
+The current implementation has a conditional six-fit estimate of 4.22/8.64 hours at 20/50 epochs,
+with additional unmeasured work; optimize and requalify preparation before release.
+
 ## Information available at issuance
 
 For an hourly origin C, the L168 history remains C−169h through C−2h. The

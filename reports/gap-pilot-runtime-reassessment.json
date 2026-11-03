@@ -1,0 +1,2702 @@
+{
+  "H4_qualification_update_scope": "FULL_PILOT_UPDATE_INCLUDING_ADAPTER_PROVENANCE_DIGESTS_COPIES_KERNELS_AND_QUALIFICATION_WRAPPER_DURABLE_STATUS_WRITES;FIRST_UPDATE_INCLUDES_LAZY_OPTIMIZER_CONSTRUCTION",
+  "approved_combined_budget_ceiling_usd": 150,
+  "conditional_runtime_scenarios": [
+    {
+      "additional_ancillary_ridge_fits": 6,
+      "additional_neural_fits": 24,
+      "ancillary_fit_preparation_scoring_resampling_fullscale_startup_hours": null,
+      "epochs": 20,
+      "modeled_additional_neural_hours": 27.518707177294147,
+      "old_H2_proxy_additional_neural_hours": 2.6179895606132075,
+      "primary_plus_additional_neural_proxy_hours": 60.60546504029668,
+      "ratio_to_old_H2_proxy": 10.511389193946398,
+      "stages": [
+        {
+          "ancillary_ridge_fits": 3,
+          "modeled_neural_hours": 3.9973565170927317,
+          "neural_fits": 6,
+          "per_gauge_and_mode": [
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 246,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03161000",
+              "mode": "clean",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 15717,
+                "inner_stopping": 2152,
+                "outer_scoring": 8556
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 1543.3752357409103
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+                "inner_stopping": "22ab65fbfefb90c2a8fa7baece9bc23e82339c7091ccc7bf4841db7ba9e145dd",
+                "outer_scoring": "77a896b6d141a9914995eb8ab0587327b913b250d51ba15521d12f35a63a85fa"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 0.7050233651155301,
+              "updates_per_fit_scenario": 4920
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 204,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 131
+              },
+              "gauge_id": "03164000",
+              "mode": "clean",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 13024,
+                "inner_stopping": 2152,
+                "outer_scoring": 8341
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 748.0943179026362,
+                "training": 1280.0060801449
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+                "inner_stopping": "7a19c1ce95adbb17d2d69dcb091642db7f6d272b1ac5c4775f45e59b4b62c8dc",
+                "outer_scoring": "49e36b9377f461062393b2ae1b345a90b77ad5b4dbfa8cdc473f574f10a771a0"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 0.6271063966321008,
+              "updates_per_fit_scenario": 4080
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 229,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03479000",
+              "mode": "clean",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 14621,
+                "inner_stopping": 2152,
+                "outer_scoring": 8516
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 1436.7734346663347
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+                "inner_stopping": "c6cd49a927a3f34187f468628592a7bfcd6de2eb1190d82884fc06649853de88",
+                "outer_scoring": "68e418282d1756320572c55712baf11dbf0ec4ce8bb545c8aa3433075285365f"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 0.6754117537059258,
+              "updates_per_fit_scenario": 4580
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 246,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03161000",
+              "mode": "augmented",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 15717,
+                "inner_stopping": 2152,
+                "outer_scoring": 8556
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 1520.2875627719332
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+                "inner_stopping": "22ab65fbfefb90c2a8fa7baece9bc23e82339c7091ccc7bf4841db7ba9e145dd",
+                "outer_scoring": "77a896b6d141a9914995eb8ab0587327b913b250d51ba15521d12f35a63a85fa"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 0.6986101226241476,
+              "updates_per_fit_scenario": 4920
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 204,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 131
+              },
+              "gauge_id": "03164000",
+              "mode": "augmented",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 13024,
+                "inner_stopping": 2152,
+                "outer_scoring": 8341
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 748.0943179026362,
+                "training": 1260.7963377751876
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+                "inner_stopping": "7a19c1ce95adbb17d2d69dcb091642db7f6d272b1ac5c4775f45e59b4b62c8dc",
+                "outer_scoring": "49e36b9377f461062393b2ae1b345a90b77ad5b4dbfa8cdc473f574f10a771a0"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 0.6217703570849585,
+              "updates_per_fit_scenario": 4080
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 229,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03479000",
+              "mode": "augmented",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 14621,
+                "inner_stopping": 2152,
+                "outer_scoring": 8516
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 1415.2554002732504
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+                "inner_stopping": "c6cd49a927a3f34187f468628592a7bfcd6de2eb1190d82884fc06649853de88",
+                "outer_scoring": "68e418282d1756320572c55712baf11dbf0ec4ce8bb545c8aa3433075285365f"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 0.669434521930069,
+              "updates_per_fit_scenario": 4580
+            }
+          ],
+          "stage": "pilot"
+        },
+        {
+          "ancillary_ridge_fits": 3,
+          "modeled_neural_hours": 23.521350660201414,
+          "neural_fits": 18,
+          "per_gauge_and_mode": [
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 634,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 137
+              },
+              "gauge_id": "03161000",
+              "mode": "clean",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 40531,
+                "inner_stopping": 2165,
+                "outer_scoring": 8766
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 782.3581797913066,
+                "training": 3976.4045779135777
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "f986edc37999ff1c3a4b711f8dfe18f658929606da10fb4bb6561fc61ef97f7e",
+                "inner_stopping": "26539c00e073f43f5d671f95d468dd17dbec753f55e6a6ab6b7aa2f0b7933cbd",
+                "outer_scoring": "58bf78e0ecdd6079c74d017e7234a878bea572593eaa24683aebd278bb68fbbc"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 4.156871156277425,
+              "updates_per_fit_scenario": 12680
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 571,
+                "inner_stopping_per_epoch": 28,
+                "outer_scoring_once": 127
+              },
+              "gauge_id": "03164000",
+              "mode": "clean",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 36500,
+                "inner_stopping": 1778,
+                "outer_scoring": 8125
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 188.1153201730922,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 725.2517433101893,
+                "training": 3581.350844519562
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "e5ac9182e6d9eae38c048d1453c8040e254324bce72499816a86e83f4b4034c3",
+                "inner_stopping": "ee5c81fb9f48f40c698b7de4c602f69172c0a737f686c42b13463425efadbc24",
+                "outer_scoring": "c8304ad4a145ae076ef91721d195463219cfc79b6b0c5bee83da3ad2c36118a8"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 3.746478993255334,
+              "updates_per_fit_scenario": 11420
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 612,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 113
+              },
+              "gauge_id": "03479000",
+              "mode": "clean",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 39148,
+                "inner_stopping": 2165,
+                "outer_scoring": 7229
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 645.3027322366252,
+                "training": 3838.449305934715
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "c4767323730a4dd4141ac1b27ecaac5c6a81fe9c633a6594ae1bdd2e54638809",
+                "inner_stopping": "4b6037804cc263857dc088bf884ec420a600aaae3179dbfcf57672a303eefb85",
+                "outer_scoring": "df0de87a66770746710d644ea03b10734577ea295407eefe3390516224e6f419"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 3.927695556666139,
+              "updates_per_fit_scenario": 12240
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 634,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 137
+              },
+              "gauge_id": "03161000",
+              "mode": "augmented",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 40531,
+                "inner_stopping": 2165,
+                "outer_scoring": 8766
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 782.3581797913066,
+                "training": 3917.4922127418686
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "f986edc37999ff1c3a4b711f8dfe18f658929606da10fb4bb6561fc61ef97f7e",
+                "inner_stopping": "26539c00e073f43f5d671f95d468dd17dbec753f55e6a6ab6b7aa2f0b7933cbd",
+                "outer_scoring": "58bf78e0ecdd6079c74d017e7234a878bea572593eaa24683aebd278bb68fbbc"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 4.107777518634335,
+              "updates_per_fit_scenario": 12680
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 571,
+                "inner_stopping_per_epoch": 28,
+                "outer_scoring_once": 127
+              },
+              "gauge_id": "03164000",
+              "mode": "augmented",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 36500,
+                "inner_stopping": 1778,
+                "outer_scoring": 8125
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 188.1153201730922,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 725.2517433101893,
+                "training": 3528.25537524675
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "e5ac9182e6d9eae38c048d1453c8040e254324bce72499816a86e83f4b4034c3",
+                "inner_stopping": "ee5c81fb9f48f40c698b7de4c602f69172c0a737f686c42b13463425efadbc24",
+                "outer_scoring": "c8304ad4a145ae076ef91721d195463219cfc79b6b0c5bee83da3ad2c36118a8"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 3.7022327688613244,
+              "updates_per_fit_scenario": 11420
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 612,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 113
+              },
+              "gauge_id": "03479000",
+              "mode": "augmented",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 39148,
+                "inner_stopping": 2165,
+                "outer_scoring": 7229
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 645.3027322366252,
+                "training": 3781.5682377435733
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "c4767323730a4dd4141ac1b27ecaac5c6a81fe9c633a6594ae1bdd2e54638809",
+                "inner_stopping": "4b6037804cc263857dc088bf884ec420a600aaae3179dbfcf57672a303eefb85",
+                "outer_scoring": "df0de87a66770746710d644ea03b10734577ea295407eefe3390516224e6f419"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 3.8802946665068543,
+              "updates_per_fit_scenario": 12240
+            }
+          ],
+          "stage": "optional_confirmation"
+        }
+      ],
+      "unchanged_primary180_proxy_hours": 33.08675786300253,
+      "update_rate_scenario": "later_min_OF_THREE_LATER_SYNTHETIC_UPDATES_NOT_A_CONFIDENCE_BOUND"
+    },
+    {
+      "additional_ancillary_ridge_fits": 6,
+      "additional_neural_fits": 24,
+      "ancillary_fit_preparation_scoring_resampling_fullscale_startup_hours": null,
+      "epochs": 20,
+      "modeled_additional_neural_hours": 29.497869607973055,
+      "old_H2_proxy_additional_neural_hours": 2.6179895606132075,
+      "primary_plus_additional_neural_proxy_hours": 62.58462747097559,
+      "ratio_to_old_H2_proxy": 11.267374802313503,
+      "stages": [
+        {
+          "ancillary_ridge_fits": 3,
+          "modeled_neural_hours": 4.216554875181024,
+          "neural_fits": 6,
+          "per_gauge_and_mode": [
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 246,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03161000",
+              "mode": "clean",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 15717,
+                "inner_stopping": 2152,
+                "outer_scoring": 8556
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 1754.542096408511
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+                "inner_stopping": "22ab65fbfefb90c2a8fa7baece9bc23e82339c7091ccc7bf4841db7ba9e145dd",
+                "outer_scoring": "77a896b6d141a9914995eb8ab0587327b913b250d51ba15521d12f35a63a85fa"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 0.7636808264120859,
+              "updates_per_fit_scenario": 4920
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 204,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 131
+              },
+              "gauge_id": "03164000",
+              "mode": "clean",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 13024,
+                "inner_stopping": 2152,
+                "outer_scoring": 8341
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 748.0943179026362,
+                "training": 1455.1127328513735
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+                "inner_stopping": "7a19c1ce95adbb17d2d69dcb091642db7f6d272b1ac5c4775f45e59b4b62c8dc",
+                "outer_scoring": "49e36b9377f461062393b2ae1b345a90b77ad5b4dbfa8cdc473f574f10a771a0"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 0.6757471334950101,
+              "updates_per_fit_scenario": 4080
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 229,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03479000",
+              "mode": "clean",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 14621,
+                "inner_stopping": 2152,
+                "outer_scoring": 8516
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 1633.344496873479
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+                "inner_stopping": "c6cd49a927a3f34187f468628592a7bfcd6de2eb1190d82884fc06649853de88",
+                "outer_scoring": "68e418282d1756320572c55712baf11dbf0ec4ce8bb545c8aa3433075285365f"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 0.7300148265412437,
+              "updates_per_fit_scenario": 4580
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 246,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03161000",
+              "mode": "augmented",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 15717,
+                "inner_stopping": 2152,
+                "outer_scoring": 8556
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 1595.0198112131716
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+                "inner_stopping": "22ab65fbfefb90c2a8fa7baece9bc23e82339c7091ccc7bf4841db7ba9e145dd",
+                "outer_scoring": "77a896b6d141a9914995eb8ab0587327b913b250d51ba15521d12f35a63a85fa"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 0.7193690805244917,
+              "updates_per_fit_scenario": 4920
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 204,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 131
+              },
+              "gauge_id": "03164000",
+              "mode": "augmented",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 13024,
+                "inner_stopping": 2152,
+                "outer_scoring": 8341
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 748.0943179026362,
+                "training": 1322.7668279951126
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+                "inner_stopping": "7a19c1ce95adbb17d2d69dcb091642db7f6d272b1ac5c4775f45e59b4b62c8dc",
+                "outer_scoring": "49e36b9377f461062393b2ae1b345a90b77ad5b4dbfa8cdc473f574f10a771a0"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 0.6389843821460488,
+              "updates_per_fit_scenario": 4080
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 229,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03479000",
+              "mode": "augmented",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 14621,
+                "inner_stopping": 2152,
+                "outer_scoring": 8516
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 1484.8221751487192
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+                "inner_stopping": "c6cd49a927a3f34187f468628592a7bfcd6de2eb1190d82884fc06649853de88",
+                "outer_scoring": "68e418282d1756320572c55712baf11dbf0ec4ce8bb545c8aa3433075285365f"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 0.6887586260621438,
+              "updates_per_fit_scenario": 4580
+            }
+          ],
+          "stage": "pilot"
+        },
+        {
+          "ancillary_ridge_fits": 3,
+          "modeled_neural_hours": 25.28131473279203,
+          "neural_fits": 18,
+          "per_gauge_and_mode": [
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 634,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 137
+              },
+              "gauge_id": "03161000",
+              "mode": "clean",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 40531,
+                "inner_stopping": 2165,
+                "outer_scoring": 8766
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 782.3581797913066,
+                "training": 4520.699074031591
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "f986edc37999ff1c3a4b711f8dfe18f658929606da10fb4bb6561fc61ef97f7e",
+                "inner_stopping": "26539c00e073f43f5d671f95d468dd17dbec753f55e6a6ab6b7aa2f0b7933cbd",
+                "outer_scoring": "58bf78e0ecdd6079c74d017e7234a878bea572593eaa24683aebd278bb68fbbc"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 4.610449903042436,
+              "updates_per_fit_scenario": 12680
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 571,
+                "inner_stopping_per_epoch": 28,
+                "outer_scoring_once": 127
+              },
+              "gauge_id": "03164000",
+              "mode": "clean",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 36500,
+                "inner_stopping": 1778,
+                "outer_scoring": 8125
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 188.1153201730922,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 725.2517433101893,
+                "training": 4071.555028695885
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "e5ac9182e6d9eae38c048d1453c8040e254324bce72499816a86e83f4b4034c3",
+                "inner_stopping": "ee5c81fb9f48f40c698b7de4c602f69172c0a737f686c42b13463425efadbc24",
+                "outer_scoring": "c8304ad4a145ae076ef91721d195463219cfc79b6b0c5bee83da3ad2c36118a8"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 4.154982480068937,
+              "updates_per_fit_scenario": 11420
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 612,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 113
+              },
+              "gauge_id": "03479000",
+              "mode": "clean",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 39148,
+                "inner_stopping": 2165,
+                "outer_scoring": 7229
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 645.3027322366252,
+                "training": 4363.855121692139
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "c4767323730a4dd4141ac1b27ecaac5c6a81fe9c633a6594ae1bdd2e54638809",
+                "inner_stopping": "4b6037804cc263857dc088bf884ec420a600aaae3179dbfcf57672a303eefb85",
+                "outer_scoring": "df0de87a66770746710d644ea03b10734577ea295407eefe3390516224e6f419"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 4.365533736463992,
+              "updates_per_fit_scenario": 12240
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 634,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 137
+              },
+              "gauge_id": "03161000",
+              "mode": "augmented",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 40531,
+                "inner_stopping": 2165,
+                "outer_scoring": 8766
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 782.3581797913066,
+                "training": 4110.1187990371445
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "f986edc37999ff1c3a4b711f8dfe18f658929606da10fb4bb6561fc61ef97f7e",
+                "inner_stopping": "26539c00e073f43f5d671f95d468dd17dbec753f55e6a6ab6b7aa2f0b7933cbd",
+                "outer_scoring": "58bf78e0ecdd6079c74d017e7234a878bea572593eaa24683aebd278bb68fbbc"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 4.268299673880398,
+              "updates_per_fit_scenario": 12680
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 571,
+                "inner_stopping_per_epoch": 28,
+                "outer_scoring_once": 127
+              },
+              "gauge_id": "03164000",
+              "mode": "augmented",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 36500,
+                "inner_stopping": 1778,
+                "outer_scoring": 8125
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 188.1153201730922,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 725.2517433101893,
+                "training": 3701.739324210056
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "e5ac9182e6d9eae38c048d1453c8040e254324bce72499816a86e83f4b4034c3",
+                "inner_stopping": "ee5c81fb9f48f40c698b7de4c602f69172c0a737f686c42b13463425efadbc24",
+                "outer_scoring": "c8304ad4a145ae076ef91721d195463219cfc79b6b0c5bee83da3ad2c36118a8"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 3.846802726330746,
+              "updates_per_fit_scenario": 11420
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 612,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 113
+              },
+              "gauge_id": "03479000",
+              "mode": "augmented",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 39148,
+                "inner_stopping": 2165,
+                "outer_scoring": 7229
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 645.3027322366252,
+                "training": 3967.510093541971
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "c4767323730a4dd4141ac1b27ecaac5c6a81fe9c633a6594ae1bdd2e54638809",
+                "inner_stopping": "4b6037804cc263857dc088bf884ec420a600aaae3179dbfcf57672a303eefb85",
+                "outer_scoring": "df0de87a66770746710d644ea03b10734577ea295407eefe3390516224e6f419"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 4.03524621300552,
+              "updates_per_fit_scenario": 12240
+            }
+          ],
+          "stage": "optional_confirmation"
+        }
+      ],
+      "unchanged_primary180_proxy_hours": 33.08675786300253,
+      "update_rate_scenario": "later_mean_OF_THREE_LATER_SYNTHETIC_UPDATES_NOT_A_CONFIDENCE_BOUND"
+    },
+    {
+      "additional_ancillary_ridge_fits": 6,
+      "additional_neural_fits": 24,
+      "ancillary_fit_preparation_scoring_resampling_fullscale_startup_hours": null,
+      "epochs": 20,
+      "modeled_additional_neural_hours": 32.100017934338716,
+      "old_H2_proxy_additional_neural_hours": 2.6179895606132075,
+      "primary_plus_additional_neural_proxy_hours": 65.18677579734126,
+      "ratio_to_old_H2_proxy": 12.261323886570418,
+      "stages": [
+        {
+          "ancillary_ridge_fits": 3,
+          "modeled_neural_hours": 4.5047508472750835,
+          "neural_fits": 6,
+          "per_gauge_and_mode": [
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 246,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03161000",
+              "mode": "clean",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 15717,
+                "inner_stopping": 2152,
+                "outer_scoring": 8556
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 1982.8143024407327
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+                "inner_stopping": "22ab65fbfefb90c2a8fa7baece9bc23e82339c7091ccc7bf4841db7ba9e145dd",
+                "outer_scoring": "77a896b6d141a9914995eb8ab0587327b913b250d51ba15521d12f35a63a85fa"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 0.8270897725321474,
+              "updates_per_fit_scenario": 4920
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 204,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 131
+              },
+              "gauge_id": "03164000",
+              "mode": "clean",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 13024,
+                "inner_stopping": 2152,
+                "outer_scoring": 8341
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 748.0943179026362,
+                "training": 1644.4037124011666
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+                "inner_stopping": "7a19c1ce95adbb17d2d69dcb091642db7f6d272b1ac5c4775f45e59b4b62c8dc",
+                "outer_scoring": "49e36b9377f461062393b2ae1b345a90b77ad5b4dbfa8cdc473f574f10a771a0"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 0.7283279611477305,
+              "updates_per_fit_scenario": 4080
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 229,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03479000",
+              "mode": "clean",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 14621,
+                "inner_stopping": 2152,
+                "outer_scoring": 8516
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 1845.8385874247178
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+                "inner_stopping": "c6cd49a927a3f34187f468628592a7bfcd6de2eb1190d82884fc06649853de88",
+                "outer_scoring": "68e418282d1756320572c55712baf11dbf0ec4ce8bb545c8aa3433075285365f"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 0.7890409628054766,
+              "updates_per_fit_scenario": 4580
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 246,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03161000",
+              "mode": "augmented",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 15717,
+                "inner_stopping": 2152,
+                "outer_scoring": 8556
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 1742.6398900914937
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+                "inner_stopping": "22ab65fbfefb90c2a8fa7baece9bc23e82339c7091ccc7bf4841db7ba9e145dd",
+                "outer_scoring": "77a896b6d141a9914995eb8ab0587327b913b250d51ba15521d12f35a63a85fa"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 0.7603746579906923,
+              "updates_per_fit_scenario": 4920
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 204,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 131
+              },
+              "gauge_id": "03164000",
+              "mode": "augmented",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 13024,
+                "inner_stopping": 2152,
+                "outer_scoring": 8341
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 748.0943179026362,
+                "training": 1445.1783550828695
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+                "inner_stopping": "7a19c1ce95adbb17d2d69dcb091642db7f6d272b1ac5c4775f45e59b4b62c8dc",
+                "outer_scoring": "49e36b9377f461062393b2ae1b345a90b77ad5b4dbfa8cdc473f574f10a771a0"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 0.6729875841148701,
+              "updates_per_fit_scenario": 4080
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 229,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03479000",
+              "mode": "augmented",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 14621,
+                "inner_stopping": 2152,
+                "outer_scoring": 8516
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 1622.238792588003
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+                "inner_stopping": "c6cd49a927a3f34187f468628592a7bfcd6de2eb1190d82884fc06649853de88",
+                "outer_scoring": "68e418282d1756320572c55712baf11dbf0ec4ce8bb545c8aa3433075285365f"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 0.726929908684167,
+              "updates_per_fit_scenario": 4580
+            }
+          ],
+          "stage": "pilot"
+        },
+        {
+          "ancillary_ridge_fits": 3,
+          "modeled_neural_hours": 27.595267087063633,
+          "neural_fits": 18,
+          "per_gauge_and_mode": [
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 634,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 137
+              },
+              "gauge_id": "03161000",
+              "mode": "clean",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 40531,
+                "inner_stopping": 2165,
+                "outer_scoring": 8766
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 782.3581797913066,
+                "training": 5109.083562806249
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "f986edc37999ff1c3a4b711f8dfe18f658929606da10fb4bb6561fc61ef97f7e",
+                "inner_stopping": "26539c00e073f43f5d671f95d468dd17dbec753f55e6a6ab6b7aa2f0b7933cbd",
+                "outer_scoring": "58bf78e0ecdd6079c74d017e7234a878bea572593eaa24683aebd278bb68fbbc"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 5.100770310354651,
+              "updates_per_fit_scenario": 12680
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 571,
+                "inner_stopping_per_epoch": 28,
+                "outer_scoring_once": 127
+              },
+              "gauge_id": "03164000",
+              "mode": "clean",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 36500,
+                "inner_stopping": 1778,
+                "outer_scoring": 8125
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 188.1153201730922,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 725.2517433101893,
+                "training": 4601.467677746899
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "e5ac9182e6d9eae38c048d1453c8040e254324bce72499816a86e83f4b4034c3",
+                "inner_stopping": "ee5c81fb9f48f40c698b7de4c602f69172c0a737f686c42b13463425efadbc24",
+                "outer_scoring": "c8304ad4a145ae076ef91721d195463219cfc79b6b0c5bee83da3ad2c36118a8"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 4.596576354278115,
+              "updates_per_fit_scenario": 11420
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 612,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 113
+              },
+              "gauge_id": "03479000",
+              "mode": "clean",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 39148,
+                "inner_stopping": 2165,
+                "outer_scoring": 7229
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 645.3027322366252,
+                "training": 4931.8208727855235
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "c4767323730a4dd4141ac1b27ecaac5c6a81fe9c633a6594ae1bdd2e54638809",
+                "inner_stopping": "4b6037804cc263857dc088bf884ec420a600aaae3179dbfcf57672a303eefb85",
+                "outer_scoring": "df0de87a66770746710d644ea03b10734577ea295407eefe3390516224e6f419"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 4.838838529041813,
+              "updates_per_fit_scenario": 12240
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 634,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 137
+              },
+              "gauge_id": "03161000",
+              "mode": "augmented",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 40531,
+                "inner_stopping": 2165,
+                "outer_scoring": 8766
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 782.3581797913066,
+                "training": 4490.617880171165
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "f986edc37999ff1c3a4b711f8dfe18f658929606da10fb4bb6561fc61ef97f7e",
+                "inner_stopping": "26539c00e073f43f5d671f95d468dd17dbec753f55e6a6ab6b7aa2f0b7933cbd",
+                "outer_scoring": "58bf78e0ecdd6079c74d017e7234a878bea572593eaa24683aebd278bb68fbbc"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 4.5853822414920815,
+              "updates_per_fit_scenario": 12680
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 571,
+                "inner_stopping_per_epoch": 28,
+                "outer_scoring_once": 127
+              },
+              "gauge_id": "03164000",
+              "mode": "augmented",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 36500,
+                "inner_stopping": 1778,
+                "outer_scoring": 8125
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 188.1153201730922,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 725.2517433101893,
+                "training": 4044.4255776582286
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "e5ac9182e6d9eae38c048d1453c8040e254324bce72499816a86e83f4b4034c3",
+                "inner_stopping": "ee5c81fb9f48f40c698b7de4c602f69172c0a737f686c42b13463425efadbc24",
+                "outer_scoring": "c8304ad4a145ae076ef91721d195463219cfc79b6b0c5bee83da3ad2c36118a8"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 4.132374604204223,
+              "updates_per_fit_scenario": 11420
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 612,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 113
+              },
+              "gauge_id": "03479000",
+              "mode": "augmented",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 39148,
+                "inner_stopping": 2165,
+                "outer_scoring": 7229
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 228.42574592446908,
+                "old_H2_checkpoint_placeholder": 0.07526000030338764,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 645.3027322366252,
+                "training": 4334.804695166647
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "c4767323730a4dd4141ac1b27ecaac5c6a81fe9c633a6594ae1bdd2e54638809",
+                "inner_stopping": "4b6037804cc263857dc088bf884ec420a600aaae3179dbfcf57672a303eefb85",
+                "outer_scoring": "df0de87a66770746710d644ea03b10734577ea295407eefe3390516224e6f419"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 4.34132504769275,
+              "updates_per_fit_scenario": 12240
+            }
+          ],
+          "stage": "optional_confirmation"
+        }
+      ],
+      "unchanged_primary180_proxy_hours": 33.08675786300253,
+      "update_rate_scenario": "later_max_OF_THREE_LATER_SYNTHETIC_UPDATES_NOT_A_CONFIDENCE_BOUND"
+    },
+    {
+      "additional_ancillary_ridge_fits": 6,
+      "additional_neural_fits": 24,
+      "ancillary_fit_preparation_scoring_resampling_fullscale_startup_hours": null,
+      "epochs": 50,
+      "modeled_additional_neural_hours": 61.49990677765544,
+      "old_H2_proxy_additional_neural_hours": 6.236398810744629,
+      "primary_plus_additional_neural_proxy_hours": 143.9494012298258,
+      "ratio_to_old_H2_proxy": 9.861445466203648,
+      "stages": [
+        {
+          "ancillary_ridge_fits": 3,
+          "modeled_neural_hours": 8.09065465117531,
+          "neural_fits": 6,
+          "per_gauge_and_mode": [
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 246,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03161000",
+              "mode": "clean",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 15717,
+                "inner_stopping": 2152,
+                "outer_scoring": 8556
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 3857.2613884772873
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+                "inner_stopping": "22ab65fbfefb90c2a8fa7baece9bc23e82339c7091ccc7bf4841db7ba9e145dd",
+                "outer_scoring": "77a896b6d141a9914995eb8ab0587327b913b250d51ba15521d12f35a63a85fa"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 1.4429782711220678,
+              "updates_per_fit_scenario": 12300
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 204,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 131
+              },
+              "gauge_id": "03164000",
+              "mode": "clean",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 13024,
+                "inner_stopping": 2152,
+                "outer_scoring": 8341
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 748.0943179026362,
+                "training": 3198.8384994872613
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+                "inner_stopping": "7a19c1ce95adbb17d2d69dcb091642db7f6d272b1ac5c4775f45e59b4b62c8dc",
+                "outer_scoring": "49e36b9377f461062393b2ae1b345a90b77ad5b4dbfa8cdc473f574f10a771a0"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 1.2553241544736342,
+              "updates_per_fit_scenario": 10200
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 229,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03479000",
+              "mode": "clean",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 14621,
+                "inner_stopping": 2152,
+                "outer_scoring": 8516
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 3590.756885790848
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+                "inner_stopping": "c6cd49a927a3f34187f468628592a7bfcd6de2eb1190d82884fc06649853de88",
+                "outer_scoring": "68e418282d1756320572c55712baf11dbf0ec4ce8bb545c8aa3433075285365f"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 1.368949242598057,
+              "updates_per_fit_scenario": 11450
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 246,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03161000",
+              "mode": "augmented",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 15717,
+                "inner_stopping": 2152,
+                "outer_scoring": 8556
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 3800.103325243341
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+                "inner_stopping": "22ab65fbfefb90c2a8fa7baece9bc23e82339c7091ccc7bf4841db7ba9e145dd",
+                "outer_scoring": "77a896b6d141a9914995eb8ab0587327b913b250d51ba15521d12f35a63a85fa"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 1.4271010313348604,
+              "updates_per_fit_scenario": 12300
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 204,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 131
+              },
+              "gauge_id": "03164000",
+              "mode": "augmented",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 13024,
+                "inner_stopping": 2152,
+                "outer_scoring": 8341
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 748.0943179026362,
+                "training": 3151.375262751477
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+                "inner_stopping": "7a19c1ce95adbb17d2d69dcb091642db7f6d272b1ac5c4775f45e59b4b62c8dc",
+                "outer_scoring": "49e36b9377f461062393b2ae1b345a90b77ad5b4dbfa8cdc473f574f10a771a0"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 1.2421399220470273,
+              "updates_per_fit_scenario": 10200
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 229,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03479000",
+              "mode": "augmented",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 14621,
+                "inner_stopping": 2152,
+                "outer_scoring": 8516
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 3537.522918996634
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+                "inner_stopping": "c6cd49a927a3f34187f468628592a7bfcd6de2eb1190d82884fc06649853de88",
+                "outer_scoring": "68e418282d1756320572c55712baf11dbf0ec4ce8bb545c8aa3433075285365f"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 1.3541620295996641,
+              "updates_per_fit_scenario": 11450
+            }
+          ],
+          "stage": "pilot"
+        },
+        {
+          "ancillary_ridge_fits": 3,
+          "modeled_neural_hours": 53.409252126480126,
+          "neural_fits": 18,
+          "per_gauge_and_mode": [
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 634,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 137
+              },
+              "gauge_id": "03161000",
+              "mode": "clean",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 40531,
+                "inner_stopping": 2165,
+                "outer_scoring": 8766
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 782.3581797913066,
+                "training": 9939.834743908956
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "f986edc37999ff1c3a4b711f8dfe18f658929606da10fb4bb6561fc61ef97f7e",
+                "inner_stopping": "26539c00e073f43f5d671f95d468dd17dbec753f55e6a6ab6b7aa2f0b7933cbd",
+                "outer_scoring": "58bf78e0ecdd6079c74d017e7234a878bea572593eaa24683aebd278bb68fbbc"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 9.412022552012875,
+              "updates_per_fit_scenario": 31700
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 571,
+                "inner_stopping_per_epoch": 28,
+                "outer_scoring_once": 127
+              },
+              "gauge_id": "03164000",
+              "mode": "clean",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 36500,
+                "inner_stopping": 1778,
+                "outer_scoring": 8125
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 470.28830043273047,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 725.2517433101893,
+                "training": 8952.200410423917
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "e5ac9182e6d9eae38c048d1453c8040e254324bce72499816a86e83f4b4034c3",
+                "inner_stopping": "ee5c81fb9f48f40c698b7de4c602f69172c0a737f686c42b13463425efadbc24",
+                "outer_scoring": "c8304ad4a145ae076ef91721d195463219cfc79b6b0c5bee83da3ad2c36118a8"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 8.457425190059041,
+              "updates_per_fit_scenario": 28550
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 612,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 113
+              },
+              "gauge_id": "03479000",
+              "mode": "clean",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 39148,
+                "inner_stopping": 2165,
+                "outer_scoring": 7229
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 645.3027322366252,
+                "training": 9594.9465639618
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "c4767323730a4dd4141ac1b27ecaac5c6a81fe9c633a6594ae1bdd2e54638809",
+                "inner_stopping": "4b6037804cc263857dc088bf884ec420a600aaae3179dbfcf57672a303eefb85",
+                "outer_scoring": "df0de87a66770746710d644ea03b10734577ea295407eefe3390516224e6f419"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 9.010402862428009,
+              "updates_per_fit_scenario": 30600
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 634,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 137
+              },
+              "gauge_id": "03161000",
+              "mode": "augmented",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 40531,
+                "inner_stopping": 2165,
+                "outer_scoring": 8766
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 782.3581797913066,
+                "training": 9793.11495016818
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "f986edc37999ff1c3a4b711f8dfe18f658929606da10fb4bb6561fc61ef97f7e",
+                "inner_stopping": "26539c00e073f43f5d671f95d468dd17dbec753f55e6a6ab6b7aa2f0b7933cbd",
+                "outer_scoring": "58bf78e0ecdd6079c74d017e7234a878bea572593eaa24683aebd278bb68fbbc"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 9.289756057228894,
+              "updates_per_fit_scenario": 31700
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 571,
+                "inner_stopping_per_epoch": 28,
+                "outer_scoring_once": 127
+              },
+              "gauge_id": "03164000",
+              "mode": "augmented",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 36500,
+                "inner_stopping": 1778,
+                "outer_scoring": 8125
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 470.28830043273047,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 725.2517433101893,
+                "training": 8820.022856430383
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "e5ac9182e6d9eae38c048d1453c8040e254324bce72499816a86e83f4b4034c3",
+                "inner_stopping": "ee5c81fb9f48f40c698b7de4c602f69172c0a737f686c42b13463425efadbc24",
+                "outer_scoring": "c8304ad4a145ae076ef91721d195463219cfc79b6b0c5bee83da3ad2c36118a8"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 8.347277228397765,
+              "updates_per_fit_scenario": 28550
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 612,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 113
+              },
+              "gauge_id": "03479000",
+              "mode": "augmented",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 39148,
+                "inner_stopping": 2165,
+                "outer_scoring": 7229
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 645.3027322366252,
+                "training": 9453.305012672441
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "c4767323730a4dd4141ac1b27ecaac5c6a81fe9c633a6594ae1bdd2e54638809",
+                "inner_stopping": "4b6037804cc263857dc088bf884ec420a600aaae3179dbfcf57672a303eefb85",
+                "outer_scoring": "df0de87a66770746710d644ea03b10734577ea295407eefe3390516224e6f419"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 8.892368236353544,
+              "updates_per_fit_scenario": 30600
+            }
+          ],
+          "stage": "optional_confirmation"
+        }
+      ],
+      "unchanged_primary180_proxy_hours": 82.44949445217038,
+      "update_rate_scenario": "later_min_OF_THREE_LATER_SYNTHETIC_UPDATES_NOT_A_CONFIDENCE_BOUND"
+    },
+    {
+      "additional_ancillary_ridge_fits": 6,
+      "additional_neural_fits": 24,
+      "ancillary_fit_preparation_scoring_resampling_fullscale_startup_hours": null,
+      "epochs": 50,
+      "modeled_additional_neural_hours": 66.44810346129427,
+      "old_H2_proxy_additional_neural_hours": 6.236398810744629,
+      "primary_plus_additional_neural_proxy_hours": 148.89759791346466,
+      "ratio_to_old_H2_proxy": 10.654883607958409,
+      "stages": [
+        {
+          "ancillary_ridge_fits": 3,
+          "modeled_neural_hours": 8.638723198131432,
+          "neural_fits": 6,
+          "per_gauge_and_mode": [
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 246,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03161000",
+              "mode": "clean",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 15717,
+                "inner_stopping": 2152,
+                "outer_scoring": 8556
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 4385.242933374791
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+                "inner_stopping": "22ab65fbfefb90c2a8fa7baece9bc23e82339c7091ccc7bf4841db7ba9e145dd",
+                "outer_scoring": "77a896b6d141a9914995eb8ab0587327b913b250d51ba15521d12f35a63a85fa"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 1.5896398113713746,
+              "updates_per_fit_scenario": 12300
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 204,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 131
+              },
+              "gauge_id": "03164000",
+              "mode": "clean",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 13024,
+                "inner_stopping": 2152,
+                "outer_scoring": 8341
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 748.0943179026362,
+                "training": 3636.669524481947
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+                "inner_stopping": "7a19c1ce95adbb17d2d69dcb091642db7f6d272b1ac5c4775f45e59b4b62c8dc",
+                "outer_scoring": "49e36b9377f461062393b2ae1b345a90b77ad5b4dbfa8cdc473f574f10a771a0"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 1.3769438836388248,
+              "updates_per_fit_scenario": 10200
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 229,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03479000",
+              "mode": "clean",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 14621,
+                "inner_stopping": 2152,
+                "outer_scoring": 8516
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 4082.2489345372114
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+                "inner_stopping": "c6cd49a927a3f34187f468628592a7bfcd6de2eb1190d82884fc06649853de88",
+                "outer_scoring": "68e418282d1756320572c55712baf11dbf0ec4ce8bb545c8aa3433075285365f"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 1.5054748116942689,
+              "updates_per_fit_scenario": 11450
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 246,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03161000",
+              "mode": "augmented",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 15717,
+                "inner_stopping": 2152,
+                "outer_scoring": 8556
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 3986.9567352004037
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+                "inner_stopping": "22ab65fbfefb90c2a8fa7baece9bc23e82339c7091ccc7bf4841db7ba9e145dd",
+                "outer_scoring": "77a896b6d141a9914995eb8ab0587327b913b250d51ba15521d12f35a63a85fa"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 1.4790047563229336,
+              "updates_per_fit_scenario": 12300
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 204,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 131
+              },
+              "gauge_id": "03164000",
+              "mode": "augmented",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 13024,
+                "inner_stopping": 2152,
+                "outer_scoring": 8341
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 748.0943179026362,
+                "training": 3306.3242771552564
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+                "inner_stopping": "7a19c1ce95adbb17d2d69dcb091642db7f6d272b1ac5c4775f45e59b4b62c8dc",
+                "outer_scoring": "49e36b9377f461062393b2ae1b345a90b77ad5b4dbfa8cdc473f574f10a771a0"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 1.2851813149369662,
+              "updates_per_fit_scenario": 10200
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 229,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03479000",
+              "mode": "augmented",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 14621,
+                "inner_stopping": 2152,
+                "outer_scoring": 8516
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 3711.4626450392725
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+                "inner_stopping": "c6cd49a927a3f34187f468628592a7bfcd6de2eb1190d82884fc06649853de88",
+                "outer_scoring": "68e418282d1756320572c55712baf11dbf0ec4ce8bb545c8aa3433075285365f"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 1.4024786201670638,
+              "updates_per_fit_scenario": 11450
+            }
+          ],
+          "stage": "pilot"
+        },
+        {
+          "ancillary_ridge_fits": 3,
+          "modeled_neural_hours": 57.809380263162836,
+          "neural_fits": 18,
+          "per_gauge_and_mode": [
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 634,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 137
+              },
+              "gauge_id": "03161000",
+              "mode": "clean",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 40531,
+                "inner_stopping": 2165,
+                "outer_scoring": 8766
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 782.3581797913066,
+                "training": 11300.635377432493
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "f986edc37999ff1c3a4b711f8dfe18f658929606da10fb4bb6561fc61ef97f7e",
+                "inner_stopping": "26539c00e073f43f5d671f95d468dd17dbec753f55e6a6ab6b7aa2f0b7933cbd",
+                "outer_scoring": "58bf78e0ecdd6079c74d017e7234a878bea572593eaa24683aebd278bb68fbbc"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 10.546023079949155,
+              "updates_per_fit_scenario": 31700
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 571,
+                "inner_stopping_per_epoch": 28,
+                "outer_scoring_once": 127
+              },
+              "gauge_id": "03164000",
+              "mode": "clean",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 36500,
+                "inner_stopping": 1778,
+                "outer_scoring": 8125
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 470.28830043273047,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 725.2517433101893,
+                "training": 10177.775264093227
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "e5ac9182e6d9eae38c048d1453c8040e254324bce72499816a86e83f4b4034c3",
+                "inner_stopping": "ee5c81fb9f48f40c698b7de4c602f69172c0a737f686c42b13463425efadbc24",
+                "outer_scoring": "c8304ad4a145ae076ef91721d195463219cfc79b6b0c5bee83da3ad2c36118a8"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 9.4787375681168,
+              "updates_per_fit_scenario": 28550
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 612,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 113
+              },
+              "gauge_id": "03479000",
+              "mode": "clean",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 39148,
+                "inner_stopping": 2165,
+                "outer_scoring": 7229
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 645.3027322366252,
+                "training": 10908.52549658386
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "c4767323730a4dd4141ac1b27ecaac5c6a81fe9c633a6594ae1bdd2e54638809",
+                "inner_stopping": "4b6037804cc263857dc088bf884ec420a600aaae3179dbfcf57672a303eefb85",
+                "outer_scoring": "df0de87a66770746710d644ea03b10734577ea295407eefe3390516224e6f419"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 10.105051972946393,
+              "updates_per_fit_scenario": 30600
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 634,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 137
+              },
+              "gauge_id": "03161000",
+              "mode": "augmented",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 40531,
+                "inner_stopping": 2165,
+                "outer_scoring": 8766
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 782.3581797913066,
+                "training": 10274.704204760335
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "f986edc37999ff1c3a4b711f8dfe18f658929606da10fb4bb6561fc61ef97f7e",
+                "inner_stopping": "26539c00e073f43f5d671f95d468dd17dbec753f55e6a6ab6b7aa2f0b7933cbd",
+                "outer_scoring": "58bf78e0ecdd6079c74d017e7234a878bea572593eaa24683aebd278bb68fbbc"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 9.69108043605569,
+              "updates_per_fit_scenario": 31700
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 571,
+                "inner_stopping_per_epoch": 28,
+                "outer_scoring_once": 127
+              },
+              "gauge_id": "03164000",
+              "mode": "augmented",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 36500,
+                "inner_stopping": 1778,
+                "outer_scoring": 8125
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 470.28830043273047,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 725.2517433101893,
+                "training": 9253.755517692614
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "e5ac9182e6d9eae38c048d1453c8040e254324bce72499816a86e83f4b4034c3",
+                "inner_stopping": "ee5c81fb9f48f40c698b7de4c602f69172c0a737f686c42b13463425efadbc24",
+                "outer_scoring": "c8304ad4a145ae076ef91721d195463219cfc79b6b0c5bee83da3ad2c36118a8"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 8.708721112782957,
+              "updates_per_fit_scenario": 28550
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 612,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 113
+              },
+              "gauge_id": "03479000",
+              "mode": "augmented",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 39148,
+                "inner_stopping": 2165,
+                "outer_scoring": 7229
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 645.3027322366252,
+                "training": 9918.182441022402
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "c4767323730a4dd4141ac1b27ecaac5c6a81fe9c633a6594ae1bdd2e54638809",
+                "inner_stopping": "4b6037804cc263857dc088bf884ec420a600aaae3179dbfcf57672a303eefb85",
+                "outer_scoring": "df0de87a66770746710d644ea03b10734577ea295407eefe3390516224e6f419"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 9.279766093311844,
+              "updates_per_fit_scenario": 30600
+            }
+          ],
+          "stage": "optional_confirmation"
+        }
+      ],
+      "unchanged_primary180_proxy_hours": 82.44949445217038,
+      "update_rate_scenario": "later_mean_OF_THREE_LATER_SYNTHETIC_UPDATES_NOT_A_CONFIDENCE_BOUND"
+    },
+    {
+      "additional_ancillary_ridge_fits": 6,
+      "additional_neural_fits": 24,
+      "ancillary_fit_preparation_scoring_resampling_fullscale_startup_hours": null,
+      "epochs": 50,
+      "modeled_additional_neural_hours": 72.95385635922197,
+      "old_H2_proxy_additional_neural_hours": 6.236398810744629,
+      "primary_plus_additional_neural_proxy_hours": 155.40335081139236,
+      "ratio_to_old_H2_proxy": 11.6980742529696,
+      "stages": [
+        {
+          "ancillary_ridge_fits": 3,
+          "modeled_neural_hours": 9.359308648869964,
+          "neural_fits": 6,
+          "per_gauge_and_mode": [
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 246,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03161000",
+              "mode": "clean",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 15717,
+                "inner_stopping": 2152,
+                "outer_scoring": 8556
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 4955.99305778835
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+                "inner_stopping": "22ab65fbfefb90c2a8fa7baece9bc23e82339c7091ccc7bf4841db7ba9e145dd",
+                "outer_scoring": "77a896b6d141a9914995eb8ab0587327b913b250d51ba15521d12f35a63a85fa"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 1.748181512597363,
+              "updates_per_fit_scenario": 12300
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 204,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 131
+              },
+              "gauge_id": "03164000",
+              "mode": "clean",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 13024,
+                "inner_stopping": 2152,
+                "outer_scoring": 8341
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 748.0943179026362,
+                "training": 4109.966582689434
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+                "inner_stopping": "7a19c1ce95adbb17d2d69dcb091642db7f6d272b1ac5c4775f45e59b4b62c8dc",
+                "outer_scoring": "49e36b9377f461062393b2ae1b345a90b77ad5b4dbfa8cdc473f574f10a771a0"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 1.50841528869646,
+              "updates_per_fit_scenario": 10200
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 229,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03479000",
+              "mode": "clean",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 14621,
+                "inner_stopping": 2152,
+                "outer_scoring": 8516
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 4613.5537702483125
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+                "inner_stopping": "c6cd49a927a3f34187f468628592a7bfcd6de2eb1190d82884fc06649853de88",
+                "outer_scoring": "68e418282d1756320572c55712baf11dbf0ec4ce8bb545c8aa3433075285365f"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 1.653059488280686,
+              "updates_per_fit_scenario": 11450
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 246,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03161000",
+              "mode": "augmented",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 15717,
+                "inner_stopping": 2152,
+                "outer_scoring": 8556
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 4356.051947667263
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+                "inner_stopping": "22ab65fbfefb90c2a8fa7baece9bc23e82339c7091ccc7bf4841db7ba9e145dd",
+                "outer_scoring": "77a896b6d141a9914995eb8ab0587327b913b250d51ba15521d12f35a63a85fa"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 1.5815312042303946,
+              "updates_per_fit_scenario": 12300
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 204,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 131
+              },
+              "gauge_id": "03164000",
+              "mode": "augmented",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 13024,
+                "inner_stopping": 2152,
+                "outer_scoring": 8341
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 748.0943179026362,
+                "training": 3612.398110145703
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+                "inner_stopping": "7a19c1ce95adbb17d2d69dcb091642db7f6d272b1ac5c4775f45e59b4b62c8dc",
+                "outer_scoring": "49e36b9377f461062393b2ae1b345a90b77ad5b4dbfa8cdc473f574f10a771a0"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 1.370201824100979,
+              "updates_per_fit_scenario": 10200
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 229,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03479000",
+              "mode": "augmented",
+              "neural_fits": 1,
+              "original_common_cases": {
+                "gradient_fit": 14621,
+                "inner_stopping": 2152,
+                "outer_scoring": 8516
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 765.2262488469714,
+                "training": 4055.0492039085366
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+                "inner_stopping": "c6cd49a927a3f34187f468628592a7bfcd6de2eb1190d82884fc06649853de88",
+                "outer_scoring": "68e418282d1756320572c55712baf11dbf0ec4ce8bb545c8aa3433075285365f"
+              },
+              "seeds": [
+                17
+              ],
+              "total_hours": 1.4979193309640815,
+              "updates_per_fit_scenario": 11450
+            }
+          ],
+          "stage": "pilot"
+        },
+        {
+          "ancillary_ridge_fits": 3,
+          "modeled_neural_hours": 63.594547710352,
+          "neural_fits": 18,
+          "per_gauge_and_mode": [
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 634,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 137
+              },
+              "gauge_id": "03161000",
+              "mode": "clean",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 40531,
+                "inner_stopping": 2165,
+                "outer_scoring": 8766
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 782.3581797913066,
+                "training": 12771.66620870214
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "f986edc37999ff1c3a4b711f8dfe18f658929606da10fb4bb6561fc61ef97f7e",
+                "inner_stopping": "26539c00e073f43f5d671f95d468dd17dbec753f55e6a6ab6b7aa2f0b7933cbd",
+                "outer_scoring": "58bf78e0ecdd6079c74d017e7234a878bea572593eaa24683aebd278bb68fbbc"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 11.771882106007196,
+              "updates_per_fit_scenario": 31700
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 571,
+                "inner_stopping_per_epoch": 28,
+                "outer_scoring_once": 127
+              },
+              "gauge_id": "03164000",
+              "mode": "clean",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 36500,
+                "inner_stopping": 1778,
+                "outer_scoring": 8125
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 470.28830043273047,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 725.2517433101893,
+                "training": 11502.626496053766
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "e5ac9182e6d9eae38c048d1453c8040e254324bce72499816a86e83f4b4034c3",
+                "inner_stopping": "ee5c81fb9f48f40c698b7de4c602f69172c0a737f686c42b13463425efadbc24",
+                "outer_scoring": "c8304ad4a145ae076ef91721d195463219cfc79b6b0c5bee83da3ad2c36118a8"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 10.58278026141725,
+              "updates_per_fit_scenario": 28550
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 612,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 113
+              },
+              "gauge_id": "03479000",
+              "mode": "clean",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 39148,
+                "inner_stopping": 2165,
+                "outer_scoring": 7229
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 645.3027322366252,
+                "training": 12328.509483650327
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "c4767323730a4dd4141ac1b27ecaac5c6a81fe9c633a6594ae1bdd2e54638809",
+                "inner_stopping": "4b6037804cc263857dc088bf884ec420a600aaae3179dbfcf57672a303eefb85",
+                "outer_scoring": "df0de87a66770746710d644ea03b10734577ea295407eefe3390516224e6f419"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 11.28837196216845,
+              "updates_per_fit_scenario": 30600
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 634,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 137
+              },
+              "gauge_id": "03161000",
+              "mode": "augmented",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 40531,
+                "inner_stopping": 2165,
+                "outer_scoring": 8766
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 782.3581797913066,
+                "training": 11225.996922866441
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "f986edc37999ff1c3a4b711f8dfe18f658929606da10fb4bb6561fc61ef97f7e",
+                "inner_stopping": "26539c00e073f43f5d671f95d468dd17dbec753f55e6a6ab6b7aa2f0b7933cbd",
+                "outer_scoring": "58bf78e0ecdd6079c74d017e7234a878bea572593eaa24683aebd278bb68fbbc"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 10.48382436781078,
+              "updates_per_fit_scenario": 31700
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 571,
+                "inner_stopping_per_epoch": 28,
+                "outer_scoring_once": 127
+              },
+              "gauge_id": "03164000",
+              "mode": "augmented",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 36500,
+                "inner_stopping": 1778,
+                "outer_scoring": 8125
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 470.28830043273047,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 725.2517433101893,
+                "training": 10110.5161665841
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "e5ac9182e6d9eae38c048d1453c8040e254324bce72499816a86e83f4b4034c3",
+                "inner_stopping": "ee5c81fb9f48f40c698b7de4c602f69172c0a737f686c42b13463425efadbc24",
+                "outer_scoring": "c8304ad4a145ae076ef91721d195463219cfc79b6b0c5bee83da3ad2c36118a8"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 9.42268832019253,
+              "updates_per_fit_scenario": 28550
+            },
+            {
+              "batches": {
+                "gradient_fit_per_epoch": 612,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 113
+              },
+              "gauge_id": "03479000",
+              "mode": "augmented",
+              "neural_fits": 3,
+              "original_common_cases": {
+                "gradient_fit": 39148,
+                "inner_stopping": 2165,
+                "outer_scoring": 7229
+              },
+              "per_fit_seconds": {
+                "clean_inner_proxy": 571.0643648111727,
+                "old_H2_checkpoint_placeholder": 0.1881500007584691,
+                "old_H2_startup_placeholder": 0.9816239032545127,
+                "seventeen_requested_outer_passes_proxy": 645.3027322366252,
+                "training": 10836.463960355148
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "c4767323730a4dd4141ac1b27ecaac5c6a81fe9c633a6594ae1bdd2e54638809",
+                "inner_stopping": "4b6037804cc263857dc088bf884ec420a600aaae3179dbfcf57672a303eefb85",
+                "outer_scoring": "df0de87a66770746710d644ea03b10734577ea295407eefe3390516224e6f419"
+              },
+              "seeds": [
+                17,
+                29,
+                43
+              ],
+              "total_hours": 10.045000692755801,
+              "updates_per_fit_scenario": 30600
+            }
+          ],
+          "stage": "optional_confirmation"
+        }
+      ],
+      "unchanged_primary180_proxy_hours": 82.44949445217038,
+      "update_rate_scenario": "later_max_OF_THREE_LATER_SYNTHETIC_UPDATES_NOT_A_CONFIDENCE_BOUND"
+    }
+  ],
+  "created_at_utc": "2026-11-03T04:42:52.417737+00:00",
+  "descriptive_attribution": {
+    "clean_adapter_over_full_predictor": 0.25671567070315876,
+    "finding": "REPEATED_PROVENANCE_NORMALIZATION_HASHING_DOMINATES_OBSERVED_FORWARD_PATH;H4_MODEL_ONLY_FORWARD_IS_NEAR_OLD_H2_RATE",
+    "full_provenance_digest_over_full_predictor": 0.6293303039455812,
+    "interpretation": "SEPARATELY_TIMED_STAGES_NOT_DISJOINT_TRACE_OR_PROVEN_CAUSAL_SPEEDUP;NO_TRAINING_KERNEL_FRACTION_MEASURED",
+    "later_H4_model_forward_over_old_H2_inference_rate": 1.0255404659238136,
+    "model_only_forward_over_full_predictor": 0.0442887409011962
+  },
+  "execution": {
+    "existing_synthetic_qualification_updates_reused_as_evidence": 16,
+    "new_backward_calls": 0,
+    "new_cloud_jobs": 0,
+    "new_network_requests": 0,
+    "new_optimizer_updates": 0,
+    "new_ridge_fits": 0,
+    "new_scientific_fits": 0,
+    "new_study_source_arrays_read": 0,
+    "profile_adapter_direct_timed_stage_calls": 40,
+    "profile_adapter_nested_full_predictor_calls": 20,
+    "profile_additional_untimed_outer_adapter_calls": 1,
+    "profile_model_forward_calls": 40,
+    "profile_total_adapter_calls_including_nested_and_setup": 61
+  },
+  "formula": {
+    "clean_inner_per_fit": "epochs*ceil(inner_cases/64)*profile_full_clean_predictor_mean; surrogate, not measured inner-loss loop",
+    "constants": "Retain oldH2 startup and per-epoch checkpoint placeholders separately; fullscaleH4 constructor/checkpoint cost unmeasured",
+    "fit_repetition": "Pilot one seed per mode per gauge; optional confirmation three seeds per mode per gauge",
+    "requested_outer_per_fit": "17*ceil(outer_cases/64)*profile_full_clean_predictor_mean; request opportunities, not guaranteed admissible predictions",
+    "training_per_fit": "first_observed_update + (epochs*ceil(gradient_cases/64)-1)*chosen_later_update_rate"
+  },
+  "input_sha256": {
+    "reports/confirmed-180-fit-admitted-runtime.json": "9a8b5526b0956125aecc2ebca9a29d20e90e6b262c136225505cde18cd92b2ec",
+    "reports/coverage-sensitivity-resource-proposal.json": "4cc6893c8c1f1b5c3f2e7461628bc0f819fc091c3d303acb66aa954c8a4295d2",
+    "reports/gap-pilot-preparation-profile.json": "2d219c8b43b5e5a5c4d65c7b1599dc2c1818b8b603ab3fe64ffa59b2a0b15233",
+    "reports/gap-pilot-qualification-v1.json": "bb2177440727b581648281fa8abd48000b2d1ffd46cd7b455e685cb68d51ee70",
+    "scripts/profile_gap_pilot.py": "3aaed7dff05df16fa7199a98acfe7194e0ed492aebad3ffe479a82969af63de2"
+  },
+  "limitations": [
+    "Four measured updates per arm on128 synthetic fit cases; only three later samples. First/later variation is reported, not confidence bounds or convergence evidence.",
+    "The profile repeatedly uses one64-case synthetic batch in one process. Full source/provenance scale and long-run thermal or storage behavior are unqualified.",
+    "No new backward or optimizer run isolates current H4 training-kernel cost; comparing old H2 kernel timing with H4 total update is not a model or GPU speed comparison.",
+    "Profile full prediction is used as a clean-inner proxy even though clean-inner additionally transforms labels/computes loss and has a different wrapper. Its error is unmeasured.",
+    "Qualification training timings include durable status serialization/writes around AdamW.step; profiling does not isolate that cost.",
+    "17requested scenario passes include mixed_recent_ridge, which correctly rejected the64-case synthetic batch with56admissible/8inadmissible. A complete17-pass scored panel is not qualified.",
+    "Ancillary ridge fits, fill construction on new cohorts, scoring/bootstrap, fullscale constructor/provenance memory, checkpoint growth and failures are not timed by these projections.",
+    "Small-profile augmented adapter being faster than clean is not evidence augmentation improves runtime; stage order/warmup and different masks are not controlled for such a claim.",
+    "The old proposal remains unchanged historical evidence; these estimates concern only the optional H4 sensitivity, not the primary180 fit scope or a cloud funding release."
+  ],
+  "measured_H4_update_rates": {
+    "augmented": {
+      "first_update_seconds": 0.7193059159908444,
+      "later_max_seconds": 0.3541208750102669,
+      "later_mean_over_old_H2_train_rate": 9.391803041923248,
+      "later_mean_seconds": 0.324110694307213,
+      "later_median_seconds": 0.3092930829152465,
+      "later_min_seconds": 0.3089181249961257,
+      "later_sample_count": 3,
+      "observed_total_update_seconds": [
+        0.7193059159908444,
+        0.3089181249961257,
+        0.3092930829152465,
+        0.3541208750102669
+      ]
+    },
+    "clean": {
+      "first_update_seconds": 1.098001959035173,
+      "later_max_seconds": 0.40286975004710257,
+      "later_mean_over_old_H2_train_rate": 10.329295841892288,
+      "later_mean_seconds": 0.3564635280442114,
+      "later_median_seconds": 0.352986125042662,
+      "later_min_seconds": 0.3135347090428695,
+      "later_sample_count": 3,
+      "observed_total_update_seconds": [
+        1.098001959035173,
+        0.352986125042662,
+        0.3135347090428695,
+        0.40286975004710257
+      ]
+    }
+  },
+  "old_H2_proxy": {
+    "inference_batch_seconds": 0.013783568708458916,
+    "measurement_case_id": "cpu-LSTM-B64",
+    "scope": "PREMAPPED_TENSORIZED_REAL_ENGINEERING_BATCHES_AFTER_FIVE_WARMUPS;TRAIN_INCLUDES_COPY_PLUS_MODEL_UPDATE;NO_PERBATCH_FULL_PROVENANCE_SERIALIZATION",
+    "stopping_batch_seconds": 0.014136868715286254,
+    "train_batch_seconds": 0.03450995435705408
+  },
+  "primary_scope_changed": false,
+  "profile": {
+    "elapsed_seconds": 16.243193916976452,
+    "full_clean_predictor_seconds": 0.3359202145948075,
+    "later_model_only_forward_seconds": 0.014135607475365856,
+    "mean_stage_seconds": {
+      "augmented_adapter": 0.07689996029366739,
+      "clean_adapter": 0.08623598319245503,
+      "full_clean_predictor": 0.3359202145948075,
+      "model_only_forward": 0.014877483347663655,
+      "provenance_json_digest": 0.21140477075241507
+    },
+    "observed_peak_process_rss_bytes": 300433408,
+    "optimizer_updates_added": 0,
+    "qualification_ledger_unchanged": true,
+    "timed_calls_per_stage": 20
+  },
+  "qualified_checkpoint_sha256": "afc06e9733785bddfb1c28f0e698b20a8133831250e5ddc60d3ad16a642ac6e6",
+  "recommendations": [
+    {
+      "action": "Address repeated immutable provenance encoding before considering a GPU for this pilot",
+      "candidates": [
+        "Validate/hash original source metadata once per immutable source/cohort, retaining exact policy/source identities",
+        "Cache clean H4 transformed inputs and clean-inner batches by source/transform/schema identity",
+        "Precompute deterministic case/epoch masks and compact endpoint/fill receipts; preserve masks/age/causality and per-step trace bindings",
+        "Replace repeated full nested provenance normalization with verified shared metadata plus compact per-batch identity hashes"
+      ],
+      "priority": 1,
+      "scope": "RECOMMENDATION_ONLY_NO_OPTIMIZATION_IMPLEMENTED"
+    },
+    {
+      "action": "Measure constructor memory/time at a representative bounded synthetic cohort before real-data pilot fitting",
+      "priority": 2,
+      "reason": "Current qualification source has192cases; proposedCV1 gauge fit cohorts contain13024\u201315717gradient cases plus2152inner cases and explicit slot provenance",
+      "scope": "NEW_BOUNDED_QUALIFICATION_SCOPE_NEEDED"
+    },
+    {
+      "action": "After any implementation change, requalify exact checkpoint replay, source/mask identity and best label-free inference before new timing or fits",
+      "priority": 3,
+      "scope": "NO_EXTRA_OPTIMIZER_ALLOWANCE_CREATED"
+    },
+    {
+      "action": "Keep paid cloud jobs held; current evidence identifies CPU preparation overhead and supplies no cloud price or CUDA throughput",
+      "priority": 4,
+      "scope": "EXISTING150USD_CEILING_UNCHANGED"
+    }
+  ],
+  "schema": "hydra-gap-pilot-runtime-reassessment/v1",
+  "scientific_pilot_ancillary_fits_authorized": 0,
+  "scientific_pilot_neural_fits_authorized": 0,
+  "status": "LIMITED_SYNTHETIC_H4_TIMING_REASSESSMENT_NOT_STABLE_BENCHMARK_OR_EXECUTION_AUTHORITY",
+  "strict_primary_scope_fits": 180
+}
