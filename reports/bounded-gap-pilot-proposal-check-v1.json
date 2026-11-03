@@ -1,0 +1,25 @@
+{
+  "checks": [
+    "All fit, assessment, cloud and protocol-adoption gates remain closed",
+    "Exact six-fit roster and67900 update cap reconcile",
+    "Three concrete gradient-only recipes match source census, loaded identities and existing adapter contract",
+    "Inference, wall/memory and conditional artifact-budget arithmetic reconcile",
+    "Every referenced public evidence hash matches"
+  ],
+  "created_at_utc": "2026-11-03T17:11:48.567164+00:00",
+  "evidence_artifacts_checked": [
+    "reports/confirmed-180-fit-admitted-runtime.json",
+    "reports/gap-pilot-artifact-size-proposal-v1.json",
+    "reports/gap-pilot-real-assembly-v1.json",
+    "reports/gap-pilot-real-loader-qualification-v1.json"
+  ],
+  "new_model_scaler_fits": 0,
+  "optimizer_updates": 0,
+  "proposal_sha256": "675255e10d8385b594dbd1be7e4e36cca95dcad5499c9c17bf8e2f1fc887721f",
+  "protected_assessment_access": false,
+  "protocol_doc_sha256": "7c43f63c47ef3ef223f1e01b84d53f48751addb01419dab7ff02f21279ef12c3",
+  "schema": "hydra-bounded-pilot-proposal-check/v1",
+  "scientific_execution_authorized": false,
+  "source_numeric_reads": 0,
+  "status": "PASSED_PROPOSAL_CONSISTENCY_NOT_EXECUTION_RELEASE"
+}

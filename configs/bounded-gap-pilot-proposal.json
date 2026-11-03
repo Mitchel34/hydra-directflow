@@ -1,0 +1,906 @@
+{
+  "schema": "hydra-bounded-gap-pilot-proposal/v1",
+  "status": "PROPOSED_FOR_REVIEW_NOT_APPROVED_NOT_EXECUTABLE",
+  "created_at_utc": "2026-11-03T16:52:36.932885+00:00",
+  "review_baseline_commit": "043ac2f",
+  "protocol_document": "docs/bounded-gap-pilot-protocol.md",
+  "authorization": {
+    "scientific_neural_fits_authorized": 0,
+    "scientific_ridge_fits_authorized": 0,
+    "scientific_scaler_fits_authorized": 0,
+    "protected_assessment_authorized": false,
+    "paid_cloud_execution_authorized": false,
+    "primary_180_fit_scope_changed": false,
+    "optional_18_fit_confirmation_authorized": false,
+    "protocol_frozen": false,
+    "future_user_release_can_be_conditional_on_engineering_gates": true
+  },
+  "scope": {
+    "fold": "cv_1",
+    "gauges": [
+      "03161000",
+      "03164000",
+      "03479000"
+    ],
+    "neural_fits_proposed": 6,
+    "ridge_fits_proposed": 3,
+    "extra_H2_fits": 0,
+    "neural_seeds": [
+      17
+    ],
+    "architecture": "LSTM",
+    "history_schema": "PILOT_HRRR_H4_W4_S2_V1",
+    "history_hours": 168,
+    "horizons_hours": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "device": "cpu",
+    "torch_threads": 1,
+    "batch_size": 64,
+    "width": 64,
+    "dtype": "float32",
+    "dropout": 0.1,
+    "reported_trainable_parameters": 68161,
+    "arms": [
+      "clean",
+      "augmented"
+    ],
+    "prediction_clipping": false
+  },
+  "clocks": {
+    "origin_is_cutoff": true,
+    "history_end_offset_hours": -2,
+    "history_start_offset_hours": -169,
+    "simulated_input_delay_hours": 2,
+    "simulated_label_refit_delay_hours": 2,
+    "refit_at_utc": "2020-07-31T00:00:00Z",
+    "historical_publication_vintage_proven": false,
+    "actual_artifact_timestamps_separate": true
+  },
+  "roles": {
+    "gradient_fit": {
+      "calendar_origins": 15798,
+      "end_exclusive_utc": "2020-05-01T00:00:00Z",
+      "last_origin_utc": "2020-04-30T05:00:00Z",
+      "latest_target_utc": "2020-04-30T23:00:00Z",
+      "purged_origins": 18,
+      "refit_at_utc": "2020-07-31T00:00:00Z",
+      "simulated_label_delay_hours": 2,
+      "start_utc": "2018-07-12T00:00:00Z"
+    },
+    "inner_stopping": {
+      "calendar_origins": 2165,
+      "end_exclusive_utc": "2020-07-31T00:00:00Z",
+      "last_origin_utc": "2020-07-30T04:00:00Z",
+      "latest_target_utc": "2020-07-30T22:00:00Z",
+      "purged_origins": 19,
+      "refit_at_utc": "2020-07-31T00:00:00Z",
+      "simulated_label_delay_hours": 2,
+      "start_utc": "2020-05-01T00:00:00Z"
+    },
+    "outer_scoring": {
+      "calendar_origins": 8742,
+      "end_exclusive_utc": "2021-07-31T00:00:00Z",
+      "last_origin_utc": "2021-07-30T05:00:00Z",
+      "latest_target_utc": "2021-07-30T23:00:00Z",
+      "purged_origins": 18,
+      "refit_at_utc": null,
+      "simulated_label_delay_hours": 2,
+      "start_utc": "2020-07-31T00:00:00Z"
+    }
+  },
+  "cohort_authority": {
+    "artifact": "reports/confirmed-180-fit-admitted-runtime.json",
+    "sha256": "9a8b5526b0956125aecc2ebca9a29d20e90e6b262c136225505cde18cd92b2ec",
+    "selector": {
+      "epochs": 20,
+      "simulated_label_delay_hours": 2,
+      "fold": "cv_1",
+      "architecture": "LSTM",
+      "input_arm": "full",
+      "history_hours": 168
+    },
+    "count_record_epochs_do_not_set_fit_epoch_cap": true,
+    "expected_development_snapshot_sha256": "b41630b7df9a216874eb4ba38a10176d4b72092bd6f1ce2ad4c4f369db56948c"
+  },
+  "per_gauge_cohorts": [
+    {
+      "gauge_id": "03161000",
+      "expected_common_case_counts": {
+        "gradient_fit": 15717,
+        "inner_stopping": 2152,
+        "outer_scoring": 8556
+      },
+      "role_case_ids_sha256": {
+        "gradient_fit": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+        "inner_stopping": "22ab65fbfefb90c2a8fa7baece9bc23e82339c7091ccc7bf4841db7ba9e145dd",
+        "outer_scoring": "77a896b6d141a9914995eb8ab0587327b913b250d51ba15521d12f35a63a85fa"
+      },
+      "training_source_fit_plus_inner_rows": 17869,
+      "batches_at_B64": {
+        "gradient_fit_per_epoch": 246,
+        "inner_stopping_per_epoch": 34,
+        "outer_scoring_once": 134
+      },
+      "max_updates_each_neural_fit": 12300
+    },
+    {
+      "gauge_id": "03164000",
+      "expected_common_case_counts": {
+        "gradient_fit": 13024,
+        "inner_stopping": 2152,
+        "outer_scoring": 8341
+      },
+      "role_case_ids_sha256": {
+        "gradient_fit": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+        "inner_stopping": "7a19c1ce95adbb17d2d69dcb091642db7f6d272b1ac5c4775f45e59b4b62c8dc",
+        "outer_scoring": "49e36b9377f461062393b2ae1b345a90b77ad5b4dbfa8cdc473f574f10a771a0"
+      },
+      "training_source_fit_plus_inner_rows": 15176,
+      "batches_at_B64": {
+        "gradient_fit_per_epoch": 204,
+        "inner_stopping_per_epoch": 34,
+        "outer_scoring_once": 131
+      },
+      "max_updates_each_neural_fit": 10200
+    },
+    {
+      "gauge_id": "03479000",
+      "expected_common_case_counts": {
+        "gradient_fit": 14621,
+        "inner_stopping": 2152,
+        "outer_scoring": 8516
+      },
+      "role_case_ids_sha256": {
+        "gradient_fit": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+        "inner_stopping": "c6cd49a927a3f34187f468628592a7bfcd6de2eb1190d82884fc06649853de88",
+        "outer_scoring": "68e418282d1756320572c55712baf11dbf0ec4ce8bb545c8aa3433075285365f"
+      },
+      "training_source_fit_plus_inner_rows": 16773,
+      "batches_at_B64": {
+        "gradient_fit_per_epoch": 229,
+        "inner_stopping_per_epoch": 34,
+        "outer_scoring_once": 134
+      },
+      "max_updates_each_neural_fit": 11450
+    }
+  ],
+  "neural_fit_roster": [
+    {
+      "fit_id": "CV1-03161000-LSTM-H4-clean-seed17",
+      "gauge_id": "03161000",
+      "arm": "clean",
+      "neural_seed": 17,
+      "max_epochs": 50,
+      "max_entered_optimizer_updates": 12300
+    },
+    {
+      "fit_id": "CV1-03161000-LSTM-H4-augmented-seed17",
+      "gauge_id": "03161000",
+      "arm": "augmented",
+      "neural_seed": 17,
+      "max_epochs": 50,
+      "max_entered_optimizer_updates": 12300
+    },
+    {
+      "fit_id": "CV1-03164000-LSTM-H4-clean-seed17",
+      "gauge_id": "03164000",
+      "arm": "clean",
+      "neural_seed": 17,
+      "max_epochs": 50,
+      "max_entered_optimizer_updates": 10200
+    },
+    {
+      "fit_id": "CV1-03164000-LSTM-H4-augmented-seed17",
+      "gauge_id": "03164000",
+      "arm": "augmented",
+      "neural_seed": 17,
+      "max_epochs": 50,
+      "max_entered_optimizer_updates": 10200
+    },
+    {
+      "fit_id": "CV1-03479000-LSTM-H4-clean-seed17",
+      "gauge_id": "03479000",
+      "arm": "clean",
+      "neural_seed": 17,
+      "max_epochs": 50,
+      "max_entered_optimizer_updates": 11450
+    },
+    {
+      "fit_id": "CV1-03479000-LSTM-H4-augmented-seed17",
+      "gauge_id": "03479000",
+      "arm": "augmented",
+      "neural_seed": 17,
+      "max_epochs": 50,
+      "max_entered_optimizer_updates": 11450
+    }
+  ],
+  "ridge": {
+    "fits_proposed": 3,
+    "one_per_gauge": true,
+    "shared_between_arms": true,
+    "alpha": 1.0,
+    "real_input_lags": 6,
+    "direct_output_hours": [
+      1,
+      2
+    ],
+    "unpenalized_intercept": true,
+    "feature_scaling": "ORIGINAL_GRADIENT_ONLY",
+    "output_units": "m3/s",
+    "recursive_self_feeding": false,
+    "all_input_output_pairs_inside_gradient_role": true,
+    "negative_or_nonfinite_fill": "FAIL_NO_CLIP_NO_FALLBACK"
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "learning_rate": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "weight_decay": 0.01,
+    "foreach": false,
+    "scheduler": null,
+    "shuffle": true,
+    "loss": "equal_lead_masked_standardized_Q_MSE",
+    "minimum_epochs": 10,
+    "maximum_epochs": 50,
+    "patience": 5,
+    "min_improvement": 0,
+    "inner_monitor": "CLEAN_STANDARDIZED_Q_MSE",
+    "best_tie_rule": "EARLIEST_STRICTLY_IMPROVING_CHECKPOINT",
+    "outer_checkpoint_selection": false,
+    "transform_definitions": "SAME_ORIGINAL_GRADIENT_H2_STATISTICS_PER_GAUGE_BOTH_ARMS",
+    "new_channel_maps": {
+      "was_missing": "identity_0_or_1",
+      "elapsed_since_real_hours": "hours/168"
+    },
+    "scaler_fit_invocation_count": "RECORD_ACTUAL_CONSTRUCTOR_EVENTS_SEPARATELY_FROM_3_UNIQUE_DEFINITIONS"
+  },
+  "augmentation": {
+    "probability": 0.5,
+    "mask_seed": 1729,
+    "replace_not_duplicate": true,
+    "ridge_in_training_recipe": false,
+    "mixture_status": "THREE_EXPLICIT_PROPOSED_RECIPES_FROM_VERIFIED_GRADIENT_CENSUS_PENDING_USER_REVIEW",
+    "gradient_missingness_before_complete_history_filter": true,
+    "outer_values_events_errors_in_recipe": false,
+    "per_gauge_proposed_recipes": [
+      {
+        "gauge_id": "03161000",
+        "status": "PROPOSED_NOT_ADOPTED",
+        "probability": 0.5,
+        "mask_seed": 1729,
+        "basis": "EXPLICIT_BALANCED_STRESS_NOT_EMPIRICAL",
+        "weights": {
+          "interior_1_early": 0.09090909090909091,
+          "interior_1_middle": 0.09090909090909091,
+          "interior_1_recent": 0.09090909090909091,
+          "interior_2_early": 0.09090909090909091,
+          "interior_2_middle": 0.09090909090909091,
+          "interior_2_recent": 0.09090909090909091,
+          "mixed_early_carry": 0.09090909090909091,
+          "mixed_middle_carry": 0.09090909090909091,
+          "mixed_recent_carry": 0.09090909090909091,
+          "trailing_1_carry": 0.09090909090909091,
+          "trailing_2_carry": 0.09090909090909091
+        },
+        "weight_numerators": {
+          "interior_1_early": 1,
+          "interior_1_middle": 1,
+          "interior_1_recent": 1,
+          "interior_2_early": 1,
+          "interior_2_middle": 1,
+          "interior_2_recent": 1,
+          "mixed_early_carry": 1,
+          "mixed_middle_carry": 1,
+          "mixed_recent_carry": 1,
+          "trailing_1_carry": 1,
+          "trailing_2_carry": 1
+        },
+        "weight_denominator": 11,
+        "original_representable_short_gap_windows": 0,
+        "original_candidate_windows": 15798,
+        "original_census_counts": {
+          "clean": 15798
+        },
+        "zero_weight_classes_omitted": true,
+        "corruption_probability_is_stress_rate_not_natural_outage_rate": true,
+        "overlapping_window_counts_are_not_independent_episodes": true,
+        "gradient_fit_case_ids_sha256": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+        "metadata_evidence": {
+          "artifact": "reports/gap-pilot-real-assembly-v1.json",
+          "sha256": "9e90d360fb322b50e760a9c7af30674190503f3969ffc1d853c25e23a8b97dbc",
+          "assembly_manifest_sha256": "4795efd085a4924df9b4b6b5b96933cb9c70590ebc71ec6e46484c63a259c540",
+          "assembly_content_sha256": "b5c468eb9fb90284ea0178b65771b0d70e040a061fe6427421d2be04e0f48d39",
+          "snapshot_sha256": "b41630b7df9a216874eb4ba38a10176d4b72092bd6f1ce2ad4c4f369db56948c",
+          "source_plan_sha256": "0dad073824984fd7eeba88e4c313d77b4015dcccb94e8eb27297fcf7c6b39b0f",
+          "census_scope": "ALL_ORIGINAL_FIT_ROLE_CANDIDATES_AFTER_EXPLICIT_TARGET_AND_REFIT_CLOCK_GATES",
+          "includes_inner_or_outer": false,
+          "uses_target_values": false
+        },
+        "runtime_loader_source_identity_sha256": "fafeebaf502f3f8d7056acaaca859bd65d87b720055887c336d86b6a9d8c2dd3",
+        "runtime_identity_binding_status": "ACTUAL_LOADER_QUALIFIED_BOUND_TO_REVIEW_PROPOSAL_NOT_FIT_AUTHORIZATION",
+        "runtime_loader_evidence": {
+          "artifact": "reports/gap-pilot-real-loader-qualification-v1.json",
+          "sha256": "be06d52456c4bbdf27b15b5c8dfa0fbbf773bd1382b83c9b207a419525d635f2",
+          "raw_arrays_sha256": "1d9a021f72a72349c5476621efabd07b541792581215066d83c2667f250b6e77",
+          "cohort_admission_digest": "93851c30e226a96aa277e7a1a19aefd10326c968baca40c5fdf1c4fd129325d3",
+          "original_provenance_sha256": "523d0b801da98a99f2537a3b886cdd354658fae85ac5db7ccd66c44d1f1940ac"
+        },
+        "proposed_runtime_recipe": {
+          "schema": "hydra-pilot-augmentation-recipe/v1",
+          "probability": 0.5,
+          "mixture": {
+            "interior_1_early": 0.09090909090909091,
+            "interior_1_middle": 0.09090909090909091,
+            "interior_1_recent": 0.09090909090909091,
+            "interior_2_early": 0.09090909090909091,
+            "interior_2_middle": 0.09090909090909091,
+            "interior_2_recent": 0.09090909090909091,
+            "mixed_early_carry": 0.09090909090909091,
+            "mixed_middle_carry": 0.09090909090909091,
+            "mixed_recent_carry": 0.09090909090909091,
+            "trailing_1_carry": 0.09090909090909091,
+            "trailing_2_carry": 0.09090909090909091
+          },
+          "evidence": {
+            "scope": "GRADIENT_ONLY",
+            "gradient_case_ids_sha256": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+            "source_identity": "fafeebaf502f3f8d7056acaaca859bd65d87b720055887c336d86b6a9d8c2dd3",
+            "evidence_sha256": "160659710f88152223eb83d98cf3d6ed963ff1642e8ee101c33c962ef13ed04e"
+          }
+        },
+        "recipe_sha256": "9140a6da1a206804da7eea5f44b64afd25fa686eb4cd4eba8638cda0a2302728"
+      },
+      {
+        "gauge_id": "03164000",
+        "status": "PROPOSED_NOT_ADOPTED",
+        "probability": 0.5,
+        "mask_seed": 1729,
+        "basis": "CONDITIONAL_EMPIRICAL_GRADIENT_WINDOW_FREQUENCIES",
+        "weights": {
+          "interior_1_early": 0.3399168399168399,
+          "interior_1_middle": 0.34303534303534305,
+          "interior_1_recent": 0.30665280665280664,
+          "mixed_early_carry": 0.0010395010395010396,
+          "mixed_recent_carry": 0.0010395010395010396,
+          "trailing_1_carry": 0.007276507276507277,
+          "trailing_2_carry": 0.0010395010395010396
+        },
+        "weight_numerators": {
+          "interior_1_early": 327,
+          "interior_1_middle": 330,
+          "interior_1_recent": 295,
+          "mixed_early_carry": 1,
+          "mixed_recent_carry": 1,
+          "trailing_1_carry": 7,
+          "trailing_2_carry": 1
+        },
+        "weight_denominator": 962,
+        "original_representable_short_gap_windows": 962,
+        "original_candidate_windows": 15798,
+        "original_census_counts": {
+          "clean": 13228,
+          "interior_1_early": 327,
+          "interior_1_middle": 330,
+          "interior_1_recent": 295,
+          "leading": 82,
+          "long_or_many": 1406,
+          "mixed_early": 1,
+          "mixed_recent": 1,
+          "nonrepresentable": 120,
+          "trailing_1": 7,
+          "trailing_2": 1
+        },
+        "zero_weight_classes_omitted": true,
+        "corruption_probability_is_stress_rate_not_natural_outage_rate": true,
+        "overlapping_window_counts_are_not_independent_episodes": true,
+        "gradient_fit_case_ids_sha256": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+        "metadata_evidence": {
+          "artifact": "reports/gap-pilot-real-assembly-v1.json",
+          "sha256": "9e90d360fb322b50e760a9c7af30674190503f3969ffc1d853c25e23a8b97dbc",
+          "assembly_manifest_sha256": "4795efd085a4924df9b4b6b5b96933cb9c70590ebc71ec6e46484c63a259c540",
+          "assembly_content_sha256": "b5c468eb9fb90284ea0178b65771b0d70e040a061fe6427421d2be04e0f48d39",
+          "snapshot_sha256": "b41630b7df9a216874eb4ba38a10176d4b72092bd6f1ce2ad4c4f369db56948c",
+          "source_plan_sha256": "0dad073824984fd7eeba88e4c313d77b4015dcccb94e8eb27297fcf7c6b39b0f",
+          "census_scope": "ALL_ORIGINAL_FIT_ROLE_CANDIDATES_AFTER_EXPLICIT_TARGET_AND_REFIT_CLOCK_GATES",
+          "includes_inner_or_outer": false,
+          "uses_target_values": false
+        },
+        "runtime_loader_source_identity_sha256": "23d0cdd35e71004dcddf84ab17a8ce6b6adce016f1a936ea7feb422d4f2708fa",
+        "runtime_identity_binding_status": "ACTUAL_LOADER_QUALIFIED_BOUND_TO_REVIEW_PROPOSAL_NOT_FIT_AUTHORIZATION",
+        "runtime_loader_evidence": {
+          "artifact": "reports/gap-pilot-real-loader-qualification-v1.json",
+          "sha256": "be06d52456c4bbdf27b15b5c8dfa0fbbf773bd1382b83c9b207a419525d635f2",
+          "raw_arrays_sha256": "2b0f2b1da07965b4210c847e77ad9b8b160d51a43a22274c0548a0397c5a25d4",
+          "cohort_admission_digest": "335ba959b406cba319b10975be50a7e6b7fad492ef221c5759a4af88553ba36b",
+          "original_provenance_sha256": "4dfbfcc582f8876741d9e0ff0941a020b217b58d8347eed52629524937b5cf51"
+        },
+        "proposed_runtime_recipe": {
+          "schema": "hydra-pilot-augmentation-recipe/v1",
+          "probability": 0.5,
+          "mixture": {
+            "interior_1_early": 0.3399168399168399,
+            "interior_1_middle": 0.34303534303534305,
+            "interior_1_recent": 0.30665280665280664,
+            "mixed_early_carry": 0.0010395010395010396,
+            "mixed_recent_carry": 0.0010395010395010396,
+            "trailing_1_carry": 0.007276507276507277,
+            "trailing_2_carry": 0.0010395010395010396
+          },
+          "evidence": {
+            "scope": "GRADIENT_ONLY",
+            "gradient_case_ids_sha256": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+            "source_identity": "23d0cdd35e71004dcddf84ab17a8ce6b6adce016f1a936ea7feb422d4f2708fa",
+            "evidence_sha256": "d182d971dda544b7c42ccd85424870d2696c2291d76653a6c901617db89a7798"
+          }
+        },
+        "recipe_sha256": "f2bcd6662273dc17c4ff61d2a13d2a7a15c4de8cea0d70fcc83ce7659550536d"
+      },
+      {
+        "gauge_id": "03479000",
+        "status": "PROPOSED_NOT_ADOPTED",
+        "probability": 0.5,
+        "mask_seed": 1729,
+        "basis": "CONDITIONAL_EMPIRICAL_GRADIENT_WINDOW_FREQUENCIES",
+        "weights": {
+          "interior_1_early": 0.3160919540229885,
+          "interior_1_middle": 0.3160919540229885,
+          "interior_1_recent": 0.3160919540229885,
+          "trailing_1_carry": 0.028735632183908046,
+          "trailing_2_carry": 0.022988505747126436
+        },
+        "weight_numerators": {
+          "interior_1_early": 55,
+          "interior_1_middle": 55,
+          "interior_1_recent": 55,
+          "trailing_1_carry": 5,
+          "trailing_2_carry": 4
+        },
+        "weight_denominator": 174,
+        "original_representable_short_gap_windows": 174,
+        "original_candidate_windows": 15798,
+        "original_census_counts": {
+          "clean": 14793,
+          "interior_1_early": 55,
+          "interior_1_middle": 55,
+          "interior_1_recent": 55,
+          "leading": 170,
+          "long_or_many": 660,
+          "nonrepresentable": 1,
+          "trailing_1": 5,
+          "trailing_2": 4
+        },
+        "zero_weight_classes_omitted": true,
+        "corruption_probability_is_stress_rate_not_natural_outage_rate": true,
+        "overlapping_window_counts_are_not_independent_episodes": true,
+        "gradient_fit_case_ids_sha256": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+        "metadata_evidence": {
+          "artifact": "reports/gap-pilot-real-assembly-v1.json",
+          "sha256": "9e90d360fb322b50e760a9c7af30674190503f3969ffc1d853c25e23a8b97dbc",
+          "assembly_manifest_sha256": "4795efd085a4924df9b4b6b5b96933cb9c70590ebc71ec6e46484c63a259c540",
+          "assembly_content_sha256": "b5c468eb9fb90284ea0178b65771b0d70e040a061fe6427421d2be04e0f48d39",
+          "snapshot_sha256": "b41630b7df9a216874eb4ba38a10176d4b72092bd6f1ce2ad4c4f369db56948c",
+          "source_plan_sha256": "0dad073824984fd7eeba88e4c313d77b4015dcccb94e8eb27297fcf7c6b39b0f",
+          "census_scope": "ALL_ORIGINAL_FIT_ROLE_CANDIDATES_AFTER_EXPLICIT_TARGET_AND_REFIT_CLOCK_GATES",
+          "includes_inner_or_outer": false,
+          "uses_target_values": false
+        },
+        "runtime_loader_source_identity_sha256": "0d4fea880527cb52aa353549081ced77ad3a6dcfa5844bb3d596ca75c0acc4ee",
+        "runtime_identity_binding_status": "ACTUAL_LOADER_QUALIFIED_BOUND_TO_REVIEW_PROPOSAL_NOT_FIT_AUTHORIZATION",
+        "runtime_loader_evidence": {
+          "artifact": "reports/gap-pilot-real-loader-qualification-v1.json",
+          "sha256": "be06d52456c4bbdf27b15b5c8dfa0fbbf773bd1382b83c9b207a419525d635f2",
+          "raw_arrays_sha256": "57e2ad0a919bad324d0671db8ad12dc69c7dc3180a874b56fb2f75a963c0ba0c",
+          "cohort_admission_digest": "66f4cae8f83e8828157b6ddcc7252e68cf5f738bbc5e6a03f2b1a7aa1d42e9e7",
+          "original_provenance_sha256": "e0755128609b500665f23df55464f3f44355c28c40bf85d859ab7e5639a40b62"
+        },
+        "proposed_runtime_recipe": {
+          "schema": "hydra-pilot-augmentation-recipe/v1",
+          "probability": 0.5,
+          "mixture": {
+            "interior_1_early": 0.3160919540229885,
+            "interior_1_middle": 0.3160919540229885,
+            "interior_1_recent": 0.3160919540229885,
+            "trailing_1_carry": 0.028735632183908046,
+            "trailing_2_carry": 0.022988505747126436
+          },
+          "evidence": {
+            "scope": "GRADIENT_ONLY",
+            "gradient_case_ids_sha256": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+            "source_identity": "0d4fea880527cb52aa353549081ced77ad3a6dcfa5844bb3d596ca75c0acc4ee",
+            "evidence_sha256": "ea21bf60c9da4192e465d6f359cb4ce28626948d73fce50b9eb7aaf483e20827"
+          }
+        },
+        "recipe_sha256": "0e1169a8eec5e608c1cf71961a03048396b737be4a5bb5626321fb7abfa86362"
+      }
+    ],
+    "heterogeneous_recipe_design_requires_explicit_review": true
+  },
+  "artificial_gap_panels": {
+    "scenario_count_per_checkpoint": 17,
+    "checkpoint_count": 6,
+    "requests_total": 102,
+    "full_size_B64_forward_batch_ceiling": 13566,
+    "interior_start_index_bands_inclusive": {
+      "early": [
+        1,
+        55
+      ],
+      "middle": [
+        56,
+        110
+      ],
+      "recent": [
+        111,
+        165
+      ]
+    },
+    "scenarios": [
+      {
+        "id": "clean",
+        "mask_seed": 101,
+        "evaluation_epoch": 0
+      },
+      {
+        "id": "interior_1_early",
+        "mask_seed": 101,
+        "evaluation_epoch": 0
+      },
+      {
+        "id": "interior_1_middle",
+        "mask_seed": 211,
+        "evaluation_epoch": 0
+      },
+      {
+        "id": "interior_1_recent",
+        "mask_seed": 307,
+        "evaluation_epoch": 0
+      },
+      {
+        "id": "interior_2_early",
+        "mask_seed": 101,
+        "evaluation_epoch": 0
+      },
+      {
+        "id": "interior_2_middle",
+        "mask_seed": 211,
+        "evaluation_epoch": 0
+      },
+      {
+        "id": "interior_2_recent",
+        "mask_seed": 307,
+        "evaluation_epoch": 0
+      },
+      {
+        "id": "trailing_1_carry",
+        "mask_seed": 101,
+        "evaluation_epoch": 0
+      },
+      {
+        "id": "trailing_1_ridge",
+        "mask_seed": 101,
+        "evaluation_epoch": 0
+      },
+      {
+        "id": "trailing_2_carry",
+        "mask_seed": 101,
+        "evaluation_epoch": 0
+      },
+      {
+        "id": "trailing_2_ridge",
+        "mask_seed": 101,
+        "evaluation_epoch": 0
+      },
+      {
+        "id": "mixed_early_carry",
+        "mask_seed": 101,
+        "evaluation_epoch": 0
+      },
+      {
+        "id": "mixed_early_ridge",
+        "mask_seed": 101,
+        "evaluation_epoch": 0
+      },
+      {
+        "id": "mixed_middle_carry",
+        "mask_seed": 211,
+        "evaluation_epoch": 0
+      },
+      {
+        "id": "mixed_middle_ridge",
+        "mask_seed": 211,
+        "evaluation_epoch": 0
+      },
+      {
+        "id": "mixed_recent_carry",
+        "mask_seed": 307,
+        "evaluation_epoch": 0
+      },
+      {
+        "id": "mixed_recent_ridge",
+        "mask_seed": 307,
+        "evaluation_epoch": 0
+      }
+    ],
+    "masks_frozen_before_prediction_errors": true,
+    "ridge_pairing": "PREDECLARED_COMMON_ORIGINAL_SIX_LAG_CONTEXT_AFTER_HIDING",
+    "post_error_success_intersection": false
+  },
+  "natural_gap_model_inference": {
+    "status": "PROPOSED_FOR_USER_REVIEW_NOT_AUTHORIZED",
+    "scenario_ids": [
+      "natural_cap1_carry",
+      "natural_cap1_ridge",
+      "natural_cap2_carry",
+      "natural_cap2_ridge"
+    ],
+    "requests_per_checkpoint": 4,
+    "additional_requests": 24,
+    "additional_B64_forward_batches_max": 3288,
+    "candidate_origins_per_gauge_after_boundary_purge": 8742,
+    "minimum_original_missing_Q_slots": 1,
+    "nonQ_admission_unchanged": true,
+    "target_masks_unchanged": true,
+    "complete_labels_required_to_attempt_forecast": false,
+    "candidate_assembly_separate_from_strict_clean_outer": true,
+    "structural_ridge_lag_exclusions_frozen_before_errors": true,
+    "overlapping_caps_not_summed": true,
+    "source_candidate_manifest_sha256": "4795efd085a4924df9b4b6b5b96933cb9c70590ebc71ec6e46484c63a259c540",
+    "cost_included_in_current_4_06_hour_proxy": false,
+    "assembled_candidate_cohorts": {
+      "03161000": {
+        "case_ids_sha256": "15b48df16868f31524e7717a78b790d703be8ec0e0730f5943a1f4cfc8463b78",
+        "cases": 8742,
+        "cohort_mode": "all_outer_candidates"
+      },
+      "03164000": {
+        "case_ids_sha256": "042fd76a661e2db26f10b77afc5ebe9c5f74d3ceafa2e79a844069f8b6198544",
+        "cases": 8742,
+        "cohort_mode": "all_outer_candidates"
+      },
+      "03479000": {
+        "case_ids_sha256": "e8fb3de18d7e7c71449c4fec7d7c2cf00594b92dfe046182f31785ba7c966c2c",
+        "cases": 8742,
+        "cohort_mode": "all_outer_candidates"
+      }
+    },
+    "implementation_status": "NEW_SEPARATELY_BOUND_LABEL_FREE_ENTRYPOINT_REQUIRED_NOT_YET_QUALIFIED",
+    "existing_predictor_constraint": "CHECKPOINT_TRAINING_FILL_POLICY_COMBINED2_CARRY_IMMUTABLE_NO_RUNTIME_CAP_OR_TRAILING_OVERRIDE",
+    "required_wrapper_contract": {
+      "training_fill_policy_immutable": true,
+      "saved_best_weights_and_transform_unchanged": true,
+      "requested_cap_and_method_bound_separately": true,
+      "label_free_prediction": true,
+      "checkpoint_policy_mutation_or_validation_bypass": false,
+      "new_scientific_fits_required_for_wrapper": 0,
+      "source_mask_clock_and_policy_separation_qualification_required": true
+    }
+  },
+  "proposed_tolerances": {
+    "status": "PRACTICAL_REVIEW_MARGINS_NOT_APPROVED_OR_CALIBRATED",
+    "per_gauge_clean_mean_NSE_delta_min": -0.01,
+    "per_gauge_clean_mean_lead_RMSE_ratio_max": 1.02,
+    "per_gauge_each_clean_lead_RMSE_ratio_max": 1.05,
+    "per_gauge_each_clean_lead_negative_frequency_increase_max": 0.005,
+    "training_inner_integrity_errors_max": 0,
+    "required_paired_panel_numerical_or_prediction_failures_max": 0,
+    "real_gap_numerical_failure_fraction_max": 0.01,
+    "real_gap_denominator": "PREDECLARED_STRUCTURALLY_ELIGIBLE_GAUGE_METHOD_CAP_ATTEMPTS",
+    "zero_baseline_RMSE_ratio_pass": "ONLY_IF_AUGMENTED_RMSE_ALSO_ZERO",
+    "operational_high_flow_margins": null,
+    "minimum_worthwhile_robustness_gain": null,
+    "point_pass_with_interval_crossing": "INCONCLUSIVE",
+    "automatic_scope_expansion_on_pass": false
+  },
+  "metrics": {
+    "primary": "EQUAL_MEAN_ALL_18_LEAD_NSE_PER_GAUGE",
+    "CV1_is_three_fold_selection": false,
+    "minimum_distinct_target_hours_each_lead": 168,
+    "minimum_distinct_UTC_dates_each_lead": 28,
+    "all_18_defined_leads_required": true,
+    "physical_metrics": [
+      "RMSE",
+      "MAE",
+      "bias",
+      "NSE",
+      "negative_frequency"
+    ],
+    "reconstruction_truth": "DELIBERATELY_HIDDEN_APPROVED_VALUES_ONLY",
+    "reference_regimes": "EXISTING_GRADIENT_CALENDAR_q10_q90_q95",
+    "high_flow_threshold": "Q_greater_than_q95_NOT_OFFICIAL_FLOOD_STAGE",
+    "contingency_metrics": [
+      "TP/(TP+FN)",
+      "FP/(FP+TN)",
+      "FP/(TP+FP)"
+    ],
+    "fixed_event_catalog": "EXISTING_CV1_NO_ERROR_BASED_RESELECTION",
+    "event_reference_or_forecast_gap": "PEAK_METRIC_UNAVAILABLE_NO_FILL"
+  },
+  "uncertainty": {
+    "status": "PROPOSED_REQUIRES_FAMILY_ORCHESTRATION_QUALIFICATION",
+    "draws": 2000,
+    "primary_block_days": 14,
+    "mandatory_sensitivity_block_days": [
+      7,
+      28
+    ],
+    "seed": 20261102,
+    "sampling": "PAIRED_NONCIRCULAR_WHOLE_ORIGIN_SEASON_SEGMENTS",
+    "retain_calendar_gaps_all_H18_and_fixed_gauges": true,
+    "percentiles": [
+      2.5,
+      97.5
+    ],
+    "joint_invalid_draws_max": 100,
+    "redraw_invalid_draws": false,
+    "clean_family": "ALL_3_GAUGE_CLEAN_CONTRASTS_REQUIRED_METRICS",
+    "stress_families": "ONE_3_GAUGE_FAMILY_PER_NAMED_SCENARIO",
+    "carry_ridge_families": "ONE_3_GAUGE_FAMILY_PER_NAMED_CONTRAST_WITHIN_ARM",
+    "tolerance_compatibility_required_all_3_block_lengths": true,
+    "simultaneous_familywise_coverage_claim": false,
+    "forecast_prediction_interval_claim": false
+  },
+  "proposed_resource_limits": {
+    "status": "NOT_APPROVED_RELEASE_DEPENDS_ON_MEASURED_ASSEMBLY_AND_REVIEW",
+    "local_only": true,
+    "concurrent_workers_max": 1,
+    "entered_optimizer_updates_total_max": 67900,
+    "total_wall_seconds_max": 28800,
+    "per_neural_fit_wall_seconds_max": 5400,
+    "active_parent_child_RSS_bytes_max": 4294967296,
+    "new_pilot_artifact_bytes_max": 4294967296,
+    "minimum_free_local_bytes_at_launch": 8589934592,
+    "retries_refits_requalification_runs_automatically_authorized": false,
+    "failed_entered_updates_refunded": false,
+    "resume_resets_limits": false,
+    "current_v2_cold_modeled_hours": {
+      "20_epochs": 2.03,
+      "50_epochs": 4.06
+    },
+    "proxy_is_completion_guarantee_or_confidence_bound": false,
+    "assembly_runtime_seconds": 57.618486790917814,
+    "unmeasured_stage_allowance_reviewed": false,
+    "checkpoint_retention": {
+      "status": "PROPOSED_REQUIRES_IMPLEMENTATION_AND_BYTE_PROJECTION_REVIEW",
+      "restart_snapshot_every_completed_epochs": 5,
+      "periodic_restart_snapshots_max_per_fit": 10,
+      "terminal_restart_snapshots_max_per_fit": 1,
+      "emergency_valid_state_snapshots_max_per_fit": 1,
+      "selected_best_exports_max_per_fit": 1,
+      "neural_checkpoint_or_export_artifacts_max": 78,
+      "ridge_artifacts_max": 3,
+      "large_checkpoint_or_ridge_artifacts_max": 81,
+      "full_snapshot_contains_current_and_best_states": true,
+      "update_journals_separate": true,
+      "all_new_outputs_share_4_GiB_cap": true,
+      "atomic_write_headroom_must_be_budgeted": true,
+      "automatic_deletion": false,
+      "50_epoch_checkpoint_trace_growth_measured": false
+    },
+    "artifact_capacity_worksheet": {
+      "status": "CONSERVATIVE_PLANNING_WORKSHEET_NOT_MEASURED_SERIALIZATION_UPPER_BOUND",
+      "observed_v2_synthetic_checkpoint_bytes_each_at_4_updates": 1223524,
+      "observed_v2_canonical_trace_record_bytes": {
+        "clean": [
+          2709,
+          2700,
+          2700,
+          2710
+        ],
+        "augmented": [
+          2708,
+          2700,
+          2699,
+          2709
+        ]
+      },
+      "observed_checkpoint_sha256": {
+        "clean": "d43d766be337fda8ba0309021b6099eb135225851211827f060c38ec4441ff64",
+        "augmented": "db4f48338da61d1d658691dc37de0924a095626238cb614b825bce0d218f1be8"
+      },
+      "observation_scope": "READ_ONLY_EXISTING_SYNTHETIC_V2_CHECKPOINTS_NOT_REAL_FITS",
+      "planning_trace_bytes_per_record": 4096,
+      "planning_nontrace_bytes_per_neural_artifact": 4194304,
+      "retained_trace_epoch_equivalents_per_fit": 425,
+      "retained_trace_record_occurrences_all_fits": 577150,
+      "neural_snapshots_exports_bytes": 2691162112,
+      "ridge_artifacts_bytes": 6291456,
+      "update_journal_bytes": 278118400,
+      "predictions_and_reference_views_bytes": 536870912,
+      "metric_event_resampling_manifest_bytes": 268435456,
+      "temporary_atomic_write_bytes": 67108864,
+      "actual_record_and_serialized_file_bytes_must_be_checked": true,
+      "JSON_record_bound_proves_pickle_bound": false,
+      "automatic_deletion": false,
+      "planning_total_bytes": 3847987200,
+      "unallocated_bytes_inside_hard_cap": 446980096,
+      "evidence_artifact": "reports/gap-pilot-artifact-size-proposal-v1.json",
+      "evidence_sha256": "924561d09172010030002b2c6028538b9614b0866ed5b696da8b5bbe88dd3f43",
+      "best_inference_artifact_retains_full_update_trace": true,
+      "largest_planned_checkpoint_bytes": 54575104,
+      "concurrent_writers_max": 1,
+      "total_live_unpublished_staging_bytes_max": 67108864,
+      "prediction_outputs_must_be_chunked": true
+    },
+    "actual_assembly_peak_parent_child_RSS_bytes": 135217152,
+    "actual_real_fit_constructor_peak_RSS_bytes": null,
+    "actual_real_scientific_checkpoint_size_bytes": null,
+    "completed_prerelease_assembly_time_separately_reported": true,
+    "released_run_loading_construction_counts_against_8h": true
+  },
+  "release_evidence_required": {
+    "real_assembly_manifest_sha256": "4795efd085a4924df9b4b6b5b96933cb9c70590ebc71ec6e46484c63a259c540",
+    "real_per_slot_provenance_authenticated": true,
+    "exact_role_cohort_counts_and_digests_matched": true,
+    "fit_inner_outer_separation_proven": true,
+    "augmentation_mixture_agreed": false,
+    "tolerances_agreed": false,
+    "event_uncertainty_reporting_agreed": false,
+    "runtime_disk_allowance_agreed": false,
+    "separate_scientific_execution_release": false,
+    "natural_gap_candidate_manifest_sha256": "4795efd085a4924df9b4b6b5b96933cb9c70590ebc71ec6e46484c63a259c540",
+    "checkpoint_retention_and_byte_projection_reviewed": false,
+    "natural_gap_request_mapping_qualified": false,
+    "actual_loader_receipt_sha256": "be06d52456c4bbdf27b15b5c8dfa0fbbf773bd1382b83c9b207a419525d635f2",
+    "actual_runtime_recipe_source_identities_bound": true,
+    "natural_gap_inference_entrypoint_qualified": false,
+    "full_runner_checkpoint_cadence_update_ledger_and_byte_guards_qualified": false
+  },
+  "draft_execution": {
+    "source_numeric_payload_reads": 0,
+    "model_or_test_execution": 0,
+    "neural_fits": 0,
+    "ridge_fits": 0,
+    "downloads": 0,
+    "cloud_jobs": 0
+  },
+  "total_inference_request_ceiling": 126,
+  "total_outer_B64_forward_batch_ceiling": 16854,
+  "actual_assembly_evidence": {
+    "artifact": "reports/gap-pilot-real-assembly-v1.json",
+    "sha256": "9e90d360fb322b50e760a9c7af30674190503f3969ffc1d853c25e23a8b97dbc",
+    "status": "PASSED",
+    "manifest_sha256": "4795efd085a4924df9b4b6b5b96933cb9c70590ebc71ec6e46484c63a259c540",
+    "content_sha256": "b5c468eb9fb90284ea0178b65771b0d70e040a061fe6427421d2be04e0f48d39",
+    "elapsed_seconds": 57.618486790917814,
+    "peak_parent_child_rss_bytes": 135217152,
+    "read_bytes": 44407134,
+    "write_bytes": 57750943,
+    "model_fits": 0,
+    "scaler_fits": 0,
+    "optimizer_updates": 0
+  },
+  "updated_at_utc": "2026-11-03T17:10:20.895152+00:00",
+  "actual_loader_evidence": {
+    "artifact": "reports/gap-pilot-real-loader-qualification-v1.json",
+    "sha256": "be06d52456c4bbdf27b15b5c8dfa0fbbf773bd1382b83c9b207a419525d635f2",
+    "status": "PASSED",
+    "elapsed_seconds": 35.5123492910061,
+    "peak_parent_child_rss_bytes": 612335616,
+    "logical_read_bytes": 107710407,
+    "real_model_constructor_or_fit_qualified": false,
+    "all_three_training_sources_and_roles_validated": true,
+    "outer_input_only_phase_before_explicit_labels_verified": true
+  }
+}

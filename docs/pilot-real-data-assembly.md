@@ -75,6 +75,21 @@ before feature/value members are decoded.
 Twenty-eight focused synthetic tests passed, including source/mask mismatches,
 qualifier preservation, protected-time rejection, refit purges, label-free
 input reads, missing provenance, resource bounds and resumed-output tampering.
-Independent review passed. Actual prepared-loader qualification is the next
-engineering check; the assembly receipt alone is not a scientific execution
-release. The bounded protocol, augmentation recipe and tolerances require review.
+Independent review passed. The subsequent
+[real prepared-loader qualification](../reports/gap-pilot-real-loader-qualification-v1.json)
+also passed in 35.51 seconds, with 612,335,616 bytes peak combined RSS and
+107,710,407 logical file bytes reserved at open. It loaded all three complete
+fit+inner bundles sequentially and verified source/provenance identities, role
+membership and all three gradient-only ridge stores. Six input-only checks used
+the first returned batch of at most 64 cases for each gauge/cohort combination;
+outer and coverage streams were sampled, not exhausted. Label opens were denied
+during input loading, followed by explicit separate label-coordinate checks.
+No Torch import, model call, scaler/ridge fit, neural update or scoring occurred.
+Seven additional synthetic loader-controller tests passed, for 35 focused tests
+across assembly and loader qualification.
+
+The [bounded protocol](bounded-gap-pilot-protocol.md), augmentation recipes and
+tolerances remain proposals. The natural-gap inference wrapper and bounded
+scientific runner must be qualified before a reviewed execution release is used.
+These preparation checks do not authorize the six neural/three ridge fits, the
+full 180-fit campaign, protected assessment or paid cloud jobs.

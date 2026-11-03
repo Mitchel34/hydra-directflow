@@ -233,5 +233,33 @@
     "paid_cloud_jobs_authorized": false,
     "protected_assessment_authorized": false,
     "updated_at_utc": "2026-11-03T16:26:07.916821+00:00"
+  },
+  "pilot_real_data_preparation": {
+    "source": "DIRECT_USER_REQUEST_FINISH_ASSEMBLY_AND_PROPOSE_BOUNDED_PILOT_BEFORE_REVIEW",
+    "recorded_at_utc": "2026-11-03T17:13:19.058232+00:00",
+    "status": "ASSEMBLY_AND_BOUNDED_REAL_LOADER_QUALIFICATION_PASSED",
+    "assembly_report": "reports/gap-pilot-real-assembly-v1.json",
+    "loader_report": "reports/gap-pilot-real-loader-qualification-v1.json",
+    "assembly_manifest_sha256": "4795efd085a4924df9b4b6b5b96933cb9c70590ebc71ec6e46484c63a259c540",
+    "proposed_protocol": "docs/bounded-gap-pilot-protocol.md",
+    "proposed_config": "configs/bounded-gap-pilot-proposal.json",
+    "proposal_sha256": "675255e10d8385b594dbd1be7e4e36cca95dcad5499c9c17bf8e2f1fc887721f",
+    "proposed_neural_fits": 6,
+    "proposed_ridge_fits": 3,
+    "scientific_neural_fits_authorized": 0,
+    "scientific_ridge_fits_authorized": 0,
+    "protocol_frozen": false,
+    "paid_cloud_jobs_authorized": false,
+    "protected_assessment_authorized": false,
+    "remaining_before_scientific_execution": [
+      "User review of practical tolerances, heterogeneous augmentation recipes and conditional uncertainty interpretation",
+      "User review of bounded six-neural/three-ridge execution allowance",
+      "Qualify bounded scientific runner with cumulative update/time/disk ledger and five-epoch checkpoint cadence",
+      "Qualify separately bound label-free natural-gap inference wrapper without mutating checkpoint training policy"
+    ],
+    "primary_180_fits_unchanged": true,
+    "completed_download_scope": "19_OWNED_PROVENANCE_FILES66039_BYTES_EXPLICITLY_APPROVED_AND_VERIFIED",
+    "actual_new_model_scaler_ridge_fits": 0,
+    "actual_new_optimizer_updates": 0
   }
 }

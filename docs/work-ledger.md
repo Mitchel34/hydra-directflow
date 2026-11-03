@@ -773,3 +773,38 @@ remain unchanged. Twenty-eight focused synthetic tests passed in 2.749 seconds,
 and independent review passed. No model/scaler fitting, neural update, forecast
 scoring, protected access or paid job occurred. Prepared-loader qualification and
 the bounded pilot protocol/tolerance review remain before scientific release.
+
+## Real loaders qualified; bounded pilot proposal prepared — November 3
+
+`reports/gap-pilot-real-loader-qualification-v1.json` records the once-only
+zero-fit loader check under plan `d20f765c…`. It passed in 35.51 seconds with
+612,335,616 bytes peak parent-plus-child RSS and 107,710,407 logical bytes reserved
+at file open. All three complete fit+inner bundles matched the exact role case
+digests, with zero outer/unassigned training rows. Original provenance and raw
+array identities are recorded. Six first-returned outer/coverage batches were
+checked with label opens prohibited during input loading; the subsequent label
+checks were explicit and retrospective. Three ridge source stores passed their
+gradient-only pair checks. Outer iterators were sampled, not exhausted.
+
+Seven new synthetic loader-controller tests passed (0.520 seconds), bringing the
+unique focused assembly/loader tests to 35. Model/Torch/scaler/ridge/optimizer,
+forecast scoring, network and protected-access counters remained zero. No
+consumed model-qualification or acquisition allowances were rerun.
+
+`docs/bounded-gap-pilot-protocol.md` and
+`configs/bounded-gap-pilot-proposal.json` are proposed for review, not frozen or
+authorized. They bind the actual assembly/loader identities and propose six H4
+neural fits, three ridge fits, 67,900 maximum entered updates and 126 inference
+requests, under eight hours and four-GiB memory/output caps. The current
+conservative storage worksheet estimates 3,847,987,200 bytes conditional on
+enforced cadence and serialization limits; it is not a measured full-run bound.
+
+The gradient-only gap census supports conditional empirical shape mixtures for
+Galax and Sugar Grove. Jefferson has no observed short gaps in this period, so
+its explicit balanced-stress recipe needs review. All use proposed 0.5 artificial
+corruption, not an estimated outage rate. The practical clean/failure tolerances,
+event/uncertainty interpretation and resources remain user choices. A new
+natural-gap inference wrapper must keep the checkpoint's training policy fixed
+while binding the separate requested fill policy; the bounded runner's journal,
+checkpoint cadence and byte/update controls also need qualification. Conditional
+pilot approval does not automatically release the primary campaign or assessment.

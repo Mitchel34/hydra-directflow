@@ -1,0 +1,317 @@
+{
+  "aggregate": {
+    "ceiling_bytes": 4294967296,
+    "checkpoint_trace_record_copies": 577150,
+    "components_bytes": {
+      "append_only_update_journal_bytes": 278118400,
+      "metric_and_log_reserve_bytes": 268435456,
+      "neural_checkpoint_cumulative_trace_bytes": 2364006400,
+      "neural_checkpoint_fixed_bytes": 163577856,
+      "prediction_artifact_reserve_bytes": 536870912,
+      "ridge_artifact_reserve_bytes": 3145728
+    },
+    "headroom_bytes": 680812544,
+    "headroom_fraction": 0.15851402282714844,
+    "headroom_gib": 0.6340560913085938,
+    "total_bytes": 3614154752,
+    "total_gib": 3.3659439086914062,
+    "unique_trace_records": 67900,
+    "within_ceiling_under_stated_assumptions": true
+  },
+  "authority": {
+    "fit_batch_counts": "Parent-supplied CV1 fit batches at B64:246/204/229; no scientific corpus reopened for this worksheet.",
+    "synthetic_qualification_report": "reports/gap-pilot-qualification-v2.json",
+    "synthetic_qualification_report_sha256": "23a0ffa7946b465d44006ef76d7e1b1366b56e7b233509c89032635cec6c917a"
+  },
+  "content_sha256": "c86f1135d2613c5c110321558e14ab9161424a2bd9a25e4dcb36eded90b0d3b4",
+  "counterexample": {
+    "condition": "If every one of13 neural artifacts per fit contains a full50-epoch trace rather than respecting the stated periodic cadence",
+    "excess_over_4gib_bytes": 570720256,
+    "total_bytes": 4865687552,
+    "total_gib": 4.531524658203125,
+    "within_ceiling": false
+  },
+  "created_at_utc": "2026-11-03T17:02:02.404713+00:00",
+  "execution": {
+    "checkpoint_tensor_or_pickle_member_reads": 0,
+    "downloads": 0,
+    "existing_checkpoint_stat_and_zip_directory_inspections": 2,
+    "existing_synthetic_result_json_reads": 2,
+    "model_calls": 0,
+    "optimizer_updates": 0,
+    "paid_jobs": 0,
+    "protected_data_reads": 0,
+    "ridge_fits": 0,
+    "scaler_fits": 0,
+    "scientific_source_reads": 0,
+    "torch_load_or_unpickle_calls": 0
+  },
+  "formulas": {
+    "append_journal": "67,900 * 4KiB =278,118,400 bytes",
+    "checkpoint_epoch_equivalents_per_fit": "sum(5,10,15,20,25,30,35,40,45,50) + 3*50 = 275+150 =425",
+    "checkpoint_fixed": "78 * 2MiB =163,577,856 bytes",
+    "checkpoint_trace": "577,150 * 4KiB =2,364,006,400 bytes",
+    "cumulative_checkpoint_trace_copies": "2 * 425 * (246+204+229) =577,150",
+    "total": "checkpoint_fixed + checkpoint_trace + append_journal +512MiB predictions +256MiB metrics/logs +3MiB ridge",
+    "unique_update_trace_records": "2 * 50 * (246 + 204 + 229) = 67,900"
+  },
+  "limitations": [
+    "Eight short synthetic trace records establish observed sizes only, not an upper bound on scientific serialized checkpoints.",
+    "A future released runner must enforce record size including delimiter, cumulative trace size, fixed artifact overhead, checkpoint count/cadence, per-fit update count, and total output bytes before publication.",
+    "The checkpoint trace term is a conservative proposed encoded-byte allowance per retained record; canonical JSON size does not prove the pickle or other checkpoint-encoding size. Final serialized checkpoint sizes must be checked separately.",
+    "The2MiB fixed overhead is a proposal, not a measured large-cohort checkpoint guarantee; training indices, RNG, optimizer, model, scaler, epoch metadata and serialization overhead must fit within it.",
+    "Terminal/emergency/best exports each reserve a full50-epoch trace even if an actual implementation needs less; unused reservations are not permission for extra artifacts.",
+    "The4GiB worksheet is final retained-output storage. It does not bound transient serialization memory, atomic-write staging duplication, source/prepared-data storage, free-disk requirements or backup copies. A future runner must reserve sufficient scratch space separately within its approved scope.",
+    "No calibration/ranking/scoring/scientific fit is authorized by this worksheet. Predictions and metrics/logs are fixed proposal reserves, not measured completed artifacts.",
+    "The recommended conservative scenario additionally includes64MiB scratch. Its headroom remains conditional on a single writer and a hard bound on total live unpublished staging bytes; this worksheet does not qualify the runner or launch scientific work."
+  ],
+  "measured_synthetic_evidence": {
+    "canonical_encoding": "UTF8_JSON_SORT_KEYS_COMPACT_SEPARATORS_ALLOW_NAN_FALSE_NO_TRAILING_NEWLINE",
+    "maximum_canonical_record_bytes": 2710,
+    "measurements": [
+      {
+        "canonical_json_record_bytes": [
+          2709,
+          2700,
+          2700,
+          2710
+        ],
+        "checkpoint_body_sha_recomputed_in_this_task": false,
+        "checkpoint_file_bytes": 1223524,
+        "checkpoint_inspection": "RESIDENT_STAT_AND_ZIP_CENTRAL_DIRECTORY_ONLY_NO_MEMBER_READ",
+        "checkpoint_sha256_from_authenticated_result": "d43d766be337fda8ba0309021b6099eb135225851211827f060c38ec4441ff64",
+        "maximum_observed_record_bytes": 2710,
+        "mode": "clean",
+        "result_json_authenticated_against_public_qualification": true,
+        "result_json_sha256": "17bc762db8bcb24465d26bb04d33fc34a21e024920847433206978bcb32cc6da",
+        "source": "EXISTING_SYNTHETIC_V2_BASELINE",
+        "trace_record_count": 4,
+        "zip_inventory": {
+          "member_bodies_read": false,
+          "member_count": 91,
+          "pickle_metadata_member_bytes": [
+            15980
+          ],
+          "sum_compressed_member_bytes": 1206959,
+          "sum_uncompressed_member_bytes": 1206959,
+          "tensor_storage_member_count": 85
+        }
+      },
+      {
+        "canonical_json_record_bytes": [
+          2708,
+          2700,
+          2699,
+          2709
+        ],
+        "checkpoint_body_sha_recomputed_in_this_task": false,
+        "checkpoint_file_bytes": 1223524,
+        "checkpoint_inspection": "RESIDENT_STAT_AND_ZIP_CENTRAL_DIRECTORY_ONLY_NO_MEMBER_READ",
+        "checkpoint_sha256_from_authenticated_result": "db4f48338da61d1d658691dc37de0924a095626238cb614b825bce0d218f1be8",
+        "maximum_observed_record_bytes": 2709,
+        "mode": "augmented",
+        "result_json_authenticated_against_public_qualification": true,
+        "result_json_sha256": "297f6f455d7cf856c783ff153993a7d6745b8d26b25788188d0d6845545c411e",
+        "source": "EXISTING_SYNTHETIC_V2_BASELINE",
+        "trace_record_count": 4,
+        "zip_inventory": {
+          "member_bodies_read": false,
+          "member_count": 91,
+          "pickle_metadata_member_bytes": [
+            15967
+          ],
+          "sum_compressed_member_bytes": 1206946,
+          "sum_uncompressed_member_bytes": 1206946,
+          "tensor_storage_member_count": 85
+        }
+      }
+    ],
+    "minimum_canonical_record_bytes": 2699,
+    "scientific_checkpoint_size_qualified": false,
+    "trace_records": 8
+  },
+  "per_gauge": [
+    {
+      "append_journal_bytes_both_arms": 100761600,
+      "arms": [
+        "clean",
+        "augmented"
+      ],
+      "checkpoint_fixed_bytes_both_arms": 54525952,
+      "checkpoint_total_bytes_both_arms": 910999552,
+      "checkpoint_trace_bytes_both_arms": 856473600,
+      "fit_batches_per_epoch": 246,
+      "fits": 2,
+      "gauge_id": "03161000",
+      "maximum_epochs_per_fit": 50,
+      "neural_artifact_count_both_arms": 26,
+      "periodic_checkpoint_epochs": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50
+      ],
+      "periodic_checkpoint_trace_records_per_fit": 67650,
+      "terminal_emergency_best_trace_records_per_fit": 36900,
+      "total_checkpoint_trace_record_copies_both_arms": 209100,
+      "total_checkpoint_trace_record_copies_per_fit": 104550,
+      "unique_trace_records_both_arms": 24600,
+      "unique_trace_records_per_fit": 12300
+    },
+    {
+      "append_journal_bytes_both_arms": 83558400,
+      "arms": [
+        "clean",
+        "augmented"
+      ],
+      "checkpoint_fixed_bytes_both_arms": 54525952,
+      "checkpoint_total_bytes_both_arms": 764772352,
+      "checkpoint_trace_bytes_both_arms": 710246400,
+      "fit_batches_per_epoch": 204,
+      "fits": 2,
+      "gauge_id": "03164000",
+      "maximum_epochs_per_fit": 50,
+      "neural_artifact_count_both_arms": 26,
+      "periodic_checkpoint_epochs": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50
+      ],
+      "periodic_checkpoint_trace_records_per_fit": 56100,
+      "terminal_emergency_best_trace_records_per_fit": 30600,
+      "total_checkpoint_trace_record_copies_both_arms": 173400,
+      "total_checkpoint_trace_record_copies_per_fit": 86700,
+      "unique_trace_records_both_arms": 20400,
+      "unique_trace_records_per_fit": 10200
+    },
+    {
+      "append_journal_bytes_both_arms": 93798400,
+      "arms": [
+        "clean",
+        "augmented"
+      ],
+      "checkpoint_fixed_bytes_both_arms": 54525952,
+      "checkpoint_total_bytes_both_arms": 851812352,
+      "checkpoint_trace_bytes_both_arms": 797286400,
+      "fit_batches_per_epoch": 229,
+      "fits": 2,
+      "gauge_id": "03479000",
+      "maximum_epochs_per_fit": 50,
+      "neural_artifact_count_both_arms": 26,
+      "periodic_checkpoint_epochs": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50
+      ],
+      "periodic_checkpoint_trace_records_per_fit": 62975,
+      "terminal_emergency_best_trace_records_per_fit": 34350,
+      "total_checkpoint_trace_record_copies_both_arms": 194650,
+      "total_checkpoint_trace_record_copies_per_fit": 97325,
+      "unique_trace_records_both_arms": 22900,
+      "unique_trace_records_per_fit": 11450
+    }
+  ],
+  "proposed_enforced_limits": {
+    "best_exports_per_fit": 1,
+    "emergency_checkpoints_per_fit": 1,
+    "fixed_overhead_bytes_per_neural_artifact": 2097152,
+    "maximum_epochs_per_fit": 50,
+    "neural_artifacts_per_fit": 13,
+    "neural_artifacts_total": 78,
+    "neural_fits": 6,
+    "periodic_checkpoint_epochs": [
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      35,
+      40,
+      45,
+      50
+    ],
+    "periodic_checkpoints_per_fit": 10,
+    "ridge_artifacts_total": 3,
+    "ridge_fits": 3,
+    "runner_enforcement_implemented": false,
+    "terminal_checkpoints_per_fit": 1,
+    "total_artifact_bytes": 4294967296,
+    "trace_record_bytes": 4096,
+    "trace_record_limit_includes_append_delimiter": true
+  },
+  "recommendation": "Use recommended_pending_review_scenario (4MiB fixed per neural artifact,2MiB per ridge artifact,64MiB scratch), subject to independent protocol/runner review and actual serialized-byte enforcement; preserve requested_base_scenario as the original arithmetic comparison.",
+  "recommended_pending_review_scenario": {
+    "atomic_scratch_condition": "One writer and at most64MiB total live unpublished staging bytes; prediction/log writers must chunk to this bound. Retained-output reserves do not imply any single512MiB artifact can be staged under64MiB.",
+    "atomic_write_scratch_bytes": 67108864,
+    "ceiling_bytes": 4294967296,
+    "checkpoint_cadence_and_trace_formula_unchanged": true,
+    "checkpoint_trace_record_copies": 577150,
+    "components_bytes": {
+      "append_only_update_journal_bytes": 278118400,
+      "atomic_write_scratch_reserve_bytes": 67108864,
+      "metric_and_log_reserve_bytes": 268435456,
+      "neural_checkpoint_cumulative_trace_bytes": 2364006400,
+      "neural_checkpoint_fixed_bytes": 327155712,
+      "prediction_artifact_reserve_bytes": 536870912,
+      "ridge_artifact_reserve_bytes": 6291456
+    },
+    "delta_formula": "78*(4MiB-2MiB) + (6MiB-3MiB) +64MiB =233,832,448 bytes",
+    "delta_from_requested_base_bytes": 233832448,
+    "fixed_overhead_bytes_per_neural_artifact": 4194304,
+    "future_runner_enforcement_implemented": false,
+    "headroom_bytes": 446980096,
+    "headroom_fraction": 0.10407066345214844,
+    "headroom_gib": 0.41628265380859375,
+    "maximum_proposed_single_neural_artifact_bytes": 54575104,
+    "maximum_proposed_single_neural_artifact_formula": "4MiB +246batches*50epochs*4KiB =54,575,104 bytes",
+    "neural_artifact_count": 78,
+    "rationale": "Additional fixed overhead for larger real-case indices and metadata; explicit ridge and atomic-write scratch reserves. Still a hypothetical enforced bound, not measured scientific artifact qualification.",
+    "ridge_artifact_count": 3,
+    "ridge_bytes_per_fit": 2097152,
+    "scientific_execution_authorized": false,
+    "status": "RECOMMENDED_PROPOSAL_PENDING_PROTOCOL_AND_RUNNER_REVIEW",
+    "total_bytes": 3847987200,
+    "total_gib": 3.5837173461914062,
+    "unique_trace_records": 67900,
+    "within_ceiling_under_stated_assumptions": true
+  },
+  "requested_base_scenario": {
+    "aggregate_location": "aggregate",
+    "components_location": "aggregate.components_bytes",
+    "fixed_overhead_bytes_per_neural_artifact": 2097152,
+    "headroom_bytes": 680812544,
+    "ridge_total_bytes": 3145728,
+    "scratch_included": false,
+    "status": "PRESERVED_ORIGINAL_REQUESTED_WORKSHEET_ASSUMPTIONS_NOT_RECOMMENDED",
+    "total_bytes": 3614154752
+  },
+  "scenario_update": {
+    "prior_unpublished_report_sha256": "a23c78efc2c3abd951a85498212d0cc32852dc02dd31b98ef198ec54c03f245f",
+    "source": "Explicit parent-authorized conservative scenario; original requested base measurements and arithmetic preserved.",
+    "updated_at_utc": "2026-11-03T17:03:50.551469+00:00"
+  },
+  "schema": "hydra-gap-pilot-artifact-size-proposal/v1",
+  "scope": "SIX_PROPOSED_NEURAL_FITS_THREE_PROPOSED_RIDGE_FITS_CV1_L168_H4_CPU_LSTM",
+  "status": "PROPOSAL_CONDITIONAL_NOT_ENFORCED_OR_SCIENTIFICALLY_QUALIFIED"
+}
