@@ -852,3 +852,26 @@ enabled/qualified in the scientific trainer. No source values, model runs,
 paid jobs, resources, reservations, quotas, permissions or data objects were
 created/modified/transferred during this exploration. No claimed cloud speedup,
 remaining cash balance or deadline guarantee is inferred from the catalog.
+
+## Local execution ordered by seed — November 3
+
+The user requested staying local and completing each seed's training and
+development evaluation before advancing, so earlier complete results can be
+reviewed while later seeds run. CUDA benefit remains unmeasured; it was not found
+ineffective. `scripts/plan_seed_sequence.py` and
+`reports/local-seed-sequence-v1.json` prepare exactly180unique metadata jobs:
+72CV17 +36final17, then36final29, then36final43. All four families, three gauges,
+paired full/Q L168 arms and matched final L24 contrasts remain unchanged.
+
+Seven metadata-only tests passed. The first complete seed milestone contains108
+fits, not60; later seeds do not repeat CV. Its historical50-epoch modeled duration
+is44.78h, followed by18.83h each, before stated additional work. Seed review does
+not tune later seeds or drop poor models; a methodological change requires a new
+version and consistent evidence. Protected assessment is outside these reports.
+No unrequested human pause is added between unchanged released seed stages.
+
+This chunk specifies ordering and evidence barriers; the durable execution
+controller and large main-study bundle integration remain to be completed. The
+specific high epoch ceiling/resource ledger and remaining protocol interpretations
+must be bound before fitting. No model, scientific fit/evaluation, source-value
+read, cloud action or optimizer update occurred in this scheduling chunk.

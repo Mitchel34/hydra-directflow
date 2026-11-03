@@ -317,5 +317,41 @@
     "new_spending_or_resource_release": false,
     "paid_cloud_jobs_started": 0,
     "resources_quota_iam_changed": 0
+  },
+  "local_seed_sequence": {
+    "source": "DIRECT_USER_REQUEST",
+    "recorded_at_utc": "2026-11-03T19:56:46.934055+00:00",
+    "status": "USER_REQUESTED_ORDER_PREPARED_NOT_EXECUTED",
+    "compute_preference": "LOCAL_CPU_MPS",
+    "CUDA_speedup_status": "UNMEASURED_NOT_SHOWN_INEFFECTIVE",
+    "seed_order": [
+      17,
+      29,
+      43
+    ],
+    "cv_seed": 17,
+    "seed_milestone_fit_counts": [
+      108,
+      36,
+      36
+    ],
+    "confirmed_total_fits": 180,
+    "CV_repeated_for_later_seeds": false,
+    "complete_first_seed_review_while_later_seeds_run": true,
+    "extra_human_pause_between_unchanged_released_seeds": false,
+    "settings_fixed_across_seed_review": true,
+    "protected_assessment_included": false,
+    "report": "reports/local-seed-sequence-v1.json",
+    "report_sha256": "87556571ea8d709da243d3b1339bad9747c32cbf71cbc53e9b02bb3d9f19e8fa",
+    "plan_sha256": "ddf8086829ad3533434ea9b682929c33842973f8fc311723857b6cc117c10749",
+    "document": "docs/local-seed-sequence.md",
+    "runtime_controller_implemented_by_this_chunk": false,
+    "scientific_fits_started": 0,
+    "paid_cloud_hold_preserved": true,
+    "remaining_concrete_gates": [
+      "Adopt concrete protocol, epoch limit and actual per-fit/global resource ledger",
+      "Qualify full main-study role-limited bundles and their local execution integration",
+      "Implement and qualify durable job/checkpoint/evaluation receipts and seed-report barriers"
+    ]
   }
 }
