@@ -1,0 +1,68 @@
+{
+  "created_at_utc": "2026-11-03T19:23:16.045781+00:00",
+  "implementation_holds": [
+    "Main epoch state machine supports200, but116 fit instances require over100000 updates and the current TrainerSpec correctly rejects them",
+    "Optional LSTM pilot has explicit50-epoch run/checkpoint guards; do not silently bypass or rewrite its qualified artifacts",
+    "Recalculate exact fit/global update, wall-time, storage and conditional cloud allocations before execution",
+    "Any changed update guard or pilot path requires scoped qualification; consumed allowances remain consumed"
+  ],
+  "monitor": "CLEAN_INNER_STOPPING_STANDARDIZED_Q_MSE",
+  "numeric_ceiling_selected_by_user": false,
+  "outer_or_assessment_metrics_control_stopping": false,
+  "paid_cloud_jobs_authorized": false,
+  "projection_formula": "H(E)=H20+(E-20)*(H50-H20)/30; same admitted180 matrix and measured rates",
+  "projection_limits": [
+    "All fits reaching cap is a sizing scenario, not expected convergence or a runtime upper bound",
+    "Excludes engineering, actual large-run loading/scaling, uncertainty/scoring/figures, thermal effects, failures and interruptions",
+    "No early-stopping epoch distribution has been measured on this study",
+    "No unqualified GPU acceleration assumed"
+  ],
+  "protected_assessment_authorized": false,
+  "recommended_max_epochs": 200,
+  "retained_min_epochs": 10,
+  "retained_min_improvement": 0.0,
+  "retained_patience": 5,
+  "same_stopping_opportunity_across_all_four_architectures": true,
+  "scenarios": [
+    {
+      "all_fits_reach_cap_proxy_hours": 82.44949445217038,
+      "fit_instances_exceeding_current100000_guard": 0,
+      "maximum_epochs": 50,
+      "maximum_updates_all180": 4550200,
+      "maximum_updates_one_fit": 31700
+    },
+    {
+      "all_fits_reach_cap_proxy_hours": 164.7207221007835,
+      "fit_instances_exceeding_current100000_guard": 0,
+      "maximum_epochs": 100,
+      "maximum_updates_all180": 9100400,
+      "maximum_updates_one_fit": 63400
+    },
+    {
+      "all_fits_reach_cap_proxy_hours": 329.2631773980096,
+      "fit_instances_exceeding_current100000_guard": 116,
+      "maximum_epochs": 200,
+      "maximum_updates_all180": 18200800,
+      "maximum_updates_one_fit": 126800
+    }
+  ],
+  "schema": "hydra-high-epoch-stopping-proposal/v1",
+  "scientific_execution_authorized": false,
+  "selected_weights": "EARLIEST_STRICTLY_BEST_INNER_CHECKPOINT",
+  "source_runtime_report": "reports/confirmed-180-fit-admitted-runtime.json",
+  "source_runtime_report_sha256": "9a8b5526b0956125aecc2ebca9a29d20e90e6b262c136225505cde18cd92b2ec",
+  "status": "PROPOSED200_PENDING_PROTOCOL_RESOURCE_AND_UPDATE_GUARD_REVIEW",
+  "user_direction": "HIGH_EPOCH_LIMIT_WITH_EARLY_STOPPING",
+  "validation": {
+    "continual_improvement_stopped_epoch": 200,
+    "current_update_guard_rejection_confirmed": true,
+    "minimum_epoch_case_stopped_epoch": 10,
+    "model_calls": 0,
+    "optimizer_updates": 0,
+    "plateau_earliest_best_epoch": 10,
+    "plateau_stopped_epoch": 15,
+    "pure_stopping_cases_passed": 3,
+    "scaler_fits": 0,
+    "source_numeric_reads": 0
+  }
+}

@@ -808,3 +808,21 @@ natural-gap inference wrapper must keep the checkpoint's training policy fixed
 while binding the separate requested fill policy; the bounded runner's journal,
 checkpoint cadence and byte/update controls also need qualification. Conditional
 pilot approval does not automatically release the primary campaign or assessment.
+
+## Higher-epoch preference recorded — November 3
+
+The user prefers a high epoch limit with early stopping. The new
+`docs/high-epoch-stopping-proposal.md` proposes 200 epochs and records a
+100-epoch alternative, while preserving minimum10, patience5, strict inner
+standardized-Q MSE improvement and earliest-best evaluation. The numerical
+ceiling remains a proposal; qualified training code and prior limits were not
+changed. `reports/high-epoch-stopping-proposal-v1.json` records exact scaling of
+the admitted 180-fit workload: 164.72h at100 or329.26h at200 if every fit reaches
+its cap, with all prior runtime exclusions retained. At200,116 fit instances
+would exceed the current100,000-update guard; the largest needs126,800 updates.
+Per-fit/global update, time and storage allowances must be reviewed together.
+
+Three pure stopping-state cases and the existing oversized-update rejection
+passed with zero model/scaler/optimizer activity or source-value reads. Earlier
+50-epoch receipts remain historical evidence. This direction neither releases
+scientific fits nor changes the protected-assessment or paid-cloud holds.

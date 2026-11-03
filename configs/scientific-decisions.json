@@ -261,5 +261,21 @@
     "completed_download_scope": "19_OWNED_PROVENANCE_FILES66039_BYTES_EXPLICITLY_APPROVED_AND_VERIFIED",
     "actual_new_model_scaler_ridge_fits": 0,
     "actual_new_optimizer_updates": 0
+  },
+  "high_epoch_early_stopping_direction": {
+    "source": "DIRECT_USER_PREFERENCE",
+    "recorded_at_utc": "2026-11-03T19:23:16.045781+00:00",
+    "user_direction": "HIGH_EPOCH_LIMIT_WITH_INNER_EARLY_STOPPING",
+    "proposed_max_epochs": 200,
+    "numeric_ceiling_adopted": false,
+    "minimum_epochs": 10,
+    "patience": 5,
+    "minimum_improvement": 0.0,
+    "monitor": "CLEAN_INNER_STOPPING_STANDARDIZED_Q_MSE",
+    "best_checkpoint_for_evaluation": true,
+    "report": "reports/high-epoch-stopping-proposal-v1.json",
+    "report_sha256": "67f41cd1a2e8170c80711f28c65169f6d6ec612d5676c995560527a0dace04f9",
+    "existing50_epoch_configuration_preserved_until_review": true,
+    "changes_authorize_no_new_execution_or_spending": true
   }
 }
