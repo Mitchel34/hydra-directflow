@@ -1,5 +1,13 @@
 # Bounded CV1 historical-Q gap pilot — proposal for review
 
+**Subsequent discussion:** the user agreed to remove ridge, requested all four
+deep-learning families, and prefers a higher epoch ceiling with early stopping.
+Whether to run a separate missingness pilot before the main campaign is still
+under discussion. The six-neural/three-ridge packet below is retained as the
+earlier proposal, not the current execution scope or an approval request. See
+[the higher-epoch proposal](high-epoch-stopping-proposal.md) and the latest
+direction in `configs/scientific-decisions.json`. No revised campaign is frozen.
+
 **Status: proposed, not approved or executable.** Prepared November 3, 2026
 against repository baseline `043ac2f`. This document and its
 [companion proposal](../configs/bounded-gap-pilot-proposal.json) define the small

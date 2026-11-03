@@ -826,3 +826,10 @@ Three pure stopping-state cases and the existing oversized-update rejection
 passed with zero model/scaler/optimizer activity or source-value reads. Earlier
 50-epoch receipts remain historical evidence. This direction neither releases
 scientific fits nor changes the protected-assessment or paid-cloud holds.
+
+The intervening discussion also accepted ridge removal and retained all four
+deep-learning families. The user asked whether a separate missingness pilot is
+needed before the primary campaign; that sequence remains unresolved. The older
+six-neural/three-ridge approval question and packet must not be treated as current
+execution authority. No24-fit pilot or main campaign has been released by this
+discussion, and no new fit was started.

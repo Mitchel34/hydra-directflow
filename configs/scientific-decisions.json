@@ -277,5 +277,24 @@
     "report_sha256": "67f41cd1a2e8170c80711f28c65169f6d6ec612d5676c995560527a0dace04f9",
     "existing50_epoch_configuration_preserved_until_review": true,
     "changes_authorize_no_new_execution_or_spending": true
+  },
+  "latest_experiment_direction": {
+    "source": "DIRECT_USER_DISCUSSION_AFTER_D589EE9",
+    "recorded_at_utc": "2026-11-03T19:26:18.544653+00:00",
+    "ridge_experiments_removed_from_requested_scope": true,
+    "requested_architectures": [
+      "LSTM",
+      "Transformer",
+      "GRU_Transformer",
+      "Mamba2_Transformer"
+    ],
+    "primary180_fit_matrix_still_recorded": true,
+    "separate_missingness_pilot_vs_direct_primary_sequence": "UNDER_DISCUSSION_NOT_FROZEN",
+    "higher_epoch_ceiling_with_inner_early_stopping_requested": true,
+    "specific200_epoch_ceiling_is_assistant_proposal_not_user_adoption": true,
+    "old_six_neural_three_ridge_packet_is_not_current_execution_authority": true,
+    "scientific_execution_enabled": false,
+    "paid_cloud_execution_enabled": false,
+    "protected_assessment_enabled": false
   }
 }
