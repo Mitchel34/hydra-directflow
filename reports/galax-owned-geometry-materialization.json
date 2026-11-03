@@ -1,0 +1,21 @@
+{
+  "additional_explicit_hydration_requests": 0,
+  "allocated_source_bytes_before_local_completion": 335872,
+  "cloud_jobs": 0,
+  "fileprovider_wire_bytes": null,
+  "initial_child_timed_out": true,
+  "initial_child_wall_limit_seconds": 60,
+  "initial_hydration_attempts": 1,
+  "initial_log_sha256": "0e747ff34163ca47735101ecf6528824ca7c4562a686b171da77e6691d5eff67",
+  "materialization_script_sha256": "92dce14f3e91bbb55179dab5b60a7f55a10f2a0ae6c870c7ccff869a6202c389",
+  "new_USGS_geometry_requests": 0,
+  "recorded_at_utc": "2026-11-03T01:44:07.394979+00:00",
+  "resident_before_local_completion": true,
+  "resident_completion_wall_limit_seconds": 8,
+  "schema": "hydra-approved-owned-geometry-copy/v1",
+  "source_contents_changed": false,
+  "source_sha256": "c28120fb6c409ff61734df608efc05f092faca1f16c9c6468252c7b016590530",
+  "status": "VERIFIED_RESIDENT_LOCAL_COMPLETION_AFTER_INITIAL_CHILD_TIMEOUT",
+  "user_response": "Approve the single-file materialization",
+  "verified_bytes": 334177
+}

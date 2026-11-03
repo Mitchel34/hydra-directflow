@@ -1,0 +1,281 @@
+{
+  "active_reduction": {
+    "candidate_denominator": "full retained delineated basin area; never published drainage-area number or observed-cell area",
+    "complete_mask": "every positive-weight cell is present",
+    "coverage": "sum_i weight_i * present_i",
+    "formula": "sum_i area(B intersect C_i)/area(B) * x_i",
+    "implementation": "local_data.basin_reduce",
+    "missing_positive_weight_cell": "mask basin mean as NaN even if missing area fraction is tiny",
+    "missing_zero_weight_cell": "does not affect basin mean or coverage",
+    "renormalization": false
+  },
+  "created_at_utc": "2026-11-03T01:44:08.906891+00:00",
+  "execution": {
+    "cloud_jobs": 0,
+    "missing_geometry_hydrated": false,
+    "network_requests": 0,
+    "optimizer_updates": 0,
+    "original_metadata_modified": false,
+    "protected_assessment_access": false,
+    "raw_archives_read": false,
+    "scientific_admission_granted": false,
+    "source_geometry_or_weights_modified": false,
+    "weather_or_discharge_values_read": false
+  },
+  "gauges": [
+    {
+      "accepted_case_ids": [],
+      "formula_verified": true,
+      "gauge_id": "03161000",
+      "geometry_bytes": 536200,
+      "geometry_sha256": "9076db27e05235204b4f99b5f37e5bd34ec8c723ab6f79af94c094691bccf763",
+      "historical_reference": {
+        "area_m2": 531144256.6693604,
+        "area_minus_published_percent": 0.037045852420947156,
+        "snap_displacement_m": 22.958176658211674,
+        "station_boundary_distance_m": 8.140354456262193,
+        "station_covered": true
+      },
+      "maximum_positive_weight": 0.016923837888878752,
+      "minimum_positive_weight": 7.399183614466504e-07,
+      "original_admitted": false,
+      "original_status": "CANDIDATE_SCIENTIFIC_HOLD",
+      "polygon_comparison_status": "INDEPENDENT_REPRODUCTION_PASS",
+      "recomputed": {
+        "area_minus_published_percent": 0.03704585242096936,
+        "edge_250m_to_125m_l1_weight_change": 2.4221621102385266e-09,
+        "footprint_bounds_wgs84": [
+          -81.73854682873875,
+          36.117638345971635,
+          -81.35854519180421,
+          36.406729592707045
+        ],
+        "full_basin_area_m2": 531144256.6693604,
+        "full_basin_area_minus_stored_denominator_m2": 0.0,
+        "gauge_coordinate_covered": true,
+        "gauge_coordinate_to_boundary_m": 8.140354456262193,
+        "geometry_repairs": 0,
+        "intersection_sum_m2": 531144256.669358,
+        "l1_weight_error": 5.210004833222756e-13,
+        "max_absolute_intersection_area_error_m2": 8.188188076019287e-06,
+        "max_absolute_weight_error": 1.5414752807529908e-14,
+        "numerical_area_tolerance_m2": 5.3114425666936045,
+        "positive_cell_membership_exact": true,
+        "positive_cells": 84,
+        "returned_pourpoint_covered": true,
+        "returned_pourpoint_wgs84": [
+          -81.40717388597287,
+          36.39324170861056
+        ],
+        "snap_displacement_geodesic_m": 22.958176658211674,
+        "source_scope_counts": {
+          "adjoint_catchment": 1,
+          "pourpoint": 1,
+          "split_catchment": 1,
+          "upstream_basin": 1
+        },
+        "source_valid": true,
+        "uncovered_area_m2": 0.0
+      },
+      "source": "Official point-specific StreamStats delineation at official stream-grid snap",
+      "source_residency": "RESIDENT",
+      "weight_rows": 84,
+      "weight_sum": 0.9999999999999953,
+      "zero_weight_cells": 873
+    },
+    {
+      "accepted_case_ids": [
+        "GALAX_OFFSET_ACCEPTED_20261025T1736Z"
+      ],
+      "formula_verified": true,
+      "gauge_id": "03164000",
+      "geometry_bytes": 334177,
+      "geometry_sha256": "c28120fb6c409ff61734df608efc05f092faca1f16c9c6468252c7b016590530",
+      "historical_reference": {
+        "area_m2": 2952737446.044447,
+        "area_minus_published_percent": -0.08253273208853606,
+        "snap_displacement_m": null,
+        "station_boundary_distance_m": 33.729673264522795,
+        "station_covered": false
+      },
+      "maximum_positive_weight": 0.0030459390329198146,
+      "minimum_positive_weight": 7.372622316603072e-08,
+      "original_admitted": false,
+      "original_status": "CANDIDATE_SCIENTIFIC_HOLD",
+      "polygon_comparison_status": "INDEPENDENT_REPRODUCTION_PASS",
+      "recomputed": {
+        "area_minus_published_percent": -0.08253273208853606,
+        "edge_250m_to_125m_l1_weight_change": 1.065810238099526e-09,
+        "footprint_bounds_wgs84": [
+          -81.74198731619042,
+          36.11716020013112,
+          -80.91513072661394,
+          36.76892420114559
+        ],
+        "full_basin_area_m2": 2952737446.044447,
+        "full_basin_area_minus_stored_denominator_m2": 0.0,
+        "gauge_coordinate_covered": false,
+        "gauge_coordinate_to_boundary_m": 33.729673264522795,
+        "geometry_repairs": 0,
+        "intersection_sum_m2": 2952737446.0444517,
+        "l1_weight_error": 4.329721997259144e-13,
+        "max_absolute_intersection_area_error_m2": 8.570030331611633e-06,
+        "max_absolute_weight_error": 2.9021923753091983e-15,
+        "numerical_area_tolerance_m2": 29.52737446044447,
+        "positive_cell_membership_exact": true,
+        "positive_cells": 387,
+        "returned_pourpoint_covered": null,
+        "returned_pourpoint_wgs84": null,
+        "snap_displacement_geodesic_m": null,
+        "source_scope_counts": {
+          "gauge_indexed_precomputed_basin": 1
+        },
+        "source_valid": true,
+        "uncovered_area_m2": 0.0
+      },
+      "source": "Official USGS GAGES-II gauge-indexed precomputed basin",
+      "source_residency": "RESIDENT",
+      "weight_rows": 387,
+      "weight_sum": 1.0000000000000016,
+      "zero_weight_cells": 570
+    },
+    {
+      "accepted_case_ids": [
+        "SUGARGROVE_AREA_ACCEPTED_20261025T1736Z"
+      ],
+      "formula_verified": true,
+      "gauge_id": "03479000",
+      "geometry_bytes": 296538,
+      "geometry_sha256": "1aa8e1e8f2116b9c6fec41a2e5fea3b729f03808a8c966af763fb8af9610e8d3",
+      "historical_reference": {
+        "area_m2": 236074901.2315688,
+        "area_minus_published_percent": -1.0325418640570683,
+        "snap_displacement_m": 29.152601751577944,
+        "station_boundary_distance_m": 3.1334366967793064,
+        "station_covered": true
+      },
+      "maximum_positive_weight": 0.03807414764601733,
+      "minimum_positive_weight": 0.00029562761669049557,
+      "original_admitted": false,
+      "original_status": "CANDIDATE_SCIENTIFIC_HOLD",
+      "polygon_comparison_status": "INDEPENDENT_REPRODUCTION_PASS",
+      "recomputed": {
+        "area_minus_published_percent": -1.0325418640570683,
+        "edge_250m_to_125m_l1_weight_change": 2.988651623774035e-09,
+        "footprint_bounds_wgs84": [
+          -81.84436261225291,
+          36.108704240623915,
+          -81.69439891089488,
+          36.348583271787184
+        ],
+        "full_basin_area_m2": 236074901.2315688,
+        "full_basin_area_minus_stored_denominator_m2": 0.0,
+        "gauge_coordinate_covered": true,
+        "gauge_coordinate_to_boundary_m": 3.1334366967793064,
+        "geometry_repairs": 0,
+        "intersection_sum_m2": 236074901.23156905,
+        "l1_weight_error": 5.353005907461628e-13,
+        "max_absolute_intersection_area_error_m2": 7.955357432365417e-06,
+        "max_absolute_weight_error": 3.3698738244325455e-14,
+        "numerical_area_tolerance_m2": 2.3607490123156882,
+        "positive_cell_membership_exact": true,
+        "positive_cells": 43,
+        "returned_pourpoint_covered": true,
+        "returned_pourpoint_wgs84": [
+          -81.82219734366353,
+          36.23890471824323
+        ],
+        "snap_displacement_geodesic_m": 29.152601751577944,
+        "source_scope_counts": {
+          "adjoint_catchment": 1,
+          "pourpoint": 1,
+          "split_catchment": 1,
+          "upstream_basin": 1
+        },
+        "source_valid": true,
+        "uncovered_area_m2": 0.0
+      },
+      "source": "Official point-specific StreamStats delineation at official stream-grid snap",
+      "source_residency": "RESIDENT",
+      "weight_rows": 43,
+      "weight_sum": 1.000000000000001,
+      "zero_weight_cells": 914
+    }
+  ],
+  "implementation_sha256": {
+    "scripts/audit_spatial_support.py": "2a5f6aa37bed9e0aee4c68c280ded5d67db6c260a619035f8fd76804899c869e",
+    "src/hydra_directflow/local_data.py": "adb2fe589fe92e1598e7e21f9955af9c9e53fa6eb5266e52dd10f2d12c0d5045",
+    "src/hydra_directflow/spatial.py": "680e84d00cb77a7f5ca27579ab55f7369bc3234435463677e3bb85e67cedcb2f"
+  },
+  "independent_geometry_reproductions": 3,
+  "limitations": [
+    "Numerical fidelity to retained official-source delineations does not establish surveyed geographic truth",
+    "Published station coordinates/drainage areas are the October23 retained metadata snapshot, not refreshed hydrologic data",
+    "Galax feature-specific outlet point/method/DEM vintage and StreamStats regional DEM build dates are not established",
+    "Provider-authored Zarr CRS attribute is absent; native-grid interpretation is corroborated, not a provider CRS declaration"
+  ],
+  "nesting": {
+    "forced_nesting_or_clipping": false,
+    "galax_covers_jefferson": false,
+    "historical": {
+      "Jefferson_area_outside_Galax_percent": 0.9750863737642285,
+      "Jefferson_area_outside_Galax_sq_km": 5.179115271814233,
+      "Jefferson_strictly_covered_by_Galax": false,
+      "interpretation": "Different independent delineation products do not have identical boundaries. Preserve the full union for conservative raw acquisition; do not clip a basin to force nesting or construct basin means from this QA receipt."
+    },
+    "jefferson_outside_galax_m2": 5179115.271814233,
+    "jefferson_outside_galax_percent": 0.9750863737642285,
+    "status": "INDEPENDENT_REPRODUCTION_PASS"
+  },
+  "official_method_references": [
+    "https://www.usgs.gov/streamstats/streamstats-fundamentals",
+    "https://www.usgs.gov/publications/gages-ii-geospatial-attributes-gages-evaluating-streamflow",
+    "https://api.water.usgs.gov/docs/nldi/basin/"
+  ],
+  "original_weight_rows": 514,
+  "original_weight_sha256": "9eaaf3b221360ed6faaa0376e953fd0c2d0356fb419df96daed9107404283a74",
+  "prior_case_acceptances": [
+    {
+      "disposition": "ACCEPTED_FOR_THIS_STUDY_CASE_ONLY",
+      "gauge_id": "03164000",
+      "id": "GALAX_OFFSET_ACCEPTED_20261025T1736Z",
+      "measured_value": 33.729673264522795,
+      "metric": "station_distance_outside_candidate_polygon_m"
+    },
+    {
+      "disposition": "ACCEPTED_FOR_THIS_STUDY_CASE_ONLY",
+      "gauge_id": "03479000",
+      "id": "SUGARGROVE_AREA_ACCEPTED_20261025T1736Z",
+      "measured_value": -1.0325418640570794,
+      "metric": "candidate_polygon_area_minus_published_drainage_area_percent"
+    }
+  ],
+  "private_input_manifest": {
+    "bytes": 1401,
+    "sha256": "5eb8fe733efffde2deeb8e94e29f173669ce5deaf0cf4639ca7747b34c144224"
+  },
+  "remaining_scientific_decisions": [
+    "Confirm approximate gauge-associated basin claim with documented outlet/method/vintage limitations",
+    "Confirm independent mixed StreamStats/GAGES-II Jefferson/Galax footprints without nesting, clipping or conservation claim"
+  ],
+  "runtime": {
+    "area_pipeline": "axis order change (2D) + Inverse of NAD83 to WGS 84 (1) + Conus Albers",
+    "area_pipeline_stated_accuracy_m": 4.0,
+    "elapsed_seconds": 1.1590396659448743,
+    "proj_network_enabled": false,
+    "pyproj": "3.7.1",
+    "python": "3.10.17",
+    "shapely": "2.0.7"
+  },
+  "scaffold_note": "spatial.py is a generic proposal with optional explicit_renormalize; the executed development reduction uses local_data.basin_reduce and never selects that option.",
+  "schema": "hydra-spatial-support-audit/v1",
+  "source_evidence_sha256": {
+    "ADMISSION_DECISIONS.json": "21a9f51854529b5ad6d734c2b92cbfc40b24981ebc602cd2c13f65d37f570c29",
+    "CANDIDATE_WEIGHTS_MANIFEST.json": "7d95d99bc0566fb3da3f5d01b45b18ffe5c94c37b90282dc8661a0779d2eb6e0",
+    "CANDIDATE_WEIGHTS_STATUS.json": "9ec7fca5f3cf1a57b3134e7b0515b8ae3a74b0e451c0543a524c9ed52c76d2f5",
+    "COORDINATE_EVIDENCE.json": "cefff3a079388e28c2681c2fccf506bda9e63828fc7291cf9925da862f126421",
+    "PROTOCOL.json": "02c9cc79bc57dd6da7361a5710a95e0d548ef5fb412f45fecccac358715db0dc",
+    "RESULTS.json": "7848e3d0ac9856ed81ea58f8031b8c116ba177f7d7d316a09aabfa60fb0532aa"
+  },
+  "status": "NUMERICAL_REPRODUCTION_COMPLETE_SCIENTIFIC_ADMISSION_PENDING"
+}
