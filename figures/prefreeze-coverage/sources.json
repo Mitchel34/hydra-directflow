@@ -1,0 +1,13 @@
+{
+  "figures": {
+    "high-flow-coverage.svg": "34bf8827aeee7b173c1ea7f472583708831b76aea284577bca5ddb02ddf87b6a",
+    "seasonal-coverage.svg": "46b8bffb57d91afe2dc220500f30a195ce11b30b8d3842239401634d59b9798f"
+  },
+  "matplotlib": "3.10.1",
+  "model_predictions_used": false,
+  "protected_data": false,
+  "schema": "hydra-coverage-figures/v1",
+  "scope": "DEVELOPMENT_AVAILABILITY_NOT_FORECAST_SKILL",
+  "script_sha256": "49345b25deb49f38e9188dd00527de99290775960b9ca38508b65febecc11a0c",
+  "source_report_sha256": "8e82f613165a5d452c74a30783b02e1c0ae5fb5d93dbe2e338d0010c215e8c0a"
+}
