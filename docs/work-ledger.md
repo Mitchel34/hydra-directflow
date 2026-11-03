@@ -735,3 +735,22 @@ receipts are `development-corpus-materialization-v1.json`,
 `resident-optimization-release-v3.json`. The partial v2 release remains unchanged.
 Real per-slot provenance qualification and pilot protocol/tolerance review still
 precede any separate scientific execution release.
+
+## CV1 original provenance cache recovered — November 3
+
+The user authorized real-data assembly and a bounded pilot protocol, with
+tolerances and scientific execution to be reviewed afterward. Metadata inventory
+found 19 owned cloud-only cache files (66,039 encoded bytes), separately from the
+already complete numerical corpus. After explicit approval, 19 scoped Apple
+iCloud requests completed. All 37 monthly entries for July 2018–July 2021 were
+copied outside cloud sync: 111 files / 370,776 bytes. Original commitments were
+pinned by the published coverage report and matched corpus monthly references;
+all payload byte counts and SHA checks passed. Five previously unreadable
+commitments were authenticated before their payload identities were trusted.
+
+`reports/pilot-cv1-provenance-cache-recovery-v1.json` preserves the exact copied
+file identities. This step copied opaque payload bytes without decoding numeric
+arrays, reconstructing targets, fitting a model or acquiring new USGS records.
+Original source IDs identify shared source requests; assembly must join by gauge
+and exact timestamp, retaining those IDs and qualifiers verbatim. Historical
+publication availability remains a simulated two-hour convention.
