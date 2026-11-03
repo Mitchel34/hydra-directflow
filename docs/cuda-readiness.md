@@ -30,3 +30,8 @@ were each1 with usage0. No resources, quotas or permissions were changed. Use a
 single-GPU planning assumption under existing quota. This establishes neither
 zonal capacity nor a successful launch, and terminated instances do not prove
 zero retained-disk or other storage costs.
+
+The [November3 read-only compute comparison](gcp-compute-options.md) refreshes
+the quota snapshot and compares L4, A100, G4 and CPU alternatives. It preserves
+the CUDA implementation/qualification and paid-job holds above. Hardware prices
+and quota are not measured workload speedups or launch authorization.

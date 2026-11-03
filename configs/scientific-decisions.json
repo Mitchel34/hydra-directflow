@@ -296,5 +296,26 @@
     "scientific_execution_enabled": false,
     "paid_cloud_execution_enabled": false,
     "protected_assessment_enabled": false
+  },
+  "gcp_compute_exploration": {
+    "source": "DIRECT_USER_REQUEST_READ_ONLY_EXPLORATION",
+    "recorded_at_utc": "2026-11-03T19:42:26.200175+00:00",
+    "report": "reports/gcp-compute-options-20261103.json",
+    "report_sha256": "0c9d5d013f4ad79cdeae732f3d4a1729d264d58aa1f04245db116e0f392e07b2",
+    "document": "docs/gcp-compute-options.md",
+    "first_candidate": "g2-standard-8_NVIDIA_L4",
+    "observed_global_gpu_quota": 1,
+    "observed_global_gpu_usage": 0,
+    "us_central1_L4_quota": 1,
+    "us_central1_A100_quota": 0,
+    "RTX_PRO6000_H100_quotas": "UNVERIFIED_MODERN_QUOTA_READ_TIMED_OUT",
+    "quota_is_capacity": false,
+    "cuda_trainer_integrated": false,
+    "real_cuda_qualified": false,
+    "cloud_speedup_measured": false,
+    "budget_scope_or_hourly_rate_changed": false,
+    "new_spending_or_resource_release": false,
+    "paid_cloud_jobs_started": 0,
+    "resources_quota_iam_changed": 0
   }
 }

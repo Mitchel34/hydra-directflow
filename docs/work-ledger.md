@@ -833,3 +833,22 @@ needed before the primary campaign; that sequence remains unresolved. The older
 six-neural/three-ridge approval question and packet must not be treated as current
 execution authority. No24-fit pilot or main campaign has been released by this
 discussion, and no new fit was started.
+
+## GCP compute exploration — November 3, 19:32 UTC
+
+The user requested exploration of more powerful GCP compute. Five read-only
+metadata queries succeeded; a sixth modern quota read timed out without retry.
+Current global GPU quota and us-central1 L4 quota remain1withusage0; A10040/80GB
+quota there is0. G4/H100 quota remains unverified. All22 listed Compute Engine
+instances are terminated; catalog listings are not capacity reservations.
+
+`docs/gcp-compute-options.md` and
+`reports/gcp-compute-options-20261103.json` compare current official whole-VM
+prices, hardware restrictions, live quota evidence and the existing150USD
+funding conditions. Recommendation is to prepare the CUDA integration and a
+bounded one-L4 benchmark first, then compare measured cost per completed fit or
+independent-fit concurrency before choosing larger hardware. CUDA is not yet
+enabled/qualified in the scientific trainer. No source values, model runs,
+paid jobs, resources, reservations, quotas, permissions or data objects were
+created/modified/transferred during this exploration. No claimed cloud speedup,
+remaining cash balance or deadline guarantee is inferred from the catalog.

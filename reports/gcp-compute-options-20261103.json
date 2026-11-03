@@ -1,0 +1,312 @@
+{
+  "budget": {
+    "actual_remaining_balance_reconciled": false,
+    "allocations_usd": {
+      "CUDA_qualification": 10,
+      "contingency": 30,
+      "scientific_compute": 75,
+      "staging": 35
+    },
+    "approved_combined_incremental_ceiling_usd": 150,
+    "current_paid_job_hold_preserved": true,
+    "historical_acquisition_liabilities_excluded": true,
+    "maximum_existing_cloud_workers": 2,
+    "maximum_existing_vm_rate_usd_per_hour": 1,
+    "published_staging_conservative_estimate_usd": 12.907585,
+    "rate_or_machine_scope_change_requires_review": true,
+    "staging_estimate_is_invoice": false,
+    "staging_estimate_source": "reports/development-completion-check.json",
+    "staging_estimate_source_sha256": "72a7b80b46574c9a4fd7cbc50905324cf191886d9330e7c9145acac4813dd8c0"
+  },
+  "catalog_exact_selected": [
+    {
+      "accelerators": [
+        {
+          "guestAcceleratorCount": 1,
+          "guestAcceleratorType": "nvidia-tesla-a100"
+        }
+      ],
+      "guestCpus": 12,
+      "memoryMb": 87040,
+      "name": "a2-highgpu-1g"
+    },
+    {
+      "accelerators": [
+        {
+          "guestAcceleratorCount": 1,
+          "guestAcceleratorType": "nvidia-h100-80gb"
+        }
+      ],
+      "guestCpus": 26,
+      "memoryMb": 239616,
+      "name": "a3-highgpu-1g"
+    },
+    {
+      "accelerators": [
+        {
+          "guestAcceleratorCount": 1,
+          "guestAcceleratorType": "nvidia-l4"
+        }
+      ],
+      "guestCpus": 4,
+      "memoryMb": 16384,
+      "name": "g2-standard-4"
+    },
+    {
+      "accelerators": [
+        {
+          "guestAcceleratorCount": 1,
+          "guestAcceleratorType": "nvidia-l4"
+        }
+      ],
+      "guestCpus": 8,
+      "memoryMb": 32768,
+      "name": "g2-standard-8"
+    },
+    {
+      "accelerators": [
+        {
+          "guestAcceleratorCount": 1,
+          "guestAcceleratorType": "nvidia-rtx-pro-6000"
+        }
+      ],
+      "guestCpus": 48,
+      "memoryMb": 184320,
+      "name": "g4-standard-48"
+    },
+    {
+      "accelerators": [
+        {
+          "guestAcceleratorCount": 1,
+          "guestAcceleratorType": "nvidia-rtx-pro-6000"
+        }
+      ],
+      "guestCpus": 6,
+      "memoryMb": 22528,
+      "name": "g4-standard-6"
+    }
+  ],
+  "catalog_scope": "Selected machine type metadata in us-central1-b; catalog presence is not launch capacity",
+  "created_at_utc": "2026-11-03T19:39:04.819949+00:00",
+  "equal_compute_cost_required_throughput_vs_g2_standard8": {
+    "a2-highgpu-1g": 4.303280668510294,
+    "g4-standard-48": 5.271557916921186
+  },
+  "exploration_execution": {
+    "cloud_read_only_metadata_queries": 6,
+    "cloud_read_only_metadata_queries_succeeded": 5,
+    "cloud_read_only_metadata_queries_timed_out": 1,
+    "cloud_resources_created": 0,
+    "cloud_resources_modified": 0,
+    "data_object_downloads": 0,
+    "model_runs": 0,
+    "paid_jobs_started": 0,
+    "quota_or_iam_changes": 0,
+    "scientific_fits": 0
+  },
+  "global_gpu_quota": [
+    {
+      "limit": 1.0,
+      "metric": "GPUS_ALL_REGIONS",
+      "usage": 0.0
+    }
+  ],
+  "independent_two_L4_example": {
+    "completion_time_or_scaling_measured": false,
+    "current_global_and_regional_quota_sufficient": false,
+    "hours_each": 24,
+    "machine_type": "g2-standard-8",
+    "quota_increase_authorized": false,
+    "vm_count": 2,
+    "vm_only_total_usd": 40.973966976
+  },
+  "instances_status_counts": {
+    "TERMINATED": 22
+  },
+  "modern_quota_probe": "TIMED_OUT_AFTER40S_NO_RETRY_NO_MUTATION",
+  "not_quoted": {
+    "a3-highgpu-1g": "H10080GB+26vCPU+234GBhost+750GiBlocalSSD; Spot/Flex-start only; no verified1GPU rate on retrieved table, do not divide8GPU price"
+  },
+  "options": [
+    {
+      "actual_workload_throughput_measured": false,
+      "displayed_us_central1_default_on_demand_vm_usd_per_hour": 0.706832276,
+      "gpu": "L4",
+      "gpu_memory_GB": 24,
+      "host_memory_GiB": 16,
+      "hypothetical_hours_for75USD_compute_allocation": 106.10720894697798,
+      "machine_type": "g2-standard-4",
+      "original_G2_L4_machine_scope": true,
+      "physical_gpu_fraction_or_count": 1,
+      "pricing_source": "https://cloud.google.com/products/compute/pricing/accelerator-optimized",
+      "quota_observation": "L4_REGIONAL_AND_GLOBAL_QUOTA_AVAILABLE_NOT_CAPACITY",
+      "under_existing1USD_vm_rate_cap": true,
+      "vcpus": 4,
+      "vm_only_24h_usd": 16.963974624,
+      "vm_only_48h_usd": 33.927949248
+    },
+    {
+      "actual_workload_throughput_measured": false,
+      "displayed_us_central1_default_on_demand_vm_usd_per_hour": 0.853624312,
+      "gpu": "L4",
+      "gpu_memory_GB": 24,
+      "host_memory_GiB": 32,
+      "hypothetical_hours_for75USD_compute_allocation": 87.86066533681388,
+      "machine_type": "g2-standard-8",
+      "original_G2_L4_machine_scope": true,
+      "physical_gpu_fraction_or_count": 1,
+      "pricing_source": "https://cloud.google.com/products/compute/pricing/accelerator-optimized",
+      "quota_observation": "L4_REGIONAL_AND_GLOBAL_QUOTA_AVAILABLE_NOT_CAPACITY",
+      "under_existing1USD_vm_rate_cap": true,
+      "vcpus": 8,
+      "vm_only_24h_usd": 20.486983488,
+      "vm_only_48h_usd": 40.973966976
+    },
+    {
+      "actual_workload_throughput_measured": false,
+      "displayed_us_central1_default_on_demand_vm_usd_per_hour": 3.673385,
+      "gpu": "A100_40GB",
+      "gpu_memory_GB": 40,
+      "host_memory_GiB": 85,
+      "hypothetical_hours_for75USD_compute_allocation": 20.417135693644962,
+      "machine_type": "a2-highgpu-1g",
+      "original_G2_L4_machine_scope": false,
+      "physical_gpu_fraction_or_count": 1,
+      "pricing_source": "https://cloud.google.com/products/compute/pricing/accelerator-optimized",
+      "quota_observation": "US_CENTRAL1_A100_QUOTA_ZERO",
+      "under_existing1USD_vm_rate_cap": false,
+      "vcpus": 12,
+      "vm_only_24h_usd": 88.16124,
+      "vm_only_48h_usd": 176.32248
+    },
+    {
+      "actual_workload_throughput_measured": false,
+      "displayed_us_central1_default_on_demand_vm_usd_per_hour": 5.06879789,
+      "gpu": "A100_80GB",
+      "gpu_memory_GB": 80,
+      "host_memory_GiB": 170,
+      "hypothetical_hours_for75USD_compute_allocation": 14.79640767448315,
+      "machine_type": "a2-ultragpu-1g",
+      "original_G2_L4_machine_scope": false,
+      "physical_gpu_fraction_or_count": 1,
+      "pricing_source": "https://cloud.google.com/products/compute/pricing/accelerator-optimized",
+      "quota_observation": "US_CENTRAL1_A100_80GB_QUOTA_ZERO",
+      "under_existing1USD_vm_rate_cap": false,
+      "vcpus": 12,
+      "vm_only_24h_usd": 121.65114936,
+      "vm_only_48h_usd": 243.30229872
+    },
+    {
+      "actual_workload_throughput_measured": false,
+      "displayed_us_central1_default_on_demand_vm_usd_per_hour": 0.64688,
+      "gpu": "RTX_PRO_6000",
+      "gpu_memory_GB": 12,
+      "host_memory_GiB": 22,
+      "hypothetical_hours_for75USD_compute_allocation": 115.94113282216176,
+      "machine_type": "g4-standard-6",
+      "original_G2_L4_machine_scope": false,
+      "physical_gpu_fraction_or_count": 0.125,
+      "pricing_source": "https://cloud.google.com/products/compute/pricing/accelerator-optimized",
+      "quota_observation": "G4_QUOTA_UNVERIFIED_FRACTIONAL_CENTRAL1B_ONLY",
+      "under_existing1USD_vm_rate_cap": true,
+      "vcpus": 6,
+      "vm_only_24h_usd": 15.525120000000001,
+      "vm_only_48h_usd": 31.050240000000002
+    },
+    {
+      "actual_workload_throughput_measured": false,
+      "displayed_us_central1_default_on_demand_vm_usd_per_hour": 4.49993,
+      "gpu": "RTX_PRO_6000",
+      "gpu_memory_GB": 96,
+      "host_memory_GiB": 180,
+      "hypothetical_hours_for75USD_compute_allocation": 16.66692592995891,
+      "machine_type": "g4-standard-48",
+      "original_G2_L4_machine_scope": false,
+      "physical_gpu_fraction_or_count": 1,
+      "pricing_source": "https://cloud.google.com/products/compute/pricing/accelerator-optimized",
+      "quota_observation": "G4_QUOTA_UNVERIFIED",
+      "under_existing1USD_vm_rate_cap": false,
+      "vcpus": 48,
+      "vm_only_24h_usd": 107.99832,
+      "vm_only_48h_usd": 215.99664
+    },
+    {
+      "actual_workload_throughput_measured": false,
+      "displayed_us_central1_default_on_demand_vm_usd_per_hour": 0.403216,
+      "gpu": "NONE",
+      "gpu_memory_GB": 0,
+      "host_memory_GiB": 32,
+      "hypothetical_hours_for75USD_compute_allocation": 186.00452363001466,
+      "machine_type": "c3-standard-8",
+      "original_G2_L4_machine_scope": false,
+      "physical_gpu_fraction_or_count": 0,
+      "pricing_source": "https://cloud.google.com/products/compute/pricing/general-purpose?hl=en",
+      "quota_observation": "C3_REGIONAL_VCPU_QUOTA24_USAGE0_CAPACITY_UNVERIFIED",
+      "under_existing1USD_vm_rate_cap": true,
+      "vcpus": 8,
+      "vm_only_24h_usd": 9.677184,
+      "vm_only_48h_usd": 19.354368
+    }
+  ],
+  "pricing_scope": "Public displayedIowa/us-central1 on-demand whole-machine GPU+CPU+RAM rates; no discounts assumed; extra disks/network/taxes excluded. Not regionalSKU commitment or invoice.",
+  "private_source_sha256": {
+    "catalog-central1b": "48a1a4b03292897acaf0cfe9177b67ec40e4b9482dd903030b9ef5b621d129a8",
+    "catalog-n2-standard-16": "0893656f2ee91e4f977e22e073e49f55f6503ff312636ba0ea1ce63b7f172ef4",
+    "central1-quota": "9ca264e16c5180e08aa4ad3a00ceae1d2a9fe2c8624cc1d1dfff5db63e37604b",
+    "global-quota": "d2727a04113c97ec4f9a5b6b1d69f3d80011e86a11651afb38326dc484425ebb",
+    "instances": "72a85547b0263611d5f0cff4a10dd6df51d10fce479a8e5761cc2beb9dd73029",
+    "modern-quota-timeout": "294c0b26470b2a644fad336e83e769ecc2c326164d4ce5295218ad38d3bf94fd"
+  },
+  "project_identity_published": false,
+  "quota_observed_at_utc": "2026-11-03T19:32:18.595454+00:00",
+  "recommendation": "Prepare versioned CUDA integration and a bounded G2 L4 end-to-end qualification/throughput benchmark before any scientific cloud run; compare cost per completed fit; consider bigger GPUs or bounded independent-fit concurrency only after measured need. CPU cloud worker is a separate scoped fallback proposal.",
+  "region_for_live_quota": "us-central1",
+  "regional_gpu_quotas": [
+    {
+      "limit": 0.0,
+      "metric": "NVIDIA_A100_GPUS",
+      "usage": 0.0
+    },
+    {
+      "limit": 0.0,
+      "metric": "NVIDIA_A100_80GB_GPUS",
+      "usage": 0.0
+    },
+    {
+      "limit": 1.0,
+      "metric": "NVIDIA_L4_GPUS",
+      "usage": 0.0
+    },
+    {
+      "limit": 1.0,
+      "metric": "PREEMPTIBLE_NVIDIA_L4_GPUS",
+      "usage": 0.0
+    }
+  ],
+  "schema": "hydra-gcp-compute-exploration/v1",
+  "software_readiness": {
+    "CUDA_runtime_helpers_available": true,
+    "Mamba2_path": "EXISTING_UNFUSED_MATH_NOT_AUTOMATIC_FUSED_SSD",
+    "model_parameters_approximate_range": [
+      67905,
+      86093
+    ],
+    "primary_precision": "FP32_WITH_TF32_DISABLED_FOR_PLANNED_QUALIFICATION",
+    "real_CUDA_qualification_passed": false,
+    "scientific_trainer_cuda_supported": false,
+    "speedup_assumption": null
+  },
+  "sources": {
+    "fractional_driver_setup": "https://docs.cloud.google.com/compute/docs/gpus/create-gpu-vm-g-series",
+    "general_purpose_pricing": "https://cloud.google.com/products/compute/pricing/general-purpose?hl=en",
+    "locations": "https://docs.cloud.google.com/compute/docs/regions-zones/gpu-regions-zones",
+    "pricing": "https://cloud.google.com/products/compute/pricing/accelerator-optimized",
+    "specifications_and_restrictions": "https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines",
+    "spot": "https://docs.cloud.google.com/compute/docs/instances/spot"
+  },
+  "status": "READ_ONLY_RESEARCH_NOT_LAUNCH_AUTHORIZATION",
+  "unverified_quota_models": [
+    "RTX_PRO_6000",
+    "H100"
+  ]
+}

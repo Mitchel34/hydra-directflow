@@ -1,0 +1,15 @@
+{
+  "schema": "hydra-compute-options-check/v1",
+  "status": "PASSED_METADATA_AND_ARITHMETIC_REVIEW_NOT_GPU_QUALIFICATION",
+  "created_at_utc": "2026-11-03T19:42:26.200940+00:00",
+  "report_sha256": "0c9d5d013f4ad79cdeae732f3d4a1729d264d58aa1f04245db116e0f392e07b2",
+  "checks": [
+    "All rate-duration and hypothetical allocation arithmetic reconciles; no measured speedup asserted",
+    "All successful metadata query bodies match retained source hashes",
+    "Budget allocations reconcile; unreconciled billing, scope/rate restrictions and execution holds explicit"
+  ],
+  "model_runs": 0,
+  "data_value_reads": 0,
+  "cloud_jobs": 0,
+  "independent_review": "PASSED_ARITHMETIC_BUDGET_SOFTWARE_QUOTA_AND_PUBLICATION_SCOPE"
+}
