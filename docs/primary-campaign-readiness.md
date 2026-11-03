@@ -61,7 +61,7 @@ still obeys the selected ceiling. At100 epochs this is9,100,400 logical updates
 and11,830,520 maximum physical entries across180 fits. Clocks and charges never
 reset. There is no automatic retry, backend substitution or deletion of evidence.
 
-Proposed hard guards are6hours per job,336hours for the campaign,4GiB combined
+Adopted hard guards are6hours per job,336hours for the campaign,4GiB combined
 host/MPS memory with2GiB MPS driver/allocator ceilings,8GiB new artifacts including
 a2GiB ledger/reporting reserve, and8GiB minimum free disk. These are failure-stop
 limits, not completion promises. Actual large-run throughput and early-stopping
@@ -92,3 +92,11 @@ The protocol records the exact user reply, “Approved 100epoch.” The original
 200-epoch proposal is superseded. Qualifications are complete and are not rerun.
 The private campaign progress/ledger provides live execution evidence; protocol
 adoption alone does not establish a running or completed fit.
+
+## Observed launch
+
+The [launch receipt](../reports/primary-campaign-launch-v1.json) confirms real
+scientific optimizer updates and completed epochs for CV1 Jefferson full-input
+L168 LSTM, seed17, on CPU. This is a timestamped startup check, not a claim that
+a complete fit or seed report exists. The local progress page and SQLite ledger
+provide the ongoing execution state.

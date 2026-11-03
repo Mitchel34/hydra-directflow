@@ -1,6 +1,6 @@
 {
   "schema": "hydra-scientific-decisions/v1",
-  "status": "PRIMARY_PROTOCOL_FROZEN_LOCAL_EXECUTION_AUTHORIZED",
+  "status": "PRIMARY_LOCAL_SCIENTIFIC_TRAINING_STARTED",
   "primary_usgs_quality": {
     "status": "USER_CONFIRMED",
     "decision_date_local": "2026-11-02",
@@ -324,7 +324,7 @@
   "local_seed_sequence": {
     "source": "DIRECT_USER_REQUEST",
     "recorded_at_utc": "2026-11-03T19:56:46.934055+00:00",
-    "status": "AUTHORIZED_LOCAL_PRIMARY_PENDING_LAUNCH_RECEIPT",
+    "status": "EXECUTING_FIRST_SEED_LOCAL",
     "compute_preference": "LOCAL_CPU_MPS",
     "CUDA_speedup_status": "UNMEASURED_NOT_SHOWN_INEFFECTIVE",
     "seed_order": [
@@ -348,8 +348,7 @@
     "report_sha256": "f45aa1afe114db80b194288ecb06c7757ebe3928de3702fac9ff1114238310e9",
     "plan_sha256": "8e087b82797b79e96177cf11c19d5127d74c6f5c09ff6e0680cdbc4b3fc3e43b",
     "document": "docs/local-seed-sequence.md",
-    "runtime_controller_implemented_by_this_chunk": true,
-    "scientific_fits_started": 0,
+    "scientific_fits_started": 1,
     "paid_cloud_hold_preserved": true,
     "remaining_concrete_gates": [],
     "device_policy": "FASTEST_OBSERVED_FULL_L168_B64_MEAN_COPY_PLUS_UPDATE_BY_ARCHITECTURE",
@@ -359,7 +358,8 @@
       "Mamba2_Transformer": "mps",
       "Transformer": "mps"
     },
-    "all_MPS_alternative_active": false
+    "all_MPS_alternative_active": false,
+    "runtime_controller_implemented": true
   },
   "latest_device_direction": {
     "source": "DIRECT_USER_STEERING_OK_GO_WITH_WHATS_FASTEST",
@@ -394,7 +394,7 @@
     "protocol": "configs/primary-training-protocol-v1.json",
     "protocol_frozen": true,
     "awaiting_previously_requested_human_method_confirmation": false,
-    "scientific_fits_started": 0,
+    "scientific_fits_started": 1,
     "cumulative_real_engineering_updates": 852,
     "cumulative_synthetic_optimizer_updates": 972,
     "paid_cloud_jobs_started": 0,
@@ -402,7 +402,9 @@
     "old_qualification_allowances_replayed": false,
     "scientific_training_authorized": true,
     "max_epochs": 100,
-    "exact_user_reply": "Approved 100epoch"
+    "exact_user_reply": "Approved 100epoch",
+    "launch_receipt": "reports/primary-campaign-launch-v1.json",
+    "launch_verified_at_utc": "2026-11-03T23:02:52.608768+00:00"
   },
   "primary_protocol_adoption": {
     "recorded_at_utc": "2026-11-03T23:00:48.597192+00:00",
@@ -420,5 +422,59 @@
     "ridge_or_gap_pilot_included": false,
     "protected_assessment_access": false,
     "paid_cloud_jobs_started": 0
+  },
+  "primary_execution": {
+    "schema": "hydra-primary-scientific-launch-receipt/v1",
+    "status": "RUNNING_AT_OBSERVED_CHECKPOINT",
+    "observed_at_utc": "2026-11-03T23:02:52.608768+00:00",
+    "launched_at_utc": "2026-11-03T23:01:50.792156+00:00",
+    "adoption_commit": "09df7f4",
+    "protocol_sha256": "3d94d182e1a22a84f3cd55b8824670821492e86a2ec015a465b155dcb91015f4",
+    "plan_sha256": "7723e33746e51badd5ca6cc2d8ac61283fdd0c152306f2d754f047862ced60ff",
+    "snapshot_sha256": "b41630b7df9a216874eb4ba38a10176d4b72092bd6f1ce2ad4c4f369db56948c",
+    "total_jobs": 180,
+    "job_counts": {
+      "ACTIVE": 1,
+      "PENDING": 179
+    },
+    "first_job": {
+      "architecture": "LSTM",
+      "device": "cpu",
+      "gauge_id": "03161000",
+      "job_id": "cv_1__03161000__LSTM__full_L168__seed17",
+      "seed": 17,
+      "state": "ACTIVE"
+    },
+    "completed_epochs_observed": 4,
+    "optimizer_updates_entered": 1199,
+    "optimizer_updates_confirmed": 1198,
+    "initial_checkpoint": {
+      "bytes": 433450,
+      "sha256": "303f39dfba33b601653d42dd5bf859c2e18ea2bf8d49fc33fffd93d6c271ed32",
+      "receipt_sha256": "e0460b185b4b680dd0ab4010dc4d8849038ed6e5080b1074bc28bb7fb85496e5",
+      "integrity_verified": true
+    },
+    "max_epochs": 100,
+    "min_epochs": 10,
+    "patience": 5,
+    "seed_milestones": [
+      108,
+      144,
+      180
+    ],
+    "selected_devices": {
+      "LSTM": "cpu",
+      "GRU_Transformer": "cpu",
+      "Transformer": "mps",
+      "Mamba2_Transformer": "mps"
+    },
+    "focused_controller_tests_passed": 14,
+    "metadata_100_epoch_preflight": "PASSED",
+    "scientific_fit_completions": 0,
+    "forecast_skill_conclusion": null,
+    "paid_cloud_jobs_started": 0,
+    "protected_assessment_access": false,
+    "new_downloads": 0,
+    "status_is_timestamped_snapshot_not_live_process_proof": true
   }
 }

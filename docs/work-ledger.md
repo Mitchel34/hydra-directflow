@@ -968,3 +968,17 @@ that authenticated current model/data/controller qualification receipts, all180
 jobs and the exact100-epoch arithmetic. The publication scan checked379 files
 with0 findings. No model call or qualification allowance was consumed by these
 checks; the execution implementation is unchanged.
+
+## Primary local training launch — 2026-11-03T23:02:52.608768+00:00
+
+The100-epoch protocol was committed and pushed as09df7f4 before launch. The
+private plan is `7723e33746e51badd5ca6cc2d8ac61283fdd0c152306f2d754f047862ced60ff` and binds protocol
+`3d94d182e1a22a84f3cd55b8824670821492e86a2ec015a465b155dcb91015f4`. The supervisor launched at
+2026-11-03T23:01:50.792156+00:00 with scoped idle/system-sleep prevention.
+At the recorded check, CV1 Jefferson LSTM/fullL168/seed17 on CPU had completed
+4 epochs; the durable ledger confirmed1198 scientific optimizer updates
+(1199 entered). The initial checkpoint bytes and receipt were authenticated.
+Completed scientific fits at this check: 0. These are startup observations,
+not a forecast-skill conclusion. One worker runs at a time; later frozen seeds
+continue after verified development reports. No paid cloud job, new download,
+protected assessment access or consumed qualification replay occurred.

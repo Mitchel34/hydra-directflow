@@ -1,0 +1,54 @@
+{
+  "schema": "hydra-primary-scientific-launch-receipt/v1",
+  "status": "RUNNING_AT_OBSERVED_CHECKPOINT",
+  "observed_at_utc": "2026-11-03T23:02:52.608768+00:00",
+  "launched_at_utc": "2026-11-03T23:01:50.792156+00:00",
+  "adoption_commit": "09df7f4",
+  "protocol_sha256": "3d94d182e1a22a84f3cd55b8824670821492e86a2ec015a465b155dcb91015f4",
+  "plan_sha256": "7723e33746e51badd5ca6cc2d8ac61283fdd0c152306f2d754f047862ced60ff",
+  "snapshot_sha256": "b41630b7df9a216874eb4ba38a10176d4b72092bd6f1ce2ad4c4f369db56948c",
+  "total_jobs": 180,
+  "job_counts": {
+    "ACTIVE": 1,
+    "PENDING": 179
+  },
+  "first_job": {
+    "architecture": "LSTM",
+    "device": "cpu",
+    "gauge_id": "03161000",
+    "job_id": "cv_1__03161000__LSTM__full_L168__seed17",
+    "seed": 17,
+    "state": "ACTIVE"
+  },
+  "completed_epochs_observed": 4,
+  "optimizer_updates_entered": 1199,
+  "optimizer_updates_confirmed": 1198,
+  "initial_checkpoint": {
+    "bytes": 433450,
+    "sha256": "303f39dfba33b601653d42dd5bf859c2e18ea2bf8d49fc33fffd93d6c271ed32",
+    "receipt_sha256": "e0460b185b4b680dd0ab4010dc4d8849038ed6e5080b1074bc28bb7fb85496e5",
+    "integrity_verified": true
+  },
+  "max_epochs": 100,
+  "min_epochs": 10,
+  "patience": 5,
+  "seed_milestones": [
+    108,
+    144,
+    180
+  ],
+  "selected_devices": {
+    "LSTM": "cpu",
+    "GRU_Transformer": "cpu",
+    "Transformer": "mps",
+    "Mamba2_Transformer": "mps"
+  },
+  "focused_controller_tests_passed": 14,
+  "metadata_100_epoch_preflight": "PASSED",
+  "scientific_fit_completions": 0,
+  "forecast_skill_conclusion": null,
+  "paid_cloud_jobs_started": 0,
+  "protected_assessment_access": false,
+  "new_downloads": 0,
+  "status_is_timestamped_snapshot_not_live_process_proof": true
+}
