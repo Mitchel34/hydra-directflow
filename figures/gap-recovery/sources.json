@@ -1,0 +1,76 @@
+{
+  "matplotlib_version": "3.10.1",
+  "minimum_lead_coverage_percent": {
+    "Forecast + valid observed target": {
+      "combined_2": [
+        100.0,
+        96.88569472963724,
+        89.139858544376
+      ],
+      "natural_l24": [
+        100.0,
+        98.00365046771617,
+        94.9349760438056
+      ],
+      "short2_or_l24": [
+        100.0,
+        98.5512206251426,
+        95.87040839607575
+      ],
+      "strict_l168": [
+        100.0,
+        93.0755190508784,
+        83.32192562172028
+      ]
+    },
+    "Known high-flow target coverage": {
+      "combined_2": [
+        100.0,
+        90.15544041450777,
+        54.46428571428571
+      ],
+      "natural_l24": [
+        100.0,
+        87.56476683937824,
+        95.23809523809523
+      ],
+      "short2_or_l24": [
+        100.0,
+        100.0,
+        100.0
+      ],
+      "strict_l168": [
+        100.0,
+        70.98445595854922,
+        48.80952380952381
+      ]
+    },
+    "Potential forecast availability": {
+      "combined_2": [
+        100.0,
+        97.15947980835044,
+        89.83572895277207
+      ],
+      "natural_l24": [
+        100.0,
+        98.25462012320328,
+        95.73351585671914
+      ],
+      "short2_or_l24": [
+        100.0,
+        98.82500570385581,
+        96.66894820898928
+      ],
+      "strict_l168": [
+        100.0,
+        93.32648870636551,
+        84.01779603011636
+      ]
+    }
+  },
+  "route_report_sha256": "3f101b0d2d51ba3eb683f7ec04dd888409d0ab43d664b5c8a6cf62f9662dacd2",
+  "schema": "hydra-gap-recovery-figure/v1",
+  "scope": "DEVELOPMENT_POTENTIAL_COVERAGE_NOT_FORECAST_SKILL",
+  "script_sha256": "9e18e6395563f47b57395454d870e1564ca7bb233445aafd1b48003436b8f1f6",
+  "source_sha256": "9aebbf68319b9c24b202655846bf49f16c7b7aa7c587db80f97f7b18f9cddba2"
+}
