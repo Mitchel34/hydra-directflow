@@ -216,15 +216,22 @@
     "constructor_synthetic_scaler_fits": 1,
     "runtime_reassessment": "reports/gap-pilot-runtime-reassessment-v2.json",
     "development_residency": {
-      "verified_files": 1430,
+      "verified_files": 1432,
       "required_files": 1432,
-      "remaining_cloud_only_files": 2,
-      "remaining_bytes": 206468,
-      "status": "AWAITING_SOURCE_RESIDENCY_FINALIZATION",
-      "integrity_passes_started": 0
+      "remaining_cloud_only_files": 0,
+      "remaining_bytes": 0,
+      "status": "COMPLETE_EXACT_DEVELOPMENT_SNAPSHOT_VERIFIED",
+      "integrity_passes_started": 1,
+      "integrity_passes_passed": 1,
+      "verified_shards": 477,
+      "verified_bytes": 75805012,
+      "snapshot_sha256": "b41630b7df9a216874eb4ba38a10176d4b72092bd6f1ce2ad4c4f369db56948c",
+      "completion_report": "reports/development-corpus-residency-finalized-v1.json",
+      "integrity_report": "reports/development-corpus-residency-integrity-v1.json"
     },
     "scientific_fits_authorized": false,
     "paid_cloud_jobs_authorized": false,
-    "protected_assessment_authorized": false
+    "protected_assessment_authorized": false,
+    "updated_at_utc": "2026-11-03T16:26:07.916821+00:00"
   }
 }

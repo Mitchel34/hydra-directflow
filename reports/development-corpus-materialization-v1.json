@@ -1,0 +1,38 @@
+{
+  "created_at_utc": "2026-11-03T16:26:07.916821+00:00",
+  "declared_file_bytes": 206468,
+  "documentation": "https://developer.apple.com/documentation/foundation/filemanager/startdownloadingubiquitousitem(at:)",
+  "files": [
+    {
+      "expected_bytes": 94351,
+      "expected_sha256": "488141d0609945561222396d89e560afc0b69e1d25a6da4bec9e4722683dd333",
+      "relative": "chunks/candidate_training__2021-10__L168/000/model.npz",
+      "resident_before_finalizer": true
+    },
+    {
+      "expected_bytes": 112117,
+      "expected_sha256": "8ca7fbdc65c91bf5024909b8528cc810b7bb64a5b24d54449664ac0ef675de7d",
+      "relative": "chunks/candidate_training__2023-03__L168/005/model.npz",
+      "resident_before_finalizer": true
+    }
+  ],
+  "finder_download_actions_completed": 0,
+  "metadata_observation_elapsed_seconds": 22.05598045804072,
+  "method": "Foundation.FileManager.startDownloadingUbiquitousItem(at:)",
+  "network_wire_bytes_measured": false,
+  "paid_cloud_jobs": 0,
+  "private_request_receipt_sha256": "ea818eb0d0a50f882cd8722b3ed3183e2d9f82fad1fef02b4c9b6cc89e81d16e",
+  "private_residency_receipt_sha256": "ec0e622c0ac6044df7abcd65db33ca84d36fe5abefe5668c08b153d2a84607d0",
+  "protected_assessment_access": false,
+  "request_at_utc": "2026-11-03T16:24:00.501042+00:00",
+  "request_count": 2,
+  "request_helper_body_reads": 0,
+  "request_process_exit_code": 0,
+  "request_process_seconds": 2.9126966249896213,
+  "schema": "hydra-owned-development-materialization/v1",
+  "scientific_fits": 0,
+  "scope_note": "Two existing owned development files only. Finalizer source_API_or_hydration_requests=0 describes its resident-copy stage; these two explicit iCloud requests occurred beforehand.",
+  "status": "BOTH_EXACT_FILES_RESIDENT_BEFORE_FINALIZATION",
+  "swift_request_source_sha256": "98f984e7a31f0fa9cebce3c1d8100f3ef2db903c67ca2da872db8c3a23c19528",
+  "user_authorization": "FINISH_TWO_REMAINING_DOWNLOADS_THEN_FINAL_INTEGRITY_AND_PUSH"
+}

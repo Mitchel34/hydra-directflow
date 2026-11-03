@@ -50,6 +50,25 @@ destination. It is not a new acquisition, preprocessing policy or scientific
 fit. Protected assessment, raw archives and monthly source partitions are outside
 that recovery scope. Consult its final receipt before assuming it completed.
 
+On November 3 at 16:25 UTC, the [finalization receipt](../reports/development-corpus-residency-finalized-v1.json)
+confirmed all **1,432 files / 75,805,012 bytes / 477 shards** resident outside cloud
+sync. The user authorized the final two owned downloads. Two explicit Apple
+FileManager iCloud requests completed before the unchanged resident-only finalizer
+ran; its reported zero hydration requests applies to that finalizer stage.
+The [single integrity pass](../reports/development-corpus-residency-integrity-v1.json)
+matched snapshot `b41630b7df9a216874eb4ba38a10176d4b72092bd6f1ce2ad4c4f369db56948c`.
+There are no missing chunks. Finalization took 5.51 seconds with 97.5 MiB observed
+parent-plus-child peak memory. Earlier failed attempts, deadlines, charges,
+partial reports and the original pending integrity marker remain historical
+evidence; the distinct finalization allowance is consumed and must not be replayed.
+
+The [current checkpoint](../reports/resident-optimization-release-v3.json)
+supersedes the partial v2 checkpoint without changing it. Data residency is
+complete. Real per-slot provenance for the pilot input bundle, pilot protocol
+and failure-tolerance review, and scientific execution authorization remain
+separate gates. No scientific fits, protected assessment access or paid cloud
+jobs occurred during this completion.
+
 Do not launch the old Documents virtual environment or broadly reopen cloud-only
 files. Check metadata/residency first; use authenticated stable copies and bounded
 recovery. Historical offline-cache commands refer to the older retained fixture

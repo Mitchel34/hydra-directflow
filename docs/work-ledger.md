@@ -700,3 +700,38 @@ synthetic tests and independent review passed. It is prepared, not executed:
 beforeclaims, read-only oldhistory and one new integrity authority bound to the
 unused priorpass. No oldclock orcharge is reset. Exact remaining-file availability
 still requires the manual residency step; the complete corpus is not claimed.
+
+## Development residency finalized — November 3, 16:25 UTC
+
+The user unlocked the Mac and explicitly requested the two remaining owned
+downloads, final integrity check and checkpoint publication, while retaining the
+scientific-fit and paid-job holds. Finder did not complete a download action;
+the two exact files were requested once each through Apple's documented
+FileManager iCloud API. The metadata monitor confirmed both resident before the
+unchanged finalizer claimed its separate allowance. Nominal file content was
+206,468 bytes; network wire traffic was not measured.
+
+The two copies passed their original byte counts and SHA checks. The one local
+development integrity pass passed at 16:25:07 UTC in a 5.51-second finalization,
+with 102,236,160 bytes peak observed parent-plus-child RSS. All 1,432 files,
+75,805,012 bytes and 477 shards are resident outside cloud sync, matching the
+existing snapshot b416... and source plan 0dad.... There are no missing chunks.
+The integrity receipt retains 53,028 origins, 159,084 candidate gauge cases and
+146,464 strict L168 complete cases; these are engineering counts, not forecast
+skill or an approved final scientific cohort.
+
+All prior failure receipts, source charges and expired deadlines remain intact.
+The original ledger's pending integrity state is historical; the separate final
+allowance records PASSED and is consumed. Cumulative source-read reservations
+are 76,424,532 bytes. The completion is an exact snapshot restoration, not a new
+acquisition, preprocessing run or upstream-source re-audit.
+
+The 25 synthetic recovery/finalizer tests pass (0.273 seconds). No neural updates,
+new ridge/scaler fits, assessment access or paid cloud jobs were performed. The
+prior 751-test integrated result remains historical and was not rerun. Public
+receipts are `development-corpus-materialization-v1.json`,
+`development-corpus-residency-finalized-v1.json`,
+`development-corpus-residency-integrity-v1.json` and
+`resident-optimization-release-v3.json`. The partial v2 release remains unchanged.
+Real per-slot provenance qualification and pilot protocol/tolerance review still
+precede any separate scientific execution release.
