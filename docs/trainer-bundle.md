@@ -58,11 +58,23 @@ The same methods support declared `inner_stop` and `outer` roles. Callers must
 choose which indices to pass to trainer mechanics; the adapter does not make
 that scientific choice.
 
-These are **strict target-window bounds only**. The workload planner's optional
-simulated two-hour refit-label convention is not implemented or adopted here.
-Any additional label publication/refit cutoff must be resolved explicitly
-before scientific fitting. Source-time bounds do not reconstruct historical
-USGS revision availability.
+Strict target-window bounds remain the default. An explicit optional
+`refit_availability={"refit_at_utc": "2023-07-31T00:00:00Z",
+"simulated_label_delay_hours": 2}` additionally requires
+`max(actual H18 target timestamps) + 2h <= refit` for `fit` and `inner_stop`.
+The refit must equal the declared inner-stop end and, when present, outer start.
+The earlier fit interval retains its own strict target boundary. `outer` is
+never subject to this fitting-label predicate. Values0 and2 are supported as
+explicit conventions; choosing one remains a separate protocol decision.
+
+The manifest records the selected refit policy and separate availability
+exclusions. All excluded rows remain unassigned in the bundle. No refit time is
+inferred from a surviving case. In particular the two-hour condition includes
+`C=B−20h`, but excludes `C=B−19h`; when combined with strict target windows it
+purges19 final hourly origins rather than18. Missing boundary cases can reduce
+the observed count difference. Omitting `refit_availability` preserves the
+previous strict-only behavior and bundle identities. Existing receipts remain
+unchanged. This simulated delay does not reconstruct historical USGS revisions.
 
 ## Identity and provenance
 

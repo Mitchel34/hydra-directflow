@@ -48,6 +48,33 @@ def _roles(role_time_bounds):
     return result
 
 
+def refit_label_mask(target_time, *, refit_at_utc, simulated_label_delay_hours):
+    """Actual timestamp availability, independent of strict role-window purges."""
+    cutoff = _hour(refit_at_utc)
+    require(cutoff <= ASSESSMENT_START and type(simulated_label_delay_hours) is int
+            and simulated_label_delay_hours in (0, 2), "Explicit development refit and supported simulated label delay required")
+    times = np.asarray(target_time)
+    require(times.ndim == 2 and times.shape[1] == 18 and times.dtype.kind in "iu"
+            and np.all(times % 3600 == 0) and np.all(np.diff(times, axis=1) == 3600)
+            and np.all(times < ASSESSMENT_START), "Exact development H18 target coordinates required for refit availability")
+    return times.max(axis=1) + simulated_label_delay_hours * 3600 <= cutoff
+
+
+def _refit_policy(value, roles):
+    if value is None:
+        return None
+    require(isinstance(value, dict) and set(value) == {"refit_at_utc", "simulated_label_delay_hours"},
+            "Explicit refit timestamp and simulated label delay required")
+    cutoff = _hour(value["refit_at_utc"])
+    lag = value["simulated_label_delay_hours"]
+    require(type(lag) is int and lag in (0, 2) and {"fit", "inner_stop"} <= set(roles)
+            and roles["inner_stop"][1] == cutoff and roles["fit"][1] <= roles["inner_stop"][0]
+            and ("outer" not in roles or roles["outer"][0] == cutoff),
+            "Refit must equal the declared inner-stop end and outer start; fit remains earlier")
+    return dict(refit_at_utc=iso(cutoff), simulated_label_delay_hours=lag, applied_roles=["fit", "inner_stop"],
+                predicate="MAX_ACTUAL_TARGET_TIMESTAMP_PLUS_SIMULATED_DELAY_LE_REFIT")
+
+
 def _selection_rows(selection):
     require(type(selection) is DatasetSelection, "Verified corpus_dataset selection required")
     snapshot = selection.inventory
@@ -136,11 +163,11 @@ class TrainerBundle:
 
 
 def assemble_bundle(selections, *, feature_view, role_time_bounds, max_total_bytes,
-                    max_batch_reads, allow_partial=False, batch_size=128, max_rss_bytes=MAX_RSS):
+                    max_batch_reads, allow_partial=False, batch_size=128, max_rss_bytes=MAX_RSS, refit_availability=None):
     """Combine selections chronologically under explicit bounds; retain all rows.
 
-    Only strict origin/target-window bounds are implemented. No historical
-    publication lag or refit-label cutoff is inferred from observed row positions.
+    Strict role windows always apply. Optional explicit refit availability uses
+    actual target clocks; no publication cutoff is inferred from surviving rows.
     """
     require(isinstance(selections, (list, tuple)) and 1 <= len(selections) <= 32, "Explicit bounded selections required")
     require(feature_view in ("full", "q_only") and type(allow_partial) is bool, "Explicit supported feature/partial mode required")
@@ -149,6 +176,7 @@ def assemble_bundle(selections, *, feature_view, role_time_bounds, max_total_byt
             and type(batch_size) is int and 1 <= batch_size <= 128
             and type(max_rss_bytes) is int and 0 < max_rss_bytes <= MAX_RSS, "Explicit bounded memory/read allowance required")
     roles = _roles(role_time_bounds)
+    refit = _refit_policy(refit_availability, roles)
     inventory = []
     for position, selection in enumerate(selections):
         origins, shards = _selection_rows(selection)
@@ -212,7 +240,11 @@ def assemble_bundle(selections, *, feature_view, role_time_bounds, max_total_byt
     for name, (start, end) in roles.items():
         origin_inside = (origins >= start) & (origins < end)
         target_inside = (arrays["target_time"] >= start).all(axis=1) & (arrays["target_time"] < end).all(axis=1)
-        admitted = origin_inside & target_inside
+        strict_admitted = origin_inside & target_inside
+        availability = (refit_label_mask(arrays["target_time"], refit_at_utc=refit["refit_at_utc"],
+                        simulated_label_delay_hours=refit["simulated_label_delay_hours"])
+                        if refit is not None and name in refit["applied_roles"] else np.ones(count, bool))
+        admitted = strict_admitted & availability
         require(not (assigned & admitted).any(), "Declared role assignments overlap")
         indices = np.flatnonzero(admitted)
         assigned |= admitted
@@ -223,6 +255,9 @@ def assemble_bundle(selections, *, feature_view, role_time_bounds, max_total_byt
                                "cases_with_observed_labels": int(arrays["target_mask"][indices].any(axis=1).sum()),
                                "complete_target_cases": int(arrays["target_mask"][indices].all(axis=1).sum()),
                                "observed_target_cells": int(arrays["target_mask"][indices].sum())}
+        if refit is not None:
+            role_manifest[name].update(refit_availability_applied=name in refit["applied_roles"],
+                refit_label_availability_purged_cases=int((strict_admitted & ~availability).sum()))
     arrays["feature_schema"] = np.array(feature_schema)
     arrays["cohort_admission_digest"] = np.array(cohort)
     exact_bytes = sum(value.nbytes for value in arrays.values())
@@ -236,6 +271,9 @@ def assemble_bundle(selections, *, feature_view, role_time_bounds, max_total_byt
                 scientific_admission=False, fitted_statistics=False,
                 time_policy="CALLER_DECLARED_STRICT_ORIGIN_AND_H18_TARGET_WINDOWS_ONLY",
                 simulated_refit_label_cutoff_implemented=False)
+    if refit is not None:
+        core.update(time_policy="STRICT_ROLE_WINDOWS_AND_EXPLICIT_SIMULATED_REFIT_LABEL_AVAILABILITY",
+                    simulated_refit_label_cutoff_implemented=True, refit_availability=refit)
     manifest = {**core, "bundle_identity": digest(core)}
     for value in arrays.values(): value.setflags(write=False)
     guard()
