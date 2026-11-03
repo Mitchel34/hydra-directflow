@@ -14,6 +14,7 @@ import numpy as np
 from hydra_directflow import pilot_assembly as assembly
 from hydra_directflow.training import array_identity
 import test_pilot_assembly as fixtures
+from isolated_test_support import rerun_without_model_imports_if_needed
 
 PATH=Path(__file__).resolve().parents[1]/'scripts/qualify_pilot_assembly_loaders.py'
 SPEC=importlib.util.spec_from_file_location('pilot_loader_qualifier_tests',PATH)
@@ -75,6 +76,7 @@ class LoaderQualificationTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError,'source/code/scope'): qualifier.validate_plan(changed,changed['plan_sha256'])
 
     def test_full_synthetic_three_gauge_loader_qualification_without_torch(self):
+        if rerun_without_model_imports_if_needed(self): return
         fixture=fixtures.PilotAssemblyTests('test_metadata_plan_never_loads_numeric_payloads'); fixture.setUp()
         try:
             result=fixture.run_assembly()

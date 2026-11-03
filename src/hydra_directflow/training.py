@@ -27,6 +27,7 @@ FEATURES = {"history": ("discharge_cms", "age_hours"),
 FULL_FEATURE_SCHEMA = "FULL_HRRR_H2_W4_S2_V1"
 Q_ONLY_FEATURE_SCHEMA = "Q_ONLY_H2_HORIZON1_S0_V1"
 CHECKPOINT_SCHEMA = "hydra-development-trainer-checkpoint/v2"
+MAX_UPDATES_PER_FIT = 200000
 
 
 def feature_schema_fields(schema=FULL_FEATURE_SCHEMA):
@@ -250,6 +251,24 @@ class TrainOnlyTransform:
         require(set(result.parameters) == set(INPUTS + ("target",)), "Transform channels missing")
         return result
 
+    def validate_training_source(self, arrays, train_indices, *, feature_schema=FULL_FEATURE_SCHEMA):
+        """Bind an authenticated saved transform without refitting statistics.
+
+        The caller authenticates the saved artifact (restore uses the checkpoint
+        SHA). This checks original gradient membership/values independently;
+        stopping rows never contribute statistics or this source identity.
+        """
+        _validate_bundle_schema(arrays, feature_schema)
+        indices = tuple(train_indices)
+        require(indices and all(type(i) is int and 0 <= i < len(arrays['case_id']) for i in indices)
+                and len(set(indices)) == len(indices), "Explicit valid transform training indices required")
+        selected = {key: np.asarray(arrays[key])[list(indices)]
+                    for name in INPUTS + ('target',) for key in (name, name + '_mask')}
+        require(self.feature_schema == feature_schema
+                and self.training_case_ids_sha256 == digest(np.asarray(arrays['case_id'])[list(indices)].tolist())
+                and self.training_values_sha256 == array_identity(selected),
+                "Saved train-only transform source differs")
+
     def transform(self, arrays):
         _validate_bundle_schema(arrays, self.feature_schema)
         features = feature_schema_fields(self.feature_schema)
@@ -329,7 +348,7 @@ class TrainerSpec:
         feature_schema_fields(self.feature_schema)
         require(self.architecture in ARCHITECTURES and self.device in ("cpu", "mps"), "Prepared local architecture/device required")
         require(self.history_hours in (24, 168) and type(self.batch_size) is int and 1 <= self.batch_size <= 64, "Bounded training geometry required")
-        require(type(self.max_updates) is int and 0 <= self.max_updates <= 100000, "Explicit update ceiling required")
+        require(type(self.max_updates) is int and 0 <= self.max_updates <= MAX_UPDATES_PER_FIT, "Explicit update ceiling required")
         require(type(self.seed) is int and 0 <= self.seed < 2**32 and type(self.shuffle_training) is bool, "Explicit seed/order required")
         require(type(self.learning_rate) in (float, int) and np.isfinite(self.learning_rate) and 0 < self.learning_rate <= .01, "Finite learning rate required")
 
@@ -369,7 +388,8 @@ class EarlyStopping:
 
 class DevelopmentTrainer:
     """Explicit mechanics API, with no automatic scientific execution gate bypass."""
-    def __init__(self, arrays, *, train_indices, validation_indices, boundary_epoch, spec, source_identity):
+    def __init__(self, arrays, *, train_indices, validation_indices, boundary_epoch, spec, source_identity,
+                 saved_transform=None):
         require(isinstance(spec, TrainerSpec), "Explicit trainer specification required")
         validate_development_bundle(arrays, spec.history_hours, feature_schema=spec.feature_schema)
         self.train, self.validation = validate_split(arrays, train_indices, validation_indices, boundary_epoch=boundary_epoch)
@@ -378,7 +398,12 @@ class DevelopmentTrainer:
         self.spec, self.arrays, self.boundary = spec, arrays, boundary_epoch
         self.cohort_admission_digest = _cohort_digest(arrays, required=spec.feature_schema == Q_ONLY_FEATURE_SCHEMA)
         self.source_identity, self.array_sha256 = source_identity, array_identity(arrays)
-        self.scaler = TrainOnlyTransform.fit(arrays, self.train, feature_schema=spec.feature_schema)
+        if saved_transform is None:
+            self.scaler = TrainOnlyTransform.fit(arrays, self.train, feature_schema=spec.feature_schema)
+        else:
+            state = asdict(saved_transform) if isinstance(saved_transform, TrainOnlyTransform) else saved_transform
+            self.scaler = TrainOnlyTransform.from_dict(state)
+            self.scaler.validate_training_source(arrays, self.train, feature_schema=spec.feature_schema)
         self.sampler = EpochSampler(self.train, seed=spec.seed, shuffle=spec.shuffle_training)
         self.updates = 0
         self.stopping, self.best_model_state, self.epoch_records = None, None, []
@@ -432,7 +457,7 @@ class DevelopmentTrainer:
         require(count > 0, "Inner stopping subset has no observed labels")
         return total / count
 
-    def fit_epochs(self, stopping, *, checkpoint_directory=None):
+    def fit_epochs(self, stopping, *, checkpoint_directory=None, after_epoch=None):
         """An explicit development fit; never uses outer-CV or assessment scores.
 
         The caller must establish that validation_indices identify an approved
@@ -440,6 +465,7 @@ class DevelopmentTrainer:
         """
         from .engineering import _cpu_tree
         require(isinstance(stopping, EarlyStopping), "Explicit stopping configuration required")
+        require(after_epoch is None or callable(after_epoch), "Explicit callable epoch observer required")
         if self.stopping is None:
             self.stopping = stopping
         else:
@@ -459,9 +485,11 @@ class DevelopmentTrainer:
                 directory = Path(checkpoint_directory)
                 directory.mkdir(parents=True, exist_ok=True)
                 self.checkpoint(directory / f"epoch-{self.stopping.completed_epochs:04d}-update-{self.updates:08d}.pt")
+            if after_epoch is not None:
+                after_epoch(self)
         return list(self.epoch_records)
 
-    def checkpoint(self, path):
+    def checkpoint(self, path, *, before_write=None):
         from .engineering import _cpu_tree
         torch = self.torch
         value = dict(schema=CHECKPOINT_SCHEMA, spec=asdict(self.spec), source_identity=self.source_identity,
@@ -476,17 +504,25 @@ class DevelopmentTrainer:
         path = Path(path)
         stage = path.with_name(path.name + ".writing")
         require(not path.exists() and not path.is_symlink() and not stage.exists() and not stage.is_symlink(), "Checkpoint and staging path must be new")
+        # Serialize before publishing so a supervising ledger can reserve exact
+        # output bytes before any checkpoint file is created.
+        buffer = io.BytesIO()
+        torch.save(value, buffer)
+        raw = buffer.getvalue()
+        require(len(raw) <= 16 * 1024**2, "Checkpoint exceeds qualified restore byte bound")
+        identity = hashlib.sha256(raw).hexdigest()
+        if before_write is not None:
+            require(callable(before_write), "Checkpoint precharge callback must be callable")
+            before_write(len(raw), identity)
         with stage.open("xb") as stream:
-            torch.save(value, stream)
-            stream.flush()
-            os.fsync(stream.fileno())
+            stream.write(raw); stream.flush(); os.fsync(stream.fileno())
         stage.rename(path)
         descriptor = os.open(path.parent, os.O_RDONLY)
         try:
             os.fsync(descriptor)
         finally:
             os.close(descriptor)
-        return hashlib.sha256(path.read_bytes()).hexdigest()
+        return identity
 
     @classmethod
     def restore(cls, path, arrays, *, expected_sha256, expected_source_identity,
@@ -503,7 +539,8 @@ class DevelopmentTrainer:
         cohort = _validate_bundle_schema(arrays, spec.feature_schema)
         require(cohort == value["cohort_admission_digest"], "Dataset comparison-cohort admission changed")
         result = cls(arrays, train_indices=value["train_indices"], validation_indices=value["validation_indices"],
-                     boundary_epoch=value["boundary_epoch"], spec=spec, source_identity=expected_source_identity)
+                     boundary_epoch=value["boundary_epoch"], spec=spec, source_identity=expected_source_identity,
+                     saved_transform=value["transform"])
         require(result.array_sha256 == value["array_sha256"] and asdict(result.scaler) == value["transform"], "Dataset or train-only transform changed")
         require(result.runtime == value["runtime"], "Training runtime settings changed")
         result.scaler = TrainOnlyTransform.from_dict(value["transform"])
