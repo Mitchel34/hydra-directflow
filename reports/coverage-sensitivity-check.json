@@ -1,0 +1,72 @@
+{
+  "approved_combined_budget_ceiling_usd": 150,
+  "code_sha256": {
+    "scripts/audit_gap_recovery.py": "10349bb3db48d6b986d57771b3653ad9964c74b16761892a86cc3e6fd3ff8bc0",
+    "scripts/audit_gap_route.py": "359fe323a66827a1ac4bcfbbbd8fb9a7d4f789d40b6ee9069a7c6a795538f844",
+    "scripts/plot_gap_recovery.py": "9e18e6395563f47b57395454d870e1564ca7bb233445aafd1b48003436b8f1f6",
+    "src/hydra_directflow/gap_policies.py": "a56641929d803fef773ea029614436f618b2cb8efeb2e9d3d9625c076e32f2a7",
+    "tests/test_gap_policies.py": "fccf81de421fe2aeb7c2ee87a585fcc5c47b861852c8a2553dae85efa7e1e981",
+    "tests/test_gap_recovery_audit.py": "6628f416adca50d9682bd4464969a2161b2948180d80a47241172064206fb477",
+    "tests/test_gap_route.py": "b1951027a8f20bdcc0e8eecf6ac353099427983a590cdd112aa08d0fcc1dbd8a"
+  },
+  "cumulative_real_engineering_updates": 852,
+  "cumulative_synthetic_updates": 904,
+  "decision_packet": "docs/coverage-sensitivity-census.md",
+  "extra_fits_authorized": 0,
+  "figure_visual_check": "PASSED_FINAL_STATIC_RENDER",
+  "independent_reconstruction": {
+    "code_sha256": "b940914811fc8242818734c049b911fd6336cebd78c73d774b2669b227f17aa8",
+    "method": "Closed-form Boolean short-gap gates independently reconstruct all validation input, all18, per-lead evaluable and known-high counts for five policy families",
+    "passed": true,
+    "report_sha256": "d98ccd81ffb915c611b38a84807ba1ea6eb24ee99c4532d6cac36002abd6700d"
+  },
+  "new_data_downloads": 0,
+  "numerical_fills": 0,
+  "optimizer_updates_this_turn": 0,
+  "paid_cloud_jobs": 0,
+  "peer_review": {
+    "gap_classifier": "PASS",
+    "main_census": "PASS",
+    "methods_and_resource_arithmetic": "PASS",
+    "routing_census": "PASS"
+  },
+  "primary_implementation_unchanged_since_commit": "66e3c8e",
+  "primary_scope_fits": 180,
+  "proposed_optional_extra_fits": {
+    "ancillary_ridge": 6,
+    "neural": 24
+  },
+  "protected_assessment_access": false,
+  "protected_scores": 0,
+  "protocol_frozen": false,
+  "recorded_at_utc": "2026-11-03T03:16:06.379712+00:00",
+  "reports_sha256": {
+    "reports/coverage-sensitivity-resource-proposal.json": "4cc6893c8c1f1b5c3f2e7461628bc0f819fc091c3d303acb66aa954c8a4295d2",
+    "reports/development-gap-recovery-v1-events-03161000.json": "48ecf1ab7101106d5b142bdc9bf355e5e98582128890ffddf7748212259dc613",
+    "reports/development-gap-recovery-v1-events-03164000.json": "ed18233fa3e5884a21a9b2cceafe242dc66be789f2e97ab96cb89b80e5610334",
+    "reports/development-gap-recovery-v1-events-03479000.json": "16ed504d3284bcec214d3e8b6c015233987701d3fd02825da48659f2a2b76b5a",
+    "reports/development-gap-recovery-v1.json": "9aebbf68319b9c24b202655846bf49f16c7b7aa7c587db80f97f7b18f9cddba2",
+    "reports/development-gap-routing-v1.json": "3f101b0d2d51ba3eb683f7ec04dd888409d0ab43d664b5c8a6cf62f9662dacd2"
+  },
+  "schema": "hydra-coverage-sensitivity-qualification/v1",
+  "scientific_fits": 0,
+  "source_snapshot_sha256": "b41630b7df9a216874eb4ba38a10176d4b72092bd6f1ce2ad4c4f369db56948c",
+  "status": "DEVELOPMENT_CENSUS_AND_PROPOSAL_COMPLETE_SENSITIVITY_EXECUTION_NOT_AUTHORIZED",
+  "tests": {
+    "elapsed_seconds": 7.317,
+    "log_sha256": "a0c6de2ab050163782922358555d77d48637034b33a0e5b1713b96db356118de",
+    "new_focused_tests": 28,
+    "passed": 639,
+    "ran": 642,
+    "skipped_GIS": 3
+  },
+  "unchanged_primary_code_sha256": {
+    "src/hydra_directflow/cache.py": "780cedd3d23a3c69d6468979f5f4adfd316dbdea19714118303aa2b38d2308f5",
+    "src/hydra_directflow/corpus_dataset.py": "cc91fc2d8f7da57cac8eb0a123a1209daee1d84a11dc967663c510b661577e84",
+    "src/hydra_directflow/models/directflow.py": "ad767e49021f144402de669ddd50080c86d3b76cb5724afdfb9bec01a29c23a5",
+    "src/hydra_directflow/multicycle.py": "6028dbd8374e28a5cfbaea0108ebbdf770e1da66473a111b78f29c5a5a5e1879",
+    "src/hydra_directflow/quality.py": "d978db5fa454e040b92544bb9dbbabe332cb575c56d150a2e616e172c33fec31",
+    "src/hydra_directflow/scoring.py": "80c807cb4666cc21d7e2e18e8d89ce66877343cda3eceeb920ac2a368bc6b6d5",
+    "src/hydra_directflow/trainer_bundle.py": "388408c715020a078390b4b51f65e9d857b183e4158ee144d282b78770398a5c"
+  }
+}

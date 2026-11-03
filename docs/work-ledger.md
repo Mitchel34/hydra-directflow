@@ -525,3 +525,57 @@ and implementation checks are ready, but complete-case high-flow representativen
 conditional uncertainty interpretation and the approximate/non-nested spatial
 claim remain material items for user review before freeze. No scientific comparison
 fits, protected scores or paid cloud jobs have started. The 180-fit scope and $150 ceiling are unchanged.
+
+
+## Coverage sensitivity census and proposal — November 2
+
+The user requested a development-only coverage census and missingness-aware
+sensitivity design before freezing the protocol. The 90% coverage aspiration is
+not an assumed result. The strict matched L168 primary, 180-fit scope, original
+quality flags and target masks remain unchanged. No extra fits were authorized.
+
+A pure mask/clock classifier now tests interior, trailing and combined one/two-hour
+candidates with both run-length and total-missing caps. Exact C−169…C−2 slots and
+approved endpoint clocks are required; availability remains the simulated two-hour
+convention, not historical revision-delivery evidence. Thirteen tests and peer
+review pass. It reads no Q values and performs no repairs.
+
+The full census preserves 159,084 candidate cases and reconciles all prior primary
+counts. Twelve tests and peer review pass. It separately reports forecast-input
+support, target-evaluable fractions over all origins and over valid references,
+known-high-flow support, unique hours, gap types/positions and fixed observed
+peak episodes. Weather/soil/calendar gates remain separate. The initial output
+attempt exceeded its public-size guard; its log/private details remain, and the
+successful packaging splits event details into three hash-bound public siblings.
+The completed census ran in 49.94 seconds at about 193 MiB peak RSS.
+
+In final development, minimum-lead known-high-flow support is 90.16% at Galax
+and 54.46% at Sugar Grove under the combined two-hour candidate, versus 87.56%
+and 95.24% under natural L24. The prior 69.2%/50.0% figures retain their original
+complete-H18 pooled denominator. No denominator was substituted silently.
+
+A separately tested routing diagnostic independently reconstructs and exactly
+matches the base/short/L24 counts, then unions short-gap support with strict L24.
+Three tests and peer review pass. At the worst lead, target-evaluable/all-origin
+support is 100%/98.55%/95.87% for Jefferson/Galax/Sugar Grove; all cataloged peaks
+have structural support at every lead (9/6/11 defined episodes). These are not
+independent flood counts, forecasts, error measurements or operational guarantees.
+The route ran in 5.67 seconds at about 129 MiB RSS. Original targets remain missing
+where unobserved or rejected. The static source-bound coverage figure was rendered
+and visually checked; its first layout draft is retained privately.
+
+The proposal adds a six-neural/three-ridge CV1 pilot, with clean-H4 and augmented-H4
+controls, issuance-safe fillers, paired artificial gaps and clean/false-alarm/event
+checks. Optional final confirmation would add eighteen neural and three ridge
+fits. Both stages would add 24 neural plus 6 ancillary fits, all unapproved.
+Measured H2 proxies including extra inference are 2.62/6.24 hours at20/50epochs;
+H4, filler, ancillary, scoring and bootstrap costs still require qualification.
+An existing-final-L24 route adds no neural fit beyond the primary matrix, but its
+inference and differing information/support require separate interpretation.
+
+The integrated suite ran 642 tests: 639 passed and three GIS-only tests skipped.
+The previous separately qualified spatial implementation is unchanged. No fills,
+model fits, optimizer updates, new data downloads, paid jobs, or protected
+assessment access/scoring occurred. Cumulative executed engineering update counts
+remain 852 real-data and 904 synthetic. Primary protocol freeze and sensitivity
+expansion await review of the concrete census/method/resource packet.

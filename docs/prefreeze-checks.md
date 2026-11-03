@@ -5,6 +5,12 @@ these checks**. The 180-fit scope and $150 incremental ceiling remain confirmed.
 No scientific comparison fit or protected assessment score has been produced.
 The 2023–24 period remains development validation.
 
+**Subsequent user decision:** design an additional coverage sensitivity before
+freeze, targeting—but not assuming—90% coverage. The strict matched L168 primary
+and its 180-fit scope remain unchanged. The original checks below are retained;
+new gap-policy census and experimental proposals require review before model
+changes or campaign expansion. Evaluation targets must never be imputed.
+
 ## Completed implementation and qualification
 
 - **Temporal separation:** explicit role intervals remain distinct from refit

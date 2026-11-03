@@ -9,6 +9,8 @@ Mamba2–Transformer. NWM is an external comparator. Research skill results are
 not yet available; synthetic model checks and a development data smoke test
 do not establish forecast performance.
 
+The requested missingness sensitivity now has a [development coverage census](docs/coverage-sensitivity-census.md), [paired experimental proposal](docs/coverage-sensitivity-design.md), and measured-rate cost scenarios. Short Q gaps alone leave substantial Sugar Grove high-flow exclusions; a separate short-gap/L24 route has broader structural support. No numerical imputation or sensitivity training has run, and the strict 180-fit primary remains unchanged.
+
 ## Current work packages
 
 **November 2:** the [complete development corpus](docs/development-completion.md)

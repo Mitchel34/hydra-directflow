@@ -1,0 +1,2020 @@
+{
+  "additional_ancillary_fits_authorized": 0,
+  "additional_full_expansion": {
+    "adopted": false,
+    "ancillary_ridge_fits": 6,
+    "neural_fits": 24,
+    "primary_plus_all_model_fit_count": 210,
+    "primary_plus_neural_fit_count": 204,
+    "total_model_fits": 30
+  },
+  "additional_neural_fits_authorized": 0,
+  "ancillary_model": {
+    "consecutive_real_lags": 6,
+    "fit_intercept": true,
+    "fit_source": "ORIGINAL_APPROVED_GRADIENT_WINDOW_PAIRS_WITH_TARGET_AND_REFIT_BOUNDARIES",
+    "forecast_target_imputation": false,
+    "horizons_hours": [
+      1,
+      2
+    ],
+    "hyperparameter_search": false,
+    "input_standardization": "GRADIENT_ONLY",
+    "intercept_penalized": false,
+    "kind": "PER_GAUGE_DIRECT_TWO_OUTPUT_RIDGE_AUTOREGRESSION",
+    "negative_or_nonfinite_fill_policy": "REPORT_FAILED_ATTEMPT_NO_SILENT_CLIP_OR_CASE_DROP",
+    "one_model_per_gauge_and_fold_shared_across_neural_seeds": true,
+    "output_units": "m3/s",
+    "recursive_self_feeding": false,
+    "ridge_alpha": 1.0,
+    "status": "PROPOSED_UNIMPLEMENTED_UNQUALIFIED",
+    "target_transform": "NONE"
+  },
+  "approved_combined_budget_ceiling_usd": 150,
+  "artificial_gap_evaluation": {
+    "augmented_rows_replace_not_duplicate": true,
+    "clean_passes": 1,
+    "corruption_probability_proposed": 0.5,
+    "extra_passes_above_runtime_receipt": 16,
+    "interior_linear_passes": 6,
+    "mask_seeds": [
+      101,
+      211,
+      307
+    ],
+    "max_contiguous_gap_hours": 2,
+    "max_total_missing_slots": 2,
+    "mixed_carry_or_ridge_passes": 6,
+    "paired_origin_target_cohort": "UNCHANGED_STRICT_COMMON_L168",
+    "probabilities_derived_from": "GRADIENT_HISTORY_MISSINGNESS_METADATA_ONLY",
+    "recompute_features_endpoints_and_real_observation_age_after_masking": true,
+    "stopping_and_outer_targets_used_for_augmentation": false,
+    "total_passes_per_checkpoint": 17,
+    "trailing_carry_or_ridge_passes": 4
+  },
+  "cloud_price_assumed": null,
+  "coverage_census_content_sha256": "152258ea830dad9dc5bd59e7dc03783372b5d956b4641fc8e46d149ea3433413",
+  "coverage_census_status": "COMPLETE_STRUCTURAL_COUNTERFACTUAL_CENSUS_NO_NUMERICAL_REPAIR_OR_SKILL_RESULT",
+  "created_at_utc": "2026-11-03T03:03:34.684998+00:00",
+  "execution": {
+    "ancillary_fits": 0,
+    "cloud_jobs": 0,
+    "literature_web_research": true,
+    "neural_fits": 0,
+    "optimizer_updates": 0,
+    "scientific_scoring_runs": 0,
+    "source_arrays_read": 0,
+    "study_data_network_requests": 0
+  },
+  "input_sha256": {
+    "reports/confirmed-180-fit-admitted-runtime.json": "9a8b5526b0956125aecc2ebca9a29d20e90e6b262c136225505cde18cd92b2ec",
+    "reports/development-coverage-regimes-v2.json": "8e82f613165a5d452c74a30783b02e1c0ae5fb5d93dbe2e338d0010c215e8c0a",
+    "reports/development-gap-recovery-v1.json": "9aebbf68319b9c24b202655846bf49f16c7b7aa7c587db80f97f7b18f9cddba2",
+    "reports/development-gap-routing-v1.json": "3f101b0d2d51ba3eb683f7ec04dd888409d0ab43d664b5c8a6cf62f9662dacd2",
+    "reports/real-batch-benchmark.json": "008364afd040be959d30949197b561596bc0c2953937c51b52be9474ffe0b801",
+    "reports/timing-controls.json": "63df6e08489a26768f3777aaff26576d1c39f5104989f31e7f380eea6430971f"
+  },
+  "joint_route_contingency": {
+    "CV1_L24_fits_included": 0,
+    "CV1_joint_route_would_need_separate_fit_approval": true,
+    "additional_real_gap_route_inference_runtime_hours": null,
+    "census_content_sha256": "742395d85c417197e5836b0275d4609597d5be82d5223c539ebf2b370ccfd821",
+    "existing_L24_reuse_scope": "FINAL_DEVELOPMENT_ONLY",
+    "issuance_uses_targets_or_errors": false,
+    "observed_validation_structural_frontier": [
+      {
+        "all_candidate_origins": 8766,
+        "forecast_support_fraction_all_origins": 1.0,
+        "forecast_supported_origins": 8766,
+        "gauge_id": "03161000",
+        "minimum_lead_evaluable_fraction_all_origins": 1.0,
+        "minimum_lead_evaluable_fraction_valid_targets": 1.0,
+        "minimum_lead_known_HIGH_coverage": 1.0,
+        "observed_event_count": 9,
+        "observed_peaks_supported_all18": 9,
+        "route_origin_counts": {
+          "L24_after_short_repair_ineligible": 0,
+          "short_Q_repair_only": 0,
+          "strict_L168": 8766,
+          "unavailable": 0
+        },
+        "unique_known_HIGH_hours": 192,
+        "unique_supported_known_HIGH_hours": 192
+      },
+      {
+        "all_candidate_origins": 8766,
+        "forecast_support_fraction_all_origins": 0.9882500570385581,
+        "forecast_supported_origins": 8663,
+        "gauge_id": "03164000",
+        "minimum_lead_evaluable_fraction_all_origins": 0.985512206251426,
+        "minimum_lead_evaluable_fraction_valid_targets": 0.9950472241419028,
+        "minimum_lead_known_HIGH_coverage": 1.0,
+        "observed_event_count": 6,
+        "observed_peaks_supported_all18": 6,
+        "route_origin_counts": {
+          "L24_after_short_repair_ineligible": 146,
+          "short_Q_repair_only": 336,
+          "strict_L168": 8181,
+          "unavailable": 103
+        },
+        "unique_known_HIGH_hours": 193,
+        "unique_supported_known_HIGH_hours": 193
+      },
+      {
+        "all_candidate_origins": 8766,
+        "forecast_support_fraction_all_origins": 0.9666894820898928,
+        "forecast_supported_origins": 8474,
+        "gauge_id": "03479000",
+        "minimum_lead_evaluable_fraction_all_origins": 0.9587040839607575,
+        "minimum_lead_evaluable_fraction_valid_targets": 0.9753946146703807,
+        "minimum_lead_known_HIGH_coverage": 1.0,
+        "observed_event_count": 11,
+        "observed_peaks_supported_all18": 11,
+        "route_origin_counts": {
+          "L24_after_short_repair_ineligible": 599,
+          "short_Q_repair_only": 510,
+          "strict_L168": 7365,
+          "unavailable": 292
+        },
+        "unique_known_HIGH_hours": 336,
+        "unique_supported_known_HIGH_hours": 336
+      }
+    ],
+    "order": [
+      "strict_L168",
+      "qualified_short_gap_H4_L168",
+      "strict_L24"
+    ],
+    "requires_qualified_H4_fit": true,
+    "status": "STRUCTURAL_UNION_CENSUS_COMPLETE_NOT_ADOPTED_NO_NUMERICAL_FILL_OR_FORECAST_SKILL",
+    "zero_new_fit_claim": false
+  },
+  "limitations": [
+    "No actual publication or revision vintages: timestamp+2h is simulated availability only",
+    "H4 input projection, fillers and augmentation unqualified; 1x/1.5x/2x are hypothetical factors, not confidence bounds",
+    "Ancillary ridge fits/scalers and source-window construction need separate bounded timing",
+    "Measured engineering rates are small-cohort throughput, not convergence or cloud speed evidence",
+    "Paired artificial-gap degradation cannot identify performance during real missing-reference peaks",
+    "All seventeen inference passes assumed feasible on the predeclared paired artificial mask; failures remain reported",
+    "No repair of weather, soil or evaluation target values; no rainfall-based routing or standalone persistence forecast",
+    "Real-gap and routed L24 scores are distinct unmatched-coverage analyses, not causal gains on the primary cohort",
+    "Additional real-gap joint-route inference and error analysis are not included in the17-pass artificial-gap proxy; their runtime is unmeasured"
+  ],
+  "literature": [
+    {
+      "title": "Che et al.2018 GRU-D",
+      "url": "https://www.nature.com/articles/s41598-018-24271-9",
+      "use": "Missingness and elapsed-time design motivation; healthcare classification, no HYDRA performance claim"
+    },
+    {
+      "title": "Cao et al.2018 BRITS",
+      "url": "https://papers.nips.cc/paper/2018/hash/734e6bfcd358e25ac1db0a4241b95651-Abstract.html",
+      "use": "Bidirectional reconstruction requires explicit issuance information limits"
+    },
+    {
+      "title": "Ren et al.2022 hydrological monitoring gap filling",
+      "url": "https://hess.copernicus.org/articles/26/1727/2022/",
+      "use": "Groundwater network comparison and future-relative training caveat, not causal discharge validation"
+    },
+    {
+      "title": "Tashiro et al.2021 CSDI",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/cfe8504bda37b575c70ee1a8276f3486-Abstract.html",
+      "use": "Probabilistic imputation distinct from deterministic fills; not adopted"
+    }
+  ],
+  "measured_proxy": {
+    "H4_runtime_qualified": false,
+    "architecture": "LSTM",
+    "batch_size": 64,
+    "checkpoint_seconds": 0.003763000015169382,
+    "device": "cpu",
+    "dtype": "float32",
+    "history_hours": 168,
+    "inference_batch_seconds": 0.013783568708458916,
+    "input_arm": "full",
+    "measured_H2_parameter_count": 67905,
+    "measurement_case_id": "cpu-LSTM-B64",
+    "proposed_H4_parameter_count_arithmetic_only": 68161,
+    "proposed_H4_projection_parameter_increment": 256,
+    "startup_seconds": 0.9816239032545127,
+    "stopping_batch_seconds": 0.014136868715286254,
+    "train_batch_seconds": 0.03450995435705408,
+    "width": 64
+  },
+  "new_dollar_allocation_proposed": null,
+  "ninety_percent_goal": {
+    "census_conclusion": "SINGLE_OPTIONS_MISS_SOME_NAMED_METRICS;SHORT2_OR_L24_STRUCTURAL_UNION_EXCEEDS90PERCENT_FOR_ALL_REPORTED_VALIDATION_GAUGE_LEAD_METRICS_NOT_REALIZED_COVERAGE_OR_SKILL",
+    "operational_coverage_or_skill_demonstrated": false,
+    "perfect_Q_nonQ_ceiling_required": true,
+    "required_named_denominators": [
+      "forecast_input_supported/all_candidate_origins",
+      "forecast_input_and_approved_target/all_candidate_origins",
+      "forecast_input_and_approved_target/approved_target_origins"
+    ],
+    "required_strata": [
+      "gauge",
+      "forecast_lead",
+      "season",
+      "observed_HIGH",
+      "observed_peak_support"
+    ],
+    "status": "METRIC_SPECIFIC_ASPIRATION_NOT_EVIDENCE_OR_GUARANTEE",
+    "union90_claim_scope": "FULL_FINAL_DEVELOPMENT_YEAR_GAUGE_LEAD_METRICS_ONLY;NOT_EVERY_SEASON_SUBPERIOD_OR_UNKNOWN_REFERENCE_EVENT",
+    "unique_target_hours_distinct_from_repeated_origin_lead_cells": true
+  },
+  "observed_validation_structural_frontier": [
+    {
+      "all18_target_evaluable_origins": 8766,
+      "all_candidate_origins": 8766,
+      "forecast_support_fraction_all_origins": 1.0,
+      "forecast_supported_origins": 8766,
+      "gauge_id": "03161000",
+      "known_HIGH_supported_cells_by_lead": [
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "known_HIGH_target_cells_by_lead": [
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "minimum_lead_evaluable_fraction_all_origins": 1.0,
+      "minimum_lead_evaluable_fraction_valid_targets": 1.0,
+      "minimum_lead_known_HIGH_coverage": 1.0,
+      "policy": "strict_l168",
+      "target_evaluable_by_lead": [
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766
+      ],
+      "valid_target_origins_by_lead": [
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766
+      ]
+    },
+    {
+      "all18_target_evaluable_origins": 8766,
+      "all_candidate_origins": 8766,
+      "forecast_support_fraction_all_origins": 1.0,
+      "forecast_supported_origins": 8766,
+      "gauge_id": "03161000",
+      "known_HIGH_supported_cells_by_lead": [
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "known_HIGH_target_cells_by_lead": [
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "minimum_lead_evaluable_fraction_all_origins": 1.0,
+      "minimum_lead_evaluable_fraction_valid_targets": 1.0,
+      "minimum_lead_known_HIGH_coverage": 1.0,
+      "policy": "combined_2",
+      "target_evaluable_by_lead": [
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766
+      ],
+      "valid_target_origins_by_lead": [
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766
+      ]
+    },
+    {
+      "all18_target_evaluable_origins": 8766,
+      "all_candidate_origins": 8766,
+      "forecast_support_fraction_all_origins": 1.0,
+      "forecast_supported_origins": 8766,
+      "gauge_id": "03161000",
+      "known_HIGH_supported_cells_by_lead": [
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "known_HIGH_target_cells_by_lead": [
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "minimum_lead_evaluable_fraction_all_origins": 1.0,
+      "minimum_lead_evaluable_fraction_valid_targets": 1.0,
+      "minimum_lead_known_HIGH_coverage": 1.0,
+      "policy": "natural_l24",
+      "target_evaluable_by_lead": [
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766
+      ],
+      "valid_target_origins_by_lead": [
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766
+      ]
+    },
+    {
+      "all18_target_evaluable_origins": 8766,
+      "all_candidate_origins": 8766,
+      "forecast_support_fraction_all_origins": 1.0,
+      "forecast_supported_origins": 8766,
+      "gauge_id": "03161000",
+      "known_HIGH_supported_cells_by_lead": [
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "known_HIGH_target_cells_by_lead": [
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "minimum_lead_evaluable_fraction_all_origins": 1.0,
+      "minimum_lead_evaluable_fraction_valid_targets": 1.0,
+      "minimum_lead_known_HIGH_coverage": 1.0,
+      "policy": "perfect_q",
+      "target_evaluable_by_lead": [
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766
+      ],
+      "valid_target_origins_by_lead": [
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766,
+        8766
+      ]
+    },
+    {
+      "all18_target_evaluable_origins": 8125,
+      "all_candidate_origins": 8766,
+      "forecast_support_fraction_all_origins": 0.9332648870636551,
+      "forecast_supported_origins": 8181,
+      "gauge_id": "03164000",
+      "known_HIGH_supported_cells_by_lead": [
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154
+      ],
+      "known_HIGH_target_cells_by_lead": [
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193
+      ],
+      "minimum_lead_evaluable_fraction_all_origins": 0.930755190508784,
+      "minimum_lead_evaluable_fraction_valid_targets": 0.9397604238654688,
+      "minimum_lead_known_HIGH_coverage": 0.7098445595854922,
+      "policy": "strict_l168",
+      "target_evaluable_by_lead": [
+        8176,
+        8175,
+        8174,
+        8173,
+        8172,
+        8171,
+        8170,
+        8169,
+        8168,
+        8167,
+        8166,
+        8165,
+        8164,
+        8163,
+        8162,
+        8161,
+        8160,
+        8159
+      ],
+      "valid_target_origins_by_lead": [
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682
+      ]
+    },
+    {
+      "all18_target_evaluable_origins": 8459,
+      "all_candidate_origins": 8766,
+      "forecast_support_fraction_all_origins": 0.9715947980835045,
+      "forecast_supported_origins": 8517,
+      "gauge_id": "03164000",
+      "known_HIGH_supported_cells_by_lead": [
+        174,
+        174,
+        174,
+        174,
+        174,
+        174,
+        174,
+        174,
+        174,
+        174,
+        174,
+        174,
+        174,
+        174,
+        174,
+        174,
+        174,
+        174
+      ],
+      "known_HIGH_target_cells_by_lead": [
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193
+      ],
+      "minimum_lead_evaluable_fraction_all_origins": 0.9688569472963724,
+      "minimum_lead_evaluable_fraction_valid_targets": 0.9782308223911541,
+      "minimum_lead_known_HIGH_coverage": 0.9015544041450777,
+      "policy": "combined_2",
+      "target_evaluable_by_lead": [
+        8510,
+        8509,
+        8508,
+        8507,
+        8506,
+        8505,
+        8504,
+        8503,
+        8502,
+        8501,
+        8500,
+        8499,
+        8498,
+        8497,
+        8496,
+        8495,
+        8494,
+        8493
+      ],
+      "valid_target_origins_by_lead": [
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682
+      ]
+    },
+    {
+      "all18_target_evaluable_origins": 8557,
+      "all_candidate_origins": 8766,
+      "forecast_support_fraction_all_origins": 0.9825462012320328,
+      "forecast_supported_origins": 8613,
+      "gauge_id": "03164000",
+      "known_HIGH_supported_cells_by_lead": [
+        169,
+        169,
+        169,
+        169,
+        169,
+        169,
+        169,
+        169,
+        169,
+        169,
+        169,
+        169,
+        169,
+        169,
+        170,
+        171,
+        172,
+        173
+      ],
+      "known_HIGH_target_cells_by_lead": [
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193
+      ],
+      "minimum_lead_evaluable_fraction_all_origins": 0.9800365046771617,
+      "minimum_lead_evaluable_fraction_valid_targets": 0.9895185441142594,
+      "minimum_lead_known_HIGH_coverage": 0.8756476683937824,
+      "policy": "natural_l24",
+      "target_evaluable_by_lead": [
+        8608,
+        8607,
+        8606,
+        8605,
+        8604,
+        8603,
+        8602,
+        8601,
+        8600,
+        8599,
+        8598,
+        8597,
+        8596,
+        8595,
+        8594,
+        8593,
+        8592,
+        8591
+      ],
+      "valid_target_origins_by_lead": [
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682
+      ]
+    },
+    {
+      "all18_target_evaluable_origins": 8631,
+      "all_candidate_origins": 8766,
+      "forecast_support_fraction_all_origins": 1.0,
+      "forecast_supported_origins": 8766,
+      "gauge_id": "03164000",
+      "known_HIGH_supported_cells_by_lead": [
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193
+      ],
+      "known_HIGH_target_cells_by_lead": [
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193,
+        193
+      ],
+      "minimum_lead_evaluable_fraction_all_origins": 0.9904175222450377,
+      "minimum_lead_evaluable_fraction_valid_targets": 1.0,
+      "minimum_lead_known_HIGH_coverage": 1.0,
+      "policy": "perfect_q",
+      "target_evaluable_by_lead": [
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682
+      ],
+      "valid_target_origins_by_lead": [
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682,
+        8682
+      ]
+    },
+    {
+      "all18_target_evaluable_origins": 7229,
+      "all_candidate_origins": 8766,
+      "forecast_support_fraction_all_origins": 0.8401779603011635,
+      "forecast_supported_origins": 7365,
+      "gauge_id": "03479000",
+      "known_HIGH_supported_cells_by_lead": [
+        172,
+        172,
+        172,
+        172,
+        172,
+        172,
+        172,
+        171,
+        169,
+        167,
+        165,
+        164,
+        164,
+        164,
+        164,
+        164,
+        164,
+        164
+      ],
+      "known_HIGH_target_cells_by_lead": [
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336
+      ],
+      "minimum_lead_evaluable_fraction_all_origins": 0.8332192562172028,
+      "minimum_lead_evaluable_fraction_valid_targets": 0.8477251624883937,
+      "minimum_lead_known_HIGH_coverage": 0.4880952380952381,
+      "policy": "strict_l168",
+      "target_evaluable_by_lead": [
+        7349,
+        7345,
+        7342,
+        7339,
+        7336,
+        7333,
+        7330,
+        7327,
+        7324,
+        7321,
+        7318,
+        7315,
+        7312,
+        7310,
+        7308,
+        7306,
+        7304,
+        7304
+      ],
+      "valid_target_origins_by_lead": [
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616
+      ]
+    },
+    {
+      "all18_target_evaluable_origins": 7732,
+      "all_candidate_origins": 8766,
+      "forecast_support_fraction_all_origins": 0.8983572895277208,
+      "forecast_supported_origins": 7875,
+      "gauge_id": "03479000",
+      "known_HIGH_supported_cells_by_lead": [
+        188,
+        188,
+        188,
+        188,
+        188,
+        188,
+        188,
+        187,
+        185,
+        184,
+        183,
+        183,
+        183,
+        183,
+        183,
+        183,
+        183,
+        183
+      ],
+      "known_HIGH_target_cells_by_lead": [
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336
+      ],
+      "minimum_lead_evaluable_fraction_all_origins": 0.8913985854437599,
+      "minimum_lead_evaluable_fraction_valid_targets": 0.9069173630454967,
+      "minimum_lead_known_HIGH_coverage": 0.5446428571428571,
+      "policy": "combined_2",
+      "target_evaluable_by_lead": [
+        7852,
+        7849,
+        7846,
+        7843,
+        7840,
+        7837,
+        7834,
+        7831,
+        7828,
+        7825,
+        7822,
+        7820,
+        7818,
+        7816,
+        7814,
+        7814,
+        7814,
+        7814
+      ],
+      "valid_target_origins_by_lead": [
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616
+      ]
+    },
+    {
+      "all18_target_evaluable_origins": 8237,
+      "all_candidate_origins": 8766,
+      "forecast_support_fraction_all_origins": 0.9573351585671914,
+      "forecast_supported_origins": 8392,
+      "gauge_id": "03479000",
+      "known_HIGH_supported_cells_by_lead": [
+        333,
+        332,
+        331,
+        330,
+        329,
+        328,
+        327,
+        326,
+        325,
+        324,
+        323,
+        322,
+        321,
+        320,
+        320,
+        320,
+        320,
+        320
+      ],
+      "known_HIGH_target_cells_by_lead": [
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336
+      ],
+      "minimum_lead_evaluable_fraction_all_origins": 0.9493497604380561,
+      "minimum_lead_evaluable_fraction_valid_targets": 0.9658774373259053,
+      "minimum_lead_known_HIGH_coverage": 0.9523809523809523,
+      "policy": "natural_l24",
+      "target_evaluable_by_lead": [
+        8370,
+        8364,
+        8360,
+        8356,
+        8352,
+        8348,
+        8344,
+        8341,
+        8339,
+        8337,
+        8335,
+        8333,
+        8330,
+        8328,
+        8326,
+        8324,
+        8322,
+        8322
+      ],
+      "valid_target_origins_by_lead": [
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616
+      ]
+    },
+    {
+      "all18_target_evaluable_origins": 8446,
+      "all_candidate_origins": 8766,
+      "forecast_support_fraction_all_origins": 1.0,
+      "forecast_supported_origins": 8766,
+      "gauge_id": "03479000",
+      "known_HIGH_supported_cells_by_lead": [
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336
+      ],
+      "known_HIGH_target_cells_by_lead": [
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336,
+        336
+      ],
+      "minimum_lead_evaluable_fraction_all_origins": 0.9828884325804244,
+      "minimum_lead_evaluable_fraction_valid_targets": 1.0,
+      "minimum_lead_known_HIGH_coverage": 1.0,
+      "policy": "perfect_q",
+      "target_evaluable_by_lead": [
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616
+      ],
+      "valid_target_origins_by_lead": [
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616,
+        8616
+      ]
+    }
+  ],
+  "optional_L24_routing_proxy": {
+    "additional_scientific_scoring_authorized": false,
+    "ancillary_fits": 0,
+    "exclusions": [
+      "Input eligibility is independent of target availability; partial or unknown targets remain masked and unfilled",
+      "Source load/tensorization/routing/metrics not measured",
+      "Inference would apply planned full-L24 checkpoints to an unmatched evaluation population; no checkpoint was used in this proposal",
+      "Additional strict-L168 input-supported but target-incomplete origins are not included in this L24-only branch estimate"
+    ],
+    "neural_fits": 0,
+    "per_gauge": [
+      {
+        "components": [
+          {
+            "architecture": "GRU_Transformer",
+            "batches_per_checkpoint": 0,
+            "device": "cpu",
+            "extra_cases_per_checkpoint": 0,
+            "measured_inference_batch_seconds": 0.0037737706501502545,
+            "measured_startup_seconds": 0.987748149590334,
+            "planned_checkpoints_required": 0,
+            "proxy_seconds": 0.0
+          },
+          {
+            "architecture": "LSTM",
+            "batches_per_checkpoint": 0,
+            "device": "cpu",
+            "extra_cases_per_checkpoint": 0,
+            "measured_inference_batch_seconds": 0.003305716690374538,
+            "measured_startup_seconds": 0.9700654094456695,
+            "planned_checkpoints_required": 0,
+            "proxy_seconds": 0.0
+          },
+          {
+            "architecture": "Mamba2_Transformer",
+            "batches_per_checkpoint": 0,
+            "device": "mps",
+            "extra_cases_per_checkpoint": 0,
+            "measured_inference_batch_seconds": 0.017413049889728426,
+            "measured_startup_seconds": 2.274674820591463,
+            "planned_checkpoints_required": 0,
+            "proxy_seconds": 0.0
+          },
+          {
+            "architecture": "Transformer",
+            "batches_per_checkpoint": 0,
+            "device": "mps",
+            "extra_cases_per_checkpoint": 0,
+            "measured_inference_batch_seconds": 0.008814810158219189,
+            "measured_startup_seconds": 1.3772773164615502,
+            "planned_checkpoints_required": 0,
+            "proxy_seconds": 0.0
+          }
+        ],
+        "gauge_id": "03161000",
+        "natural_L24_only_input_origins": 0
+      },
+      {
+        "components": [
+          {
+            "architecture": "GRU_Transformer",
+            "batches_per_checkpoint": 7,
+            "device": "cpu",
+            "extra_cases_per_checkpoint": 432,
+            "measured_inference_batch_seconds": 0.0037737706501502545,
+            "measured_startup_seconds": 0.987748149590334,
+            "planned_checkpoints_required": 3,
+            "proxy_seconds": 3.0424936324241574
+          },
+          {
+            "architecture": "LSTM",
+            "batches_per_checkpoint": 7,
+            "device": "cpu",
+            "extra_cases_per_checkpoint": 432,
+            "measured_inference_batch_seconds": 0.003305716690374538,
+            "measured_startup_seconds": 0.9700654094456695,
+            "planned_checkpoints_required": 3,
+            "proxy_seconds": 2.979616278834874
+          },
+          {
+            "architecture": "Mamba2_Transformer",
+            "batches_per_checkpoint": 7,
+            "device": "mps",
+            "extra_cases_per_checkpoint": 432,
+            "measured_inference_batch_seconds": 0.017413049889728426,
+            "measured_startup_seconds": 2.274674820591463,
+            "planned_checkpoints_required": 3,
+            "proxy_seconds": 7.189698509458686
+          },
+          {
+            "architecture": "Transformer",
+            "batches_per_checkpoint": 7,
+            "device": "mps",
+            "extra_cases_per_checkpoint": 432,
+            "measured_inference_batch_seconds": 0.008814810158219189,
+            "measured_startup_seconds": 1.3772773164615502,
+            "planned_checkpoints_required": 3,
+            "proxy_seconds": 4.3169429627072535
+          }
+        ],
+        "gauge_id": "03164000",
+        "natural_L24_only_input_origins": 432
+      },
+      {
+        "components": [
+          {
+            "architecture": "GRU_Transformer",
+            "batches_per_checkpoint": 17,
+            "device": "cpu",
+            "extra_cases_per_checkpoint": 1027,
+            "measured_inference_batch_seconds": 0.0037737706501502545,
+            "measured_startup_seconds": 0.987748149590334,
+            "planned_checkpoints_required": 3,
+            "proxy_seconds": 3.155706751928665
+          },
+          {
+            "architecture": "LSTM",
+            "batches_per_checkpoint": 17,
+            "device": "cpu",
+            "extra_cases_per_checkpoint": 1027,
+            "measured_inference_batch_seconds": 0.003305716690374538,
+            "measured_startup_seconds": 0.9700654094456695,
+            "planned_checkpoints_required": 3,
+            "proxy_seconds": 3.0787877795461096
+          },
+          {
+            "architecture": "Mamba2_Transformer",
+            "batches_per_checkpoint": 17,
+            "device": "mps",
+            "extra_cases_per_checkpoint": 1027,
+            "measured_inference_batch_seconds": 0.017413049889728426,
+            "measured_startup_seconds": 2.274674820591463,
+            "planned_checkpoints_required": 3,
+            "proxy_seconds": 7.712090006150539
+          },
+          {
+            "architecture": "Transformer",
+            "batches_per_checkpoint": 17,
+            "device": "mps",
+            "extra_cases_per_checkpoint": 1027,
+            "measured_inference_batch_seconds": 0.008814810158219189,
+            "measured_startup_seconds": 1.3772773164615502,
+            "planned_checkpoints_required": 3,
+            "proxy_seconds": 4.581387267453829
+          }
+        ],
+        "gauge_id": "03479000",
+        "natural_L24_only_input_origins": 1027
+      }
+    ],
+    "proxy_hours": 0.010015756441251144,
+    "status": "CENSUS_L24_ONLY_INPUT_ORIGINS_NOT_COMPLETE_TARGET_VECTORS_PROPOSED_INFERENCE_ONLY",
+    "validation_extra_L24_only_input_origins": 1459
+  },
+  "pilot_freeze": {
+    "CV1_informed_choices_recorded": true,
+    "CV1_untouched_confirmation_claim": false,
+    "main_protocol_remains_unfrozen": true,
+    "primary180_changes_require_recorded_review": true,
+    "status": "PILOT_SPECIFIC_PROTOCOL_AND_ALLOWANCE_REQUIRED"
+  },
+  "pilot_stopping_policy_proposed": {
+    "matched_budget_definition": "SAME_PER_EPOCH_OPPORTUNITIES_AND_MAXIMUM_ALLOWANCE_NOT_IDENTICAL_REALIZED_EARLY_STOP_COUNTS",
+    "max_epochs": 50,
+    "min_epochs": 10,
+    "monitor": "CLEAN_INNER_STOPPING_STANDARDIZED_Q_MSE",
+    "outer_checkpoint_selection": false,
+    "patience": 5,
+    "same_for_both_H4_arms": true,
+    "strict_improvement": true
+  },
+  "primary_snapshot_sha256": "b41630b7df9a216874eb4ba38a10176d4b72092bd6f1ce2ad4c4f369db56948c",
+  "proposed_input_mask_semantics": {
+    "elapsed_real_age_valid_only_with_preceding_real_reading": true,
+    "failed_fill_numeric_mask": false,
+    "filled_value_is_not_observation": true,
+    "fit_Q_and_coordinate_age_statistics_before_augmentation_using_original_approved_masks_only": true,
+    "known_coordinate_age_and_was_missing_masks": true,
+    "numeric_input_mask": "QUALIFIED_OBSERVED_OR_DERIVED_NUMERIC_VALUE",
+    "original_observation_mask": "IMMUTABLE_SEPARATE_PROVENANCE",
+    "was_missing_remains_one_on_filled_slots": true,
+    "zero_placeholder_required_when_numeric_mask_false": true
+  },
+  "proposed_stages": [
+    {
+      "ancillary_fits": 0,
+      "neural_fits": 0,
+      "requires_execution_approval": false,
+      "scope": "Documented census and pure synthetic mechanics only; no actual fill or model scoring",
+      "stage": "census_and_synthetic_contract"
+    },
+    {
+      "ancillary_fits": 0,
+      "neural_fits": 0,
+      "requires_execution_approval": true,
+      "scope": "After separately authorized primary checkpoints exist; same architecture L168 then L24 by original input status only",
+      "stage": "optional_existing_L24_input_status_route"
+    },
+    {
+      "ancillary_fits": 3,
+      "fold": "cv_1",
+      "gauges": 3,
+      "neural_fits": 6,
+      "neural_training_arms": [
+        "H4_clean",
+        "H4_block_augmented"
+      ],
+      "requires_execution_approval": true,
+      "seeds": [
+        17
+      ],
+      "stage": "pilot"
+    },
+    {
+      "ancillary_fits": 3,
+      "fold": "final_development",
+      "gauges": 3,
+      "neural_fits": 18,
+      "neural_training_arms": [
+        "H4_clean",
+        "H4_block_augmented"
+      ],
+      "requires_execution_approval": true,
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "stage": "optional_confirmation"
+    }
+  ],
+  "runtime_scenarios": [
+    {
+      "ancillary_ridge_fit_hours": null,
+      "base_additional_neural_proxy_hours": 2.6179895606132075,
+      "epochs": 20,
+      "illustrative_unmeasured_overhead_factors": [
+        {
+          "additional_neural_hours": 2.6179895606132075,
+          "factor": 1.0,
+          "primary_plus_neural_proxy_hours": 35.70474742361574
+        },
+        {
+          "additional_neural_hours": 3.9269843409198115,
+          "factor": 1.5,
+          "primary_plus_neural_proxy_hours": 37.01374220392234
+        },
+        {
+          "additional_neural_hours": 5.235979121226415,
+          "factor": 2.0,
+          "primary_plus_neural_proxy_hours": 38.322736984228946
+        }
+      ],
+      "interpretation": "H2_MEASURED_RATE_PROXY_FOR_UNQUALIFIED_H4_PLUS_EXTRA_INFERENCE_NOT_A_MEASURED_RUNTIME_OR_UPPER_BOUND",
+      "preprocessing_and_scoring_hours": null,
+      "proposed_additional_ancillary_ridge_fits": 6,
+      "proposed_additional_neural_fits": 24,
+      "simulated_label_delay_hours": 2,
+      "stages": [
+        {
+          "H2_fit_proxy_hours": 0.28119704887407065,
+          "ancillary_ridge_fits": 3,
+          "extra_stress_inference_proxy_hours": 0.048885723686000956,
+          "fold": "cv_1",
+          "neural_fits": 6,
+          "per_gauge": [
+            {
+              "H2_fit_proxy_hours": 0.10128107126310675,
+              "ancillary_ridge_fits": 1,
+              "batches": {
+                "gradient_fit_per_epoch": 246,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03161000",
+              "neural_fits": 2,
+              "original_common_cases": {
+                "gradient_fit": 15717,
+                "inner_stopping": 2152,
+                "outer_scoring": 8556
+              },
+              "primary_per_fit_components_seconds": {
+                "checkpoint_writes": 0.07526000030338764,
+                "inner_stopping": 9.613070726394653,
+                "outer_inference_once": 1.8469982069334947,
+                "startup": 0.9816239032545127,
+                "training": 169.7889754367061
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+                "inner_stopping": "22ab65fbfefb90c2a8fa7baece9bc23e82339c7091ccc7bf4841db7ba9e145dd",
+                "outer_scoring": "77a896b6d141a9914995eb8ab0587327b913b250d51ba15521d12f35a63a85fa"
+              },
+              "sixteen_extra_inference_passes_proxy_hours": 0.01641776183940884,
+              "total_neural_proxy_hours": 0.11769883310251558
+            },
+            {
+              "H2_fit_proxy_hours": 0.0851534532819674,
+              "ancillary_ridge_fits": 1,
+              "batches": {
+                "gradient_fit_per_epoch": 204,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 131
+              },
+              "gauge_id": "03164000",
+              "neural_fits": 2,
+              "original_common_cases": {
+                "gradient_fit": 13024,
+                "inner_stopping": 2152,
+                "outer_scoring": 8341
+              },
+              "primary_per_fit_components_seconds": {
+                "checkpoint_writes": 0.07526000030338764,
+                "inner_stopping": 9.613070726394653,
+                "outer_inference_once": 1.805647500808118,
+                "startup": 0.9816239032545127,
+                "training": 140.80061377678066
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+                "inner_stopping": "7a19c1ce95adbb17d2d69dcb091642db7f6d272b1ac5c4775f45e59b4b62c8dc",
+                "outer_scoring": "49e36b9377f461062393b2ae1b345a90b77ad5b4dbfa8cdc473f574f10a771a0"
+              },
+              "sixteen_extra_inference_passes_proxy_hours": 0.016050200007183272,
+              "total_neural_proxy_hours": 0.10120365328915067
+            },
+            {
+              "H2_fit_proxy_hours": 0.09476252432899653,
+              "ancillary_ridge_fits": 1,
+              "batches": {
+                "gradient_fit_per_epoch": 229,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03479000",
+              "neural_fits": 2,
+              "original_common_cases": {
+                "gradient_fit": 14621,
+                "inner_stopping": 2152,
+                "outer_scoring": 8516
+              },
+              "primary_per_fit_components_seconds": {
+                "checkpoint_writes": 0.07526000030338764,
+                "inner_stopping": 9.613070726394653,
+                "outer_inference_once": 1.8469982069334947,
+                "startup": 0.9816239032545127,
+                "training": 158.0555909553077
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+                "inner_stopping": "c6cd49a927a3f34187f468628592a7bfcd6de2eb1190d82884fc06649853de88",
+                "outer_scoring": "68e418282d1756320572c55712baf11dbf0ec4ce8bb545c8aa3433075285365f"
+              },
+              "sixteen_extra_inference_passes_proxy_hours": 0.01641776183940884,
+              "total_neural_proxy_hours": 0.11118028616840536
+            }
+          ],
+          "stage": "pilot",
+          "total_neural_proxy_hours": 0.3300827725600716
+        },
+        {
+          "H2_fit_proxy_hours": 2.149335977304096,
+          "ancillary_ridge_fits": 3,
+          "extra_stress_inference_proxy_hours": 0.13857081074904032,
+          "fold": "final_development",
+          "neural_fits": 18,
+          "per_gauge": [
+            {
+              "H2_fit_proxy_hours": 0.7502408746507618,
+              "ancillary_ridge_fits": 1,
+              "batches": {
+                "gradient_fit_per_epoch": 634,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 137
+              },
+              "gauge_id": "03161000",
+              "neural_fits": 6,
+              "original_common_cases": {
+                "gradient_fit": 40531,
+                "inner_stopping": 2165,
+                "outer_scoring": 8766
+              },
+              "primary_per_fit_components_seconds": {
+                "checkpoint_writes": 0.07526000030338764,
+                "inner_stopping": 9.613070726394653,
+                "outer_inference_once": 1.8883489130588715,
+                "startup": 0.9816239032545127,
+                "training": 437.5862212474458
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "f986edc37999ff1c3a4b711f8dfe18f658929606da10fb4bb6561fc61ef97f7e",
+                "inner_stopping": "26539c00e073f43f5d671f95d468dd17dbec753f55e6a6ab6b7aa2f0b7933cbd",
+                "outer_scoring": "58bf78e0ecdd6079c74d017e7234a878bea572593eaa24683aebd278bb68fbbc"
+              },
+              "sixteen_extra_inference_passes_proxy_hours": 0.05035597101490324,
+              "total_neural_proxy_hours": 0.800596845665665
+            },
+            {
+              "H2_fit_proxy_hours": 0.6747128706127501,
+              "ancillary_ridge_fits": 1,
+              "batches": {
+                "gradient_fit_per_epoch": 571,
+                "inner_stopping_per_epoch": 28,
+                "outer_scoring_once": 127
+              },
+              "gauge_id": "03164000",
+              "neural_fits": 6,
+              "original_common_cases": {
+                "gradient_fit": 36500,
+                "inner_stopping": 1778,
+                "outer_scoring": 8125
+              },
+              "primary_per_fit_components_seconds": {
+                "checkpoint_writes": 0.07526000030338764,
+                "inner_stopping": 7.916646480560303,
+                "outer_inference_once": 1.7505132259742824,
+                "startup": 0.9816239032545127,
+                "training": 394.10367875755765
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "e5ac9182e6d9eae38c048d1453c8040e254324bce72499816a86e83f4b4034c3",
+                "inner_stopping": "ee5c81fb9f48f40c698b7de4c602f69172c0a737f686c42b13463425efadbc24",
+                "outer_scoring": "c8304ad4a145ae076ef91721d195463219cfc79b6b0c5bee83da3ad2c36118a8"
+              },
+              "sixteen_extra_inference_passes_proxy_hours": 0.04668035269264753,
+              "total_neural_proxy_hours": 0.7213932233053977
+            },
+            {
+              "H2_fit_proxy_hours": 0.724382232040584,
+              "ancillary_ridge_fits": 1,
+              "batches": {
+                "gradient_fit_per_epoch": 612,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 113
+              },
+              "gauge_id": "03479000",
+              "neural_fits": 6,
+              "original_common_cases": {
+                "gradient_fit": 39148,
+                "inner_stopping": 2165,
+                "outer_scoring": 7229
+              },
+              "primary_per_fit_components_seconds": {
+                "checkpoint_writes": 0.07526000030338764,
+                "inner_stopping": 9.613070726394653,
+                "outer_inference_once": 1.5575432640558575,
+                "startup": 0.9816239032545127,
+                "training": 422.401841330342
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "c4767323730a4dd4141ac1b27ecaac5c6a81fe9c633a6594ae1bdd2e54638809",
+                "inner_stopping": "4b6037804cc263857dc088bf884ec420a600aaae3179dbfcf57672a303eefb85",
+                "outer_scoring": "df0de87a66770746710d644ea03b10734577ea295407eefe3390516224e6f419"
+              },
+              "sixteen_extra_inference_passes_proxy_hours": 0.041534487041489536,
+              "total_neural_proxy_hours": 0.7659167190820736
+            }
+          ],
+          "stage": "optional_confirmation",
+          "total_neural_proxy_hours": 2.287906788053136
+        }
+      ],
+      "unchanged_primary180_proxy_hours": 33.08675786300253
+    },
+    {
+      "ancillary_ridge_fit_hours": null,
+      "base_additional_neural_proxy_hours": 6.236398810744629,
+      "epochs": 50,
+      "illustrative_unmeasured_overhead_factors": [
+        {
+          "additional_neural_hours": 6.236398810744629,
+          "factor": 1.0,
+          "primary_plus_neural_proxy_hours": 88.68589326291502
+        },
+        {
+          "additional_neural_hours": 9.354598216116944,
+          "factor": 1.5,
+          "primary_plus_neural_proxy_hours": 91.80409266828732
+        },
+        {
+          "additional_neural_hours": 12.472797621489258,
+          "factor": 2.0,
+          "primary_plus_neural_proxy_hours": 94.92229207365965
+        }
+      ],
+      "interpretation": "H2_MEASURED_RATE_PROXY_FOR_UNQUALIFIED_H4_PLUS_EXTRA_INFERENCE_NOT_A_MEASURED_RUNTIME_OR_UPPER_BOUND",
+      "preprocessing_and_scoring_hours": null,
+      "proposed_additional_ancillary_ridge_fits": 6,
+      "proposed_additional_neural_fits": 24,
+      "simulated_label_delay_hours": 2,
+      "stages": [
+        {
+          "H2_fit_proxy_hours": 0.6959555258314778,
+          "ancillary_ridge_fits": 3,
+          "extra_stress_inference_proxy_hours": 0.048885723686000956,
+          "fold": "cv_1",
+          "neural_fits": 6,
+          "per_gauge": [
+            {
+              "H2_fit_proxy_hours": 0.2508454930659435,
+              "ancillary_ridge_fits": 1,
+              "batches": {
+                "gradient_fit_per_epoch": 246,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03161000",
+              "neural_fits": 2,
+              "original_common_cases": {
+                "gradient_fit": 15717,
+                "inner_stopping": 2152,
+                "outer_scoring": 8556
+              },
+              "primary_per_fit_components_seconds": {
+                "checkpoint_writes": 0.1881500007584691,
+                "inner_stopping": 24.032676815986633,
+                "outer_inference_once": 1.8469982069334947,
+                "startup": 0.9816239032545127,
+                "training": 424.47243859176524
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+                "inner_stopping": "22ab65fbfefb90c2a8fa7baece9bc23e82339c7091ccc7bf4841db7ba9e145dd",
+                "outer_scoring": "77a896b6d141a9914995eb8ab0587327b913b250d51ba15521d12f35a63a85fa"
+              },
+              "sixteen_extra_inference_passes_proxy_hours": 0.01641776183940884,
+              "total_neural_proxy_hours": 0.26726325490535235
+            },
+            {
+              "H2_fit_proxy_hours": 0.21056090703486632,
+              "ancillary_ridge_fits": 1,
+              "batches": {
+                "gradient_fit_per_epoch": 204,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 131
+              },
+              "gauge_id": "03164000",
+              "neural_fits": 2,
+              "original_common_cases": {
+                "gradient_fit": 13024,
+                "inner_stopping": 2152,
+                "outer_scoring": 8341
+              },
+              "primary_per_fit_components_seconds": {
+                "checkpoint_writes": 0.1881500007584691,
+                "inner_stopping": 24.032676815986633,
+                "outer_inference_once": 1.805647500808118,
+                "startup": 0.9816239032545127,
+                "training": 352.00153444195166
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+                "inner_stopping": "7a19c1ce95adbb17d2d69dcb091642db7f6d272b1ac5c4775f45e59b4b62c8dc",
+                "outer_scoring": "49e36b9377f461062393b2ae1b345a90b77ad5b4dbfa8cdc473f574f10a771a0"
+              },
+              "sixteen_extra_inference_passes_proxy_hours": 0.016050200007183272,
+              "total_neural_proxy_hours": 0.2266111070420496
+            },
+            {
+              "H2_fit_proxy_hours": 0.234549125730668,
+              "ancillary_ridge_fits": 1,
+              "batches": {
+                "gradient_fit_per_epoch": 229,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 134
+              },
+              "gauge_id": "03479000",
+              "neural_fits": 2,
+              "original_common_cases": {
+                "gradient_fit": 14621,
+                "inner_stopping": 2152,
+                "outer_scoring": 8516
+              },
+              "primary_per_fit_components_seconds": {
+                "checkpoint_writes": 0.1881500007584691,
+                "inner_stopping": 24.032676815986633,
+                "outer_inference_once": 1.8469982069334947,
+                "startup": 0.9816239032545127,
+                "training": 395.13897738826927
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+                "inner_stopping": "c6cd49a927a3f34187f468628592a7bfcd6de2eb1190d82884fc06649853de88",
+                "outer_scoring": "68e418282d1756320572c55712baf11dbf0ec4ce8bb545c8aa3433075285365f"
+              },
+              "sixteen_extra_inference_passes_proxy_hours": 0.01641776183940884,
+              "total_neural_proxy_hours": 0.25096688757007685
+            }
+          ],
+          "stage": "pilot",
+          "total_neural_proxy_hours": 0.7448412495174788
+        },
+        {
+          "H2_fit_proxy_hours": 5.3529867504781095,
+          "ancillary_ridge_fits": 3,
+          "extra_stress_inference_proxy_hours": 0.13857081074904032,
+          "fold": "final_development",
+          "neural_fits": 18,
+          "per_gauge": [
+            {
+              "H2_fit_proxy_hours": 1.8684272545861216,
+              "ancillary_ridge_fits": 1,
+              "batches": {
+                "gradient_fit_per_epoch": 634,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 137
+              },
+              "gauge_id": "03161000",
+              "neural_fits": 6,
+              "original_common_cases": {
+                "gradient_fit": 40531,
+                "inner_stopping": 2165,
+                "outer_scoring": 8766
+              },
+              "primary_per_fit_components_seconds": {
+                "checkpoint_writes": 0.1881500007584691,
+                "inner_stopping": 24.032676815986633,
+                "outer_inference_once": 1.8883489130588715,
+                "startup": 0.9816239032545127,
+                "training": 1093.9655531186145
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "f986edc37999ff1c3a4b711f8dfe18f658929606da10fb4bb6561fc61ef97f7e",
+                "inner_stopping": "26539c00e073f43f5d671f95d468dd17dbec753f55e6a6ab6b7aa2f0b7933cbd",
+                "outer_scoring": "58bf78e0ecdd6079c74d017e7234a878bea572593eaa24683aebd278bb68fbbc"
+              },
+              "sixteen_extra_inference_passes_proxy_hours": 0.05035597101490324,
+              "total_neural_proxy_hours": 1.9187832256010249
+            },
+            {
+              "H2_fit_proxy_hours": 1.6799518337088037,
+              "ancillary_ridge_fits": 1,
+              "batches": {
+                "gradient_fit_per_epoch": 571,
+                "inner_stopping_per_epoch": 28,
+                "outer_scoring_once": 127
+              },
+              "gauge_id": "03164000",
+              "neural_fits": 6,
+              "original_common_cases": {
+                "gradient_fit": 36500,
+                "inner_stopping": 1778,
+                "outer_scoring": 8125
+              },
+              "primary_per_fit_components_seconds": {
+                "checkpoint_writes": 0.1881500007584691,
+                "inner_stopping": 19.791616201400757,
+                "outer_inference_once": 1.7505132259742824,
+                "startup": 0.9816239032545127,
+                "training": 985.2591968938941
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "e5ac9182e6d9eae38c048d1453c8040e254324bce72499816a86e83f4b4034c3",
+                "inner_stopping": "ee5c81fb9f48f40c698b7de4c602f69172c0a737f686c42b13463425efadbc24",
+                "outer_scoring": "c8304ad4a145ae076ef91721d195463219cfc79b6b0c5bee83da3ad2c36118a8"
+              },
+              "sixteen_extra_inference_passes_proxy_hours": 0.04668035269264753,
+              "total_neural_proxy_hours": 1.7266321864014513
+            },
+            {
+              "H2_fit_proxy_hours": 1.8046076621831841,
+              "ancillary_ridge_fits": 1,
+              "batches": {
+                "gradient_fit_per_epoch": 612,
+                "inner_stopping_per_epoch": 34,
+                "outer_scoring_once": 113
+              },
+              "gauge_id": "03479000",
+              "neural_fits": 6,
+              "original_common_cases": {
+                "gradient_fit": 39148,
+                "inner_stopping": 2165,
+                "outer_scoring": 7229
+              },
+              "primary_per_fit_components_seconds": {
+                "checkpoint_writes": 0.1881500007584691,
+                "inner_stopping": 24.032676815986633,
+                "outer_inference_once": 1.5575432640558575,
+                "startup": 0.9816239032545127,
+                "training": 1056.004603325855
+              },
+              "role_case_ids_sha256": {
+                "gradient_fit": "c4767323730a4dd4141ac1b27ecaac5c6a81fe9c633a6594ae1bdd2e54638809",
+                "inner_stopping": "4b6037804cc263857dc088bf884ec420a600aaae3179dbfcf57672a303eefb85",
+                "outer_scoring": "df0de87a66770746710d644ea03b10734577ea295407eefe3390516224e6f419"
+              },
+              "sixteen_extra_inference_passes_proxy_hours": 0.041534487041489536,
+              "total_neural_proxy_hours": 1.8461421492246737
+            }
+          ],
+          "stage": "optional_confirmation",
+          "total_neural_proxy_hours": 5.49155756122715
+        }
+      ],
+      "unchanged_primary180_proxy_hours": 82.44949445217038
+    }
+  ],
+  "schema": "hydra-coverage-sensitivity-resource-proposal/v1",
+  "status": "PROPOSED_ONLY_NOT_AUTHORIZED_NOT_EXECUTED",
+  "strict_primary_scope_changed": false,
+  "strict_primary_scope_fits": 180
+}

@@ -1,6 +1,6 @@
 {
   "schema": "hydra-scientific-decisions/v1",
-  "status": "TRAINING_CORE_CONDITIONALLY_ACCEPTED_PENDING_PREFREEZE_CHECKS",
+  "status": "COVERAGE_SENSITIVITY_DESIGN_REQUESTED_BEFORE_PROTOCOL_FREEZE",
   "primary_usgs_quality": {
     "status": "USER_CONFIRMED",
     "decision_date_local": "2026-11-02",
@@ -114,14 +114,59 @@
     "scaling": "GRADIENT_FIT_ONLY_ISOLATION_TESTED",
     "inference": "SYNTHETIC_EIGHT_UPDATE_FRESH_PROCESS_BEST_STATE_QUALIFIED",
     "scoring": "RULES_IMPLEMENTED_TESTED_PROPOSED_PENDING_FREEZE",
-    "coverage": "SEASON_REGIME_EVENT_REFERENCE_GAP_AUDIT_COMPLETE",
+    "coverage": "COMPLETE_PER_LEAD_INPUT_TARGET_HIGH_FLOW_UNIQUE_HOUR_EVENT_GAP_POLICY_CENSUS",
     "uncertainty": "DEPENDENCE_AWARE_PROPOSAL_AND_UTILITIES_TESTED_NO_STUDY_INTERVALS",
     "holds": [
-      "Review high-flow representativeness under common L168 complete cases, particularly Sugar Grove",
+      "Review additional coverage sensitivity pilot, clean-input degradation/failure tolerances and final-only routing before expanding 180 fits or freezing",
       "Review conditional within-year uncertainty interpretation and any confirmatory multiplicity/practical-effect claim before freeze",
       "Confirm approximate independent basin footprints and non-nesting interpretation; no exact-outlet or nested-conservation claim"
     ],
     "source_geometry_changed": false,
     "original_weight_hold_flags_changed": false
+  },
+  "coverage_sensitivity_request": {
+    "source": "DIRECT_USER_REPLY",
+    "recorded_at_utc": "2026-11-03T02:54:48.934384+00:00",
+    "status": "CENSUS_COMPLETED_PROPOSED_PILOT_AND_ROUTING_RETURNED_FOR_REVIEW",
+    "strict_common_L168_primary_preserved": true,
+    "coverage_goal_fraction": 0.9,
+    "coverage_goal_is_not_assumed_or_guaranteed": true,
+    "candidate_historical_discharge_policies": [
+      "1_or_2_hour_interior_interpolation_with_available_endpoints",
+      "1_or_2_hour_trailing_last_observation_input_fill",
+      "1_or_2_hour_trailing_model_predicted_input_fill",
+      "observed_filled_indicator_and_time_since_real_reading",
+      "realistic_short_block_augmentation_if_appropriate"
+    ],
+    "longer_gaps": "EXCLUDED_INITIALLY",
+    "natural_L24_fallback": "SEPARATE_PROPOSAL_IF_NEEDED",
+    "other_variable_filling_authorized": false,
+    "target_imputation_authorized": false,
+    "required_census": [
+      "missing_input_type",
+      "gap_length_and_location_in_L168",
+      "forecast_availability_by_gauge_and_lead",
+      "evaluable_coverage_and_valid_target_denominators",
+      "known_high_flow_coverage",
+      "unique_target_hours",
+      "defined_event_episodes_and_peak_support",
+      "policy_recovery_and_nonQ_limits"
+    ],
+    "additional_scientific_fits_authorized": 0,
+    "model_changes_authorized": false,
+    "protocol_freeze_authorized": false,
+    "protected_assessment_authorized": false,
+    "proposal_requires_user_review": [
+      "methods",
+      "model_input_changes",
+      "fit_count",
+      "resource_and_time_implications",
+      "scientific_tradeoffs"
+    ],
+    "census_report": "reports/development-gap-recovery-v1.json",
+    "routing_report": "reports/development-gap-routing-v1.json",
+    "decision_packet": "docs/coverage-sensitivity-census.md",
+    "methods_proposal": "docs/coverage-sensitivity-design.md",
+    "resource_proposal": "reports/coverage-sensitivity-resource-proposal.json"
   }
 }
