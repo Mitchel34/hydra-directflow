@@ -754,3 +754,22 @@ arrays, reconstructing targets, fitting a model or acquiring new USGS records.
 Original source IDs identify shared source requests; assembly must join by gauge
 and exact timestamp, retaining those IDs and qualifiers verbatim. Historical
 publication availability remains a simulated two-hour convention.
+
+## CV1 real-data assembly completed — November 3, 16:59 UTC
+
+`reports/gap-pilot-real-assembly-v1.json` records one bounded local assembly under
+controller plan `6ba6aeb0…`: 57.62 seconds, 135,217,152 bytes combined peak RSS,
+44,407,134 source bytes read and 57,750,943 output bytes. All source joins and
+published strict CV1 role case hashes passed. The immutable output manifest is
+`4795efd085a4924df9b4b6b5b96933cb9c70590ebc71ec6e46484c63a259c540`.
+
+There are 928 committed input/label parts, separate compact source provenance,
+strict paired cohorts, 8,742 all-candidate outer origins per gauge and three
+gradient-only ridge series. The ridge eligibility counts are 15,809 / 15,370 /
+15,604 for Jefferson / Galax / Sugar Grove; these are prepared pairs, not fits.
+Original gradient mask counts support a separate review of augmentation recipes.
+The source corpus, prior recovery/integrity receipts and qualified model code
+remain unchanged. Twenty-eight focused synthetic tests passed in 2.749 seconds,
+and independent review passed. No model/scaler fitting, neural update, forecast
+scoring, protected access or paid job occurred. Prepared-loader qualification and
+the bounded pilot protocol/tolerance review remain before scientific release.
