@@ -897,3 +897,53 @@ passed. No model call, new optimizer update, scientific score, source-value read
 cloud action or consumed-qualification replay occurred. Current trainer B64
 restart/best-state integration and larger main bundles remain qualification work;
 the durable execution controller and final epoch/resource plan remain pending.
+
+## Primary launch implementation and qualification — November 3
+
+The user explicitly requested starting training. A final method-confirmation
+question remains pending because the earlier instruction required review of
+material tradeoffs before freeze: proposed200 epochs/minimum10/patience5, strict
+matched L168 without repair, approximate independent basins, conditional
+within-year uncertainty, raw unclipped output and sealed assessment. The new
+protocol draft records these choices without pretending a reply was received.
+
+The primary trainer now accepts a finite200,000-update hard bound; each actual
+fit remains restricted by its exact logical allowance. Restore reuses its
+authenticated gradient-only transform without refitting. Checkpoint publication
+supports exact byte precharge and epoch callbacks reuse the existing stopping
+loop. New synthetic qualification covered all12 primary architecture/input/
+history cells atB64 on the selected CPU/MPS backends: exactly36 entered/confirmed
+updates and12 scaler fits,94.88seconds,1,872,297,984bytes observed peak combined
+RSS+MPS. Every case passed fresh-process next-update state/RNG equivalence and
+best-state inference distinct from last weights. Cumulative engineering counts
+are now852 real-data updates and972 synthetic updates; scientific fits remain0.
+
+The new campaign data loader reuses the pinned full corpus integrity receipt,
+selects only exact roster memberships and separates outer inputs from labels.
+All27 unique real-data views passed in152.28seconds with598,081,536bytes peak RSS
+and3,833,862,913 logical file bytes reserved at open. The42,696-row largest
+fit+inner bundle is included. No model/scaler fit, protected access, raw source
+cache read, cloud transfer or full-corpus verification replay occurred.
+
+The durable SQLite ledger, one-job worker, supervising process and seed reporter
+are implemented. Update and output charges persist across interruptions; the
+latest checkpoint alone supports up to3 explicit resumes. Seed barriers require
+authenticated training plus matching predictions/metrics for every job, followed
+by committed JSON/HTML reports at108/144/180 completions. Later seeds may continue
+unchanged while the user reviews earlier results. Event/uncertainty figures are
+explicitly pending postprocessing, not falsely included in initial report claims.
+
+The integrated suite ran911 tests in104.532seconds:908 passed,3 unchanged optional
+GIS skips. The first910-test attempt had two no-Torch loader tests sharing a
+process with unrelated Torch-importing tests; fresh-process test isolation fixed
+that without changing production qualification guards. The failed log remains
+preserved. Independent reviews passed for the loader, ledger, worker, supervisor
+and seed-report publisher. `reports/primary-campaign-controller-check-v1.json`
+binds the exact technical versions and both executed qualification receipts.
+
+Current free local space exceeded20GiB. Proposed run guards are6h/job,336h total,
+4GiB host+MPS (2GiB MPS),8GiB new output including2GiB bookkeeping, and8GiB free
+space floor. At200 epochs, logical updates cap18,200,800; physical replay reserve
+caps20,930,920. No quota is refunded, deadline reset or old qualification rerun.
+No scientific release marker, campaign ledger or study fit has been created
+while human method confirmation is pending.

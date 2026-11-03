@@ -1,5 +1,10 @@
 # Local campaign with complete results after each seed
 
+**Execution update:** the [durable local controller, worker, data integration and
+seed publisher](primary-campaign-readiness.md) are now implemented and qualified.
+The metadata roster remains unchanged. The final method confirmation is still
+pending before the first scientific fit; no execution has started.
+
 The user requested local training and evaluation one seed at a time, so a complete
 first-seed result can be reviewed while the later seeds run. This changes execution
 order, not the confirmed 180-fit comparison matrix or its common cohorts. CUDA

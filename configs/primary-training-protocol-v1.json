@@ -1,0 +1,1120 @@
+{
+  "schema": "hydra-primary-training-protocol/v1",
+  "status": "DRAFT_AWAITING_USER_CONFIRMATION",
+  "created_at_utc": "2026-11-03T21:02:56.229832+00:00",
+  "protocol_frozen": false,
+  "scientific_training_authorized": false,
+  "protected_assessment_access": false,
+  "paid_cloud_jobs_started": 0,
+  "source_plan_sha256": "0dad073824984fd7eeba88e4c313d77b4015dcccb94e8eb27297fcf7c6b39b0f",
+  "snapshot_sha256": "b41630b7df9a216874eb4ba38a10176d4b72092bd6f1ce2ad4c4f369db56948c",
+  "roster_path": "reports/local-seed-sequence-fastest-v3.json",
+  "roster_sha256": "f45aa1afe114db80b194288ecb06c7757ebe3928de3702fac9ff1114238310e9",
+  "roster_plan_sha256": "8e087b82797b79e96177cf11c19d5127d74c6f5c09ff6e0680cdbc4b3fc3e43b",
+  "human_confirmation": {
+    "received": false,
+    "message_reference": null,
+    "confirmed_at_utc": null,
+    "pending_methods": [
+      "200-epoch ceiling with minimum10/patience5 inner MSE stopping",
+      "strict matched L168 cohort without gap repairs",
+      "validated approximate independent basin interpretation",
+      "conditional within-year exploratory uncertainty",
+      "four architecture families and final seeds17/29/43",
+      "raw unclipped Q with protected assessment sealed"
+    ],
+    "start_training_request_does_not_fill_pending_method_answers": true
+  },
+  "training": {
+    "max_epochs": 200,
+    "min_epochs": 10,
+    "patience": 5,
+    "min_improvement": 0.0,
+    "learning_rate": 0.0001,
+    "shuffle_training": true
+  },
+  "limits": {
+    "max_optimizer_updates": 20930920,
+    "max_job_seconds": 21600,
+    "max_campaign_seconds": 1209600,
+    "max_output_bytes": 8589934592,
+    "min_free_bytes": 8589934592,
+    "max_combined_rss_bytes": 4294967296
+  },
+  "scope": {
+    "fits": 180,
+    "cv_fits": 72,
+    "final_development_fits": 108,
+    "architectures": [
+      "LSTM",
+      "Transformer",
+      "GRU_Transformer",
+      "Mamba2_Transformer"
+    ],
+    "gauge_ids": [
+      "03161000",
+      "03164000",
+      "03479000"
+    ],
+    "one_gauge_per_fit": true,
+    "one_configuration_per_arm": true,
+    "horizons_hours": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "cv_input_history_arms": [
+      "full_L168",
+      "q_only_L168"
+    ],
+    "final_development_input_history_arms": [
+      "full_L168",
+      "q_only_L168",
+      "full_L24"
+    ],
+    "cv_seed": 17,
+    "final_seed_order": [
+      17,
+      29,
+      43
+    ],
+    "ridge_fits": 0,
+    "missingness_pilot_fits": 0,
+    "Q_only_L24_fits": 0,
+    "persistence_baseline_included": false,
+    "post_validation_refit": false,
+    "prediction_ensemble": false
+  },
+  "sequence": {
+    "phase_ids": [
+      "01_cv_1_seed17",
+      "02_cv_2_seed17",
+      "03_cv_3_seed17",
+      "04_final_development_seed17",
+      "05_final_development_seed29",
+      "06_final_development_seed43"
+    ],
+    "seed_milestone_fits": [
+      108,
+      36,
+      36
+    ],
+    "cumulative_milestone_fits": [
+      108,
+      144,
+      180
+    ],
+    "CV_repeated_for_seeds29_43": false,
+    "CV_before_final_development": true,
+    "unchanged_next_seed_can_start_while_user_reviews_previous": true,
+    "extra_human_approval_pause_between_released_unchanged_seeds": false,
+    "results_can_change_later_seed_methods": false
+  },
+  "runtime": {
+    "local_only": true,
+    "concurrent_training_workers": 1,
+    "device_policy": "FASTEST_OBSERVED_FULL_L168_B64_MEAN_COPY_PLUS_UPDATE_BY_ARCHITECTURE",
+    "selected_devices": {
+      "GRU_Transformer": "cpu",
+      "LSTM": "cpu",
+      "Mamba2_Transformer": "mps",
+      "Transformer": "mps"
+    },
+    "CPU_threads": 1,
+    "Torch_interop_threads": 1,
+    "batch_size": 64,
+    "partial_last_batch_retained": true,
+    "precision": "FP32",
+    "automatic_mixed_precision": false,
+    "MPS_driver_allocator_bytes_max": 2147483648,
+    "PYTORCH_ENABLE_MPS_FALLBACK": "0",
+    "automatic_backend_switch": false,
+    "checkpoint_backend_migration": false,
+    "CUDA_enabled": false,
+    "CPU_or_MPS_choice_based_on_forecast_scores": false
+  },
+  "model": {
+    "width": 64,
+    "dropout": 0.1,
+    "site_mode": "per_gauge",
+    "linear_output_head": true,
+    "history_features": [
+      "discharge_cms",
+      "age_hours"
+    ],
+    "full_weather_features": [
+      "precip_mm",
+      "temp_k",
+      "specific_humidity",
+      "swe_kg_m2"
+    ],
+    "full_state_features": [
+      "soil_water_fraction",
+      "soil_age_hours"
+    ],
+    "full_schema": "FULL_HRRR_H2_W4_S2_V1",
+    "Q_only_schema": "Q_ONLY_H2_HORIZON1_S0_V1",
+    "Q_only_weather_features": [
+      "horizon_hours"
+    ],
+    "Q_only_state_features": [],
+    "Q_only_horizon_map": "horizon/18",
+    "Q_only_retains_full_model_case_admission": true,
+    "Transformer_attention_heads": 4,
+    "Transformer_feedforward_width": 128,
+    "Transformer_encoder_layers": 1,
+    "Transformer_decoder_layers": 1,
+    "Transformer_activation": "gelu",
+    "Transformer_norm_first": true,
+    "LSTM_layers": 1,
+    "GRU_layers": 1,
+    "Mamba2": {
+      "hidden_size": 64,
+      "num_heads": 4,
+      "head_dim": 32,
+      "state_size": 64,
+      "num_hidden_layers": 1,
+      "expand": 2,
+      "n_groups": 1,
+      "conv_kernel": 4,
+      "chunk_size": 32,
+      "use_bias": false,
+      "use_conv_bias": true,
+      "rms_norm": true,
+      "residual_in_fp32": true
+    },
+    "qualified_parameter_counts": {
+      "LSTM-full168": 67905,
+      "LSTM-q168": 67265,
+      "LSTM-full24": 67905,
+      "Transformer-full168": 85057,
+      "Transformer-q168": 84417,
+      "Transformer-full24": 85057,
+      "GRU_Transformer-full168": 76545,
+      "GRU_Transformer-q168": 75905,
+      "GRU_Transformer-full24": 76545,
+      "Mamba2_Transformer-full168": 86093,
+      "Mamba2_Transformer-q168": 85453,
+      "Mamba2_Transformer-full24": 86093
+    },
+    "implementation_sha256": {
+      "src/hydra_directflow/models/directflow.py": "ad767e49021f144402de669ddd50080c86d3b76cb5724afdfb9bec01a29c23a5",
+      "src/hydra_directflow/models/mamba2_math.py": "e467b5de664bd0bc7f517c246bceb0c4dc777b1b63cf819effbf7eb5ee94b7aa"
+    }
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "learning_rate_source": "training.learning_rate",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "weight_decay": 0.01,
+    "foreach": false,
+    "scheduler": null,
+    "gradient_clipping": null
+  },
+  "transforms_and_loss": {
+    "input_transform": "AFFINE_STANDARDIZATION_ORIGINAL_OBSERVED_GRADIENT_TENSOR_CELLS_ONLY",
+    "target_transform": "ONE_POOLED_AFFINE_Q_MEAN_SCALE_PER_GAUGE_FIT_OVER_H18_GRADIENT_LABELS",
+    "variance_ddof": 0,
+    "constant_channel_scale": 1.0,
+    "no_training_support": "FAIL",
+    "overlapping_tensor_cell_occurrences_contribute": true,
+    "full_Q_same_lookback_history_target_transforms_must_agree": true,
+    "L24_same_fitting_rule_but_history_statistics_may_differ": true,
+    "new_transform_and_optimizer_per_fit": true,
+    "inner_outer_or_protected_values_used_to_fit_transform": false,
+    "loss": "MASKED_STANDARDIZED_Q_MSE_EQUAL_HORIZONS",
+    "event_or_lead_weights": null,
+    "log_Q": false,
+    "inverse": "EXACT_SAVED_AFFINE",
+    "prediction_clipping": false,
+    "negative_frequency_reported": true,
+    "labels_are_model_forward_inputs": false
+  },
+  "stopping": {
+    "monitor": "CLEAN_INNER_STOPPING_STANDARDIZED_Q_MSE",
+    "improvement": "loss < best_loss - min_improvement",
+    "tie_rule": "RETAIN_EARLIEST_STRICT_BEST",
+    "selected_weights": "BEST_INNER_CHECKPOINT",
+    "best_epoch_can_precede_minimum_training_epochs": true,
+    "outer_or_assessment_errors_choose_epoch": false,
+    "resource_stop_is_successful_early_stopping": false
+  },
+  "data_and_quality": {
+    "cohort_mode": "common_l168_complete",
+    "complete_history_weather_soil_and_all18_targets_required": true,
+    "natural_L24_extra_cases_used_for_matched_comparison": false,
+    "cross_gauge_common_case_intersection_required": false,
+    "quality_policy": "PRIMARY_APPROVED_A_OPTIONAL_R_V1",
+    "required_USGS_flag": "A",
+    "optional_additional_USGS_flags": [
+      "R"
+    ],
+    "excluded_flags": [
+      "P",
+      "e"
+    ],
+    "unknown_flags_admitted": false,
+    "original_qualifier_order_and_duplicates_retained": true,
+    "source_masks_and_identifiers_retained": true,
+    "input_and_target_policies_separate": true,
+    "historical_Q_imputation": false,
+    "other_variable_imputation": false,
+    "target_filling": false,
+    "outage_augmentation": false,
+    "H4_pilot_schema": false,
+    "guaranteed_90_percent_per_gauge_coverage": false,
+    "case_count_authority": "reports/confirmed-180-fit-admitted-runtime.json",
+    "case_count_authority_sha256": "9a8b5526b0956125aecc2ebca9a29d20e90e6b262c136225505cde18cd92b2ec",
+    "role_case_authorities": [
+      {
+        "fold": "cv_1",
+        "gauge_id": "03161000",
+        "input_arm": "full",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 15717,
+          "inner_stopping": 2152,
+          "outer_scoring": 8556
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+          "inner_stopping": "22ab65fbfefb90c2a8fa7baece9bc23e82339c7091ccc7bf4841db7ba9e145dd",
+          "outer_scoring": "77a896b6d141a9914995eb8ab0587327b913b250d51ba15521d12f35a63a85fa"
+        }
+      },
+      {
+        "fold": "cv_1",
+        "gauge_id": "03161000",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 15717,
+          "inner_stopping": 2152,
+          "outer_scoring": 8556
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "582aaf46399a3827d235f3b61655cb96760b21cf3feafdf902ef4d433f0c4873",
+          "inner_stopping": "22ab65fbfefb90c2a8fa7baece9bc23e82339c7091ccc7bf4841db7ba9e145dd",
+          "outer_scoring": "77a896b6d141a9914995eb8ab0587327b913b250d51ba15521d12f35a63a85fa"
+        }
+      },
+      {
+        "fold": "cv_1",
+        "gauge_id": "03164000",
+        "input_arm": "full",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 13024,
+          "inner_stopping": 2152,
+          "outer_scoring": 8341
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+          "inner_stopping": "7a19c1ce95adbb17d2d69dcb091642db7f6d272b1ac5c4775f45e59b4b62c8dc",
+          "outer_scoring": "49e36b9377f461062393b2ae1b345a90b77ad5b4dbfa8cdc473f574f10a771a0"
+        }
+      },
+      {
+        "fold": "cv_1",
+        "gauge_id": "03164000",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 13024,
+          "inner_stopping": 2152,
+          "outer_scoring": 8341
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "88a2602c92fc814ee7abb668504cb85409b660ab0baa22c3076b6c49c4511640",
+          "inner_stopping": "7a19c1ce95adbb17d2d69dcb091642db7f6d272b1ac5c4775f45e59b4b62c8dc",
+          "outer_scoring": "49e36b9377f461062393b2ae1b345a90b77ad5b4dbfa8cdc473f574f10a771a0"
+        }
+      },
+      {
+        "fold": "cv_1",
+        "gauge_id": "03479000",
+        "input_arm": "full",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 14621,
+          "inner_stopping": 2152,
+          "outer_scoring": 8516
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+          "inner_stopping": "c6cd49a927a3f34187f468628592a7bfcd6de2eb1190d82884fc06649853de88",
+          "outer_scoring": "68e418282d1756320572c55712baf11dbf0ec4ce8bb545c8aa3433075285365f"
+        }
+      },
+      {
+        "fold": "cv_1",
+        "gauge_id": "03479000",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 14621,
+          "inner_stopping": 2152,
+          "outer_scoring": 8516
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "79d10e3d30bb14dc835a6f9cc48d7c241614f919f5cf18099e11a10fa3a678a7",
+          "inner_stopping": "c6cd49a927a3f34187f468628592a7bfcd6de2eb1190d82884fc06649853de88",
+          "outer_scoring": "68e418282d1756320572c55712baf11dbf0ec4ce8bb545c8aa3433075285365f"
+        }
+      },
+      {
+        "fold": "cv_2",
+        "gauge_id": "03161000",
+        "input_arm": "full",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 24278,
+          "inner_stopping": 2165,
+          "outer_scoring": 8106
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "91c595f3bc09109ecf703a61aa83900ac369066d9e19d0d4451a1acaddab06b4",
+          "inner_stopping": "5162a44006e5e4a9ee1ad8bd48612e64c999f427aedd0a1ee8209931e0b11f7c",
+          "outer_scoring": "4b95d1aa3fab97afeb168c22d1df25f17b61a5330c05f34967eba8b012ba3e5d"
+        }
+      },
+      {
+        "fold": "cv_2",
+        "gauge_id": "03161000",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 24278,
+          "inner_stopping": 2165,
+          "outer_scoring": 8106
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "91c595f3bc09109ecf703a61aa83900ac369066d9e19d0d4451a1acaddab06b4",
+          "inner_stopping": "5162a44006e5e4a9ee1ad8bd48612e64c999f427aedd0a1ee8209931e0b11f7c",
+          "outer_scoring": "4b95d1aa3fab97afeb168c22d1df25f17b61a5330c05f34967eba8b012ba3e5d"
+        }
+      },
+      {
+        "fold": "cv_2",
+        "gauge_id": "03164000",
+        "input_arm": "full",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 21370,
+          "inner_stopping": 2165,
+          "outer_scoring": 7396
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "672e8e269ca1ca61ad55e172967e5e786ae551fad58446ee25794fd7c13f979c",
+          "inner_stopping": "89dbb179910582fc7a5bc2e94dc05ca878901d6338bf1691303ae079b8cf1e68",
+          "outer_scoring": "27969d44aae9ae8dc4e048e13e0a817e63e6b4d8c0c791a9fef7ced62d04469e"
+        }
+      },
+      {
+        "fold": "cv_2",
+        "gauge_id": "03164000",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 21370,
+          "inner_stopping": 2165,
+          "outer_scoring": 7396
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "672e8e269ca1ca61ad55e172967e5e786ae551fad58446ee25794fd7c13f979c",
+          "inner_stopping": "89dbb179910582fc7a5bc2e94dc05ca878901d6338bf1691303ae079b8cf1e68",
+          "outer_scoring": "27969d44aae9ae8dc4e048e13e0a817e63e6b4d8c0c791a9fef7ced62d04469e"
+        }
+      },
+      {
+        "fold": "cv_2",
+        "gauge_id": "03479000",
+        "input_arm": "full",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 23142,
+          "inner_stopping": 2165,
+          "outer_scoring": 7781
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "d415ff9230dcf281012a03c77a9a8289284856044a6b17403f942dd3605588a3",
+          "inner_stopping": "01f9b0acb8fb0739de8abf560a17899410dcc2ac95479c50f1289178b56da8b3",
+          "outer_scoring": "0e0d5f350cc27856aa35e9a7f5efcab72c449a4c36abab4678bb1a7b937be18e"
+        }
+      },
+      {
+        "fold": "cv_2",
+        "gauge_id": "03479000",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 23142,
+          "inner_stopping": 2165,
+          "outer_scoring": 7781
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "d415ff9230dcf281012a03c77a9a8289284856044a6b17403f942dd3605588a3",
+          "inner_stopping": "01f9b0acb8fb0739de8abf560a17899410dcc2ac95479c50f1289178b56da8b3",
+          "outer_scoring": "0e0d5f350cc27856aa35e9a7f5efcab72c449a4c36abab4678bb1a7b937be18e"
+        }
+      },
+      {
+        "fold": "cv_3",
+        "gauge_id": "03161000",
+        "input_arm": "full",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 32402,
+          "inner_stopping": 2165,
+          "outer_scoring": 8111
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "b82a4ac797146bf40ded30bc1f1eb23cfa99a93f5f83e2843284d445324e65a6",
+          "inner_stopping": "2b7fcc1446b1474b5ab26684be0d36003d10825064657238e22cf9ed70f2d88d",
+          "outer_scoring": "eb3bd5a92dc912c738b2b48c597415265c0270aefdda3b1d5cb7cba5f1036f2d"
+        }
+      },
+      {
+        "fold": "cv_3",
+        "gauge_id": "03161000",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 32402,
+          "inner_stopping": 2165,
+          "outer_scoring": 8111
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "b82a4ac797146bf40ded30bc1f1eb23cfa99a93f5f83e2843284d445324e65a6",
+          "inner_stopping": "2b7fcc1446b1474b5ab26684be0d36003d10825064657238e22cf9ed70f2d88d",
+          "outer_scoring": "eb3bd5a92dc912c738b2b48c597415265c0270aefdda3b1d5cb7cba5f1036f2d"
+        }
+      },
+      {
+        "fold": "cv_3",
+        "gauge_id": "03164000",
+        "input_arm": "full",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 28984,
+          "inner_stopping": 1965,
+          "outer_scoring": 7311
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "4e7ee6aa2d6e83573613b7996e0527ce3ca5a6c7fe4c84d0b059d15d88ec48cd",
+          "inner_stopping": "6f87828e3413e064ab2f57a065d6891fd9347aee56f0b25c6596b71a43e34bdd",
+          "outer_scoring": "56c4f781ebcf958d1393a84fae576d5070efee6e966b30d48b2a6529b07ba8b1"
+        }
+      },
+      {
+        "fold": "cv_3",
+        "gauge_id": "03164000",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 28984,
+          "inner_stopping": 1965,
+          "outer_scoring": 7311
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "4e7ee6aa2d6e83573613b7996e0527ce3ca5a6c7fe4c84d0b059d15d88ec48cd",
+          "inner_stopping": "6f87828e3413e064ab2f57a065d6891fd9347aee56f0b25c6596b71a43e34bdd",
+          "outer_scoring": "56c4f781ebcf958d1393a84fae576d5070efee6e966b30d48b2a6529b07ba8b1"
+        }
+      },
+      {
+        "fold": "cv_3",
+        "gauge_id": "03479000",
+        "input_arm": "full",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 30941,
+          "inner_stopping": 2165,
+          "outer_scoring": 8189
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "5cb71286770a06b31d60e3c9f549de7990cd9c65a88026085f1569d5e66b2aef",
+          "inner_stopping": "d1ef418d543fda477dc52cb31c3b40b4ee7806fc6bc0d595b40835a89a089cc8",
+          "outer_scoring": "f401362564714456cc9fb20fe3c878403207f4505fd2df58815b7d20c8b3feb2"
+        }
+      },
+      {
+        "fold": "cv_3",
+        "gauge_id": "03479000",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 30941,
+          "inner_stopping": 2165,
+          "outer_scoring": 8189
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "5cb71286770a06b31d60e3c9f549de7990cd9c65a88026085f1569d5e66b2aef",
+          "inner_stopping": "d1ef418d543fda477dc52cb31c3b40b4ee7806fc6bc0d595b40835a89a089cc8",
+          "outer_scoring": "f401362564714456cc9fb20fe3c878403207f4505fd2df58815b7d20c8b3feb2"
+        }
+      },
+      {
+        "fold": "final_development",
+        "gauge_id": "03161000",
+        "input_arm": "full",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 40531,
+          "inner_stopping": 2165,
+          "outer_scoring": 8766
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "f986edc37999ff1c3a4b711f8dfe18f658929606da10fb4bb6561fc61ef97f7e",
+          "inner_stopping": "26539c00e073f43f5d671f95d468dd17dbec753f55e6a6ab6b7aa2f0b7933cbd",
+          "outer_scoring": "58bf78e0ecdd6079c74d017e7234a878bea572593eaa24683aebd278bb68fbbc"
+        }
+      },
+      {
+        "fold": "final_development",
+        "gauge_id": "03161000",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 40531,
+          "inner_stopping": 2165,
+          "outer_scoring": 8766
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "f986edc37999ff1c3a4b711f8dfe18f658929606da10fb4bb6561fc61ef97f7e",
+          "inner_stopping": "26539c00e073f43f5d671f95d468dd17dbec753f55e6a6ab6b7aa2f0b7933cbd",
+          "outer_scoring": "58bf78e0ecdd6079c74d017e7234a878bea572593eaa24683aebd278bb68fbbc"
+        }
+      },
+      {
+        "fold": "final_development",
+        "gauge_id": "03161000",
+        "input_arm": "full",
+        "history_hours": 24,
+        "actual_common_cases": {
+          "gradient_fit": 40531,
+          "inner_stopping": 2165,
+          "outer_scoring": 8766
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "f986edc37999ff1c3a4b711f8dfe18f658929606da10fb4bb6561fc61ef97f7e",
+          "inner_stopping": "26539c00e073f43f5d671f95d468dd17dbec753f55e6a6ab6b7aa2f0b7933cbd",
+          "outer_scoring": "58bf78e0ecdd6079c74d017e7234a878bea572593eaa24683aebd278bb68fbbc"
+        }
+      },
+      {
+        "fold": "final_development",
+        "gauge_id": "03164000",
+        "input_arm": "full",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 36500,
+          "inner_stopping": 1778,
+          "outer_scoring": 8125
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "e5ac9182e6d9eae38c048d1453c8040e254324bce72499816a86e83f4b4034c3",
+          "inner_stopping": "ee5c81fb9f48f40c698b7de4c602f69172c0a737f686c42b13463425efadbc24",
+          "outer_scoring": "c8304ad4a145ae076ef91721d195463219cfc79b6b0c5bee83da3ad2c36118a8"
+        }
+      },
+      {
+        "fold": "final_development",
+        "gauge_id": "03164000",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 36500,
+          "inner_stopping": 1778,
+          "outer_scoring": 8125
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "e5ac9182e6d9eae38c048d1453c8040e254324bce72499816a86e83f4b4034c3",
+          "inner_stopping": "ee5c81fb9f48f40c698b7de4c602f69172c0a737f686c42b13463425efadbc24",
+          "outer_scoring": "c8304ad4a145ae076ef91721d195463219cfc79b6b0c5bee83da3ad2c36118a8"
+        }
+      },
+      {
+        "fold": "final_development",
+        "gauge_id": "03164000",
+        "input_arm": "full",
+        "history_hours": 24,
+        "actual_common_cases": {
+          "gradient_fit": 36500,
+          "inner_stopping": 1778,
+          "outer_scoring": 8125
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "e5ac9182e6d9eae38c048d1453c8040e254324bce72499816a86e83f4b4034c3",
+          "inner_stopping": "ee5c81fb9f48f40c698b7de4c602f69172c0a737f686c42b13463425efadbc24",
+          "outer_scoring": "c8304ad4a145ae076ef91721d195463219cfc79b6b0c5bee83da3ad2c36118a8"
+        }
+      },
+      {
+        "fold": "final_development",
+        "gauge_id": "03479000",
+        "input_arm": "full",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 39148,
+          "inner_stopping": 2165,
+          "outer_scoring": 7229
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "c4767323730a4dd4141ac1b27ecaac5c6a81fe9c633a6594ae1bdd2e54638809",
+          "inner_stopping": "4b6037804cc263857dc088bf884ec420a600aaae3179dbfcf57672a303eefb85",
+          "outer_scoring": "df0de87a66770746710d644ea03b10734577ea295407eefe3390516224e6f419"
+        }
+      },
+      {
+        "fold": "final_development",
+        "gauge_id": "03479000",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "actual_common_cases": {
+          "gradient_fit": 39148,
+          "inner_stopping": 2165,
+          "outer_scoring": 7229
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "c4767323730a4dd4141ac1b27ecaac5c6a81fe9c633a6594ae1bdd2e54638809",
+          "inner_stopping": "4b6037804cc263857dc088bf884ec420a600aaae3179dbfcf57672a303eefb85",
+          "outer_scoring": "df0de87a66770746710d644ea03b10734577ea295407eefe3390516224e6f419"
+        }
+      },
+      {
+        "fold": "final_development",
+        "gauge_id": "03479000",
+        "input_arm": "full",
+        "history_hours": 24,
+        "actual_common_cases": {
+          "gradient_fit": 39148,
+          "inner_stopping": 2165,
+          "outer_scoring": 7229
+        },
+        "role_case_ids_sha256": {
+          "gradient_fit": "c4767323730a4dd4141ac1b27ecaac5c6a81fe9c633a6594ae1bdd2e54638809",
+          "inner_stopping": "4b6037804cc263857dc088bf884ec420a600aaae3179dbfcf57672a303eefb85",
+          "outer_scoring": "df0de87a66770746710d644ea03b10734577ea295407eefe3390516224e6f419"
+        }
+      }
+    ]
+  },
+  "clocks": {
+    "origin_equals_information_cutoff": true,
+    "time_basis": "EXACT_UTC_HOURLY",
+    "history_endpoint_offset_hours": -2,
+    "L168_history_start_offset_hours": -169,
+    "L24_history_start_offset_hours": -25,
+    "targets": "C+1..18h",
+    "simulated_observation_weather_soil_delay_hours": 2,
+    "weather_selection": "LATEST_ELIGIBLE_COMPLETE_SINGLE_CYCLE_WITH_EXPLICIT_OLDER_EXTENDED_FALLBACK",
+    "weather_cycle_stitching": false,
+    "initial_soil_separate": true,
+    "max_soil_age_hours": 8,
+    "source_cycle_age_and_native_leads_retained_as_provenance_not_added_channels": true,
+    "refit_label_delay_hours": 2,
+    "refit_predicate": "MAX_ACTUAL_TARGET_TIMESTAMP_PLUS_2H_LE_REFIT_B",
+    "refit_guard_roles": [
+      "gradient_fit",
+      "inner_stopping"
+    ],
+    "strict_targets_before_role_end": true,
+    "gradient_and_outer_boundary_origins_purged": 18,
+    "inner_boundary_origins_purged": 19,
+    "historical_publication_or_revision_vintage_proven": false,
+    "fit_or_tuning_elapsed_time_simulated": false,
+    "actual_artifact_time_separate_from_replay": true
+  },
+  "role_windows": {
+    "cv_1": {
+      "gradient_fit": {
+        "calendar_origins": 15798,
+        "end_exclusive_utc": "2020-05-01T00:00:00Z",
+        "last_origin_utc": "2020-04-30T05:00:00Z",
+        "latest_target_utc": "2020-04-30T23:00:00Z",
+        "purged_origins": 18,
+        "refit_at_utc": "2020-07-31T00:00:00Z",
+        "simulated_label_delay_hours": 2,
+        "start_utc": "2018-07-12T00:00:00Z"
+      },
+      "inner_stopping": {
+        "calendar_origins": 2165,
+        "end_exclusive_utc": "2020-07-31T00:00:00Z",
+        "last_origin_utc": "2020-07-30T04:00:00Z",
+        "latest_target_utc": "2020-07-30T22:00:00Z",
+        "purged_origins": 19,
+        "refit_at_utc": "2020-07-31T00:00:00Z",
+        "simulated_label_delay_hours": 2,
+        "start_utc": "2020-05-01T00:00:00Z"
+      },
+      "name": "cv_1",
+      "outer_scoring": {
+        "calendar_origins": 8742,
+        "end_exclusive_utc": "2021-07-31T00:00:00Z",
+        "last_origin_utc": "2021-07-30T05:00:00Z",
+        "latest_target_utc": "2021-07-30T23:00:00Z",
+        "purged_origins": 18,
+        "refit_at_utc": null,
+        "simulated_label_delay_hours": 2,
+        "start_utc": "2020-07-31T00:00:00Z"
+      },
+      "role": "PROPOSED_OUTER_CV"
+    },
+    "cv_2": {
+      "gradient_fit": {
+        "calendar_origins": 24558,
+        "end_exclusive_utc": "2021-05-01T00:00:00Z",
+        "last_origin_utc": "2021-04-30T05:00:00Z",
+        "latest_target_utc": "2021-04-30T23:00:00Z",
+        "purged_origins": 18,
+        "refit_at_utc": "2021-07-31T00:00:00Z",
+        "simulated_label_delay_hours": 2,
+        "start_utc": "2018-07-12T00:00:00Z"
+      },
+      "inner_stopping": {
+        "calendar_origins": 2165,
+        "end_exclusive_utc": "2021-07-31T00:00:00Z",
+        "last_origin_utc": "2021-07-30T04:00:00Z",
+        "latest_target_utc": "2021-07-30T22:00:00Z",
+        "purged_origins": 19,
+        "refit_at_utc": "2021-07-31T00:00:00Z",
+        "simulated_label_delay_hours": 2,
+        "start_utc": "2021-05-01T00:00:00Z"
+      },
+      "name": "cv_2",
+      "outer_scoring": {
+        "calendar_origins": 8742,
+        "end_exclusive_utc": "2022-07-31T00:00:00Z",
+        "last_origin_utc": "2022-07-30T05:00:00Z",
+        "latest_target_utc": "2022-07-30T23:00:00Z",
+        "purged_origins": 18,
+        "refit_at_utc": null,
+        "simulated_label_delay_hours": 2,
+        "start_utc": "2021-07-31T00:00:00Z"
+      },
+      "role": "PROPOSED_OUTER_CV"
+    },
+    "cv_3": {
+      "gradient_fit": {
+        "calendar_origins": 33318,
+        "end_exclusive_utc": "2022-05-01T00:00:00Z",
+        "last_origin_utc": "2022-04-30T05:00:00Z",
+        "latest_target_utc": "2022-04-30T23:00:00Z",
+        "purged_origins": 18,
+        "refit_at_utc": "2022-07-31T00:00:00Z",
+        "simulated_label_delay_hours": 2,
+        "start_utc": "2018-07-12T00:00:00Z"
+      },
+      "inner_stopping": {
+        "calendar_origins": 2165,
+        "end_exclusive_utc": "2022-07-31T00:00:00Z",
+        "last_origin_utc": "2022-07-30T04:00:00Z",
+        "latest_target_utc": "2022-07-30T22:00:00Z",
+        "purged_origins": 19,
+        "refit_at_utc": "2022-07-31T00:00:00Z",
+        "simulated_label_delay_hours": 2,
+        "start_utc": "2022-05-01T00:00:00Z"
+      },
+      "name": "cv_3",
+      "outer_scoring": {
+        "calendar_origins": 8742,
+        "end_exclusive_utc": "2023-07-31T00:00:00Z",
+        "last_origin_utc": "2023-07-30T05:00:00Z",
+        "latest_target_utc": "2023-07-30T23:00:00Z",
+        "purged_origins": 18,
+        "refit_at_utc": null,
+        "simulated_label_delay_hours": 2,
+        "start_utc": "2022-07-31T00:00:00Z"
+      },
+      "role": "PROPOSED_OUTER_CV"
+    },
+    "final_development": {
+      "gradient_fit": {
+        "calendar_origins": 42078,
+        "end_exclusive_utc": "2023-05-01T00:00:00Z",
+        "last_origin_utc": "2023-04-30T05:00:00Z",
+        "latest_target_utc": "2023-04-30T23:00:00Z",
+        "purged_origins": 18,
+        "refit_at_utc": "2023-07-31T00:00:00Z",
+        "simulated_label_delay_hours": 2,
+        "start_utc": "2018-07-12T00:00:00Z"
+      },
+      "inner_stopping": {
+        "calendar_origins": 2165,
+        "end_exclusive_utc": "2023-07-31T00:00:00Z",
+        "last_origin_utc": "2023-07-30T04:00:00Z",
+        "latest_target_utc": "2023-07-30T22:00:00Z",
+        "purged_origins": 19,
+        "refit_at_utc": "2023-07-31T00:00:00Z",
+        "simulated_label_delay_hours": 2,
+        "start_utc": "2023-05-01T00:00:00Z"
+      },
+      "name": "final_development",
+      "outer_scoring": {
+        "calendar_origins": 8766,
+        "end_exclusive_utc": "2024-07-31T00:00:00Z",
+        "last_origin_utc": "2024-07-30T05:00:00Z",
+        "latest_target_utc": "2024-07-30T23:00:00Z",
+        "purged_origins": 18,
+        "refit_at_utc": null,
+        "simulated_label_delay_hours": 2,
+        "start_utc": "2023-07-31T00:00:00Z"
+      },
+      "role": "FINAL_DEVELOPMENT_CHECK_NOT_PROTECTED"
+    }
+  },
+  "spatial": {
+    "interpretation_pending_confirmation": true,
+    "interpretation": "VALIDATED_APPROXIMATE_INDEPENDENT_BASIN_FOOTPRINTS",
+    "original_candidate_weight_rows": 514,
+    "original_weights_and_hold_flags_unchanged": true,
+    "known_outlet_area_discrepancies_retained": true,
+    "exact_surveyed_outlet_claim": false,
+    "forced_nesting_or_conservation_claim": false
+  },
+  "scoring": {
+    "when": "IMMEDIATELY_AFTER_EACH_JOB_BEST_CHECKPOINT_PREDICTIONS",
+    "units": "m3/s",
+    "bias_direction": "PREDICTION_MINUS_OBSERVATION",
+    "per_lead_metrics": [
+      "NSE",
+      "MSE",
+      "RMSE",
+      "MAE",
+      "bias",
+      "negative_prediction_frequency"
+    ],
+    "primary_score": "ARITHMETIC_MEAN_OF_ALL18_LEAD_NSE",
+    "minimum_distinct_target_hours_per_lead": 168,
+    "minimum_distinct_UTC_dates_per_lead": 28,
+    "positive_reference_variance_required": true,
+    "undefined_required_lead": "PRIMARY_UNAVAILABLE",
+    "missing_or_nonfinite_requested_prediction": "FAIL_EVEN_IF_REFERENCE_LABEL_MASKED",
+    "invalid_admitted_reference": "FAIL",
+    "no_successful_prediction_intersection": true,
+    "CV_aggregate": "EQUAL_MEAN_OF_ALL3_REQUIRED_FOLD_METRICS_SEED17",
+    "final_aggregate": "EQUAL_MEAN_OF_ALL3_SEED_METRICS_NOT_AVERAGED_PREDICTIONS",
+    "missing_fold_or_seed": "UNAVAILABLE_NO_OMISSION",
+    "configuration_count": 1,
+    "configuration_tie_order": [
+      "fixed_config_v1"
+    ],
+    "rounded_score_or_favorable_seed_selection": false,
+    "predictions_complete_before_outer_label_read": true,
+    "per_job_receipts": [
+      "terminal_training",
+      "best_checkpoint",
+      "physical_predictions",
+      "matching_metrics",
+      "source_cohort_role_identities"
+    ]
+  },
+  "postprocessing": {
+    "event_and_uncertainty_figures_follow_saved_predictions": true,
+    "blocks_next_seed_after_authenticated_per_job_metrics": false,
+    "initial_seed_package_is_poster_complete": false,
+    "seed17_package_is_final_assessment": false,
+    "manifest_status_must_show_pending_event_uncertainty_figures": true,
+    "postprocessing_remains_inside_active_resource_allowance_or_requires_separate_explicit_bound": true
+  },
+  "events": {
+    "thresholds": "q10_q90_q95_FROM_UNIQUE_APPROVED_GRADIENT_CALENDAR_HOURS_ONLY",
+    "regimes": {
+      "LOW": "Q<=q10",
+      "ORDINARY": "q10<Q<=q90",
+      "ELEVATED": "q90<Q<=q95",
+      "HIGH": "Q>q95",
+      "UNKNOWN": "NO_APPROVED_REFERENCE"
+    },
+    "HIGH_is_official_flood_stage": false,
+    "peak_selection": "DESCENDING_APPROVED_q95_EXCEEDANCES_EARLIEST_UTC_TIE",
+    "minimum_peak_separation_hours": 168,
+    "window_hours_before": 48,
+    "window_hours_after": 72,
+    "clip_to_outer_interval": true,
+    "representative_hydrographs": "FIRST3_FIXED_CATALOG_EVENTS",
+    "select_or_replace_events_from_model_errors": false,
+    "missing_reference_or_forecast_support": "REPORT_UNAVAILABLE_RETAIN_CATALOG",
+    "short_event_metrics_are_descriptive": true
+  },
+  "uncertainty": {
+    "interpretation_pending_confirmation": true,
+    "claim": "CONDITIONAL_WITHIN_YEAR_EXPLORATORY",
+    "draws": 2000,
+    "paired_unit": "WHOLE_HOURLY_ORIGIN_VECTOR_ALL18_LEADS_ALL_MODELS_FIXED_GAUGES",
+    "method": "NONCIRCULAR_MOVING_BLOCKS_STRATIFIED_BY_CONTIGUOUS_UTC_SEASON_SEGMENTS",
+    "primary_block_days": 14,
+    "required_sensitivity_block_days": [
+      7,
+      28
+    ],
+    "seed": 20261102,
+    "percentiles": [
+      2.5,
+      97.5
+    ],
+    "calendar_gaps_retained": true,
+    "blocks_cross_folds_or_season_segments": false,
+    "same_draws_across_compared_models_and_seeds": true,
+    "original_unique_coordinate_integer_multiplicity_scoring": true,
+    "distinct_positive_weight_support_rechecked_each_draw": true,
+    "final_primary_contrast_family_size": 42,
+    "CV_primary_contrast_family_size": 30,
+    "joint_invalid_draws_max": 100,
+    "redraw_invalid_draws": false,
+    "over_invalid_limit": "FAMILY_INTERVALS_UNAVAILABLE",
+    "joint_valid_pool_shared_within_family": true,
+    "simultaneous95percent_familywise_claim": false,
+    "independent_year_or_random_catchment_inference": false,
+    "calibrated_forecast_prediction_intervals": false,
+    "seed_dispersion_separate_from_within_year_resampling": true
+  },
+  "recovery_and_accounting": {
+    "resume_requires_explicit_request": true,
+    "maximum_explicit_resumes_per_job": 3,
+    "maximum_replay_epoch_equivalents_per_job": 30,
+    "logical_epoch_cap_proposed": 200,
+    "physical_epoch_equivalent_ceiling": 230,
+    "sum_gradient_batches_per_epoch_all_jobs": 91004,
+    "logical_optimizer_updates_max": 18200800,
+    "replay_reserve_optimizer_updates_max": 2730120,
+    "physical_optimizer_updates_max": 20930920,
+    "per_job_logical_update_formula": "200*gradient_batches_per_epoch",
+    "per_job_physical_update_formula": "230*gradient_batches_per_epoch",
+    "largest_per_job_logical_updates": 126800,
+    "largest_per_job_physical_updates": 145820,
+    "updates_entered_durable_before_optimizer_call": true,
+    "failed_or_interrupted_entered_steps_consume_allowance": true,
+    "refund_failed_entered_steps": false,
+    "reset_job_or_campaign_clock_on_resume": false,
+    "reuse_same_protocol_data_spec_backend_sampler_rng_and_ledger": true,
+    "automatic_retry_or_replacement_fit": false
+  },
+  "checkpoints_and_storage": {
+    "initial_checkpoint": true,
+    "every_completed_epochs": 10,
+    "terminal_checkpoint": true,
+    "maximum_checkpoints_per_job": 21,
+    "terminal_at_existing_checkpoint_epoch_reuses_that_checkpoint": true,
+    "duplicate_checkpoint_number_on_resume_may_overwrite_or_delete": false,
+    "maximum_checkpoints_all180_jobs": 3780,
+    "full_checkpoint_contains_current_and_best_states": true,
+    "persistent_sampler_optimizer_CPU_MPS_RNG_and_transform": true,
+    "hash_and_size_receipts_required": true,
+    "no_automatic_deletion": true,
+    "total_bookkeeping_reserve_bytes": 2147483648,
+    "artifact_allowance_after_bookkeeping_reserve_bytes": 6442450944,
+    "all_new_checkpoints_predictions_metrics_logs_staging_inside_8GiB_cap": true,
+    "existing_immutable_inputs_and_old_receipts_not_deleted": true,
+    "actual_output_growth_checked_before_writes": true,
+    "byte_cap_is_completion_guarantee": false
+  },
+  "qualification_evidence": {
+    "current_trainer": {
+      "artifact": "reports/primary-campaign-qualification-v1.json",
+      "sha256": "b69ae171e6972ae51fb141a586d59fe89938a65febfd9254fab48b0d9ffc6e1a",
+      "status": "PASSED_SYNTHETIC_PRIMARY_CAMPAIGN_QUALIFICATION",
+      "synthetic_optimizer_updates_entered": 36,
+      "synthetic_optimizer_updates_confirmed": 36,
+      "geometry_checks": 12,
+      "scientific_fits": 0,
+      "exact_fresh_recovery_and_best_inference": true
+    },
+    "real_data_views": {
+      "artifact": "reports/primary-campaign-data-qualification-v1.json",
+      "sha256": "4d0e45a1f2b08a21c93b0355e53073401f593ed4e9bc43f2e2270096e19fc222",
+      "status": "PASSED",
+      "views": 27,
+      "paired_fold_checks": 4,
+      "model_calls": 0,
+      "optimizer_updates": 0,
+      "scaler_fits": 0,
+      "limitations": [
+        "All declared outer input/label arrays are loaded and hash/coordinate checked; only the first64-case predictor slice per view is exercised",
+        "Raw source provenance caches and the full corpus inspection are not replayed",
+        "Numeric target members are never decoded during input-only loading; compressed shard reads still contain archived target bytes",
+        "Logical read telemetry reserves each full resident file size at open, not physical disk or network bytes"
+      ]
+    },
+    "durable_controller": {
+      "status": "PASSED_UNIT_AND_PEER_REVIEW",
+      "artifact": "reports/primary-campaign-controller-check-v1.json",
+      "sha256": "f980a15712d98df8693fcf8186b07dda1fc500a2319e7e2659f686fdf4ae857b"
+    }
+  },
+  "release_requirements": {
+    "actual_human_method_confirmation": false,
+    "draft_flags_updated_by_root_after_actual_reply": false,
+    "frozen_protocol_file_sha_bound_to_ledger_before_first_fit": false,
+    "durable_controller_qualification_passed": true,
+    "required_current_trainer_qualification_passed": true,
+    "required_data_view_qualification_passed": true,
+    "resource_preflight_passed": true
+  },
+  "excluded_execution": {
+    "ridge_or_H4_gap_pilot": true,
+    "historical_gap_repair": true,
+    "extra_seed_or_CV_refit": true,
+    "NWM_as_predictor_or_admission_gate": true,
+    "NWM_new_comparison_run": true,
+    "paid_cloud_execution": true,
+    "protected_assessment": true
+  },
+  "NWM": {
+    "role": "EXTERNAL_COMPARATOR_ONLY_FUTURE_QUALIFIED_MATCHED_ANALYSIS",
+    "gates_independent_training_or_scoring": false,
+    "native_lead_support_and_information_cutoff_required": true,
+    "two_hour_old_18_lead_run_supports_origin_H1_to_H16_only": true,
+    "included_in_independent_H18_primary_aggregate": false
+  },
+  "technical_stop_rules": [
+    "source/cohort/role/schema or protocol identity mismatch",
+    "protected data or leakage",
+    "nonfinite fit state or missing/nonfinite requested predictions",
+    "checkpoint/RNG/ledger inconsistency",
+    "job/campaign/update/memory/output/free-space limit",
+    "unsupported requested backend"
+  ],
+  "nonfailure_outcomes": [
+    "ordinary inner early stopping",
+    "poor but finite performance",
+    "explicitly undefined reference-based panel"
+  ],
+  "draft_preparation": {
+    "source_numeric_payload_reads": 0,
+    "models_or_tests_executed": 0,
+    "fits": 0,
+    "fees": 0,
+    "files_written": [
+      "configs/primary-training-protocol-v1.json",
+      "docs/primary-training-protocol-v1.md"
+    ]
+  },
+  "resource_preflight": {
+    "observed_at_utc": "2026-11-03T21:31:28.566278+00:00",
+    "free_local_bytes": 22477418496,
+    "minimum_free_bytes": 8589934592,
+    "free_space_passed": true,
+    "live_worker_guards_still_required": true
+  }
+}

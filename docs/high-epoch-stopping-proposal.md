@@ -1,5 +1,11 @@
 # Higher ceiling with inner early stopping — proposal
 
+**Implementation update:** the [primary campaign readiness work](primary-campaign-readiness.md)
+has raised and qualified the finite trainer limit to200,000 updates per fit.
+The previously identified100,000-update blocker below is historical. Exact
+campaign logical/replay allowances remain explicitly bound, and the numerical
+epoch choice still awaits the pending protocol confirmation.
+
 The user prefers a high epoch limit with early stopping. A numerical ceiling has
 not yet been selected by the user or frozen into a scientific execution plan.
 Propose **200 maximum epochs**, retaining the existing minimum of 10 epochs,

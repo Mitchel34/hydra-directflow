@@ -1,5 +1,11 @@
 # Fastest demonstrated local backend policy
 
+**Qualification update:** the [primary campaign readiness receipt](primary-campaign-readiness.md)
+now records successful B64 fresh-process recovery/best-inference checks for all12
+planned backend/geometry cells and all27 real-data views. The earlier remaining
+qualification notes below describe the state before this completed work. Final
+protocol confirmation remains pending; no scientific fit has started.
+
 The user first requested MPS for all experiments, then clarified: **“Ok go with
 what’s fastest!”** The active plan uses CPU for LSTM and GRU–Transformer, and MPS
 for Transformer and Mamba-2–Transformer. This follows the recorded full-L168/B64

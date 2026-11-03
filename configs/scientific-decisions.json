@@ -387,5 +387,24 @@
     "seed_order_unchanged": true,
     "scientific_execution_started": false,
     "cloud_execution_started": false
+  },
+  "primary_campaign_readiness": {
+    "recorded_at_utc": "2026-11-03T21:31:28.566278+00:00",
+    "user_requested_start": true,
+    "controller_implemented": true,
+    "controller_review_and_tests_passed": true,
+    "model_geometry_qualification_passed": true,
+    "all27_data_views_qualified": true,
+    "technical_report": "reports/primary-campaign-controller-check-v1.json",
+    "technical_report_sha256": "f980a15712d98df8693fcf8186b07dda1fc500a2319e7e2659f686fdf4ae857b",
+    "protocol": "configs/primary-training-protocol-v1.json",
+    "protocol_frozen": false,
+    "awaiting_previously_requested_human_method_confirmation": true,
+    "scientific_fits_started": 0,
+    "cumulative_real_engineering_updates": 852,
+    "cumulative_synthetic_optimizer_updates": 972,
+    "paid_cloud_jobs_started": 0,
+    "protected_assessment_access": false,
+    "old_qualification_allowances_replayed": false
   }
 }

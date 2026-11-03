@@ -1,5 +1,12 @@
 # Restartable development training components
 
+**Primary-campaign update:** the [local runner and qualifications](primary-campaign-readiness.md)
+now cover all12 B64 primary geometries and all27 distinct real-data views. The
+trainer supports an exact per-fit update allowance up to200,000, authenticated
+saved-transform reuse on restore, output precharge callbacks and epoch observers.
+These capabilities do not select the campaign's epoch budget or freeze its
+protocol; the pending method confirmation remains a separate launch condition.
+
 `training.py` implements train-only affine transforms, explicit training sample
 order, a bounded CPU/MPS update loop, inner early stopping and immutable
 checkpoints. This is a prepared training component, not a frozen scientific
