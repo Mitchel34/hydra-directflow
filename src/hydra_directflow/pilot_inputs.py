@@ -7,7 +7,6 @@ from collections.abc import Mapping
 from dataclasses import asdict
 import hashlib
 import math
-from numbers import Integral
 import re
 from types import MappingProxyType
 
@@ -16,9 +15,9 @@ import numpy as np
 from .gap_policies import POLICY_IDS, policy_catalog
 from .inference import validate_input_coordinates, validate_inputs
 from .local_data import GAUGES
-from .quality import PRIMARY_APPROVED, admit_usgs_quality
 from .reference import digest, require
 from .training import FULL_FEATURE_SCHEMA, TrainOnlyTransform, INPUTS
+from .pilot_provenance import ValidatedProvenanceBatch, validate_native_provenance
 
 H4_FEATURE_SCHEMA = 'PILOT_HRRR_H4_W4_S2_V1'
 H4_HISTORY_FEATURES = ('discharge_cms', 'age_hours', 'was_missing', 'elapsed_since_real_hours')
@@ -144,27 +143,10 @@ def _input_coordinates(arrays):
     return coordinates,GAUGES[int(sites[0])],cohort.item(),order
 
 
-def _provenance(value,original_mask,times):
-    require(isinstance(value,Mapping) and set(value)=={'observation_times','quality_flags','source_ids'},'Explicit per-slot original provenance required')
-    n=original_mask.shape[0]
-    require(all(isinstance(value[key],(list,tuple,np.ndarray)) and len(value[key])==n for key in value),'Provenance case dimension differs')
-    result={key:[] for key in value}
-    for case in range(n):
-        require(all(len(value[key][case])==168 for key in value),'Provenance history dimension differs')
-        stamps,flags,ids=[],[],[]
-        for slot in range(168):
-            stamp=value['observation_times'][case][slot];native=value['quality_flags'][case][slot];source=value['source_ids'][case][slot]
-            require(stamp is None or isinstance(stamp,Integral) and not isinstance(stamp,(bool,np.bool_)) and int(stamp)==int(times[case,slot]),
-                    'Original source timestamp must equal its exact history slot')
-            require(isinstance(native,(list,tuple)) and len(native)<=16 and all(type(flag) is str and 0<len(flag)<=32 for flag in native),
-                    'Original qualifiers must be native ordered string sequences')
-            require(source is None or isinstance(source,str) and 0<len(source)<=2048,'Original source ID malformed')
-            if original_mask[case,slot]:
-                require(stamp is not None and source is not None and admit_usgs_quality(native,policy_id=PRIMARY_APPROVED),
-                        'Observed-mask/source-clock/approved-qualifier provenance differs')
-            stamps.append(None if stamp is None else int(stamp));flags.append(tuple(native));ids.append(source)
-        result['observation_times'].append(tuple(stamps));result['quality_flags'].append(tuple(flags));result['source_ids'].append(tuple(ids))
-    return {key:tuple(rows) for key,rows in result.items()}
+def _provenance(value,original_mask,times,**bindings):
+    if type(value) is ValidatedProvenanceBatch:
+        return value.checked_native(original_mask=original_mask,times=times,**bindings)
+    return validate_native_provenance(value,original_mask,times)
 
 
 def _saved_transform(value):
@@ -196,6 +178,14 @@ def prepare_h4_inputs(arrays, *, history_provenance, saved_h2_transform, inferen
     if recipe is not None:
         require(recipe['evidence']['gradient_case_ids_sha256']==transform.training_case_ids_sha256
                 and recipe['evidence']['source_identity']==inference_source_identity,'Augmentation evidence differs from original gradient transform/source')
+    bindings=dict(origins=coordinates['origin_time'],forecast_times=coordinates['forecast_time'],
+                  site_ids=coordinates['site_id'],case_ids=coordinates['case_id'],
+                  source_identity=inference_source_identity,cohort_digest=cohort)
+    if type(history_provenance) is ValidatedProvenanceBatch:
+        original_masks=np.asarray(arrays['history_mask'])
+        require(original_masks.shape==(len(coordinates['origin_time']),168,2) and original_masks.dtype==np.dtype(bool),
+                'Original H2 masks required before provenance reuse')
+        _provenance(history_provenance,original_masks[...,0],coordinates['history_time'],**bindings)
     h2={**coordinates}
     for name in INPUTS:
         h2[name],h2[name+'_mask']=np.asarray(arrays[name]),np.asarray(arrays[name+'_mask'])
@@ -205,7 +195,7 @@ def prepare_h4_inputs(arrays, *, history_provenance, saved_h2_transform, inferen
     original=h2['history_mask'][...,0].copy();times=coordinates['history_time'];origins=coordinates['origin_time'];n=len(origins)
     age=(origins[:,None]-times)/3600
     require(np.array_equal(h2['history'][...,1][original],age[original]),'Original observed coordinate-age values differ')
-    native=_provenance(history_provenance,original,times)
+    native=_provenance(history_provenance,original,times,**bindings)
     hidden=np.zeros((n,168),bool);effective=original.copy();usable=np.zeros((n,168),bool)
     raw_history=np.full((n,168,4),np.nan,np.float64);raw_mask=np.zeros((n,168,4),bool)
     selected=[];methods=[];fill_receipts=[];failure_reasons=[];admissible=np.zeros(n,bool)

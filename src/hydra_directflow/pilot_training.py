@@ -25,6 +25,7 @@ from .training import (FULL_FEATURE_SCHEMA, INPUTS, FEATURES, TrainOnlyTransform
     EpochSampler, EarlyStopping, array_identity, validate_coordinates,
     validate_development_bundle, implementation_fingerprint)
 from .trainer_bundle import _roles, _refit_policy, refit_label_mask
+from .pilot_provenance import admit_history_provenance, ValidatedProvenanceBatch
 
 CHECKPOINT_SCHEMA = "hydra-h4-pilot-checkpoint/v1"
 H4_FEATURE_SCHEMA = "PILOT_HRRR_H4_W4_S2_V1"
@@ -37,14 +38,71 @@ def _sha(value):
     return isinstance(value, str) and re.fullmatch(r"[0-9a-f]{64}", value) is not None
 
 
+def _json_default(item):
+    """Let the native JSON encoder traverse normal dictionaries/sequences."""
+    if isinstance(item, Mapping): return dict(item)
+    if isinstance(item, np.ndarray): return item.tolist()
+    if isinstance(item, np.generic):
+        value = item.item()
+        # NumPy extended scalars can return their own type from item(). The
+        # previous recursive converter rejected these with RecursionError.
+        if isinstance(value, np.generic) and type(value) is type(item):
+            raise RecursionError("NumPy scalar has no native JSON representation")
+        return value
+    raise TypeError("Object of type " + type(item).__name__ + " is not JSON serializable")
+
+
+def _json_text(value):
+    return json.dumps(value, default=_json_default, sort_keys=True,
+                      separators=(",", ":"), ensure_ascii=True, allow_nan=False)
+
+
 def _canonical(value):
-    def plain(item):
-        if isinstance(item,Mapping): return {key:plain(child) for key,child in item.items()}
-        if isinstance(item,np.ndarray): return plain(item.tolist())
-        if isinstance(item,np.generic): return plain(item.item())
-        if isinstance(item,(tuple,list)): return [plain(child) for child in item]
-        return item
-    return json.loads(json.dumps(plain(value), sort_keys=True, allow_nan=False))
+    """Preserve the legacy plain JSON value contract without a Python tree copy."""
+    return json.loads(_json_text(value))
+
+
+def _needs_key_normalization(value):
+    """Find rare JSON-key coercions without recursively copying scalar leaves.
+
+    The legacy JSON roundtrip stringifies keys before the final sorted digest.
+    Sorting integer keys directly can therefore produce a different digest.
+    Normal provenance has string keys; keep the fallback for legacy supported
+    key types. Retained references prevent ID reuse for temporary object-array
+    lists during this bounded, per-call scan; there is no cross-call cache.
+    """
+    pending, seen = [value], {}
+    primitive = (str, int, float, bool, type(None))
+    while pending:
+        item = pending.pop()
+        if id(item) in seen: continue
+        seen[id(item)] = item
+        if isinstance(item, Mapping):
+            if any(type(key) is not str for key in item): return True
+            children = item.values()
+        elif isinstance(item, np.ndarray):
+            if type(item) is np.ndarray and not item.dtype.hasobject: continue
+            children = (item.tolist(),)
+        elif isinstance(item, np.generic):
+            children = (_json_default(item),)
+        elif isinstance(item, (tuple, list)):
+            children = item
+        else:
+            continue
+        pending.extend(child for child in children if type(child) not in primitive)
+    return False
+
+
+def _canonical_bytes(value):
+    """Byte-equivalent to JSON encoding of the old _canonical(value) result."""
+    if _needs_key_normalization(value):
+        value = _canonical(value)
+    return _json_text(value).encode("utf-8")
+
+
+def _canonical_digest(value):
+    """Hash normal provenance with one encoding and no JSON roundtrip."""
+    return hashlib.sha256(_canonical_bytes(value)).hexdigest()
 
 
 def _freeze_metadata(value):
@@ -60,14 +118,14 @@ def _ridge_identity(model):
 
 
 def _ridge_state_sha256(model):
-    return None if model is None else digest(_canonical(model.to_dict()))
+    return None if model is None else _canonical_digest(model.to_dict())
 
 
 def pilot_implementation_fingerprint():
     parent = Path(__file__).resolve().parent
     return {**implementation_fingerprint(), "pilot_code": {
         name: hashlib.sha256((parent / name).read_bytes()).hexdigest()
-        for name in ("pilot_training.py", "pilot_inputs.py", "gap_filling.py", "gap_policies.py", "quality.py", "trainer_bundle.py", "inference.py", "engineering.py")}}
+        for name in ("pilot_training.py", "pilot_inputs.py", "pilot_provenance.py", "gap_filling.py", "gap_policies.py", "quality.py", "trainer_bundle.py", "inference.py", "engineering.py")}}
 
 
 @dataclass(frozen=True)
@@ -179,6 +237,42 @@ def _prepare(arrays, provenance, scaler, source, *, scenario_id, epoch, mask_see
         expected_ridge_identity=None if ridge_model is None else ridge_model.identity)
 
 
+def _check_provenance_view(provenance, arrays, source, cohort):
+    return provenance.checked_native(original_mask=np.asarray(arrays["history_mask"])[...,0],
+        times=arrays["history_time"],origins=arrays["origin_time"],forecast_times=arrays["target_time"],
+        site_ids=arrays["site_id"],case_ids=arrays["case_id"],source_identity=source,cohort_digest=cohort)
+
+
+def _inference_provenance_view(owner, arrays, raw_provenance, source, cohort):
+    """At most one owned batch snapshot; actual content must match on reuse.
+
+    The caller's protected/gauge/outer-coordinate gates run first. Only original
+    metadata and coordinate/mask content are hashed here; Q/target values are
+    neither read nor cached. Dynamic fills and input validation still run.
+    """
+    if type(raw_provenance) is ValidatedProvenanceBatch:
+        _check_provenance_view(raw_provenance,arrays,source,cohort)
+        owner._provenance_explicit_view_uses = getattr(owner,"_provenance_explicit_view_uses",0)+1
+        return raw_provenance
+    metadata_sha = _canonical_digest(raw_provenance)
+    coordinates_sha = array_identity({name:np.asarray(arrays[name]) for name in
+        COORDINATES+("history_mask","feature_schema","cohort_admission_digest")})
+    key = (source,cohort,metadata_sha,coordinates_sha)
+    cached = getattr(owner,"_provenance_cache",None)
+    if cached is None or cached[0] != key:
+        owner._provenance_cache_misses = getattr(owner,"_provenance_cache_misses",0)+1
+        snapshot = admit_history_provenance(arrays,raw_provenance,source_identity=source,cohort_digest=cohort)
+        require(snapshot.provenance_sha256 == metadata_sha,"Owned provenance differs from hashed input metadata")
+        owner._provenance_cache = (key,snapshot)
+        owner._provenance_cache_admissions = getattr(owner,"_provenance_cache_admissions",0)+1
+    else:
+        snapshot = cached[1]
+        owner._provenance_cache_hits = getattr(owner,"_provenance_cache_hits",0)+1
+    view = snapshot.select(tuple(range(len(arrays["origin_time"]))))
+    _check_provenance_view(view,arrays,source,cohort)
+    return view
+
+
 class PilotTrainer:
     def __init__(self, arrays, *, train_indices, inner_indices, role_time_bounds, refit_at_utc,
                  spec, source_identity, cohort_digest, history_provenance, fill_policy,
@@ -189,7 +283,8 @@ class PilotTrainer:
         require(np.asarray(arrays["feature_schema"]).shape == () and np.asarray(arrays["feature_schema"]).item() == FULL_FEATURE_SCHEMA
                 and np.asarray(arrays["cohort_admission_digest"]).shape == () and np.asarray(arrays["cohort_admission_digest"]).item() == cohort_digest,
                 "Original full H2 source and comparison cohort required")
-        self.history_provenance = _freeze_metadata(_provenance(arrays, history_provenance))
+        self.history_provenance = admit_history_provenance(arrays,history_provenance,
+            source_identity=source_identity,cohort_digest=cohort_digest)
         validate_development_bundle(arrays,168,feature_schema=FULL_FEATURE_SCHEMA)
         selected = list(self.train + self.validation)
         require(all(np.asarray(arrays[name])[selected].all() for name in ("history_mask", "weather_mask", "state_mask", "target_mask")),
@@ -200,7 +295,7 @@ class PilotTrainer:
         for value in self.arrays.values(): value.setflags(write=False)
         self.spec, self.source_identity, self.cohort_admission_digest = spec, source_identity, cohort_digest
         self.gauge_id = GAUGE_IDS[int(self.arrays["site_id"][0])]
-        self.array_sha256, self.provenance_sha256 = array_identity(self.arrays), digest(_canonical(self.history_provenance))
+        self.array_sha256, self.provenance_sha256 = array_identity(self.arrays), self.history_provenance.provenance_sha256
         from .pilot_inputs import validate_fill_policy, validate_augmentation_recipe, H4_HISTORY_FEATURES
         require(H4_HISTORY_FEATURES == H4_FEATURES, "Pilot adapter/model H4 feature order differs")
         self.fill_policy = _canonical(validate_fill_policy(_canonical(fill_policy)))
@@ -238,9 +333,12 @@ class PilotTrainer:
         self.optimizer = None
 
     def _view(self, indices):
-        result = {name: self.arrays[name][list(indices)] for name in MODEL_KEYS + COORDINATES}
+        require(self.history_provenance.provenance_sha256 == self.provenance_sha256,"Owned source provenance changed")
+        provenance = self.history_provenance.select(indices)
+        result = {name:self.arrays[name][list(indices)] for name in COORDINATES+("history_mask",)}
+        _check_provenance_view(provenance,result,self.source_identity,self.cohort_admission_digest)
+        result.update({name:self.arrays[name][list(indices)] for name in MODEL_KEYS})
         for name in ("feature_schema", "cohort_admission_digest"): result[name] = self.arrays[name]
-        provenance = {name: [value[i] for i in indices] for name,value in self.history_provenance.items()}
         return result, provenance
 
     def preview_batch(self, indices, *, epoch, augment=False):
@@ -268,7 +366,7 @@ class PilotTrainer:
         mask_sha = array_identity({name: np.asarray(prepared["raw_inputs"][name]) for name in ("history", "history_mask")})
         receipt = dict(indices=list(indices), case_ids=self.arrays["case_id"][list(indices)].tolist(), epoch=epoch,
             augmented=augment, mask_digest=mask_sha, adapter_receipt_sha256=digest(prepared["receipt"]),
-            provenance_sha256=digest(_canonical(prepared["provenance"])), batch_identity=array_identity(batch))
+            provenance_sha256=_canonical_digest(prepared["provenance"]), batch_identity=array_identity(batch))
         return batch, receipt
 
     def preview_next_batch(self):
@@ -453,6 +551,13 @@ def _load_checkpoint(path,*,expected_sha256,expected_source_identity,expected_co
 
 
 class PilotBestPredictor:
+    def provenance_cache_info(self):
+        """Internal diagnostics only; never part of canonical scientific receipts."""
+        return dict(hits=getattr(self,"_provenance_cache_hits",0),misses=getattr(self,"_provenance_cache_misses",0),
+            entries=int(getattr(self,"_provenance_cache",None) is not None),
+            admissions=getattr(self,"_provenance_cache_admissions",0),
+            explicit_views=getattr(self,"_provenance_explicit_view_uses",0))
+
     @classmethod
     def load(cls,path,*,expected_sha256,expected_source_identity,expected_cohort_digest,expected_mode,
              expected_fill_policy,expected_augmentation_recipe,gradient_fit_case_ids,expected_gauge_id,ridge_model=None):
@@ -475,6 +580,9 @@ class PilotBestPredictor:
         with torch.random.fork_rng(devices=[]): result.model = _model(result.spec)
         _state_valid(result.model,value["best_model"],torch); result.model.load_state_dict(value["best_model"]); result.model.eval()
         result.fill_policy, result.recipe, result.ridge_model = value["fill_policy"], value["augmentation_recipe"], ridge_model
+        result._provenance_cache = None
+        result._provenance_cache_hits = result._provenance_cache_misses = result._provenance_cache_admissions = 0
+        result._provenance_explicit_view_uses = 0
         result.receipt = dict(checkpoint_sha256=expected_sha256,training_source_identity=expected_source_identity,
             training_cohort_admission_digest=expected_cohort_digest,selected_state="best_model",selected_best_epoch=best_epoch,
             completed_epochs=value["stopping"]["completed_epochs"],feature_schema=H4_FEATURE_SCHEMA,mode=result.spec.mode,
@@ -505,7 +613,8 @@ class PilotBestPredictor:
                 "Original inference H2 source/cohort differs")
         # Target values and masks are intentionally never fetched.
         for name in MODEL_KEYS:view[name]=np.asarray(arrays[name])
-        provenance = _provenance(view,history_provenance)
+        provenance = _inference_provenance_view(self,view,history_provenance,
+            expected_inference_source_identity,expected_inference_cohort_digest)
         prepared = _prepare(view,provenance,self.scaler,expected_inference_source_identity,scenario_id=scenario_id,
             epoch=epoch,mask_seed=mask_seed,fill_policy=self.fill_policy,recipe=None,ridge_model=self.ridge_model)
         require(np.asarray(prepared["case_admissible"]).shape == (n,) and np.asarray(prepared["case_admissible"]).all(),
@@ -521,6 +630,6 @@ class PilotBestPredictor:
             receipt={**self.receipt,"inference_source_identity":expected_inference_source_identity,
                 "inference_cohort_admission_digest":expected_inference_cohort_digest,"input_case_ids_sha256":digest(view["case_id"].tolist()),
                 "input_identity":array_identity(view),"scenario_id":scenario_id,"mask_seed":mask_seed,"epoch":epoch,
-                "adapter_receipt_sha256":digest(prepared["receipt"]),"provenance_sha256":digest(_canonical(prepared["provenance"])),
+                "adapter_receipt_sha256":digest(prepared["receipt"]),"provenance_sha256":_canonical_digest(prepared["provenance"]),
                 "case_count":n,"target_values_read":False,"target_masks_read":False,"optimizer_updates":0,
                 "posthoc_clipping":False,"scientific_scoring_performed":False})
