@@ -13,6 +13,8 @@ The [resident execution recovery](docs/resident-execution.md) now keeps active c
 
 The user subsequently requested ridge removal, all four deep-learning families and a higher epoch ceiling with early stopping. The [200-epoch proposal](docs/high-epoch-stopping-proposal.md) records its resource implications; the separate-pilot versus direct-primary sequence remains under discussion. The earlier six-neural/three-ridge packet is retained historical planning, not the current execution scope. No scientific execution is released.
 
+The active [local seed sequence](docs/local-seed-sequence.md) uses the user's latest instruction to select the [fastest demonstrated backends](docs/local-device-policy.md): CPU for LSTM/GRU–Transformer and MPS for Transformer/Mamba-2–Transformer. The all-MPS alternative is retained with its54 unmeasured control jobs explicitly identified. Seed order, cohorts and all180 fits remain unchanged; model execution has not started.
+
 The [v1 implementation and qualification](docs/pilot-implementation-qualification.md), including its earlier 4.22/8.64-hour six-fit estimate, is preserved as historical evidence. Use the v2 performance summary above only for its stated LSTM pilot scope; neither timing applies to an expanded four-family pilot or a200-epoch campaign.
 
 The requested missingness sensitivity now has a [development coverage census](docs/coverage-sensitivity-census.md), [paired experimental proposal](docs/coverage-sensitivity-design.md), and measured-rate cost scenarios. Short Q gaps alone leave substantial Sugar Grove high-flow exclusions; a separate short-gap/L24 route has broader structural support. No study-data gap filling or scientific sensitivity training has run, and the strict 180-fit primary remains unchanged.

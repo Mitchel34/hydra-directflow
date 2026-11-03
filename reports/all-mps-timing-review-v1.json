@@ -1,0 +1,87 @@
+{
+  "all_MPS_plan_sha256": "6045c34f73bcead57b6117f9239073111f7e542a103b56060c8fa22308818c9f",
+  "cloud_jobs": 0,
+  "current_study_uniform_MPS_speedup_established": false,
+  "evidence_sha256": {
+    "reports/local-seed-sequence-v1.json": "87556571ea8d709da243d3b1339bad9747c32cbf71cbc53e9b02bb3d9f19e8fa",
+    "reports/real-batch-benchmark.json": "008364afd040be959d30949197b561596bc0c2953937c51b52be9474ffe0b801",
+    "reports/timing-controls.json": "63df6e08489a26768f3777aaff26576d1c39f5104989f31e7f380eea6430971f"
+  },
+  "new_model_calls": 0,
+  "new_optimizer_updates": 0,
+  "protected_assessment_access": false,
+  "schema": "hydra-all-MPS-timing-review/v1",
+  "scientific_fits_started": 0,
+  "source_benchmark_comparison": [
+    {
+      "CPU_mean_copy_plus_update_seconds": 0.03450995435705408,
+      "MPS_mean_copy_plus_update_seconds": 0.05509607923449948,
+      "MPS_to_CPU_duration_ratio": 1.5965271545842379,
+      "architecture": "LSTM",
+      "scope": "FULL_H2_L168_B64_FIXED_UNIT_ENGINEERING_20_TIMED_UPDATES_AFTER5_WARMUPS"
+    },
+    {
+      "CPU_mean_copy_plus_update_seconds": 0.12246859595179557,
+      "MPS_mean_copy_plus_update_seconds": 0.09121120005147532,
+      "MPS_to_CPU_duration_ratio": 0.7447721543845953,
+      "architecture": "Transformer",
+      "scope": "FULL_H2_L168_B64_FIXED_UNIT_ENGINEERING_20_TIMED_UPDATES_AFTER5_WARMUPS"
+    },
+    {
+      "CPU_mean_copy_plus_update_seconds": 0.04961157726938836,
+      "MPS_mean_copy_plus_update_seconds": 0.15535716254380533,
+      "MPS_to_CPU_duration_ratio": 3.131469932919564,
+      "architecture": "GRU_Transformer",
+      "scope": "FULL_H2_L168_B64_FIXED_UNIT_ENGINEERING_20_TIMED_UPDATES_AFTER5_WARMUPS"
+    },
+    {
+      "CPU_mean_copy_plus_update_seconds": 0.2637929854332469,
+      "MPS_mean_copy_plus_update_seconds": 0.1108825562056154,
+      "MPS_to_CPU_duration_ratio": 0.42033929000615655,
+      "architecture": "Mamba2_Transformer",
+      "scope": "FULL_H2_L168_B64_FIXED_UNIT_ENGINEERING_20_TIMED_UPDATES_AFTER5_WARMUPS"
+    }
+  ],
+  "timing_coverage": {
+    "complete_matched_geometry_campaign_estimate_hours": null,
+    "matching_geometry_jobs": 126,
+    "missing_cells": [
+      {
+        "architecture": "GRU_Transformer",
+        "batch_size": 64,
+        "device": "mps",
+        "history_hours": 24,
+        "input_arm": "full"
+      },
+      {
+        "architecture": "GRU_Transformer",
+        "batch_size": 64,
+        "device": "mps",
+        "history_hours": 168,
+        "input_arm": "q_only"
+      },
+      {
+        "architecture": "LSTM",
+        "batch_size": 64,
+        "device": "mps",
+        "history_hours": 24,
+        "input_arm": "full"
+      },
+      {
+        "architecture": "LSTM",
+        "batch_size": 64,
+        "device": "mps",
+        "history_hours": 168,
+        "input_arm": "q_only"
+      }
+    ],
+    "supplemental_full_L168_proxy_scenario_hours": {
+      "100": 255.45348598172595,
+      "20": 51.264390684336036,
+      "200": 510.6898551034632,
+      "50": 127.83530142085725
+    },
+    "unmeasured_geometry_jobs": 54
+  },
+  "user_device_choice_honored": true
+}

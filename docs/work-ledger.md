@@ -875,3 +875,25 @@ controller and large main-study bundle integration remain to be completed. The
 specific high epoch ceiling/resource ledger and remaining protocol interpretations
 must be bound before fitting. No model, scientific fit/evaluation, source-value
 read, cloud action or optimizer update occurred in this scheduling chunk.
+
+## Device comparison and latest fastest-backend direction — November 3
+
+The user initially requested MPS for all experiments, then directed “Ok go with
+what’s fastest!” after the measured differences were explained. The active
+`reports/local-seed-sequence-fastest-v3.json` therefore retains CPU for LSTM/
+GRU–Transformer and MPS for Transformer/Mamba-2–Transformer. All180 job identities,
+cohorts, roles, seeds, B64/FP32 settings and108/36/36 milestones stay unchanged.
+Every selected backend/feature geometry has a corresponding engineering timing
+cell. No general optimum across untested shapes or batch sizes is claimed.
+
+The separately generated all-MPS v2 plan and timing review remain comparison
+evidence. They have126 matched and54 unmeasured jobs; CPU controls were never
+relabeled MPS. A complete matched all-MPS campaign estimate stays null, and its
+supplemental full-L168 proxy is explicitly not an upper bound or measured total.
+The active mixed-backend timing scenarios retain their original exclusions.
+
+Nine all-MPS planner tests and five active-policy tests passed. Independent review
+passed. No model call, new optimizer update, scientific score, source-value read,
+cloud action or consumed-qualification replay occurred. Current trainer B64
+restart/best-state integration and larger main bundles remain qualification work;
+the durable execution controller and final epoch/resource plan remain pending.

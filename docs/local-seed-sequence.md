@@ -8,7 +8,14 @@ would be ineffective. Paid cloud jobs remain held.
 
 ## Order and deliverables
 
-The [generated roster](../reports/local-seed-sequence-v1.json) expands the existing
+**Current device direction:** the user chose the fastest demonstrated local
+backends after reviewing the all-MPS option. Use the
+[active v3 roster](../reports/local-seed-sequence-fastest-v3.json): CPU for LSTM/
+GRU–Transformer and MPS for Transformer/Mamba-2–Transformer. The
+[device-policy evidence](local-device-policy.md) preserves the comparison and its
+limits. The v1 roster below remains the unchanged source of the ordering.
+
+The [original generated roster](../reports/local-seed-sequence-v1.json) expands the existing
 admitted-count authority into exactly 180 unique jobs:
 
 | Stage | Fits in stage | Complete milestone |

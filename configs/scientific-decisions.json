@@ -54,16 +54,19 @@
     "label_free_inference": "BEST_STATE_QUALIFIED_SYNTHETIC_ONLY"
   },
   "recommended_local_execution": {
-    "status": "THROUGHPUT_RECOMMENDATION_NOT_FORECAST_SELECTION",
+    "status": "USER_SELECTED_FASTEST_DEMONSTRATED_LOCAL_BACKENDS",
     "batch_size": 64,
     "dtype": "float32",
     "devices": {
-      "LSTM": "cpu",
-      "Transformer": "mps",
       "GRU_Transformer": "cpu",
-      "Mamba2_Transformer": "mps"
+      "LSTM": "cpu",
+      "Mamba2_Transformer": "mps",
+      "Transformer": "mps"
     },
-    "evidence": "reports/real-batch-benchmark.json"
+    "evidence": "reports/all-mps-timing-review-v1.json",
+    "source_benchmark": "reports/real-batch-benchmark.json",
+    "CPU_fallback_for_MPS_workers": false,
+    "backend_selection_uses_forecast_scores": false
   },
   "execution_budget_proposal": {
     "total_usd": 150,
@@ -341,9 +344,9 @@
     "extra_human_pause_between_unchanged_released_seeds": false,
     "settings_fixed_across_seed_review": true,
     "protected_assessment_included": false,
-    "report": "reports/local-seed-sequence-v1.json",
-    "report_sha256": "87556571ea8d709da243d3b1339bad9747c32cbf71cbc53e9b02bb3d9f19e8fa",
-    "plan_sha256": "ddf8086829ad3533434ea9b682929c33842973f8fc311723857b6cc117c10749",
+    "report": "reports/local-seed-sequence-fastest-v3.json",
+    "report_sha256": "f45aa1afe114db80b194288ecb06c7757ebe3928de3702fac9ff1114238310e9",
+    "plan_sha256": "8e087b82797b79e96177cf11c19d5127d74c6f5c09ff6e0680cdbc4b3fc3e43b",
     "document": "docs/local-seed-sequence.md",
     "runtime_controller_implemented_by_this_chunk": false,
     "scientific_fits_started": 0,
@@ -351,7 +354,38 @@
     "remaining_concrete_gates": [
       "Adopt concrete protocol, epoch limit and actual per-fit/global resource ledger",
       "Qualify full main-study role-limited bundles and their local execution integration",
-      "Implement and qualify durable job/checkpoint/evaluation receipts and seed-report barriers"
-    ]
+      "Implement and qualify durable job/checkpoint/evaluation receipts and seed-report barriers",
+      "Qualify current primary trainer recovery and best-state inference at the actual planned B64 backend geometries",
+      "Set disabled MPS CPU fallback before fresh worker imports; never silently change a fit backend"
+    ],
+    "device_policy": "FASTEST_OBSERVED_FULL_L168_B64_MEAN_COPY_PLUS_UPDATE_BY_ARCHITECTURE",
+    "selected_devices": {
+      "GRU_Transformer": "cpu",
+      "LSTM": "cpu",
+      "Mamba2_Transformer": "mps",
+      "Transformer": "mps"
+    },
+    "all_MPS_alternative_active": false
+  },
+  "latest_device_direction": {
+    "source": "DIRECT_USER_STEERING_OK_GO_WITH_WHATS_FASTEST",
+    "recorded_at_utc": "2026-11-03T20:19:53.183118+00:00",
+    "supersedes_brief_all_MPS_request": true,
+    "selected_devices": {
+      "GRU_Transformer": "cpu",
+      "LSTM": "cpu",
+      "Mamba2_Transformer": "mps",
+      "Transformer": "mps"
+    },
+    "selection_basis": "RECORDED_FULL_L168_B64_MEAN_COPY_PLUS_UPDATE_NOT_FORECAST_SKILL",
+    "all180_selected_backend_geometries_have_engineering_timing": true,
+    "fastest_across_all_possible_geometries_proven": false,
+    "all_MPS_alternative": "reports/local-seed-sequence-all-mps-v2.json",
+    "all_MPS_unmeasured_control_jobs": 54,
+    "new_model_calls": 0,
+    "new_optimizer_updates": 0,
+    "seed_order_unchanged": true,
+    "scientific_execution_started": false,
+    "cloud_execution_started": false
   }
 }
