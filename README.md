@@ -9,9 +9,11 @@ Mamba2–Transformer. NWM is an external comparator. Research skill results are
 not yet available; synthetic model checks and a development data smoke test
 do not establish forecast performance.
 
-The separate H4 pilot components are now [implemented and synthetically qualified](docs/pilot-implementation-qualification.md): exact 16-update restart and best-state inference checks passed. Study-data fits remain held. A zero-update profile identifies repeated provenance processing as the main current overhead; the revised six-fit proxy is 4.22/8.64 hours at 20/50 epochs, with further unmeasured work.
+The [resident execution recovery](docs/resident-execution.md) now keeps active code and a fully isolated pinned runtime outside cloud storage. [Optimized provenance processing](docs/pilot-provenance-performance-v2.md) passed exact v1 numerical equivalence and a new bounded restart/inference qualification. The six-fit cold-default proxy is now **2.03/4.06 hours at 20/50 epochs**, plus stated unmeasured work. Scientific fits and paid cloud jobs remain held. The resident data copy is **1,430/1,432 files** pending two owned cloud-file downloads and its final integrity pass.
 
-The requested missingness sensitivity now has a [development coverage census](docs/coverage-sensitivity-census.md), [paired experimental proposal](docs/coverage-sensitivity-design.md), and measured-rate cost scenarios. Short Q gaps alone leave substantial Sugar Grove high-flow exclusions; a separate short-gap/L24 route has broader structural support. No numerical imputation or sensitivity training has run, and the strict 180-fit primary remains unchanged.
+The [v1 implementation and qualification](docs/pilot-implementation-qualification.md), including its earlier 4.22/8.64-hour six-fit estimate, is preserved as historical evidence. Use the v2 performance summary above for current planning.
+
+The requested missingness sensitivity now has a [development coverage census](docs/coverage-sensitivity-census.md), [paired experimental proposal](docs/coverage-sensitivity-design.md), and measured-rate cost scenarios. Short Q gaps alone leave substantial Sugar Grove high-flow exclusions; a separate short-gap/L24 route has broader structural support. No study-data gap filling or scientific sensitivity training has run, and the strict 180-fit primary remains unchanged.
 
 ## Current work packages
 
@@ -51,7 +53,7 @@ include four-model CPU/MPS qualification, a bounded real-data engineering probe,
 fresh-process recovery and a 20-case synthetic local throughput benchmark.
 Discharge-only ablation and source-aware NWM evaluation helpers are implemented.
 
-The [multi-cycle reader](docs/multicycle.md) now processes five authenticated
+The initial [multi-cycle reader qualification](docs/multicycle.md) processed five authenticated
 development cycles across 2021–2024, preserving missing history masks. All four
 models passed bounded CPU/MPS end-to-end timing and checkpoint replay. See the
 [runtime and budget inputs](docs/runtime-and-budget.md) for measured stage costs,

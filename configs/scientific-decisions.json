@@ -1,6 +1,6 @@
 {
   "schema": "hydra-scientific-decisions/v1",
-  "status": "PILOT_COMPONENTS_SYNTHETICALLY_QUALIFIED_SCIENTIFIC_FITS_HELD",
+  "status": "RESIDENT_RUNTIME_AND_OPTIMIZED_PILOT_REQUALIFIED_SCIENTIFIC_FITS_HELD",
   "primary_usgs_quality": {
     "status": "USER_CONFIRMED",
     "decision_date_local": "2026-11-02",
@@ -117,13 +117,13 @@
     "coverage": "COMPLETE_PER_LEAD_INPUT_TARGET_HIGH_FLOW_UNIQUE_HOUR_EVENT_GAP_POLICY_CENSUS",
     "uncertainty": "DEPENDENCE_AWARE_PROPOSAL_AND_UTILITIES_TESTED_NO_STUDY_INTERVALS",
     "holds": [
-      "Review pilot-specific protocol, clean-input degradation/failure tolerances and measured preparation overhead before any scientific fit expansion",
+      "Complete resident development snapshot, authenticate real per-slot provenance, and agree pilot protocol/tolerances before scientific fits",
       "Review conditional within-year uncertainty interpretation and any confirmatory multiplicity/practical-effect claim before freeze",
       "Confirm approximate independent basin footprints and non-nesting interpretation; no exact-outlet or nested-conservation claim"
     ],
     "source_geometry_changed": false,
     "original_weight_hold_flags_changed": false,
-    "pilot_missingness": "IMPLEMENTED_SYNTHETIC_QUALIFICATION_PASSED_REAL_FITS_HELD"
+    "pilot_missingness": "OPTIMIZED_V2_EXACT_SYNTHETIC_REQUALIFICATION_AND_FULL_FIT_INNER_CONSTRUCTOR_PASSED"
   },
   "coverage_sensitivity_request": {
     "source": "DIRECT_USER_REPLY",
@@ -183,17 +183,48 @@
     "protected_assessment_authorized": false,
     "paid_cloud_execution_authorized_by_this_reply": false,
     "scientific_fit_release_conditions": [
-      "Pilot protocol reviewed and frozen",
-      "Clean-input degradation and failure tolerances agreed",
-      "Concrete real-data fit allowance released after qualification",
-      "Updated preparation runtime reviewed for schedule and budget; any optimization requalified",
-      "Bounded full-cohort construction memory/time checked"
+      "Pilot-specific protocol and clean-degradation/failure tolerances agreed",
+      "Actual data/provenance bundle authenticated and complete resident snapshot verified",
+      "Pilot assembler keeps qualified fit-plus-inner extent; outer data loaded separately",
+      "Updated cold-default runtime and resource allowance reviewed",
+      "Separate scientific execution release; protected assessment remains independently gated"
     ],
     "implementation_status": "SEPARATE_H4_INPUT_FILLER_TRAINING_AND_BEST_INFERENCE_IMPLEMENTED",
     "qualification_report": "reports/gap-pilot-qualification-v1.json",
     "qualification_optimizer_updates": 16,
     "qualification_status": "PASSED_SYNTHETIC_FRESH_PROCESS_RESTART_AND_INFERENCE",
-    "runtime_reassessment": "reports/gap-pilot-runtime-reassessment.json",
-    "profile_optimizer_updates": 0
+    "runtime_reassessment": "reports/gap-pilot-runtime-reassessment-v2.json",
+    "profile_optimizer_updates": 0,
+    "qualification_v2_status": "PASSED_EXACT_V1_AND_FRESH_RESTART_BEST_INFERENCE"
+  },
+  "execution_recovery_and_optimization": {
+    "source": "DIRECT_USER_REQUEST",
+    "recorded_at_utc": "2026-11-03T07:14:51.438493+00:00",
+    "scope": "LOCAL_GIT_RESIDENCY_PROVENANCE_OPTIMIZATION_SYNTHETIC_REQUALIFICATION_ONLY",
+    "active_code_and_runtime_outside_cloud": true,
+    "isolated_locked_dependencies": 29,
+    "qualified_source_rows_fit_plus_inner": 17869,
+    "qualified_outer_rows": 0,
+    "qualification_v2_report": "reports/gap-pilot-qualification-v2.json",
+    "qualification_v2_optimizer_updates": 16,
+    "exact_v1_numerical_equivalence": true,
+    "new_ridge_fits": 0,
+    "profile_v2_report": "reports/gap-pilot-preparation-profile-v2.json",
+    "profile_timed_calls": 120,
+    "profile_optimizer_updates": 0,
+    "constructor_v2_report": "reports/gap-pilot-constructor-qualification-v2.json",
+    "constructor_synthetic_scaler_fits": 1,
+    "runtime_reassessment": "reports/gap-pilot-runtime-reassessment-v2.json",
+    "development_residency": {
+      "verified_files": 1430,
+      "required_files": 1432,
+      "remaining_cloud_only_files": 2,
+      "remaining_bytes": 206468,
+      "status": "AWAITING_SOURCE_RESIDENCY_FINALIZATION",
+      "integrity_passes_started": 0
+    },
+    "scientific_fits_authorized": false,
+    "paid_cloud_jobs_authorized": false,
+    "protected_assessment_authorized": false
   }
 }

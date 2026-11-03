@@ -1,0 +1,65 @@
+{
+  "active_code_runtime_resident_outside_cloud": true,
+  "approved_combined_budget_usd": 150,
+  "blocking_external_state": "The two owned development files remain cloud-only; Finder interaction requires the user to unlock the Mac. Source residency must be verified before finalization.",
+  "constructor_fit_inner_source_rows": 17869,
+  "constructor_outer_rows": 0,
+  "constructor_peak_parent_child_bytes": 1967226880,
+  "constructor_synthetic_scaler_fits": 1,
+  "cumulative_real_engineering_optimizer_updates": 852,
+  "cumulative_synthetic_optimizer_updates": 936,
+  "development_corpus": {
+    "all_prior_charges_deadlines_errors_preserved": true,
+    "expected_files": 1432,
+    "expected_snapshot_sha256": "b41630b7df9a216874eb4ba38a10176d4b72092bd6f1ce2ad4c4f369db56948c",
+    "finalizer_prepared_not_executed": true,
+    "integrity_passes_started": 0,
+    "remaining_bytes": 206468,
+    "verified_files": 1430
+  },
+  "model_code_and_primary_h2_path_changed": false,
+  "new_origin_misses_verified": 20,
+  "new_synthetic_optimizer_updates": 16,
+  "numerical_v1_and_restart_equivalence": true,
+  "paid_cloud_jobs": 0,
+  "primary_scope_fits": 180,
+  "profile_timed_calls": 120,
+  "protected_assessment_access": false,
+  "recorded_at_utc": "2026-11-03T07:24:32.021550+00:00",
+  "report_sha256": {
+    "development-corpus-residency-partial-v1.json": "539ffed4784898d406a63abf96923f1101a6f0889aba3abf887b8e9fa4e9b50e",
+    "development-corpus-residency-recovery-v1.json": "2ac4f854b57be3e400ace01ee317aaca64a785f7b6316f3933b3e8351ae3595b",
+    "gap-pilot-constructor-qualification-v2.json": "c5c57d0f368864237df45199f13aba0d1ecf5d485e7164ebb6d392351e4decbb",
+    "gap-pilot-preparation-profile-v2.json": "88eec75e27e396946c828fecde566c0f4d5ba11a25f75d3b9a3ffde722f5fffe",
+    "gap-pilot-qualification-v2.json": "23a0ffa7946b465d44006ef76d7e1b1366b56e7b233509c89032635cec6c917a",
+    "gap-pilot-runtime-reassessment-v2.json": "d12f6eae10369b0750cd3c2b2e2e40833d09a230ecea903caf1de5a5033df824",
+    "local-residency-recovery.json": "d4b12d24bf0caee985f8acf975654c15105067dec1830dd9d3d1d022f40da7da"
+  },
+  "schema": "hydra-resident-optimization-release/v2",
+  "scientific_fits": 0,
+  "scientific_release_still_held_for": [
+    "Complete authenticated resident data/provenance",
+    "Reviewed pilot protocol and degradation/failure tolerances",
+    "Separate scientific execution release; assessment independently gated"
+  ],
+  "source_sha256": {
+    "scripts/finalize_development_residency.py": "eaf54f0078e790bddc8b95434bd5e5991df02dd82f8631c7a05c332e3f3ff938",
+    "scripts/profile_gap_pilot_v2.py": "e5cf6bc07008c6beb3718773bd3dae92c6fbff80cb23fb456cf837b92e10ab98",
+    "scripts/qualify_gap_pilot_constructor_v2.py": "c90ac2abcdac38d9ff98cd0e54ca26223c05c91addf24cc2112a1c8a7f3761e1",
+    "scripts/qualify_gap_pilot_v2.py": "0ff58fbf0ae647f78b7d6bcf1ce1eb454bd4e08f2ba0a845f124a8ef882e1d61",
+    "scripts/recover_development_residency.py": "7ea9e22d7849891b26a125aaa2d0a2e0a9832ed528003675b694033139a8726c",
+    "src/hydra_directflow/pilot_inputs.py": "0a12e0ee864e4900561dc4d11a92f1df2f7dd4dc9980b25a6542da9585ef4572",
+    "src/hydra_directflow/pilot_provenance.py": "8ded46ede83958624f79fd7256b74b502a524179047a371e3d2dbd52837a3008",
+    "src/hydra_directflow/pilot_training.py": "9aeb8f1945ebe081e6be61842b3892d7fda10650a1e9d560372cbf6f6e422bc0"
+  },
+  "status": "OPTIMIZATION_REQUALIFIED_DATA_RESIDENCY_PARTIAL_WAITING_FOR_TWO_FILES",
+  "tests": {
+    "log_sha256": "4c54cccf38184d6af9c834a94a1890c8333feb2c127feb54c760f2886efcdbe3",
+    "passed": 748,
+    "ran": 751,
+    "seconds": 11.863,
+    "skipped_GIS": 3
+  },
+  "v2_ridge_fits": 0,
+  "warm_hits_verified": 19
+}

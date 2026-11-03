@@ -625,3 +625,78 @@ remain historical. Reduce repeated immutable metadata processing and qualify
 full-cohort construction before scientificrelease; no optimization or new update
 allowance has been silently executed. No study-data fit, new download, paid job,
 protected-access/score or securitychange occurred during this work.
+
+
+## Resident execution, provenance optimization and v2 qualification — November 3
+
+The user authorized local Git/cloud-only-file recovery, provenance optimization
+and requalification, while keeping scientific fits and paid cloud jobs held.
+The active source checkout was recovered at published b35e0f7 outside Documents.
+The original Git metadata and unheld stale index lock were preserved; standard
+linked-worktree repair synchronized its frozen HEAD/index to b35e0f7 without
+rewriting working-source or research files. Active Git commands now operate on
+the resident checkout and push normally. The original cloud workspace remains
+an evidence/data archive; the private handoff records explicit execution paths.
+
+A fully isolated Python3.11 runtime was installed offline from all29 exact
+previously-qualified wheels (142,010,840 bytes); critical imports and all locked
+versions verified outside cloud storage. Resident wheels were reused and missing
+runtime bytes restored only from official package sources matching their old
+SHA/size. No model weights or scientific sources were downloaded by that step.
+All21 required v1 qualification artifacts and the consumed16-update marker were
+copied and verified; the original plan derivation was labeled. Other consumed
+markers were preserved, with an explicit fail-closed blocker for one unreadable
+legacy marker rather than a new allowance.
+
+Provenance optimization preserves exact canonical bytes and hashes, then reuses
+an owned immutable source-metadata snapshot. It interns immutable primitives and
+stores original clocks/masks in byte-backed arrays; no Q values, targets, fills
+or model outputs are cached. Training uses ordered snapshot views. Inference
+reuses one context only after actual metadata, clock, mask and identity checks.
+All dynamic quality, timing, value, endpoint and fill-failure gates remain.
+23 focused parity tests and14 adapter tests passed independent review.
+
+The integrated pre-execution suite ran741 tests in14.620s:738 passed and3 GIS
+skips. The separately precharged v2 run confirmed16 synthetic optimizer updates
+in21.84s, with zero new ridge fits. Both baselines match v1 exactly on traces,
+losses, masks, weights, optimizer/RNG/sampler state, transforms, best weights and
+physical predictions. Fresh-process prefix/resume and best inference also pass;
+old checkpoints were authenticated comparison references, never restored under
+changed code fingerprints. Cumulative optimizer counts are852 real-data
+engineering and936 synthetic; scientific fit counts remain zero.
+
+The zero-update v2 profile completed120 timed calls across six paths. Mean full
+prediction is144.09ms for one miss plus19 repeated-batch hits, and175.06ms for
+20 actual new-origin misses; these are not disk-I/O rates. The v1 repeated-batch
+mean was335.92ms. Provenance digest mean fell211.40→62.72ms; model-only forward
+is essentially unchanged at14.82ms. Residency, workload and cache limits remain
+explicit; separate stage times are not a disjoint causal trace.
+
+The17869-row fit+inner-only synthetic constructor passed with one synthetic
+scaler fit, zero neural updates/forwards and1.832GiB observed combined RSS.
+Construction took9.01s after fixture generation. Outer/unassigned rows and the
+larger optional final constructor were not qualified. Later-mean cold-default
+six-fit proxies are2.03/4.06h at20/50epochs, with unmeasured data assembly, ridge,
+scoring/resampling and journal costs. Warm batch-major scheduling remains a
+separate conditional scenario. The primary180 fits and150USD ceiling are unchanged.
+
+Development residency recovery binds the exact existing plan0dad.../snapshot
+b416... and1432 immutable files/75,805,012 bytes, with no raw-source acquisition
+or assessment files. The first900s-window sweep preserved five timeout failures;
+three subsequently resident files were copied under a separately recorded small
+supplement and adopted by exact target hashes, keeping all failures/charges.
+Currently1430 files are verified outside cloud storage and two (206,468 bytes)
+remain cloud-only. The first deadline expired and was not reset; no numeric
+integrity pass has started. A separate resident-only finalization plan is saved.
+Finder access is blocked by the locked Mac; the user was asked to unlock while
+independent work continued. Scientific fits, assessment scoring and paid jobs
+remain held; no false complete-corpus claim is made.
+
+
+Final integrated validation after adding the prepared finalizer ran751 tests in
+11.863s:748 passed and3 unchangedGIS tests skipped. The finalizer's10 focused
+synthetic tests and independent review passed. It is prepared, not executed:
+2MiB freshsource/1GiB cumulative source/4GiB RSS/120s, actualbothresident checks
+beforeclaims, read-only oldhistory and one new integrity authority bound to the
+unused priorpass. No oldclock orcharge is reset. Exact remaining-file availability
+still requires the manual residency step; the complete corpus is not claimed.
