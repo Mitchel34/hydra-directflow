@@ -17,6 +17,8 @@ The active [local seed sequence](docs/local-seed-sequence.md) uses the user's la
 
 The [primary campaign runner and qualifications](docs/primary-campaign-readiness.md) are now complete: all12 B64 model geometries passed recovery/best-inference checks, all27 real-data views passed, and908 integrated tests passed with3 optional GIS skips. The [final protocol](docs/primary-training-protocol-v1.md) was adopted on November 3 with maximum 100 epochs, minimum 10 and patience 5. Paid cloud and protected assessment remain excluded.
 
+A [monitoring-file timing conflict](docs/primary-heartbeat-recovery.md) stopped the campaign after 30 completed fits. The qualified repair passed 47 focused tests, and [checkpoint recovery is verified](reports/primary-heartbeat-recovery-launch-v1.json): replayed epochs match exactly and training has advanced beyond its prior stopping point. The frozen training methods, original deadlines and prior charges remain unchanged.
+
 The [v1 implementation and qualification](docs/pilot-implementation-qualification.md), including its earlier 4.22/8.64-hour six-fit estimate, is preserved as historical evidence. Use the v2 performance summary above only for its stated LSTM pilot scope; neither timing applies to an expanded four-family pilot or a200-epoch campaign.
 
 The requested missingness sensitivity now has a [development coverage census](docs/coverage-sensitivity-census.md), [paired experimental proposal](docs/coverage-sensitivity-design.md), and measured-rate cost scenarios. Short Q gaps alone leave substantial Sugar Grove high-flow exclusions; a separate short-gap/L24 route has broader structural support. No study-data gap filling or scientific sensitivity training has run, and the strict 180-fit primary remains unchanged.

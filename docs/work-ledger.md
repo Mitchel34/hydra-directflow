@@ -1001,3 +1001,12 @@ original-supervisor malformed/foreign-heartbeat stops. Independent review passed
 No scientific update or old qualification replay was performed by these checks.
 The recovery uses a separately hashed operational amendment and launch receipt;
 preparation is not a claim that resumed training has started.
+
+The qualified repair was pushed as5e5df2e. The explicit recovery launched at
+2026-11-04T07:34:37.127003+00:00 (01:34CentralNov4), using operational amendment
+`2ec9d376cb0d6db6ae60728760459df880ffc246043f2dce7e3890b527a01228`. At2026-11-04T07:38:25.955977+00:00,
+the resumed MPS attempt32 had passed the original interrupted logical prefix of
+4,572updates. Replayed epochs11/12 matched the original epoch records and stopping
+state exactly. All30completed-receipt digests, original protocol/code/plan identities,
+jobdeadline and prior charges were preserved. The public versioned recovery
+launch receipt records the observed counters; no old fit was restarted.

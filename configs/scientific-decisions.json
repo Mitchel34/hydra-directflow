@@ -1,6 +1,6 @@
 {
   "schema": "hydra-scientific-decisions/v1",
-  "status": "PRIMARY_LOCAL_SCIENTIFIC_TRAINING_STARTED",
+  "status": "PRIMARY_LOCAL_SCIENTIFIC_TRAINING_RESUMED_AFTER_HEARTBEAT_FIX",
   "primary_usgs_quality": {
     "status": "USER_CONFIRMED",
     "decision_date_local": "2026-11-02",
@@ -476,5 +476,16 @@
     "protected_assessment_access": false,
     "new_downloads": 0,
     "status_is_timestamped_snapshot_not_live_process_proof": true
+  },
+  "primary_heartbeat_recovery": {
+    "authorization_quote": "Ok let\u2019s resolve the timing conflict and get training back on track",
+    "authorized_at_utc": "2026-11-04T07:31:09.751894+00:00",
+    "qualification": "reports/primary-heartbeat-recovery-qualification-v1.json",
+    "launch_receipt": "reports/primary-heartbeat-recovery-launch-v1.json",
+    "amendment_sha256": "2ec9d376cb0d6db6ae60728760459df880ffc246043f2dce7e3890b527a01228",
+    "observed_at_utc": "2026-11-04T07:38:25.955977+00:00",
+    "completed_fits_preserved": 30,
+    "original_deadlines_and_charges_preserved": true,
+    "protocol_changed": false
   }
 }
