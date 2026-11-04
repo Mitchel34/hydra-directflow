@@ -982,3 +982,22 @@ Completed scientific fits at this check: 0. These are startup observations,
 not a forecast-skill conclusion. One worker runs at a time; later frozen seeds
 continue after verified development reports. No paid cloud job, new download,
 protected assessment access or consumed qualification replay occurred.
+
+## Heartbeat conflict repair and explicit recovery — November 4
+
+The supervisor stopped after30 completed fits because an atomically refreshed
+heartbeat was read using immutable-corpus pathname checks. The failure was in
+monitoring, not a source-shard read. The user explicitly requested resolving the
+conflict and getting training back on track. The epoch10 checkpoint and30
+completed receipts were authenticated;772 post-checkpoint updates will replay
+with their original charges retained.
+
+An additive heartbeat snapshot reader and separately authenticated recovery
+wrapper preserve all frozen execution files, the protocol, original privateplan
+and ledger. The wrapper exposes only same-job resume and keeps immutable reads,
+worker commands, identity/resource checks and original deadlines.47 focused
+tests passed with0failures/errors, including deterministic race reproduction and
+original-supervisor malformed/foreign-heartbeat stops. Independent review passed.
+No scientific update or old qualification replay was performed by these checks.
+The recovery uses a separately hashed operational amendment and launch receipt;
+preparation is not a claim that resumed training has started.
