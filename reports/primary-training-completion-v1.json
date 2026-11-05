@@ -1,0 +1,757 @@
+{
+  "schema": "hydra-primary-training-completion/v1",
+  "status": "VERIFIED_COMPLETE_TRAINING_AND_DEVELOPMENT_METRICS",
+  "verified_at_utc": "2026-11-05T16:11:24.591474+00:00",
+  "last_fit_finished_central": "2026-11-05T07:09:34.684448-06:00",
+  "completion_status_central": "2026-11-05T07:09:39.978482-06:00",
+  "completed_fits": 180,
+  "cv_fits": 72,
+  "final_development_fits": 108,
+  "architectures": {
+    "LSTM": 45,
+    "Transformer": 45,
+    "GRU_Transformer": 45,
+    "Mamba2_Transformer": 45
+  },
+  "backends": {
+    "cpu": 90,
+    "mps": 90
+  },
+  "final_seeds": [
+    17,
+    29,
+    43
+  ],
+  "epochs": {
+    "minimum": 10,
+    "maximum": 37,
+    "mean": 13.255555555555556,
+    "median": 10.0,
+    "at_minimum_10": 94,
+    "at_cap_100": 0
+  },
+  "optimizer_updates": {
+    "logical": 1150918,
+    "physical_entered": 1151690,
+    "physical_confirmed": 1151690,
+    "recovery_replay": 772
+  },
+  "runtime": {
+    "elapsed_hours": 38.12872882227103,
+    "summed_attempt_spans_hours": 33.43545879364014,
+    "between_attempt_gaps_hours": 4.693270028630892,
+    "attempt_spans_are_not_isolated_accelerator_time": true
+  },
+  "resources": {
+    "peak_recorded_combined_rss_mps_bytes": 2881650688,
+    "minimum_recorded_free_bytes": 19084783616,
+    "output_bytes_reserved_including_bookkeeping": 2992748398
+  },
+  "original_plan_sha256": "7723e33746e51badd5ca6cc2d8ac61283fdd0c152306f2d754f047862ced60ff",
+  "protocol_sha256": "3d94d182e1a22a84f3cd55b8824670821492e86a2ec015a465b155dcb91015f4",
+  "snapshot_sha256": "b41630b7df9a216874eb4ba38a10176d4b72092bd6f1ce2ad4c4f369db56948c",
+  "artifact_verification": {
+    "status": "PASSED_ALL180_ARTIFACTS_AND_ALL3_SEED_REPORT_COMMITS",
+    "files": 919,
+    "logical_bytes": 507221045,
+    "seconds": 5.443352292058989,
+    "ledger_sha256": "256b46a0fd064f4c7ee3db78a801bbc439fcab72ac10a2c1c13d44639086afcf",
+    "ledger_unchanged": true,
+    "new_models": 0,
+    "new_optimizer_updates": 0,
+    "prediction_values_redecoded": false
+  },
+  "seed_report_sha256": {
+    "17": {
+      "summary.json": "98e275a1c31a4a5e5fb4edbd7db923cf164d8e34815bf30b2d410565b0743013",
+      "index.html": "75175ac934fae4752a42645d5969ee79ddd3dc8f755f2327947fbe5767b79940",
+      "COMMIT.json": "f8771bd4643521163f8146a10e00f2fb914d9a09555c63587a795910ed052e27"
+    },
+    "29": {
+      "summary.json": "02b9c041fe50f3860507d969128fd7031623fe70ad67553161e60d7c358b4393",
+      "index.html": "68c804c2937f0f0d596e04098d2a0317e7cfd688a6d949ad31a4987c4332c80a",
+      "COMMIT.json": "946764cd96f2d32f92dfe298bae8ee72bac04ca11d5387f523ebea8ba6a6155e"
+    },
+    "43": {
+      "summary.json": "b79a1e70f837dd60f35bd36033effd99a3a0d4b223af5328f261f4aabd54eaa7",
+      "index.html": "d0988a02148dc74082f6fcd4469e370f8d8d4bd0a652add62cc0a694586d2a14",
+      "COMMIT.json": "569d289a89a0ca9ed32b7e07d51db1b1e199b78d0ac41e163297bb5fa63cb2eb"
+    }
+  },
+  "independent_summary_arithmetic": {
+    "per_job_primary_panels": 180,
+    "cv_means": 24,
+    "final_seed_means_and_sample_std": 36,
+    "final_per_lead_means": 648,
+    "relative_and_absolute_tolerance": 1e-12,
+    "raw_prediction_metrics_recomputed": false
+  },
+  "preliminary_development_only": {
+    "period": "[2023-07-31,2024-07-31) UTC; H18 target and refit purging retained",
+    "all36_aggregates": [
+      {
+        "gauge_id": "03161000",
+        "architecture": "GRU_Transformer",
+        "input_arm": "full",
+        "history_hours": 24,
+        "mean_equal_lead_nse": 0.798187352095745,
+        "seeds": {
+          "17": 0.7990164882250015,
+          "29": 0.7960469574473911,
+          "43": 0.7994986106148426
+        },
+        "seed_standard_deviation": 0.001869245151852301,
+        "cases_per_lead": 8766
+      },
+      {
+        "gauge_id": "03161000",
+        "architecture": "GRU_Transformer",
+        "input_arm": "full",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.7916774818090717,
+        "seeds": {
+          "17": 0.7699800024239936,
+          "29": 0.8062388277817338,
+          "43": 0.7988136152214876
+        },
+        "seed_standard_deviation": 0.019153822180980665,
+        "cases_per_lead": 8766
+      },
+      {
+        "gauge_id": "03161000",
+        "architecture": "GRU_Transformer",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.6089297273720391,
+        "seeds": {
+          "17": 0.6013256434035106,
+          "29": 0.6258182198978186,
+          "43": 0.5996453188147882
+        },
+        "seed_standard_deviation": 0.014649974659563341,
+        "cases_per_lead": 8766
+      },
+      {
+        "gauge_id": "03161000",
+        "architecture": "LSTM",
+        "input_arm": "full",
+        "history_hours": 24,
+        "mean_equal_lead_nse": 0.828393187413106,
+        "seeds": {
+          "17": 0.8261817702351554,
+          "29": 0.836436336522993,
+          "43": 0.8225614554811695
+        },
+        "seed_standard_deviation": 0.00719693375211896,
+        "cases_per_lead": 8766
+      },
+      {
+        "gauge_id": "03161000",
+        "architecture": "LSTM",
+        "input_arm": "full",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.8283378300427033,
+        "seeds": {
+          "17": 0.8300236618799589,
+          "29": 0.8360023116706654,
+          "43": 0.8189875165774855
+        },
+        "seed_standard_deviation": 0.00863176313121216,
+        "cases_per_lead": 8766
+      },
+      {
+        "gauge_id": "03161000",
+        "architecture": "LSTM",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.6408602946385079,
+        "seeds": {
+          "17": 0.6204662104398939,
+          "29": 0.648143315624305,
+          "43": 0.6539713578513248
+        },
+        "seed_standard_deviation": 0.017900573224762913,
+        "cases_per_lead": 8766
+      },
+      {
+        "gauge_id": "03161000",
+        "architecture": "Mamba2_Transformer",
+        "input_arm": "full",
+        "history_hours": 24,
+        "mean_equal_lead_nse": 0.7989056015213324,
+        "seeds": {
+          "17": 0.8051748804663315,
+          "29": 0.7918128904640734,
+          "43": 0.7997290336335923
+        },
+        "seed_standard_deviation": 0.006718945195321686,
+        "cases_per_lead": 8766
+      },
+      {
+        "gauge_id": "03161000",
+        "architecture": "Mamba2_Transformer",
+        "input_arm": "full",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.800714601349745,
+        "seeds": {
+          "17": 0.785887718670648,
+          "29": 0.7946044482163119,
+          "43": 0.821651637162275
+        },
+        "seed_standard_deviation": 0.018648456905450257,
+        "cases_per_lead": 8766
+      },
+      {
+        "gauge_id": "03161000",
+        "architecture": "Mamba2_Transformer",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.6116904888036596,
+        "seeds": {
+          "17": 0.6053000543989083,
+          "29": 0.6245304369200586,
+          "43": 0.6052409750920121
+        },
+        "seed_standard_deviation": 0.01111976048820243,
+        "cases_per_lead": 8766
+      },
+      {
+        "gauge_id": "03161000",
+        "architecture": "Transformer",
+        "input_arm": "full",
+        "history_hours": 24,
+        "mean_equal_lead_nse": 0.8038958834669914,
+        "seeds": {
+          "17": 0.7779610701996991,
+          "29": 0.8417324414064361,
+          "43": 0.7919941387948392
+        },
+        "seed_standard_deviation": 0.033510231140320285,
+        "cases_per_lead": 8766
+      },
+      {
+        "gauge_id": "03161000",
+        "architecture": "Transformer",
+        "input_arm": "full",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.7970775222459936,
+        "seeds": {
+          "17": 0.782587805105803,
+          "29": 0.7992338627826032,
+          "43": 0.8094108988495745
+        },
+        "seed_standard_deviation": 0.013540935819918757,
+        "cases_per_lead": 8766
+      },
+      {
+        "gauge_id": "03161000",
+        "architecture": "Transformer",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.6237214349432144,
+        "seeds": {
+          "17": 0.6185207052240562,
+          "29": 0.61644721009183,
+          "43": 0.6361963895137571
+        },
+        "seed_standard_deviation": 0.010853258228231237,
+        "cases_per_lead": 8766
+      },
+      {
+        "gauge_id": "03164000",
+        "architecture": "GRU_Transformer",
+        "input_arm": "full",
+        "history_hours": 24,
+        "mean_equal_lead_nse": 0.8408380697656846,
+        "seeds": {
+          "17": 0.8261055774904791,
+          "29": 0.8275906992572856,
+          "43": 0.8688179325492893
+        },
+        "seed_standard_deviation": 0.024242647085406514,
+        "cases_per_lead": 8125
+      },
+      {
+        "gauge_id": "03164000",
+        "architecture": "GRU_Transformer",
+        "input_arm": "full",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.8281509415460636,
+        "seeds": {
+          "17": 0.8206069805596844,
+          "29": 0.8001365196159488,
+          "43": 0.8637093244625578
+        },
+        "seed_standard_deviation": 0.03245086885646156,
+        "cases_per_lead": 8125
+      },
+      {
+        "gauge_id": "03164000",
+        "architecture": "GRU_Transformer",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.8219524164536673,
+        "seeds": {
+          "17": 0.8232432102403219,
+          "29": 0.787640530336627,
+          "43": 0.8549735087840531
+        },
+        "seed_standard_deviation": 0.03368504279498748,
+        "cases_per_lead": 8125
+      },
+      {
+        "gauge_id": "03164000",
+        "architecture": "LSTM",
+        "input_arm": "full",
+        "history_hours": 24,
+        "mean_equal_lead_nse": 0.8627522587093853,
+        "seeds": {
+          "17": 0.8809502751454534,
+          "29": 0.8450798702597696,
+          "43": 0.8622266307229328
+        },
+        "seed_standard_deviation": 0.017940978241189332,
+        "cases_per_lead": 8125
+      },
+      {
+        "gauge_id": "03164000",
+        "architecture": "LSTM",
+        "input_arm": "full",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.8683003846230956,
+        "seeds": {
+          "17": 0.8862916759357502,
+          "29": 0.8446573028269503,
+          "43": 0.8739521751065862
+        },
+        "seed_standard_deviation": 0.021384861650070284,
+        "cases_per_lead": 8125
+      },
+      {
+        "gauge_id": "03164000",
+        "architecture": "LSTM",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.8152111990966591,
+        "seeds": {
+          "17": 0.8369919342384835,
+          "29": 0.8226993796576464,
+          "43": 0.7859422833938474
+        },
+        "seed_standard_deviation": 0.026335742801851525,
+        "cases_per_lead": 8125
+      },
+      {
+        "gauge_id": "03164000",
+        "architecture": "Mamba2_Transformer",
+        "input_arm": "full",
+        "history_hours": 24,
+        "mean_equal_lead_nse": 0.8638335959005596,
+        "seeds": {
+          "17": 0.8312539461325666,
+          "29": 0.8991639954077643,
+          "43": 0.8610828461613482
+        },
+        "seed_standard_deviation": 0.03403848801336174,
+        "cases_per_lead": 8125
+      },
+      {
+        "gauge_id": "03164000",
+        "architecture": "Mamba2_Transformer",
+        "input_arm": "full",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.8560999642407264,
+        "seeds": {
+          "17": 0.8523551399324533,
+          "29": 0.8611800580361973,
+          "43": 0.8547646947535288
+        },
+        "seed_standard_deviation": 0.004561469427391615,
+        "cases_per_lead": 8125
+      },
+      {
+        "gauge_id": "03164000",
+        "architecture": "Mamba2_Transformer",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.8242656760310184,
+        "seeds": {
+          "17": 0.8436099584373201,
+          "29": 0.8151279012120332,
+          "43": 0.8140591684437021
+        },
+        "seed_standard_deviation": 0.016761160275875604,
+        "cases_per_lead": 8125
+      },
+      {
+        "gauge_id": "03164000",
+        "architecture": "Transformer",
+        "input_arm": "full",
+        "history_hours": 24,
+        "mean_equal_lead_nse": 0.8781504101699329,
+        "seeds": {
+          "17": 0.8940432742301047,
+          "29": 0.8463452519434691,
+          "43": 0.8940627043362248
+        },
+        "seed_standard_deviation": 0.027544076708796255,
+        "cases_per_lead": 8125
+      },
+      {
+        "gauge_id": "03164000",
+        "architecture": "Transformer",
+        "input_arm": "full",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.8638106190293869,
+        "seeds": {
+          "17": 0.8727041679325167,
+          "29": 0.8729491099835971,
+          "43": 0.845778579172047
+        },
+        "seed_standard_deviation": 0.015616684834324426,
+        "cases_per_lead": 8125
+      },
+      {
+        "gauge_id": "03164000",
+        "architecture": "Transformer",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.8255459281126873,
+        "seeds": {
+          "17": 0.8484474851633144,
+          "29": 0.7919690434725998,
+          "43": 0.8362212557021478
+        },
+        "seed_standard_deviation": 0.029714063308635255,
+        "cases_per_lead": 8125
+      },
+      {
+        "gauge_id": "03479000",
+        "architecture": "GRU_Transformer",
+        "input_arm": "full",
+        "history_hours": 24,
+        "mean_equal_lead_nse": 0.6590379003245036,
+        "seeds": {
+          "17": 0.6288659294608993,
+          "29": 0.660136785570325,
+          "43": 0.6881109859422865
+        },
+        "seed_standard_deviation": 0.02963781100146068,
+        "cases_per_lead": 7229
+      },
+      {
+        "gauge_id": "03479000",
+        "architecture": "GRU_Transformer",
+        "input_arm": "full",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.6503393817731002,
+        "seeds": {
+          "17": 0.6257134053938392,
+          "29": 0.6401281250409677,
+          "43": 0.6851766148844939
+        },
+        "seed_standard_deviation": 0.031018875604533317,
+        "cases_per_lead": 7229
+      },
+      {
+        "gauge_id": "03479000",
+        "architecture": "GRU_Transformer",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.570730985333538,
+        "seeds": {
+          "17": 0.5803724393537244,
+          "29": 0.559920968134629,
+          "43": 0.5718995485122609
+        },
+        "seed_standard_deviation": 0.010275690910268368,
+        "cases_per_lead": 7229
+      },
+      {
+        "gauge_id": "03479000",
+        "architecture": "LSTM",
+        "input_arm": "full",
+        "history_hours": 24,
+        "mean_equal_lead_nse": 0.6786011344100544,
+        "seeds": {
+          "17": 0.7230375977421324,
+          "29": 0.6319379257278063,
+          "43": 0.6808278797602246
+        },
+        "seed_standard_deviation": 0.04559063891217502,
+        "cases_per_lead": 7229
+      },
+      {
+        "gauge_id": "03479000",
+        "architecture": "LSTM",
+        "input_arm": "full",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.6715396469845213,
+        "seeds": {
+          "17": 0.7257788237736803,
+          "29": 0.621372131375246,
+          "43": 0.6674679858046376
+        },
+        "seed_standard_deviation": 0.052322300914315174,
+        "cases_per_lead": 7229
+      },
+      {
+        "gauge_id": "03479000",
+        "architecture": "LSTM",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.5867408990658796,
+        "seeds": {
+          "17": 0.5813911728351453,
+          "29": 0.5893861941190606,
+          "43": 0.589445330243433
+        },
+        "seed_standard_deviation": 0.004633093170675151,
+        "cases_per_lead": 7229
+      },
+      {
+        "gauge_id": "03479000",
+        "architecture": "Mamba2_Transformer",
+        "input_arm": "full",
+        "history_hours": 24,
+        "mean_equal_lead_nse": 0.6698134850349717,
+        "seeds": {
+          "17": 0.6462278237083315,
+          "29": 0.6709424975639544,
+          "43": 0.6922701338326295
+        },
+        "seed_standard_deviation": 0.023041909260377205,
+        "cases_per_lead": 7229
+      },
+      {
+        "gauge_id": "03479000",
+        "architecture": "Mamba2_Transformer",
+        "input_arm": "full",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.7015654428783976,
+        "seeds": {
+          "17": 0.7473200955106236,
+          "29": 0.664043965596193,
+          "43": 0.6933322675283761
+        },
+        "seed_standard_deviation": 0.04224413966030591,
+        "cases_per_lead": 7229
+      },
+      {
+        "gauge_id": "03479000",
+        "architecture": "Mamba2_Transformer",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.57365080212154,
+        "seeds": {
+          "17": 0.5583471664026605,
+          "29": 0.571804635732542,
+          "43": 0.5908006042294174
+        },
+        "seed_standard_deviation": 0.016305295288515733,
+        "cases_per_lead": 7229
+      },
+      {
+        "gauge_id": "03479000",
+        "architecture": "Transformer",
+        "input_arm": "full",
+        "history_hours": 24,
+        "mean_equal_lead_nse": 0.6825390557054554,
+        "seeds": {
+          "17": 0.6712592121280683,
+          "29": 0.6858866635015762,
+          "43": 0.6904712914867215
+        },
+        "seed_standard_deviation": 0.010033985090096769,
+        "cases_per_lead": 7229
+      },
+      {
+        "gauge_id": "03479000",
+        "architecture": "Transformer",
+        "input_arm": "full",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.6800191762955597,
+        "seeds": {
+          "17": 0.663649014523386,
+          "29": 0.6787533506783232,
+          "43": 0.6976551636849702
+        },
+        "seed_standard_deviation": 0.017038376714637968,
+        "cases_per_lead": 7229
+      },
+      {
+        "gauge_id": "03479000",
+        "architecture": "Transformer",
+        "input_arm": "q_only",
+        "history_hours": 168,
+        "mean_equal_lead_nse": 0.5647345913048838,
+        "seeds": {
+          "17": 0.5667343466427484,
+          "29": 0.5638310454744451,
+          "43": 0.5636383817974577
+        },
+        "seed_standard_deviation": 0.0017345160367076885,
+        "cases_per_lead": 7229
+      }
+    ],
+    "paired_contrasts": [
+      {
+        "gauge_id": "03161000",
+        "architecture": "LSTM",
+        "full_L168": 0.8283378300427033,
+        "q_only_L168": 0.6408602946385079,
+        "full_L24": 0.828393187413106,
+        "full_minus_q": 0.18747753540419543,
+        "L24_minus_L168": 5.535737040263111e-05,
+        "H1_full_minus_q": -0.00014925104649066157,
+        "H18_full_minus_q": 0.32994418927222646
+      },
+      {
+        "gauge_id": "03161000",
+        "architecture": "Transformer",
+        "full_L168": 0.7970775222459936,
+        "q_only_L168": 0.6237214349432144,
+        "full_L24": 0.8038958834669914,
+        "full_minus_q": 0.17335608730277918,
+        "L24_minus_L168": 0.006818361220997771,
+        "H1_full_minus_q": -0.007254652040669662,
+        "H18_full_minus_q": 0.35840568205312395
+      },
+      {
+        "gauge_id": "03161000",
+        "architecture": "GRU_Transformer",
+        "full_L168": 0.7916774818090717,
+        "q_only_L168": 0.6089297273720391,
+        "full_L24": 0.798187352095745,
+        "full_minus_q": 0.18274775443703262,
+        "L24_minus_L168": 0.006509870286673269,
+        "H1_full_minus_q": -0.016508209808612673,
+        "H18_full_minus_q": 0.34936030900430703
+      },
+      {
+        "gauge_id": "03161000",
+        "architecture": "Mamba2_Transformer",
+        "full_L168": 0.800714601349745,
+        "q_only_L168": 0.6116904888036596,
+        "full_L24": 0.7989056015213324,
+        "full_minus_q": 0.18902411254608542,
+        "L24_minus_L168": -0.0018089998284126496,
+        "H1_full_minus_q": 0.005537368927610364,
+        "H18_full_minus_q": 0.37650853215588126
+      },
+      {
+        "gauge_id": "03164000",
+        "architecture": "LSTM",
+        "full_L168": 0.8683003846230956,
+        "q_only_L168": 0.8152111990966591,
+        "full_L24": 0.8627522587093853,
+        "full_minus_q": 0.05308918552643649,
+        "L24_minus_L168": -0.0055481259137102334,
+        "H1_full_minus_q": -0.004495996583467776,
+        "H18_full_minus_q": 0.11745843289067415
+      },
+      {
+        "gauge_id": "03164000",
+        "architecture": "Transformer",
+        "full_L168": 0.8638106190293869,
+        "q_only_L168": 0.8255459281126873,
+        "full_L24": 0.8781504101699329,
+        "full_minus_q": 0.038264690916699595,
+        "L24_minus_L168": 0.014339791140545954,
+        "H1_full_minus_q": -0.044434774444558234,
+        "H18_full_minus_q": 0.1287217426598709
+      },
+      {
+        "gauge_id": "03164000",
+        "architecture": "GRU_Transformer",
+        "full_L168": 0.8281509415460636,
+        "q_only_L168": 0.8219524164536673,
+        "full_L24": 0.8408380697656846,
+        "full_minus_q": 0.006198525092396268,
+        "L24_minus_L168": 0.012687128219621036,
+        "H1_full_minus_q": -0.09510405279632206,
+        "H18_full_minus_q": 0.10326364289133494
+      },
+      {
+        "gauge_id": "03164000",
+        "architecture": "Mamba2_Transformer",
+        "full_L168": 0.8560999642407264,
+        "q_only_L168": 0.8242656760310184,
+        "full_L24": 0.8638335959005596,
+        "full_minus_q": 0.03183428820970802,
+        "L24_minus_L168": 0.007733631659833207,
+        "H1_full_minus_q": -0.05375523013921624,
+        "H18_full_minus_q": 0.11129613862103327
+      },
+      {
+        "gauge_id": "03479000",
+        "architecture": "LSTM",
+        "full_L168": 0.6715396469845213,
+        "q_only_L168": 0.5867408990658796,
+        "full_L24": 0.6786011344100544,
+        "full_minus_q": 0.08479874791864173,
+        "L24_minus_L168": 0.007061487425533142,
+        "H1_full_minus_q": -0.028228943698593856,
+        "H18_full_minus_q": 0.13363621290939126
+      },
+      {
+        "gauge_id": "03479000",
+        "architecture": "Transformer",
+        "full_L168": 0.6800191762955597,
+        "q_only_L168": 0.5647345913048838,
+        "full_L24": 0.6825390557054554,
+        "full_minus_q": 0.11528458499067595,
+        "L24_minus_L168": 0.00251987940989562,
+        "H1_full_minus_q": -0.17834028276677905,
+        "H18_full_minus_q": 0.2762293882218918
+      },
+      {
+        "gauge_id": "03479000",
+        "architecture": "GRU_Transformer",
+        "full_L168": 0.6503393817731002,
+        "q_only_L168": 0.570730985333538,
+        "full_L24": 0.6590379003245036,
+        "full_minus_q": 0.07960839643956219,
+        "L24_minus_L168": 0.008698518551403356,
+        "H1_full_minus_q": -0.2185644837454449,
+        "H18_full_minus_q": 0.24568996580131602
+      },
+      {
+        "gauge_id": "03479000",
+        "architecture": "Mamba2_Transformer",
+        "full_L168": 0.7015654428783976,
+        "q_only_L168": 0.57365080212154,
+        "full_L24": 0.6698134850349717,
+        "full_minus_q": 0.12791464075685766,
+        "L24_minus_L168": -0.03175195784342588,
+        "H1_full_minus_q": -0.09044559207465708,
+        "H18_full_minus_q": 0.25057047733117005
+      }
+    ],
+    "full_L168_primary_gain_pairs": 12,
+    "full_L168_H1_lower_pairs": 11,
+    "full_L168_H18_higher_pairs": 12,
+    "support_counts_by_gauge": {
+      "03161000": 8766,
+      "03164000": 8125,
+      "03479000": 7229
+    },
+    "seed_spread_is_confidence_interval": false,
+    "events_and_dependence_aware_uncertainty_pending": true,
+    "architecture_selected": false,
+    "statistical_significance_claimed": false,
+    "weather_and_soil_isolated": false,
+    "L24_natural_coverage_experiment": false
+  },
+  "scoring_metadata": {
+    "component_policy_status": "PROPOSED_NOT_FROZEN",
+    "component_label_is_not_protocol_adoption_authority": true,
+    "controlling_protocol_frozen": true,
+    "immutable_metric_receipts_rewritten": false
+  },
+  "scientific_poster_ready": false,
+  "protected_assessment_access": false,
+  "paid_cloud_jobs_recorded": 0,
+  "new_downloads": 0,
+  "raw_values_published": false
+}

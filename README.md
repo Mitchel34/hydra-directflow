@@ -4,10 +4,16 @@ Direct hourly discharge forecasting at three Appalachian gauges using observed
 USGS history and issued HRRR weather. The forecast outputs are leads 1–18 hours
 at gauges `03161000`, `03164000` and `03479000`.
 
+**November 5: all 180 planned fits have completed training and development scoring.**
+The [verified completion and first development review](docs/primary-training-completion.md)
+records all three seeds, artifact checks and preliminary comparisons. Event analysis,
+dependence-aware uncertainty and poster review remain pending. Protected assessment
+is sealed and paid cloud jobs remain held.
+
 The experiment includes LSTM, Transformer, GRU–Transformer and
-Mamba2–Transformer. NWM is an external comparator. Research skill results are
-not yet available; synthetic model checks and a development data smoke test
-do not establish forecast performance.
+Mamba2–Transformer. NWM is an external comparator. Three-seed development results are now available; protected-assessment skill
+has not been measured. Synthetic model checks and data smoke tests remain
+engineering evidence.
 
 The [resident execution recovery](docs/resident-execution.md) now keeps active code and a fully isolated pinned runtime outside cloud storage. [Optimized provenance processing](docs/pilot-provenance-performance-v2.md) passed exact v1 numerical equivalence and a new bounded restart/inference qualification. The six-fit cold-default proxy is now **2.03/4.06 hours at 20/50 epochs**, plus stated unmeasured work. These pilot timings remain engineering evidence; paid cloud jobs remain held. The [resident development snapshot](reports/resident-optimization-release-v3.json) is now **1,432/1,432 files across 477 shards**, with the exact snapshot integrity check passed. [CV1 real-data assembly and bounded loader checks](docs/pilot-real-data-assembly.md) are complete. The earlier [small-pilot protocol](docs/bounded-gap-pilot-protocol.md) is retained as historical planning; no pilot fits ran.
 

@@ -1,6 +1,6 @@
 {
   "schema": "hydra-scientific-decisions/v1",
-  "status": "PRIMARY_LOCAL_SCIENTIFIC_TRAINING_RESUMED_AFTER_HEARTBEAT_FIX",
+  "status": "PRIMARY_ALL180_TRAINING_AND_DEVELOPMENT_METRICS_COMPLETE",
   "primary_usgs_quality": {
     "status": "USER_CONFIRMED",
     "decision_date_local": "2026-11-02",
@@ -487,5 +487,21 @@
     "completed_fits_preserved": 30,
     "original_deadlines_and_charges_preserved": true,
     "protocol_changed": false
+  },
+  "primary_campaign_completion": {
+    "receipt": "reports/primary-training-completion-v1.json",
+    "review_document": "docs/primary-training-completion.md",
+    "completed_fits": 180,
+    "cv_fits": 72,
+    "final_development_fits": 108,
+    "final_seed_reports": [
+      17,
+      29,
+      43
+    ],
+    "completed_at_central": "2026-11-05T07:09:39.978482-06:00",
+    "scientific_poster_ready": false,
+    "protected_assessment_access": false,
+    "paid_cloud_jobs_recorded": 0
   }
 }
