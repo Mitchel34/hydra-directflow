@@ -1,0 +1,186 @@
+{
+  "schema": "hydra-coverage-extension-protocol/v1",
+  "version": 1,
+  "status": "ADOPTED_PHASE_A_INFERENCE_ONLY",
+  "registered_at_utc": "2026-11-05T21:30:15.658640+00:00",
+  "user_authorization": {
+    "source": "EXPLICIT_USER_ADOPTION_IN_ACTIVE_GOAL",
+    "adopted_plan_sha256": "2a68d386dabe553bdda2e77f07c99c89e4081b8dc899296162fd203d0c81fd4a",
+    "goal_prompt_sha256": "a4895c781d8ae1d17aa1b9979b478e7c59ee50e615b1003ceb28ab590d87c2cb"
+  },
+  "primary_plan_sha256": "7723e33746e51badd5ca6cc2d8ac61283fdd0c152306f2d754f047862ced60ff",
+  "primary_protocol_sha256": "3d94d182e1a22a84f3cd55b8824670821492e86a2ec015a465b155dcb91015f4",
+  "snapshot_sha256": "b41630b7df9a216874eb4ba38a10176d4b72092bd6f1ce2ad4c4f369db56948c",
+  "source_plan_sha256": "0dad073824984fd7eeba88e4c313d77b4015dcccb94e8eb27297fcf7c6b39b0f",
+  "event_catalog_sha256": "8e82f613165a5d452c74a30783b02e1c0ae5fb5d93dbe2e338d0010c215e8c0a",
+  "calendar": {
+    "start_utc": "2023-07-31T00:00:00Z",
+    "end_exclusive_utc": "2024-07-30T06:00:00Z",
+    "last_target_utc": "2024-07-30T23:00:00Z",
+    "origins_per_gauge": 8766,
+    "gauge_origin_rows": 26298,
+    "protected_assessment_access": false
+  },
+  "gauges": [
+    "03161000",
+    "03164000",
+    "03479000"
+  ],
+  "architectures": [
+    "LSTM",
+    "Transformer",
+    "GRU_Transformer",
+    "Mamba2_Transformer"
+  ],
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "checkpoints": {
+    "distinct": 72,
+    "full_L168": 36,
+    "full_L24": 36,
+    "fold": "final_development",
+    "input_arm": "full",
+    "selected_weights": "SAVED_BEST",
+    "saved_transforms_only": true,
+    "training_source_identity_preserved": true,
+    "new_inference_identities_required": true,
+    "missing_Q_only_L24": true
+  },
+  "products": [
+    "PRIMARY_FROZEN",
+    "L168_INPUT_ONLY_V1",
+    "L24_INPUT_ONLY_V1",
+    "ROUTED_CLEAN_168_24_V1"
+  ],
+  "router": {
+    "version": "CLEAN_INPUT_168_THEN24_V1",
+    "shared_across_architectures_and_seeds": true,
+    "order": [
+      "NON_Q_FAIL_UNAVAILABLE",
+      "COMPLETE_L168",
+      "OTHERWISE_COMPLETE_L24",
+      "OTHERWISE_UNAVAILABLE"
+    ],
+    "one_checkpoint_for_entire_H18": true,
+    "target_values_read": false,
+    "target_masks_read": false,
+    "target_derived_admission_flags_used": false,
+    "route_changes_on_model_failure": false
+  },
+  "inputs": {
+    "delay_hours": 2,
+    "L168_offsets_hours": [
+      -169,
+      -2
+    ],
+    "L24_offsets_hours": [
+      -25,
+      -2
+    ],
+    "single_eligible_HRRR_cycle": true,
+    "existing_older_cycle_fallback_preserved": true,
+    "weather_stitching": false,
+    "soil_initial_state_separate": true,
+    "soil_max_age_hours": 8,
+    "quality_policy": "PRIMARY_APPROVED_A_OPTIONAL_R_V1",
+    "original_qualifiers_and_sources_preserved": true,
+    "historical_Q_repairs": false,
+    "missing_weather_fill": false,
+    "target_imputation": false,
+    "historical_vintage_limitation_retained": true
+  },
+  "barriers": [
+    "INPUT_ONLY_ROUTE_MAP_COMMITTED",
+    "ALL72_ORIGINAL_CLEAN_PREDICTIONS_BYTE_EXACT",
+    "ALL_L168_L24_AND_ROUTED_PREDICTIONS_COMMITTED",
+    "ONLY_THEN_LOAD_VERIFICATION_TARGETS"
+  ],
+  "clean_regression": {
+    "batch_size": 64,
+    "original_batch_order_and_partition": true,
+    "prediction_equality": "BYTE_EXACT",
+    "tolerance_relaxed": false,
+    "clean_reuse_requires_exact_inputs_coordinates_checkpoint_and_recorded_parity": true,
+    "global_clean_barrier_before_expanded_forwards": true
+  },
+  "scoring": {
+    "quality_policy": "PRIMARY_APPROVED_A_OPTIONAL_R_V1",
+    "independent_target_mask_each_lead": true,
+    "temporal_H18_purge_retained": true,
+    "prediction_clipping": false,
+    "missing_or_nonfinite_requested_prediction": "FAIL_EVEN_IF_TARGET_MASKED",
+    "cohorts": [
+      "ALL_REQUESTED",
+      "ORIGINAL_COMMON",
+      "ADDITIONAL_L168",
+      "L24_FALLBACK",
+      "UNAVAILABLE"
+    ],
+    "truthful_routed_history_identity": "PER_ORIGIN_168_OR24_NOT_ONE_FAKE_HISTORY_LENGTH",
+    "metrics": [
+      "physical_MSE",
+      "RMSE",
+      "MAE",
+      "signed_bias",
+      "NSE",
+      "negative_prediction_frequency"
+    ],
+    "primary": "EQUAL_MEAN_ALL18_LEAD_NSE_IF_EACH_QUALIFIES",
+    "minimum_distinct_target_hours": 168,
+    "minimum_distinct_UTC_dates": 28,
+    "positive_reference_variance_required": true,
+    "all_seed_metrics_retained": true,
+    "seed_aggregate": "MEAN_OF_INDIVIDUAL_SEED_METRICS_NOT_ENSEMBLE_PREDICTIONS",
+    "undefined_metrics_retained": true,
+    "availability_denominator": "GAUGE_ORIGIN_NOT_MULTIPLIED_BY_MODELS_OR_SEEDS",
+    "new_uncertainty_families": false
+  },
+  "events": {
+    "existing_catalog_and_gradient_thresholds_only": true,
+    "keep_fixed_top3_even_unavailable": true,
+    "unique_hours_cells_and_catalog_events_separate": true,
+    "new_peak_timing_or_false_alarm_acceptance_definition": false
+  },
+  "runtime": {
+    "workers": 1,
+    "device_by_architecture": {
+      "LSTM": "cpu",
+      "GRU_Transformer": "cpu",
+      "Transformer": "mps",
+      "Mamba2_Transformer": "mps"
+    },
+    "dtype": "FP32",
+    "deterministic_algorithms": true,
+    "torch_threads": 1,
+    "interop_threads": 1,
+    "mps_cpu_fallback": false,
+    "offline": true,
+    "memory_accounting": "COMBINED_PARENT_CHILD_AND_MPS_DRIVER"
+  },
+  "limits": {
+    "max_forward_batches": 20000,
+    "max_batch_size": 64,
+    "max_model_constructions": 145,
+    "max_seconds": 21600,
+    "max_mps_bytes": 2147483648,
+    "max_read_bytes": 8589934592,
+    "min_free_bytes": 8589934592,
+    "max_infrastructure_resumes": 1,
+    "max_case_checkpoint_evaluations": 1280000,
+    "max_rss_bytes": 4294967296,
+    "max_output_bytes": 1073741824
+  },
+  "zero_new_training": true,
+  "zero_optimizer_updates": true,
+  "zero_scaler_fits": true,
+  "paid_jobs": false,
+  "additional_downloads": false,
+  "security_or_access_changes": false,
+  "protected_assessment_access": false,
+  "coverage_90_percent_is_not_a_pass_condition": true,
+  "Phase_B_real_repair_execution_authorized": false,
+  "original_aggregate_artifact_cap_bytes": 8589934592
+}

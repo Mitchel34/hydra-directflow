@@ -1090,3 +1090,26 @@ exports therefore use the verified SVG versions; all seven PNG previews remain
 in the private artifact directory. Only newly created duplicate PNG export copies
 were removed after checksum comparison. No source/model artifact was deleted,
 and no publication/security guard was relaxed.
+
+## Adopted Phase A and input-source qualification — November 5
+
+The user adopted the private Phase A inference-only extension plan with SHA256
+2a68d386dabe553bdda2e77f07c99c89e4081b8dc899296162fd203d0c81fd4a as an active
+continuous goal. The version matched exactly. Current repository f203885 and the
+completed primary/postprocessing evidence were reconciled; no scientific worker
+was active and the original optimizer counter remained 1,151,690. A further
+1 GiB reservation fits the existing 8 GiB cap; it has not yet been charged.
+
+The public sensitivity protocol preserves all 72 final-development full-input
+checkpoints, input-only L168/L24 admission, the fixed clean router, global clean
+parity and prediction-before-target barriers, all seeds, per-lead A/A+R scoring
+and the finite adopted envelope. Ninety-percent coverage is not a pass condition.
+No new training, real repairs, paid jobs, downloads or protected access are authorized.
+
+Additive source reconciliation, selected-member input loading, native causal
+provenance, route construction and immutable bundle storage passed 51 synthetic
+tests and independent review. Target arrays, target masks and mixed admission
+members are not decoded in that path. All three routes are committed before
+original common-case selectors are consulted. Real source/model execution remains
+pending executor qualification; these tests did not repeat a consumed model
+qualification or create any model/optimizer/scaler fit.

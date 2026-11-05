@@ -1,0 +1,28 @@
+{
+  "schema": "hydra-phase-a-source-qualification/v1",
+  "status": "IMPLEMENTED_SYNTHETIC_QUALIFIED_NOT_REAL_EXECUTED",
+  "created_at_utc": "2026-11-05T22:38:50.325286+00:00",
+  "adopted_plan_sha256": "2a68d386dabe553bdda2e77f07c99c89e4081b8dc899296162fd203d0c81fd4a",
+  "tests": {
+    "passed": 51,
+    "failures": 0,
+    "errors": 0,
+    "log_sha256": "62e0df5cdab9cb684c363cd1a929a6f9d4d9646aec0f75f8cfe3a6a532effac7"
+  },
+  "file_sha256": {
+    "src/hydra_directflow/coverage_extension_manifest.py": "7915b055cbb8d57181b19d11230c2c08fc72835e3395c222ed32a83a278f9652",
+    "src/hydra_directflow/coverage_extension_data.py": "7619bd8ad8aca7f3776a6b8af4512ffe1082dd36e2a9b7572ae209375bc58272",
+    "src/hydra_directflow/coverage_extension_io.py": "c008273b71eec3a96297201e7e95ecf8c44e7ca2a2ddc544ef0dd177a75bc3aa",
+    "tests/test_coverage_extension_manifest.py": "cb3a825cfade618ef065c30a113a97fd234a88a3067fadc20aa501ebc88ae994",
+    "tests/test_coverage_extension_data.py": "fd22de55c0cfeb422c5ffae6d6df4bfe57a3a6aa9cf3b5fc2f195df7aba9b6e3",
+    "tests/test_coverage_extension_io.py": "ff63e0b1a4a8a9dbc4545d39a2f789d9b33846f4bad1e71c32c726fab5d705ec"
+  },
+  "independent_review": "PASSED",
+  "real_source_values_read": false,
+  "real_checkpoint_deserializations": 0,
+  "real_model_constructions": 0,
+  "real_model_forwards": 0,
+  "optimizer_updates": 0,
+  "scaler_fits": 0,
+  "protected_assessment_access": false
+}
