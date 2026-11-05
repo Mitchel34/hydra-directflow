@@ -1059,3 +1059,34 @@ The user separately approved33owned cloud-only reference-cache files totaling
 105,064bytes. All147required files (467,088bytes) were copied/verified resident
 with their exact checksums. The July2024development-export boundary is retained.
 No new USGS request, paid cloud job or protected access was made.
+
+## Development postprocessing executed and reviewed — November 5
+
+The qualified code was pushed as 599b358 before execution. Postprocessing plan
+7aee14c8dc9f332bd16e44ae2297001b71c4f9d6e5e7bfa33b3e8f2c82ccc5f9 ran
+inside the existing resource allowance. All 180 saved raw prediction panels passed
+independent physical-metric/count/time checks; maximum absolute metric difference
+was 4.55e-13. All 12 fold/gauge reference/event groups matched original targets and
+fixed observed peaks. No threshold, source value or model selection was changed.
+
+All 7/14/28-day bootstrap analyses completed, with 2,000/2,000 jointly valid draws
+for each 30-CV/42-final contrast family. All 540 baseline checks and 12 fixed scalar
+weighted-reference checks passed. Independent sorted-order interpolation then
+reproduced 216 contrast intervals and 3,240 per-lead intervals exactly. Seven PNG/SVG
+figure pairs were rendered and visually reviewed. Raw arrays/checkpoints remain
+private; public artifacts contain aggregate results and scientific figures.
+
+The scientific review retains material limitations: only 5/12 final joint-input
+intervals exclude zero at all three lengths; high-flow cell coverage is 100%,
+69.2% and 50.0% for Jefferson, Galax and Sugar Grove; major observed peaks lack
+forecasts; Galax residual dependence persists at multi-week lags. The adequacy of
+the seasonal bootstrap interpretation requires review before protected assessment,
+without silently changing block lengths or selecting favorable results. The current
+poster path is clearly labeled development results. No new training, paid cloud
+job or protected access occurred.
+
+The unchanged publication checker rejects unreviewed binary files. Public figure
+exports therefore use the verified SVG versions; all seven PNG previews remain
+in the private artifact directory. Only newly created duplicate PNG export copies
+were removed after checksum comparison. No source/model artifact was deleted,
+and no publication/security guard was relaxed.

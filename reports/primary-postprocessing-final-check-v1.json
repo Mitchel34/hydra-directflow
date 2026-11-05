@@ -1,0 +1,15 @@
+{
+  "checked_at_utc": "2026-11-05T17:52:44.791323+00:00",
+  "contrast_intervals_independently_recomputed": 216,
+  "maximum_contrast_endpoint_difference": 0,
+  "method": "EXPLICIT_SORTED_ORDER_STATISTICS_LINEAR_INTERPOLATION_NOT_PERCENTILE_HELPER",
+  "model_calls": 0,
+  "new_optimizer_updates": 0,
+  "original_training_code_protocol_unchanged": true,
+  "per_lead_intervals_independently_recomputed": 3240,
+  "postprocessing_plan_sha256": "7aee14c8dc9f332bd16e44ae2297001b71c4f9d6e5e7bfa33b3e8f2c82ccc5f9",
+  "protected_assessment_access": false,
+  "schema": "hydra-primary-postprocessing-final-check/v1",
+  "seven_figures_visually_reviewed": true,
+  "status": "PASSED"
+}

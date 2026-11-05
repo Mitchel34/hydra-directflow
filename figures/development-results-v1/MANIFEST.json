@@ -1,0 +1,107 @@
+{
+  "schema": "hydra-primary-public-figure-exports/v1",
+  "source_render_manifest_sha256": "f8202d63a32d73ea07f4b31baa4e45e8537332f6de536a67d89f19901fc685a7",
+  "public_format": "SVG",
+  "private_preview_format": "PNG",
+  "publication_checker_unchanged": true,
+  "figures": [
+    {
+      "name": "development-nse-by-lead",
+      "caption": "Mean of three seed NSEs; common L168 support. Solid: full inputs; dashed: Q-only.",
+      "public_svg": {
+        "path": "development-nse-by-lead.svg",
+        "bytes": 101783,
+        "sha256": "026e73e703914889d5b79ed6decf7dab0d73de2caa5d4c72d382ac25912f05c5"
+      },
+      "private_png_preview": {
+        "path": "development-nse-by-lead.png",
+        "bytes": 272299,
+        "sha256": "876aa36f122efc82b24c89171d9337032e467e5a8304af96719b840e14e8834a"
+      }
+    },
+    {
+      "name": "development-joint-input-delta-by-lead",
+      "caption": "Mean of three seed NSEs; common L168 support. Zero marks no difference.",
+      "public_svg": {
+        "path": "development-joint-input-delta-by-lead.svg",
+        "bytes": 93170,
+        "sha256": "4b8e70161a42f63d05b193b836fea1a2d5a842ca43990e6c49061e9b0565c5c8"
+      },
+      "private_png_preview": {
+        "path": "development-joint-input-delta-by-lead.png",
+        "bytes": 183510,
+        "sha256": "20655e7a866efd8a8c0989cb416abc5d6631ee984b25ad0ac51bcd1d800c3d31"
+      }
+    },
+    {
+      "name": "development-full_minus_q-uncertainty",
+      "caption": "95% conditional, pointwise percentile intervals; paired calendar blocks, same jointly valid pool. Not simultaneous or interannual coverage.",
+      "public_svg": {
+        "path": "development-full_minus_q-uncertainty.svg",
+        "bytes": 108860,
+        "sha256": "c0859d19c1208e756d69e65682bb3d1d8753322079642fef49432b72785c0990"
+      },
+      "private_png_preview": {
+        "path": "development-full_minus_q-uncertainty.png",
+        "bytes": 94527,
+        "sha256": "66431ad086f68036d99ec9fb057761bbdb7e2ffae7289c6b211216665c2eb4e4"
+      }
+    },
+    {
+      "name": "development-L168_minus_L24-uncertainty",
+      "caption": "95% conditional, pointwise percentile intervals; paired calendar blocks, same jointly valid pool. Not simultaneous or interannual coverage.",
+      "public_svg": {
+        "path": "development-L168_minus_L24-uncertainty.svg",
+        "bytes": 108186,
+        "sha256": "a50ca989d383739a4134ba51199f84a363ea257e21fc6a2554e169175cbccad3"
+      },
+      "private_png_preview": {
+        "path": "development-L168_minus_L24-uncertainty.png",
+        "bytes": 98846,
+        "sha256": "a1e9351d79b9a923c424b6817ad16728384b5e889936a2af67a8a10c266c1183"
+      }
+    },
+    {
+      "name": "development-architecture_first_minus_second-uncertainty",
+      "caption": "95% conditional, pointwise percentile intervals; paired calendar blocks, same jointly valid pool. Not simultaneous or interannual coverage.",
+      "public_svg": {
+        "path": "development-architecture_first_minus_second-uncertainty.svg",
+        "bytes": 126153,
+        "sha256": "f6fc33f380f57249951d847dc6876b7681dc82885ea77827dec69369c58b8465"
+      },
+      "private_png_preview": {
+        "path": "development-architecture_first_minus_second-uncertainty.png",
+        "bytes": 115139,
+        "sha256": "7a7dc45dc28a3ba65d8845718201064533cc15c877d7b94b46b311993b006bec"
+      }
+    },
+    {
+      "name": "development-fixed-events-H01",
+      "caption": "Full L168; lines = seed-mean predictions, shading = seed min\u2013max (not confidence intervals). Metrics remain means of individual-seed scores.",
+      "public_svg": {
+        "path": "development-fixed-events-H01.svg",
+        "bytes": 488613,
+        "sha256": "2e26304574975e6abdad7555b3f98adfb1a2ebf5d694f16d809682f7be03eef5"
+      },
+      "private_png_preview": {
+        "path": "development-fixed-events-H01.png",
+        "bytes": 912461,
+        "sha256": "16978e4940a2ec69b48fa97cef203862b98da4ff7dc77361811b01a09df668d3"
+      }
+    },
+    {
+      "name": "development-fixed-events-H18",
+      "caption": "Full L168; lines = seed-mean predictions, shading = seed min\u2013max (not confidence intervals). Metrics remain means of individual-seed scores.",
+      "public_svg": {
+        "path": "development-fixed-events-H18.svg",
+        "bytes": 487851,
+        "sha256": "819a62bca9d5144b72dee079b9533ec872cb249b25eecff53ea4d172d8b4ebbc"
+      },
+      "private_png_preview": {
+        "path": "development-fixed-events-H18.png",
+        "bytes": 925637,
+        "sha256": "10552805151085cb31adca1251c592e9bf5f3bfc74ba30fe2b3805d1adfc5cca"
+      }
+    }
+  ]
+}

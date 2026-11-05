@@ -1,6 +1,6 @@
 {
   "schema": "hydra-scientific-decisions/v1",
-  "status": "PRIMARY_ALL180_TRAINING_AND_DEVELOPMENT_METRICS_COMPLETE",
+  "status": "PRIMARY_DEVELOPMENT_POSTPROCESSING_COMPLETE_SCIENTIFIC_REVIEW_REQUIRED",
   "primary_usgs_quality": {
     "status": "USER_CONFIRMED",
     "decision_date_local": "2026-11-02",
@@ -503,5 +503,28 @@
     "scientific_poster_ready": false,
     "protected_assessment_access": false,
     "paid_cloud_jobs_recorded": 0
+  },
+  "primary_postprocessing": {
+    "receipt": "reports/primary-development-postprocessing-v1.json",
+    "final_check": "reports/primary-postprocessing-final-check-v1.json",
+    "review": "docs/primary-development-review.md",
+    "plan_sha256": "7aee14c8dc9f332bd16e44ae2297001b71c4f9d6e5e7bfa33b3e8f2c82ccc5f9",
+    "tests_passed": 93,
+    "raw_panels_independently_verified": 180,
+    "bootstrap_complete": true,
+    "event_analysis_complete": true,
+    "figures_visually_reviewed": 7,
+    "protected_assessment_access": false,
+    "paid_cloud_jobs": 0,
+    "new_training_fits": 0
+  },
+  "assessment_readiness_review": {
+    "status": "PROTECTED_ASSESSMENT_REMAINS_CLOSED",
+    "new_scientific_review_item": "Review long-lag residual dependence and its implications for seasonal block-bootstrap interpretation before protected assessment.",
+    "annual_acf_not_a_within_season_stationarity_test": true,
+    "existing_coverage_limitation_retained": true,
+    "model_selection_record_not_finalized": true,
+    "explicit_protected_access_approval_received": false,
+    "methods_changed_from_observed_results": false
   }
 }

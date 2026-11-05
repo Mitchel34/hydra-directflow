@@ -1,0 +1,15 @@
+{
+  "status": "SEVEN_FIGURES_VISUALLY_REVIEWED",
+  "reviewed_at_utc": "2026-11-05T17:46:10.673282+00:00",
+  "render_manifest_sha256": "f8202d63a32d73ea07f4b31baa4e45e8537332f6de536a67d89f19901fc685a7",
+  "checked": [
+    "labels_units_support_counts",
+    "axes_legends_and_captions_readable",
+    "no_clipped_content",
+    "all_fixed_representative_events_retained",
+    "missing_forecasts_show_gaps",
+    "seed_range_not_labeled_confidence_interval",
+    "all7_14_28_day_sensitivities_shown"
+  ],
+  "interpretation_caveat": "Long-lag Galax residual dependence requires review before protected assessment; intervals remain exploratory conditional approximations."
+}

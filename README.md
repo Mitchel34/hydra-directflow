@@ -5,10 +5,11 @@ USGS history and issued HRRR weather. The forecast outputs are leads 1–18 hour
 at gauges `03161000`, `03164000` and `03479000`.
 
 **November 5: all 180 planned fits have completed training and development scoring.**
-The [verified completion and first development review](docs/primary-training-completion.md)
-records all three seeds, artifact checks and preliminary comparisons. Event analysis,
-dependence-aware uncertainty and poster review remain pending. Protected assessment
-is sealed and paid cloud jobs remain held.
+The [scientific development review](docs/primary-development-review.md) now includes
+independent raw-prediction verification, fixed-event analysis, all three block-bootstrap
+sensitivities, residual diagnostics and [seven SVG figures](figures/development-results-v1/README.md).
+Residual-dependence interpretation and poster review remain pending. Protected
+assessment is sealed and paid cloud jobs remain held.
 
 The experiment includes LSTM, Transformer, GRU–Transformer and
 Mamba2–Transformer. NWM is an external comparator. Three-seed development results are now available; protected-assessment skill
