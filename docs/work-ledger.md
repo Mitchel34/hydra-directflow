@@ -1113,3 +1113,26 @@ members are not decoded in that path. All three routes are committed before
 original common-case selectors are consulted. Real source/model execution remains
 pending executor qualification; these tests did not repeat a consumed model
 qualification or create any model/optimizer/scaler fit.
+
+## Phase A executor and evaluation qualification — November 5
+
+The bounded inference executor, separate SQLite resource ledger, one-worker
+supervisor, independent per-lead evaluator and publication pipeline are implemented.
+The integrated suite passed 180 tests; a final independently requested clean-barrier
+binding check passed two follow-up tests, bringing unique qualified methods to 181.
+All tests used synthetic data/mocked models; no study forward or target read occurred.
+The qualification receipt records current code/test hashes and independent reviews.
+
+The fixed first eight clean jobs measure all four architectures and both lookbacks
+before broader execution; profiling is charged as part of required clean regression.
+All 72 original clean predictions must reproduce byte-exactly before expanded
+forwards. All 72 clean, 72 input-only and 36 routed products must authenticate before
+verification values are loaded. Original common scores, per-lead masks, empty
+cohorts, all seeds, raw negatives and independent metric/count checks remain explicit.
+The phase does not add uncertainty families or attribute routed gains to weather.
+
+Metadata reads are conservatively reserved before worker launch. Failures retain
+charges; exactly one diagnosed infrastructure supervision resume is allowed within
+the same clock and caps, while numerical/integrity failures remain visible.
+Figure rendering is local and precharged; public exports stay sanitized SVG/JSON/MD.
+Real execution and final outcome evidence remain pending at this checkpoint.

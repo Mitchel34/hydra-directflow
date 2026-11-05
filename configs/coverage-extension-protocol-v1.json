@@ -158,7 +158,11 @@
     "interop_threads": 1,
     "mps_cpu_fallback": false,
     "offline": true,
-    "memory_accounting": "COMBINED_PARENT_CHILD_AND_MPS_DRIVER"
+    "memory_accounting": "COMBINED_PARENT_CHILD_AND_MPS_DRIVER",
+    "authentication_read_reservation_per_worker_bytes": 16777216,
+    "initial_planning_and_supervisor_metadata_reservation_bytes": 50331648,
+    "supervisor_restart_limit": 1,
+    "supervisor_resume_requires_preserved_diagnosis": true
   },
   "limits": {
     "max_forward_batches": 20000,
@@ -182,5 +186,13 @@
   "protected_assessment_access": false,
   "coverage_90_percent_is_not_a_pass_condition": true,
   "Phase_B_real_repair_execution_authorized": false,
-  "original_aggregate_artifact_cap_bytes": 8589934592
+  "original_aggregate_artifact_cap_bytes": 8589934592,
+  "profiling": {
+    "fixed_prefix": "FIRST_EIGHT_ORIGINAL_ORDER_CLEAN_JOBS_JEFFERSON_SEED17_ALL4_FAMILIES_AND2_HISTORIES",
+    "extra_duplicate_forwards": false,
+    "counts_within_clean_regression_allowance": true,
+    "preflight_before_remaining_clean_jobs": true,
+    "conservative_remaining_estimate": "2*(remaining_cases*observed_geometry_seconds_per_case+20_seconds_per_checkpoint)+1200_seconds_for_scoring_reporting",
+    "estimate_must_fit_original_phase_deadline": true
+  }
 }
