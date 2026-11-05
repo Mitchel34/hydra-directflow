@@ -1,0 +1,70 @@
+{
+  "schema": "hydra-primary-postprocessing-qualification/v1",
+  "status": "PASSED_SYNTHETIC_AND_INDEPENDENT_REVIEW",
+  "created_at_utc": "2026-11-05T17:14:06.364327+00:00",
+  "tests": {
+    "passed": 93,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "log_sha256": "2e651f9a6aa440e359b1a323f0875edc7d802004b806583e58a56b28f4e5dad8"
+  },
+  "implementation_sha256": {
+    "scripts/run_primary_postprocessing.py": "64a2d17742df646e439dc3f3b3f2959313f80512ee5bc91763eb858d2d247c61",
+    "src/hydra_directflow/post_data.py": "1c0eeb74ed0521bbf3e8fc6bdf11d82189a861466578a421736d0ec390693bad",
+    "src/hydra_directflow/post_events.py": "e1b6a1ddaa7fca9f7ab1e89c819f39f034d86523759d854fe03e055c79154592",
+    "src/hydra_directflow/post_uncertainty.py": "42f55cc2ebcec78a46fbe3a62f88f404e0fb0435034e9db19a122c5517c92ddf",
+    "scripts/postprocess_primary_events.py": "9ca99337f1bfa19fe1a92ec0e946bd6c9deff0ea51b081045d1aa95417e2f7c8",
+    "scripts/postprocess_primary_uncertainty.py": "4e39f677ce1efcba9833994c6cc568166f303e34880156042b3644b112454fed",
+    "scripts/postprocess_primary_residuals.py": "bc4bb076c38a4525b67d86c08eb2dc8889269151dd6b0d72a9c0be033eee1666",
+    "scripts/plot_primary_development.py": "15f8b5dec0c4e94d3bfc0dad288f2bcd5c1baf34f397301f6eba596523fbfd3e",
+    "scripts/audit_coverage_regimes.py": "7ade8e7a26646bc459bda8361334ca32bdaba1c4e6ad67cc574c0cde31e02c27",
+    "src/hydra_directflow/coverage_analysis.py": "ed8507b28becf752f290999ba150200dce3149f0f4b69e56e98353e7709b2963",
+    "src/hydra_directflow/cache.py": "780cedd3d23a3c69d6468979f5f4adfd316dbdea19714118303aa2b38d2308f5",
+    "src/hydra_directflow/development_export.py": "472149f464d5634298ca9ad6d42b17f24270d9d56634226b7b4ab2c58efb0ab5",
+    "src/hydra_directflow/multicycle.py": "6028dbd8374e28a5cfbaea0108ebbdf770e1da66473a111b78f29c5a5a5e1879",
+    "src/hydra_directflow/telemetry.py": "50e28d1fcbbde444c6199324155a4114cae77ac2461e4f6b331933a2748e2791"
+  },
+  "test_sha256": {
+    "tests/test_post_data.py": "24bbc57d6da105057c57bf5761a37f94d9e382fda447e7ac41cece3b8b077a36",
+    "tests/test_post_events.py": "29fba1f1524c9d0645cd15d077138de24d8fe7223af124c4261a2d1c3122a9de",
+    "tests/test_post_uncertainty.py": "fb61a8cfcc8f56d3a08c2994e2ea6aa540f9acdcb24c7e388229b9379e0fbd11",
+    "tests/test_primary_postprocessing_controller.py": "3aff2218621a73b33ff5cacd94868ab1c0e1aa6197528fefae3a8003be9f1c92",
+    "tests/test_primary_events_stage.py": "f14a1c5982f3c5a9cfd74b306664583e78c9fc964440f310084062386eaddab6",
+    "tests/test_primary_uncertainty_stage.py": "bcbafbf132a2a51cd592a89aac30c71f899324a30626061cac82e8436ab9c1e9",
+    "tests/test_primary_residuals_stage.py": "a2c243ded32dbe170880786730929bf21dcd550d91b6083a5a8c035fc1a0c385"
+  },
+  "synthetic_bootstrap_benchmark": {
+    "origins": 8766,
+    "panels": 36,
+    "draws": 2000,
+    "block_hours": [
+      168,
+      336,
+      672
+    ],
+    "draw_seconds": [
+      0.383,
+      0.283,
+      0.253
+    ],
+    "scoring_seconds": [
+      0.835,
+      0.683,
+      0.609
+    ],
+    "peak_process_rss_bytes": 563101696
+  },
+  "independent_reviews": [
+    "prediction_reader_and_independent_metrics",
+    "event_catalog_and_reference_stage",
+    "paired_uncertainty_and_family_stage",
+    "controller_guards",
+    "figure_source_and_scientific_display"
+  ],
+  "real_study_postprocessing_executed": false,
+  "model_calls": 0,
+  "optimizer_updates": 0,
+  "protected_assessment_access": false,
+  "paid_cloud_jobs": 0
+}

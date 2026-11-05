@@ -1036,3 +1036,26 @@ unchanged. Full inputs exceed Q-only primary means in all 12 three-seed gauge/mo
 pairs, but H1 is lower in 11/12 and H18 higher in 12/12. This is preliminary
 development evidence, not an isolated-input effect, significance result or
 protected assessment.
+
+## Postprocessing implementation qualified — November 5
+
+The user requested continuing after all180fits completed. New, separate modules
+authenticate saved prediction values and original labels, independently recompute
+all physical metrics, preserve full origin calendars, retain the fixed event
+catalog, and implement the frozen paired seasonal-block analysis. The operational
+plan precharges1GiB inside the existing campaign output allowance, with persistent
+6h wall,3GiB memory,8GiB logicalread and8GiB free-space bounds. No training method,
+checkpoint, original artifact or protected-assessment gate is changed.
+
+The exact fixed stream split and descriptive residual lag grid are documented
+before real postprocessing. All93focused tests passed and independent reviews
+found no blocking issue. A realistic synthetic2000draw×36panel bootstrap used
+under1second for scoring per block length and peaked at563MBprocessRSS. These are
+synthetic qualification timings, not study findings. No model calls or optimizer
+updates were used. The subsequent real run must still pass all actual baseline
+and fixed scalar-reference checks before releasing intervals.
+
+The user separately approved33owned cloud-only reference-cache files totaling
+105,064bytes. All147required files (467,088bytes) were copied/verified resident
+with their exact checksums. The July2024development-export boundary is retained.
+No new USGS request, paid cloud job or protected access was made.

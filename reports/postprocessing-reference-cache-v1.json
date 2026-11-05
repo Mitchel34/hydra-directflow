@@ -1,0 +1,16 @@
+{
+  "schema": "hydra-postprocessing-reference-materialization/v1",
+  "status": "ALL147_VERIFIED_RESIDENT",
+  "verified_at_utc": "2026-11-05T16:39:06.857843+00:00",
+  "files": 147,
+  "bytes": 467088,
+  "approved_cloud_only_files": 33,
+  "approved_cloud_only_bytes": 105064,
+  "catalog_sha256": "8e82f613165a5d452c74a30783b02e1c0ae5fb5d93dbe2e338d0010c215e8c0a",
+  "months": "2020-07 through 2024-07",
+  "all_file_sha256_and_sizes_verified": true,
+  "original_qualifiers_and_source_identities_preserved": true,
+  "no_new_USGS_requests": true,
+  "protected_assessment_access": false,
+  "paid_cloud_jobs": 0
+}
