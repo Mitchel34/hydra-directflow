@@ -1,0 +1,16 @@
+{
+  "schema": "hydra-assessment-independent-audit-qualification/v1",
+  "status": "PASS",
+  "at_utc": "2026-11-06T19:17:21.094299+00:00",
+  "synthetic_tests_passed": 24,
+  "independent_rerun_tests_passed": 24,
+  "code_sha256": {
+    "scripts/audit_assessment_results.py": "cd656ebbd9e16f60ee3d5f1621f93b4d01717dd7d7d3855a87e341918883a43e",
+    "tests/test_assessment_result_audit.py": "4005e87109d8e4ea9e1f6dc62eaaf6b0c8188e7828284d2d2589fd508a8fd142"
+  },
+  "real_assessment_results_read": false,
+  "scientific_metrics_verified": false,
+  "qualification_scope": "Independent formulas, common support, all36 semantic barrier, all3 seeds, no learning, same persistent runtime budgets; no scientific conclusion yet",
+  "empty_input_cohort_rule": "All36 models constructed by first-pass; zero forward batches for an empty cohort",
+  "publication_findings": 0
+}

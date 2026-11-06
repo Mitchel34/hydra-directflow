@@ -1237,3 +1237,17 @@ Strict complete-H18 primary, per-lead valid-target secondary and same-support
 NWM H1–16 comparisons stay distinct. All three seeds are retained with descriptive
 mean/min/max; these are not confidence intervals. PBIAS is explicitly defined
 as100 × sum(prediction − observation) / sum(observation).
+
+## Independent assessment audit qualification — November 6
+
+The separate result-audit implementation passed24 synthetic tests and an
+independent24-test rerun. It recomputes primary18, per-lead secondary and paired
+NWM16 metrics with independent formulas, then checks all three seed aggregates,
+source/semantic barriers, exact support and original resource accounting.
+Empty input cohorts retain the controller's36-model construction accounting
+while producing zero forwards for those cohorts. No real assessment metric
+was accessed during this qualification; the actual audit awaits POINT_RESULTS.
+
+An explicit checkpoint resume follows the interrupted preprocessing attempt.
+The original clock, consumed allowances and593 verified cycle caches remain;
+no model construction or forward had occurred before interruption.
