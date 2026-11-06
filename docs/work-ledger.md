@@ -1190,3 +1190,18 @@ is still 1,151,690. A reporting-helper field-name correction required no scienti
 replay. All 12 Phase A completion criteria are verified in the completion receipt;
 the private handoff is updated. No worker is active. The bounded Phase A goal is
 complete; the poster, optional repairs and protected assessment remain distinct.
+
+## Assessment source and timing qualification — November 6
+
+The user requested saved-weight assessment inference and exact-cutoff NWM
+comparison, and approved bounded assessment staging (16 GiB, 4,000 GCS GETs,
+$5 estimated charges within the existing $150 ceiling, plus five owned USGS
+files totaling 1,371,323 bytes). All13 required USGS months and the manifest are
+now verified locally. All1,463 HRRR archive identities are resolved; the first
+128 archives were prefetched as opaque bytes. No assessment numerical inputs,
+forecasts or scores were produced by this source-preparation chunk.
+
+The additive calendar, source transport and NWM normalization components passed
+132 tests including70 new assessment fixtures. Original development guards remain
+unchanged. NWM supports originH1–16 from exactC−2 issues; H17–18 stay unsupported.
+The public qualification report contains code hashes and no private source paths.

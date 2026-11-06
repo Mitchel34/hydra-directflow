@@ -1,0 +1,33 @@
+{
+  "schema": "hydra-assessment-source-qualification/v1",
+  "status": "PASS",
+  "at_utc": "2026-11-06T18:41:24.337573+00:00",
+  "tests_passed": 132,
+  "new_assessment_tests": 70,
+  "test_modules": [
+    "test_assessment_contract",
+    "test_assessment_sources",
+    "test_assessment_nwm",
+    "test_contracts",
+    "test_staging",
+    "test_lineage"
+  ],
+  "code_sha256": {
+    "src/hydra_directflow/assessment_contract.py": "a5ac11512c75a12e5b44a5befab46ac6d674cd446044ce2d51dd54325b7c5cc6",
+    "src/hydra_directflow/assessment_sources.py": "eada3c019546f39d78c1b9dfc3172b4539d2963583ef496e35380dbd06391534",
+    "src/hydra_directflow/assessment_nwm.py": "04bd81466f523bbf8d341897532f0395e5663f9a08e61bec6d812ee6f7ded823",
+    "tests/test_assessment_contract.py": "1e79861a2763510381ac87fea0b44e31ae1a14a9e2e42cbafa71dba071f76b39",
+    "tests/test_assessment_sources.py": "05fb1ff949702c007571a98dd91af079ee570a18ad29030794b3b2c603f0e006",
+    "tests/test_assessment_nwm.py": "5651b2f13c7be5cf68fa197820d708db4ab8b6a6fac03a0f8ec12a7451d1aafa"
+  },
+  "new_scientific_training": false,
+  "assessment_inference_performed": false,
+  "assessment_scores_computed": false,
+  "old_development_guards_modified": false,
+  "staging_state": "Owned13USGSmonths+manifest resident;1463HRRRidentities resolved;128opaquearchives prefetched",
+  "approved_gcs_bytes": 17179869184,
+  "approved_gcs_gets": 4000,
+  "approved_estimated_usd": 5,
+  "within_combined_ceiling_usd": 150,
+  "publication_check_findings": 0
+}
