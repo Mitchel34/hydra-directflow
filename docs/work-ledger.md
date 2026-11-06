@@ -1205,3 +1205,20 @@ The additive calendar, source transport and NWM normalization components passed
 132 tests including70 new assessment fixtures. Original development guards remain
 unchanged. NWM supports originH1–16 from exactC−2 issues; H17–18 stay unsupported.
 The public qualification report contains code hashes and no private source paths.
+
+## Assessment inference readiness — November 6
+
+The additive reader/cache/inference/runtime/controller path passed the integrated
+187-test assessment suite;96 tests cover this inference chunk. Independent
+reader/inference, cache and runtime/controller reviews passed. A metadata-only
+preflight authenticated36 exact FULL L168 best checkpoints, all1,463 source
+candidates and original training memberships; no assessment numerical read or
+forward had occurred at the qualification checkpoint. All224 prefetched archives
+remain opaque, with629 charged GCS GETs and a conservative $0.508967 estimate.
+
+The separate execution plan binds code and original source/checkpoint identities.
+Original development guards and1,151,690 training updates remain unchanged.
+Source is_core flags are retained as acquisition ownership/padding provenance,
+while explicit assessment windows and native-month ownership determine returned
+rows. Tests preserve the authorized finalH18 tail through2025-07-31 17Z.
+The final scoring controller has a separate release before verification reads.

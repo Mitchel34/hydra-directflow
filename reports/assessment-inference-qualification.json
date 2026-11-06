@@ -1,0 +1,31 @@
+{
+  "schema": "hydra-assessment-inference-qualification/v1",
+  "status": "PASS",
+  "at_utc": "2026-11-06T18:50:11.746182+00:00",
+  "integrated_assessment_tests_passed": 187,
+  "this_chunk_tests_within_integrated_run": 96,
+  "code_sha256": {
+    "src/hydra_directflow/assessment_data.py": "aeeace768db7583676e9e7b25e3f74a3265c63bf28c7d15db5ec32e535921b6b",
+    "src/hydra_directflow/assessment_inference.py": "664cb7b2c2779f4dbf456fe2bfa7b81c0a4e5d4d248409b78e7fa2b54c09fde0",
+    "src/hydra_directflow/assessment_runtime.py": "ff997fd5c2fe286ca7e0e2824a0e82152ed8635b9de4c42d6fa61a06d66292fa",
+    "scripts/assessment_prepare_inputs.py": "1240d8096f158a7b3f425e7b10d915df2d592ff7648eed9c98fdbda1891be28c",
+    "scripts/run_assessment_first_pass.py": "4c73908b1687ddcdbb091ac7c9eea1f9685fd1cf85f7fab0694b1eec95126c04"
+  },
+  "preflight": "36pinnedcheckpoints,1463candidatecycles,exactsourceandcodebindingsverified",
+  "execution_plan_sha256": "acd38d2e6a0568923054c2c0c6f0cc4264f197fa6042111da555c1866e7d48f2",
+  "original_optimizer_updates": 1151690,
+  "new_optimizer_updates": 0,
+  "scaler_fits": 0,
+  "assessment_numeric_values_decoded_at_qualification": false,
+  "assessment_forecasts_generated_at_qualification": 0,
+  "independent_reviews": [
+    "reader-inference",
+    "reader-preparation",
+    "runtime-controller"
+  ],
+  "source_staged_opaque_cycles": 224,
+  "source_estimated_read_transfer_usd": 0.508967,
+  "source_get_attempts": 629,
+  "publication_findings": 0,
+  "scoring_controller_release": "Separate qualification before verification-role reads"
+}
