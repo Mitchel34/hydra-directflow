@@ -1222,3 +1222,18 @@ Source is_core flags are retained as acquisition ownership/padding provenance,
 while explicit assessment windows and native-month ownership determine returned
 rows. Tests preserve the authorized finalH18 tail through2025-07-31 17Z.
 The final scoring controller has a separate release before verification reads.
+
+## Assessment point-scoring qualification — November 6
+
+The separate scorer and controller passed128 combined tests, including16 pure
+metric tests and15 controller fixtures. Independent review passed. Every saved
+prediction product must match its exact checkpoint, input-source/cohort identity,
+calendar, complete-input admission and chronological B64 receipts before NWM
+or verification targets are opened. A durable semantic barrier binds target-role
+access; the earlier structural barrier is retained. No assessment score was
+computed during this qualification.
+
+Strict complete-H18 primary, per-lead valid-target secondary and same-support
+NWM H1–16 comparisons stay distinct. All three seeds are retained with descriptive
+mean/min/max; these are not confidence intervals. PBIAS is explicitly defined
+as100 × sum(prediction − observation) / sum(observation).

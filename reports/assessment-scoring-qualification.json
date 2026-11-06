@@ -1,0 +1,27 @@
+{
+  "schema": "hydra-assessment-scoring-qualification/v1",
+  "status": "PASS",
+  "at_utc": "2026-11-06T18:55:37.955298+00:00",
+  "combined_tests_passed": 128,
+  "new_scoring_tests": 16,
+  "score_controller_tests": 15,
+  "code_sha256": {
+    "scripts/run_assessment_scores.py": "dafc7e6d25e1929115ecb112154884f2fdb5a0fbffc4b5bc6defc85ce0363972",
+    "src/hydra_directflow/assessment_scoring.py": "64cd63d8bd3741fadf6d4d79111c7a2985b806a5b65f2c338097510721a22f46",
+    "tests/test_assessment_scoring.py": "1d1c73c023118245a99b54e42f7f784c8bfcb786cf2ec57ea5b8e7ff768b9a75",
+    "tests/test_assessment_score_controller.py": "4f2e7024282d254aec726bca78b14f706191c797b7e772ccc492728f52b60855"
+  },
+  "independent_review": "PASS",
+  "barrier": "All36 semantic predictions verified before NWM or verification target reads; target authority bound to semantic artifact SHA",
+  "paired_leads": [
+    1,
+    16
+  ],
+  "hydra_primary_leads": [
+    1,
+    18
+  ],
+  "three_seed_descriptive_ranges_not_confidence_intervals": true,
+  "scientific_scores_computed_at_qualification": false,
+  "publication_findings": 0
+}
