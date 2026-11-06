@@ -1174,3 +1174,19 @@ Phase B packet now contains measured throughput, a conservative 54-minute planni
 estimate and proposed finite limits. Its real scientific execution and all new
 training remain unapproved. The development-results poster is the next study
 deliverable; Phase A completion does not authorize protected assessment.
+
+## Phase A publication and closure — November 5
+
+Results commit a0077abae5e918304ee8692ac5e2d1325a1d1a9a was pushed and matched
+the remote main ref. Independent aggregate review checked 144 seed reports,
+12,960 support panels and 25,920 metric means; public artifact review and all
+five visual checks passed. The unchanged publication checker found zero issues.
+Both Phase A bookkeeping/publication reservations and the original campaign's
+Phase A reservation were settled without refunding unused allowances. Final
+reservations are 6,397,053,055 logical-read bytes and 578,861,442 Phase A output
+bytes; the parent global reservation remains 5,140,232,046 bytes. All limits
+and the original deadline remain unchanged, and the original training counter
+is still 1,151,690. A reporting-helper field-name correction required no scientific
+replay. All 12 Phase A completion criteria are verified in the completion receipt;
+the private handoff is updated. No worker is active. The bounded Phase A goal is
+complete; the poster, optional repairs and protected assessment remain distinct.

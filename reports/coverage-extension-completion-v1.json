@@ -1,0 +1,135 @@
+{
+  "schema": "hydra-phase-a-completion/v1",
+  "status": "PHASE_A_REVIEWED_PUBLISHED_AND_CLOSED",
+  "completed_at_utc": "2026-11-06T04:49:29.719789+00:00",
+  "results_commit": "a0077abae5e918304ee8692ac5e2d1325a1d1a9a",
+  "verified_remote_results_commit": "a0077abae5e918304ee8692ac5e2d1325a1d1a9a",
+  "definition_of_done": [
+    {
+      "id": 1,
+      "requirement": "Reconcile current state and preserve completed primary work",
+      "status": "PASSED",
+      "evidence": [
+        "reports/coverage-extension-reconciliation-v1.json",
+        "reports/primary-training-completion-v1.json"
+      ]
+    },
+    {
+      "id": 2,
+      "requirement": "Freeze Phase A specification and private execution plan",
+      "status": "PASSED",
+      "evidence": [
+        "configs/coverage-extension-protocol-v1.json",
+        "reports/coverage-extension-execution-qualification-v1.json"
+      ]
+    },
+    {
+      "id": 3,
+      "requirement": "Authenticate all72 existing correct checkpoints",
+      "status": "PASSED",
+      "evidence": [
+        "reports/coverage-extension-final-verification-v1.json"
+      ]
+    },
+    {
+      "id": 4,
+      "requirement": "Commit target-free input eligibility and route map",
+      "status": "PASSED",
+      "evidence": [
+        "reports/coverage-extension-v1/summary.json"
+      ]
+    },
+    {
+      "id": 5,
+      "requirement": "Reproduce all72 original clean predictions exactly",
+      "status": "PASSED",
+      "evidence": [
+        "reports/coverage-extension-final-verification-v1.json"
+      ]
+    },
+    {
+      "id": 6,
+      "requirement": "Commit both input-only products and routed outputs",
+      "status": "PASSED",
+      "evidence": [
+        "reports/coverage-extension-final-verification-v1.json"
+      ]
+    },
+    {
+      "id": 7,
+      "requirement": "Per-lead approved target scoring and independent metric checks",
+      "status": "PASSED",
+      "evidence": [
+        "reports/coverage-extension-final-verification-v1.json"
+      ]
+    },
+    {
+      "id": 8,
+      "requirement": "All models/seeds/cohorts coverage/events/errors/costs reported",
+      "status": "PASSED",
+      "evidence": [
+        "reports/coverage-extension-v1/summary.json",
+        "docs/coverage-extension-review.md"
+      ]
+    },
+    {
+      "id": 9,
+      "requirement": "Finite bounds and zero learning verified",
+      "status": "PASSED",
+      "evidence": [
+        "reports/coverage-extension-final-verification-v1.json"
+      ]
+    },
+    {
+      "id": 10,
+      "requirement": "Tested publication-checked commits pushed with verified remote receipt",
+      "status": "PASSED",
+      "evidence": [
+        "a0077abae5e918304ee8692ac5e2d1325a1d1a9a"
+      ]
+    },
+    {
+      "id": 11,
+      "requirement": "Findings, limitations and Phase B decision packet delivered",
+      "status": "PASSED",
+      "evidence": [
+        "docs/coverage-extension-review.md",
+        "docs/coverage-extension-phase-b-decision.md"
+      ]
+    },
+    {
+      "id": 12,
+      "requirement": "Keep Phase B real runs, new training/cloud/downloads/assessment unapproved",
+      "status": "PASSED",
+      "evidence": [
+        "docs/coverage-extension-phase-b-decision.md"
+      ]
+    }
+  ],
+  "final_counters": {
+    "deadline": 1793944777.2729018,
+    "entered_cases": 600996,
+    "confirmed_cases": 600996,
+    "entered_batches": 9420,
+    "confirmed_batches": 9420,
+    "entered_models": 120,
+    "confirmed_models": 120,
+    "read_reserved": 6397053055,
+    "output_reserved": 578861442,
+    "infrastructure_resumes": 0
+  },
+  "output_settlement_status": "VERIFIED",
+  "phase_global_reservation_bytes": 1073741824,
+  "phase_artifact_closure_snapshot_bytes": 462475662,
+  "original_global_reservation_bytes": 5140232046,
+  "original_scientific_updates": 1151690,
+  "reservations_refunded": false,
+  "new_training": 0,
+  "scaler_fits": 0,
+  "paid_jobs": 0,
+  "new_downloads": 0,
+  "protected_assessment_access": false,
+  "phase_b_real_execution_authorized": false,
+  "whole_AGU_study_complete": false,
+  "next_study_deliverable": "Development-results poster using existing AGU layout; optional Phase B requires separate review"
+}
