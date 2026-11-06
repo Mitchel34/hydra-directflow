@@ -1,0 +1,101 @@
+{
+  "schema": "hydra-phase-a-final-verification/v1",
+  "status": "FINAL_NUMERICAL_AGGREGATE_AND_VISUAL_REVIEW_PASSED",
+  "phase_plan_sha256": "09c7a35c0d38b47e3e0325a678c970851849aa48888ea1d9cdc7069748f58d01",
+  "completed_tasks": 152,
+  "completed_attempts": 152,
+  "artifact_files": 1095,
+  "artifact_bytes": 385299472,
+  "artifact_inventory_sha256": "99ce31e6db4a94d272f20414a1a6e507a71e81b9a9e282a24a1e564814d51136",
+  "clean_regressions": 72,
+  "expanded_tasks": 72,
+  "distinct_checkpoints": 72,
+  "model_constructions": 120,
+  "confirmed_cases": 600996,
+  "confirmed_batches": 9420,
+  "global_clean_barrier_preceded_expanded": true,
+  "global_prediction_barrier_preceded_target_evaluation": true,
+  "original_common_check_count": 72,
+  "product_score_count": 144,
+  "seed_aggregate_count": 48,
+  "independent_verification": {
+    "lead_panels": 12960,
+    "maximum_absolute_metric_difference": 1.4551915228366852e-11,
+    "product_reports": 144,
+    "relative_absolute_tolerance": 1e-10
+  },
+  "inference_scoring_report_seconds": 1372.9569914340973,
+  "original_execution_finished_unix": 1793924550.2298932,
+  "persistent_deadline_unix": 1793944777.2729018,
+  "optimizer_updates": 0,
+  "scaler_fits": 0,
+  "paid_cloud_jobs": 0,
+  "protected_assessment_access": false,
+  "peak_combined_rss_bytes": 1861255168,
+  "peak_mps_bytes": 1248591872,
+  "minimum_free_disk_bytes": 21566558208,
+  "infrastructure_resumes": 0,
+  "verification_receipts": 144,
+  "verification_receipt_statuses": [
+    "INDEPENDENT_METRICS_AND_COUNTS_MATCH"
+  ],
+  "clean_byte_exact_receipts": 72,
+  "maximum_original_common_metric_difference": 2.842170943040401e-14,
+  "reviewed_at_utc": "2026-11-06T04:43:21.007772+00:00",
+  "original_training_updates": 1151690,
+  "original_training_fits_completed": 180,
+  "primary_protocol_sha256": "3d94d182e1a22a84f3cd55b8824670821492e86a2ec015a465b155dcb91015f4",
+  "all_114_frozen_code_hashes_match": true,
+  "qualified_unique_synthetic_tests": 181,
+  "qualified_test_file_hashes_unchanged": true,
+  "visual_review": {
+    "status": "ALL5_FIGURES_VISUALLY_REVIEWED",
+    "figures": [
+      "phase-a-fixed-events-H01.svg",
+      "phase-a-fixed-events-H18.svg",
+      "phase-a-high_flow_coverage.svg",
+      "phase-a-paired_routed_l24.svg",
+      "phase-a-valid_target_coverage.svg"
+    ],
+    "review": "Legible axes, units, coverage gaps, fixed events, seed-range caveats and no unsupported uncertainty labels"
+  },
+  "resource_reservations": {
+    "logical_read_bytes": 6397053055,
+    "phase_output_bytes": 578861442,
+    "parent_global_output_bytes": 5140232046,
+    "read_cap_bytes": 8589934592,
+    "phase_output_cap_bytes": 1073741824,
+    "parent_output_cap_bytes": 8589934592,
+    "includes_review_reservations": true
+  },
+  "review_scope": "Saved development products and committed input-only masks; no scientific run or worker restart",
+  "phase_b": {
+    "status": "PROPOSED_NOT_AUTHORIZED",
+    "structural_census": "reports/coverage-extension-phase-b-census-v1.json",
+    "decision_packet": "docs/coverage-extension-phase-b-decision.md",
+    "real_repairs": 0
+  },
+  "publication_check": {
+    "candidate_files": 506,
+    "findings": 0,
+    "raw_arrays_checkpoints_and_PNGs_excluded": true
+  },
+  "report_accounting_snapshot_is_before_final_review": true,
+  "remote_push_receipt": "Recorded in the private handoff after the publication commit",
+  "independent_aggregate_review": {
+    "status": "PASSED",
+    "detail_file_hashes": 48,
+    "seed_reports": 144,
+    "lead_cohort_support_panels": 12960,
+    "aggregate_metric_means_recomputed": 25920,
+    "raw_source_arrays_read": false,
+    "artifact_read_bytes_including_retained_failed_analysis_pass": 48402937
+  },
+  "independent_publication_review": {
+    "status": "PASSED",
+    "artifact_read_bytes": 32304828,
+    "all_cohorts_and_seeds_retained": true,
+    "material_blockers": 0,
+    "phase_b_sample_and_disjoint_gap_clarifications_added": true
+  }
+}

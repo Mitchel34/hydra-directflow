@@ -11,6 +11,14 @@ sensitivities, residual diagnostics and [seven SVG figures](figures/development-
 Residual-dependence interpretation and poster review remain pending. Protected
 assessment is sealed and paid cloud jobs remain held.
 
+The separately registered [Phase A coverage extension](docs/coverage-extension-review.md)
+has completed inference and independent scoring with the existing models. Input-only
+admission and clean L24 fallback provide forecast availability of 100.00%, 98.25%
+and 95.73% at Jefferson, Galax and Sugar Grove. Availability is not accuracy:
+large peak errors and remaining gaps are documented alongside five new figures.
+The [short-gap repair decision packet](docs/coverage-extension-phase-b-decision.md)
+is proposed only; it does not authorize another run.
+
 The experiment includes LSTM, Transformer, GRU–Transformer and
 Mamba2–Transformer. NWM is an external comparator. Three-seed development results are now available; protected-assessment skill
 has not been measured. Synthetic model checks and data smoke tests remain

@@ -1136,3 +1136,41 @@ charges; exactly one diagnosed infrastructure supervision resume is allowed with
 the same clock and caps, while numerical/integrity failures remain visible.
 Figure rendering is local and precharged; public exports stay sanitized SVG/JSON/MD.
 Real execution and final outcome evidence remain pending at this checkpoint.
+
+## Phase A executed, audited and prepared for publication — November 5
+
+Execution plan 09c7a35c0d38b47e3e0325a678c970851849aa48888ea1d9cdc7069748f58d01
+completed all 152 tasks at 2026-11-06T00:22:30Z, in 1,372.957 seconds. All 72
+existing checkpoint predictions reproduced byte-exactly before expanded inference.
+All requested predictions committed before target decoding. There were 600,996
+confirmed case/checkpoint forwards, 9,420 batches, 120 model constructions using
+72 distinct checkpoints, and no failed attempt or infrastructure resume. New
+training/scaler fitting, downloads, paid jobs and protected access remained zero.
+The original 1,151,690 scientific-update counter and frozen code/protocol remain
+unchanged. An agent authentication failure at 00:10:03Z interrupted supervision,
+while the detached qualified process completed normally; no worker was restarted.
+
+All 144 product reports and 48 three-seed aggregates were produced. The independent
+metric/count implementation checked 12,960 per-lead panels (maximum metric
+difference 1.46e-11). All 72 original-common checks passed; 1,095 referenced
+artifact hashes were verified during final review. All five scientific figures
+were visually checked. Final report/publication review has separately precharged
+896 MiB logical reads and 64 MiB output inside the original Phase A envelope;
+unused reservations are not refunded or used for scientific repairs.
+
+The router adds 1,651 gauge/origin cases, reaching 100%, 98.25% and 95.73%
+issuance availability. Galax and Sugar Grove known-high-cell coverage reaches
+87.85% and 96.74%, but Galax H1–H3 at its largest peak remain unavailable and
+Sugar Grove's largest peak remains substantially underestimated. Routed-minus-L24
+mean NSE is positive in 3/12 and negative in 9/12 gauge/model panels on identical
+support; this does not support a universal advantage for L168-first routing.
+No new policy uncertainty or routed weather/soil attribution is claimed.
+
+A no-forward structural census applied the exact proposed K1/K2 total-slot caps,
+leading-gap exclusion and original admissible endpoint constraints. Seven fixtures
+and six vectorized-versus-rowwise checks passed. K2 could add 50 Galax and 82
+Sugar Grove origins; one additional Galax origin has no evaluable targets. The
+Phase B packet now contains measured throughput, a conservative 54-minute planning
+estimate and proposed finite limits. Its real scientific execution and all new
+training remain unapproved. The development-results poster is the next study
+deliverable; Phase A completion does not authorize protected assessment.

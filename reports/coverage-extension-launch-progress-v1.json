@@ -1,0 +1,46 @@
+{
+  "schema": "hydra-phase-a-launch-progress/v1",
+  "status": "RUNNING_CLEAN_REGRESSION_NOT_EXPANDED_OR_SCORED",
+  "observed_at_utc": "2026-11-06T00:07:19.240541+00:00",
+  "phase_plan_sha256": "09c7a35c0d38b47e3e0325a678c970851849aa48888ea1d9cdc7069748f58d01",
+  "implementation_commit": "21fe159",
+  "opaque_checkpoints_verified": 72,
+  "gradient_memberships": 3,
+  "input_route_origin_counts": {
+    "03161000": {
+      "L168": 8766,
+      "L24": 0,
+      "UNAVAILABLE": 0
+    },
+    "03164000": {
+      "L168": 8181,
+      "L24": 432,
+      "UNAVAILABLE": 153
+    },
+    "03479000": {
+      "L168": 7365,
+      "L24": 1027,
+      "UNAVAILABLE": 374
+    }
+  },
+  "input_only_route_maps_committed": true,
+  "clean_completed": 34,
+  "forward_counters": {
+    "confirmed_batches": 4488,
+    "confirmed_cases": 287146,
+    "confirmed_models": 35,
+    "entered_batches": 4488,
+    "entered_cases": 287146,
+    "entered_models": 35,
+    "infrastructure_resumes": 0,
+    "output_reserved": 149984626,
+    "read_reserved": 1307172546
+  },
+  "timing_preflight_status": "FIXED_REAL_CLEAN_PROFILE_PASSED",
+  "conservative_remaining_seconds_at_preflight": 4714.634757741055,
+  "target_values_loaded": false,
+  "optimizer_updates": 0,
+  "scaler_fits": 0,
+  "protected_assessment_access": false,
+  "paid_cloud_jobs": 0
+}
