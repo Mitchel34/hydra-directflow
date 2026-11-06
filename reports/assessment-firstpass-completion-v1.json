@@ -43,7 +43,7 @@
     "precharged_body_bytes": 12059307723
   },
   "runtime_managed_output_reserved_bytes": 1519052066,
-  "external_result_and_poster_copy_bytes": 8103397,
+  "external_result_and_poster_copy_bytes": 8101390,
   "combined_output_bytes_below_2GiB": true,
   "peak_combined_rss_mps_bytes": 1804369920,
   "peak_mps_bytes": 1164673024,

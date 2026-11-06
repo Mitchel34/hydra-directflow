@@ -55,7 +55,7 @@ def export(source,expected,directory):
     # Keeping aggregates once in summary and all seeds in separate model files
     # avoids a multi-megabyte public blob while preserving every audit value.
     write('summary.json',encoded(summary))
-    stream=io.StringIO(newline='');writer=csv.DictWriter(stream,fieldnames=list(csv_rows[0]));writer.writeheader();writer.writerows(csv_rows)
+    stream=io.StringIO(newline='');writer=csv.DictWriter(stream,fieldnames=list(csv_rows[0]),lineterminator='\n');writer.writeheader();writer.writerows(csv_rows)
     write('lead-metrics.csv',stream.getvalue().encode())
     rows=[]
     for g,site in zip(GAUGES,SITES):
