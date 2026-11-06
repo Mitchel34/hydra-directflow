@@ -1,0 +1,8 @@
+{
+  "event_audit_sha256": "9eb49b2f189dd86dea7ec81affd2e78482843d02fc60fbb2bda2b17ddb68286f",
+  "hydrograph_trace_csvs_published": false,
+  "raw_weights_published": false,
+  "raw_year_arrays_published": false,
+  "source_figure_manifest_sha256": "ce0566297f8cf56fa636d05b85f8870a155e44452b486f87f16a0ec0a9f80cc3",
+  "svg_publication_formatting": "Trailing ASCII whitespace removed; XML text, attributes and path-token semantics verified unchanged; original hashes in source figure manifest"
+}

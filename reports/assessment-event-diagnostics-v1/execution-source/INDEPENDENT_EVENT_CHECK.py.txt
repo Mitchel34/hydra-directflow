@@ -1,0 +1,246 @@
+"""Independent NumPy/scalar checks; deliberately imports no diagnostic helpers."""
+import os
+for key in ('OMP_NUM_THREADS','MKL_NUM_THREADS','OPENBLAS_NUM_THREADS'):os.environ[key]='1'
+import pathlib,json,hashlib,sqlite3,io,zipfile,time,math,shutil,gc
+import numpy as np
+import psutil
+BASE=pathlib.Path(__file__).resolve().parent;ROOT=BASE.parents[1];OLD=ROOT/'.local/assessment-v1'
+PROTOCOL='d83f32fa2163f1b85616edacf07507f192dc4b7afc6fe43e3c3496ab55d9ea4f'
+RESULTS='6bae6b40e622bfe5d446a8539425a3842d42561173cec5591ea9842ce08798f1'
+AUDIT='ffe5e6755d5e6a2d67cc8fd50ef8aa116938cdbd65b6ebd197eaea474ef66d27'
+HEAD='8b505b9f54c10440dff15b099c4297a709dc1521277a9d490f012c2c00bb4dda'
+PLAN='acd38d2e6a0568923054c2c0c6f0cc4264f197fa6042111da555c1866e7d48f2'
+ARCH=('LSTM','Transformer','GRU_Transformer','Mamba2_Transformer');SEEDS=(17,29,43);H=3600
+C=np.arange(1722384000,1753920000,H,dtype=np.int64);F=C[:,None]+np.arange(1,19)*H
+ATOL=1e-10;RTOL=1e-12;started=time.time();nread=0;peak=0;sources={};scalars=0;maxabs=0.;maxscaled=0.;panels=0
+
+def sha(raw):return hashlib.sha256(raw).hexdigest()
+def encode(x):return (json.dumps(x,sort_keys=True,indent=2,allow_nan=False)+'\n').encode()
+def digest(x):return sha(json.dumps(x,sort_keys=True,separators=(',',':'),allow_nan=False).encode())
+def resources():
+ global peak
+ rss=psutil.Process().memory_info().rss;peak=max(peak,rss)
+ assert rss<2*1024**3 and shutil.disk_usage(BASE).free>=8*1024**3 and time.time()-started<3600
+
+def read(path,expected=None,size=None):
+ global nread
+ p=pathlib.Path(path);s=p.lstat();assert p.is_absolute() and p==p.resolve() and p.is_file() and not s.st_flags&0x40000000
+ assert 0<s.st_size<=32*1024**2 and (size is None or size==s.st_size)
+ assert nread+s.st_size<=256*1024**2;nread+=s.st_size;resources()
+ raw=p.read_bytes();a=p.lstat();assert (s.st_ino,s.st_size,s.st_mtime_ns)==(a.st_ino,a.st_size,a.st_mtime_ns)
+ assert expected is None or sha(raw)==expected
+ sources[str(p)]={'bytes':len(raw),'sha256':sha(raw)};return raw
+
+def artifact(desc,fields=None):
+ path=pathlib.Path(desc['path']);path=path if path.is_absolute() else OLD/path
+ raw=read(path,desc['sha256'],desc['bytes'])
+ if path.suffix!='.npz':return json.loads(raw)
+ with zipfile.ZipFile(io.BytesIO(raw)) as z:
+  assert len(z.infolist())<=64 and len({e.filename for e in z.infolist()})==len(z.infolist()) and sum(e.file_size for e in z.infolist())<512*1024**2
+ with np.load(io.BytesIO(raw),allow_pickle=False) as z:return {k:z[k] for k in (fields or z.files)}
+
+def commit(key):
+ body,stamp=con.execute('select body,sha256 from commits where key=?',(key,)).fetchone();v=json.loads(body)
+ assert digest(v)==stamp and v['plan_sha256']==PLAN;return v
+
+def equal(actual,expected):
+ global scalars,maxabs,maxscaled
+ if expected is None:assert actual is None;return
+ if isinstance(expected,(bool,str,int,np.integer)):
+  assert actual==expected,(actual,expected);return
+ assert isinstance(actual,(int,float)) and math.isfinite(actual) and math.isfinite(float(expected)),(actual,expected)
+ expected=float(expected);diff=abs(actual-expected);scale=ATOL+RTOL*abs(expected)
+ maxabs=max(maxabs,diff);maxscaled=max(maxscaled,diff/scale);scalars+=1
+ assert diff<=scale,(actual,expected,diff,scale)
+
+def stats(y,p,row):
+ global panels
+ n=len(y);equal(row['n'],n)
+ if not n:
+  for key in ('sse','physical_mse','rmse','mae','bias'):equal(row[key],None)
+  equal(row['status'],'UNAVAILABLE_NO_MATCHED_TARGETS');panels+=1;return
+ err=p-y;sse=float(np.sum(err**2,dtype=np.float64));mse=sse/n
+ for key,value in dict(sse=sse,physical_mse=mse,rmse=np.sqrt(mse),mae=float(np.mean(np.abs(err))),bias=float(np.mean(err))).items():equal(row[key],value)
+ equal(row['status'],'AVAILABLE_DESCRIPTIVE');panels+=1
+
+def peak_metrics(p,t,mask,event,row):
+ at=(t==event['peak_epoch'])&mask;idx=np.flatnonzero(at)
+ expected_peak=row['at_observed_peak']
+ if len(idx):
+  assert len(idx)==1;value=float(p[idx[0]])
+  equal(expected_peak['status'],'AVAILABLE_AT_OBSERVED_PEAK')
+  equal(expected_peak['prediction_q_cms'],value);equal(expected_peak['error_cms'],value-event['observed_peak_q_cms'])
+  equal(expected_peak['ratio_to_observed_peak'],value/event['observed_peak_q_cms'])
+ else:
+  equal(expected_peak['status'],'UNAVAILABLE_AT_OBSERVED_PEAK')
+  for key in ('prediction_q_cms','error_cms','ratio_to_observed_peak'):equal(expected_peak[key],None)
+ trace=row['fixed_lead_trace_maximum'];loc=np.flatnonzero(mask)
+ if not len(loc):
+  for key in ('q_cms','valid_epoch','timing_from_selected_observed_peak_hours'):equal(trace[key],None)
+  equal(trace['coverage_complete'],False)
+ else:
+  i=loc[int(np.argmax(p[loc]))];equal(trace['q_cms'],float(p[i]));equal(trace['valid_epoch'],int(t[i]))
+  equal(trace['timing_from_selected_observed_peak_hours'],(int(t[i])-event['peak_epoch'])/H if len(idx) else None)
+  equal(trace['coverage_complete'],len(loc)==event['reference_requested_hours'])
+
+def spread(row,values):
+ equal(row['total_seeds'],3);equal(row['defined_seeds'],sum(v is not None for v in values))
+ if any(v is None for v in values):
+  for k in ('mean','min','max'):equal(row[k],None)
+ else:
+  equal(row['mean'],sum(values)/3);equal(row['min'],min(values));equal(row['max'],max(values))
+
+try:
+ assert not (BASE/'CHECKS.json').exists() and not (BASE/'CHECKS_FAILURE.json').exists()
+ protocol=json.loads(read(ROOT/'configs/assessment-event-diagnostics-v1.json',PROTOCOL))
+ result=json.loads(read(BASE/'RESULTS.json',RESULTS));assert result['protocol_sha256']==PROTOCOL and result['original_runtime_unchanged']
+ assert all(result[k]==0 for k in ('new_downloads','new_forwards','new_scaler_fits','new_training_updates'))
+ con=sqlite3.connect('file:'+str(OLD/'assessment-runtime.sqlite3')+'?mode=ro',uri=True);con.execute('PRAGMA query_only=ON')
+ before=con.execute('select body from state').fetchone()[0];state=json.loads(before);assert state['owner'] is None and state['failure'] is None
+ ac=commit('INDEPENDENT_POINT_AUDIT');assert ac['artifacts']['private_audit']['sha256']==AUDIT
+ audited=artifact(ac['artifacts']['private_audit']);assert audited['status']=='PASS'
+ public=artifact(ac['artifacts']['public_summary']);assert ac['artifacts']['public_summary']['sha256']==protocol['source_aggregate_sha256']
+ semantic=commit('SEMANTIC_PREDICTION_BARRIER');assert semantic['artifacts']['barrier']['sha256']==audited['hashes']['semantic_barrier_sha256']
+ targets=commit('VERIFICATION_TARGETS');assert targets['metadata']['prediction_barrier_sha256']==audited['hashes']['semantic_barrier_sha256']
+ nwcommit=commit('NWM_MATCHED_INPUT');inventory=artifact(commit('INPUTS')['artifacts']['inventory'])
+ threshold=json.loads(read(ROOT/protocol['threshold_authority'],protocol['threshold_authority_sha256']))
+ heads=json.loads(read(BASE/'HEAD_BOUNDS.json',HEAD));assert heads['original_runtime_unchanged'] if 'original_runtime_unchanged' in heads else heads['original_runtime_body_unchanged']
+ assert heads['original_runtime_state_sha256']==sha(before.encode())
+ bounds={x['job_id']:x for x in heads['records']};assert len(bounds)==24
+ summary_hashes={};plot_hashes={};gauge_checks={};capacity=[]
+ for gauge in ('03161000','03164000'):
+  out=result['outputs'][gauge];summary=artifact(out['summary']);plot=artifact(out['plot']);catalog_file=artifact(out['catalog'])
+  summary_hashes[gauge]=out['summary']['sha256'];plot_hashes[gauge]=out['plot']['sha256']
+  assert summary['protocol_sha256']==PROTOCOL and summary['source_audit_sha256']==AUDIT and summary['gauge_id']==gauge
+  assert summary['new_training']==summary['model_calls']==0 and not summary['targets_filled'] and not summary['predictions_clipped']
+  assert not summary['formal_confidence_intervals'] and summary['no_claim_of_independent_floods'] and not summary['selection_requires_forecast_admission']
+  td=targets['artifacts'][gauge];nd=nwcommit['artifacts'][gauge];ib=inventory['gauge_bundles'][gauge]['arrays']
+  assert summary['sources']['targets']==td and summary['sources']['nwm']==nd and summary['sources']['inputs']==ib
+  truth=artifact(td,('target','target_mask','target_time'));inputs=artifact(ib,('origin_time','input_admitted','history'))
+  nw=artifact(nd,('prediction_q','source_valid'))
+  y,valid=truth['target'],truth['target_mask'];admitted=inputs['input_admitted'];nwm=nw['prediction_q'];nmask=nw['source_valid']
+  assert np.array_equal(inputs['origin_time'],C) and np.array_equal(truth['target_time'],F)
+  assert y.shape==valid.shape==nwm.shape==nmask.shape==(8760,18) and valid.dtype==nmask.dtype==admitted.dtype==bool
+  assert np.isfinite(y[valid]).all() and (y[valid]>=0).all() and not nmask[:,16:].any() and np.isnan(nwm[:,16:]).all()
+  # Independent reconstruction by one dictionary entry per actual valid hour.
+  references={}
+  for i in range(8760):
+   for j in range(18):
+    t=int(F[i,j]);value=(bool(valid[i,j]),float(y[i,j]) if valid[i,j] else None)
+    if t in references:assert references[t]==value
+    else:references[t]=value
+  times=np.arange(C[0]+H,C[-1]+19*H,H);assert len(times)==8777 and set(times.tolist())==set(references)
+  obs=np.array([references[int(t)][1] if references[int(t)][0] else np.nan for t in times]);known=np.array([references[int(t)][0] for t in times])
+  assert np.array_equal(plot['reference_time'],times) and np.array_equal(plot['reference_valid'],known)
+  assert np.array_equal(plot['observed_q'],obs,equal_nan=True) and np.array_equal(plot['forecast_time'],F)
+  assert np.array_equal(plot['nwm'],nwm,equal_nan=True)
+  primary=admitted & np.all(valid,axis=1);matched=np.repeat(primary[:,None],18,axis=1)&nmask
+  assert np.array_equal(primary,plot['primary_mask']) and np.array_equal(matched,plot['matched_mask'])
+  tr=next(x['thresholds'] for x in threshold['fold_regime_and_event_diagnostics'] if x['gauge_id']==gauge and x['fold']=='final_development')
+  assert tr==summary['threshold']==catalog_file['threshold'];q95=tr['q95_cms'];equal(summary['q95_cms'],q95)
+  # Independent greedy catalog, including all lower-ranked eligible events.
+  candidates=sorted((t,v[1]) for t,v in references.items() if v[0] and v[1]>q95)
+  candidates=sorted(candidates,key=lambda x:(-x[1],x[0]));chosen=[];expected_catalog=[]
+  for t,q in candidates:
+   if any(abs(t-p)<168*H for p in chosen):continue
+   chosen.append(t);left=max(int(times[0]),t-48*H);right=min(int(times[-1]+H),t+72*H)
+   in_window=(times>=left)&(times<right);approved=in_window&known
+   indices=np.flatnonzero(approved);m=indices[int(np.argmax(obs[indices]))];rank=len(chosen)
+   expected_catalog.append(dict(event_id=str(t),observed_peak_rank=rank,representative_top3=rank<=3,peak_epoch=t,
+    observed_peak_q_cms=q,start_epoch=left,end_exclusive_epoch=right,left_truncated=left!=t-48*H,right_truncated=right!=t+72*H,
+    reference_requested_hours=int(in_window.sum()),reference_approved_hours=int(approved.sum()),reference_unusable_hours=int((in_window&~known).sum()),
+    window_observed_max_epoch=int(times[m]),window_observed_max_q_cms=float(obs[m]),selected_peak_is_window_max=t==times[m],
+    selection_uses_model_errors=False,selection_requires_forecast_admission=False,event_episodes_are_proven_independent=False))
+  assert expected_catalog==summary['catalog']==catalog_file['catalog']
+  events=expected_catalog[:3];assert len(events)==summary['representative_event_count']==len(summary['events'])==3
+  pred={}
+  for arch in ARCH:
+   for seed in SEEDS:
+    job=f'final_development__{gauge}__{arch}__full_L168__seed{seed}';mc=commit(job);d=mc['artifacts']['predictions']
+    assert d==summary['sources']['predictions'][job] and d['sha256']==audited['model_products'][job]['prediction_artifact_sha256']
+    ar=artifact(d);assert np.array_equal(ar['origin_time'],C) and np.array_equal(ar['forecast_time'],F) and np.array_equal(ar['input_admitted'],admitted)
+    p=ar['prediction_q'];assert np.isfinite(p[admitted]).all() and np.isnan(p[~admitted]).all();pred[arch,seed]=p
+    bound=bounds[job];assert bound['checkpoint_sha256']==audited['model_products'][job]['checkpoint_sha256'] and bound['saved_prediction_artifact_sha256']==d['sha256']
+    assert p[admitted].max()<=bound['physical_upper']+bound['comparison_allowance_cms'] and p[admitted].min()>=bound['physical_lower']-bound['comparison_allowance_cms']
+    equal(bound['saved_prediction_envelope_check']['saved_prediction_max_cms'],float(p[admitted].max()))
+    for e in events:
+     capacity.append(dict(gauge_id=gauge,architecture=arch,seed=seed,event_id=e['event_id'],observed_peak_q_cms=e['observed_peak_q_cms'],
+      physical_upper_cms=bound['physical_upper'],observed_peak_above_upper_beyond_allowance=bool(e['observed_peak_q_cms']>bound['physical_upper']+bound['comparison_allowance_cms']),
+      minimum_exact_real_peak_underprediction_cms=max(0.,e['observed_peak_q_cms']-bound['physical_upper'])))
+   stack=np.stack([pred[arch,s] for s in SEEDS])
+   for label,operation in [('mean',np.mean),('min',np.min),('max',np.max)]:
+    assert np.array_equal(plot[f'prediction_{label}__{arch}'],operation(stack,axis=0),equal_nan=True)
+  bucket_masks=[]
+  for event,reported in zip(events,summary['events']):
+   assert event==reported['event'];window=(F>=event['start_epoch'])&(F<event['end_exclusive_epoch']);bucket_masks.append(window)
+   equal(reported['matched_forecast_target_pairs'],int((window&matched).sum()))
+   equal(reported['unique_matched_target_hours'],int(np.unique(F[window&matched]).size))
+   for j in range(18):
+    cov=reported['coverage_by_lead'][j];h=j+1;take=window[:,j]&matched[:,j];ind=window[:,j]&primary
+    for k,value in dict(lead_hours=h,requested_target_hours=int(window[:,j].sum()),valid_observed_target_hours=int((window[:,j]&valid[:,j]).sum()),
+     input_admitted_target_hours=int((window[:,j]&admitted).sum()),strict_primary_target_hours=int(ind.sum()),matched_nwm_target_hours=int(take.sum()),
+     observed_peak_matched=bool(np.any((F[:,j]==event['peak_epoch'])&take)),observed_peak_hydra_primary=bool(np.any((F[:,j]==event['peak_epoch'])&ind))).items():equal(cov[k],value)
+    context=cov['latest_observation_context'];origin=event['peak_epoch']-h*H;equal(context['forecast_origin_epoch'],origin);equal(context['valid_epoch'],origin-2*H)
+    loc=(origin-int(C[0]))//H;latest=None
+    if 0<=loc<len(C):
+     val,age=inputs['history'][loc,-1];latest=float(val) if np.isfinite(val) and val>=0 and age==2 else None
+     equal(context['full_history_and_inputs_admitted'],bool(admitted[loc]));equal(context['complete_H18_targets'],bool(primary[loc]))
+    equal(context['q_cms'],latest)
+    if j<16:
+     row=reported['nwm_paired'][j];equal(row['lead_hours'],h);stats(y[take,j],nwm[take,j],row);peak_metrics(nwm[:,j],F[:,j],take,event,row)
+   for arch in ARCH:
+    for seed in SEEDS:
+     p=pred[arch,seed];seedrows=reported['models'][arch]['seeds'][str(seed)]
+     for j in range(16):
+      take=window[:,j]&matched[:,j];row=seedrows['paired'][j]
+      equal(row['lead_hours'],j+1);stats(y[take,j],p[take,j],row);peak_metrics(p[:,j],F[:,j],take,event,row)
+     take=window[:,17]&primary;row=seedrows['hydra_h18'];equal(row['lead_hours'],18);stats(y[take,17],p[take,17],row);peak_metrics(p[:,17],F[:,17],take,event,row)
+    for j,row in enumerate(reported['models'][arch]['seed_mean_and_range']):
+     equal(row['lead_hours'],j+1);equal(row['n'],int((window[:,j]&matched[:,j]).sum()))
+     for field in ('sse','physical_mse','rmse','mae','bias'):spread(row[field],[reported['models'][arch]['seeds'][str(s)]['paired'][j][field] for s in SEEDS])
+     for field in ('prediction_q_cms','error_cms','ratio_to_observed_peak'):spread(row['at_observed_peak'][field],[reported['models'][arch]['seeds'][str(s)]['paired'][j]['at_observed_peak'][field] for s in SEEDS])
+  assert np.max(np.sum(bucket_masks,axis=0))==1;bucket_masks.append(~np.any(bucket_masks,axis=0));keys=[e['event_id'] for e in events]+['REST_OF_ASSESSMENT']
+  for arch in ARCH:
+   decomp=summary['decomposition'][arch];gaps=[];contributions={k:[] for k in keys}
+   for seed in SEEDS:
+    p=pred[arch,seed];r=decomp['seeds'][str(seed)];leadgaps=[];leadcontrib={k:[] for k in keys}
+    for j in range(16):
+     take=matched[:,j];v=y[take,j];sst=float(np.sum((v-np.mean(v))**2));assert sst>0
+     sse_p=float(np.sum((p[take,j]-v)**2));sse_n=float(np.sum((nwm[take,j]-v)**2));gap=(sse_p-sse_n)/sst
+     row=r['leads'][j];equal(row['n'],len(v));equal(row['sst'],sst);equal(row['nwm_minus_hydra_nse'],gap);leadgaps.append(gap)
+     for key,bucket in zip(keys,bucket_masks):
+      subset=take&bucket[:,j];difference=float(np.sum((p[subset,j]-y[subset,j])**2)-np.sum((nwm[subset,j]-y[subset,j])**2));value=difference/sst
+      equal(row['contributions'][key],value);leadcontrib[key].append(value)
+     equal(sum(row['contributions'].values()),gap)
+    annual=sum(leadgaps)/16;equal(r['equal_lead_nwm_minus_hydra_nse'],annual);gaps.append(annual)
+    original=public['gauges'][gauge];equal(annual,original['nwm']['matched']['equal_lead_nse']-original['models'][arch]['seeds'][str(seed)]['nwm_matched']['equal_lead_nse'])
+    for key in keys:
+     value=sum(leadcontrib[key])/16;equal(r['contributions'][key],value);contributions[key].append(value)
+   spread(decomp['seed_mean_and_range'],gaps)
+   for key in keys:
+    spread(decomp['contributions'][key],contributions[key]);equal(decomp['signed_fraction_of_gap'][key],(sum(contributions[key])/3)/(sum(gaps)/3))
+   equal(sum(decomp['contributions'][k]['mean'] for k in keys),decomp['seed_mean_and_range']['mean'])
+  assert summary['original_audited_annual']==public['gauges'][gauge]
+  gauge_checks[gauge]=dict(catalog_events=len(expected_catalog),selected_events=3,all_selected_windows_requested_hours=[e['reference_requested_hours'] for e in events],
+    largest_peak_epoch=events[0]['peak_epoch'],largest_peak_q_cms=events[0]['observed_peak_q_cms'],selection_independent_of_errors_and_forecast_admission=True)
+  print(json.dumps({'gauge':gauge,'status':'PASS','catalog_events':len(expected_catalog),'metric_panels_checked_so_far':panels}),flush=True)
+  del truth,inputs,nw,pred,plot;gc.collect();resources()
+ assert con.execute('select body from state').fetchone()[0]==before
+ report=dict(schema='hydra-assessment-event-independent-check/v1',status='PASS',protocol_sha256=PROTOCOL,source_results_sha256=RESULTS,
+  source_assessment_audit_sha256=AUDIT,summary_sha256_by_gauge=summary_hashes,plot_sha256_by_gauge=plot_hashes,headbounds_sha256=HEAD,
+  gauge_checks=gauge_checks,peak_vs_bound_checks=capacity,all24_saved_prediction_envelopes_verified=True,
+  checks=dict(full_catalog_and_top3_recomputed=True,all_event_metrics_and_peak_diagnostics_recomputed=True,
+   all_seed_aggregates_recomputed=True,all_plot_arrays_bound_to_original_sources=True,annual_gap_contributions_and_residual_reconcile=True,
+   annual_gap_matches_original_audited_NSE=True,original_runtime_unchanged=True,metric_panels=panels,scalar_comparisons=scalars,
+   maximum_absolute_numeric_difference=maxabs,maximum_scaled_numeric_difference=maxscaled,absolute_tolerance=ATOL,relative_tolerance=RTOL),
+  limits=dict(logical_read_cap_bytes=256*1024**2,logical_read_bytes=nread,peak_rss_bytes=peak,memory_cap_bytes=2*1024**3,elapsed_seconds=time.time()-started,output_cap_bytes=1024**2),
+  model_constructions=0,model_forwards=0,optimizer_updates=0,scaler_fits=0,downloads=0,
+  interpretation='Descriptive post-assessment accounting and current fixed-weight representational limits, not causality, independent floods, confidence intervals or a training-data maximum.',
+  reviewer_implementation_sha256=sha(pathlib.Path(__file__).read_bytes()),sources=sources)
+ raw=encode(report);assert len(raw)<1024**2
+ with (BASE/'CHECKS.json').open('xb') as f:f.write(raw);f.flush();os.fsync(f.fileno())
+ print(json.dumps(dict(status='PASS',path=str(BASE/'CHECKS.json'),bytes=len(raw),sha256=sha(raw),read_bytes=nread,metric_panels=panels,scalar_comparisons=scalars,max_scaled_difference=maxscaled)))
+except BaseException as error:
+ p=BASE/'CHECKS_FAILURE.json'
+ if not p.exists():p.write_bytes(encode(dict(status='FAILED_NO_AUTOMATIC_RETRY',type=type(error).__name__,error=str(error),read_bytes=nread,peak_rss_bytes=peak,elapsed_seconds=time.time()-started)))
+ raise

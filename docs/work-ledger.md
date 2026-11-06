@@ -1280,3 +1280,37 @@ The one explicit preprocessing resume preserved the original clock and consumed
 allowances. Original training remains 1,151,690 updates. No worker remains active.
 This completes the requested saved-weight assessment first pass and draft update,
 not the entire AGU scientific-review/publication process.
+
+## Post-assessment peak diagnosis — November 6
+
+The user requested Jefferson/Galax largest-peak hydrographs and lead errors
+without retraining or assessment tuning. The diagnostic reused frozen gradient
+q95 thresholds, observed-only ranking, 168-hour separation and first-three
+selection. Its method was recorded before new event-level errors were inspected.
+All six selected windows had complete 120-hour paired support at H1–16.
+
+Independent checks reproduced 1,320 event metric panels, 25,542 scalar comparisons,
+all selected events and the exact annual NSE-gap decomposition. The September
+2024 windows account for 103.78–104.16% of Jefferson's annual NWM advantage and
+99.15–101.51% at Galax across model families. Signed shares above 100% reflect
+offsetting errors elsewhere, not causal attribution or grounds to omit extremes.
+
+A separate read-only audit of all 24 frozen saved-best checkpoints derived the
+LayerNorm-to-linear physical output envelopes and checked all 3,578,040 saved
+forecast values against them. Jefferson upper envelopes are 153–247 m³/s versus
+its 1,048 m³/s largest observed peak; Galax envelopes are 458–621 versus 3,058.
+These are constraints of the fixed learned parameters, not universal family
+limits, training-data maxima or calibrated prediction intervals.
+
+Seven figure sets passed render review and independent source/claim review.
+Current code passed 18 event, 20 parameter-bound and 11 plot tests. The missing-
+peak timing guard was tightened after execution; all six real windows have
+complete peak support, so their outputs are unchanged. Exact executed-source
+copies and before/after hashes are retained. Original models, forecasts, targets,
+training counters and assessment runtime state remain unchanged. New model calls,
+fitting, downloads and paid jobs are all zero.
+
+iTransformer and an inverted-encoder/GRU-decoder design remain development-only
+proposals. Output/normalization, encoder and decoder effects need separate
+controls. The already inspected assessment cannot be labeled an untouched
+confirmatory holdout for these assessment-informed new choices.

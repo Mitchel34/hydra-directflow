@@ -1,0 +1,23 @@
+{
+  "schema": "hydra-executed-diagnostic-source/v1",
+  "status": "EXACT_EXECUTED_SOURCE_COPIES",
+  "files": {
+    "assessment_event_diagnostics.py.txt": {
+      "bytes": 17027,
+      "sha256": "0478715166c8a5063c54b2ab3195460c312477f4d8def33992a7fd5ed7ea6ec5"
+    },
+    "run_assessment_event_diagnostics.py.txt": {
+      "bytes": 10226,
+      "sha256": "2e767ca0df03c0cea78ba68d0d0bc04458166c7eace7c112f5d569d31f3eb8c0"
+    },
+    "HEAD_BOUND_EXECUTION.py.txt": {
+      "bytes": 7046,
+      "sha256": "4476ea9b226d05f5740f49a12ac3a6d049a621a1ba3304e6b5c8ad5e01d2665a"
+    },
+    "INDEPENDENT_EVENT_CHECK.py.txt": {
+      "bytes": 20073,
+      "sha256": "4433ec2ca9ccb5bf0f226b31e5b853b6229a47cfd2c6c6acb7132c97953998f5"
+    }
+  },
+  "raw_data_or_weights": false
+}

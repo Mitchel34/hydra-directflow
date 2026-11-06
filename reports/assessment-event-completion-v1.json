@@ -1,0 +1,39 @@
+{
+  "schema": "hydra-assessment-event-diagnostic-completion/v1",
+  "status": "AUDITED_EVENT_AND_PARAMETER_DIAGNOSTICS_WITH_VERIFIED_FIGURES",
+  "completed_at_utc": "2026-11-06T20:39:20.138285+00:00",
+  "gauges": [
+    "03161000",
+    "03164000"
+  ],
+  "selected_events": 6,
+  "paired_leads": [
+    1,
+    16
+  ],
+  "independent_hydra_h18_retained": true,
+  "source_checks_sha256": "9eb49b2f189dd86dea7ec81affd2e78482843d02fc60fbb2bda2b17ddb68286f",
+  "head_bounds_sha256": "8b505b9f54c10440dff15b099c4297a709dc1521277a9d490f012c2c00bb4dda",
+  "figure_manifest_sha256": "ce0566297f8cf56fa636d05b85f8870a155e44452b486f87f16a0ec0a9f80cc3",
+  "event_tests": 18,
+  "parameter_bound_tests": 20,
+  "plot_tests": 11,
+  "independent_event_metric_panels": 1320,
+  "independent_scalar_comparisons": 25542,
+  "saved_checkpoints_read": 24,
+  "saved_values_checked_against_envelope": 3578040,
+  "new_model_constructions": 0,
+  "new_model_forwards": 0,
+  "new_training_updates": 0,
+  "new_scaler_fits": 0,
+  "new_downloads": 0,
+  "paid_compute_jobs": 0,
+  "original_assessment_runtime_unchanged": true,
+  "original_training_updates": 1151690,
+  "all3_seeds_retained": true,
+  "whole_AGU_study_complete": false,
+  "artifact_bytes_private_figures_public_copies": 45342934,
+  "local_output_cap_bytes": 104857600,
+  "itransformer_status": "DEVELOPMENT_PROPOSAL_ONLY_NOT_TRAINED_OR_SELECTED",
+  "interpretation": "Post-assessment descriptive concentration and fixed-parameter representational envelopes; not universal architecture caps or causal component experiment."
+}

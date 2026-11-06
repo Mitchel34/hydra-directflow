@@ -1,0 +1,91 @@
+"""One-time frozen saved-parameter inspection; no model execution."""
+import os
+for k in ('OMP_NUM_THREADS','MKL_NUM_THREADS','OPENBLAS_NUM_THREADS'):os.environ[k]='1'
+os.environ['HF_HUB_OFFLINE']=os.environ['TRANSFORMERS_OFFLINE']='1'
+import sys,pathlib,json,hashlib,sqlite3,io,zipfile,time,shutil,gc
+from contextlib import ExitStack
+from unittest.mock import patch
+from urllib.parse import quote
+ROOT=pathlib.Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'src'))
+import numpy as np
+import psutil
+from hydra_directflow.reference import digest
+from hydra_directflow.output_bound_diagnostic import ParameterReadAuthority,extract_saved_bound,check_saved_prediction_envelope
+OUT=ROOT/'.local/assessment-event-diagnostics-v1';RUN=ROOT/'.local/assessment-v1';OLD=ROOT/'.local/primary-campaign-v1'
+PROTOCOL='d83f32fa2163f1b85616edacf07507f192dc4b7afc6fe43e3c3496ab55d9ea4f';METHOD='4e963fe4db74e07c9fc41c4e55b0bf74705018ef1ec399cf7488f2d65fb22e0d'
+SELECT='224c80bf251402670e895cbdd2db281e81ab8792088c7510d41694189d586302';AUDIT='ffe5e6755d5e6a2d67cc8fd50ef8aa116938cdbd65b6ebd197eaea474ef66d27'
+started=time.time();read_bytes=0;peak=0;sources={}
+def sha(raw):return hashlib.sha256(raw).hexdigest()
+def encode(value):return (json.dumps(value,sort_keys=True,indent=2,allow_nan=False)+'\n').encode()
+def check():
+ global peak
+ rss=psutil.Process().memory_info().rss;peak=max(peak,rss)
+ assert rss<2*1024**3 and shutil.disk_usage(OUT).free>=8*1024**3 and time.time()-started<3600
+
+def charge(n):
+ global read_bytes
+ assert type(n) is int and n>=0 and read_bytes+n<=128*1024**2
+ read_bytes+=n;check()
+
+def read(path,expected=None,size=None):
+ p=pathlib.Path(path);s=p.lstat();assert p.is_absolute() and p==p.resolve() and p.is_file() and not s.st_flags&0x40000000
+ assert 0<s.st_size<=16*1024**2 and (size is None or s.st_size==size)
+ charge(s.st_size);raw=p.read_bytes();a=p.lstat();assert (s.st_size,s.st_mtime_ns,s.st_ino)==(a.st_size,a.st_mtime_ns,a.st_ino)
+ assert expected is None or sha(raw)==expected
+ sources[str(p)]=dict(bytes=len(raw),sha256=sha(raw));return raw
+
+def commit_file(name,value):
+ raw=encode(value);assert sum(p.stat().st_size for p in OUT.glob('HEAD_BOUNDS*.json'))+len(raw)<1024**2
+ p=OUT/name
+ with p.open('xb') as f:f.write(raw);f.flush();os.fsync(f.fileno())
+ return dict(path=str(p),bytes=len(raw),sha256=sha(raw))
+
+try:
+ assert not (OUT/'HEAD_BOUNDS.json').exists() and not (OUT/'HEAD_BOUNDS_FAILURE.json').exists()
+ protocol=json.loads(read(ROOT/'configs/assessment-event-diagnostics-v1.json',PROTOCOL));method=json.loads(read(OUT/'PARAMETER_METHOD_BEFORE_WEIGHTS.json',METHOD))
+ assert method['protocol_sha256']==PROTOCOL and method['checkpoint_reads_before_record'] is False
+ selection=json.loads(read(ROOT/'.local/assessment-preparation-v1/PRIMARY_SELECTION.json'))
+ assert selection['selection_sha256']==SELECT==digest({k:v for k,v in selection.items() if k!='selection_sha256'})
+ records=[j for j in selection['records'] if j['gauge_id'] in ('03161000','03164000')]
+ authority=ParameterReadAuthority(PROTOCOL,SELECT,tuple((j['job_id'],j['checkpoint']['sha256']) for j in records),True)
+ audit=json.loads(read(RUN/'artifacts/audit/INDEPENDENT_AUDIT.json',AUDIT));assert audit['status']=='PASS'
+ connection=sqlite3.connect('file:'+quote(str(RUN/'assessment-runtime.sqlite3'),safe='/')+'?mode=ro',uri=True)
+ before=connection.execute('SELECT body FROM state WHERE id=1').fetchone()[0];old=json.loads(before)
+ assert old['owner'] is None and old['failure'] is None and old['confirmed_models']==36 and old['confirmed_cases']==287472
+ import torch
+ torch.set_num_threads(1)
+ results=[]
+ with ExitStack() as guards:
+  def forbidden(*args,**kwargs):raise AssertionError('No models, forwards, optimizers or fits permitted')
+  for name in ('torch.nn.Module.__init__','torch.nn.Module.__call__','torch.optim.Optimizer.__init__','torch.optim.Optimizer.step','hydra_directflow.training.TrainOnlyTransform.fit','hydra_directflow.training.DevelopmentTrainer.__init__'):
+   guards.enter_context(patch(name,side_effect=forbidden))
+  for job in records:
+   result=extract_saved_bound(OLD/job['checkpoint']['path'],job,authority,read_budget=charge)
+   body,stored=connection.execute('SELECT body,sha256 FROM commits WHERE key=?',(job['job_id'],)).fetchone();commit=json.loads(body);assert digest(commit)==stored
+   d=commit['artifacts']['predictions'];assert d['sha256']==audit['model_products'][job['job_id']]['prediction_artifact_sha256']
+   assert result['checkpoint_sha256']==audit['model_products'][job['job_id']]['checkpoint_sha256']
+   raw=read(RUN/d['path'],d['sha256'],d['bytes'])
+   with zipfile.ZipFile(io.BytesIO(raw)) as z:assert sum(x.file_size for x in z.infolist())<32*1024**2
+   with np.load(io.BytesIO(raw),allow_pickle=False) as z:
+    summary=check_saved_prediction_envelope(z['prediction_q'],z['input_admitted'],result)
+   assert summary['admitted_origins']==audit['model_products'][job['job_id']]['forecast_origins']
+   result['saved_prediction_envelope_check']=summary;result['saved_prediction_artifact_sha256']=d['sha256'];results.append(result)
+   print(json.dumps({k:result[k] for k in ('gauge_id','architecture','seed','physical_upper','physical_lower')}),flush=True)
+   del raw;gc.collect();check()
+ assert connection.execute('SELECT body FROM state WHERE id=1').fetchone()[0]==before
+ payload=dict(schema='hydra-saved-head-bound-report/v1',status='ALL24_SAVED_BEST_BOUNDS_AND_PREDICTION_ENVELOPES_VERIFIED',protocol_sha256=PROTOCOL,
+  parameter_method_sha256=METHOD,selection_sha256=SELECT,source_audit_sha256=AUDIT,records=results,
+  model_constructions=0,model_forwards=0,optimizer_constructions=0,optimizer_updates=0,scaler_fits=0,new_downloads=0,
+  original_runtime_body_unchanged=True,original_runtime_state_sha256=sha(before.encode()),
+  math_scope='Exact-real structural envelope; separately tested numerical allowance is not a formal FP32 certificate.',
+  interpretation='A peak above the upper envelope is outside that fixed model representation; bounds do not establish a training-data maximum, attainability or all causes of error.')
+ report=commit_file('HEAD_BOUNDS.json',payload)
+ receipt=commit_file('HEAD_BOUNDS_RECEIPT.json',dict(status='PASS',report=report,logical_read_bytes=read_bytes,maximum_logical_read_bytes=128*1024**2,
+  peak_rss_bytes=peak,elapsed_seconds=time.time()-started,sources=sources,
+  helper_sha256=sha((ROOT/'src/hydra_directflow/output_bound_diagnostic.py').read_bytes()),runner_sha256=sha(pathlib.Path(__file__).read_bytes()),
+  original_runtime_unchanged=True,model_constructions=0,model_forwards=0,new_training=0,new_scaler_fits=0))
+ print(json.dumps(dict(report=report,receipt=receipt,read_bytes=read_bytes,peak_rss_bytes=peak)))
+except BaseException as error:
+ failure=dict(status='FAILED_NO_AUTOMATIC_RETRY',error_type=type(error).__name__,error=str(error),logical_read_bytes=read_bytes,peak_rss_bytes=peak,elapsed_seconds=time.time()-started)
+ if not (OUT/'HEAD_BOUNDS_FAILURE.json').exists():commit_file('HEAD_BOUNDS_FAILURE.json',failure)
+ raise

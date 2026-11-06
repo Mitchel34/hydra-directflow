@@ -1,0 +1,72 @@
+{
+  "all24_saved_models_and_all3_seeds_retained": true,
+  "files": {
+    "03161000__event_1.json": {
+      "bytes": 389037,
+      "sha256": "1dbb91808a513835cf886b998b4bc7c77fdf4e23055edbc4ccd0de13ce9fdb27"
+    },
+    "03161000__event_2.json": {
+      "bytes": 388550,
+      "sha256": "71f47c7d13d5d0b13846669044ddfdb419d31025787fcd36295f6bc9281c8f8b"
+    },
+    "03161000__event_3.json": {
+      "bytes": 388327,
+      "sha256": "9b0115e03cebfa8d724f134c8b46e9c6a8018911a2baefd824ad4a3d8346e8b2"
+    },
+    "03164000__event_1.json": {
+      "bytes": 388763,
+      "sha256": "2088931fe88cd760e3120f8303c47605115636f6543520034705058bc3035968"
+    },
+    "03164000__event_2.json": {
+      "bytes": 388275,
+      "sha256": "e523f9a28c797da05e768ebd288c323035baf623702f463d818b13a0c38b317c"
+    },
+    "03164000__event_3.json": {
+      "bytes": 388659,
+      "sha256": "f59c92b5e2765cf900ffab6c3d075752edc5aefe7712fc6d9654020e74865c48"
+    },
+    "FIGURE_SOURCE.json": {
+      "bytes": 492,
+      "sha256": "74a5501447bc60eff8fa591783bfe14a3af8cc8725c61fa8cb45aa52481577e7"
+    },
+    "event-lead-metrics.csv": {
+      "bytes": 278823,
+      "sha256": "e0feb79d9b8afcb9a2339aee568c046e0e7d61e03c2c45040cc6a0514dc5fb15"
+    },
+    "figures/03161000_ANNUAL_NSE_GAP_DECOMPOSITION.svg": {
+      "bytes": 17656,
+      "sha256": "0ac6ebdbcf2c1b7e9f69b65984a1aa353a1542183483658397e08b7dfe39ccb0"
+    },
+    "figures/03161000_EVENT_HYDROGRAPHS.svg": {
+      "bytes": 606034,
+      "sha256": "18d9ba4c9d86e74522ec9fa8dc26b945f2bfe7eb1d96144847cb056556865d0a"
+    },
+    "figures/03161000_EVENT_LEAD_ERRORS.svg": {
+      "bytes": 145283,
+      "sha256": "54eb96b1254f6918f69cf15c5f17b5e4f730704dbe543963cb2fd7cf8abf8701"
+    },
+    "figures/03164000_ANNUAL_NSE_GAP_DECOMPOSITION.svg": {
+      "bytes": 18322,
+      "sha256": "415b4528876a97b945960cfe7c4ecebf864146aae9150b3bb139b0e73a9f15a1"
+    },
+    "figures/03164000_EVENT_HYDROGRAPHS.svg": {
+      "bytes": 600364,
+      "sha256": "5f6ee9cccf11985768f4f39744e184fd47aa1595893c1e6239a31cb8de70f9dc"
+    },
+    "figures/03164000_EVENT_LEAD_ERRORS.svg": {
+      "bytes": 149054,
+      "sha256": "af622f4c59f8cac88b2138449df20396b84085bbaaf69d6f76795e9192767553"
+    },
+    "figures/LARGEST_EVENT_COMPARISON.svg": {
+      "bytes": 204742,
+      "sha256": "a7c6764bd5880bbd28a04099f18754541d596eb972f0bfaaa882da21e77f4186"
+    },
+    "summary.json": {
+      "bytes": 264771,
+      "sha256": "261ac00ae1abe3a819fa75c8908269ab30dff7664f2160a2d0ecd8b392132d5b"
+    }
+  },
+  "metric_rows": 1320,
+  "schema": "hydra-event-report-export/v1",
+  "status": "AUDITED_AGGREGATE_EXPORT"
+}
