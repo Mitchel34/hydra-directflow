@@ -1,0 +1,24 @@
+{
+  "schema": "hydra-assessment-diagnostic-qualification/v1",
+  "status": "SYNTHETIC_AND_READ_ONLY_SOURCE_REVIEWS_PASSED",
+  "at_utc": "2026-11-06T20:24:56.411929+00:00",
+  "event_tests": 18,
+  "bound_tests": 20,
+  "files": {
+    "src/hydra_directflow/assessment_event_diagnostics.py": "bd23438b391ca23ef8f943cb8d6ce02bc94c4ef376e77f013ba26361fc097af6",
+    "src/hydra_directflow/output_bound_diagnostic.py": "61990d7ce2c1da7f40544eac8229a5a72467bebbe4a10c3dcce9620bf645d2f7",
+    "scripts/run_assessment_event_diagnostics.py": "2e767ca0df03c0cea78ba68d0d0bc04458166c7eace7c112f5d569d31f3eb8c0"
+  },
+  "original_assessment_or_training_code_modified": false,
+  "new_model_calls": 0,
+  "new_training_updates": 0,
+  "new_scaler_fits": 0,
+  "new_downloads": 0,
+  "real_event_result_audit": "PASS",
+  "timing_guard_real_results_changed": false,
+  "combined_root_tests_passed": 38,
+  "event_audit_sha256": "9eb49b2f189dd86dea7ec81affd2e78482843d02fc60fbb2bda2b17ddb68286f",
+  "head_bounds_sha256": "8b505b9f54c10440dff15b099c4297a709dc1521277a9d490f012c2c00bb4dda",
+  "independent_event_metric_panels": 1320,
+  "independent_scalar_comparisons": 25542
+}

@@ -1,0 +1,22 @@
+{
+  "assessment_numerical_arrays_read_by_fix": false,
+  "corrected_source_sha256": "bd23438b391ca23ef8f943cb8d6ce02bc94c4ef376e77f013ba26361fc097af6",
+  "corrected_test_sha256": "2a43f2699f79e41d054980db3c794d030719ed1b7a711d2c5919e9fee0420384",
+  "correction": "When the observed peak has no matched forecast cell, retain the available fixed-lead trace maximum and its timestamp but withhold timing relative to that peak and state UNAVAILABLE_OBSERVED_PEAK_NOT_MATCHED.",
+  "current_real_event_effect": "None: all six selected real events were independently confirmed to have full 120-of-120 paired support at all 16 leads, including the observed peak.",
+  "executed_source_preserved": true,
+  "executed_source_sha256": "0478715166c8a5063c54b2ab3195460c312477f4d8def33992a7fd5ed7ea6ec5",
+  "independent_guard_review": "PASS",
+  "new_downloads": 0,
+  "new_model_calls": 0,
+  "new_scaler_fits": 0,
+  "new_training_updates": 0,
+  "previous_test_sha256": "537e1e20da04b02a4f5281ef95fe00bfb08cea1a607bd265b5cc3a8b60983df4",
+  "production_reexecuted": false,
+  "recorded_at_utc": "2026-11-06T20:22:15.671637+00:00",
+  "schema": "hydra-assessment-event-timing-guard-review/v1",
+  "scientific_outputs_changed": false,
+  "status": "SYNTHETIC_TESTS_AND_INDEPENDENT_GUARD_REVIEW_PASSED",
+  "synthetic_tests_passed": 18,
+  "valid_full_support_branch_changed": false
+}
