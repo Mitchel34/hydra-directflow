@@ -1,0 +1,72 @@
+{
+  "schema": "hydra-assessment-firstpass-completion-public/v1",
+  "status": "INFERENCE_SCORING_INDEPENDENT_AUDIT_AND_POSTER_DRAFT_COMPLETE",
+  "completed_at_utc": "2026-11-06T19:51:59.072033+00:00",
+  "whole_AGU_study_complete": false,
+  "models": 36,
+  "unique_gauge_origin_forecasts": 23956,
+  "case_model_forwards": 287472,
+  "finite_horizon_predictions": 5174496,
+  "forward_batches": 4500,
+  "input_chunks": 73,
+  "candidate_cycles_verified": 1463,
+  "new_training_updates": 0,
+  "new_scaler_fits": 0,
+  "original_training_updates": 1151690,
+  "authorized_infrastructure_resumes": 1,
+  "protocol_or_weights_changed_after_assessment": false,
+  "assessment_origins": [
+    "2024-07-31",
+    "2025-07-31"
+  ],
+  "last_target_utc": "2025-07-31T17:00:00Z",
+  "nwm_matched_origin_leads": [
+    1,
+    16
+  ],
+  "nwm_unsupported_origin_leads": [
+    17,
+    18
+  ],
+  "assessment_event_analysis_performed": false,
+  "source_budget": {
+    "attempt_states": {
+      "VERIFIED": 1853
+    },
+    "attempted_gets": 1853,
+    "billing_invoice_reconciled": false,
+    "body_cap": 17179869184,
+    "conservative_precharge_estimate_usd": 3.265155,
+    "cost_estimate_cap_usd": 5.0,
+    "get_cap": 4000,
+    "observed_body_bytes": 12058758612,
+    "precharged_body_bytes": 12059307723
+  },
+  "runtime_managed_output_reserved_bytes": 1519052066,
+  "external_result_and_poster_copy_bytes": 8103397,
+  "combined_output_bytes_below_2GiB": true,
+  "peak_combined_rss_mps_bytes": 1804369920,
+  "peak_mps_bytes": 1164673024,
+  "hashes": {
+    "audit_code_sha256": "cd656ebbd9e16f60ee3d5f1621f93b4d01717dd7d7d3855a87e341918883a43e",
+    "plan_sha256": "acd38d2e6a0568923054c2c0c6f0cc4264f197fa6042111da555c1866e7d48f2",
+    "point_results_sha256": "19536780b2cd115bc386575b82c25c3f2533a88568147fb7f1fecac3eb01e959",
+    "score_sha256_by_gauge": {
+      "03161000": "878a2bedb0a5850175308c7b3bf9bc8d7980d83559561bac80ebab873cbba865",
+      "03164000": "2268170a5a27222c6ba0a4458037b2daac70a0c874d0700af273fb6255bfa0be",
+      "03479000": "b86cd6695e38fa5fc7d7cbb10c6a9e9a1df9c9769da0831b228cbb52d02af233"
+    },
+    "scoring_release_sha256": "064229c7b04c1743147a7b0914c401484de6e3162e3d57719694ca179b80c3a3",
+    "semantic_barrier_sha256": "068f2d725a6426114b673e8f46fa7ee3061ff94541e198f852421f2b5750cdfd"
+  },
+  "poster_pdf_sha256": "aef4eb0da8febb326878cfffd8104220b15a552b839178fdde59cb1b5643c7e9",
+  "poster_qa_sha256": "b782c404636932245b424c6a67c2988e64077c3a1e8d51afe028af9e5c14dd74",
+  "public_results": "reports/assessment-firstpass-v1/README.md",
+  "remaining": [
+    "Advisor and poster scientific review",
+    "Assessment event/peak diagnosis if separately scoped",
+    "No assessment Q-only, L24/router or new training in this pass",
+    "No formal assessment confidence intervals or significance claims"
+  ],
+  "paid_compute_jobs": 0
+}

@@ -1,0 +1,23 @@
+{
+  "status": "AUDITED_AGGREGATES_AND_RENDERED_FIGURES_VERIFIED",
+  "poster_qa_sha256": "b782c404636932245b424c6a67c2988e64077c3a1e8d51afe028af9e5c14dd74",
+  "files": {
+    "ASSESSMENT_MATCHED_NSE_H1_H16.svg": {
+      "bytes": 40629,
+      "sha256": "e2995b1ef9b2a57e43444344a55cbafea3a5e0b4ab081ccb148440be681cf8d6"
+    },
+    "ASSESSMENT_MATCHED_DELTAS_H1_H16.svg": {
+      "bytes": 14322,
+      "sha256": "4b6090aa3b189b0163cf07528294c0654f81c28b766ea0e4d165942471482158"
+    },
+    "ASSESSMENT_HYDRA_H18_BIAS_SEPARATE_SUPPORT.svg": {
+      "bytes": 25411,
+      "sha256": "30efabaa414d6ceb09a793e7b996ff966e679cb093f2098f1e6cf87fec3016fa"
+    },
+    "ASSESSMENT_MATCHED_PLOT_VALUES.csv": {
+      "bytes": 64889,
+      "sha256": "c08dcecf50b4104f74eae05846b6e1090f448b087b14640ac898be0ad2894164"
+    }
+  },
+  "raw_data_or_weights": false
+}

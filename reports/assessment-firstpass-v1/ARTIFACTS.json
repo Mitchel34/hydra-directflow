@@ -1,0 +1,70 @@
+{
+  "all36_seed_products_preserved": true,
+  "files": {
+    "03161000__GRU_Transformer.json": {
+      "bytes": 297817,
+      "sha256": "36f435d7d119d9f87879cfdee449059e38fdc6082eb007f52f8267df0930dc6c"
+    },
+    "03161000__LSTM.json": {
+      "bytes": 298403,
+      "sha256": "05f06568c48405743bc1c249d397004b669285b749b65a422d35cedc2175f825"
+    },
+    "03161000__Mamba2_Transformer.json": {
+      "bytes": 297707,
+      "sha256": "a82eed5b9bfb8c459aab046a0058274e47dfd33ed8a48132714b6c1caf0a2b09"
+    },
+    "03161000__Transformer.json": {
+      "bytes": 297717,
+      "sha256": "c4ad079b9dee66b07d137d9c807f0b1b8e391bb2eca91acfbf818ce0bd0c0e87"
+    },
+    "03164000__GRU_Transformer.json": {
+      "bytes": 297849,
+      "sha256": "bfde1703bbad9ffce1a23529abde726086664d84802d4c0433d11be1b2c2f1e4"
+    },
+    "03164000__LSTM.json": {
+      "bytes": 298354,
+      "sha256": "96d6b38091be14ef4fa9e76420ecfee443efc0c46a9a806a0ae3195dd4f3726e"
+    },
+    "03164000__Mamba2_Transformer.json": {
+      "bytes": 297893,
+      "sha256": "b55164f25f4bca9ccab283cb86298af017b648c765238ad41a4440d706c02783"
+    },
+    "03164000__Transformer.json": {
+      "bytes": 297946,
+      "sha256": "e9e255a39b1bb55eb1cd7a7645cdc3d7bcce63b2943c964928b18a6f3ece1e7a"
+    },
+    "03479000__GRU_Transformer.json": {
+      "bytes": 299495,
+      "sha256": "bfb426be79bfdea952f548a25a6afd599c927c0849721f5bcfd31ca0cd1742ee"
+    },
+    "03479000__LSTM.json": {
+      "bytes": 300452,
+      "sha256": "a80d2b9beb2a6939c6f6a4dcbdeb5b7dd0d49b7c8237ba33d5313ca8566b3202"
+    },
+    "03479000__Mamba2_Transformer.json": {
+      "bytes": 300397,
+      "sha256": "877d83482038911017723325b17d240400bb712d775f4856203624da9ccb860c"
+    },
+    "03479000__Transformer.json": {
+      "bytes": 298561,
+      "sha256": "5f7655ba931e152db8e794eb66483f29df5602fbb771606c9f58007bed3cd962"
+    },
+    "README.md": {
+      "bytes": 2537,
+      "sha256": "4fca86ea84a0191e8bcfd736858b55c23bad355c4a463221d8ab16e7ec439caa"
+    },
+    "lead-metrics.csv": {
+      "bytes": 361257,
+      "sha256": "495d5978d2fe71b15f4a08db86eebd12f18cca79661da4df8e05edefbba05c2c"
+    },
+    "summary.json": {
+      "bytes": 131768,
+      "sha256": "b55e18c30eeac5dd7080985051faea894171493b699d37c6377b72577104d501"
+    }
+  },
+  "metric_csv_rows": 1998,
+  "raw_arrays_or_weights": false,
+  "schema": "hydra-assessment-public-export/v1",
+  "source_aggregate_sha256": "38a16a7749c2b1444e0e380c57eb6f6a43ad25ebc2a353bb9d7a605c07db9fe0",
+  "status": "EXACT_AGGREGATE_EXPORT_VERIFIED"
+}

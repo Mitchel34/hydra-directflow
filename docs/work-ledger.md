@@ -1251,3 +1251,32 @@ was accessed during this qualification; the actual audit awaits POINT_RESULTS.
 An explicit checkpoint resume follows the interrupted preprocessing attempt.
 The original clock, consumed allowances and593 verified cycle caches remain;
 no model construction or forward had occurred before interruption.
+
+## Assessment first pass and poster draft completed — November 6
+
+All 73 input chunks and 1,463 candidate cycles were verified. All 36 frozen FULL
+L168 models completed 287,472 case-model forwards in 4,500 batches, with zero
+new training or scaling fits. All predictions passed structural and semantic
+barriers before verification targets and matched scoring. Independent scalar
+recomputation verified every model, lead, support count and three-seed aggregate.
+
+NWM has higher matched H1–16 mean NSE than all four models at Jefferson and
+Galax. At Sugar Grove, LSTM and Mamba2-Transformer have higher seed means, with
+substantial seed variability and a nonmonotonic NWM lead profile. The mean gains
+do not imply all-lead gains or significance. Strict assessment forecast
+availability is 100%/89.10%/84.37%; development-extension coverage is separate.
+NWM H17–18 remain unsupported. No assessment repair, ablation or event analysis
+was added after outcomes.
+
+The aggregate export preserves all 36 seed products and 1,998 physical-metric CSV
+rows. Public SVG comparison figures and 192 plotting rows were checked against
+the audited summaries. The local AGU V3 review-draft PDF passed rendering and
+independent aggregate review; development peak-underprediction limitations are
+explicitly retained as development findings.
+
+Assessment staging used 1,853 verified GETs, with a conservative $3.265155 estimate
+inside the approved 16 GiB / 4,000 GET / $5 envelope; billing is not invoice-reconciled.
+The one explicit preprocessing resume preserved the original clock and consumed
+allowances. Original training remains 1,151,690 updates. No worker remains active.
+This completes the requested saved-weight assessment first pass and draft update,
+not the entire AGU scientific-review/publication process.

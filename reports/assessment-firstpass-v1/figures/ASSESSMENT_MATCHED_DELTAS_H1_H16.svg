@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns2="http://creativecommons.org/ns#" xmlns:ns4="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="652.32pt" height="383.2pt" viewBox="0 0 652.32 383.2" version="1.1">
+ <metadata>
+  <rdf:RDF>
+   <ns2:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <ns2:Agent>
+      <dc:title>Matplotlib v3.10.7, https://matplotlib.org/</dc:title>
+     </ns2:Agent>
+    </dc:creator>
+   </ns2:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 295.2  L 652.32 295.2  L 652.32 0  L 0 0  z " style="fill: #ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 163.08 140.37269  L 645.7968 140.37269  L 645.7968 61.992  L 163.08 61.992  z " style="fill: #ffffff" />
+   </g>
+   <g clip-path="url(#p17ff7edd20)">
+    <image ns4:href="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAp8AAABtCAYAAADnLQozAAACd0lEQVR4nO3YMUpEMQBF0f9nEMbCzhW4GRdl5d7cgeU0tipiYyOi3xUEBpEbhXPaFHlVuGS9f3ncFviDrvYfsycA/EvPy/nsCTC0Gx8BAMDvEp8AAGTEJwAAGfEJAEBGfAIAkBGfAABkxCcAABnxCQBARnwCAJARnwAAZMQnAAAZ8QkAQEZ8AgCQEZ8AAGTEJwAAGfEJAEBGfAIAkBGfAABkxCcAABnxCQBARnwCAJARnwAAZMQnAAAZ8QkAQEZ8AgCQEZ8AAGTEJwAAGfEJAEBGfAIAkBGfAABkxCcAABnxCQBARnwCAJARnwAAZMQnAACZ9eb6sHXXwemOT5+zJ8DQl5cT4Ef8fAIAkBGfAABkxCcAABnxCQBARnwCAJARnwAAZMQnAAAZ8QkAQEZ8AgCQEZ8AAGTEJwAAGfEJAEBGfAIAkBGfAABkxCcAABnxCQBARnwCAJARnwAAZMQnAAAZ8QkAQEZ8AgCQEZ8AAGTEJwAAGfEJAEBGfAIAkBGfAABkxCcAABnxCQBARnwCAJARnwAAZMQnAAAZ8QkAQEZ8AgCQEZ8AAGTEJwAAGfEJAEBmfbi73brr4HS7/dnsCTD0/vY6ewIMHS4uZ0+AIT+fAABkxCcAABnxCQBARnwCAJARnwAAZMQnAAAZ8QkAQEZ8AgCQEZ8AAGTEJwAAGfEJAEBGfAIAkBGfAABkxCcAABnxCQBARnwCAJARnwAAZMQnAAAZ8QkAQEZ8AgCQEZ8AAGTEJwAAGfEJAEBGfAIAkBGfAABkxCcAABnxCQBARnwCAJARnwAAZMQnAAAZ8QkAQEZ8AgCQEZ8AAGTEJwAAGfEJAMBS+QZ/uxNP70NkcQAAAABJRU5ErkJggg==" id="image8f11939d5d" transform="scale(1 -1) translate(0 -78.48)" x="163.08" y="-61.89269" width="483.12" height="78.48" />
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1" />
+     <g id="text_1">
+      <text style="font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #526971" x="223.4196" y="53.832625" transform="rotate(-0 223.4196 53.832625)">LSTM</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2" />
+     <g id="text_2">
+      <text style="font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #526971" x="344.0988" y="53.832625" transform="rotate(-0 344.0988 53.832625)">T</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3" />
+     <g id="text_3">
+      <text style="font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #526971" x="464.778" y="53.832625" transform="rotate(-0 464.778 53.832625)">GRU-T</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4" />
+     <g id="text_4">
+      <text style="font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #526971" x="585.4572" y="53.832625" transform="rotate(-0 585.4572 53.832625)">Mamba2-T</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_5" />
+     <g id="text_5">
+      <text style="font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #526971" x="159.08" y="82.653886" transform="rotate(-0 159.08 82.653886)">Jefferson</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_6" />
+     <g id="text_6">
+      <text style="font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #526971" x="159.08" y="108.780782" transform="rotate(-0 159.08 108.780782)">Galax</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_7" />
+     <g id="text_7">
+      <text style="font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #526971" x="159.08" y="134.907679" transform="rotate(-0 159.08 134.907679)">Sugar Grove</text>
+     </g>
+    </g>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #244c5a" x="223.4196" y="80.574198" transform="rotate(-0 223.4196 80.574198)">-0.210</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #244c5a" x="344.0988" y="80.574198" transform="rotate(-0 344.0988 80.574198)">-0.204</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #244c5a" x="464.778" y="80.574198" transform="rotate(-0 464.778 80.574198)">-0.225</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #244c5a" x="585.4572" y="80.574198" transform="rotate(-0 585.4572 80.574198)">-0.196</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="223.4196" y="106.701095" transform="rotate(-0 223.4196 106.701095)">-0.464</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="344.0988" y="106.701095" transform="rotate(-0 344.0988 106.701095)">-0.535</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="464.778" y="106.701095" transform="rotate(-0 464.778 106.701095)">-0.543</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="585.4572" y="106.701095" transform="rotate(-0 585.4572 106.701095)">-0.543</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #244c5a" x="223.4196" y="132.827991" transform="rotate(-0 223.4196 132.827991)">+0.080</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #244c5a" x="344.0988" y="132.827991" transform="rotate(-0 344.0988 132.827991)">-0.035</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #244c5a" x="464.778" y="132.827991" transform="rotate(-0 464.778 132.827991)">-0.035</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #244c5a" x="585.4572" y="132.827991" transform="rotate(-0 585.4572 132.827991)">+0.049</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 21px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #244c5a" x="404.4384" y="29.63575" transform="rotate(-0 404.4384 29.63575)">NSE gain: HYDRA - NWM</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_3">
+    <path d="M 163.08 289.296  L 645.7968 289.296  L 645.7968 210.91531  L 163.08 210.91531  z " style="fill: #ffffff" />
+   </g>
+   <g clip-path="url(#pfcd8309c0e)">
+    <image ns4:href="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAp8AAABtCAYAAADnLQozAAACX0lEQVR4nO3YwU0DMQBFwXWIRFspiXopgCMSaLmuqWAlxOE5gZkG/E/2k8fnvs8N7tDT6gEAD8rDzj27rB4AAMD/IT4BAMiITwAAMuITAICM+AQAICM+AQDIiE8AADLiEwCAjPgEACAjPgEAyIhPAAAy4hMAgIz4BAAgIz4BAMiITwAAMuITAICM+AQAICM+AQDIiE8AADLiEwCAjPgEACAjPgEAyIhPAAAy4hMAgIz4BAAgIz4BAMiITwAAMuITAICM+AQAICM+AQDIiE8AADLiEwCAjPgEACAjPgEAyIhPAAAy4+X2PLvj4OfePo7VE+DU4eYE+BU/nwAAZMQnAAAZ8QkAQEZ8AgCQEZ8AAGTEJwAAGfEJAEBGfAIAkBGfAABkxCcAABnxCQBARnwCAJARnwAAZMQnAAAZ8QkAQEZ8AgCQEZ8AAGTEJwAAGfEJAEBGfAIAkBGfAABkxCcAABnxCQBARnwCAJARnwAAZMQnAAAZ8QkAQEZ8AgCQEZ8AAGTEJwAAGfEJAEBGfAIAkBGfAABkxCcAABnxCQBARnwCAJAZX++vszsO4I+Yx+oFcG5cVy+AU34+AQDIiE8AADLiEwCAjPgEACAjPgEAyIhPAAAy4hMAgIz4BAAgIz4BAMiITwAAMuITAICM+AQAICM+AQDIiE8AADLiEwCAjPgEACAjPgEAyIhPAAAy4hMAgIz4BAAgIz4BAMiITwAAMuITAICM+AQAICM+AQDIiE8AADLiEwCAjPgEACAjPgEAyIhPAAAy4hMAgIz4BAAgIz4BAMiITwAAMuITAICt8g0H5xH5hLD3tgAAAABJRU5ErkJggg==" id="image8245f5118d" transform="scale(1 -1) translate(0 -78.48)" x="163.08" y="-210.816" width="483.12" height="78.48" />
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_5">
+     <g id="line2d_8" />
+     <g id="text_21">
+      <text style="font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #526971" x="223.4196" y="202.755935" transform="rotate(-0 223.4196 202.755935)">LSTM</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_9" />
+     <g id="text_22">
+      <text style="font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #526971" x="344.0988" y="202.755935" transform="rotate(-0 344.0988 202.755935)">T</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_10" />
+     <g id="text_23">
+      <text style="font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #526971" x="464.778" y="202.755935" transform="rotate(-0 464.778 202.755935)">GRU-T</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_11" />
+     <g id="text_24">
+      <text style="font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #526971" x="585.4572" y="202.755935" transform="rotate(-0 585.4572 202.755935)">Mamba2-T</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_4">
+     <g id="line2d_12" />
+     <g id="text_25">
+      <text style="font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #526971" x="159.08" y="231.577196" transform="rotate(-0 159.08 231.577196)">Jefferson</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_13" />
+     <g id="text_26">
+      <text style="font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #526971" x="159.08" y="257.704093" transform="rotate(-0 159.08 257.704093)">Galax</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_14" />
+     <g id="text_27">
+      <text style="font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #526971" x="159.08" y="283.830989" transform="rotate(-0 159.08 283.830989)">Sugar Grove</text>
+     </g>
+    </g>
+   </g>
+   <g id="text_28">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #244c5a" x="223.4196" y="229.497509" transform="rotate(-0 223.4196 229.497509)">-8.200</text>
+   </g>
+   <g id="text_29">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #244c5a" x="344.0988" y="229.497509" transform="rotate(-0 344.0988 229.497509)">-8.041</text>
+   </g>
+   <g id="text_30">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #244c5a" x="464.778" y="229.497509" transform="rotate(-0 464.778 229.497509)">-8.717</text>
+   </g>
+   <g id="text_31">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #244c5a" x="585.4572" y="229.497509" transform="rotate(-0 585.4572 229.497509)">-7.819</text>
+   </g>
+   <g id="text_32">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="223.4196" y="255.624405" transform="rotate(-0 223.4196 255.624405)">-69.72</text>
+   </g>
+   <g id="text_33">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="344.0988" y="255.624405" transform="rotate(-0 344.0988 255.624405)">-77.35</text>
+   </g>
+   <g id="text_34">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="464.778" y="255.624405" transform="rotate(-0 464.778 255.624405)">-78.16</text>
+   </g>
+   <g id="text_35">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="585.4572" y="255.624405" transform="rotate(-0 585.4572 255.624405)">-78.10</text>
+   </g>
+   <g id="text_36">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #244c5a" x="223.4196" y="281.751302" transform="rotate(-0 223.4196 281.751302)">+0.790</text>
+   </g>
+   <g id="text_37">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #244c5a" x="344.0988" y="281.751302" transform="rotate(-0 344.0988 281.751302)">-0.430</text>
+   </g>
+   <g id="text_38">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #244c5a" x="464.778" y="281.751302" transform="rotate(-0 464.778 281.751302)">-0.432</text>
+   </g>
+   <g id="text_39">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #244c5a" x="585.4572" y="281.751302" transform="rotate(-0 585.4572 281.751302)">+0.444</text>
+   </g>
+   <g id="text_40">
+    <text style="font-weight: 700; font-size: 21px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #244c5a" x="404.4384" y="178.55906" transform="rotate(-0 404.4384 178.55906)">RMSE reduction: NWM - HYDRA (m³/s)</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p17ff7edd20">
+   <rect x="163.08" y="61.992" width="482.7168" height="78.38069" />
+  </clipPath>
+  <clipPath id="pfcd8309c0e">
+   <rect x="163.08" y="210.91531" width="482.7168" height="78.38069" />
+  </clipPath>
+ </defs>
+<rect x="0" y="295.2" width="652.32" height="88" fill="white" /><text x="16" y="313.2" font-size="13" style="fill:#526971;font-family:Arial,Helvetica,sans-serif">Matched H1-16. NSE gain is equal-lead; RMSE reduction averages per-lead RMSE</text><text x="16" y="331.2" font-size="13" style="fill:#526971;font-family:Arial,Helvetica,sans-serif">differences, not pooled RMSE.</text><text x="16" y="349.2" font-size="13" style="fill:#526971;font-family:Arial,Helvetica,sans-serif">Mean of all three seed metrics; positive favors HYDRA. Matched n/lead: Jefferson 8,712,</text><text x="16" y="367.2" font-size="13" style="fill:#526971;font-family:Arial,Helvetica,sans-serif">Galax 7,717, Sugar Grove 7,265.</text></svg>
